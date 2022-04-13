@@ -6,22 +6,30 @@
 
 
 
-# PHP_regis-Kel-
+# PHP_regis-Kel-.
 
 Registration form using php 
 
-## prequiste
+## prequiste.
 
 - >Scratch Html
 - >tailwindcss
 - >Js
 
-### Rules / Domians
+### Rules / Domians.
 
 - form layout present in css/style.css.
 - standard js present in js/main.js.
 - tailwind css for easy implementation.
 - required doubts commented in each sub-file.
+
+#### Database (MySql) Constraints.
+`Databasw name regis_dat table form_fillup for storing feedbacks`
+##### table constraints. (Temp/[Update when Schema acq])
+- id int.
+- Name varchar.
+- Review varchar.
+- Date Timestamp (current).
 
 ## Acknowledgements
 

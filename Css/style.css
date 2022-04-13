@@ -1,3 +1,10 @@
+ /* ======index css===== */
+
+
+
+
+
+ /* ======formto.php css===== */
 :root{
     /*===== Colores =====*/
     --first-color: #006eff;
@@ -36,7 +43,7 @@
     width: 69vh;
     padding: 4rem 2rem;
     border-radius: 0.2rem;
-    box-shadow: 1rem 2rem 3rem rgba(92,99,105,.2);
+    box-shadow: 1rem 1rem 4rem rgba(92,99,105,.2);
     border-style: solid;
     border-width: 1px;
   }
@@ -143,4 +150,3 @@
     font-size: 0.85rem;
     float: right;
   }
-  

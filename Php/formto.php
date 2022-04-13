@@ -52,9 +52,11 @@ if(isset($_POST['login'])){
   <!-- script -->
   <script type="text/javascript" src="../Js/main.js"></script>
 </head>
-<body>
-    
-<div class="l-form">
+<body class="p-3 m-3 bg-[#ffffff]">
+    <br>
+    <br>
+   
+<div class="l-form p-8">
             <form action="#" method ="POST" class="form">
                 <h1 class="form__title text-3xl" style="font-family:'Bungee', cursive;">Fill up<br><span style="font-size:1.4rem;font-family: 'Roboto', sans-serif;">Fellow User &#128512;</span></h1>
                 <div class="form__div">
@@ -67,8 +69,10 @@ if(isset($_POST['login'])){
                     <label for="" class="form__label">Review?</label>
                 </div>
                 <br>
-                <input type="submit" class="form__button" value="Sign In" name="login" style="float:right;background-color:#006eff" onclick="verify()">
+                <input type="submit" class="form__button" value="Submit" name="login" style="float:right;background-color:#006eff" onclick="verify()">
             </form>
+            <br>
+    <br>
     </div>
 
 </body>

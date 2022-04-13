@@ -24,7 +24,7 @@ Registration form using php
 - required doubts commented in each sub-file.
 
 #### Database (MySql) Constraints.
-`Databasw name regis_dat table form_fillup for storing feedbacks`
+`Database name 'regis_dat' table 'form_fillup' for storing feedbacks`
 ##### table constraints. (Temp/[Update when Schema acq])
 - id int.
 - Name varchar.

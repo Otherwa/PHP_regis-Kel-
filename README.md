@@ -1,5 +1,9 @@
 ![download](https://user-images.githubusercontent.com/67428572/163125682-be729cb1-e01b-4532-a005-8cc42b9def89.png)
 
+![download](https://user-images.githubusercontent.com/67428572/163125865-40f93fdc-69b2-48ae-ae2e-5a6c2e726fbf.png)
+
+![download](https://user-images.githubusercontent.com/67428572/163125996-f147491c-141f-401a-a808-da535c22fd95.png)
+
 # PHP_regis-Kel-.
 
 Registration form using php 

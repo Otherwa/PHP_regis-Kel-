@@ -16,6 +16,13 @@ Registration form using php
 - >tailwindcss
 - >Js
 
+### Rules / Domians
+
+- form layout present in css/style.css.
+- standard js present in js/main.js.
+- tailwind css for easy implementation.
+- required doubts commented in each sub-file.
+
 ## Acknowledgements
 
  - [Awesome Readme Templates](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)

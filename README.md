@@ -24,16 +24,22 @@ Registration form using php
 #### Database (MySql) Constraints.
 `Database name 'regis_dat' table 'form_fillup' for storing feedbacks`
 ##### table constraints. (Temp/[Update when Schema acq])
-- id int.
+`form_fillup`
+- Id int.
 - Name varchar.
 - Review varchar.
 - Date Timestamp (current).
 
+`form_num`
+- Id int.
+- Phone varchar
+- User_id int (Id - form_fillup)
 
 ![ssj1](https://user-images.githubusercontent.com/67428572/163079317-1e3561d1-9fe0-4a2d-8187-e9fc190ba4e8.png)
 ![ssj2](https://user-images.githubusercontent.com/67428572/163079320-1902922d-1ce9-44fc-96da-68f8819dfa16.png)
 ![ssj3](https://user-images.githubusercontent.com/67428572/163079326-1c8c7da9-5ff8-4dfb-b675-1de29571904f.png)
 ![ssj4](https://user-images.githubusercontent.com/67428572/163079477-e497d636-22cb-4204-803f-7c77ba767d3a.png)
+![ssj5](https://user-images.githubusercontent.com/67428572/163398910-182d1bb5-3708-4c71-90af-5b19d2e753c4.png)
 
 ## Acknowledgements
 

@@ -2,6 +2,14 @@
 ![download](https://user-images.githubusercontent.com/67428572/163125865-40f93fdc-69b2-48ae-ae2e-5a6c2e726fbf.png)
 ![download](https://user-images.githubusercontent.com/67428572/163125996-f147491c-141f-401a-a808-da535c22fd95.png)
 
+## For Developement
+
+- XAMPP [doc](https://www.apachefriends.org/index.html)
+- Any IDE. `VSCode`.
+- Google Fonts api.
+- Tailwind npm/CDN`(temp)`.
+
+
 # PHP_regis-Kel-.
 
 Registration form using php 

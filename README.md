@@ -46,7 +46,8 @@ Registration form using php
 
 ## styling
 
-- tailwind css ![](https://tailwindcss.com/docs/installation)
+- tailwind css ![documentation](https://tailwindcss.com/docs/installation)
+- scratch css.
 
 # Preview
 

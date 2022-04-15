@@ -35,7 +35,7 @@ Registration form using php
 - Phone varchar
 - User_id int (Id - form_fillup)
 
-![ssj1](https://user-images.githubusercontent.com/67428572/163079317-1e3561d1-9fe0-4a2d-8187-e9fc190ba4e8.png)
+![ssj1](https://user-images.githubusercontent.com/67428572/163563487-7c2512ab-dcc6-45a4-b89a-63b8f02e2a9f.png)
 ![ssj2](https://user-images.githubusercontent.com/67428572/163079320-1902922d-1ce9-44fc-96da-68f8819dfa16.png)
 ![ssj3](https://user-images.githubusercontent.com/67428572/163079326-1c8c7da9-5ff8-4dfb-b675-1de29571904f.png)
 ![ssj4](https://user-images.githubusercontent.com/67428572/163079477-e497d636-22cb-4204-803f-7c77ba767d3a.png)

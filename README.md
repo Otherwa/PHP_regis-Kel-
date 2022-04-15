@@ -4,10 +4,10 @@
 
 ## For Developement
 
-- XAMPP [doc](https://www.apachefriends.org/index.html)
+- XAMPP [documentation](https://www.apachefriends.org/index.html)
 - Any IDE. `VSCode`.
-- Google Fonts api.
-- Tailwind npm/CDN `(temp)`.
+- Google Fonts API. [documentaion](https://fonts.google.com/knowledge)
+- Tailwind npm/CDN `(temp)`. [documentation](https://tailwindcss.com/docs/installation)
 
 
 # PHP_regis-Kel-.

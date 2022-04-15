@@ -25,10 +25,13 @@ Registration form using php
 
 - `Main Directory` consists of all basic static pages needed to render , the index.html redirects to formto.php in `Php Directory`
 - `Php Directory\formto.php` uses sql connect to fill respective data to Mysql backend
-- after fillup is compeleted again redirected to `Main Directory\formsub.html` (3 sec) wait -> `index.html` 
+- after fillup is compeleted again redirected to `Main Directory\formsub.html` (3 sec) wait -> `index.html`
+- Done.
 
 #### Database (MySql) Constraints.
+
 `Database name 'regis_dat' table 'form_fillup' for storing feedbacks`
+
 ##### table constraints. (Temp/[Update when Schema acq])
 `form_fillup`
 - Id int.
@@ -40,6 +43,12 @@ Registration form using php
 - Id int.
 - Phone varchar
 - User_id int (Id - form_fillup)
+
+## styling
+
+- tailwind css ![](https://tailwindcss.com/docs/installation)
+
+# Preview
 
 ![ssj1](https://user-images.githubusercontent.com/67428572/163563487-7c2512ab-dcc6-45a4-b89a-63b8f02e2a9f.png)
 ![ssj2](https://user-images.githubusercontent.com/67428572/163079320-1902922d-1ce9-44fc-96da-68f8819dfa16.png)

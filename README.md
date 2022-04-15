@@ -7,7 +7,7 @@
 - XAMPP [doc](https://www.apachefriends.org/index.html)
 - Any IDE. `VSCode`.
 - Google Fonts api.
-- Tailwind npm/CDN`(temp)`.
+- Tailwind npm/CDN `(temp)`.
 
 
 # PHP_regis-Kel-.

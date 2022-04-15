@@ -1,15 +1,28 @@
 <!doctype html>
 <html>
 <head>
+  <title>Form</title>  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- tailwind css -->
+  <!-- tailwind css CDN (solve after npm install [note]) -->
   <script src="https://cdn.tailwindcss.com"></script> 
   <link rel="stylesheet" href="../Css/style.css">
   <!-- Gfonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+  <!-- icon -->
+  <link type="image/png" sizes="16x16" rel="icon" href="https://img.icons8.com/cute-clipart/16/000000/pixel-cat.png">
+  <script type="text/javascript">
+    // formsub to index after 3 sec
+      const myTimeout = setTimeout(Redirect, 3000);
+
+      function Redirect() {
+        console.log("H1");
+        window.open("/PHP_regis/Main/index.html","_self");
+      }
+  </script>
+  <!-- basic css -->
   <style>
     .myfont{
       font-family: 'Bungee', cursive;
@@ -23,8 +36,9 @@
     <br>
     <!-- This requires Tailwind CSS v2.0+ -->
 <div class="bg-[#ffffff] text-center p-3 m-2">
-    <p class="text-4xl myfont antialiased tracking-normal leading-relaxed md:text-4xl">Form Submitted</p>
+    <p class="text-4xl myfont antialiased tracking-normal leading-relaxed md:text-4xl overline leading-loose">Form Submitted</p>
      <br>
+     <p class="font-mono">Redirecting to main page .....</p> 
      <br>
      <br>
     <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-3xl">

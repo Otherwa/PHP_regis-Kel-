@@ -69,6 +69,7 @@ else{
 <!doctype html>
 <html>
 <head>
+  <title>Form</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- tailwind css -->
@@ -78,14 +79,14 @@ else{
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
-  <!-- script -->
-  <script type="text/javascript" src="../Js/main.js"></script>
+  <!-- icon -->
+  <link type="image/png" sizes="16x16" rel="icon" href="https://img.icons8.com/cute-clipart/16/000000/pixel-cat.png">
 </head>
-<body class="p-3 m-3 bg-[#ffffff]">
+<body class="p-1 m-0 bg-[#ffffff]">
     <br>
     <br>
    
-<div class="l-form p-8">
+<div class="l-form p-0">
             <form action="#" method ="POST" class="form">
                 <h1 class="form__title text-4xl" style="font-family:'Bungee', cursive;">Fill up<br><span style="font-size:1.4rem;font-family: 'Roboto', sans-serif;">User &#128512;</span></h1>
                 <div class="form__div">

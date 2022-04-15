@@ -46,8 +46,8 @@ Registration form using php
 
 ## styling
 
-- tailwind css [documentation](https://tailwindcss.com/docs/installation)
-- scratch css.
+- Tailwind Css [documentation](https://tailwindcss.com/docs/installation)
+- Scratch Css.
 
 # Preview
 
@@ -66,7 +66,7 @@ Registration form using php
 
 ## License
 
-Copyright (c) [year] [fullname]
+Copyright (c) [2022] [Atharv Desai]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

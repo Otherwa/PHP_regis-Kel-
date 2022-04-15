@@ -8,18 +8,24 @@
 
 Registration form using php 
 
-## prequiste.
+## Prequiste.
 
 - >Scratch Html
 - >tailwindcss
 - >Js
 
-### Rules / Domians.
+### Domians.
 
 - form layout present in css/style.css.
 - standard js present in js/main.js.
 - tailwind css for easy implementation.
 - required doubts commented in each sub-file.
+
+# Instructions
+
+- `Main Directory` consists of all basic static pages needed to render , the index.html redirects to formto.php in `Php Directory`
+- `Php Directory\formto.php` uses sql connect to fill respective data to Mysql backend
+- after fillup is compeleted again redirected to `Main Directory\formsub.html` (3 sec) wait -> `index.html` 
 
 #### Database (MySql) Constraints.
 `Database name 'regis_dat' table 'form_fillup' for storing feedbacks`

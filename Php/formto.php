@@ -11,7 +11,7 @@ if (!$con){
 //VALUES
 $flag = 0;
 if(isset($_POST['login'])){
-    //posted then
+    //Get dat
     session_start();
     $name = $_POST['Name'];
     $review = $_POST['Review'];

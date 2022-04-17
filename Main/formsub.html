@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- tailwind css CDN (solve after npm install [note]) -->
   <script src="https://cdn.tailwindcss.com"></script> 
+  <link rel="stylesheet" href="../dist/output.css">
   <link rel="stylesheet" href="../Css/style.css">
   <!-- Gfonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,12 +16,7 @@
   <link type="image/png" sizes="16x16" rel="icon" href="https://img.icons8.com/cute-clipart/16/000000/pixel-cat.png">
   <script type="text/javascript">
     // formsub to index after 3 sec
-      const myTimeout = setTimeout(Redirect, 3000);
-
-      function Redirect() {
-        console.log("H1");
-        window.open("/PHP_regis/Main/index.html","_self");
-      }
+     
   </script>
   <!-- basic css -->
   <style>
@@ -36,9 +32,9 @@
     <br>
     <!-- This requires Tailwind CSS v2.0+ -->
 <div class="bg-[#ffffff] text-center p-3 m-2">
-    <p class="text-4xl myfont antialiased tracking-normal leading-relaxed md:text-4xl overline leading-loose">Form Submitted</p>
+    <p class="text-4xl myfont antialiased tracking-normal  md:text-4xl overline leading-loose">Form Submitted</p>
      <br>
-     <p class="font-mono">Redirecting to main page .....</p> 
+     <p class="font-mono underline text-xl hover:text-[#006eff]"><a href="../Php/formto.php">Submit Another Form</a></p> 
      <br>
      <br>
     <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-3xl">
@@ -47,9 +43,9 @@
           <img class="h-48 w-full object-cover md:h-full md:w-69" src="https://camo.githubusercontent.com/2122bb0983abb5a86fefd552a7122760dfa8872181dfc2e997be6ed07781d300/68747470733a2f2f69302e77702e636f6d2f7777772e7072696e746d61672e636f6d2f77702d636f6e74656e742f75706c6f6164732f323032312f30322f3463626538645f66316564323830306134393634393834383130326336386663356136366535336d76322e6769663f6669743d3437362532433238302673736c3d31" alt="Nyan Cat">
         </div>
         <div class="p-8">
-          <div class="uppercase tracking-wide text-sm font-mono text-500 font-semibold text-2xl">Sucessfully Submitted</div>
+          <div class="uppercase tracking-wide  font-mono text-500 font-semibold text-2xl">Sucessfully Submitted</div>
           <br>
-          <p href="#" class="block mt-1 text-lg leading-tight text-2xl text-black font-mono hover:underline">...</p>
+          <p href="#" class="block mt-1  leading-tight text-2xl text-black font-mono hover:underline">...</p>
           <br>
           <p class="mt-2  text-2xl text-slate-500 font-mono">:)</p>
         </div>
@@ -58,9 +54,6 @@
 <br>
 
 </div>
-  <script type="text/javascript">
- 
-  </script>
 </body>
  
 </html>

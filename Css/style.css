@@ -137,11 +137,15 @@
     font-size: var(--small-font-size);
     font-weight: 500;
     z-index: 0;
+    transition:0.5s;
+    
   }
   
   /*Input focus*/
   .form__input:focus{
+    color: rgb(0, 100, 166);
     border: 1.5px solid var(--first-color);
+    transition:0.5s;
   }
   
   /* Form Msg */
@@ -174,5 +178,72 @@
 /*=== nav bar css ===*/
 .footer-copyright{
   position: relative;
-  bottom: -14rem;
+  bottom: -20rem;
+}
+
+@media screen and (max-width: 426px) {
+  .footer-copyright{
+    position: relative;
+    bottom: -10rem;
+  }
+}
+
+/* nav bar */
+ul.sidenav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 20%;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+ul.sidenav li a {
+  display: block;
+  color: #000;
+  padding: 20px 16px;
+  text-decoration: none;
+  font-family: 'Bungee', cursive;
+}
+ 
+ul.sidenav li a.active {
+  background-color: #1e88de;
+  color: white;
+}
+
+ul.sidenav li a:hover:not(.active) {
+  transition: 0.5s;
+  background-color: rgba(0, 0, 0, 0.690);
+  color: #1fc6e4;
+}
+
+div.content {
+  margin-left: 25%;
+  padding: 4rem 2rem;
+  height: 1000px;
+}
+
+@media screen and (max-width: 900px) {
+  ul.sidenav {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  
+  ul.sidenav li a {
+    float: left;
+    padding: 15px;
+  }
+  
+  div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 426px) {
+  ul.sidenav li a {
+    text-align: center;
+    float: none;
+    padding: 16px 16px;
+  }
 }

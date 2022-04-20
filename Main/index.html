@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- tailwind css CDN (solve after npm install [note]) -->
 
-  <!-- <script src="https://cdn.tailwindcss.com"></script>  -->
+  <script src="https://cdn.tailwindcss.com"></script> 
   <link rel="stylesheet" href="../dist/output.css">
   <link rel="stylesheet" href="../Css/style.css">
   <!-- Gfonts -->
@@ -22,70 +22,14 @@
 
   /* nav css */
 
-  ul.sidenav {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 20%;
-  background-color: #f1f1f1;
-  position: fixed;
-  height: 100%;
-  overflow: auto;
-}
-
-ul.sidenav li a {
-  display: block;
-  color: #000;
-  padding: 8px 16px;
-  text-decoration: none;
-}
- 
-ul.sidenav li a.active {
-  background-color: #1e88de;
-  color: white;
-}
-
-ul.sidenav li a:hover:not(.active) {
-  transition: 0.5s;
-  background-color: rgba(0, 0, 0, 0.690);
-  color: #1fc6e4;
-}
-
-div.content {
-  margin-left: 25%;
-  padding: 4rem 2rem;
-  height: 1000px;
-}
-
-@media screen and (max-width: 900px) {
-  ul.sidenav {
-    width: 100%;
-    height: auto;
-    position: relative;
-  }
-  
-  ul.sidenav li a {
-    float: left;
-    padding: 15px;
-  }
-  
-  div.content {margin-left: 0;}
-}
-
-@media screen and (max-width: 426px) {
-  ul.sidenav li a {
-    text-align: center;
-    float: none;
-  }
-}
   </style>
 </head>
 <body class="bg-[#ffffff]">
     <ul class="sidenav">
-      <li><a class="active font-mono text-[1.45rem]" href="index.html">Home</a></li>
-      <li><a class="font-mono text-[1.45rem]" href="news.html">News</a></li>
-      <li><a class="font-mono text-[1.45rem]" href="contact.html">Contact</a></li>
-      <li><a class="font-mono text-[1.45rem] " href="about.html">About</a></li>
+      <li><a class="active font-mono text-xl" href="index.html">Home</a></li>
+      <li><a class="font-mono text-xl" href="news.html">News</a></li>
+      <li><a class="font-mono text-xl" href="contact.html">Contact</a></li>
+      <li><a class="font-mono text-xl " href="about.html">About</a></li>
     </ul>
   
   
@@ -104,7 +48,7 @@ div.content {
         <div class="md:shrink-0">
           <img class="h-48 w-full object-cover md:h-full md:w-25" src="https://camo.githubusercontent.com/2122bb0983abb5a86fefd552a7122760dfa8872181dfc2e997be6ed07781d300/68747470733a2f2f69302e77702e636f6d2f7777772e7072696e746d61672e636f6d2f77702d636f6e74656e742f75706c6f6164732f323032312f30322f3463626538645f66316564323830306134393634393834383130326336386663356136366535336d76322e6769663f6669743d3437362532433238302673736c3d31" alt="Man looking at item at a store">
         </div>
-        <div class="p-8">
+        <div class="p-8 inline-block">
           <div class="uppercase tracking-wide  font-mono text-xl">What is a Form?</div>
           <br>
           <p href="#" class="block mt-1  leading-tight text-xl text-black font-mono hover:underline">To Gather data.</p>

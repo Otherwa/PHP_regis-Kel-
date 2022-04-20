@@ -90,17 +90,17 @@ else{
             <form action="#" method ="POST" class="form">
                 <h1 class="form__title text-4xl" style="font-family:'Bungee', cursive;">Fill up<br><span style="font-size:1.4rem;font-family: 'Roboto', sans-serif;">User &#128512;</span></h1>
                 <div class="form__div">
-                    <input type="text" class="form__input" name="Name" id="name" placeholder="e.g xyz">
+                    <input type="text" class="form__input" name="Name" id="name" placeholder="e.g xyz" autocomplete="off">
                     <label for="" class="form__label">Name</label>
                 </div>
                 
                 <div class="form__div">
-                    <input type="text" class="form__input" name="Review" id="review" placeholder="e.g xyz@1">
+                    <input type="text" class="form__input" name="Review" id="review" placeholder="e.g xyz@1" autocomplete="off">
                     <label for="" class="form__label">Review?</label>
                 </div>
 
                 <div class="form__div">
-                    <input type="text" class="form__input" name="Phone" id="review" placeholder="e.g 8828388979">
+                    <input type="text" class="form__input" name="Phone" id="review" placeholder="e.g 8828388979" autocomplete="off">
                     <label for="" class="form__label">Phone</label>
                 </div>
                 <br>

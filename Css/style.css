@@ -46,6 +46,18 @@
     border-style: solid;
     border-width: 1px;
   }
+  /* tablet */
+  @media screen and (max-width: 768px) {
+    .form{
+      width: 65vh;
+    }
+  }
+  /* mobile */
+  @media screen and (max-width: 439px) {
+    .form{
+      width: 49vh;
+    }
+  }
   .form__title{
     font-weight: 400;
     margin-bottom: 3rem;
@@ -175,10 +187,12 @@
     float: right;
   }
 
+
 /*=== nav bar css ===*/
 .footer-copyright{
   position: relative;
   bottom: -20rem;
+  line-height: 1.6rem;
 }
 
 @media screen and (max-width: 426px) {
@@ -206,6 +220,7 @@ ul.sidenav li a {
   padding: 20px 16px;
   text-decoration: none;
   font-family: 'Bungee', cursive;
+  font-size: 1.15rem;
 }
  
 ul.sidenav li a.active {

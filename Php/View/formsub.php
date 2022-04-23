@@ -55,7 +55,7 @@ session_destroy();
         </div>
         <div class="p-8">
             <!-- php session data-->
-          <div class="uppercase tracking-wide  font-mono  font-semibold text-xl"><p class="text-[1.6rem]">Konichiwa </p> <p class="text-[blue]"><?php if(isset($_SESSION['name'])){echo $firstname[0];} else {echo 'User';} ?> - Kun</p> <span class="text-[1.2rem]"> Your Form Sucessfully Submitted</span></div>
+          <div class="uppercase tracking-wide  font-mono  font-semibold text-xl"><p class="text-[1.6rem]">Konichiwa </p> <br> <p class="text-[blue]"><?php if(isset($_SESSION['name'])){echo $firstname[0];} else {echo 'User';} ?> - Kun</p> <br> <span class="text-[1.2rem]"> Your Form Sucessfully Submitted</span></div>
           <br>
           <p href="#" class="block mt-1  leading-tight text-2xl text-black font-mono hover:underline">...</p>
           <br>

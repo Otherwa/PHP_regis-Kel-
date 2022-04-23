@@ -76,22 +76,40 @@ else{
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- tailwind css -->
-  <script src="https://cdn.tailwindcss.com"></script> 
-  <link rel="stylesheet" href="../../Css/style.css">
+  <!-- <script src="https://cdn.tailwindcss.com"></script>  -->
+  <link rel="stylesheet" type="text/css" href="../../dist/output.css">
+  <link rel="stylesheet" type="text/css" href="../../Css/style.css">
   <!-- Gfonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
   <!-- icon -->
   <link type="image/png" sizes="16x16" rel="icon" href="https://img.icons8.com/cute-clipart/16/000000/pixel-cat.png">
+  <!-- num style -->
+  <style>
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+  </style>
 </head>
 <body class="p-1 m-0 bg-[#ffffff]">
     <br>
     <br>
    
 <div class="l-form p-0">
+    <fieldset>
+        
             <form action="#" method ="POST" class="form">
-                <h1 class="form__title text-4xl" style="font-family:'Bungee', cursive;">Fill up<br><span style="font-size:1.4rem;font-family: 'Roboto', sans-serif;">User &#128512;</span></h1>
+            <fieldset>
+            <legend>Yare Yare Daze</legend>
+                <h1 class="form__title" style="font-family:'Bungee', cursive;font-size:2.2rem;color:#565656;">Fill up<br><span style="font-size:1.4rem;font-family: 'Roboto', sans-serif;color:black">User &#128466;</span></h1>
                 <div class="form__div">
                     <input type="text" class="form__input" name="Name" id="name" placeholder="e.g xyz" autocomplete="off">
                     <label for="" class="form__label">Name</label>
@@ -103,11 +121,12 @@ else{
                 </div>
 
                 <div class="form__div">
-                    <input type="text" class="form__input" name="Phone" id="review" placeholder="e.g 8828388979" autocomplete="off">
+                    <input type="number" class="form__input" name="Phone" id="review" placeholder="e.g 8828388979" autocomplete="off">
                     <label for="" class="form__label">Phone</label>
                 </div>
                 <br>
                 <input type="submit" id="sub" class="form__button font-mono" value="Submit" name="login" style="float:right;" onclick="verify()">
+            </fieldset>
             </form>
     <br>
     <br>

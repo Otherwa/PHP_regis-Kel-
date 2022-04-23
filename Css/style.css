@@ -30,32 +30,27 @@
   
   /*===== FORM =====*/
   .l-form{
-    display: flex;
+    display:flex;
     justify-content: center;
     align-items: center;
     height: auto;
-    margin:0.25rem;
-    padding:0.25rem;
-    
+    margin:0.5rem;
+    padding:0.5rem;
   }
   .form{
-    width: 69vh;
-    padding: 4rem 2rem;
+    padding: 2rem;
     border-radius: 0.2rem;
     box-shadow: 1rem 1rem 4rem rgba(92,99,105,.2);
     border-style: solid;
     border-width: 1px;
+    position: relative;
+    text-align: left;
+    width:39rem;
   }
-  /* tablet */
-  @media screen and (max-width: 768px) {
+  /* size change */
+  @media screen and (max-width: 428px){
     .form{
-      width: 65vh;
-    }
-  }
-  /* mobile */
-  @media screen and (max-width: 439px) {
-    .form{
-      width: 49vh;
+      width:22rem;
     }
   }
   .form__title{

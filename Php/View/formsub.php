@@ -4,7 +4,7 @@ session_start();
 $firstname = explode(" ", $_SESSION['name']);
 // validiting refresh
 if(!isset($_SESSION['name'])){
-    header('Location: \\PHP_regis\\Php\\View\\formto.php');
+    header('Location: /PHP_regis/Php/View/formto.php');
 }
 session_destroy();
 ?>

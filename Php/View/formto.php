@@ -99,7 +99,7 @@ input[type=number] {
 }
   </style>
 </head>
-<body class="p-1 m-0 bg-[#ffffff]">
+<body class="p-1 m-0 bg-[#ebebeb]">
     <br>
     <br>
    
@@ -130,6 +130,8 @@ input[type=number] {
             </form>
     <br>
     <br>
+    <br>
+
     </div>
 
 </body>

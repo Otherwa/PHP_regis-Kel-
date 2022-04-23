@@ -58,7 +58,7 @@ if(isset($_POST['login'])){
     //redirect(base_url) falg operations
     if($flag == 1){
         sleep(1);
-        header("Location: \\PHP_regis\\Php\\View\\formsub.php");
+        header("Location: /PHP_regis/Php/View/formsub.php");
     }
     // session_unset();
     

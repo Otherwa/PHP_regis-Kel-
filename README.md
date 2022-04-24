@@ -2,6 +2,8 @@
 ![download](https://user-images.githubusercontent.com/67428572/163125865-40f93fdc-69b2-48ae-ae2e-5a6c2e726fbf.png)
 ![download](https://user-images.githubusercontent.com/67428572/163125996-f147491c-141f-401a-a808-da535c22fd95.png)
 
+# Badge
+[![CodeFactor](https://www.codefactor.io/repository/github/otherwa/php_regis-kel-/badge)](https://www.codefactor.io/repository/github/otherwa/php_regis-kel-)
 
 ## [![Repography logo](https://images.repography.com/logo.svg)](https://repography.com) / Recent activity [![Time period](https://images.repography.com/25186133/Otherwa/PHP_regis-Kel-/recent-activity/2d39f7ec9a6a0a126598cef5bd926a77_badge.svg)](https://repography.com)
 [![Timeline graph](https://images.repography.com/25186133/Otherwa/PHP_regis-Kel-/recent-activity/2d39f7ec9a6a0a126598cef5bd926a77_timeline.svg)](https://github.com/Otherwa/PHP_regis-Kel-/commits)

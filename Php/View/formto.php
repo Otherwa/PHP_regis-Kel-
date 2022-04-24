@@ -41,8 +41,8 @@ elseif($status == PHP_SESSION_ACTIVE){
     $_SESSION['name'] = $name;
 
     //check if exists
-    $sql_o = "SELECT Id from `form_fillup` WHERE Name = '$name'; ";
-    $result = mysqli_query($con,$sql_o);
+    $sql_check = "SELECT Id from `form_fillup` WHERE Name = '$name'; ";
+    $result = mysqli_query($con,$sql_check);
     $count = mysqli_num_rows($result);
     
     if($count > 1 ){ //ony two per query user
@@ -51,20 +51,19 @@ elseif($status == PHP_SESSION_ACTIVE){
     
     elseif($name != null && $review != null){
 
-    $sql1 = "INSERT INTO `form_fillup` (`Name`, `Review`, `Date`) VALUES ('$name','$review',current_timestamp());";
-    $result = mysqli_query($con,$sql1);
+    $sql_insert_form_fillup = "INSERT INTO `form_fillup` (`Name`, `Review`, `Date`) VALUES ('$name','$review',current_timestamp());";
+    $result = mysqli_query($con,$sql_insert_form_fillup);
 
     //retrive id
-    $sql = "SELECT Id from `form_fillup` WHERE Name = '$name' ";
-    $result = mysqli_query($con,$sql);
-
+    $sql_retrieve = "SELECT Id from `form_fillup` WHERE Name = '$name' ";
+    $result = mysqli_query($con,$sql_retrieve);
     // query to get primary key of id
     $user_id = mysqli_fetch_assoc($result);
     $u_id = $user_id['Id'];
 
     //get data u_id to store and pass on to sql2 Query;
-    $sql2 = "INSERT INTO `form_num` (`Phone`, `User_Id`) VALUES ('$phone','$u_id');";
-    $result = mysqli_query($con,$sql2);
+    $sql_insert_form_num = "INSERT INTO `form_num` (`Phone`, `User_Id`) VALUES ('$phone','$u_id');";
+    $result = mysqli_query($con,$sql_insert_form_num);
 
     $flag = 1;
     //if all done set flag

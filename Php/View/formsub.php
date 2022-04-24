@@ -39,8 +39,6 @@ session_destroy();
 </head>
 <body class="p-3 m-3 bg-[#ffffff]">
     <br>
-    <br>
-    <br>
     <!-- This requires Tailwind CSS v2.0+ -->
 <div class="bg-[#ffffff] text-center p-3 m-2">
     <p class="text-4xl myfont antialiased tracking-normal  md:text-4xl overline leading-loose">Form Submitted</p>
@@ -55,7 +53,7 @@ session_destroy();
         </div>
         <div class="p-8">
             <!-- php session data-->
-          <div class="uppercase tracking-wide  font-mono  font-semibold text-xl"><p class="text-[1.6rem]">Konichiwa </p> <br> <p class="text-[blue]"><?php if(isset($_SESSION['name'])){echo $firstname[0];} else {echo 'User';} ?> - Kun</p> <br> <span class="text-[1.2rem]"> Your Form Sucessfully Submitted</span></div>
+          <div class="uppercase tracking-wide  font-mono  font-semibold text-xl"><p class="text-[1.6rem]">Konichiwa </p> <br> <p class="text-[blue] font-mono"><?php if(isset($_SESSION['name'])){echo $firstname[0];} else {echo 'User';} ?>-Kun</p> <br> <span class="text-[1.2rem]"> Your Form Sucessfully Submitted</span></div>
           <br>
           <p href="#" class="block mt-1  leading-tight text-2xl text-black font-mono hover:underline">...</p>
           <br>
@@ -64,7 +62,11 @@ session_destroy();
       </div>
     </div> 
 <br>
-
+      <div class="footer-copyright">
+          <br>
+          <p>&copy; | Copyright 2022 - ♾️ All rights reserved. | <a href="term.html" target="_self" class="text-[blue] hover:underline">Terms & Conditions</a></p>
+          <br>
+        </div>
 </div>
 </body>
  

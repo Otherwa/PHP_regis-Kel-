@@ -7,9 +7,7 @@
 [![Trending topics](https://images.repography.com/25186133/Otherwa/PHP_regis-Kel-/recent-activity/2d39f7ec9a6a0a126598cef5bd926a77_words.svg)](https://github.com/Otherwa/PHP_regis-Kel-/commits)
 [![Top contributors](https://images.repography.com/25186133/Otherwa/PHP_regis-Kel-/recent-activity/2d39f7ec9a6a0a126598cef5bd926a77_users.svg)](https://github.com/Otherwa/PHP_regis-Kel-/graphs/contributors)
 
-![download](https://user-images.githubusercontent.com/67428572/163125682-be729cb1-e01b-4532-a005-8cc42b9def89.png)
-![download](https://user-images.githubusercontent.com/67428572/163125865-40f93fdc-69b2-48ae-ae2e-5a6c2e726fbf.png)
-![download](https://user-images.githubusercontent.com/67428572/163125996-f147491c-141f-401a-a808-da535c22fd95.png)
+
 
 ## For Developement
 
@@ -18,6 +16,9 @@
 - Google Fonts API. [documentaion](https://fonts.google.com/knowledge)
 - Tailwind npm/CDN `(temp)`. [documentation](https://tailwindcss.com/docs/installation)
 
+![download](https://user-images.githubusercontent.com/67428572/163125682-be729cb1-e01b-4532-a005-8cc42b9def89.png)
+![download](https://user-images.githubusercontent.com/67428572/163125865-40f93fdc-69b2-48ae-ae2e-5a6c2e726fbf.png)
+![download](https://user-images.githubusercontent.com/67428572/163125996-f147491c-141f-401a-a808-da535c22fd95.png)
 
 # PHP_regis-Kel-.
 

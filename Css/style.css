@@ -1,66 +1,79 @@
+ /* ======index css===== */
  
-/* ======index css===== */
-@import url('https://fonts.googleapis.com/css2?family=Water+Brush&display=swap');
-/* ======formto.php css===== */
- :root{
-    /*===== Colores =====*/
+ @import url('https://fonts.googleapis.com/css2?family=Water+Brush&display=swap');
+ /* ======formto.php css===== */
+ 
+ :root {
+     /*===== Colores =====*/
      --first-color: #006eff;
      --input-color: #80868B;
      --border-color: #DADCE0;
-    /*===== Fuente y tipografia =====*/
+     /*===== Fuente y tipografia =====*/
      --body-font: 'Roboto', sans-serif;
      --normal-font-size: 0.9rem;
      --small-font-size: 0.70rem;
-}
- img{
+ }
+ 
+ img {
      pointer-events: none;
-}
-/*===== BASE =====*/
- *,::before,::after{
+ }
+ /*===== BASE =====*/
+ 
+ *,
+ ::before,
+ ::after {
      box-sizing: border-box;
-}
- body{
+ }
+ 
+ body {
      font-family: var(--body-font);
      font-size: var(--normal-font-size);
-}
- h1{
+ }
+ 
+ h1 {
      margin: 0;
-}
-/*===== FORM =====*/
- .l-form{
-     display:flex;
+ }
+ /*===== FORM =====*/
+ 
+ .l-form {
+     display: flex;
      justify-content: center;
      align-items: center;
      height: auto;
-     margin:0.5rem;
-     padding:0.5rem;
-}
- .form{
+     margin: 0.5rem;
+     padding: 0.5rem;
+ }
+ 
+ .form {
      padding: 2rem;
      border-radius: 0.2rem;
-     box-shadow: 1rem 1rem 4rem rgba(92,99,105,.2);
+     box-shadow: 1rem 1rem 4rem rgba(92, 99, 105, .2);
      border-style: solid;
      border-width: 1px;
      position: relative;
      text-align: left;
-     width:39rem;
-}
-/* size change */
- @media screen and (max-width: 428px){
-     .form{
-         width:22rem;
-    }
-}
- .form__title{
+     width: 39rem;
+ }
+ /* size change */
+ 
+ @media screen and (max-width: 428px) {
+     .form {
+         width: 22rem;
+     }
+ }
+ 
+ .form__title {
      font-weight: 400;
      margin-bottom: 3rem;
-}
- .form__div{
+ }
+ 
+ .form__div {
      position: relative;
      height: 48px;
      margin-bottom: 1.5rem;
-}
- .form__input{
+ }
+ 
+ .form__input {
      position: absolute;
      top: 0;
      left: 0;
@@ -73,8 +86,9 @@
      padding: 1rem;
      background: none;
      z-index: 0;
-}
- .form__label{
+ }
+ 
+ .form__label {
      position: absolute;
      top: -.5rem;
      left: .8rem;
@@ -84,107 +98,101 @@
      font-size: var(--normal-font-size);
      transition: .3s;
      z-index: 0;
-}
- .form__button{
+ }
+ 
+ .form__button {
      display: block;
      margin-left: auto;
      padding: .75rem 2rem;
      outline: none;
      border: none;
-     color:#ffffff;
+     color: #ffffff;
      background-color: rgb(171, 171, 171);
      font-size: var(--normal-font-size);
      border-radius: .2rem;
      cursor: pointer;
-    /*pointer cursor */
+     /*pointer cursor */
      transition: .3s;
-}
- .form__button:hover{
+ }
+ 
+ .form__button:hover {
      box-shadow: 1px 10px 36px rgba(77, 77, 77, 0.419);
      background-color: rgb(0, 229, 149);
-}
-/* for sub button */
- #sub{
+ }
+ /* for sub button */
+ 
+ #sub {
      display: block;
      margin-left: auto;
      padding: .75rem 2rem;
      outline: none;
      border: none;
-     color:#ffffff;
+     color: #ffffff;
      background-color: rgb(19, 95, 196);
      font-size: var(--normal-font-size);
      border-radius: .2rem;
      cursor: pointer;
-    /*pointer cursor */
+     /*pointer cursor */
      transition: .3s;
-}
- #sub:hover{
+ }
+ 
+ #sub:hover {
      box-shadow: 1px 10px 36px rgba(77, 77, 77, 0.419);
      background-color: rgb(0, 229, 149);
-}
-/*Input focus move up label*/
- .form__input:focus + .form__label{
+ }
+ /*Input focus move up label*/
+ 
+ .form__input:focus+.form__label {
      top: -.5rem;
      left: .8rem;
      color: var(--first-color);
      font-size: var(--small-font-size);
      font-weight: 500;
      z-index: 0;
-}
-/*Input focus sticky top label*/
- .form__input:not(:placeholder-shown).form__input:not(:focus)+ .form__label{
+ }
+ /*Input focus sticky top label*/
+ 
+ .form__input:not(:placeholder-shown).form__input:not(:focus)+.form__label {
      top: -.5rem;
      left: .8rem;
      font-size: var(--small-font-size);
      font-weight: 500;
      z-index: 0;
-     transition:0.5s;
-}
-/*Input focus*/
- .form__input:focus{
+     transition: 0.5s;
+ }
+ /*Input focus*/
+ 
+ .form__input:focus {
      color: rgb(0, 100, 166);
      border: 1.5px solid var(--first-color);
-     transition:0.5s;
-}
-/* Form Msg */
- .form__msg__txt{
-     display: inline-block;
-     padding-left: 0.3rem;
+     transition: 0.5s;
+ }
+ /* Form error messages */
+ 
+ #phone_err {
+     display: none;
      position: relative;
-     bottom: 1.05rem;
-     font-size:0.89rem;
-     font-weight: bold;
-     color: rgb(255, 0, 0);
-}
- .msg1{
-     position: relative;
-     right: 138px;
-     top: 30px;
-     font-weight: bold;
-     font-size: 0.85rem;
-     float: left;
-}
- .msg2{
-     position: relative;
-     left: 90px;
-     top: 13px;
-     font-weight: bold;
-     font-size: 0.85rem;
-     float: right;
-}
-/*=== nav bar css ===*/
- .footer-copyright{
+     top: -18px;
+     color: red;
+     font-weight: 600;
+     font-size: 0.8rem;
+ }
+ /*=== nav bar css ===*/
+ 
+ .footer-copyright {
      position: relative;
      bottom: -20rem;
      line-height: 1.6rem;
-}
+ }
+ 
  @media screen and (max-width: 426px) {
-     .footer-copyright{
+     .footer-copyright {
          position: relative;
          bottom: -10rem;
-    }
-}
-/* nav bar */
+     }
+ }
+ /* nav bar */
+ 
  ul.sidenav {
      list-style-type: none;
      margin: 0;
@@ -194,7 +202,8 @@
      position: fixed;
      height: 100%;
      overflow: auto;
-}
+ }
+ 
  ul.sidenav li a {
      display: block;
      color: #000;
@@ -202,39 +211,44 @@
      text-decoration: none;
      font-family: 'Bungee', cursive;
      font-size: 1.15rem;
-}
+ }
+ 
  ul.sidenav li a.active {
      background-color: #1e88de;
      color: white;
-}
+ }
+ 
  ul.sidenav li a:hover:not(.active) {
      transition: 0.5s;
      background-color: rgba(0, 0, 0, 0.690);
      color: #1fc6e4;
-}
+ }
+ 
  div.content {
      margin-left: 25%;
      padding: 4rem 2rem;
      height: 1000px;
-}
+ }
+ 
  @media screen and (max-width: 900px) {
      ul.sidenav {
          width: 100%;
          height: auto;
          position: relative;
-    }
+     }
      ul.sidenav li a {
          float: left;
          padding: 15px;
-    }
+     }
      div.content {
-        margin-left: 0;
-    }
-}
+         margin-left: 0;
+     }
+ }
+ 
  @media screen and (max-width: 426px) {
      ul.sidenav li a {
          text-align: center;
          float: none;
-         padding: 16px;
-    }
-}
+         padding: 16px 16px;
+     }
+ }

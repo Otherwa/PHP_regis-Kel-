@@ -73,10 +73,7 @@ if (isset($_POST['login'])) {
         header("Location: /PHP_regis/Php/View/formsub.php");
     }
     //  session_unset();
-} else {
-    //echo "ERROR:"
-}
-
+} 
 ?>
 
 

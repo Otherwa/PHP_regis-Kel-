@@ -10,12 +10,16 @@ phone.addEventListener('input', () => {
         phone_err_label.style.color = "red";
         phone.style.borderColor = "red";
         phone_err.style.display = "block";
-        phone_err_label.phone_err.phone.style.transition = "all 1s";
+        phone_err_label.style.transition = "all 1s";
+        phone_err.style.transition = "all 1s";
+        phone.style.transition = "all 1s";
     } else {
         phone.style.color = "#006eff";
         phone_err_label.style.color = "#006eff";
         phone.style.borderColor = "#006eff";
         phone_err.style.display = "none";
-        phone_err_label.phone_err.phone.style.transition = "all 1s";
+        phone_err_label.style.transition = "all 1s";
+        phone_err.style.transition = "all 1s";
+        phone.style.transition = "all 1s";
     }
 });

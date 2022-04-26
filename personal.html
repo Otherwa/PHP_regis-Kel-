@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Terms & Conditions</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- tailwind css CDN (solve after npm install [note])  if no npm modules -->
+    <!-- <script src="https://cdn.tailwindcss.com"></script>  -->
+    <link rel="stylesheet" type="text/css" href="dist/output.css" />
+    <link rel="stylesheet" type="text/css" href="Css/style.css" />
+    <!-- Gfonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet" />
+    <!-- icon -->
+    <link type="image/png" sizes="16x16" rel="icon" href="imgs\1611814068005.jpg" />
+    <style>
+        .myfont {
+            font-family: "Bungee", cursive;
+        }
+        /* nav css */
+        
+        .container {
+            padding: 3rem;
+            line-height: 1.7rem;
+            font-family: monospace;
+        }
+        /* portfolio css */
+        
+        #portfolio {
+            height: 159rem;
+            width: 52rem;
+            pointer-events: none;
+        }
+        
+        @media screen and (max-width: 1440px) {
+            #portfolio {
+                height: 159rem;
+                width: 52rem;
+            }
+        }
+        /* laptop */
+        
+        @media screen and (max-width: 769px) {
+            #portfolio {
+                height: 159rem;
+                width: 43rem;
+            }
+        }
+        /* tablet */
+        
+        @media screen and (max-width: 427px) {
+            #portfolio {
+                height: 159rem;
+                width: 18rem;
+            }
+        }
+        /* mobile */
+    </style>
+</head>
+
+<body class="p-1 m-0">
+    <div class="container">
+        <div class="portfolio">
+            <p class=" font-mono text-2xl">#portfolio</p>
+            <br>
+            <br>
+            <iframe id="portfolio" src="https://otherwa.github.io/Otherwa/" scrolling="no"></iframe>
+            <br>
+            <br>
+        </div>
+    </div>
+</body>
+
+</html>

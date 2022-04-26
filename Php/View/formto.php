@@ -42,10 +42,12 @@ if (isset($_POST['login'])) {
     $result = mysqli_query($con, $sql_check);
     $count = mysqli_num_rows($result);
 
-    if ($count > 1) {
+    if ($count > 1) { 
         //ony two per query user
-        echo "<script>alert('Form Instance Already Exists');</script>";
-    } elseif ($name != null && $review != null && $phone_val >= strlen($phone)) {
+        echo "<script>alert('You\'ve Already Submitted Two Forms');</script>";
+    } 
+    elseif ($name != null && $review != null && $phone_val >= strlen($phone)) {
+        
         $sql_insert_form_fillup = "INSERT INTO `form_fillup` (`Name`, `Review`, `Date`) VALUES ('$name','$review',current_timestamp());";
         $result = mysqli_query($con, $sql_insert_form_fillup);
 
@@ -64,7 +66,7 @@ if (isset($_POST['login'])) {
         //if all done set flag
     } else {
         session_destroy();
-        echo "<script>alert('Invalid Form Try Again');</script>";
+        echo "<script>confirm('Invalid Form Try Again');</script>";
     }
 
     //redirect(base_url) falg operations
@@ -93,8 +95,7 @@ if (isset($_POST['login'])) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet" />
     <!-- icon -->
-    <link type="image/png" sizes="16x16" rel="icon"
-        href="https://img.icons8.com/cute-clipart/16/000000/pixel-cat.png" />
+    <link type="image/png" sizes="16x16" rel="icon" href="..\..\imgs\1611814068005.jpg" />
     <!-- num style -->
     <style>
     input::-webkit-outer-spin-button,
@@ -110,11 +111,11 @@ if (isset($_POST['login'])) {
     </style>
 </head>
 
-<body class="p-1 m-0 bg-[#ebebeb]">
+<body class="p-1 m-0">
     <br />
     <br />
 
-    <div class="l-form p-0">
+    <div class="l-form p-0 ">
         <form action="#" method="POST" class="form">
             <fieldset>
                 <legend>Yare Yare Daze</legend>

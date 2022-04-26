@@ -76,6 +76,8 @@
  .form__input {
      position: absolute;
      top: 0;
+     /* color: var(--input-color); */
+     color: #474747;
      left: 0;
      width: 100%;
      height: 100%;
@@ -183,12 +185,14 @@
      position: relative;
      bottom: -20rem;
      line-height: 1.6rem;
+     padding-bottom: 1.25rem;
  }
  
  @media screen and (max-width: 426px) {
      .footer-copyright {
          position: relative;
          bottom: -10rem;
+         padding-bottom: 1.25rem;
      }
  }
  /* nav bar */
@@ -220,8 +224,8 @@
  
  ul.sidenav li a:hover:not(.active) {
      transition: 0.5s;
-     background-color: rgba(0, 0, 0, 0.690);
-     color: #1fc6e4;
+     background-color: rgba(198, 198, 198, 0.845);
+     color: #ffffff;
  }
  
  div.content {
@@ -230,7 +234,7 @@
      height: 1000px;
  }
  
- @media screen and (max-width: 900px) {
+ @media screen and (max-width: 999px) {
      ul.sidenav {
          width: 100%;
          height: auto;

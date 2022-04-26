@@ -73,6 +73,7 @@ if (isset($_POST['login'])) {
     if ($flag == 1) {
         sleep(1);
         header("Location: /PHP_regis/Php/View/formsub.php");
+        // formsub only redirection
     }
     //  session_unset();
 } 

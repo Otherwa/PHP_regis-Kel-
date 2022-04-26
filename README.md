@@ -39,9 +39,9 @@ Registration form using php
 
 # Instructions
 
-- `/Directory` consists of all basic static pages needed to render , the index.html redirects to formto.php in `Php Directory`
-- `Php Directory\formto.php` uses sql connect to fill respective data to Mysql backend
-- after fillup is compeleted again redirected to `Main Directory\formsub.html` (3 sec) wait -> `index.html`
+- `*/` consists of all basic static pages needed to render , the `index.html` redirects to `Php\View\formto.php`.
+- `Php\View\formto.php` uses sql connect to fill respective data to Mysql backend
+- after fillup is compeleted again redirected to `Php Directory\formsub.html` (1 sec) wait -> `index.html`
 - Done.
 
 # Overview
@@ -106,6 +106,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
 ## Appendix
 
 Any additional information goes here

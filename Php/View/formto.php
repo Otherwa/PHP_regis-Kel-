@@ -118,11 +118,13 @@ if (isset($_POST['login'])) {
         <form action="#" method="POST" class="form">
             <fieldset>
                 <legend>Yare Yare Daze</legend>
+
                 <h1 class="form__title" style="font-family: 'Bungee', cursive; font-size: 2.2rem; color: #565656;">
-                    Fill up<br />
-                    <span style="font-size: 1.4rem; font-family: 'Roboto', sans-serif; color: black;">User
-                        &#128466;</span>
+                    <span style="text-decoration:underline;">Fill up</span><br />
+                    <span style=" font-size: 1.4rem; font-family: 'Roboto' , sans-serif; color: black;">User
+                        ⏳</span>
                 </h1>
+
                 <div class="form__div">
                     <input type="text" class="form__input" name="Name" id="name" placeholder="e.g xyz"
                         autocomplete="off" />

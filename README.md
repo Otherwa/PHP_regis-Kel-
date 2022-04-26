@@ -44,6 +44,12 @@ Registration form using php
 - after fillup is compeleted again redirected to `Main Directory\formsub.html` (3 sec) wait -> `index.html`
 - Done.
 
+# Overview
+
+1. Basic html,php
+2. form validation/verification in `JS/form.js`
+3. php code to verify form input.
+
 #### Database (MySql) Constraints.
 
 `Database name 'regis_dat' table 'form_fillup' for storing feedbacks`

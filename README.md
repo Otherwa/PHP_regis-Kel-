@@ -39,37 +39,36 @@ Registration form using php
 
 # Instructions
 
-- `Main Directory` consists of all basic static pages needed to render , the index.html redirects to formto.php in `Php Directory`
+- `/Directory` consists of all basic static pages needed to render , the index.html redirects to formto.php in `Php Directory`
 - `Php Directory\formto.php` uses sql connect to fill respective data to Mysql backend
 - after fillup is compeleted again redirected to `Main Directory\formsub.html` (3 sec) wait -> `index.html`
 - Done.
 
 # Overview
 
-1. Basic html,php
-2. form validation/verification in `JS/form.js`
-3. php code to verify form input.
+1. `index.html` consist of basic info and link to `Php/View/formto.php` for submission of data.
+2. `news.html` for notices of any kind.
+3. `contact.html` for contact purposes.
+4. `about.html` for description.
+5. `term.html` for basic policies.
+6. `formto.php` for form data input.
+7. `formsub.php` for redirect.
+8. `style.css` for styling
+9. `dist/output.css` tailwindcss compiled output.
+10. `form.js` for form verification.
+11. `backend any relational database` / MySql.
 
 #### Database (MySql) Constraints.
 
 `Database name 'regis_dat' table 'form_fillup' for storing feedbacks`
 
 ##### table constraints. (Temp/[Update when Schema acq])
-`form_fillup`
-- Id int.
-- Name varchar.
-- Review varchar.
-- Date Timestamp (current).
 
-`form_num`
-- Id int.
-- Phone varchar
-- User_id int (Id - form_fillup)
 
 ## styling
 
 - Tailwind Css [documentation](https://tailwindcss.com/docs/installation)
-- Scratch Css.
+- Scratch Css. `present in Css/style.css`
 
 # Preview
 

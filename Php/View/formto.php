@@ -68,11 +68,7 @@ if (isset($_POST['login'])) {
     
     //check if exists two forms done
     function user_check_form_sub2($name,$review,$phone){
-        $host = "localhost";
-        $user = "root";
-        $password = "";
-        $dbname = "regis_dat";
-        $con = mysqli_connect($host, $user, $password, $dbname);
+        $con = get_connection();
         $sql_check = "SELECT Id from `form_fillup` WHERE Name = '$name'; ";
         $result = mysqli_query($con, $sql_check);
         $count = mysqli_num_rows($result);
@@ -81,11 +77,7 @@ if (isset($_POST['login'])) {
 
     //get foregin key for phone_id
     function phone_get_foreign($name){
-        $host = "localhost";
-        $user = "root";
-        $password = "";
-        $dbname = "regis_dat";
-        $con = mysqli_connect($host, $user, $password, $dbname);
+        $con = get_connection();
         $sql_retrieve = "SELECT Id from `form_fillup` WHERE Name = '$name' ";
         $result = mysqli_query($con, $sql_retrieve);
         // query to get primary key of id
@@ -96,24 +88,25 @@ if (isset($_POST['login'])) {
 
     //form fill up data feed
     function insert_form_fill_up($name,$review,$phone){
-        $host = "localhost";
-        $user = "root";
-        $password = "";
-        $dbname = "regis_dat";
-        $con = mysqli_connect($host, $user, $password, $dbname);
+        $con = get_connection();
         $sql_insert_form_fillup = "INSERT INTO `form_fillup` (`Name`, `Review`, `Date`) VALUES ('$name','$review',current_timestamp());";
         $result = mysqli_query($con, $sql_insert_form_fillup);
     }
 
     //form fill up form_num
     function insert_form_num($phone,$u_id){
+        $con = get_connection();
+        $sql_insert_form_num = "INSERT INTO `form_num` (`Phone`, `User_Id`) VALUES ('$phone','$u_id');";
+        $result = mysqli_query($con, $sql_insert_form_num);
+    }
+
+    function get_connection(){
         $host = "localhost";
         $user = "root";
         $password = "";
         $dbname = "regis_dat";
         $con = mysqli_connect($host, $user, $password, $dbname);
-        $sql_insert_form_num = "INSERT INTO `form_num` (`Phone`, `User_Id`) VALUES ('$phone','$u_id');";
-        $result = mysqli_query($con, $sql_insert_form_num);
+        return $con;
     }
 ?>
 

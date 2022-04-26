@@ -1,18 +1,9 @@
 <?php
-$host = "localhost";
-$user = "root";
-$password = "";
-$dbname = "regis_dat";
-$con = mysqli_connect($host, $user, $password, $dbname);
-if (!$con) {
-    die("Could not connect to" . mysqli_connect_error());
-}
-//echo "Connection established";
-//VALUES
 $flag = 0;
 
 //on click
 if (isset($_POST['login'])) {
+    
     //session statuses
     $status = session_status();
     if ($status == PHP_SESSION_NONE) {
@@ -33,34 +24,27 @@ if (isset($_POST['login'])) {
 
     //val var
     $phone_val = 10;
+    $count = 0;
     
     //session_name to send
     $_SESSION['name'] = $name;
 
-    //check if exists
-    $sql_check = "SELECT Id from `form_fillup` WHERE Name = '$name'; ";
-    $result = mysqli_query($con, $sql_check);
-    $count = mysqli_num_rows($result);
+    
+    
+    $count = user_check_form_sub2($name,$review,$phone);
 
     if ($count > 1) { 
         //ony two per query user
         echo "<script>alert('You\'ve Already Submitted Two Forms');</script>";
     } 
     elseif ($name != null && $review != null && $phone_val >= strlen($phone)) {
-        
-        $sql_insert_form_fillup = "INSERT INTO `form_fillup` (`Name`, `Review`, `Date`) VALUES ('$name','$review',current_timestamp());";
-        $result = mysqli_query($con, $sql_insert_form_fillup);
+        insert_form_fill_up($name,$review,$phone);
 
         //retrive id
-        $sql_retrieve = "SELECT Id from `form_fillup` WHERE Name = '$name' ";
-        $result = mysqli_query($con, $sql_retrieve);
-        // query to get primary key of id
-        $user_id = mysqli_fetch_assoc($result);
-        $u_id = $user_id['Id'];
+        $u_id = phone_get_foreign($name);
 
         //get data u_id to store and pass on to sql2 Query;
-        $sql_insert_form_num = "INSERT INTO `form_num` (`Phone`, `User_Id`) VALUES ('$phone','$u_id');";
-        $result = mysqli_query($con, $sql_insert_form_num);
+        insert_form_num($phone,$u_id);
 
         $flag = 1;
         //if all done set flag
@@ -76,7 +60,61 @@ if (isset($_POST['login'])) {
         // formsub only redirection
     }
     //  session_unset();
-} 
+}
+
+//functions
+//auto-fix
+//sql injection saftey
+    
+    //check if exists two forms done
+    function user_check_form_sub2($name,$review,$phone){
+        $host = "localhost";
+        $user = "root";
+        $password = "";
+        $dbname = "regis_dat";
+        $con = mysqli_connect($host, $user, $password, $dbname);
+        $sql_check = "SELECT Id from `form_fillup` WHERE Name = '$name'; ";
+        $result = mysqli_query($con, $sql_check);
+        $count = mysqli_num_rows($result);
+        return $count;
+    }
+
+    //get foregin key for phone_id
+    function phone_get_foreign($name){
+        $host = "localhost";
+        $user = "root";
+        $password = "";
+        $dbname = "regis_dat";
+        $con = mysqli_connect($host, $user, $password, $dbname);
+        $sql_retrieve = "SELECT Id from `form_fillup` WHERE Name = '$name' ";
+        $result = mysqli_query($con, $sql_retrieve);
+        // query to get primary key of id
+        $user_id = mysqli_fetch_assoc($result);
+        $u_id = $user_id['Id'];
+        return $u_id;
+    }
+
+    //form fill up data feed
+    function insert_form_fill_up($name,$review,$phone){
+        $host = "localhost";
+        $user = "root";
+        $password = "";
+        $dbname = "regis_dat";
+        $con = mysqli_connect($host, $user, $password, $dbname);
+        $sql_insert_form_fillup = "INSERT INTO `form_fillup` (`Name`, `Review`, `Date`) VALUES ('$name','$review',current_timestamp());";
+        $result = mysqli_query($con, $sql_insert_form_fillup);
+    }
+
+    //form fill up form_num
+    function insert_form_num($phone,$u_id){
+        $host = "localhost";
+        $user = "root";
+        $password = "";
+        $dbname = "regis_dat";
+        $con = mysqli_connect($host, $user, $password, $dbname);
+        $sql_insert_form_num = "INSERT INTO `form_num` (`Phone`, `User_Id`) VALUES ('$phone','$u_id');";
+        $result = mysqli_query($con, $sql_insert_form_num);
+    }
 ?>
 
 

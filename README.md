@@ -1,4 +1,7 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/otherwa/php_regis-kel-/badge)](https://www.codefactor.io/repository/github/otherwa/php_regis-kel-)
+[![DeepSource](https://deepsource.io/gh/Otherwa/PHP_regis-Kel-.svg/?label=active+issues&show_trend=true&token=Yt3saTzI2GR54O2TQOQG5I_e)](https://deepsource.io/gh/Otherwa/PHP_regis-Kel-/?ref=repository-badge)
+
+# Status
 
 ## [![Repography logo](https://images.repography.com/logo.svg)](https://repography.com) / Recent activity [![Time period](https://images.repography.com/25186133/Otherwa/PHP_regis-Kel-/recent-activity/2d39f7ec9a6a0a126598cef5bd926a77_badge.svg)](https://repography.com)
 [![Timeline graph](https://images.repography.com/25186133/Otherwa/PHP_regis-Kel-/recent-activity/2d39f7ec9a6a0a126598cef5bd926a77_timeline.svg)](https://github.com/Otherwa/PHP_regis-Kel-/commits)

@@ -1,5 +1,5 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/otherwa/php_regis-kel-/badge)](https://www.codefactor.io/repository/github/otherwa/php_regis-kel-)
-[![DeepSource](https://deepsource.io/gh/Otherwa/PHP_regis-Kel-.svg/?label=active+issues&show_trend=true&token=Yt3saTzI2GR54O2TQOQG5I_e)](https://deepsource.io/gh/Otherwa/PHP_regis-Kel-/?ref=repository-badge)
+
 
 # Status
 

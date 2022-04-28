@@ -1,8 +1,12 @@
 <?php
 
-//on click
+// default value
+$pass_confo = "";
+
 if (isset($_POST['login'])) {
-    
+    $name =  $_POST['username'];
+    $pass = $_POST['password'];
+  
     //session statuses
     $status = session_status();
     if ($status == PHP_SESSION_NONE) {
@@ -15,24 +19,34 @@ if (isset($_POST['login'])) {
         session_destroy();
         session_start();
     }
+
+    //session variables
     
-    function get_connection(){
-        $host = "localhost";
-        $user = "root";
-        $password = "";
-        $dbname = "regis_dat";
-        $con = mysqli_connect($host, $user, $password, $dbname);
-        return $con;
+    $_SESSION['name'] = $name;
+
+    $host = "localhost";
+    $user = "root";
+    $password = "";
+    $dbname = "regis_dat";
+    $con = mysqli_connect($host, $user, $password, $dbname);
+    $sql = "SELECT * FROM `admin` WHERE Name = '$name' AND Password = '$pass'";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_num_rows($result);
+    if($row > 0){
+     header("Location: admin.php");
     }
+    else{
+        echo "<script>alert('Wrong Password or Username');</script>";
+    }
+    
 }
 ?>
-
 
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>Form Submission</title>
+    <title>Admin Login</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- tailwind css -->
@@ -63,40 +77,38 @@ if (isset($_POST['login'])) {
 <body class="p-1 m-0">
     <br />
     <br />
+    <br />
+    <br />
+    <br />
 
     <div class="l-form p-0 ">
-        <form action="#" method="POST" class="form">
+
+        <form action="#" method="POST" class="form" style="width:33rem">
             <fieldset>
-                <legend>Yare Yare Daze</legend>
+                <legend></legend>
 
                 <h1 class="form__title" style="font-family: 'Bungee', cursive; font-size: 2.2rem; color: #565656;">
-                    <span style="text-decoration:underline;">Fill up</span><br />
-                    <span style=" font-size: 1.4rem; font-family: 'Roboto' , sans-serif; color: black;">User
-                        ⏳</span>
+                    <span style="text-decoration:underline;">Login in</span><br />
+                    <span
+                        style=" font-size: 1.4rem; font-family: 'Roboto' , sans-serif; color: black;">SuperUser.</span>
                 </h1>
 
                 <div class="form__div">
-                    <input type="text" class="form__input" name="Name" id="name" placeholder="e.g xyz"
+                    <input type="text" class="form__input" name="username" id="name" placeholder="e.g xyz"
                         autocomplete="off" />
                     <label for="" class="form__label">Name</label>
                 </div>
 
                 <div class="form__div">
-                    <input type="text" class="form__input" name="Review" id="review" placeholder="e.g xyz@1"
+                    <input type="password" class="form__input" name="password" id="review" placeholder="e.g xyz@1"
                         autocomplete="off" />
-                    <label for="" class="form__label">Review?</label>
+                    <label for="" class="form__label">Password</label>
                 </div>
-
-                <div class="form__div">
-                    <input type="number" class="form__input" name="Phone" id="phone" placeholder="e.g 8828388979"
-                        autocomplete="off" />
-                    <label for="" class="form__label" id="phone_err_label">Phone</label>
-                </div>
-                <code id="phone_err">- phone number invalid</code>
 
                 <br />
-                <input type="submit" id="sub" class="form__button font-mono" value="Submit" name="login"
+                <input type="submit" id="sub" class="form__button font-mono" value="Login" name="login"
                     style="float: right;" />
+
             </fieldset>
         </form>
         <br />
@@ -105,7 +117,7 @@ if (isset($_POST['login'])) {
     </div>
 </body>
 
-<!-- form validation -->
-<script type="text/javascript" src="../../Js/form.js"></script>
+
+
 
 </html>

@@ -1,5 +1,4 @@
 // phone number verification less than 10
-
 //DOM elements getElementById
 var phone = document.getElementById("phone");
 var phone_err = document.getElementById("phone_err");

@@ -13,7 +13,7 @@ session_destroy();
 <html>
 
 <head>
-    <title>Form</title>
+    <title>Form Submited</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- tailwind css CDN (solve after npm install [note]) -->

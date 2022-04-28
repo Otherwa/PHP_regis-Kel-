@@ -1,4 +1,10 @@
  /* ======index css===== */
+ /* selected text */
+ 
+ ::selection {
+     color: rgb(255, 255, 255);
+     background: rgb(0, 0, 0);
+ }
  
  @import url('https://fonts.googleapis.com/css2?family=Water+Brush&display=swap');
  /* ======formto.php css===== */
@@ -211,7 +217,7 @@
  ul.sidenav li a {
      display: block;
      color: #000;
-     padding: 20px 16px;
+     padding: 20px;
      text-decoration: none;
      font-family: 'Bungee', cursive;
      font-size: 1.15rem;
@@ -234,7 +240,7 @@
      height: 1000px;
  }
  
- @media screen and (max-width: 999px) {
+ @media screen and (max-width: 900px) {
      ul.sidenav {
          width: 100%;
          height: auto;

@@ -1,14 +1,14 @@
 // phone number verification less than 10
 //DOM elements getElementById
-var phone = document.getElementById("phone");
-var phone_err = document.getElementById("phone_err");
-var phone_err_label = document.getElementById("phone_err_label");
+let phone = document.getElementById("phone");
+let phone_err = document.getElementById("phone_err");
+let phone_err_label = document.getElementById("phone_err_label");
 
 // flag for error
 let is_phone_err = 0; // phone outfoucs color channge
 
 phone.addEventListener('input', () => {
-    var phoneNumber_err = phone.value;
+    let phoneNumber_err = phone.value;
     phoneNumber_err = phoneNumber_err.length;
     if (phoneNumber_err >= 11) {
         phone.style.color = "red";

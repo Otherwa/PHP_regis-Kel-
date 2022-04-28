@@ -1,5 +1,5 @@
 const ctx = document.getElementById('myChart').getContext('2d');
-var chart_data = document.getElementById('chardata').value;
+let chart_data = document.getElementById('chardata').value;
 
 var Data = [chart_data];
 const myChart = new Chart(ctx, {

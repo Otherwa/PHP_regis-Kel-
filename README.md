@@ -26,8 +26,9 @@
 # In a nut-shell
 
 ![](https://www.meme-arsenal.com/memes/a81c61c281b518e3d545aa6dadf2c0b8.jpg)
+![](https://www.meme-arsenal.com/memes/d48dec40c8e413c60329cb6784248a13.jpg)
 ![](https://memegenerator.net/img/instances/61394033/i-know-css.jpg)
-![](https://www.meme-arsenal.com/memes/04630d84ef1614c0ed79826fc7bc94cd.jpg)
+
 
 # PHP_regis-Kel-.
 

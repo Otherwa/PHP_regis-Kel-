@@ -23,6 +23,12 @@
 ![download](https://user-images.githubusercontent.com/67428572/163125865-40f93fdc-69b2-48ae-ae2e-5a6c2e726fbf.png)
 ![download](https://user-images.githubusercontent.com/67428572/163125996-f147491c-141f-401a-a808-da535c22fd95.png)
 
+# In a nut-shell
+
+![](https://www.meme-arsenal.com/memes/a81c61c281b518e3d545aa6dadf2c0b8.jpg)
+![](https://memegenerator.net/img/instances/61394033/i-know-css.jpg)
+![](https://www.meme-arsenal.com/memes/04630d84ef1614c0ed79826fc7bc94cd.jpg)
+
 # PHP_regis-Kel-.
 
 Registration form using php 

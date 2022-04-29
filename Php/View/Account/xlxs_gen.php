@@ -5,7 +5,7 @@ $user = "root";
 $password = "";
 $dbname = "regis_dat";
 $con = mysqli_connect($host, $user, $password, $dbname);
-$output = 0;
+$output = "QUERY";
 if(isset($_POST["export"]))
 {
  $query = "SELECT * FROM `form_fillup`";
@@ -26,7 +26,7 @@ if(isset($_POST["export"]))
             <tr>  
                          <td>'.$row["Id"].'</td>  
                          <td>'.$row["Name"].'</td>  
-                         <td>'.$row["Date"].'</td>  
+                         <td>'.$row["Day"].'</td>  
             </tr>
    ';
   }

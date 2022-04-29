@@ -10,10 +10,49 @@ if (!isset($_SESSION['name'])) {
 // re write functions
 function admin_chart(){
     $con = get_connection();
-    $sql_insert_form_num = "SELECT Count(*) as total FROM `form_fillup`";
-    $result = mysqli_query($con, $sql_insert_form_num);
+    // monday
+    $sql_form_retrive = "SELECT COUNT(*) as total FROM `form_fillup` WHERE `Day` = 'MONDAY'";
+    $result = mysqli_query($con, $sql_form_retrive);
     $data=mysqli_fetch_assoc($result);
-    return $data['total'];
+    $Monday = $data['total'];
+
+    // Tuesday
+    $sql_form_retrive = "SELECT COUNT(*) as total FROM `form_fillup` WHERE `Day` = 'TUESDAY'";
+    $result = mysqli_query($con, $sql_form_retrive);
+    $data=mysqli_fetch_assoc($result);
+    $Tuesday = $data['total'];
+
+    // Wednesday
+    $sql_form_retrive = "SELECT COUNT(*) as total FROM `form_fillup` WHERE `Day` = 'WEDNESDAY'";
+    $result = mysqli_query($con, $sql_form_retrive);
+    $data=mysqli_fetch_assoc($result);
+    $Wednesday = $data['total'];
+
+    // Thursday
+    $sql_form_retrive = "SELECT COUNT(*) as total FROM `form_fillup` WHERE `Day` = 'THURSDAY'";
+    $result = mysqli_query($con, $sql_form_retrive);
+    $data=mysqli_fetch_assoc($result);
+    $Thursday = $data['total'];
+
+    // Friday
+    $sql_form_retrive = "SELECT COUNT(*) as total FROM `form_fillup` WHERE `Day` = 'FRIDAY'";
+    $result = mysqli_query($con, $sql_form_retrive);
+    $data=mysqli_fetch_assoc($result);
+    $Friday = $data['total'];
+
+    // Saturday
+    $sql_form_retrive = "SELECT COUNT(*) as total FROM `form_fillup` WHERE `Day` = 'SATURDAY'";
+    $result = mysqli_query($con, $sql_form_retrive);
+    $data=mysqli_fetch_assoc($result);
+    $Saturday = $data['total'];
+
+    // Sunday
+    $sql_form_retrive = "SELECT COUNT(*) as total FROM `form_fillup` WHERE `Day` = 'SUNDAY'";
+    $result = mysqli_query($con, $sql_form_retrive);
+    $data=mysqli_fetch_assoc($result);
+    $Sunday = $data['total'];
+
+    return (array($Monday,$Tuesday,$Wednesday,$Thursday,$Friday,$Saturday,$Sunday));
 }
 
 function get_connection(){
@@ -61,8 +100,6 @@ session_destroy();
 </head>
 
 <body class="p-1 m-0">
-    <!-- php js bridge -->
-    <input id="chardata" type="hidden" value="<?php echo $chartdata ?>">
     <br />
     <br />
     <br />
@@ -91,7 +128,16 @@ session_destroy();
                 <br />
         </div>
     </div>
+    <!-- php js bridge -->
+    <input id="monday" type="hidden" value="<?php echo $chartdata[0] ?>">
+    <input id="tuesday" type="hidden" value="<?php echo $chartdata[1] ?>">
+    <input id="wednesday" type="hidden" value="<?php echo $chartdata[2] ?>">
+    <input id="thursday" type="hidden" value="<?php echo $chartdata[3] ?>">
+    <input id="friday" type="hidden" value="<?php echo $chartdata[4] ?>">
+    <input id="saturday" type="hidden" value="<?php echo $chartdata[5] ?>">
+    <input id="sunday" type="hidden" value="<?php echo $chartdata[6] ?>">
     <script type="text/javascript" src="../../../js/admin.js"></script>
+
 </body>
 
 

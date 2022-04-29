@@ -26,7 +26,7 @@ if (isset($_POST['login'])) {
     }
 }
 ?>
-
+// INSERT INTO `form_fillup` (`Id`, `Name`, `Review`, `Day`) VALUES ('1', 'Atharv', 'NICE', DAYNAME(CURDATE()));
 
 <!DOCTYPE html>
 <html>

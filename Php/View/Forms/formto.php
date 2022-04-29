@@ -1,8 +1,8 @@
 <?php
-
+include('../connect.php');
 //on click
 if (isset($_POST['login'])) {
-    
+
     //session statuses
     $status = session_status();
     if ($status == PHP_SESSION_NONE) {
@@ -14,15 +14,6 @@ if (isset($_POST['login'])) {
         //Destroy current and start new one
         session_destroy();
         session_start();
-    }
-    
-    function get_connection(){
-        $host = "localhost";
-        $user = "root";
-        $password = "";
-        $dbname = "regis_dat";
-        $con = mysqli_connect($host, $user, $password, $dbname);
-        return $con;
     }
 }
 // INSERT INTO `form_fillup` (`Id`, `Name`, `Review`, `Day`) VALUES ('1', 'Atharv', 'NICE', DAYNAME(CURDATE()));

@@ -8,54 +8,56 @@ if (!isset($_SESSION['name'])) {
 
 
 // re write functions
-function admin_chart(){
+function admin_chart()
+{
     $con = get_connection();
     // monday
     $sql_form_retrive = "SELECT COUNT(*) as total FROM `form_fillup` WHERE `Day` = 'MONDAY'";
     $result = mysqli_query($con, $sql_form_retrive);
-    $data=mysqli_fetch_assoc($result);
+    $data = mysqli_fetch_assoc($result);
     $Monday = $data['total'];
 
     // Tuesday
     $sql_form_retrive = "SELECT COUNT(*) as total FROM `form_fillup` WHERE `Day` = 'TUESDAY'";
     $result = mysqli_query($con, $sql_form_retrive);
-    $data=mysqli_fetch_assoc($result);
+    $data = mysqli_fetch_assoc($result);
     $Tuesday = $data['total'];
 
     // Wednesday
     $sql_form_retrive = "SELECT COUNT(*) as total FROM `form_fillup` WHERE `Day` = 'WEDNESDAY'";
     $result = mysqli_query($con, $sql_form_retrive);
-    $data=mysqli_fetch_assoc($result);
+    $data = mysqli_fetch_assoc($result);
     $Wednesday = $data['total'];
 
     // Thursday
     $sql_form_retrive = "SELECT COUNT(*) as total FROM `form_fillup` WHERE `Day` = 'THURSDAY'";
     $result = mysqli_query($con, $sql_form_retrive);
-    $data=mysqli_fetch_assoc($result);
+    $data = mysqli_fetch_assoc($result);
     $Thursday = $data['total'];
 
     // Friday
     $sql_form_retrive = "SELECT COUNT(*) as total FROM `form_fillup` WHERE `Day` = 'FRIDAY'";
     $result = mysqli_query($con, $sql_form_retrive);
-    $data=mysqli_fetch_assoc($result);
+    $data = mysqli_fetch_assoc($result);
     $Friday = $data['total'];
 
     // Saturday
     $sql_form_retrive = "SELECT COUNT(*) as total FROM `form_fillup` WHERE `Day` = 'SATURDAY'";
     $result = mysqli_query($con, $sql_form_retrive);
-    $data=mysqli_fetch_assoc($result);
+    $data = mysqli_fetch_assoc($result);
     $Saturday = $data['total'];
 
     // Sunday
     $sql_form_retrive = "SELECT COUNT(*) as total FROM `form_fillup` WHERE `Day` = 'SUNDAY'";
     $result = mysqli_query($con, $sql_form_retrive);
-    $data=mysqli_fetch_assoc($result);
+    $data = mysqli_fetch_assoc($result);
     $Sunday = $data['total'];
 
-    return (array($Monday,$Tuesday,$Wednesday,$Thursday,$Friday,$Saturday,$Sunday));
+    return (array($Monday, $Tuesday, $Wednesday, $Thursday, $Friday, $Saturday, $Sunday));
 }
 
-function get_connection(){
+function get_connection()
+{
     $host = "localhost";
     $user = "root";
     $password = "";
@@ -118,6 +120,8 @@ session_destroy();
             <input type="submit" name="export"
                 class="font-mono text-center bg-[#006eff] p-3 m-1 hover:bg-slate-500 rounded transition-all duration-500"
                 value=".xlxs sheet" />
+            <br />
+            <p>Does not work in mobile browsers.</p>
         </form>
 
         <div class=" footer-copyright">
@@ -136,7 +140,7 @@ session_destroy();
     <input id="friday" type="hidden" value="<?php echo $chartdata[4] ?>">
     <input id="saturday" type="hidden" value="<?php echo $chartdata[5] ?>">
     <input id="sunday" type="hidden" value="<?php echo $chartdata[6] ?>">
-    <script type="text/javascript" src="../../../js/admin.js"></script>
+    <script type="text/javascript" src="../../../Js/admin.js"></script>
 
 </body>
 

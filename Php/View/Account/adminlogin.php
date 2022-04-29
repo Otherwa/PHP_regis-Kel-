@@ -1,4 +1,6 @@
 <?php
+// connection
+include('../connect.php');
 
 // default value
 $pass_confo = "";
@@ -6,7 +8,7 @@ $pass_confo = "";
 if (isset($_POST['login'])) {
     $name =  $_POST['username'];
     $pass = $_POST['password'];
-  
+
     //session statuses
     $status = session_status();
     if ($status == PHP_SESSION_NONE) {
@@ -21,25 +23,21 @@ if (isset($_POST['login'])) {
     }
 
     //session variables
-    
+
     $_SESSION['name'] = $name;
 
-    $host = "localhost";
-    $user = "root";
-    $password = "";
-    $dbname = "regis_dat";
-    $con = mysqli_connect($host, $user, $password, $dbname);
+    $con = get_con();
     $sql = "SELECT * FROM `admin` WHERE Name = '$name' AND Password = '$pass'";
     $result = mysqli_query($con, $sql);
     $row = mysqli_num_rows($result);
-    if($row > 0){
-     header("Location: admin.php");
-    }
-    else{
+    if ($row > 0) {
+        header("Location: admin.php");
+    } else {
         echo "<script>alert('Wrong Password or Username');</script>";
     }
-    
 }
+
+
 ?>
 
 <!DOCTYPE html>

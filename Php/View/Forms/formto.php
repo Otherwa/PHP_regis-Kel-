@@ -25,8 +25,9 @@ if (isset($_POST['login'])) {
         return $con;
     }
 }
-?>
 // INSERT INTO `form_fillup` (`Id`, `Name`, `Review`, `Day`) VALUES ('1', 'Atharv', 'NICE', DAYNAME(CURDATE()));
+?>
+
 
 <!DOCTYPE html>
 <html>
@@ -69,10 +70,12 @@ if (isset($_POST['login'])) {
             <fieldset>
                 <legend>Yare Yare Daze</legend>
 
-                <h1 class="form__title" style="font-family: 'Bungee', cursive; font-size: 2.2rem; color: #565656;">
+                <h1 class="form__title"
+                    style="font-family: 'Bungee', cursive; font-size: 2.2rem; color: rgb(119, 195, 196);">
                     <span style="text-decoration:underline;">Fill up</span><br />
                     <span style=" font-size: 1.4rem; font-family: 'Roboto' , sans-serif; color: black;">User
-                        ⏳</span>
+                        <img src="https://github.githubassets.com/images/mona-loading-dark.gif" alt="octo"
+                            style="height:3rem"></span>
                 </h1>
 
                 <div class="form__div">

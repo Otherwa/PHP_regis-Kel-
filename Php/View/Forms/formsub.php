@@ -61,7 +61,11 @@ session_destroy();
                         <p class="text-[1.6rem]" style="text-align:start;">Konichiwa</p>
                         <br />
                         <p class="text-[blue] font-mono" style="text-align:start;">
-                            <?php if(isset($_SESSION['name'])){echo $firstname[0];} else {echo 'User';} ?>-Kun</p>
+                            <?php if (isset($_SESSION['name'])) {
+                                echo $firstname[0];
+                            } else {
+                                echo 'User';
+                            } ?>-Kun</p>
                         <br />
                         <p class="text-[1.2rem]" style="text-align:start;"> Your Form Sucessfully Submitted</p>
                     </div>
@@ -76,9 +80,9 @@ session_destroy();
         <br />
         <div class=" footer-copyright">
             <br />
-            <p>&copy; | Copyright 2022 - ♾️ All rights reserved. | <a href="../../../term.html" target="_blank"
+            <p>&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html" target="_blank"
                     class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> | <a
-                    href="../../../personal.html" class="text-[blue] hover:underline " target="_blank">Contact.</a>
+                    href="../../../personal.html" class="text-[blue] hover:underline " target="_blank">Contact</a>
                 <br />
         </div>
     </div>

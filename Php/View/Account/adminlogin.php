@@ -51,6 +51,8 @@ if (isset($_POST['login'])) {
     <!-- <script src="https://cdn.tailwindcss.com"></script>  -->
     <link rel="stylesheet" type="text/css" href="../../../dist/output.css" />
     <link rel="stylesheet" type="text/css" href="../../../Css/style.css" />
+    <!-- title color -->
+    <meta name="theme-color" content="#006eff;" />
     <!-- Gfonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

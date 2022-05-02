@@ -1,35 +1,3 @@
-[![CodeFactor](https://www.codefactor.io/repository/github/otherwa/php_regis-kel-/badge)](https://www.codefactor.io/repository/github/otherwa/php_regis-kel-)
-
-
-# Status
-
-## [![Repography logo](https://images.repography.com/logo.svg)](https://repography.com) / Recent activity [![Time period](https://images.repography.com/25186133/Otherwa/PHP_regis-Kel-/recent-activity/2d39f7ec9a6a0a126598cef5bd926a77_badge.svg)](https://repography.com)
-[![Timeline graph](https://images.repography.com/25186133/Otherwa/PHP_regis-Kel-/recent-activity/2d39f7ec9a6a0a126598cef5bd926a77_timeline.svg)](https://github.com/Otherwa/PHP_regis-Kel-/commits)
-[![Issue status graph](https://images.repography.com/25186133/Otherwa/PHP_regis-Kel-/recent-activity/2d39f7ec9a6a0a126598cef5bd926a77_issues.svg)](https://github.com/Otherwa/PHP_regis-Kel-/issues)
-[![Pull request status graph](https://images.repography.com/25186133/Otherwa/PHP_regis-Kel-/recent-activity/2d39f7ec9a6a0a126598cef5bd926a77_prs.svg)](https://github.com/Otherwa/PHP_regis-Kel-/pulls)
-[![Trending topics](https://images.repography.com/25186133/Otherwa/PHP_regis-Kel-/recent-activity/2d39f7ec9a6a0a126598cef5bd926a77_words.svg)](https://github.com/Otherwa/PHP_regis-Kel-/commits)
-[![Top contributors](https://images.repography.com/25186133/Otherwa/PHP_regis-Kel-/recent-activity/2d39f7ec9a6a0a126598cef5bd926a77_users.svg)](https://github.com/Otherwa/PHP_regis-Kel-/graphs/contributors)
-
-
-
-## For Developement
-
-- XAMPP [documentation](https://www.apachefriends.org/index.html)
-- Any IDE. `VSCode`.
-- Google Fonts API. [documentaion](https://fonts.google.com/knowledge)
-- Tailwind npm/CDN `(temp)`. [documentation](https://tailwindcss.com/docs/installation)
-
-![download](https://user-images.githubusercontent.com/67428572/163125682-be729cb1-e01b-4532-a005-8cc42b9def89.png)
-![download](https://user-images.githubusercontent.com/67428572/163125865-40f93fdc-69b2-48ae-ae2e-5a6c2e726fbf.png)
-![download](https://user-images.githubusercontent.com/67428572/163125996-f147491c-141f-401a-a808-da535c22fd95.png)
-
-# In a nut-shell
-
-![](https://www.meme-arsenal.com/memes/a81c61c281b518e3d545aa6dadf2c0b8.jpg)
-![](https://www.meme-arsenal.com/memes/d48dec40c8e413c60329cb6784248a13.jpg)
-![](https://memegenerator.net/img/instances/61394033/i-know-css.jpg)
-
-
 # PHP_regis-Kel-.
 
 Registration form using php 
@@ -40,12 +8,18 @@ Registration form using php
 - >tailwindcss
 - >Js
 
-### Domians.
+![download](https://user-images.githubusercontent.com/67428572/163125682-be729cb1-e01b-4532-a005-8cc42b9def89.png)
+![download](https://user-images.githubusercontent.com/67428572/163125865-40f93fdc-69b2-48ae-ae2e-5a6c2e726fbf.png)
+![download](https://user-images.githubusercontent.com/67428572/163125996-f147491c-141f-401a-a808-da535c22fd95.png)
 
-- form layout present in css/style.css.
-- standard js present in js/main.js.
-- tailwind css for easy implementation.
-- required doubts commented in each sub-file.
+[![CodeFactor](https://www.codefactor.io/repository/github/otherwa/php_regis-kel-/badge)](https://www.codefactor.io/repository/github/otherwa/php_regis-kel-)
+
+## For Developement
+
+- XAMPP [documentation](https://www.apachefriends.org/index.html)
+- Any IDE. `VSCode`.
+- Google Fonts API. [documentaion](https://fonts.google.com/knowledge)
+- Tailwind npm/CDN `(temp)`. [documentation](https://tailwindcss.com/docs/installation)
 
 # File Structure
 
@@ -90,16 +64,11 @@ Registration form using php
 - Done.
 - Each seperate .css file for each components (Name Convention).
 
-
-
-
-
 #### Database (MySql) Constraints.
 
 `Database name 'regis_dat' table 'form_fillup' for storing feedbacks`
 
 ##### table constraints. (Temp/[Update when Schema acq])
-
 
 ## styling
 
@@ -113,8 +82,18 @@ Registration form using php
 ![ssj3](https://user-images.githubusercontent.com/67428572/163079326-1c8c7da9-5ff8-4dfb-b675-1de29571904f.png)
 ![ssj4](https://user-images.githubusercontent.com/67428572/163079477-e497d636-22cb-4204-803f-7c77ba767d3a.png)
 ![ssj5](https://user-images.githubusercontent.com/67428572/163398910-182d1bb5-3708-4c71-90af-5b19d2e753c4.png)
-# feature
+
+# Feature
+
 ![ssj7](https://user-images.githubusercontent.com/67428572/165899848-0fdaa6a6-0a4d-4a2a-9ec4-5b10613c8ee1.png)
+
+# In a nut-shell
+
+![](https://www.meme-arsenal.com/memes/a81c61c281b518e3d545aa6dadf2c0b8.jpg)
+![](https://www.meme-arsenal.com/memes/d48dec40c8e413c60329cb6784248a13.jpg)
+![](https://memegenerator.net/img/instances/61394033/i-know-css.jpg)
+
+
 
 
 
@@ -124,6 +103,14 @@ Registration form using php
  - [Awesome README](https://github.com/matiassingers/awesome-readme)
  - [How to write a Good readme](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
 
+# Status
+
+## [![Repography logo](https://images.repography.com/logo.svg)](https://repography.com) / Recent activity [![Time period](https://images.repography.com/25186133/Otherwa/PHP_regis-Kel-/recent-activity/2d39f7ec9a6a0a126598cef5bd926a77_badge.svg)](https://repography.com)
+[![Timeline graph](https://images.repography.com/25186133/Otherwa/PHP_regis-Kel-/recent-activity/2d39f7ec9a6a0a126598cef5bd926a77_timeline.svg)](https://github.com/Otherwa/PHP_regis-Kel-/commits)
+[![Issue status graph](https://images.repography.com/25186133/Otherwa/PHP_regis-Kel-/recent-activity/2d39f7ec9a6a0a126598cef5bd926a77_issues.svg)](https://github.com/Otherwa/PHP_regis-Kel-/issues)
+[![Pull request status graph](https://images.repography.com/25186133/Otherwa/PHP_regis-Kel-/recent-activity/2d39f7ec9a6a0a126598cef5bd926a77_prs.svg)](https://github.com/Otherwa/PHP_regis-Kel-/pulls)
+[![Trending topics](https://images.repography.com/25186133/Otherwa/PHP_regis-Kel-/recent-activity/2d39f7ec9a6a0a126598cef5bd926a77_words.svg)](https://github.com/Otherwa/PHP_regis-Kel-/commits)
+[![Top contributors](https://images.repography.com/25186133/Otherwa/PHP_regis-Kel-/recent-activity/2d39f7ec9a6a0a126598cef5bd926a77_users.svg)](https://github.com/Otherwa/PHP_regis-Kel-/graphs/contributors)
 
 ## License
 

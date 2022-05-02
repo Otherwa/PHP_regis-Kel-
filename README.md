@@ -47,26 +47,52 @@ Registration form using php
 - tailwind css for easy implementation.
 - required doubts commented in each sub-file.
 
+# File Structure
+
+```
+|- index.html
+|- contact.html
+|- about.html
+|- notices.html
+|- src |
+       |- input.css (Tailwindcss Input.)
+
+|- Php |
+       |- View |
+               |- Account |
+                          |- formsub.php
+                          |- formto.php
+               |- Form |
+                       |- admin.php
+                       |- adminlogin.php
+|- Js |
+      |- admin.js
+      |- form.js
+      |- main.js
+      
+|- imgs |
+        |- .jpg
+
+|- dist |
+        |- output.css (Tailwindcss Output.)
+        
+|- Css |
+       |- nav.css
+       |- form.css
+       |- style.css
+```
+
 # Instructions
 
-- `*/` consists of all basic static pages needed to render , the `index.html` redirects to `Php\View\formto.php`.
-- `Php\View\formto.php` uses sql connect to fill respective data to Mysql backend
+- `*/` consists of all basic static pages needed to render , the `index.html` redirects to `Php\View\Forms\formto.php`.
+- `Php\View\Forms\formto.php` uses sql connect to fill respective data to Mysql backend
 - after fillup is compeleted again redirected to `Php Directory\formsub.html` (1 sec) wait -> `index.html`
 - Done.
+- Each seperate .css file for each components (Name Convention).
 
-# Overview
 
-1. `index.html` consist of basic info and link to `Php/View/formto.php` for submission of data.
-2. `news.html` for notices of any kind.
-3. `contact.html` for contact purposes.
-4. `about.html` for description.
-5. `term.html` for basic policies.
-6. `formto.php` for form data input.
-7. `formsub.php` for redirect.
-8. `style.css` for styling
-9. `dist/output.css` tailwindcss compiled output.
-10. `form.js` for form verification.
-11. `backend any relational database` / MySql.
+
+
 
 #### Database (MySql) Constraints.
 

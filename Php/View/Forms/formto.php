@@ -31,6 +31,8 @@ if (isset($_POST['login'])) {
     <!-- <script src="https://cdn.tailwindcss.com"></script>  -->
     <link rel="stylesheet" type="text/css" href="../../../dist/output.css" />
     <link rel="stylesheet" type="text/css" href="../../../Css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../../Css/form.css" />
+    <link rel="stylesheet" type="text/css" href="../../../Css/nav.css" />
     <!-- title color -->
     <meta name="theme-color" content="#006eff;" />
     <!-- Gfonts -->
@@ -61,9 +63,10 @@ if (isset($_POST['login'])) {
     <div class="l-form p-0 ">
         <form action="#" method="POST" class="form">
             <fieldset>
+                <code style="color:red">Still in Production</code>
                 <legend>Yare Yare Daze</legend>
 
-                <h1 class="form__title"
+                <h1 class=" form__title"
                     style="font-family: 'Bungee', cursive; font-size: 2.2rem; color: rgb(119, 195, 196);">
                     <span style="text-decoration:underline;">Fill up</span><br />
                     <span style=" font-size: 1.4rem; font-family: 'Roboto' , sans-serif; color: black;">User

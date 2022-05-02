@@ -83,6 +83,7 @@ session_destroy();
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../../../dist/output.css" />
     <link rel="stylesheet" href="../../../Css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../../Css/form.css" />
     <!-- title color -->
     <meta name="theme-color" content="#006eff;" />
     <!-- Gfonts -->

@@ -56,6 +56,6 @@ div.content {
     ul.sidenav li a {
         text-align: center;
         float: none;
-        padding: 16px 16px;
+        padding: 16px;
     }
 }

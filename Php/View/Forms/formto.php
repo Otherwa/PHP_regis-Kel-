@@ -34,7 +34,7 @@ if (isset($_POST['login'])) {
     <link rel="stylesheet" type="text/css" href="../../../Css/form.css" />
     <link rel="stylesheet" type="text/css" href="../../../Css/nav.css" />
     <!-- title color -->
-    <meta name="theme-color" content="#006eff;" />
+    <meta name="theme-color" content="#ff6600">
     <!-- Gfonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

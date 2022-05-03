@@ -21,7 +21,7 @@ session_destroy();
     <link rel="stylesheet" href="../../../dist/output.css" />
     <link rel="stylesheet" href="../../../Css/style.css" />
     <!-- title color -->
-    <meta name="theme-color" content="#006eff;" />
+    <meta name="theme-color" content="#ff6600">
     <!-- Gfonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

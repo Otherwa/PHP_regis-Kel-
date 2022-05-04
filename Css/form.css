@@ -5,7 +5,7 @@
     --border-color: #DADCE0;
     /*===== Fuente y tipografia =====*/
     --body-font: 'Roboto', sans-serif;
-    --normal-font-size: 0.9rem;
+    --normal-font-size: 0.89rem;
     --small-font-size: 0.70rem;
 }
 
@@ -21,12 +21,12 @@
 .form {
     padding: 2rem;
     border-radius: 0.2rem;
-    box-shadow: 1rem 1rem 4rem rgba(92, 99, 105, .2);
+    box-shadow: 1rem 1rem 4rem rgba(68, 74, 79, 0.17);
     border-style: solid;
     border-width: 1px;
     position: relative;
     text-align: left;
-    width: 39rem;
+    width: 40rem;
 }
 
 
@@ -45,7 +45,7 @@
 
 .form__div {
     position: relative;
-    height: 48px;
+    height: 42px;
     margin-bottom: 1.5rem;
 }
 
@@ -165,4 +165,63 @@
     color: red;
     font-weight: 600;
     font-size: 0.8rem;
+}
+
+
+/* select tab */
+
+select {
+    width: auto;
+    padding: 2px;
+    margin: 2px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.99rem;
+    color: #0559c7;
+    border-style: solid;
+    border-width: 0.5px;
+    border-color: #8d949d;
+    border-radius: 3px;
+}
+
+.selectaltered {
+    height: 18px;
+    margin-bottom: 1.5rem;
+    font-size: 0.99rem;
+}
+
+
+/* ol */
+
+ol {
+    list-style: A;
+    padding-left: 1.2rem;
+    font-size: 1rem;
+}
+
+ul {
+    list-style: square;
+    padding-left: 1rem;
+    font-size: 1rem;
+}
+
+
+/* radio */
+
+.radio {
+    color: #0559c7;
+}
+
+.form-ol {
+    padding: 2rem;
+}
+
+@media screen and (max-width: 430px) {
+    .selectaltered {
+        height: 18px;
+        margin-bottom: 1.6rem;
+        font-size: 0.99rem;
+    }
+    .form-ol {
+        padding: 1rem;
+    }
 }

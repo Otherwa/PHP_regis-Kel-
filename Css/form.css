@@ -25,6 +25,7 @@
     border-style: solid;
     border-width: 1px;
     position: relative;
+    background-color: rgb(255, 255, 255);
     text-align: left;
     width: 40rem;
 }
@@ -180,6 +181,7 @@ select {
     border-style: solid;
     border-width: 0.5px;
     border-color: #8d949d;
+    background-color: #ffffff;
     border-radius: 3px;
 }
 
@@ -204,6 +206,10 @@ ul {
     font-size: 1rem;
 }
 
+ul li {
+    padding-bottom: 1rem;
+}
+
 
 /* radio */
 
@@ -224,4 +230,20 @@ ul {
     .form-ol {
         padding: 1rem;
     }
+}
+
+
+/* form nav bars */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+/* Firefox */
+
+input[type="number"] {
+    -moz-appearance: textfield;
 }

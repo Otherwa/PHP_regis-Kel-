@@ -1,29 +1,25 @@
 <?php
 include('../connect.php');
 //on click
-
+session_start();
 //session statuses
-$status = session_status();
-if ($status == PHP_SESSION_NONE) {
+$status = session_status(); //1st measure
+if ($status == PHP_SESSION_ACTIVE) {
     //There is no active session
-    session_start();
-} elseif ($status == PHP_SESSION_DISABLED) {
-    //Sessions are not available
-} elseif ($status == PHP_SESSION_ACTIVE) {
-    //Destroy current and start new one
     session_destroy();
-    session_start();
 }
-
 if (isset($_POST['PAPForm'])) {
+    session_start();
     $_SESSION['setPAP'] = "yes";
     header('Location: pap.php');
 }
 if (isset($_POST['StuForm'])) {
+    session_start();
     $_SESSION['setStu'] = "yes";
     header('Location: student.php');
 }
 if (isset($_POST['FFForm'])) {
+    session_start();
     $_SESSION['setFF'] = "yes";
     header('Location: faculty.php');
 }
@@ -35,14 +31,14 @@ if (isset($_POST['FFForm'])) {
 <html>
 
 <head>
-    <title>Form Submission</title>
+    <title>Forms Submission</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- tailwind css -->
     <!-- <script src="https://cdn.tailwindcss.com"></script>  -->
     <link rel="stylesheet" type="text/css" href="../../../dist/output.css" />
     <link rel="stylesheet" type="text/css" href="../../../Css/style.css" />
-    <link rel="stylesheet" type="text/css" href="../../../Css/form.css" />
+    <link rel="stylesheet" type="text/css" href="../../../Css/nav.css" />
     <!-- title color -->
     <meta name="theme-color" content="#ff6600">
     <!-- Gfonts -->
@@ -55,62 +51,66 @@ if (isset($_POST['FFForm'])) {
     <meta http-equiv='cache-control' content='no-cache'>
     <meta http-equiv='expires' content='0'>
     <meta http-equiv='pragma' content='no-cache'>
-
 </head>
 
-<body class="p-1 m-0">
+<body class="p-0 m-0">
+    <ul class="sidenav">
+        <li><a class="font-mono" href="../../../index.html" target="_self"><img
+                    style="width:2.5rem;height:auto;text-align:center;display:initial"
+                    src="https://i.gifer.com/24S2.gif" alt="load">
+            </a></li>
+        <li><a class="font-mono" href="../../../about.html" target="_self">About</a></li>
+    </ul>
     <br />
-    <br />
-    <br />
-    <br />
-    <p id="demo" class="text-center" style="text-decoration:underline"> Ping</p>
-    <br />
-    <br />
-    <br />
-    <br />
-
-
-    <div class="text-center" id="forms" style="display:none; padding:1rem;margin:1rem">
-        <form action="" method="POST">
-            <button type="submit"
-                class="inline-block font-mono text-center border border-transparent rounded-md py-3 px-8 text-lg text-white transition ease-in-out delay-100 bg-blue-500 hover:bg-[#1fc6e4] hover:text-black duration-300"
-                name="PAPForm" style="text-align:center"> PAP's Form
-            </button>
-            <br />
-            <br />
-            <br />
-
-            <button type="submit"
-                class="inline-block font-mono text-center border border-transparent rounded-md py-3 px-8 text-lg text-white transition ease-in-out delay-100 bg-blue-500 hover:bg-[#1fc6e4] hover:text-black duration-300"
-                name="StuForm" style="text-align:center"> Student Survey Form
-            </button>
-            <br />
-            <br />
-            <br />
-
-            <button type="submit"
-                class="inline-block font-mono text-center border border-transparent rounded-md py-3 px-8 text-lg text-white transition ease-in-out delay-100 bg-blue-500 hover:bg-[#1fc6e4] hover:text-black duration-300"
-                name="FFForm" style="text-align:center"> Faculty Feedback Form
-            </button>
-            <br />
-            <br />
-            <br />
-        </form>
-    </div>
-
-    <div id="msg" class="msg text-xl text-center hover:underline" style="display:block">
-        <p>Forms are not allowed to fill now</p>
-    </div>
-    <div class="footer-copyright text-center">
+    <div class="bg-[#ffffff] text-center m-2 content">
         <br />
-        <p>&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="term.html" target="_self"
-                class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> | <a href="personal.html"
-                class="text-[blue] hover:underline ">Contact</a> |
-            <a href="Php/View/Account/adminlogin.php" class="text-[blue] hover:underline">Admin</a>
-        </p>
+        <br />
+        <p class="text-center"><code id="demo" style="padding:1rem">Ping</code></p>
+        <br />
+        <br />
+        <div class="text-center" id="forms" style="display:none; padding:1rem;margin:1rem">
+            <form action="" method="POST">
+                <button type="submit"
+                    class="inline-block font-mono text-center border border-transparent rounded-md py-3 px-8 text-lg text-white transition ease-in-out delay-100 bg-blue-500 hover:bg-[#1fc6e4] hover:text-black duration-300"
+                    name="PAPForm" style="text-align:center"> PAP's Form
+                </button>
+                <br />
+                <br />
+                <br />
+                <button type="submit"
+                    class="inline-block font-mono text-center border border-transparent rounded-md py-3 px-8 text-lg text-white transition ease-in-out delay-100 bg-blue-500 hover:bg-[#1fc6e4] hover:text-black duration-300"
+                    name="StuForm" style="text-align:center"> Student Survey Form
+                </button>
+                <br />
+                <br />
+                <br />
+                <button type="submit"
+                    class="inline-block font-mono text-center border border-transparent rounded-md py-3 px-8 text-lg text-white transition ease-in-out delay-100 bg-blue-500 hover:bg-[#1fc6e4] hover:text-black duration-300"
+                    name="FFForm" style="text-align:center"> Faculty Feedback Form
+                </button>
+                <br />
+                <br />
+                <br />
+            </form>
+        </div>
+        <div id="msg" class="msg text-xl text-center hover:underline" style="display:none">
+            <p style="padding:1rem">Forms are not allowed to fill furthermore.
+            </p>
+            <br />
+            <br />
+            <img src="" alt="Scott" id="clown_com"
+                style="text-align:center;display:inline-block;border-radius:0.4rem;width:40rem;height:auto" />
+        </div>
+        <div class="footer-copyright text-center" style="padding:1rem">
+            <br />
+            <p>&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html" target="_self"
+                    class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> | <a
+                    href="../../../personal.html" class="text-[blue] hover:underline ">Contact</a>
+            </p>
+        </div>
     </div>
-</body>
 
+</body>
 <!-- form validation -->
 <script type="text/javascript" src="../../../Js/forms.js"></script>
 

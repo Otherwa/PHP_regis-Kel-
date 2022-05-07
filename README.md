@@ -39,6 +39,8 @@ Registration form using php
                |- Form |
                        |- admin.php
                        |- adminlogin.php
+               
+               |-connect.php
 |- Js |
       |- admin.js
       |- form.js

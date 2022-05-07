@@ -55,11 +55,8 @@ if (isset($_POST['FFForm'])) {
 
 <body class="p-0 m-0">
     <ul class="sidenav">
-        <li><a class="font-mono" href="../../../index.html" target="_self"><img
-                    style="width:2.5rem;height:auto;text-align:center;display:initial"
-                    src="https://i.gifer.com/24S2.gif" alt="load">
-            </a></li>
-        <li><a class="font-mono" href="../../../about.html" target="_self">About</a></li>
+        <li><a class="font-mono" href="../../../index.html" target="_self">&nbsp;Home</a></li>
+        <li><a class="font-mono" href="../../../about.html" target="_self">&nbsp;About</a></li>
     </ul>
     <br />
     <div class="bg-[#ffffff] text-center m-2 content">

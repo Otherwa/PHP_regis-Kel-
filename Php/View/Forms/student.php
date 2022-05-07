@@ -81,6 +81,9 @@ if (isset($_POST['submit'])) {
     <!-- icon -->
     <link type="image/png" sizes="16x16" rel="icon" href="../../../imgs/1611814068005.jpg" />
     <!-- num style -->
+    <meta http-equiv='cache-control' content='no-cache'>
+    <meta http-equiv='expires' content='0'>
+    <meta http-equiv='pragma' content='no-cache'>
     <style>
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {

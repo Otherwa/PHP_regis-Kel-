@@ -55,8 +55,8 @@ if (isset($_POST['FFForm'])) {
 
 <body class="p-0 m-0">
     <ul class="sidenav">
-        <li><a class="font-mono" href="../../../index.html" target="_self">&nbsp;Home</a></li>
-        <li><a class="font-mono" href="../../../about.html" target="_self">&nbsp;About</a></li>
+        <li><a class="font-mono" href="../../../index.html" target="_self">Form</a></li>
+        <li><a class="font-mono" href="../../../about.html" target="_self">About</a></li>
     </ul>
     <br />
     <div class="bg-[#ffffff] text-center m-2 content">
@@ -69,21 +69,21 @@ if (isset($_POST['FFForm'])) {
             <form action="" method="POST">
                 <button type="submit"
                     class="inline-block font-mono text-center border border-transparent rounded-md py-3 px-8 text-lg text-white transition ease-in-out delay-100 bg-blue-500 hover:bg-[#1fc6e4] hover:text-black duration-300"
-                    name="PAPForm" style="text-align:center"> PAP's Form
+                    name="PAPForm" style="text-align:center;width:15rem;height:5rem"> PAP's Form
                 </button>
                 <br />
                 <br />
                 <br />
                 <button type="submit"
                     class="inline-block font-mono text-center border border-transparent rounded-md py-3 px-8 text-lg text-white transition ease-in-out delay-100 bg-blue-500 hover:bg-[#1fc6e4] hover:text-black duration-300"
-                    name="StuForm" style="text-align:center"> Student Survey Form
+                    name="StuForm" style="text-align:center;width:15rem;height:5rem"> Student Survey Form
                 </button>
                 <br />
                 <br />
                 <br />
                 <button type="submit"
                     class="inline-block font-mono text-center border border-transparent rounded-md py-3 px-8 text-lg text-white transition ease-in-out delay-100 bg-blue-500 hover:bg-[#1fc6e4] hover:text-black duration-300"
-                    name="FFForm" style="text-align:center"> Faculty Feedback Form
+                    name="FFForm" style="text-align:center;width:15rem;height:5rem"> Faculty Feedback Form
                 </button>
                 <br />
                 <br />
@@ -91,12 +91,11 @@ if (isset($_POST['FFForm'])) {
             </form>
         </div>
         <div id="msg" class="msg text-xl text-center hover:underline" style="display:none">
-            <p style="padding:1rem">Forms are not allowed to fill furthermore.
+            <p id="msg-p" style="padding:1rem">Forms are not allowed to fill furthermore.
             </p>
             <br />
-            <br />
             <img src="" alt="Scott" id="clown_com"
-                style="text-align:center;display:inline-block;border-radius:0.4rem;width:40rem;height:auto" />
+                style="text-align:center;display:inline-block;border-radius:0.4rem;width:35rem;height:auto" />
         </div>
         <div class="footer-copyright text-center" style="padding:1rem">
             <br />

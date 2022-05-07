@@ -93,6 +93,9 @@ session_destroy();
     <!-- icon -->
     <link type="image/png" sizes="16x16" rel="icon" href="../../../imgs/1611814068005.jpg" />
     <!-- chart js API -->
+    <meta http-equiv='cache-control' content='no-cache'>
+    <meta http-equiv='expires' content='0'>
+    <meta http-equiv='pragma' content='no-cache'>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"
         integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>

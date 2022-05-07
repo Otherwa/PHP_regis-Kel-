@@ -61,6 +61,9 @@ if (isset($_POST['login'])) {
     <!-- icon -->
     <link type="image/png" sizes="16x16" rel="icon" href="../../../imgs/1611814068005.jpg" />
     <!-- num style -->
+    <meta http-equiv='cache-control' content='no-cache'>
+    <meta http-equiv='expires' content='0'>
+    <meta http-equiv='pragma' content='no-cache'>
     <style>
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {
@@ -116,12 +119,17 @@ if (isset($_POST['login'])) {
             </fieldset>
         </form>
         <br />
+
         <br />
         <br />
     </div>
+    <div class="footer-copyright text-center" style="padding:1rem">
+        <br />
+        <p>&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html" target="_self"
+                class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> | <a
+                href="../../../personal.html" class="text-[blue] hover:underline ">Contact</a>
+        </p>
+    </div>
 </body>
-
-
-
 
 </html>

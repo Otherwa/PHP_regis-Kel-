@@ -195,7 +195,7 @@ select {
 /* ol */
 
 ol {
-    list-style: A;
+    list-style: upper-roman;
     padding-left: 1.2rem;
     font-size: 1rem;
 }

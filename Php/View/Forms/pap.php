@@ -92,6 +92,9 @@ if (isset($_POST['submit'])) {
     <!-- icon -->
     <link type="image/png" sizes="16x16" rel="icon" href="../../../imgs/1611814068005.jpg" />
     <!-- num style -->
+    <meta http-equiv='cache-control' content='no-cache'>
+    <meta http-equiv='expires' content='0'>
+    <meta http-equiv='pragma' content='no-cache'>
 </head>
 
 <body class="p-0 m-0">
@@ -254,6 +257,7 @@ if (isset($_POST['submit'])) {
                                 <li>
                                     Positive and motivating attitude towards students.
                                     <br />
+                                    <br />
                                     <span class="radio">
                                         <input type="radio" name="rating1_1" value="VeryPoor" />&nbsp; Very-Poor&nbsp;
                                         <input type="radio" name="rating1_1" value="Poor" />&nbsp; Poor&nbsp;
@@ -269,6 +273,7 @@ if (isset($_POST['submit'])) {
                                     Readiness to resolve student's doubts and general availability / accessibility to
                                     students.Positive and motivating attitude towards students.
                                     <br />
+                                    <br />
                                     <span class="radio">
                                         <input type="radio" name="rating2_1" value="VeryPoor" />&nbsp; Very-Poor&nbsp;
                                         <input type="radio" name="rating2_1" value="Poor" />&nbsp; Poor&nbsp;
@@ -282,6 +287,7 @@ if (isset($_POST['submit'])) {
                                 </li>
                                 <li>
                                     Worked hard to create a feeling of belongingness in a classroom without walls.
+                                    <br />
                                     <br />
                                     <span class="radio">
                                         <input type="radio" name="rating3_1" value="VeryPoor" />&nbsp; Very-Poor&nbsp;
@@ -305,6 +311,7 @@ if (isset($_POST['submit'])) {
                                 <li>
                                     Command over the subject.
                                     <br />
+                                    <br />
                                     <span class="radio">
                                         <input type="radio" name="rating1_2" value="VeryPoor" />&nbsp; Very-Poor&nbsp;
                                         <input type="radio" name="rating1_2" value="Poor" />&nbsp; Poor&nbsp;
@@ -318,6 +325,7 @@ if (isset($_POST['submit'])) {
                                 </li>
                                 <li>
                                     Skills in making the subject interesting.
+                                    <br />
                                     <br />
                                     <span class="radio">
                                         <input type="radio" name="rating2_2" value="VeryPoor" />&nbsp; Very-Poor&nbsp;
@@ -333,6 +341,7 @@ if (isset($_POST['submit'])) {
                                 <li>
                                     Command over the medium of instruction(language) / communication skills
                                     <br />
+                                    <br />
                                     <span class="radio">
                                         <input type="radio" name="rating3_2" value="VeryPoor" />&nbsp; Very-Poor&nbsp;
                                         <input type="radio" name="rating3_2" value="Poor" />&nbsp; Poor&nbsp;
@@ -346,6 +355,7 @@ if (isset($_POST['submit'])) {
                                 </li>
                                 <li>
                                     Clarity in approach / thinking.
+                                    <br />
                                     <br />
                                     <span class="radio">
                                         <input type="radio" name="rating4_2" value="VeryPoor" />&nbsp; Very-Poor&nbsp;
@@ -361,6 +371,7 @@ if (isset($_POST['submit'])) {
                                 <li>
                                     Punctuality and regularity in taking lectures and practicals.
                                     <br />
+                                    <br />
                                     <span class="radio">
                                         <input type="radio" name="rating5_2" value="VeryPoor" />&nbsp; Very-Poor&nbsp;
                                         <input type="radio" name="rating5_2" value="Poor" />&nbsp; Poor&nbsp;
@@ -374,6 +385,7 @@ if (isset($_POST['submit'])) {
                                 </li>
                                 <li>
                                     Proficiency in handling online classroom platforms.
+                                    <br />
                                     <br />
                                     <span class="radio">
                                         <input type="radio" name="rating6_2" value="VeryPoor" />&nbsp; Very-Poor&nbsp;
@@ -389,6 +401,7 @@ if (isset($_POST['submit'])) {
                                 <li>
                                     Time management skill \ skill of completing the syllabus with doubt solving sessions
                                     in time.
+                                    <br />
                                     <br />
                                     <span class="radio">
                                         <input type="radio" name="rating7_2" value="VeryPoor" />&nbsp; Very-Poor&nbsp;
@@ -413,6 +426,7 @@ if (isset($_POST['submit'])) {
                                     CUse of case studies, illustration, current events, anecdotes in teaching.ommand
                                     over the subject.
                                     <br />
+                                    <br />
                                     <span class="radio">
                                         <input type="radio" name="rating1_3" value="VeryPoor" />&nbsp; Very-Poor&nbsp;
                                         <input type="radio" name="rating1_3" value="Poor" />&nbsp; Poor&nbsp;
@@ -426,6 +440,7 @@ if (isset($_POST['submit'])) {
                                 </li>
                                 <li>
                                     Use of interactive teaching - seminars, tutorials, quizzes, assignments etc.
+                                    <br />
                                     <br />
                                     <span class="radio">
                                         <input type="radio" name="rating2_3" value="VeryPoor" />&nbsp; Very-Poor&nbsp;
@@ -441,6 +456,7 @@ if (isset($_POST['submit'])) {
                                 <li>
                                     Command over the medium of instruction(language) / communication skills
                                     <br />
+                                    <br />
                                     <span class="radio">
                                         <input type="radio" name="rating3_3" value="VeryPoor" />&nbsp; Very-Poor&nbsp;
                                         <input type="radio" name="rating3_3" value="Poor" />&nbsp; Poor&nbsp;
@@ -454,6 +470,7 @@ if (isset($_POST['submit'])) {
                                 </li>
                                 <li>
                                     Giving references for further reading.
+                                    <br />
                                     <br />
                                     <span class="radio">
                                         <input type="radio" name="rating4_3" value="VeryPoor" />&nbsp; Very-Poor&nbsp;
@@ -470,6 +487,7 @@ if (isset($_POST['submit'])) {
                                     Conducting evaluation by periodic tests / questions answer sessions or by designing
                                     quizzes / tests / assignments / examinations and projects to evaluate students.
                                     <br />
+                                    <br />
                                     <span class="radio">
                                         <input type="radio" name="rating5_3" value="VeryPoor" />&nbsp; Very-Poor&nbsp;
                                         <input type="radio" name="rating5_3" value="Poor" />&nbsp; Poor&nbsp;
@@ -483,6 +501,7 @@ if (isset($_POST['submit'])) {
                                 </li>
                                 <li>
                                     Encouraging students to apply in real life whatever they have learnt in classrooms.
+                                    <br />
                                     <br />
                                     <span class="radio">
                                         <input type="radio" name="rating6_3" value="VeryPoor" />&nbsp; Very-Poor&nbsp;
@@ -498,6 +517,7 @@ if (isset($_POST['submit'])) {
                                 <li>
                                     Counselling : Career / placement / personal.
                                     <br />
+                                    <br />
                                     <span class="radio">
                                         <input type="radio" name="rating7_3" value="VeryPoor" />&nbsp; Very-Poor&nbsp;
                                         <input type="radio" name="rating7_3" value="Poor" />&nbsp; Poor&nbsp;
@@ -511,6 +531,7 @@ if (isset($_POST['submit'])) {
                                 </li>
                                 <li>
                                     Stimulating a sense of social responsibility.
+                                    <br />
                                     <br />
                                     <span class="radio">
                                         <input type="radio" name="rating8_3" value="VeryPoor" />&nbsp; Very-Poor&nbsp;

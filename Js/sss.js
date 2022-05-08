@@ -1,1 +1,3 @@
-console.log("demo");
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});

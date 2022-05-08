@@ -62,7 +62,7 @@ if (isset($_POST['FFForm'])) {
     <div class="bg-[#ffffff] text-center m-2 content">
         <br />
         <br />
-        <p class="text-center"><code id="demo" style="padding:1rem">Ping</code></p>
+        <p class="text-center hover:underline"><code id="demo" style="padding:1rem">Ping</code></p>
         <br />
         <br />
         <div class="text-center" id="forms" style="display:none; padding:1rem;margin:1rem">

@@ -9,15 +9,7 @@ if (!isset($_SESSION['setPAP'])) {
     header('Location: forms.php');
 }
 
-$con = get_con();
-$sqlquery_get_tech = "SELECT Name FROM `form_fillup`";
-$result = mysqli_query($con, $sqlquery_get_tech);
-while ($r = mysqli_fetch_assoc($result)) {
-    // echo $r['Name'] . " ";
-}
-
 if (isset($_POST['submit'])) {
-
     //session statuses
     $status = session_status();
     if ($status == PHP_SESSION_NONE) {
@@ -30,42 +22,112 @@ if (isset($_POST['submit'])) {
         //Destroy current and start new one
         $stat = 2;
     }
+    // establish connection
+    $con = get_con();
+    $name = mysqli_real_escape_string($con, $_POST['name']);
+    $rollno = mysqli_real_escape_string($con, $_POST['rollno']);
+    $class = mysqli_real_escape_string($con, $_POST['class']);
+    $division = mysqli_real_escape_string($con, $_POST['division']);
+    $semester = mysqli_real_escape_string($con, $_POST['semester']);
+    $paper = getPaper($semester);
+    $teacher = mysqli_real_escape_string($con, $_POST['teacher']);
 
+    // validation and submission entry
+    $err = validate_submit_dat($name, $rollno, $class, $division, $semester, $paper, $teacher, $con);
 
-    $name = $_POST['name'];
-    $class = $_POST['class'];
-    $rollno = $_POST['rollno'];
-    $division = $_POST['division'];
-    $semester = $_POST['semester'];
-    $teacher = $_POST['teacher'];
-    $rating_1 = $_POST['rating_1'];
-    $rating_2 = $_POST['rating_2'];
-    $rating_3 = $_POST['rating_3'];
-    $paper;
-    if ($semester == "I") {
-        $paper = $_POST['paper1'];
-    } else if ($semester == "II") {
-        $paper = $_POST['paper2'];
-    } else if ($semester == "III") {
-        $paper = $_POST['paper3'];
-    } else if ($semester == "IV") {
-        $paper = $_POST['paper4'];
-    } else if ($semester == "V") {
-        $paper = $_POST['paper5'];
-    } else if ($semester == "VI") {
-        $paper = $_POST['paper6'];
-    } else {
-        echo "<script>alert('WTF')script>";
-    }
-    // session name
-    $_SESSION['name'] = $name;
-    if ($name == 'Atharv') {
+    // if yes 
+    if ($err != 1) {
+        $_SESSION['name'] = $name;
         header('Location: formsubmit.php');
+    } else {
+        echo "<script>alert('or Something Wrong');</script>";
+    }
+}
+
+
+// get paper validation
+function getPaper($semester)
+{
+    if ($semester == "I") {
+        return $_POST['paper1'];
+    } else if ($semester == "II") {
+        return  $_POST['paper2'];
+    } else if ($semester == "III") {
+        return $_POST['paper3'];
+    } else if ($semester == "IV") {
+        return  $_POST['paper4'];
+    } else if ($semester == "V") {
+        return  $_POST['paper5'];
+    } else if ($semester == "VI") {
+        return  $_POST['paper6'];
+    } else {
+        return " ";
+    }
+}
+
+// validations setup 1
+function validate_submit_dat($name, $rollno, $class, $division, $semester, $paper, $teacher, $con)
+{
+    if ($name == " " || $rollno == " " || $class == " " || $division == " " || $semester == " " || $paper == " " || $teacher == " ") {
+        echo "<script>alert('WTF check the form for name,... and ratings etc');</script>";
+        return 1;
+    } else {
+        if (isset($_POST['rating1_1']) && isset($_POST['rating2_1']) && isset($_POST['rating3_1']) && isset($_POST['rating1_2']) && isset($_POST['rating2_2']) && isset($_POST['rating3_2']) && isset($_POST['rating4_2']) && isset($_POST['rating5_2']) && isset($_POST['rating6_2']) && isset($_POST['rating7_2']) && isset($_POST['rating1_3']) && isset($_POST['rating2_3']) && isset($_POST['rating3_3']) && isset($_POST['rating4_3']) && isset($_POST['rating5_3']) && isset($_POST['rating6_3']) && isset($_POST['rating7_3']) && isset($_POST['rating8_3'])) {
+            $rating1_1 = $_POST['rating1_1'];
+            $rating2_1 = $_POST['rating2_1'];
+            $rating3_1 = $_POST['rating3_1'];
+            // second rating block
+            $rating1_2 = $_POST['rating1_2'];
+            $rating2_2 = $_POST['rating2_2'];
+            $rating3_2 = $_POST['rating3_2'];
+            $rating4_2 = $_POST['rating4_2'];
+            $rating5_2 = $_POST['rating5_2'];
+            $rating6_2 = $_POST['rating6_2'];
+            $rating7_2 = $_POST['rating7_2'];
+            // third rating block
+            $rating1_3 = $_POST['rating1_3'];
+            $rating2_3 = $_POST['rating2_3'];
+            $rating3_3 = $_POST['rating3_3'];
+            $rating4_3 = $_POST['rating4_3'];
+            $rating5_3 = $_POST['rating5_3'];
+            $rating6_3 = $_POST['rating6_3'];
+            $rating7_3 = $_POST['rating7_3'];
+            $rating8_3 = $_POST['rating8_3'];
+            return ratings_validate_submit($name, $rollno, $class, $division, $semester, $paper, $teacher, $rating1_1, $rating2_1, $rating3_1, $rating1_2, $rating2_2, $rating3_2, $rating4_2, $rating5_2, $rating6_2, $rating7_2, $rating1_3, $rating2_3, $rating3_3, $rating4_3, $rating5_3, $rating6_3, $rating7_3, $rating8_3, $con);
+        } else {
+            echo "<script>alert('WTF check ratings ');</script>";
+        }
+    }
+}
+
+//get ratings_validate_submit  setup 2
+function ratings_validate_submit($name, $rollno, $class, $division, $semester, $paper, $teacher, $rating1_1, $rating2_1, $rating3_1, $rating1_2, $rating2_2, $rating3_2, $rating4_2, $rating5_2, $rating6_2, $rating7_2, $rating1_3, $rating2_3, $rating3_3, $rating4_3, $rating5_3, $rating6_3, $rating7_3, $rating8_3, $con)
+{
+    $temp_query = "SELECT `Id` FROM `stu_dat` WHERE Name = '$name'";
+    $result = mysqli_query($con, $temp_query);
+    $result = mysqli_num_rows($result);
+    // only 5 forms for each semester
+    if ($result > 4) {
+        echo "<script>alert('WTF form instance already excits');</script>";
+        return 1;
     }
 
-    // echo $name . " " . $class . " " . $rollno . " " . $division . " " . $semester . " " . $paper . " " . $teacher . " " . $rating_1 . " " . $rating_2 . " " . $rating_3;
+    // stu -dat
+    $query_stu_dat = "INSERT INTO `stu_dat`(`Name`, `Roll no`, `Class`, `Division`, `Semester`, `Paper`, `Teacher`, `Date/Time`) VALUES ('$name','$rollno','$class','$division','$semester','$paper','$teacher',current_timestamp())";
+    $result = mysqli_query($con, $query_stu_dat);
+
+    // get student id from database
+    $temp_query = "SELECT `Id` FROM `stu_dat` WHERE Name = '$name'";
+    $result = mysqli_query($con, $temp_query);
+    $row = mysqli_fetch_assoc($result);
+    $by_stu = $row['Id'];
+
+    // teach_rate
+    $query_teach_rate = "INSERT INTO `teach_rate`(`By_Stu`, `Positive and motivating attitude towards students.`, `Readiness to resolve student's doubts and general availability /`, `Worked hard to create a feeling of belongingness in a classroom`, `Command over the subject.`, `Skills in making the subject interesting.`, `Command over the medium of instruction(language) / comm`, `Clarity in approach / thinking.`, `Punctuality and regularity in taking lectures and practicals.`, `Proficiency in handling online classroom platforms.`, `Time management skill \ skill of completing the syllabus with do`, `Use of case studies, illustration, current events, anecdotes in`, `Use of interactive teaching - seminars, tutorials, quizzes, assi`, `Command over the medium of instruction(language) / communication`, `Giving references for further reading.`, `Conducting evaluation by periodic tests / questions answer sessi`, `Encouraging students to apply in real life whatever they have le`, `Counselling : Career / placement / personal.`, `Stimulating a sense of social responsibility.`) 
+    VALUES ('$by_stu','$rating1_1', '$rating2_1', '$rating3_1', '$rating1_2', '$rating2_2', '$rating3_2', '$rating4_2',' $rating5_2', '$rating6_2', '$rating7_2', '$rating1_3', '$rating2_3', '$rating3_3', '$rating4_3', '$rating5_3', '$rating6_3', '$rating7_3', '$rating8_3')";
+    $result = mysqli_query($con, $query_teach_rate);
 }
-// INSERT INTO `form_fillup` (`Id`, `Name`, `Review`, `Day`) VALUES ('1', 'Atharv', 'NICE', DAYNAME(CURDATE()));
+
 
 ?>
 
@@ -105,7 +167,6 @@ if (isset($_POST['submit'])) {
     <br />
     <br />
     <div class="bg-[#ffffff] text-center content" style="padding:1rem">
-        <!-- darkmode toggle -->
         <br />
         <div class="l-form">
             <form action="#" method="POST" class="form">
@@ -134,7 +195,8 @@ if (isset($_POST['submit'])) {
                     <div class="form__div selectaltered">
                         <label for="class" class="text-sm" style="color: rgb(68, 74, 79);">&bull; Class:</label>
                         <select name="class" id="class">
-                            <option value="FYBsc-IT" selected>FYBsc-IT</option>
+                            <option value=" " selected>--</option>
+                            <option value="FYBsc-IT">FYBsc-IT</option>
                             <option value="SYBsc-IT">SYBsc-IT</option>
                             <option value="TYBsc-IT">TYBsc-IT</option>
                         </select>
@@ -142,7 +204,8 @@ if (isset($_POST['submit'])) {
                     <div class="form__div selectaltered">
                         <label for="division" class="text-sm" style="color: rgb(68, 74, 79);">&bull; Division:</label>
                         <select name="division" id="divison">
-                            <option value="A" selected>A</option>
+                            <option value=" " selected>--</option>
+                            <option value="A">A</option>
                             <option value="B">B</option>
                             <option value="C">C</option>
                             <option value="D">D</option>
@@ -152,7 +215,7 @@ if (isset($_POST['submit'])) {
                         <label for="division" class="text-sm" style="color: rgb(68, 74, 79);">&bull; Choose
                             Semester:</label>
                         <select name="semester" id="semester" onchange="selectedsemester()">
-                            <option value="" selected>----</option>
+                            <option value=" " selected>--</option>
                             <option value="I">I</option>
                             <option value="II">II</option>
                             <option value="III">III</option>
@@ -214,7 +277,7 @@ if (isset($_POST['submit'])) {
                         <select name="paper5">
                             <option value="Software Project Management">Software Project Management</option>
                             <option value="Internet of Things">Internet of Things</option>
-                            <option value="Advanced Web Programming">Advanced Web ProgrammingIII</option>
+                            <option value="Advanced Web Programming">Advanced Web Programming</option>
                             <option value="Artificial Intelligence">Artificial Intelligence</option>
                             <option value="Next Generation TechnologiesV">Next Generation Technologies</option>
                         </select>
@@ -231,18 +294,19 @@ if (isset($_POST['submit'])) {
                             <option value="Cyber Laws">Cyber Laws</option>
                         </select>
                     </div>
+
                     <!-- selected opts -->
-                    <br />
                     <div class="form__div selectaltered" id="teacher">
                         <label for="division" class="text-sm" style="color: rgb(68, 74, 79);">&bull; Teacher
                             Name:</label>
                         <select name="teacher">
-                            <option value="Mr's Pournima Bhangal">Mr's Pournima Bhangale</option>
-                            <option value="Mr's Vandana Kadam">Mr's Vandana Kadam</option>
-                            <option value="Mr's Rakhee Rane">Mr's Rakhee Rane</option>
-                            <option value="Mr's Nanda Rupnar">Mr's Nanda Rupnar</option>
-                            <option value="Mr's Mohini Bhole">Mr's Mohini Bhole</option>
-                            <option value="Mr's Pranali Pawar">Mr's Pranali Pawar</option>
+                            <option value=" ">--</option>
+                            <option value="Mrs Pournima Bhangal">Mrs Pournima Bhangale</option>
+                            <option value="Mrs Vandana Kadam">Mrs Vandana Kadam</option>
+                            <option value="Mrs Rakhee Rane">Mrs Rakhee Rane</option>
+                            <option value="Mrs Nanda Rupnar">Mrs Nanda Rupnar</option>
+                            <option value="Mrs Mohini Bhole">Mrs Mohini Bhole</option>
+                            <option value="Mrs Pranali Pawar">Mrs Pranali Pawar</option>
                         </select>
                     </div>
                     <!-- all query  -->
@@ -265,7 +329,7 @@ if (isset($_POST['submit'])) {
                                         Below-Average&nbsp; <input type="radio" name="rating1_1"
                                             value="Average" />&nbsp; Average&nbsp;
                                         <input type="radio" name="rating1_1" value="Good" />&nbsp; Good&nbsp; <input
-                                            type="radio" name="rating1_1" vlaue="VeryGood" />&nbsp; Very-Good&nbsp;
+                                            type="radio" name="rating1_1" value="VeryGood" />&nbsp; Very-Good&nbsp;
                                         <input type="radio" name="rating1_1" value="Excellent" />&nbsp; Excellent&nbsp;
                                     </span>
                                 </li>
@@ -281,7 +345,7 @@ if (isset($_POST['submit'])) {
                                         Below-Average&nbsp; <input type="radio" name="rating2_1"
                                             value="Average" />&nbsp; Average&nbsp;
                                         <input type="radio" name="rating2_1" value="Good" />&nbsp; Good&nbsp; <input
-                                            type="radio" name="rating2_1" vlaue="VeryGood" />&nbsp; Very-Good&nbsp;
+                                            type="radio" name="rating2_1" value="VeryGood" />&nbsp; Very-Good&nbsp;
                                         <input type="radio" name="rating2_1" value="Excellent" />&nbsp; Excellent&nbsp;
                                     </span>
                                 </li>
@@ -296,7 +360,7 @@ if (isset($_POST['submit'])) {
                                         Below-Average&nbsp; <input type="radio" name="rating3_1"
                                             value="Average" />&nbsp; Average&nbsp;
                                         <input type="radio" name="rating3_1" value="Good" />&nbsp; Good&nbsp; <input
-                                            type="radio" name="rating3_1" vlaue="VeryGood" />&nbsp; Very-Good&nbsp;
+                                            type="radio" name="rating3_1" value="VeryGood" />&nbsp; Very-Good&nbsp;
                                         <input type="radio" name="rating3_1" value="Excellent" />&nbsp; Excellent&nbsp;
                                     </span>
                                 </li>
@@ -319,7 +383,7 @@ if (isset($_POST['submit'])) {
                                         Below-Average&nbsp; <input type="radio" name="rating1_2"
                                             value="Average" />&nbsp; Average&nbsp;
                                         <input type="radio" name="rating1_2" value="Good" />&nbsp; Good&nbsp; <input
-                                            type="radio" name="rating1_2" vlaue="VeryGood" />&nbsp; Very-Good&nbsp;
+                                            type="radio" name="rating1_2" value="VeryGood" />&nbsp; Very-Good&nbsp;
                                         <input type="radio" name="rating1_2" value="Excellent" />&nbsp; Excellent&nbsp;
                                     </span>
                                 </li>
@@ -334,7 +398,7 @@ if (isset($_POST['submit'])) {
                                         Below-Average&nbsp; <input type="radio" name="rating2_2"
                                             value="Average" />&nbsp; Average&nbsp;
                                         <input type="radio" name="rating2_2" value="Good" />&nbsp; Good&nbsp; <input
-                                            type="radio" name="rating2_2" vlaue="VeryGood" />&nbsp; Very-Good&nbsp;
+                                            type="radio" name="rating2_2" value="VeryGood" />&nbsp; Very-Good&nbsp;
                                         <input type="radio" name="rating2_2" value="Excellent" />&nbsp; Excellent&nbsp;
                                     </span>
                                 </li>
@@ -349,7 +413,7 @@ if (isset($_POST['submit'])) {
                                         Below-Average&nbsp; <input type="radio" name="rating3_2"
                                             value="Average" />&nbsp; Average&nbsp;
                                         <input type="radio" name="rating3_2" value="Good" />&nbsp; Good&nbsp; <input
-                                            type="radio" name="rating3_2" vlaue="VeryGood" />&nbsp; Very-Good&nbsp;
+                                            type="radio" name="rating3_2" value="VeryGood" />&nbsp; Very-Good&nbsp;
                                         <input type="radio" name="rating3_2" value="Excellent" />&nbsp; Excellent&nbsp;
                                     </span>
                                 </li>
@@ -364,7 +428,7 @@ if (isset($_POST['submit'])) {
                                         Below-Average&nbsp; <input type="radio" name="rating4_2"
                                             value="Average" />&nbsp; Average&nbsp;
                                         <input type="radio" name="rating4_2" value="Good" />&nbsp; Good&nbsp; <input
-                                            type="radio" name="rating4_2" vlaue="VeryGood" />&nbsp; Very-Good&nbsp;
+                                            type="radio" name="rating4_2" value="VeryGood" />&nbsp; Very-Good&nbsp;
                                         <input type="radio" name="rating4_2" value="Excellent" />&nbsp; Excellent&nbsp;
                                     </span>
                                 </li>
@@ -379,7 +443,7 @@ if (isset($_POST['submit'])) {
                                         Below-Average&nbsp; <input type="radio" name="rating5_2"
                                             value="Average" />&nbsp; Average&nbsp;
                                         <input type="radio" name="rating5_2" value="Good" />&nbsp; Good&nbsp; <input
-                                            type="radio" name="rating5_2" vlaue="VeryGood" />&nbsp; Very-Good&nbsp;
+                                            type="radio" name="rating5_2" value="VeryGood" />&nbsp; Very-Good&nbsp;
                                         <input type="radio" name="rating5_2" value="Excellent" />&nbsp; Excellent&nbsp;
                                     </span>
                                 </li>
@@ -394,7 +458,7 @@ if (isset($_POST['submit'])) {
                                         Below-Average&nbsp; <input type="radio" name="rating6_2"
                                             value="Average" />&nbsp; Average&nbsp;
                                         <input type="radio" name="rating6_2" value="Good" />&nbsp; Good&nbsp; <input
-                                            type="radio" name="rating6_2" vlaue="VeryGood" />&nbsp; Very-Good&nbsp;
+                                            type="radio" name="rating6_2" value="VeryGood" />&nbsp; Very-Good&nbsp;
                                         <input type="radio" name="rating6_2" value="Excellent" />&nbsp; Excellent&nbsp;
                                     </span>
                                 </li>
@@ -410,7 +474,7 @@ if (isset($_POST['submit'])) {
                                         Below-Average&nbsp; <input type="radio" name="rating7_2"
                                             value="Average" />&nbsp; Average&nbsp;
                                         <input type="radio" name="rating7_2" value="Good" />&nbsp; Good&nbsp; <input
-                                            type="radio" name="rating7_2" vlaue="VeryGood" />&nbsp; Very-Good&nbsp;
+                                            type="radio" name="rating7_2" value="VeryGood" />&nbsp; Very-Good&nbsp;
                                         <input type="radio" name="rating7_2" value="Excellent" />&nbsp; Excellent&nbsp;
                                     </span>
                                 </li>
@@ -434,7 +498,7 @@ if (isset($_POST['submit'])) {
                                         Below-Average&nbsp; <input type="radio" name="rating1_3"
                                             value="Average" />&nbsp; Average&nbsp;
                                         <input type="radio" name="rating1_3" value="Good" />&nbsp; Good&nbsp; <input
-                                            type="radio" name="rating1_3" vlaue="VeryGood" />&nbsp; Very-Good&nbsp;
+                                            type="radio" name="rating1_3" value="VeryGood" />&nbsp; Very-Good&nbsp;
                                         <input type="radio" name="rating1_3" value="Excellent" />&nbsp; Excellent&nbsp;
                                     </span>
                                 </li>
@@ -449,7 +513,7 @@ if (isset($_POST['submit'])) {
                                         Below-Average&nbsp; <input type="radio" name="rating2_3"
                                             value="Average" />&nbsp; Average&nbsp;
                                         <input type="radio" name="rating2_3" value="Good" />&nbsp; Good&nbsp; <input
-                                            type="radio" name="rating2_3" vlaue="VeryGood" />&nbsp; Very-Good&nbsp;
+                                            type="radio" name="rating2_3" value="VeryGood" />&nbsp; Very-Good&nbsp;
                                         <input type="radio" name="rating2_3" value="Excellent" />&nbsp; Excellent&nbsp;
                                     </span>
                                 </li>
@@ -464,7 +528,7 @@ if (isset($_POST['submit'])) {
                                         Below-Average&nbsp; <input type="radio" name="rating3_3"
                                             value="Average" />&nbsp; Average&nbsp;
                                         <input type="radio" name="rating3_3" value="Good" />&nbsp; Good&nbsp; <input
-                                            type="radio" name="rating3_3" vlaue="VeryGood" />&nbsp; Very-Good&nbsp;
+                                            type="radio" name="rating3_3" value="VeryGood" />&nbsp; Very-Good&nbsp;
                                         <input type="radio" name="rating3_3" value="Excellent" />&nbsp; Excellent&nbsp;
                                     </span>
                                 </li>
@@ -479,7 +543,7 @@ if (isset($_POST['submit'])) {
                                         Below-Average&nbsp; <input type="radio" name="rating4_3"
                                             value="Average" />&nbsp; Average&nbsp;
                                         <input type="radio" name="rating4_3" value="Good" />&nbsp; Good&nbsp; <input
-                                            type="radio" name="rating4_3" vlaue="VeryGood" />&nbsp; Very-Good&nbsp;
+                                            type="radio" name="rating4_3" value="VeryGood" />&nbsp; Very-Good&nbsp;
                                         <input type="radio" name="rating4_3" value="Excellent" />&nbsp; Excellent&nbsp;
                                     </span>
                                 </li>
@@ -495,7 +559,7 @@ if (isset($_POST['submit'])) {
                                         Below-Average&nbsp; <input type="radio" name="rating5_3"
                                             value="Average" />&nbsp; Average&nbsp;
                                         <input type="radio" name="rating5_3" value="Good" />&nbsp; Good&nbsp; <input
-                                            type="radio" name="rating5_3" vlaue="VeryGood" />&nbsp; Very-Good&nbsp;
+                                            type="radio" name="rating5_3" value="VeryGood" />&nbsp; Very-Good&nbsp;
                                         <input type="radio" name="rating5_3" value="Excellent" />&nbsp; Excellent&nbsp;
                                     </span>
                                 </li>
@@ -510,7 +574,7 @@ if (isset($_POST['submit'])) {
                                         Below-Average&nbsp; <input type="radio" name="rating6_3"
                                             value="Average" />&nbsp; Average&nbsp;
                                         <input type="radio" name="rating6_3" value="Good" />&nbsp; Good&nbsp; <input
-                                            type="radio" name="rating6_3" vlaue="VeryGood" />&nbsp; Very-Good&nbsp;
+                                            type="radio" name="rating6_3" value="VeryGood" />&nbsp; Very-Good&nbsp;
                                         <input type="radio" name="rating6_3" value="Excellent" />&nbsp; Excellent&nbsp;
                                     </span>
                                 </li>
@@ -525,7 +589,7 @@ if (isset($_POST['submit'])) {
                                         Below-Average&nbsp; <input type="radio" name="rating7_3"
                                             value="Average" />&nbsp; Average&nbsp;
                                         <input type="radio" name="rating7_3" value="Good" />&nbsp; Good&nbsp; <input
-                                            type="radio" name="rating7_3" vlaue="VeryGood" />&nbsp; Very-Good&nbsp;
+                                            type="radio" name="rating7_3" value="VeryGood" />&nbsp; Very-Good&nbsp;
                                         <input type="radio" name="rating7_3" value="Excellent" />&nbsp; Excellent&nbsp;
                                     </span>
                                 </li>
@@ -540,7 +604,7 @@ if (isset($_POST['submit'])) {
                                         Below-Average&nbsp; <input type="radio" name="rating8_3"
                                             value="Average" />&nbsp; Average&nbsp;
                                         <input type="radio" name="rating8_3" value="Good" />&nbsp; Good&nbsp; <input
-                                            type="radio" name="rating8_3" vlaue="VeryGood" />&nbsp; Very-Good&nbsp;
+                                            type="radio" name="rating8_3" value="VeryGood" />&nbsp; Very-Good&nbsp;
                                         <input type="radio" name="rating8_3" value="Excellent" />&nbsp; Excellent&nbsp;
                                     </span>
                                 </li>
@@ -569,6 +633,7 @@ if (isset($_POST['submit'])) {
 </body>
 
 <!-- form validation -->
-<script type="text/javascript" src="../../../Js/papto.js"></script>
+<script type="text/javascript" src="../../../Js/papto.js">
+</script>
 
 </html>

@@ -1,3 +1,6 @@
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});
 const ctx = document.getElementById('myChart').getContext('2d');
 let data_mon = document.getElementById('monday').value;
 let data_tue = document.getElementById('tuesday').value;

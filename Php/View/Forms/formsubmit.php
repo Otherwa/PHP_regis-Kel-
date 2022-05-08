@@ -1,11 +1,12 @@
 <?php
 session_start();
 // php get user name using session variable
-$firstname = explode(" ", $_SESSION['name']);
+
 // validiting refresh
 if (!isset($_SESSION['name'])) {
     header('Location: forms.php');
 }
+$firstname = explode(" ", $_SESSION['name']);
 session_destroy();
 ?>
 

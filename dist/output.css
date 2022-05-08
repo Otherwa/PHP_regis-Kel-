@@ -666,13 +666,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 2.5rem;
 }
 
-.text-\[1rem\] {
-  font-size: 1rem;
-}
-
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
+}
+
+.text-\[1rem\] {
+  font-size: 1rem;
 }
 
 .font-bold {

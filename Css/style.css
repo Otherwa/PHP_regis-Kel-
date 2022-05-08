@@ -2,7 +2,8 @@
  /* selected text */
  
  html {
-     cursor: url(http://www.rw-designer.com/cursor-extern.php?id=121707), auto;
+     /* cursor: url(http://www.rw-designer.com/cursor-extern.php?id=121707), auto; */
+     cursor: auto;
  }
  
  html::-webkit-scrollbar {

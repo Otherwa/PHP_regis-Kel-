@@ -215,6 +215,7 @@ ul li {
 
 .radio {
     color: #0559c7;
+    font-family: system-ui;
 }
 
 .form-ol {

@@ -187,15 +187,19 @@ select {
 
 .selectaltered {
     height: 18px;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     font-size: 0.99rem;
+}
+
+#subject {
+    width: 8rem;
 }
 
 
 /* ol */
 
 ol {
-    list-style: upper-roman;
+    list-style: numeric;
     padding-left: 1.2rem;
     font-size: 1rem;
 }
@@ -215,7 +219,16 @@ ul li {
 
 .radio {
     color: #0559c7;
-    font-family: system-ui;
+    font-family: monospace;
+    font-size: 0.95rem;
+    font-weight: bold;
+    display: grid;
+    justify-content: start;
+    padding: 1rem 0rem 1rem 0rem;
+}
+
+.green {
+    color: green;
 }
 
 .form-ol {
@@ -225,7 +238,7 @@ ul li {
 @media screen and (max-width: 430px) {
     .selectaltered {
         height: 18px;
-        margin-bottom: 1.6rem;
+        margin-bottom: 2.1rem;
         font-size: 0.99rem;
     }
     .form-ol {
@@ -247,4 +260,14 @@ input::-webkit-inner-spin-button {
 
 input[type="number"] {
     -moz-appearance: textfield;
+}
+
+
+/* error messages */
+
+.err_ctrlid {
+    font-weight: bold;
+    font-family: monospace;
+    color: red;
+    display: none;
 }

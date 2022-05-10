@@ -9,6 +9,12 @@ if (!isset($_SESSION['setPAP'])) {
     header('Location: forms.php');
 }
 
+// establish connection
+$con = get_con();
+// err_msgs
+$err_ctrlid = " ";
+
+
 if (isset($_POST['submit'])) {
     //session statuses
     $status = session_status();
@@ -22,111 +28,79 @@ if (isset($_POST['submit'])) {
         //Destroy current and start new one
         $stat = 2;
     }
-    // establish connection
-    $con = get_con();
+
+
     $name = mysqli_real_escape_string($con, $_POST['name']);
     $rollno = mysqli_real_escape_string($con, $_POST['rollno']);
     $class = mysqli_real_escape_string($con, $_POST['class']);
     $division = mysqli_real_escape_string($con, $_POST['division']);
+    // get teacher
     $semester = mysqli_real_escape_string($con, $_POST['semester']);
-    $paper = getPaper($semester);
+    $paper = 1;
     $teacher = mysqli_real_escape_string($con, $_POST['teacher']);
 
     // validation and submission entry
-    $err = validate_submit_dat($name, $rollno, $class, $division, $semester, $paper, $teacher, $con);
+    $rating1_1 = mysqli_real_escape_string($con, $_POST['rating1_1']);
+    $rating2_1 = mysqli_real_escape_string($con, $_POST['rating2_1']);
+    $rating3_1 = mysqli_real_escape_string($con, $_POST['rating3_1']);
+    // second rating block
+    $rating1_2 = mysqli_real_escape_string($con, $_POST['rating1_2']);
+    $rating2_2 = mysqli_real_escape_string($con, $_POST['rating2_2']);
+    $rating3_2 = mysqli_real_escape_string($con, $_POST['rating3_2']);
+    $rating4_2 = mysqli_real_escape_string($con, $_POST['rating4_2']);
+    $rating5_2 = mysqli_real_escape_string($con, $_POST['rating5_2']);
+    $rating6_2 = mysqli_real_escape_string($con, $_POST['rating6_2']);
+    $rating7_2 = mysqli_real_escape_string($con, $_POST['rating7_2']);
+    // third rating block
+    $rating1_3 = mysqli_real_escape_string($con, $_POST['rating1_3']);
+    $rating2_3 = mysqli_real_escape_string($con, $_POST['rating2_3']);
+    $rating3_3 = mysqli_real_escape_string($con, $_POST['rating3_3']);
+    $rating4_3 = mysqli_real_escape_string($con, $_POST['rating4_3']);
+    $rating5_3 = mysqli_real_escape_string($con, $_POST['rating5_3']);
+    $rating6_3 = mysqli_real_escape_string($con, $_POST['rating6_3']);
+    $rating7_3 = mysqli_real_escape_string($con, $_POST['rating7_3']);
+    $rating8_3 = mysqli_real_escape_string($con, $_POST['rating8_3']);
 
-    // if yes 
-    if ($err != 1) {
-        $_SESSION['name'] = $name;
-        header('Location: formsubmit.php');
+    // all validtions
+    $is_stu = verify_student($rollno, $con);
+    // echo 
+    echo $name . " " . $rollno . " " . $class . " " . $division . " " . $semester . " " . $paper . " " . $teacher;
+    echo $rating1_1 . " " . $rating2_1 . " " . $rating3_1 . " " . $rating1_2 . " " . $rating2_2 . " " . $rating3_2 . " " . $rating4_2  . " " . $rating5_2 . " " . $rating6_2 . " " . $rating7_2;
+
+    // redirection flag
+    if ($is_stu == !false) {
+        $err_ctrlid = "display: none";
+        // header("Location: formsubmit.php");
     } else {
-        echo "<script>alert('or Something Wrong');</script>";
+        $err_ctrlid = "display: block";
     }
 }
 
 
-// get paper validation
-function getPaper($semester)
+
+function verify_student($rollno, $con)
 {
-    if ($semester == "I") {
-        return $_POST['paper1'];
-    } else if ($semester == "II") {
-        return  $_POST['paper2'];
-    } else if ($semester == "III") {
-        return $_POST['paper3'];
-    } else if ($semester == "IV") {
-        return  $_POST['paper4'];
-    } else if ($semester == "V") {
-        return  $_POST['paper5'];
-    } else if ($semester == "VI") {
-        return  $_POST['paper6'];
+    $query = "SELECT * FROM `activectrlid` WHERE ctrlid = '$rollno'";
+    $result = mysqli_query($con, $query);
+    if (mysqli_num_rows($result) > 0) {
+        return true;
     } else {
-        return " ";
+        return false;
     }
 }
 
-// validations setup 1
-function validate_submit_dat($name, $rollno, $class, $division, $semester, $paper, $teacher, $con)
+
+// sql teacher_name get
+function teacher_dat($con)
 {
-    if ($name == " " || $rollno == " " || $class == " " || $division == " " || $semester == " " || $paper == " " || $teacher == " ") {
-        echo "<script>alert('WTF check the form for name,... and ratings etc');</script>";
-        return 1;
-    } else {
-        if (isset($_POST['rating1_1']) && isset($_POST['rating2_1']) && isset($_POST['rating3_1']) && isset($_POST['rating1_2']) && isset($_POST['rating2_2']) && isset($_POST['rating3_2']) && isset($_POST['rating4_2']) && isset($_POST['rating5_2']) && isset($_POST['rating6_2']) && isset($_POST['rating7_2']) && isset($_POST['rating1_3']) && isset($_POST['rating2_3']) && isset($_POST['rating3_3']) && isset($_POST['rating4_3']) && isset($_POST['rating5_3']) && isset($_POST['rating6_3']) && isset($_POST['rating7_3']) && isset($_POST['rating8_3'])) {
-            $rating1_1 = $_POST['rating1_1'];
-            $rating2_1 = $_POST['rating2_1'];
-            $rating3_1 = $_POST['rating3_1'];
-            // second rating block
-            $rating1_2 = $_POST['rating1_2'];
-            $rating2_2 = $_POST['rating2_2'];
-            $rating3_2 = $_POST['rating3_2'];
-            $rating4_2 = $_POST['rating4_2'];
-            $rating5_2 = $_POST['rating5_2'];
-            $rating6_2 = $_POST['rating6_2'];
-            $rating7_2 = $_POST['rating7_2'];
-            // third rating block
-            $rating1_3 = $_POST['rating1_3'];
-            $rating2_3 = $_POST['rating2_3'];
-            $rating3_3 = $_POST['rating3_3'];
-            $rating4_3 = $_POST['rating4_3'];
-            $rating5_3 = $_POST['rating5_3'];
-            $rating6_3 = $_POST['rating6_3'];
-            $rating7_3 = $_POST['rating7_3'];
-            $rating8_3 = $_POST['rating8_3'];
-            return ratings_validate_submit($name, $rollno, $class, $division, $semester, $paper, $teacher, $rating1_1, $rating2_1, $rating3_1, $rating1_2, $rating2_2, $rating3_2, $rating4_2, $rating5_2, $rating6_2, $rating7_2, $rating1_3, $rating2_3, $rating3_3, $rating4_3, $rating5_3, $rating6_3, $rating7_3, $rating8_3, $con);
-        } else {
-            echo "<script>alert('WTF check ratings ');</script>";
-        }
+    $query = "SELECT distinct(`tname`) FROM `teachers`;";
+    $result = mysqli_query($con, $query);
+    while ($row = mysqli_fetch_assoc($result)) {
+
+        echo "<option value"  . "=\""  . $row['tname'] . "\">" . $row['tname'] . "</option>";
     }
 }
 
-//get ratings_validate_submit  setup 2
-function ratings_validate_submit($name, $rollno, $class, $division, $semester, $paper, $teacher, $rating1_1, $rating2_1, $rating3_1, $rating1_2, $rating2_2, $rating3_2, $rating4_2, $rating5_2, $rating6_2, $rating7_2, $rating1_3, $rating2_3, $rating3_3, $rating4_3, $rating5_3, $rating6_3, $rating7_3, $rating8_3, $con)
-{
-    $temp_query = "SELECT `Id` FROM `stu_dat` WHERE Name = '$name'";
-    $result = mysqli_query($con, $temp_query);
-    $result = mysqli_num_rows($result);
-    // only 5 forms for each semester
-    if ($result > 4) {
-        echo "<script>alert('WTF form instance already excits');</script>";
-        return 1;
-    }
-
-    // stu -dat
-    $query_stu_dat = "INSERT INTO `stu_dat`(`Name`, `Roll no`, `Class`, `Division`, `Semester`, `Paper`, `Teacher`, `Date/Time`) VALUES ('$name','$rollno','$class','$division','$semester','$paper','$teacher',current_timestamp())";
-    $result = mysqli_query($con, $query_stu_dat);
-
-    // get student id from database
-    $temp_query = "SELECT `Id` FROM `stu_dat` WHERE Name = '$name'";
-    $result = mysqli_query($con, $temp_query);
-    $row = mysqli_fetch_assoc($result);
-    $by_stu = $row['Id'];
-
-    // teach_rate
-    $query_teach_rate = "INSERT INTO `teach_rate`(`By_Stu`, `Positive and motivating attitude towards students.`, `Readiness to resolve student's doubts and general availability /`, `Worked hard to create a feeling of belongingness in a classroom`, `Command over the subject.`, `Skills in making the subject interesting.`, `Command over the medium of instruction(language) / comm`, `Clarity in approach / thinking.`, `Punctuality and regularity in taking lectures and practicals.`, `Proficiency in handling online classroom platforms.`, `Time management skill \ skill of completing the syllabus with do`, `Use of case studies, illustration, current events, anecdotes in`, `Use of interactive teaching - seminars, tutorials, quizzes, assi`, `Command over the medium of instruction(language) / communication`, `Giving references for further reading.`, `Conducting evaluation by periodic tests / questions answer sessi`, `Encouraging students to apply in real life whatever they have le`, `Counselling : Career / placement / personal.`, `Stimulating a sense of social responsibility.`) 
-    VALUES ('$by_stu','$rating1_1', '$rating2_1', '$rating3_1', '$rating1_2', '$rating2_2', '$rating3_2', '$rating4_2',' $rating5_2', '$rating6_2', '$rating7_2', '$rating1_3', '$rating2_3', '$rating3_3', '$rating4_3', '$rating5_3', '$rating6_3', '$rating7_3', '$rating8_3')";
-    $result = mysqli_query($con, $query_teach_rate);
-}
 
 
 ?>
@@ -157,6 +131,10 @@ function ratings_validate_submit($name, $rollno, $class, $division, $semester, $
     <meta http-equiv='cache-control' content='no-cache'>
     <meta http-equiv='expires' content='0'>
     <meta http-equiv='pragma' content='no-cache'>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
 </head>
 
 <body class="p-0 m-0">
@@ -166,7 +144,7 @@ function ratings_validate_submit($name, $rollno, $class, $division, $semester, $
     </ul>
     <br />
     <br />
-    <div class="bg-[#ffffff] text-center content" style="padding:1rem">
+    <div class="bg-[#ffffff] text-center content" style="padding:0.5rem">
         <br />
         <div class="l-form">
             <form action="#" method="POST" class="form">
@@ -181,135 +159,83 @@ function ratings_validate_submit($name, $rollno, $class, $division, $semester, $
                                 style="height: 3rem; margin-top: 1rem;" />
                         </span>
                     </h1>
+
                     <div class="form__div">
                         <input type="text" class="form__input" name="name" id="name" placeholder="e.g xyz"
                             autocomplete="off" />
                         <label for="" class="form__label">Name</label>
                     </div>
                     <div class="form__div">
-                        <input type="text" class="form__input" name="rollno" id="rollno" placeholder="e.g 3844A004"
+                        <input type="text" class="form__input" name="rollno" id="rollno" placeholder="e.g 2021070008"
                             autocomplete="off" />
-                        <label for="" class="form__label">Roll no?</label>
+                        <label for="" class="form__label">Control Id?</label>
+
                     </div>
+                    <p class="err_ctrlid" style="<?php echo $err_ctrlid ?>"> Not a valid Ctrl Id.</p>
+
+                    <br />
                     <!-- selected opts -->
                     <div class="form__div selectaltered">
                         <label for="class" class="text-sm" style="color: rgb(68, 74, 79);">&bull; Class:</label>
                         <select name="class" id="class">
                             <option value=" " selected>--</option>
-                            <option value="FYBsc-IT">FYBsc-IT</option>
-                            <option value="SYBsc-IT">SYBsc-IT</option>
-                            <option value="TYBsc-IT">TYBsc-IT</option>
+                            <option value="FYIT">FYBsc-IT</option>
+                            <option value="SYIT">SYBsc-IT</option>
+                            <option value="TYIT">TYBsc-IT</option>
                         </select>
                     </div>
                     <div class="form__div selectaltered">
                         <label for="division" class="text-sm" style="color: rgb(68, 74, 79);">&bull; Division:</label>
                         <select name="division" id="divison">
-                            <option value=" " selected>--</option>
-                            <option value="A">A</option>
+                            <option value=" ">--</option>
+                            <option value="A" selected>A</option>
                             <option value="B">B</option>
                             <option value="C">C</option>
                             <option value="D">D</option>
                         </select>
                     </div>
-                    <div class="form__div selectaltered">
-                        <label for="division" class="text-sm" style="color: rgb(68, 74, 79);">&bull; Choose
-                            Semester:</label>
-                        <select name="semester" id="semester" onchange="selectedsemester()">
-                            <option value=" " selected>--</option>
-                            <option value="I">I</option>
-                            <option value="II">II</option>
-                            <option value="III">III</option>
-                            <option value="IV">IV</option>
-                            <option value="V">V</option>
-                            <option value="VI">VI</option>
-                        </select>
-                    </div>
-                    <!-- paper selection -->
-                    <div class="form__div selectaltered" id="semester1_paper" style="display: none;">
-                        <label for="division" class="text-sm" style="color: rgb(68, 74, 79);">&bull; Choose Sem I
-                            Subject:</label>
-                        <select name="paper1">
-                            <option value="Imperative Programming">Imperative Programming</option>
-                            <option value="Digital Electronics">Digital Electronics</option>
-                            <option value="Operating Systems">Operating Systems</option>
-                            <option value="Discrete Mathematics">Discrete Mathematics</option>
-                            <option value="Communication Skills">Communication Skills</option>
-                            >
-                        </select>
-                    </div>
-                    <div class="form__div selectaltered" id="semester2_paper" style="display: none;">
-                        <label for="division" class="text-sm" style="color: rgb(68, 74, 79);">&bull; Choose Sem II
-                            Subject:</label>
-                        <select name="paper2">
-                            <option value="Object Oriented Programming">Object Oriented Programming</option>
-                            <option value="Microprocessor Architecture">Microprocessor Architecture</option>
-                            <option value="Web Programming">Web Programming</option>
-                            <option value="Numerical and Statistical Methods">Numerical and Statistical Methods</option>
-                            <option value="Green Computing">Green Computing</option>
-                        </select>
-                    </div>
-                    <div class="form__div selectaltered" id="semester3_paper" style="display: none;">
-                        <label for="division" class="text-sm" style="color: rgb(68, 74, 79);">&bull; Choose Sem III
-                            Subject:</label>
-                        <select name="paper3">
-                            <option value="Python Programming">Python Programming</option>
-                            <option value="Data Structures">Data Structures</option>
-                            <option value="Computer Networks">Computer Networks</option>
-                            <option value="Database Management SystemsIV">Database Management Systems</option>
-                            <option value="Applied Mathematics">Applied Mathematics</option>
-                        </select>
-                    </div>
-                    <div class="form__div selectaltered" id="semester4_paper" style="display: none;">
-                        <label for="division" class="text-sm" style="color: rgb(68, 74, 79);">&bull; Choose Sem IV
-                            Subject:</label>
-                        <select name="paper4">
-                            <option value="Core Java">Core Java</option>
-                            <option value="Introduction to Embedded Systems">Introduction to Embedded Systems</option>
-                            <option value="Computer Oriented Statistical Techniques">Computer Oriented Statistical
-                                Techniques</option>
-                            <option value="Software Engineering">Software Engineering</option>
-                            <option value="Computer Graphics and Animation">Computer Graphics and Animation</option>
-                        </select>
-                    </div>
-                    <div class="form__div selectaltered" id="semester5_paper" style="display: none;">
-                        <label for="division" class="text-sm" style="color: rgb(68, 74, 79);">&bull; Choose Sem V
-                            Subject:</label>
-                        <select name="paper5">
-                            <option value="Software Project Management">Software Project Management</option>
-                            <option value="Internet of Things">Internet of Things</option>
-                            <option value="Advanced Web Programming">Advanced Web Programming</option>
-                            <option value="Artificial Intelligence">Artificial Intelligence</option>
-                            <option value="Next Generation TechnologiesV">Next Generation Technologies</option>
-                        </select>
-                    </div>
-                    <div class="form__div selectaltered" id="semester6_paper" style="display: none;">
-                        <label for="division" class="text-sm" style="color: rgb(68, 74, 79);">&bull; Choose Sem VI
-                            Subject:</label>
-                        <select name="paper6">
-                            <option value="Software Quality Assurance">Software Quality Assurance</option>
-                            <option value="Security in Computing">Security in Computing</option>
-                            <option value="Business Intelligence">Business Intelligence</option>
-                            <option value="Principles of Geographic Information Systems">Principles of Geographic
-                                Information Systems</option>
-                            <option value="Cyber Laws">Cyber Laws</option>
-                        </select>
-                    </div>
 
-                    <!-- selected opts -->
                     <div class="form__div selectaltered" id="teacher">
                         <label for="division" class="text-sm" style="color: rgb(68, 74, 79);">&bull; Teacher
                             Name:</label>
-                        <select name="teacher">
+                        <select name="teacher" id="teacher" onchange=FetchSem(this.value)>
                             <option value=" ">--</option>
-                            <option value="Mrs Pournima Bhangal">Mrs Pournima Bhangale</option>
-                            <option value="Mrs Vandana Kadam">Mrs Vandana Kadam</option>
-                            <option value="Mrs Rakhee Rane">Mrs Rakhee Rane</option>
-                            <option value="Mrs Nanda Rupnar">Mrs Nanda Rupnar</option>
-                            <option value="Mrs Mohini Bhole">Mrs Mohini Bhole</option>
-                            <option value="Mrs Pranali Pawar">Mrs Pranali Pawar</option>
+                            <!-- get list -->
+                            <?php
+                            teacher_dat($con);
+                            ?>
                         </select>
                     </div>
+
+
+                    <div class="form__div selectaltered">
+                        <label for="division" class="text-sm" style="color: rgb(68, 74, 79);">&bull; Choose
+                            Semester:</label>
+                        <select name="semester" id="semester" onchange=FetchSub(this.value)>
+                            <option value=" ">--</option>
+                            <!-- get list Ajax-->
+                        </select>
+                    </div>
+                    <!-- paper selection -->
+
+
+
+
+                    <div class="form__div selectaltered" id="semester_paper" style="display: block;">
+                        <label for="subject" class="text-sm" style="color: rgb(68, 74, 79);">&bull; Choose
+                            Subject:</label>
+                        <select id="subject" name="paper">
+                            <!-- get list Ajax-->
+                            <option value=" ">--</option>
+                        </select>
+                    </div>
+
+                    <br />
+                    <!-- selected opts -->
+
+
                     <!-- all query  -->
+
                     <br />
                     <br />
                     <ol>
@@ -322,15 +248,20 @@ function ratings_validate_submit($name, $rollno, $class, $division, $semester, $
                                     Positive and motivating attitude towards students.
                                     <br />
                                     <br />
-                                    <span class="radio">
-                                        <input type="radio" name="rating1_1" value="VeryPoor" />&nbsp; Very-Poor&nbsp;
-                                        <input type="radio" name="rating1_1" value="Poor" />&nbsp; Poor&nbsp;
-                                        <input type="radio" name="rating1_1" value="BelowAverage" />&nbsp;
-                                        Below-Average&nbsp; <input type="radio" name="rating1_1"
-                                            value="Average" />&nbsp; Average&nbsp;
-                                        <input type="radio" name="rating1_1" value="Good" />&nbsp; Good&nbsp; <input
-                                            type="radio" name="rating1_1" value="VeryGood" />&nbsp; Very-Good&nbsp;
-                                        <input type="radio" name="rating1_1" value="Excellent" />&nbsp; Excellent&nbsp;
+                                    <span class=" radio">
+                                        <p><input type="radio" name="rating1_1" value="VeryPoor" />&nbsp;
+                                            Very-Poor&nbsp;</p>
+                                        <p><input type="radio" name="rating1_1" value="Poor" />&nbsp; Poor&nbsp;</p>
+                                        <p><input type="radio" name="rating1_1" value="BelowAverage" />&nbsp;
+                                            Below-Average&nbsp;</p>
+                                        <p><input type="radio" name="rating1_1" value="Average" />&nbsp;
+                                            Average&nbsp;
+                                        </p>
+                                        <p><input type="radio" name="rating1_1" value="Good" />&nbsp; Good&nbsp;</p>
+                                        <p> <input type="radio" name="rating1_1" value="VeryGood" />&nbsp;
+                                            Very-Good&nbsp;</p>
+                                        <p><input type="radio" name="rating1_1" value="Excellent" />&nbsp;
+                                            Excellent&nbsp;</p>
                                     </span>
                                 </li>
                                 <li>
@@ -339,14 +270,18 @@ function ratings_validate_submit($name, $rollno, $class, $division, $semester, $
                                     <br />
                                     <br />
                                     <span class="radio">
-                                        <input type="radio" name="rating2_1" value="VeryPoor" />&nbsp; Very-Poor&nbsp;
-                                        <input type="radio" name="rating2_1" value="Poor" />&nbsp; Poor&nbsp;
-                                        <input type="radio" name="rating2_1" value="BelowAverage" />&nbsp;
-                                        Below-Average&nbsp; <input type="radio" name="rating2_1"
-                                            value="Average" />&nbsp; Average&nbsp;
-                                        <input type="radio" name="rating2_1" value="Good" />&nbsp; Good&nbsp; <input
-                                            type="radio" name="rating2_1" value="VeryGood" />&nbsp; Very-Good&nbsp;
-                                        <input type="radio" name="rating2_1" value="Excellent" />&nbsp; Excellent&nbsp;
+                                        <p><input type="radio" name="rating2_1" value="VeryPoor" />&nbsp;
+                                            Very-Poor&nbsp; </p>
+                                        <p><input type="radio" name="rating2_1" value="Poor" />&nbsp; Poor&nbsp;</p>
+                                        <p><input type="radio" name="rating2_1" value="BelowAverage" />&nbsp;
+                                            Below-Average&nbsp;</p>
+                                        <p><input type="radio" name="rating2_1" value="Average" />&nbsp; Average&nbsp;
+                                        </p>
+                                        <p> <input type="radio" name="rating2_1" value="Good" />&nbsp; Good&nbsp;</p>
+                                        <p><input type="radio" name="rating2_1" value="VeryGood" />&nbsp;
+                                            Very-Good&nbsp;</p>
+                                        <p><input type="radio" name="rating2_1" value="Excellent" />&nbsp;
+                                            Excellent&nbsp;</p>
                                     </span>
                                 </li>
                                 <li>
@@ -354,14 +289,18 @@ function ratings_validate_submit($name, $rollno, $class, $division, $semester, $
                                     <br />
                                     <br />
                                     <span class="radio">
-                                        <input type="radio" name="rating3_1" value="VeryPoor" />&nbsp; Very-Poor&nbsp;
-                                        <input type="radio" name="rating3_1" value="Poor" />&nbsp; Poor&nbsp;
-                                        <input type="radio" name="rating3_1" value="BelowAverage" />&nbsp;
-                                        Below-Average&nbsp; <input type="radio" name="rating3_1"
-                                            value="Average" />&nbsp; Average&nbsp;
-                                        <input type="radio" name="rating3_1" value="Good" />&nbsp; Good&nbsp; <input
-                                            type="radio" name="rating3_1" value="VeryGood" />&nbsp; Very-Good&nbsp;
-                                        <input type="radio" name="rating3_1" value="Excellent" />&nbsp; Excellent&nbsp;
+                                        <p><input type="radio" name="rating3_1" value="VeryPoor" />&nbsp;
+                                            Very-Poor&nbsp;</p>
+                                        <p><input type="radio" name="rating3_1" value="Poor" />&nbsp; Poor&nbsp;</p>
+                                        <p> <input type="radio" name="rating3_1" value="BelowAverage" />&nbsp;
+                                            Below-Average&nbsp;</p>
+                                        <p> <input type="radio" name="rating3_1" value="Average" />&nbsp; Average&nbsp;
+                                        </p>
+                                        <p><input type="radio" name="rating3_1" value="Good" />&nbsp; Good&nbsp; </p>
+                                        <p><input type="radio" name="rating3_1" value="VeryGood" />&nbsp;
+                                            Very-Good&nbsp;</p>
+                                        <p><input type="radio" name="rating3_1" value="Excellent" />&nbsp;
+                                            Excellent&nbsp;</p>
                                     </span>
                                 </li>
                             </ul>
@@ -377,14 +316,20 @@ function ratings_validate_submit($name, $rollno, $class, $division, $semester, $
                                     <br />
                                     <br />
                                     <span class="radio">
-                                        <input type="radio" name="rating1_2" value="VeryPoor" />&nbsp; Very-Poor&nbsp;
-                                        <input type="radio" name="rating1_2" value="Poor" />&nbsp; Poor&nbsp;
-                                        <input type="radio" name="rating1_2" value="BelowAverage" />&nbsp;
-                                        Below-Average&nbsp; <input type="radio" name="rating1_2"
-                                            value="Average" />&nbsp; Average&nbsp;
-                                        <input type="radio" name="rating1_2" value="Good" />&nbsp; Good&nbsp; <input
-                                            type="radio" name="rating1_2" value="VeryGood" />&nbsp; Very-Good&nbsp;
-                                        <input type="radio" name="rating1_2" value="Excellent" />&nbsp; Excellent&nbsp;
+                                        <p><input type="radio" name="rating1_2" value="VeryPoor" />&nbsp;
+                                            Very-Poor&nbsp;
+                                        </p>
+                                        <p><input type="radio" name="rating1_2" value="Poor" />&nbsp; Poor&nbsp;</p>
+                                        <p><input type="radio" name="rating1_2" value="BelowAverage" />&nbsp;
+                                            Below-Average&nbsp;</p>
+                                        <p><input type="radio" name="rating1_2" value="Average" />&nbsp; Average&nbsp;
+                                        </p>
+                                        <p><input type="radio" name="rating1_2" value="Good" />&nbsp; Good&nbsp;</p>
+                                        <p><input type="radio" name="rating1_2" value="VeryGood" />&nbsp;
+                                            Very-Good&nbsp;
+                                        </p>
+                                        <p><input type="radio" name="rating1_2" value="Excellent" />&nbsp;
+                                            Excellent&nbsp;</p>
                                     </span>
                                 </li>
                                 <li>
@@ -392,14 +337,18 @@ function ratings_validate_submit($name, $rollno, $class, $division, $semester, $
                                     <br />
                                     <br />
                                     <span class="radio">
-                                        <input type="radio" name="rating2_2" value="VeryPoor" />&nbsp; Very-Poor&nbsp;
-                                        <input type="radio" name="rating2_2" value="Poor" />&nbsp; Poor&nbsp;
-                                        <input type="radio" name="rating2_2" value="BelowAverage" />&nbsp;
-                                        Below-Average&nbsp; <input type="radio" name="rating2_2"
-                                            value="Average" />&nbsp; Average&nbsp;
-                                        <input type="radio" name="rating2_2" value="Good" />&nbsp; Good&nbsp; <input
-                                            type="radio" name="rating2_2" value="VeryGood" />&nbsp; Very-Good&nbsp;
-                                        <input type="radio" name="rating2_2" value="Excellent" />&nbsp; Excellent&nbsp;
+                                        <p><input type="radio" name="rating2_2" value="VeryPoor" />&nbsp;
+                                            Very-Poor&nbsp;</p>
+                                        <p><input type="radio" name="rating2_2" value="Poor" />&nbsp; Poor&nbsp; </p>
+                                        <p> <input type="radio" name="rating2_2" value="BelowAverage" />&nbsp;
+                                            Below-Average&nbsp;</p>
+                                        <p> <input type="radio" name="rating2_2" value="Average" />&nbsp; Average&nbsp;
+                                        </p>
+                                        <p> <input type="radio" name="rating2_2" value="Good" />&nbsp; Good&nbsp;</p>
+                                        <p> <input type="radio" name="rating2_2" value="VeryGood" />&nbsp;
+                                            Very-Good&nbsp;</p>
+                                        <p> <input type="radio" name="rating2_2" value="Excellent" />&nbsp;
+                                            Excellent&nbsp;</p>
                                     </span>
                                 </li>
                                 <li>
@@ -407,14 +356,18 @@ function ratings_validate_submit($name, $rollno, $class, $division, $semester, $
                                     <br />
                                     <br />
                                     <span class="radio">
-                                        <input type="radio" name="rating3_2" value="VeryPoor" />&nbsp; Very-Poor&nbsp;
-                                        <input type="radio" name="rating3_2" value="Poor" />&nbsp; Poor&nbsp;
-                                        <input type="radio" name="rating3_2" value="BelowAverage" />&nbsp;
-                                        Below-Average&nbsp; <input type="radio" name="rating3_2"
-                                            value="Average" />&nbsp; Average&nbsp;
-                                        <input type="radio" name="rating3_2" value="Good" />&nbsp; Good&nbsp; <input
-                                            type="radio" name="rating3_2" value="VeryGood" />&nbsp; Very-Good&nbsp;
-                                        <input type="radio" name="rating3_2" value="Excellent" />&nbsp; Excellent&nbsp;
+                                        <p><input type="radio" name="rating3_2" value="VeryPoor" />&nbsp;
+                                            Very-Poor&nbsp;</p>
+                                        <p> <input type="radio" name="rating3_2" value="Poor" />&nbsp; Poor&nbsp;</p>
+                                        <p> <input type="radio" name="rating3_2" value="BelowAverage" />&nbsp;
+                                            Below-Average&nbsp;</p>
+                                        <p> <input type="radio" name="rating3_2" value="Average" />&nbsp; Average&nbsp;
+                                        </p>
+                                        <p> <input type="radio" name="rating3_2" value="Good" />&nbsp; Good&nbsp;</p>
+                                        <p><input type="radio" name="rating3_2" value="VeryGood" />&nbsp;
+                                            Very-Good&nbsp;</p>
+                                        <p> <input type="radio" name="rating3_2" value="Excellent" />&nbsp;
+                                            Excellent&nbsp;</p>
                                     </span>
                                 </li>
                                 <li>
@@ -422,14 +375,18 @@ function ratings_validate_submit($name, $rollno, $class, $division, $semester, $
                                     <br />
                                     <br />
                                     <span class="radio">
-                                        <input type="radio" name="rating4_2" value="VeryPoor" />&nbsp; Very-Poor&nbsp;
-                                        <input type="radio" name="rating4_2" value="Poor" />&nbsp; Poor&nbsp;
-                                        <input type="radio" name="rating4_2" value="BelowAverage" />&nbsp;
-                                        Below-Average&nbsp; <input type="radio" name="rating4_2"
-                                            value="Average" />&nbsp; Average&nbsp;
-                                        <input type="radio" name="rating4_2" value="Good" />&nbsp; Good&nbsp; <input
-                                            type="radio" name="rating4_2" value="VeryGood" />&nbsp; Very-Good&nbsp;
-                                        <input type="radio" name="rating4_2" value="Excellent" />&nbsp; Excellent&nbsp;
+                                        <p><input type="radio" name="rating4_2" value="VeryPoor" />&nbsp;
+                                            Very-Poor&nbsp;</p>
+                                        <p><input type="radio" name="rating4_2" value="Poor" />&nbsp; Poor&nbsp;</p>
+                                        <p><input type="radio" name="rating4_2" value="BelowAverage" />&nbsp;
+                                            Below-Average&nbsp;</p>
+                                        <p><input type="radio" name="rating4_2" value="Average" />&nbsp; Average&nbsp;
+                                        </p>
+                                        <p><input type="radio" name="rating4_2" value="Good" />&nbsp; Good&nbsp;</p>
+                                        <p> <input type="radio" name="rating4_2" value="VeryGood" />&nbsp;
+                                            Very-Good&nbsp;</p>
+                                        <p> <input type="radio" name="rating4_2" value="Excellent" />&nbsp;
+                                            Excellent&nbsp;</p>
                                     </span>
                                 </li>
                                 <li>
@@ -437,14 +394,18 @@ function ratings_validate_submit($name, $rollno, $class, $division, $semester, $
                                     <br />
                                     <br />
                                     <span class="radio">
-                                        <input type="radio" name="rating5_2" value="VeryPoor" />&nbsp; Very-Poor&nbsp;
-                                        <input type="radio" name="rating5_2" value="Poor" />&nbsp; Poor&nbsp;
-                                        <input type="radio" name="rating5_2" value="BelowAverage" />&nbsp;
-                                        Below-Average&nbsp; <input type="radio" name="rating5_2"
-                                            value="Average" />&nbsp; Average&nbsp;
-                                        <input type="radio" name="rating5_2" value="Good" />&nbsp; Good&nbsp; <input
-                                            type="radio" name="rating5_2" value="VeryGood" />&nbsp; Very-Good&nbsp;
-                                        <input type="radio" name="rating5_2" value="Excellent" />&nbsp; Excellent&nbsp;
+                                        <p><input type="radio" name="rating5_2" value="VeryPoor" />&nbsp;
+                                            Very-Poor&nbsp;</p>
+                                        <p><input type="radio" name="rating5_2" value="Poor" />&nbsp; Poor&nbsp;</p>
+                                        <p><input type="radio" name="rating5_2" value="BelowAverage" />&nbsp;
+                                            Below-Average&nbsp;</p>
+                                        <p> <input type="radio" name="rating5_2" value="Average" />&nbsp; Average&nbsp;
+                                        </p>
+                                        <p><input type="radio" name="rating5_2" value="Good" />&nbsp; Good&nbsp;</p>
+                                        <p> <input type="radio" name="rating5_2" value="VeryGood" />&nbsp;
+                                            Very-Good&nbsp;</p>
+                                        <p><input type="radio" name="rating5_2" value="Excellent" />&nbsp;
+                                            Excellent&nbsp;</p>
                                     </span>
                                 </li>
                                 <li>
@@ -452,14 +413,18 @@ function ratings_validate_submit($name, $rollno, $class, $division, $semester, $
                                     <br />
                                     <br />
                                     <span class="radio">
-                                        <input type="radio" name="rating6_2" value="VeryPoor" />&nbsp; Very-Poor&nbsp;
-                                        <input type="radio" name="rating6_2" value="Poor" />&nbsp; Poor&nbsp;
-                                        <input type="radio" name="rating6_2" value="BelowAverage" />&nbsp;
-                                        Below-Average&nbsp; <input type="radio" name="rating6_2"
-                                            value="Average" />&nbsp; Average&nbsp;
-                                        <input type="radio" name="rating6_2" value="Good" />&nbsp; Good&nbsp; <input
-                                            type="radio" name="rating6_2" value="VeryGood" />&nbsp; Very-Good&nbsp;
-                                        <input type="radio" name="rating6_2" value="Excellent" />&nbsp; Excellent&nbsp;
+                                        <p><input type="radio" name="rating6_2" value="VeryPoor" />&nbsp;
+                                            Very-Poor&nbsp;</p>
+                                        <p> <input type="radio" name="rating6_2" value="Poor" />&nbsp; Poor&nbsp;</p>
+                                        <p> <input type="radio" name="rating6_2" value="BelowAverage" />&nbsp;
+                                            Below-Average&nbsp;</p>
+                                        <p> <input type="radio" name="rating6_2" value="Average" />&nbsp; Average&nbsp;
+                                        </p>
+                                        <p> <input type="radio" name="rating6_2" value="Good" />&nbsp; Good&nbsp;</p>
+                                        <p> <input type="radio" name="rating6_2" value="VeryGood" />&nbsp;
+                                            Very-Good&nbsp;</p>
+                                        <p> <input type="radio" name="rating6_2" value="Excellent" />&nbsp;
+                                            Excellent&nbsp;</p>
                                     </span>
                                 </li>
                                 <li>
@@ -468,14 +433,18 @@ function ratings_validate_submit($name, $rollno, $class, $division, $semester, $
                                     <br />
                                     <br />
                                     <span class="radio">
-                                        <input type="radio" name="rating7_2" value="VeryPoor" />&nbsp; Very-Poor&nbsp;
-                                        <input type="radio" name="rating7_2" value="Poor" />&nbsp; Poor&nbsp;
-                                        <input type="radio" name="rating7_2" value="BelowAverage" />&nbsp;
-                                        Below-Average&nbsp; <input type="radio" name="rating7_2"
-                                            value="Average" />&nbsp; Average&nbsp;
-                                        <input type="radio" name="rating7_2" value="Good" />&nbsp; Good&nbsp; <input
-                                            type="radio" name="rating7_2" value="VeryGood" />&nbsp; Very-Good&nbsp;
-                                        <input type="radio" name="rating7_2" value="Excellent" />&nbsp; Excellent&nbsp;
+                                        <p><input type="radio" name="rating7_2" value="VeryPoor" />&nbsp;
+                                            Very-Poor&nbsp;</p>
+                                        <p><input type="radio" name="rating7_2" value="Poor" />&nbsp; Poor&nbsp;</p>
+                                        <p><input type="radio" name="rating7_2" value="BelowAverage" />&nbsp;
+                                            Below-Average&nbsp;</p>
+                                        <p><input type="radio" name="rating7_2" value="Average" />&nbsp; Average&nbsp;
+                                        </p>
+                                        <p> <input type="radio" name="rating7_2" value="Good" />&nbsp; Good&nbsp;</p>
+                                        <p><input type="radio" name="rating7_2" value="VeryGood" />&nbsp;
+                                            Very-Good&nbsp;</p>
+                                        <p><input type="radio" name="rating7_2" value="Excellent" />&nbsp;
+                                            Excellent&nbsp;</p>
                                     </span>
                                 </li>
                             </ul>
@@ -487,19 +456,23 @@ function ratings_validate_submit($name, $rollno, $class, $division, $semester, $
                             <br />
                             <ul>
                                 <li>
-                                    CUse of case studies, illustration, current events, anecdotes in teaching.ommand
+                                    Use of case studies, illustration, current events, anecdotes in teaching.ommand
                                     over the subject.
                                     <br />
                                     <br />
                                     <span class="radio">
-                                        <input type="radio" name="rating1_3" value="VeryPoor" />&nbsp; Very-Poor&nbsp;
-                                        <input type="radio" name="rating1_3" value="Poor" />&nbsp; Poor&nbsp;
-                                        <input type="radio" name="rating1_3" value="BelowAverage" />&nbsp;
-                                        Below-Average&nbsp; <input type="radio" name="rating1_3"
-                                            value="Average" />&nbsp; Average&nbsp;
-                                        <input type="radio" name="rating1_3" value="Good" />&nbsp; Good&nbsp; <input
-                                            type="radio" name="rating1_3" value="VeryGood" />&nbsp; Very-Good&nbsp;
-                                        <input type="radio" name="rating1_3" value="Excellent" />&nbsp; Excellent&nbsp;
+                                        <p><input type="radio" name="rating1_3" value="VeryPoor" />&nbsp;
+                                            Very-Poor&nbsp;</p>
+                                        <p><input type="radio" name="rating1_3" value="Poor" />&nbsp; Poor&nbsp;</p>
+                                        <p><input type="radio" name="rating1_3" value="BelowAverage" />&nbsp;
+                                            Below-Average&nbsp;</p>
+                                        <p> <input type="radio" name="rating1_3" value="Average" />&nbsp; Average&nbsp;
+                                        </p>
+                                        <p> <input type="radio" name="rating1_3" value="Good" />&nbsp; Good&nbsp;</p>
+                                        <p><input type="radio" name="rating1_3" value="VeryGood" />&nbsp;
+                                            Very-Good&nbsp;</p>
+                                        <p><input type="radio" name="rating1_3" value="Excellent" />&nbsp;
+                                            Excellent&nbsp;</p>
                                     </span>
                                 </li>
                                 <li>
@@ -507,14 +480,18 @@ function ratings_validate_submit($name, $rollno, $class, $division, $semester, $
                                     <br />
                                     <br />
                                     <span class="radio">
-                                        <input type="radio" name="rating2_3" value="VeryPoor" />&nbsp; Very-Poor&nbsp;
-                                        <input type="radio" name="rating2_3" value="Poor" />&nbsp; Poor&nbsp;
-                                        <input type="radio" name="rating2_3" value="BelowAverage" />&nbsp;
-                                        Below-Average&nbsp; <input type="radio" name="rating2_3"
-                                            value="Average" />&nbsp; Average&nbsp;
-                                        <input type="radio" name="rating2_3" value="Good" />&nbsp; Good&nbsp; <input
-                                            type="radio" name="rating2_3" value="VeryGood" />&nbsp; Very-Good&nbsp;
-                                        <input type="radio" name="rating2_3" value="Excellent" />&nbsp; Excellent&nbsp;
+                                        <p><input type="radio" name="rating2_3" value="VeryPoor" />&nbsp;
+                                            Very-Poor&nbsp;</p>
+                                        <p><input type="radio" name="rating2_3" value="Poor" />&nbsp; Poor&nbsp;</p>
+                                        <p><input type="radio" name="rating2_3" value="BelowAverage" />&nbsp;
+                                            Below-Average&nbsp;</p>
+                                        <p> <input type="radio" name="rating2_3" value="Average" />&nbsp; Average&nbsp;
+                                        </p>
+                                        <p> <input type="radio" name="rating2_3" value="Good" />&nbsp; Good&nbsp;</p>
+                                        <p><input type="radio" name="rating2_3" value="VeryGood" />&nbsp;
+                                            Very-Good&nbsp;</p>
+                                        <p><input type="radio" name="rating2_3" value="Excellent" />&nbsp;
+                                            Excellent&nbsp;</p>
                                     </span>
                                 </li>
                                 <li>
@@ -522,14 +499,18 @@ function ratings_validate_submit($name, $rollno, $class, $division, $semester, $
                                     <br />
                                     <br />
                                     <span class="radio">
-                                        <input type="radio" name="rating3_3" value="VeryPoor" />&nbsp; Very-Poor&nbsp;
-                                        <input type="radio" name="rating3_3" value="Poor" />&nbsp; Poor&nbsp;
-                                        <input type="radio" name="rating3_3" value="BelowAverage" />&nbsp;
-                                        Below-Average&nbsp; <input type="radio" name="rating3_3"
-                                            value="Average" />&nbsp; Average&nbsp;
-                                        <input type="radio" name="rating3_3" value="Good" />&nbsp; Good&nbsp; <input
-                                            type="radio" name="rating3_3" value="VeryGood" />&nbsp; Very-Good&nbsp;
-                                        <input type="radio" name="rating3_3" value="Excellent" />&nbsp; Excellent&nbsp;
+                                        <p><input type="radio" name="rating3_3" value="VeryPoor" />&nbsp;
+                                            Very-Poor&nbsp;</p>
+                                        <p><input type="radio" name="rating3_3" value="Poor" />&nbsp; Poor&nbsp;</p>
+                                        <p><input type="radio" name="rating3_3" value="BelowAverage" />&nbsp;
+                                            Below-Average&nbsp;</p>
+                                        <p> <input type="radio" name="rating3_3" value="Average" />&nbsp; Average&nbsp;
+                                        </p>
+                                        <p> <input type="radio" name="rating3_3" value="Good" />&nbsp; Good&nbsp;</p>
+                                        <p><input type="radio" name="rating3_3" value="VeryGood" />&nbsp;
+                                            Very-Good&nbsp;</p>
+                                        <p><input type="radio" name="rating3_3" value="Excellent" />&nbsp;
+                                            Excellent&nbsp;</p>
                                     </span>
                                 </li>
                                 <li>
@@ -537,14 +518,18 @@ function ratings_validate_submit($name, $rollno, $class, $division, $semester, $
                                     <br />
                                     <br />
                                     <span class="radio">
-                                        <input type="radio" name="rating4_3" value="VeryPoor" />&nbsp; Very-Poor&nbsp;
-                                        <input type="radio" name="rating4_3" value="Poor" />&nbsp; Poor&nbsp;
-                                        <input type="radio" name="rating4_3" value="BelowAverage" />&nbsp;
-                                        Below-Average&nbsp; <input type="radio" name="rating4_3"
-                                            value="Average" />&nbsp; Average&nbsp;
-                                        <input type="radio" name="rating4_3" value="Good" />&nbsp; Good&nbsp; <input
-                                            type="radio" name="rating4_3" value="VeryGood" />&nbsp; Very-Good&nbsp;
-                                        <input type="radio" name="rating4_3" value="Excellent" />&nbsp; Excellent&nbsp;
+                                        <p><input type="radio" name="rating4_3" value="VeryPoor" />&nbsp;
+                                            Very-Poor&nbsp;</p>
+                                        <p><input type="radio" name="rating4_3" value="Poor" />&nbsp; Poor&nbsp;</p>
+                                        <p><input type="radio" name="rating4_3" value="BelowAverage" />&nbsp;
+                                            Below-Average&nbsp;</p>
+                                        <p> <input type="radio" name="rating4_3" value="Average" />&nbsp; Average&nbsp;
+                                        </p>
+                                        <p> <input type="radio" name="rating4_3" value="Good" />&nbsp; Good&nbsp;</p>
+                                        <p><input type="radio" name="rating4_3" value="VeryGood" />&nbsp;
+                                            Very-Good&nbsp;</p>
+                                        <p><input type="radio" name="rating4_3" value="Excellent" />&nbsp;
+                                            Excellent&nbsp;</p>
                                     </span>
                                 </li>
                                 <li>
@@ -553,14 +538,18 @@ function ratings_validate_submit($name, $rollno, $class, $division, $semester, $
                                     <br />
                                     <br />
                                     <span class="radio">
-                                        <input type="radio" name="rating5_3" value="VeryPoor" />&nbsp; Very-Poor&nbsp;
-                                        <input type="radio" name="rating5_3" value="Poor" />&nbsp; Poor&nbsp;
-                                        <input type="radio" name="rating5_3" value="BelowAverage" />&nbsp;
-                                        Below-Average&nbsp; <input type="radio" name="rating5_3"
-                                            value="Average" />&nbsp; Average&nbsp;
-                                        <input type="radio" name="rating5_3" value="Good" />&nbsp; Good&nbsp; <input
-                                            type="radio" name="rating5_3" value="VeryGood" />&nbsp; Very-Good&nbsp;
-                                        <input type="radio" name="rating5_3" value="Excellent" />&nbsp; Excellent&nbsp;
+                                        <p><input type="radio" name="rating5_3" value="VeryPoor" />&nbsp;
+                                            Very-Poor&nbsp;</p>
+                                        <p><input type="radio" name="rating5_3" value="Poor" />&nbsp; Poor&nbsp;</p>
+                                        <p><input type="radio" name="rating5_3" value="BelowAverage" />&nbsp;
+                                            Below-Average&nbsp;</p>
+                                        <p> <input type="radio" name="rating5_3" value="Average" />&nbsp; Average&nbsp;
+                                        </p>
+                                        <p> <input type="radio" name="rating5_3" value="Good" />&nbsp; Good&nbsp;</p>
+                                        <p><input type="radio" name="rating5_3" value="VeryGood" />&nbsp;
+                                            Very-Good&nbsp;</p>
+                                        <p><input type="radio" name="rating5_3" value="Excellent" />&nbsp;
+                                            Excellent&nbsp;</p>
                                     </span>
                                 </li>
                                 <li>
@@ -568,14 +557,18 @@ function ratings_validate_submit($name, $rollno, $class, $division, $semester, $
                                     <br />
                                     <br />
                                     <span class="radio">
-                                        <input type="radio" name="rating6_3" value="VeryPoor" />&nbsp; Very-Poor&nbsp;
-                                        <input type="radio" name="rating6_3" value="Poor" />&nbsp; Poor&nbsp;
-                                        <input type="radio" name="rating6_3" value="BelowAverage" />&nbsp;
-                                        Below-Average&nbsp; <input type="radio" name="rating6_3"
-                                            value="Average" />&nbsp; Average&nbsp;
-                                        <input type="radio" name="rating6_3" value="Good" />&nbsp; Good&nbsp; <input
-                                            type="radio" name="rating6_3" value="VeryGood" />&nbsp; Very-Good&nbsp;
-                                        <input type="radio" name="rating6_3" value="Excellent" />&nbsp; Excellent&nbsp;
+                                        <p><input type="radio" name="rating6_3" value="VeryPoor" />&nbsp;
+                                            Very-Poor&nbsp;</p>
+                                        <p><input type="radio" name="rating6_3" value="Poor" />&nbsp; Poor&nbsp;</p>
+                                        <p><input type="radio" name="rating6_3" value="BelowAverage" />&nbsp;
+                                            Below-Average&nbsp;</p>
+                                        <p> <input type="radio" name="rating6_3" value="Average" />&nbsp; Average&nbsp;
+                                        </p>
+                                        <p> <input type="radio" name="rating6_3" value="Good" />&nbsp; Good&nbsp;</p>
+                                        <p><input type="radio" name="rating6_3" value="VeryGood" />&nbsp;
+                                            Very-Good&nbsp;</p>
+                                        <p><input type="radio" name="rating6_3" value="Excellent" />&nbsp;
+                                            Excellent&nbsp;</p>
                                     </span>
                                 </li>
                                 <li>
@@ -583,14 +576,18 @@ function ratings_validate_submit($name, $rollno, $class, $division, $semester, $
                                     <br />
                                     <br />
                                     <span class="radio">
-                                        <input type="radio" name="rating7_3" value="VeryPoor" />&nbsp; Very-Poor&nbsp;
-                                        <input type="radio" name="rating7_3" value="Poor" />&nbsp; Poor&nbsp;
-                                        <input type="radio" name="rating7_3" value="BelowAverage" />&nbsp;
-                                        Below-Average&nbsp; <input type="radio" name="rating7_3"
-                                            value="Average" />&nbsp; Average&nbsp;
-                                        <input type="radio" name="rating7_3" value="Good" />&nbsp; Good&nbsp; <input
-                                            type="radio" name="rating7_3" value="VeryGood" />&nbsp; Very-Good&nbsp;
-                                        <input type="radio" name="rating7_3" value="Excellent" />&nbsp; Excellent&nbsp;
+                                        <p><input type="radio" name="rating7_3" value="VeryPoor" />&nbsp;
+                                            Very-Poor&nbsp;</p>
+                                        <p><input type="radio" name="rating7_3" value="Poor" />&nbsp; Poor&nbsp;</p>
+                                        <p><input type="radio" name="rating7_3" value="BelowAverage" />&nbsp;
+                                            Below-Average&nbsp;</p>
+                                        <p> <input type="radio" name="rating7_3" value="Average" />&nbsp; Average&nbsp;
+                                        </p>
+                                        <p> <input type="radio" name="rating7_3" value="Good" />&nbsp; Good&nbsp;</p>
+                                        <p><input type="radio" name="rating7_3" value="VeryGood" />&nbsp;
+                                            Very-Good&nbsp;</p>
+                                        <p><input type="radio" name="rating7_3" value="Excellent" />&nbsp;
+                                            Excellent&nbsp;</p>
                                     </span>
                                 </li>
                                 <li>
@@ -598,14 +595,18 @@ function ratings_validate_submit($name, $rollno, $class, $division, $semester, $
                                     <br />
                                     <br />
                                     <span class="radio">
-                                        <input type="radio" name="rating8_3" value="VeryPoor" />&nbsp; Very-Poor&nbsp;
-                                        <input type="radio" name="rating8_3" value="Poor" />&nbsp; Poor&nbsp;
-                                        <input type="radio" name="rating8_3" value="BelowAverage" />&nbsp;
-                                        Below-Average&nbsp; <input type="radio" name="rating8_3"
-                                            value="Average" />&nbsp; Average&nbsp;
-                                        <input type="radio" name="rating8_3" value="Good" />&nbsp; Good&nbsp; <input
-                                            type="radio" name="rating8_3" value="VeryGood" />&nbsp; Very-Good&nbsp;
-                                        <input type="radio" name="rating8_3" value="Excellent" />&nbsp; Excellent&nbsp;
+                                        <p><input type="radio" name="rating8_3" value="VeryPoor" />&nbsp;
+                                            Very-Poor&nbsp;</p>
+                                        <p><input type="radio" name="rating8_3" value="Poor" />&nbsp; Poor&nbsp;</p>
+                                        <p><input type="radio" name="rating8_3" value="BelowAverage" />&nbsp;
+                                            Below-Average&nbsp;</p>
+                                        <p> <input type="radio" name="rating8_3" value="Average" />&nbsp; Average&nbsp;
+                                        </p>
+                                        <p> <input type="radio" name="rating8_3" value="Good" />&nbsp; Good&nbsp;</p>
+                                        <p><input type="radio" name="rating8_3" value="VeryGood" />&nbsp;
+                                            Very-Good&nbsp;</p>
+                                        <p><input type="radio" name="rating8_3" value="Excellent" />&nbsp;
+                                            Excellent&nbsp;</p>
                                     </span>
                                 </li>
                             </ul>
@@ -630,10 +631,12 @@ function ratings_validate_submit($name, $rollno, $class, $division, $semester, $
             </p>
         </div>
     </div>
+
 </body>
+<!-- jquery -->
 
 <!-- form validation -->
-<script type="text/javascript" src="../../../Js/papto.js">
-</script>
+<script type="text/javascript" src="../../../Js/papto.js"></script>
+
 
 </html>

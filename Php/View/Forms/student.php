@@ -213,6 +213,7 @@ if (isset($_POST['submit'])) {
                     <li style="color:red">Each question has seven responses, choose the most appropriate one. *</li>
                 </ul>
                 <br />
+
                 <!-- selected opts -->
 
                 <ol class="form-ol">
@@ -221,7 +222,7 @@ if (isset($_POST['submit'])) {
                         <br />
                         <br />
                         <span class="radio">
-                            <input type="radio" name="rating_1" value="VeryPoor">&nbsp; Very-Poor&nbsp;
+                            <p><input type="radio" name="rating_1" value="VeryPoor">&nbsp; Very-Poor&nbsp;</p>
                             <input type="radio" name="rating_1" value="Poor">&nbsp; Poor&nbsp;
                             <input type="radio" name="rating_1" value="BelowAverage">&nbsp; Below-Average&nbsp;
                             <input type="radio" name="rating_1" value="Average">&nbsp; Average&nbsp;

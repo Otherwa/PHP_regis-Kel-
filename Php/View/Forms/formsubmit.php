@@ -51,7 +51,8 @@ session_destroy();
     <div class="bg-[#ffffff] text-center p-3 m-2">
         <p class="text-4xl myfont antialiased tracking-normal md:text-4xl overline leading-loose">Form Submitted</p>
         <br />
-        <p class="font-mono underline text-xl hover:text-[#006eff]"><a href="forms.php">Submit Another Form</a></p>
+        <p class="font-mono underline text-xl hover:text-[#006eff]"><a style="font-size:1.3rem" href="forms.php">Submit
+                Another Form</a></p>
         <br />
         <br />
         <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-3xl">

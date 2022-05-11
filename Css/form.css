@@ -63,6 +63,8 @@
     border-radius: .2rem;
     border-color: #80868B;
     outline: none;
+    font-family: monospace;
+    font-weight: bold;
     padding: 1rem;
     background: none;
     z-index: 0;
@@ -166,6 +168,10 @@
     color: red;
     font-weight: 600;
     font-size: 0.8rem;
+}
+
+input::text {
+    font-family: monospace;
 }
 
 

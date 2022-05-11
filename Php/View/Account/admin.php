@@ -1,73 +1,27 @@
 <?php
 
 session_start();
-// php get user name using session variable or else redirect the shit
+// php get user name using session variable or else redirect 
 if (!isset($_SESSION['name'])) {
     header('Location: adminlogin.php');
 }
-
-
+include('../connect.php');
+$con = get_con();
 // re write functions
-function admin_chart()
+function admin_chart($con)
 {
-    $con = get_connection();
-    // monday
-    $sql_form_retrive = "SELECT COUNT(*) as total FROM `form_fillup` WHERE `Day` = 'MONDAY'";
+
+    // bar data
+    $sql_form_retrive = "SELECT count(*) as total FROM `answerpats`;";
     $result = mysqli_query($con, $sql_form_retrive);
     $data = mysqli_fetch_assoc($result);
-    $Monday = $data['total'];
-
-    // Tuesday
-    $sql_form_retrive = "SELECT COUNT(*) as total FROM `form_fillup` WHERE `Day` = 'TUESDAY'";
-    $result = mysqli_query($con, $sql_form_retrive);
-    $data = mysqli_fetch_assoc($result);
-    $Tuesday = $data['total'];
-
-    // Wednesday
-    $sql_form_retrive = "SELECT COUNT(*) as total FROM `form_fillup` WHERE `Day` = 'WEDNESDAY'";
-    $result = mysqli_query($con, $sql_form_retrive);
-    $data = mysqli_fetch_assoc($result);
-    $Wednesday = $data['total'];
-
-    // Thursday
-    $sql_form_retrive = "SELECT COUNT(*) as total FROM `form_fillup` WHERE `Day` = 'THURSDAY'";
-    $result = mysqli_query($con, $sql_form_retrive);
-    $data = mysqli_fetch_assoc($result);
-    $Thursday = $data['total'];
-
-    // Friday
-    $sql_form_retrive = "SELECT COUNT(*) as total FROM `form_fillup` WHERE `Day` = 'FRIDAY'";
-    $result = mysqli_query($con, $sql_form_retrive);
-    $data = mysqli_fetch_assoc($result);
-    $Friday = $data['total'];
-
-    // Saturday
-    $sql_form_retrive = "SELECT COUNT(*) as total FROM `form_fillup` WHERE `Day` = 'SATURDAY'";
-    $result = mysqli_query($con, $sql_form_retrive);
-    $data = mysqli_fetch_assoc($result);
-    $Saturday = $data['total'];
-
-    // Sunday
-    $sql_form_retrive = "SELECT COUNT(*) as total FROM `form_fillup` WHERE `Day` = 'SUNDAY'";
-    $result = mysqli_query($con, $sql_form_retrive);
-    $data = mysqli_fetch_assoc($result);
-    $Sunday = $data['total'];
-
-    return (array($Monday, $Tuesday, $Wednesday, $Thursday, $Friday, $Saturday, $Sunday));
+    $data = $data['total'];
+    return $data;
 }
 
-function get_connection()
-{
-    $host = "localhost";
-    $user = "root";
-    $password = "";
-    $dbname = "regis_dat";
-    $con = mysqli_connect($host, $user, $password, $dbname);
-    return $con;
-}
 
 //varaibe to store chart data
-$chartdata = admin_chart();
+$chartdata = admin_chart($con);
 
 session_destroy();
 ?>
@@ -139,13 +93,7 @@ session_destroy();
         </div>
     </div>
     <!-- php js bridge -->
-    <input id="monday" type="hidden" value="<?php echo $chartdata[0] ?>">
-    <input id="tuesday" type="hidden" value="<?php echo $chartdata[1] ?>">
-    <input id="wednesday" type="hidden" value="<?php echo $chartdata[2] ?>">
-    <input id="thursday" type="hidden" value="<?php echo $chartdata[3] ?>">
-    <input id="friday" type="hidden" value="<?php echo $chartdata[4] ?>">
-    <input id="saturday" type="hidden" value="<?php echo $chartdata[5] ?>">
-    <input id="sunday" type="hidden" value="<?php echo $chartdata[6] ?>">
+    <input id="data" type="hidden" value="<?php echo $chartdata ?>">
     <script type="text/javascript" src="../../../Js/admin.js"></script>
 
 </body>

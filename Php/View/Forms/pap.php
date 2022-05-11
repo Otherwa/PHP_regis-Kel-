@@ -41,7 +41,7 @@ if (isset($_POST['submit'])) {
 
     if ($name == ' ' || $rollno == ' ' || $class == ' ' || $division == ' ' || $semester == ' ' || $paper == ' ' || $paper == "--" || $teacher == ' ') {
         echo "<script>alert('name set issues');</script>";
-        session_destroy();
+        // session_destroy();
     } else {
 
         $is_stu = verify_student($rollno, $con);
@@ -214,7 +214,7 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                     <div class="form__div">
                         <input type="text" class="form__input" name="rollno" id="rollno" placeholder="e.g 2020080289"
                             autocomplete="off" />
-                        <label for="" class="form__label">Control Id?</label>
+                        <label for="" class="form__label">Control Id</label>
 
                     </div>
                     <p class="err_ctrlid" style="<?php echo $err_ctrlid ?>"> Not a valid Ctrl Id.</p>
@@ -663,7 +663,7 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                     <div class="form__div">
                         <input type="text" class="form__input" name="suggest" id="suggest"
                             placeholder="Your Suggessions" autocomplete="off" />
-                        <label for="" class="form__label">Suggestions?</label>
+                        <label for="" class="form__label">Suggestions</label>
                     </div>
                     <br />
                     <input type="submit" id="sub" class="form__button font-mono" value="Submit" name="submit"

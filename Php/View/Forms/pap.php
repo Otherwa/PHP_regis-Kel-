@@ -11,6 +11,7 @@ if (!isset($_SESSION['setPAP'])) {
 
 // establish connection
 $con = get_con();
+
 // err_msgs
 $err_ctrlid = " ";
 
@@ -29,50 +30,32 @@ if (isset($_POST['submit'])) {
         $stat = 2;
     }
 
-
     $name = mysqli_real_escape_string($con, $_POST['name']);
     $rollno = mysqli_real_escape_string($con, $_POST['rollno']);
     $class = mysqli_real_escape_string($con, $_POST['class']);
     $division = mysqli_real_escape_string($con, $_POST['division']);
     // get teacher
     $semester = mysqli_real_escape_string($con, $_POST['semester']);
-    $paper = 1;
+    $paper = mysqli_real_escape_string($con, $_POST['subject']);
     $teacher = mysqli_real_escape_string($con, $_POST['teacher']);
 
-    // validation and submission entry
-    $rating1_1 = mysqli_real_escape_string($con, $_POST['rating1_1']);
-    $rating2_1 = mysqli_real_escape_string($con, $_POST['rating2_1']);
-    $rating3_1 = mysqli_real_escape_string($con, $_POST['rating3_1']);
-    // second rating block
-    $rating1_2 = mysqli_real_escape_string($con, $_POST['rating1_2']);
-    $rating2_2 = mysqli_real_escape_string($con, $_POST['rating2_2']);
-    $rating3_2 = mysqli_real_escape_string($con, $_POST['rating3_2']);
-    $rating4_2 = mysqli_real_escape_string($con, $_POST['rating4_2']);
-    $rating5_2 = mysqli_real_escape_string($con, $_POST['rating5_2']);
-    $rating6_2 = mysqli_real_escape_string($con, $_POST['rating6_2']);
-    $rating7_2 = mysqli_real_escape_string($con, $_POST['rating7_2']);
-    // third rating block
-    $rating1_3 = mysqli_real_escape_string($con, $_POST['rating1_3']);
-    $rating2_3 = mysqli_real_escape_string($con, $_POST['rating2_3']);
-    $rating3_3 = mysqli_real_escape_string($con, $_POST['rating3_3']);
-    $rating4_3 = mysqli_real_escape_string($con, $_POST['rating4_3']);
-    $rating5_3 = mysqli_real_escape_string($con, $_POST['rating5_3']);
-    $rating6_3 = mysqli_real_escape_string($con, $_POST['rating6_3']);
-    $rating7_3 = mysqli_real_escape_string($con, $_POST['rating7_3']);
-    $rating8_3 = mysqli_real_escape_string($con, $_POST['rating8_3']);
-
-    // all validtions
-    $is_stu = verify_student($rollno, $con);
-    // echo 
-    echo $name . " " . $rollno . " " . $class . " " . $division . " " . $semester . " " . $paper . " " . $teacher;
-    echo $rating1_1 . " " . $rating2_1 . " " . $rating3_1 . " " . $rating1_2 . " " . $rating2_2 . " " . $rating3_2 . " " . $rating4_2  . " " . $rating5_2 . " " . $rating6_2 . " " . $rating7_2;
-
-    // redirection flag
-    if ($is_stu == !false) {
-        $err_ctrlid = "display: none";
-        // header("Location: formsubmit.php");
+    if ($name == ' ' || $rollno == ' ' || $class == ' ' || $division == ' ' || $semester == ' ' || $paper == ' ' || $paper == "--" || $teacher == ' ') {
+        echo "<script>alert('name set issues');</script>";
+        session_destroy();
     } else {
-        $err_ctrlid = "display: block";
+
+        $is_stu = verify_student($rollno, $con);
+
+        // check stu active ctrlid
+        if ($is_stu != true) {
+            // echo "<script>alert('ctrlid issues');</script>";
+            $err_ctrlid = "display:block";
+            // session_destroy();
+        } else {
+
+            //data submission func 
+            get_ratings($con, $name, $teacher, $rollno, $class, $division, $semester, $paper);
+        }
     }
 }
 
@@ -101,6 +84,73 @@ function teacher_dat($con)
     }
 }
 
+// data submit func
+function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semester, $paper)
+{
+
+    if (isset($_POST['rating1_1']) && isset($_POST['rating2_1']) && isset($_POST['rating3_1']) && isset($_POST['rating1_2']) && isset($_POST['rating2_2']) && isset($_POST['rating3_2']) && isset($_POST['rating4_2']) && isset($_POST['rating5_2']) && isset($_POST['rating6_2']) && isset($_POST['rating7_2']) && isset($_POST['rating1_3']) && isset($_POST['rating2_3']) && isset($_POST['rating3_3']) && isset($_POST['rating4_3']) && isset($_POST['rating5_3']) && isset($_POST['rating6_3']) && isset($_POST['rating7_3']) && isset($_POST['rating8_3'])) {
+
+        $rating1_1 = mysqli_real_escape_string($con, $_POST['rating1_1']);
+        $rating2_1 = mysqli_real_escape_string($con, $_POST['rating2_1']);
+        $rating3_1 = mysqli_real_escape_string($con, $_POST['rating3_1']);
+        // second rating block
+        $rating1_2 = mysqli_real_escape_string($con, $_POST['rating1_2']);
+        $rating2_2 = mysqli_real_escape_string($con, $_POST['rating2_2']);
+        $rating3_2 = mysqli_real_escape_string($con, $_POST['rating3_2']);
+        $rating4_2 = mysqli_real_escape_string($con, $_POST['rating4_2']);
+        $rating5_2 = mysqli_real_escape_string($con, $_POST['rating5_2']);
+        $rating6_2 = mysqli_real_escape_string($con, $_POST['rating6_2']);
+        $rating7_2 = mysqli_real_escape_string($con, $_POST['rating7_2']);
+        // third rating block
+        $rating1_3 = mysqli_real_escape_string($con, $_POST['rating1_3']);
+        $rating2_3 = mysqli_real_escape_string($con, $_POST['rating2_3']);
+        $rating3_3 = mysqli_real_escape_string($con, $_POST['rating3_3']);
+        $rating4_3 = mysqli_real_escape_string($con, $_POST['rating4_3']);
+        $rating5_3 = mysqli_real_escape_string($con, $_POST['rating5_3']);
+        $rating6_3 = mysqli_real_escape_string($con, $_POST['rating6_3']);
+        $rating7_3 = mysqli_real_escape_string($con, $_POST['rating7_3']);
+        $rating8_3 = mysqli_real_escape_string($con, $_POST['rating8_3']);
+        $suggest = mysqli_real_escape_string($con, $_POST['suggest']);
+        // echo 
+        // echo $rating1_1 . " " . $rating2_1 . " " . $rating3_1 . " " . $rating1_2 . " " . $rating2_2 . " " . $rating3_2 . " " . $rating4_2  . " " . $rating5_2 . " " . $rating6_2 . " " . $rating7_2;
+
+        // get academic_year
+        $query = "SELECT YEAR(CURDATE()) as year_end;";
+        $result = mysqli_query($con, $query);
+        $result = mysqli_fetch_assoc($result);
+        $end = $result['year_end'];
+
+        // start config each time of year
+        $query = "SELECT YEAR('2021-01-01 00:00:00') as year_start;";
+        $result = mysqli_query($con, $query);
+        $result = mysqli_fetch_assoc($result);
+        $start = $result['year_start'];
+        $academic_year = $start . "-" . $end;
+
+        $tcode = "tcode-something212";
+        // check if already exists
+        $query = "SELECT * FROM `answerpats` WHERE ctrlid =\"" . $rollno . "\"" . " AND cname =\"" . $class . "\"" . " AND tcode =\"" . $teacher . "\"" . " AND sem =\"" . $semester . "\""  . " AND subject =\"" . $paper . "\""  . " AND academic_year =\"" . $academic_year . "\";";
+        $result = mysqli_query($con, $query);
+        $result = mysqli_num_rows($result);
+        if ($result > 0) {
+            echo "<script>alert('form already exists');</script>";
+            // redirect flag
+            // session_destroy();
+            sleep(1);
+        } else {
+            // change year year(curdate)
+            $query = "INSERT INTO `answerpats`(`ctrlid`, `cname`, `tcode`, `a11`, `a12`, `a13`, `a14`, `a15`, `a16`, `a17`, `a18`, `a19`, `a20`, `a21`, `a22`, `a23`, `a24`, `a25`, `a26`, `a27`, `a28`, `suggession`, `division`, `sem`, `subject`, `academic_year`) 
+            VALUES ('$rollno','$class','$teacher','$rating1_1','$rating2_1','$rating3_1','$rating1_2','$rating2_2','$rating3_2','$rating4_2','$rating5_2','$rating6_2','$rating7_2','$rating1_3','$rating2_3','$rating3_3','$rating4_3','$rating5_3','$rating6_3','$rating7_3','$rating8_3','$suggest','$division','$semester','$paper','$academic_year');";
+            // execute query
+            mysqli_query($con, $query);
+            $_SESSION['name'] = $name;
+            header('Location: formsubmit.php');
+        }
+    } else {
+        echo "<script>alert('ratting isssues');</script>";
+        //session_destroy();
+    }
+}
 
 
 ?>
@@ -131,25 +181,21 @@ function teacher_dat($con)
     <meta http-equiv='cache-control' content='no-cache'>
     <meta http-equiv='expires' content='0'>
     <meta http-equiv='pragma' content='no-cache'>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-
 </head>
 
 <body class="p-0 m-0">
     <ul class="sidenav">
         <!-- to destroy session -->
-        <li><a class="font-mono" href="forms.php" target="_self">Back</a></li>
+        <li style="padding-bottom:0px"><a class="font-mono" href="forms.php" target="_self">Back</a></li>
     </ul>
     <br />
     <br />
     <div class="bg-[#ffffff] text-center content" style="padding:0.5rem">
         <br />
         <div class="l-form">
-            <form action="#" method="POST" class="form">
+            <form method="POST" class="form">
                 <fieldset>
-                    <code style="color: red;">Still in Production</code>
+                    <code style="color: red;">Still in Testing</code>
                     <legend>Yare Yare Daze</legend>
                     <h1 class="form__title"
                         style="font-family: 'Bungee', cursive; font-size: 2.2rem; color: rgb(119, 195, 196);">
@@ -161,12 +207,12 @@ function teacher_dat($con)
                     </h1>
 
                     <div class="form__div">
-                        <input type="text" class="form__input" name="name" id="name" placeholder="e.g xyz"
+                        <input type="text" class="form__input" name="name" id="name" placeholder="e.g Atharv Desai"
                             autocomplete="off" />
                         <label for="" class="form__label">Name</label>
                     </div>
                     <div class="form__div">
-                        <input type="text" class="form__input" name="rollno" id="rollno" placeholder="e.g 2021070008"
+                        <input type="text" class="form__input" name="rollno" id="rollno" placeholder="e.g 2020080289"
                             autocomplete="off" />
                         <label for="" class="form__label">Control Id?</label>
 
@@ -214,6 +260,7 @@ function teacher_dat($con)
                         <select name="semester" id="semester" onchange=FetchSub(this.value)>
                             <option value=" ">--</option>
                             <!-- get list Ajax-->
+                            <!-- value as space character if no subject -->
                         </select>
                     </div>
                     <!-- paper selection -->
@@ -224,7 +271,7 @@ function teacher_dat($con)
                     <div class="form__div selectaltered" id="semester_paper" style="display: block;">
                         <label for="subject" class="text-sm" style="color: rgb(68, 74, 79);">&bull; Choose
                             Subject:</label>
-                        <select id="subject" name="paper">
+                        <select id="subject" name="subject">
                             <!-- get list Ajax-->
                             <option value=" ">--</option>
                         </select>
@@ -249,18 +296,18 @@ function teacher_dat($con)
                                     <br />
                                     <br />
                                     <span class=" radio">
-                                        <p><input type="radio" name="rating1_1" value="VeryPoor" />&nbsp;
+                                        <p><input type="radio" name="rating1_1" value="1" />&nbsp;
                                             Very-Poor&nbsp;</p>
-                                        <p><input type="radio" name="rating1_1" value="Poor" />&nbsp; Poor&nbsp;</p>
-                                        <p><input type="radio" name="rating1_1" value="BelowAverage" />&nbsp;
+                                        <p><input type="radio" name="rating1_1" value="2" />&nbsp; Poor&nbsp;</p>
+                                        <p><input type="radio" name="rating1_1" value="3" />&nbsp;
                                             Below-Average&nbsp;</p>
-                                        <p><input type="radio" name="rating1_1" value="Average" />&nbsp;
+                                        <p><input type="radio" name="rating1_1" value="4" />&nbsp;
                                             Average&nbsp;
                                         </p>
-                                        <p><input type="radio" name="rating1_1" value="Good" />&nbsp; Good&nbsp;</p>
-                                        <p> <input type="radio" name="rating1_1" value="VeryGood" />&nbsp;
+                                        <p><input type="radio" name="rating1_1" value="5" />&nbsp; Good&nbsp;</p>
+                                        <p> <input type="radio" name="rating1_1" value="6" />&nbsp;
                                             Very-Good&nbsp;</p>
-                                        <p><input type="radio" name="rating1_1" value="Excellent" />&nbsp;
+                                        <p><input type="radio" name="rating1_1" value="7" />&nbsp;
                                             Excellent&nbsp;</p>
                                     </span>
                                 </li>
@@ -270,17 +317,17 @@ function teacher_dat($con)
                                     <br />
                                     <br />
                                     <span class="radio">
-                                        <p><input type="radio" name="rating2_1" value="VeryPoor" />&nbsp;
+                                        <p><input type="radio" name="rating2_1" value="1" />&nbsp;
                                             Very-Poor&nbsp; </p>
-                                        <p><input type="radio" name="rating2_1" value="Poor" />&nbsp; Poor&nbsp;</p>
-                                        <p><input type="radio" name="rating2_1" value="BelowAverage" />&nbsp;
+                                        <p><input type="radio" name="rating2_1" value="2" />&nbsp; Poor&nbsp;</p>
+                                        <p><input type="radio" name="rating2_1" value="3" />&nbsp;
                                             Below-Average&nbsp;</p>
-                                        <p><input type="radio" name="rating2_1" value="Average" />&nbsp; Average&nbsp;
+                                        <p><input type="radio" name="rating2_1" value="4" />&nbsp; Average&nbsp;
                                         </p>
-                                        <p> <input type="radio" name="rating2_1" value="Good" />&nbsp; Good&nbsp;</p>
-                                        <p><input type="radio" name="rating2_1" value="VeryGood" />&nbsp;
+                                        <p> <input type="radio" name="rating2_1" value="5" />&nbsp; Good&nbsp;</p>
+                                        <p><input type="radio" name="rating2_1" value="6" />&nbsp;
                                             Very-Good&nbsp;</p>
-                                        <p><input type="radio" name="rating2_1" value="Excellent" />&nbsp;
+                                        <p><input type="radio" name="rating2_1" value="7" />&nbsp;
                                             Excellent&nbsp;</p>
                                     </span>
                                 </li>
@@ -289,17 +336,17 @@ function teacher_dat($con)
                                     <br />
                                     <br />
                                     <span class="radio">
-                                        <p><input type="radio" name="rating3_1" value="VeryPoor" />&nbsp;
+                                        <p><input type="radio" name="rating3_1" value="1" />&nbsp;
                                             Very-Poor&nbsp;</p>
-                                        <p><input type="radio" name="rating3_1" value="Poor" />&nbsp; Poor&nbsp;</p>
-                                        <p> <input type="radio" name="rating3_1" value="BelowAverage" />&nbsp;
+                                        <p><input type="radio" name="rating3_1" value="2" />&nbsp; Poor&nbsp;</p>
+                                        <p> <input type="radio" name="rating3_1" value="3" />&nbsp;
                                             Below-Average&nbsp;</p>
-                                        <p> <input type="radio" name="rating3_1" value="Average" />&nbsp; Average&nbsp;
+                                        <p> <input type="radio" name="rating3_1" value="4" />&nbsp; Average&nbsp;
                                         </p>
-                                        <p><input type="radio" name="rating3_1" value="Good" />&nbsp; Good&nbsp; </p>
-                                        <p><input type="radio" name="rating3_1" value="VeryGood" />&nbsp;
+                                        <p><input type="radio" name="rating3_1" value="5" />&nbsp; Good&nbsp; </p>
+                                        <p><input type="radio" name="rating3_1" value="6" />&nbsp;
                                             Very-Good&nbsp;</p>
-                                        <p><input type="radio" name="rating3_1" value="Excellent" />&nbsp;
+                                        <p><input type="radio" name="rating3_1" value="7" />&nbsp;
                                             Excellent&nbsp;</p>
                                     </span>
                                 </li>
@@ -316,19 +363,19 @@ function teacher_dat($con)
                                     <br />
                                     <br />
                                     <span class="radio">
-                                        <p><input type="radio" name="rating1_2" value="VeryPoor" />&nbsp;
+                                        <p><input type="radio" name="rating1_2" value="1" />&nbsp;
                                             Very-Poor&nbsp;
                                         </p>
-                                        <p><input type="radio" name="rating1_2" value="Poor" />&nbsp; Poor&nbsp;</p>
-                                        <p><input type="radio" name="rating1_2" value="BelowAverage" />&nbsp;
+                                        <p><input type="radio" name="rating1_2" value="2" />&nbsp; Poor&nbsp;</p>
+                                        <p><input type="radio" name="rating1_2" value="3" />&nbsp;
                                             Below-Average&nbsp;</p>
-                                        <p><input type="radio" name="rating1_2" value="Average" />&nbsp; Average&nbsp;
+                                        <p><input type="radio" name="rating1_2" value="4" />&nbsp; Average&nbsp;
                                         </p>
-                                        <p><input type="radio" name="rating1_2" value="Good" />&nbsp; Good&nbsp;</p>
-                                        <p><input type="radio" name="rating1_2" value="VeryGood" />&nbsp;
+                                        <p><input type="radio" name="rating1_2" value="5" />&nbsp; Good&nbsp;</p>
+                                        <p><input type="radio" name="rating1_2" value="6" />&nbsp;
                                             Very-Good&nbsp;
                                         </p>
-                                        <p><input type="radio" name="rating1_2" value="Excellent" />&nbsp;
+                                        <p><input type="radio" name="rating1_2" value="7" />&nbsp;
                                             Excellent&nbsp;</p>
                                     </span>
                                 </li>
@@ -337,17 +384,17 @@ function teacher_dat($con)
                                     <br />
                                     <br />
                                     <span class="radio">
-                                        <p><input type="radio" name="rating2_2" value="VeryPoor" />&nbsp;
+                                        <p><input type="radio" name="rating2_2" value="1" />&nbsp;
                                             Very-Poor&nbsp;</p>
-                                        <p><input type="radio" name="rating2_2" value="Poor" />&nbsp; Poor&nbsp; </p>
-                                        <p> <input type="radio" name="rating2_2" value="BelowAverage" />&nbsp;
+                                        <p><input type="radio" name="rating2_2" value="2" />&nbsp; Poor&nbsp; </p>
+                                        <p> <input type="radio" name="rating2_2" value="3" />&nbsp;
                                             Below-Average&nbsp;</p>
-                                        <p> <input type="radio" name="rating2_2" value="Average" />&nbsp; Average&nbsp;
+                                        <p> <input type="radio" name="rating2_2" value="4" />&nbsp; Average&nbsp;
                                         </p>
-                                        <p> <input type="radio" name="rating2_2" value="Good" />&nbsp; Good&nbsp;</p>
-                                        <p> <input type="radio" name="rating2_2" value="VeryGood" />&nbsp;
+                                        <p> <input type="radio" name="rating2_2" value="5" />&nbsp; Good&nbsp;</p>
+                                        <p> <input type="radio" name="rating2_2" value="6" />&nbsp;
                                             Very-Good&nbsp;</p>
-                                        <p> <input type="radio" name="rating2_2" value="Excellent" />&nbsp;
+                                        <p> <input type="radio" name="rating2_2" value="7" />&nbsp;
                                             Excellent&nbsp;</p>
                                     </span>
                                 </li>
@@ -356,17 +403,17 @@ function teacher_dat($con)
                                     <br />
                                     <br />
                                     <span class="radio">
-                                        <p><input type="radio" name="rating3_2" value="VeryPoor" />&nbsp;
+                                        <p><input type="radio" name="rating3_2" value="1" />&nbsp;
                                             Very-Poor&nbsp;</p>
-                                        <p> <input type="radio" name="rating3_2" value="Poor" />&nbsp; Poor&nbsp;</p>
-                                        <p> <input type="radio" name="rating3_2" value="BelowAverage" />&nbsp;
+                                        <p> <input type="radio" name="rating3_2" value="2" />&nbsp; Poor&nbsp;</p>
+                                        <p> <input type="radio" name="rating3_2" value="3" />&nbsp;
                                             Below-Average&nbsp;</p>
-                                        <p> <input type="radio" name="rating3_2" value="Average" />&nbsp; Average&nbsp;
+                                        <p> <input type="radio" name="rating3_2" value="4" />&nbsp; Average&nbsp;
                                         </p>
-                                        <p> <input type="radio" name="rating3_2" value="Good" />&nbsp; Good&nbsp;</p>
-                                        <p><input type="radio" name="rating3_2" value="VeryGood" />&nbsp;
+                                        <p> <input type="radio" name="rating3_2" value="5" />&nbsp; Good&nbsp;</p>
+                                        <p><input type="radio" name="rating3_2" value="6" />&nbsp;
                                             Very-Good&nbsp;</p>
-                                        <p> <input type="radio" name="rating3_2" value="Excellent" />&nbsp;
+                                        <p> <input type="radio" name="rating3_2" value="7" />&nbsp;
                                             Excellent&nbsp;</p>
                                     </span>
                                 </li>
@@ -375,17 +422,17 @@ function teacher_dat($con)
                                     <br />
                                     <br />
                                     <span class="radio">
-                                        <p><input type="radio" name="rating4_2" value="VeryPoor" />&nbsp;
+                                        <p><input type="radio" name="rating4_2" value="1" />&nbsp;
                                             Very-Poor&nbsp;</p>
-                                        <p><input type="radio" name="rating4_2" value="Poor" />&nbsp; Poor&nbsp;</p>
-                                        <p><input type="radio" name="rating4_2" value="BelowAverage" />&nbsp;
+                                        <p><input type="radio" name="rating4_2" value="2" />&nbsp; Poor&nbsp;</p>
+                                        <p><input type="radio" name="rating4_2" value="3" />&nbsp;
                                             Below-Average&nbsp;</p>
-                                        <p><input type="radio" name="rating4_2" value="Average" />&nbsp; Average&nbsp;
+                                        <p><input type="radio" name="rating4_2" value="4" />&nbsp; Average&nbsp;
                                         </p>
-                                        <p><input type="radio" name="rating4_2" value="Good" />&nbsp; Good&nbsp;</p>
-                                        <p> <input type="radio" name="rating4_2" value="VeryGood" />&nbsp;
+                                        <p><input type="radio" name="rating4_2" value="5" />&nbsp; Good&nbsp;</p>
+                                        <p> <input type="radio" name="rating4_2" value="6" />&nbsp;
                                             Very-Good&nbsp;</p>
-                                        <p> <input type="radio" name="rating4_2" value="Excellent" />&nbsp;
+                                        <p> <input type="radio" name="rating4_2" value="7" />&nbsp;
                                             Excellent&nbsp;</p>
                                     </span>
                                 </li>
@@ -394,17 +441,17 @@ function teacher_dat($con)
                                     <br />
                                     <br />
                                     <span class="radio">
-                                        <p><input type="radio" name="rating5_2" value="VeryPoor" />&nbsp;
+                                        <p><input type="radio" name="rating5_2" value="1" />&nbsp;
                                             Very-Poor&nbsp;</p>
-                                        <p><input type="radio" name="rating5_2" value="Poor" />&nbsp; Poor&nbsp;</p>
-                                        <p><input type="radio" name="rating5_2" value="BelowAverage" />&nbsp;
+                                        <p><input type="radio" name="rating5_2" value="2" />&nbsp; Poor&nbsp;</p>
+                                        <p><input type="radio" name="rating5_2" value="3" />&nbsp;
                                             Below-Average&nbsp;</p>
-                                        <p> <input type="radio" name="rating5_2" value="Average" />&nbsp; Average&nbsp;
+                                        <p> <input type="radio" name="rating5_2" value="4" />&nbsp; Average&nbsp;
                                         </p>
-                                        <p><input type="radio" name="rating5_2" value="Good" />&nbsp; Good&nbsp;</p>
-                                        <p> <input type="radio" name="rating5_2" value="VeryGood" />&nbsp;
+                                        <p><input type="radio" name="rating5_2" value="5" />&nbsp; Good&nbsp;</p>
+                                        <p> <input type="radio" name="rating5_2" value="6" />&nbsp;
                                             Very-Good&nbsp;</p>
-                                        <p><input type="radio" name="rating5_2" value="Excellent" />&nbsp;
+                                        <p><input type="radio" name="rating5_2" value="7" />&nbsp;
                                             Excellent&nbsp;</p>
                                     </span>
                                 </li>
@@ -413,17 +460,17 @@ function teacher_dat($con)
                                     <br />
                                     <br />
                                     <span class="radio">
-                                        <p><input type="radio" name="rating6_2" value="VeryPoor" />&nbsp;
+                                        <p><input type="radio" name="rating6_2" value="1" />&nbsp;
                                             Very-Poor&nbsp;</p>
-                                        <p> <input type="radio" name="rating6_2" value="Poor" />&nbsp; Poor&nbsp;</p>
-                                        <p> <input type="radio" name="rating6_2" value="BelowAverage" />&nbsp;
+                                        <p> <input type="radio" name="rating6_2" value="2" />&nbsp; Poor&nbsp;</p>
+                                        <p> <input type="radio" name="rating6_2" value="3" />&nbsp;
                                             Below-Average&nbsp;</p>
-                                        <p> <input type="radio" name="rating6_2" value="Average" />&nbsp; Average&nbsp;
+                                        <p> <input type="radio" name="rating6_2" value="4" />&nbsp; Average&nbsp;
                                         </p>
-                                        <p> <input type="radio" name="rating6_2" value="Good" />&nbsp; Good&nbsp;</p>
-                                        <p> <input type="radio" name="rating6_2" value="VeryGood" />&nbsp;
+                                        <p> <input type="radio" name="rating6_2" value="5" />&nbsp; Good&nbsp;</p>
+                                        <p> <input type="radio" name="rating6_2" value="6" />&nbsp;
                                             Very-Good&nbsp;</p>
-                                        <p> <input type="radio" name="rating6_2" value="Excellent" />&nbsp;
+                                        <p> <input type="radio" name="rating6_2" value="7" />&nbsp;
                                             Excellent&nbsp;</p>
                                     </span>
                                 </li>
@@ -433,17 +480,17 @@ function teacher_dat($con)
                                     <br />
                                     <br />
                                     <span class="radio">
-                                        <p><input type="radio" name="rating7_2" value="VeryPoor" />&nbsp;
+                                        <p><input type="radio" name="rating7_2" value="1" />&nbsp;
                                             Very-Poor&nbsp;</p>
-                                        <p><input type="radio" name="rating7_2" value="Poor" />&nbsp; Poor&nbsp;</p>
-                                        <p><input type="radio" name="rating7_2" value="BelowAverage" />&nbsp;
+                                        <p><input type="radio" name="rating7_2" value="2" />&nbsp; Poor&nbsp;</p>
+                                        <p><input type="radio" name="rating7_2" value="3" />&nbsp;
                                             Below-Average&nbsp;</p>
-                                        <p><input type="radio" name="rating7_2" value="Average" />&nbsp; Average&nbsp;
+                                        <p><input type="radio" name="rating7_2" value="4" />&nbsp; Average&nbsp;
                                         </p>
-                                        <p> <input type="radio" name="rating7_2" value="Good" />&nbsp; Good&nbsp;</p>
-                                        <p><input type="radio" name="rating7_2" value="VeryGood" />&nbsp;
+                                        <p> <input type="radio" name="rating7_2" value="5" />&nbsp; Good&nbsp;</p>
+                                        <p><input type="radio" name="rating7_2" value="6" />&nbsp;
                                             Very-Good&nbsp;</p>
-                                        <p><input type="radio" name="rating7_2" value="Excellent" />&nbsp;
+                                        <p><input type="radio" name="rating7_2" value="7" />&nbsp;
                                             Excellent&nbsp;</p>
                                     </span>
                                 </li>
@@ -461,17 +508,17 @@ function teacher_dat($con)
                                     <br />
                                     <br />
                                     <span class="radio">
-                                        <p><input type="radio" name="rating1_3" value="VeryPoor" />&nbsp;
+                                        <p><input type="radio" name="rating1_3" value="1" />&nbsp;
                                             Very-Poor&nbsp;</p>
-                                        <p><input type="radio" name="rating1_3" value="Poor" />&nbsp; Poor&nbsp;</p>
-                                        <p><input type="radio" name="rating1_3" value="BelowAverage" />&nbsp;
+                                        <p><input type="radio" name="rating1_3" value="2" />&nbsp; Poor&nbsp;</p>
+                                        <p><input type="radio" name="rating1_3" value="3" />&nbsp;
                                             Below-Average&nbsp;</p>
-                                        <p> <input type="radio" name="rating1_3" value="Average" />&nbsp; Average&nbsp;
+                                        <p> <input type="radio" name="rating1_3" value="4" />&nbsp; Average&nbsp;
                                         </p>
-                                        <p> <input type="radio" name="rating1_3" value="Good" />&nbsp; Good&nbsp;</p>
-                                        <p><input type="radio" name="rating1_3" value="VeryGood" />&nbsp;
+                                        <p> <input type="radio" name="rating1_3" value="5" />&nbsp; Good&nbsp;</p>
+                                        <p><input type="radio" name="rating1_3" value="6" />&nbsp;
                                             Very-Good&nbsp;</p>
-                                        <p><input type="radio" name="rating1_3" value="Excellent" />&nbsp;
+                                        <p><input type="radio" name="rating1_3" value="7" />&nbsp;
                                             Excellent&nbsp;</p>
                                     </span>
                                 </li>
@@ -480,17 +527,17 @@ function teacher_dat($con)
                                     <br />
                                     <br />
                                     <span class="radio">
-                                        <p><input type="radio" name="rating2_3" value="VeryPoor" />&nbsp;
+                                        <p><input type="radio" name="rating2_3" value="1" />&nbsp;
                                             Very-Poor&nbsp;</p>
-                                        <p><input type="radio" name="rating2_3" value="Poor" />&nbsp; Poor&nbsp;</p>
-                                        <p><input type="radio" name="rating2_3" value="BelowAverage" />&nbsp;
+                                        <p><input type="radio" name="rating2_3" value="2" />&nbsp; Poor&nbsp;</p>
+                                        <p><input type="radio" name="rating2_3" value="3" />&nbsp;
                                             Below-Average&nbsp;</p>
-                                        <p> <input type="radio" name="rating2_3" value="Average" />&nbsp; Average&nbsp;
+                                        <p> <input type="radio" name="rating2_3" value="4" />&nbsp; Average&nbsp;
                                         </p>
-                                        <p> <input type="radio" name="rating2_3" value="Good" />&nbsp; Good&nbsp;</p>
-                                        <p><input type="radio" name="rating2_3" value="VeryGood" />&nbsp;
+                                        <p> <input type="radio" name="rating2_3" value="5" />&nbsp; Good&nbsp;</p>
+                                        <p><input type="radio" name="rating2_3" value="6" />&nbsp;
                                             Very-Good&nbsp;</p>
-                                        <p><input type="radio" name="rating2_3" value="Excellent" />&nbsp;
+                                        <p><input type="radio" name="rating2_3" value="7" />&nbsp;
                                             Excellent&nbsp;</p>
                                     </span>
                                 </li>
@@ -499,17 +546,17 @@ function teacher_dat($con)
                                     <br />
                                     <br />
                                     <span class="radio">
-                                        <p><input type="radio" name="rating3_3" value="VeryPoor" />&nbsp;
+                                        <p><input type="radio" name="rating3_3" value="1" />&nbsp;
                                             Very-Poor&nbsp;</p>
-                                        <p><input type="radio" name="rating3_3" value="Poor" />&nbsp; Poor&nbsp;</p>
-                                        <p><input type="radio" name="rating3_3" value="BelowAverage" />&nbsp;
+                                        <p><input type="radio" name="rating3_3" value="2" />&nbsp; Poor&nbsp;</p>
+                                        <p><input type="radio" name="rating3_3" value="3" />&nbsp;
                                             Below-Average&nbsp;</p>
-                                        <p> <input type="radio" name="rating3_3" value="Average" />&nbsp; Average&nbsp;
+                                        <p> <input type="radio" name="rating3_3" value="4" />&nbsp; Average&nbsp;
                                         </p>
-                                        <p> <input type="radio" name="rating3_3" value="Good" />&nbsp; Good&nbsp;</p>
-                                        <p><input type="radio" name="rating3_3" value="VeryGood" />&nbsp;
+                                        <p> <input type="radio" name="rating3_3" value="5" />&nbsp; Good&nbsp;</p>
+                                        <p><input type="radio" name="rating3_3" value="6" />&nbsp;
                                             Very-Good&nbsp;</p>
-                                        <p><input type="radio" name="rating3_3" value="Excellent" />&nbsp;
+                                        <p><input type="radio" name="rating3_3" value="7" />&nbsp;
                                             Excellent&nbsp;</p>
                                     </span>
                                 </li>
@@ -518,17 +565,17 @@ function teacher_dat($con)
                                     <br />
                                     <br />
                                     <span class="radio">
-                                        <p><input type="radio" name="rating4_3" value="VeryPoor" />&nbsp;
+                                        <p><input type="radio" name="rating4_3" value="1" />&nbsp;
                                             Very-Poor&nbsp;</p>
-                                        <p><input type="radio" name="rating4_3" value="Poor" />&nbsp; Poor&nbsp;</p>
-                                        <p><input type="radio" name="rating4_3" value="BelowAverage" />&nbsp;
+                                        <p><input type="radio" name="rating4_3" value="2" />&nbsp; Poor&nbsp;</p>
+                                        <p><input type="radio" name="rating4_3" value="3" />&nbsp;
                                             Below-Average&nbsp;</p>
-                                        <p> <input type="radio" name="rating4_3" value="Average" />&nbsp; Average&nbsp;
+                                        <p> <input type="radio" name="rating4_3" value="4" />&nbsp; Average&nbsp;
                                         </p>
-                                        <p> <input type="radio" name="rating4_3" value="Good" />&nbsp; Good&nbsp;</p>
-                                        <p><input type="radio" name="rating4_3" value="VeryGood" />&nbsp;
+                                        <p> <input type="radio" name="rating4_3" value="5" />&nbsp; Good&nbsp;</p>
+                                        <p><input type="radio" name="rating4_3" value="6" />&nbsp;
                                             Very-Good&nbsp;</p>
-                                        <p><input type="radio" name="rating4_3" value="Excellent" />&nbsp;
+                                        <p><input type="radio" name="rating4_3" value="7" />&nbsp;
                                             Excellent&nbsp;</p>
                                     </span>
                                 </li>
@@ -538,17 +585,17 @@ function teacher_dat($con)
                                     <br />
                                     <br />
                                     <span class="radio">
-                                        <p><input type="radio" name="rating5_3" value="VeryPoor" />&nbsp;
+                                        <p><input type="radio" name="rating5_3" value="1" />&nbsp;
                                             Very-Poor&nbsp;</p>
-                                        <p><input type="radio" name="rating5_3" value="Poor" />&nbsp; Poor&nbsp;</p>
-                                        <p><input type="radio" name="rating5_3" value="BelowAverage" />&nbsp;
+                                        <p><input type="radio" name="rating5_3" value="2" />&nbsp; Poor&nbsp;</p>
+                                        <p><input type="radio" name="rating5_3" value="3" />&nbsp;
                                             Below-Average&nbsp;</p>
-                                        <p> <input type="radio" name="rating5_3" value="Average" />&nbsp; Average&nbsp;
+                                        <p> <input type="radio" name="rating5_3" value="4" />&nbsp; Average&nbsp;
                                         </p>
-                                        <p> <input type="radio" name="rating5_3" value="Good" />&nbsp; Good&nbsp;</p>
-                                        <p><input type="radio" name="rating5_3" value="VeryGood" />&nbsp;
+                                        <p> <input type="radio" name="rating5_3" value="5" />&nbsp; Good&nbsp;</p>
+                                        <p><input type="radio" name="rating5_3" value="6" />&nbsp;
                                             Very-Good&nbsp;</p>
-                                        <p><input type="radio" name="rating5_3" value="Excellent" />&nbsp;
+                                        <p><input type="radio" name="rating5_3" value="7" />&nbsp;
                                             Excellent&nbsp;</p>
                                     </span>
                                 </li>
@@ -557,17 +604,17 @@ function teacher_dat($con)
                                     <br />
                                     <br />
                                     <span class="radio">
-                                        <p><input type="radio" name="rating6_3" value="VeryPoor" />&nbsp;
+                                        <p><input type="radio" name="rating6_3" value="1" />&nbsp;
                                             Very-Poor&nbsp;</p>
-                                        <p><input type="radio" name="rating6_3" value="Poor" />&nbsp; Poor&nbsp;</p>
-                                        <p><input type="radio" name="rating6_3" value="BelowAverage" />&nbsp;
+                                        <p><input type="radio" name="rating6_3" value="2" />&nbsp; Poor&nbsp;</p>
+                                        <p><input type="radio" name="rating6_3" value="3" />&nbsp;
                                             Below-Average&nbsp;</p>
-                                        <p> <input type="radio" name="rating6_3" value="Average" />&nbsp; Average&nbsp;
+                                        <p> <input type="radio" name="rating6_3" value="4" />&nbsp; Average&nbsp;
                                         </p>
-                                        <p> <input type="radio" name="rating6_3" value="Good" />&nbsp; Good&nbsp;</p>
-                                        <p><input type="radio" name="rating6_3" value="VeryGood" />&nbsp;
+                                        <p> <input type="radio" name="rating6_3" value="5" />&nbsp; Good&nbsp;</p>
+                                        <p><input type="radio" name="rating6_3" value="6" />&nbsp;
                                             Very-Good&nbsp;</p>
-                                        <p><input type="radio" name="rating6_3" value="Excellent" />&nbsp;
+                                        <p><input type="radio" name="rating6_3" value="7" />&nbsp;
                                             Excellent&nbsp;</p>
                                     </span>
                                 </li>
@@ -576,17 +623,17 @@ function teacher_dat($con)
                                     <br />
                                     <br />
                                     <span class="radio">
-                                        <p><input type="radio" name="rating7_3" value="VeryPoor" />&nbsp;
+                                        <p><input type="radio" name="rating7_3" value="1" />&nbsp;
                                             Very-Poor&nbsp;</p>
-                                        <p><input type="radio" name="rating7_3" value="Poor" />&nbsp; Poor&nbsp;</p>
-                                        <p><input type="radio" name="rating7_3" value="BelowAverage" />&nbsp;
+                                        <p><input type="radio" name="rating7_3" value="2" />&nbsp; Poor&nbsp;</p>
+                                        <p><input type="radio" name="rating7_3" value="3" />&nbsp;
                                             Below-Average&nbsp;</p>
-                                        <p> <input type="radio" name="rating7_3" value="Average" />&nbsp; Average&nbsp;
+                                        <p> <input type="radio" name="rating7_3" value="4" />&nbsp; Average&nbsp;
                                         </p>
-                                        <p> <input type="radio" name="rating7_3" value="Good" />&nbsp; Good&nbsp;</p>
-                                        <p><input type="radio" name="rating7_3" value="VeryGood" />&nbsp;
+                                        <p> <input type="radio" name="rating7_3" value="5" />&nbsp; Good&nbsp;</p>
+                                        <p><input type="radio" name="rating7_3" value="6" />&nbsp;
                                             Very-Good&nbsp;</p>
-                                        <p><input type="radio" name="rating7_3" value="Excellent" />&nbsp;
+                                        <p><input type="radio" name="rating7_3" value="7" />&nbsp;
                                             Excellent&nbsp;</p>
                                     </span>
                                 </li>
@@ -595,17 +642,17 @@ function teacher_dat($con)
                                     <br />
                                     <br />
                                     <span class="radio">
-                                        <p><input type="radio" name="rating8_3" value="VeryPoor" />&nbsp;
+                                        <p><input type="radio" name="rating8_3" value="1" />&nbsp;
                                             Very-Poor&nbsp;</p>
-                                        <p><input type="radio" name="rating8_3" value="Poor" />&nbsp; Poor&nbsp;</p>
-                                        <p><input type="radio" name="rating8_3" value="BelowAverage" />&nbsp;
+                                        <p><input type="radio" name="rating8_3" value="2" />&nbsp; Poor&nbsp;</p>
+                                        <p><input type="radio" name="rating8_3" value="3" />&nbsp;
                                             Below-Average&nbsp;</p>
-                                        <p> <input type="radio" name="rating8_3" value="Average" />&nbsp; Average&nbsp;
+                                        <p> <input type="radio" name="rating8_3" value="4" />&nbsp; Average&nbsp;
                                         </p>
-                                        <p> <input type="radio" name="rating8_3" value="Good" />&nbsp; Good&nbsp;</p>
-                                        <p><input type="radio" name="rating8_3" value="VeryGood" />&nbsp;
+                                        <p> <input type="radio" name="rating8_3" value="5" />&nbsp; Good&nbsp;</p>
+                                        <p><input type="radio" name="rating8_3" value="6" />&nbsp;
                                             Very-Good&nbsp;</p>
-                                        <p><input type="radio" name="rating8_3" value="Excellent" />&nbsp;
+                                        <p><input type="radio" name="rating8_3" value="7" />&nbsp;
                                             Excellent&nbsp;</p>
                                     </span>
                                 </li>
@@ -613,6 +660,11 @@ function teacher_dat($con)
                         </li>
                     </ol>
                     <br />
+                    <div class="form__div">
+                        <input type="text" class="form__input" name="suggest" id="suggest"
+                            placeholder="Your Suggessions" autocomplete="off" />
+                        <label for="" class="form__label">Suggestions?</label>
+                    </div>
                     <br />
                     <input type="submit" id="sub" class="form__button font-mono" value="Submit" name="submit"
                         style="float: right;" />
@@ -634,7 +686,7 @@ function teacher_dat($con)
 
 </body>
 <!-- jquery -->
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <!-- form validation -->
 <script type="text/javascript" src="../../../Js/papto.js"></script>
 

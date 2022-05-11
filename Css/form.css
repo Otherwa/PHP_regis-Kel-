@@ -175,8 +175,9 @@ select {
     width: auto;
     padding: 2px;
     margin: 2px;
-    font-family: 'Roboto', sans-serif;
+    font-family: monospace;
     font-size: 0.99rem;
+    font-weight: bold;
     color: #0559c7;
     border-style: solid;
     border-width: 0.5px;

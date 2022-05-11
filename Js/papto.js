@@ -40,6 +40,7 @@ function FetchSem(id) {
 
     })
     value1 = id;
+    // for And SQL query in ajaxtemp if isset$_POST'sem' && isset$_POST'teachername' method
 }
 
 

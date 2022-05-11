@@ -18,6 +18,8 @@ var x = setInterval(() => {
         document.querySelector("#demo").style.fontSize = "2rem";
         document.querySelector("#demo").style.line_height = "1.6rem";
         document.getElementById("demo").innerHTML = days + "d " + hours + "hrs " + minutes + "min " + seconds + "sec ";
+
+        // set or display form status
         if (timeend < 0) {
             clearInterval(x);
             document.getElementById("demo").innerHTML = "Select any One Form to fill.";

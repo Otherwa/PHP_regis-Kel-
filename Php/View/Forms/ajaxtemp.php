@@ -15,6 +15,7 @@ if (isset($_POST['tname'])) {
     }
 }
 
+// get subject for specific semester teacher
 if (isset($_POST['sem']) && isset($_POST['teachername'])) {
     $con = get_con();
     $query = " SELECT * FROM `teachers` WHERE sem = " . "\"" . $_POST['sem'] . "\" " . "AND tname =" . "\"" . $_POST['teachername']  . "\"; ";
@@ -23,9 +24,9 @@ if (isset($_POST['sem']) && isset($_POST['teachername'])) {
     $result1 = mysqli_num_rows($result);
     if ($result1 > 0) {
         echo "<option value =\"" . " " . "\">" . "--" . "</option>";
-        echo "<option value =\"" . $row['subject1'] . "\">" . $row['subject1'] . "</option>";
-        echo "<option value =\"" . $row['subject2'] . "\">" . $row['subject2'] . "</option>";
-        echo "<option value =\"" . $row['subject3'] . "\">" . $row['subject3'] . "</option>";
+        echo "<option value =\"" . $row['subject1'] . "\">" .  $row['subject1']  . "</option>";
+        echo "<option value =\"" . $row['subject2'] . "\">" .  $row['subject2']  . "</option>";
+        echo "<option value =\"" . $row['subject3'] . "\">" .  $row['subject3']  . "</option>";
     } else {
         echo "<option value =\"" . " " . "\">" . "--" . "</option>";
     }

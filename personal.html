@@ -23,58 +23,77 @@
             font-family: "Bungee", cursive;
         }
         /* nav css */
+        /* mobile */
         
         .container {
-            padding: 1rem;
-            line-height: 1.7rem;
-            font-family: monospace;
-            align-items: center;
-        }
-        /* portfolio css */
-        
-        #portfolio {
-            height: 159rem;
-            width: 80rem;
-            pointer-events: none;
+            padding: 3rem 2rem 2rem 2rem;
+            display: flex;
+            justify-content: center;
         }
         
-        @media screen and (max-width: 1441px) {
-            #portfolio {
-                height: 159rem;
-                width: 93rem;
-            }
+        ul {
+            list-style-type: square;
+            padding: 1.5rem;
+            padding: 2rem;
+            display: inline-block;
+            justify-content: center;
         }
-        /* laptop */
-        
-        @media screen and (max-width: 769px) {
-            #portfolio {
-                height: 159rem;
-                width: 33rem;
-            }
-        }
-        /* tablet */
-        
-        @media screen and (max-width: 427px) {
-            #portfolio {
-                height: 159rem;
-                width: 25rem;
-            }
-        }
-        /* mobile */
     </style>
 </head>
 
 <body class="p-1 m-0">
     <div class="container">
         <div class="portfolio">
-            <p class=" font-mono text-2xl" style="padding:1rem">#portfolio</p>
-            <br>
-            <br>
-            <iframe id="portfolio" src="https://otherwa.github.io/Otherwa/" scrolling="no"></iframe>
-            <br>
-            <br>
+            <p style="font-size:2.4rem;text-decoration: underline;" class="myfont">Contributers:</p>
+            <br />
+            <ul>
+                <li>
+                    <p style="font-size:1.5rem;font-family: monospace;">Atharv Desai <a class="hover:underline text-[blue]" href="mailto:atharvdesai2002@gmail.com">(Mail)</a></p>
+                </li>
+                <li>
+                    <p style="font-size:1.5rem;font-family: monospace;">Atharv Desai <a class="hover:underline text-[blue]" href="mailto:atharvdesai2002@gmail.com">(Mail)</a></p>
+                </li>
+                <li>
+                    <p style="font-size:1.5rem;font-family: monospace;">Atharv Desai <a class="hover:underline text-[blue]" href="mailto:atharvdesai2002@gmail.com">(Mail)</a></p>
+                </li>
+                <li>
+                    <p style="font-size:1.5rem;font-family: monospace;">Atharv Desai <a class="hover:underline text-[blue]" href="mailto:atharvdesai2002@gmail.com">(Mail)</a></p>
+                </li>
+                <li>
+                    <p style="font-size:1.5rem;font-family: monospace;">Atharv Desai <a class="hover:underline text-[blue]" href="mailto:atharvdesai2002@gmail.com">(Mail)</a></p>
+                </li>
+            </ul>
         </div>
     </div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+<script>
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+    // dark mode js plugin
+    const options = {
+        bottom: '64px', // default: '32px'
+        right: 'unset', // default: '32px'
+        left: '32px', // default: 'unset'
+        time: '0.5s', // default: '0.3s'
+        mixColor: '#fff', // default: '#fff'
+        backgroundColor: '#fff', // default: '#fff'
+        buttonColorDark: '#100f2c', // default: '#100f2c'
+        buttonColorLight: '#fff', // default: '#fff'
+        saveInCookies: false, // default: true,
+        label: '💡', // default: ''
+        autoMatchOsTheme: true // default: true
+    }
+
+    const darkmode = new Darkmode(options);
+    darkmode.showWidget();
+
+    function addDarkmodeWidget() {
+        new Darkmode().showWidget();
+        console.log(darkmode.isActivated()) // will return true
+    }
+    window.addEventListener('load', addDarkmodeWidget);
+</script>
 
 </html>

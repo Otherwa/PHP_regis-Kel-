@@ -34,20 +34,32 @@ Registration form using php
 |- Php |
        |- View |
                |- Account |
-                          |- formsub.php
-                          |- formto.php
-               |- Form |
-                       |- admin.php
-                       |- adminlogin.php
+                          |- forms.php
+                          |- ajaxtemp.php
+                          |- pap.php
+                          |- student.php
+                          |- faculty/php
+                          |- formsubmit.php
+                          
+                         
+               
+               |- Admin |
+                        |- admin.php
+                        |- adminlogin.php
+                        |- xlxsgen.php
+                                                
                
                |-connect.php
 |- Js |
       |- admin.js
       |- form.js
       |- main.js
+      |- papto.js
+      |- fff.js
+      |- sss.js
       
 |- imgs |
-        |- .jpg
+        |- .jpg( all)
 
 |- dist |
         |- output.css (Tailwindcss Output.)

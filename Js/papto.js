@@ -43,7 +43,7 @@ function FetchSem(id) {
     // for And SQL query in ajaxtemp if isset$_POST'sem' && isset$_POST'teachername' method
 }
 
-
+// get subject for specific sem of teacher
 function FetchSub(id) {
     $('#subject').html('<option value =" ">--</option>');
     $.ajax({
@@ -59,3 +59,24 @@ function FetchSub(id) {
 
     })
 }
+
+// verify student ascyconously
+function verify_stu() {
+    $.ajax({
+        type: 'post',
+        url: 'ajaxtemp.php',
+        data: 'rollno=' + $('#rollno').val(),
+        success: function(data) {
+            $('#notvalid_roll').html(data);
+        },
+        error: function() {},
+    })
+}
+
+
+// if ctrlid valid set ratings else none
+window.setInterval(function() {
+    var msg = document.getElementById('msg').value;
+    console.log(msg);
+    document.getElementById('msg_set').style.display = msg;
+}, 1000);

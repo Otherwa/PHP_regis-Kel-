@@ -553,7 +553,6 @@ if (isset($_POST['submit'])) {
             <br />
             <br />
         </div>
-
         <div class="footer-copyright text-center">
             <br />
             <p style="padding:1rem">&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html"

@@ -69,6 +69,7 @@ session_destroy();
     <div class=" bg-[#ffffff] text-center p-3 m-2">
         <p class="text-4xl myfont antialiased tracking-normal md:text-4xl overline leading-loose">Hey Shaw'ty.</p>
         <br />
+
         <br />
         <!-- chart js -->
         <canvas id="myChart" width="400" height="150"></canvas>
@@ -83,6 +84,8 @@ session_destroy();
             <br />
             <p>Does not work in mobile browsers.</p>
         </form>
+
+
 
         <div class=" footer-copyright">
             <br />

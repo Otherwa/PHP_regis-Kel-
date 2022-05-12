@@ -251,6 +251,13 @@ ul li {
     .form-ol {
         padding: 1rem;
     }
+    .radio {
+        font-size: 0.8rem;
+    }
+     :root {
+        --normal-font-size: 0.79rem;
+        --small-font-size: 0.60rem;
+    }
 }
 
 

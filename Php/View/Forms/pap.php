@@ -13,7 +13,7 @@ if (!isset($_SESSION['setPAP'])) {
 $con = get_con();
 
 // err_msgs
-$err_ctrlid = " ";
+$var1 = 1;
 
 
 if (isset($_POST['submit'])) {
@@ -44,12 +44,12 @@ if (isset($_POST['submit'])) {
         // session_destroy();
     } else {
 
+        // double verify student
         $is_stu = verify_student($rollno, $con);
 
         // check stu active ctrlid
         if ($is_stu != true) {
-            // echo "<script>alert('ctrlid issues');</script>";
-            $err_ctrlid = "display:block";
+            echo "<script>alert('ctrlid issues');</script>";
             // session_destroy();
         } else {
 
@@ -60,7 +60,7 @@ if (isset($_POST['submit'])) {
 }
 
 
-
+// double ctrlid check during submission
 function verify_student($rollno, $con)
 {
     $query = "SELECT * FROM `activectrlid` WHERE ctrlid = '$rollno'";
@@ -127,9 +127,8 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
         $start = $result['year_start'];
         $academic_year = $start . "-" . $end;
 
-        $tcode = "tcode-something212";
         // check if already exists
-        $query = "SELECT * FROM `answerpats` WHERE ctrlid =\"" . $rollno . "\"" . " AND cname =\"" . $class . "\"" . " AND tcode =\"" . $teacher . "\"" . " AND sem =\"" . $semester . "\""  . " AND subject =\"" . $paper . "\""  . " AND academic_year =\"" . $academic_year . "\";";
+        $query = "SELECT * FROM `answerpats` WHERE ctrlid =\"" . $rollno . "\"" . " AND cname =\"" . $class . "\"" . " AND tname =\"" . $teacher . "\"" . " AND sem =\"" . $semester . "\""  . " AND subject =\"" . $paper . "\""  . " AND academic_year =\"" . $academic_year . "\";";
         $result = mysqli_query($con, $query);
         $result = mysqli_num_rows($result);
         if ($result > 0) {
@@ -139,7 +138,7 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
             sleep(1);
         } else {
             // change year year(curdate)
-            $query = "INSERT INTO `answerpats`(`ctrlid`, `cname`, `tcode`, `a11`, `a12`, `a13`, `a14`, `a15`, `a16`, `a17`, `a18`, `a19`, `a20`, `a21`, `a22`, `a23`, `a24`, `a25`, `a26`, `a27`, `a28`, `suggession`, `division`, `sem`, `subject`, `academic_year`) 
+            $query = "INSERT INTO `answerpats`(`ctrlid`, `cname`, `tname`, `a11`, `a12`, `a13`, `a14`, `a15`, `a16`, `a17`, `a18`, `a19`, `a20`, `a21`, `a22`, `a23`, `a24`, `a25`, `a26`, `a27`, `a28`, `suggession`, `division`, `sem`, `subject`, `academic_year`) 
             VALUES ('$rollno','$class','$teacher','$rating1_1','$rating2_1','$rating3_1','$rating1_2','$rating2_2','$rating3_2','$rating4_2','$rating5_2','$rating6_2','$rating7_2','$rating1_3','$rating2_3','$rating3_3','$rating4_3','$rating5_3','$rating6_3','$rating7_3','$rating8_3','$suggest','$division','$semester','$paper','$academic_year');";
             // execute query
             mysqli_query($con, $query);
@@ -212,12 +211,15 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                         <label for="" class="form__label">Name</label>
                     </div>
                     <div class="form__div">
-                        <input type="text" class="form__input" name="rollno" id="rollno" placeholder="e.g 2020080289"
-                            autocomplete="off" />
+                        <input type="text" class="form__input" name="rollno" id="rollno"
+                            placeholder="e.g Use 2020080289 for verify_student" autocomplete="off"
+                            onInput="verify_stu()" />
                         <label for="" class="form__label">Control Id</label>
 
                     </div>
-                    <p class="err_ctrlid" style="<?php echo $err_ctrlid ?>"> Not a valid Ctrl Id.</p>
+                    <!-- feature req -->
+                    <p id="notvalid_roll"></p>
+                    <!-- ajax ctrlid verify -->
 
                     <br />
                     <!-- selected opts -->
@@ -252,7 +254,7 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                             ?>
                         </select>
                     </div>
-
+                    <br />
 
                     <div class="form__div selectaltered">
                         <label for="division" class="text-sm" style="color: rgb(68, 74, 79);">&bull; Choose
@@ -285,7 +287,8 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
 
                     <br />
                     <br />
-                    <ol>
+                    <!-- if msg displaynone -->
+                    <ol id="msg_set">
                         <li>
                             Attitude Towards Students:
                             <br />
@@ -295,7 +298,7 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                                     Positive and motivating attitude towards students.
                                     <br />
                                     <br />
-                                    <span class=" radio">
+                                    <span class="radio">
                                         <p><input type="radio" name="rating1_1" value="1" />&nbsp;
                                             Very-Poor&nbsp;</p>
                                         <p><input type="radio" name="rating1_1" value="2" />&nbsp; Poor&nbsp;</p>

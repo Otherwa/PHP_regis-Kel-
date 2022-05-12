@@ -27,7 +27,7 @@ if (isset($_POST['login'])) {
     $_SESSION['name'] = $name;
 
     $con = get_con();
-    $sql = "SELECT * FROM `admin` WHERE Name = '$name' AND Password = '$pass'";
+    $sql = "SELECT * FROM `admin` WHERE name = '$name' AND pass = '$pass'";
     $result = mysqli_query($con, $sql);
     $row = mysqli_num_rows($result);
     if ($row > 0) {
@@ -52,6 +52,7 @@ if (isset($_POST['login'])) {
     <link rel="stylesheet" type="text/css" href="../../../dist/output.css" />
     <link rel="stylesheet" type="text/css" href="../../../Css/style.css" />
     <link rel="stylesheet" type="text/css" href="../../../Css/form.css" />
+    <link rel="stylesheet" type="text/css" href="../../../Css/nav.css" />
     <!-- title color -->
     <meta name="theme-color" content="#ff6600">
     <!-- Gfonts -->
@@ -78,57 +79,61 @@ if (isset($_POST['login'])) {
     </style>
 </head>
 
-<body class="p-1 m-0">
+<body class="p-0 m-0">
+    <ul class="sidenav">
+        <!-- to destroy session -->
+        <li style="padding-bottom:0px"><a class="font-mono" href="../../../index.html" target="_self">Back</a></li>
+    </ul>
     <br />
     <br />
     <br />
     <br />
     <br />
+    <div class="bg-[#ffffff] text-center content" style="padding:0.5rem">
+        <div class="l-form p-0 ">
 
-    <div class="l-form p-0 ">
+            <form action="#" method="POST" class="form" style="width:33rem">
+                <fieldset>
+                    <legend></legend>
 
-        <form action="#" method="POST" class="form" style="width:33rem">
-            <fieldset>
-                <legend></legend>
+                    <h1 class="form__title"
+                        style="font-family: 'Bungee', cursive; font-size: 2.2rem; color: rgb(119, 195, 196);">
+                        <span style="text-decoration:underline;">Login in</span><br />
+                        <span style=" font-size: 1.4rem; font-family: 'Roboto' , sans-serif; color: black;">SuperUser
+                            <img src="https://github.githubassets.com/images/mona-loading-dark.gif" alt="octo"
+                                style="height:3rem">
+                        </span>
+                    </h1>
 
-                <h1 class="form__title"
-                    style="font-family: 'Bungee', cursive; font-size: 2.2rem; color: rgb(119, 195, 196);">
-                    <span style="text-decoration:underline;">Login in</span><br />
-                    <span style=" font-size: 1.4rem; font-family: 'Roboto' , sans-serif; color: black;">SuperUser <img
-                            src="https://github.githubassets.com/images/mona-loading-dark.gif" alt="octo"
-                            style="height:3rem">
-                    </span>
-                </h1>
+                    <div class="form__div">
+                        <input type="text" class="form__input" name="username" id="name" placeholder="e.g xyz"
+                            autocomplete="off" />
+                        <label for="" class="form__label">Name</label>
+                    </div>
 
-                <div class="form__div">
-                    <input type="text" class="form__input" name="username" id="name" placeholder="e.g xyz"
-                        autocomplete="off" />
-                    <label for="" class="form__label">Name</label>
-                </div>
+                    <div class="form__div">
+                        <input type="password" class="form__input" name="password" id="review" placeholder="e.g xyz@1"
+                            autocomplete="off" />
+                        <label for="" class="form__label">Password</label>
+                    </div>
 
-                <div class="form__div">
-                    <input type="password" class="form__input" name="password" id="review" placeholder="e.g xyz@1"
-                        autocomplete="off" />
-                    <label for="" class="form__label">Password</label>
-                </div>
+                    <br />
+                    <input type="submit" id="sub" class="form__button font-mono" value="Login" name="login"
+                        style="float: right;" />
 
-                <br />
-                <input type="submit" id="sub" class="form__button font-mono" value="Login" name="login"
-                    style="float: right;" />
+                </fieldset>
+            </form>
 
-            </fieldset>
-        </form>
+        </div>
         <br />
-
         <br />
-        <br />
-    </div>
-    <div class="footer-copyright text-center" style="padding:1rem">
-        <br />
-        <p>&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html" target="_self"
-                class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> | <a
-                href="../../../personal.html" class="text-[blue] hover:underline ">Contact</a>
-        </p>
+        <div class="footer-copyright text-center" style="padding:1rem">
+            <br />
+            <p>&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html" target="_self"
+                    class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> | <a
+                    href="../../../personal.html" class="text-[blue] hover:underline ">Contact</a>
+            </p>
+        </div>
     </div>
 </body>
 

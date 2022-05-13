@@ -15,7 +15,6 @@ $con = get_con();
 // err_msgs
 $var1 = 1;
 
-
 if (isset($_POST['submit'])) {
     //session statuses
     $status = session_status();
@@ -42,6 +41,7 @@ if (isset($_POST['submit'])) {
     if ($name == ' ' || $rollno == ' ' || $class == ' ' || $division == ' ' || $semester == ' ' || $paper == ' ' || $paper == "--" || $teacher == ' ') {
         echo "<script>alert('Kindly Check Your Form Once Again 🤓');</script>";
         // session_destroy();
+
     } else {
 
         // double verify student
@@ -51,16 +51,16 @@ if (isset($_POST['submit'])) {
         if ($is_stu != true) {
             echo "<script>alert('Something Wrong with Your Control Id 🤓');</script>";
             // session_destroy();
+
         } else {
 
-            //data submission func 
+            //data submission func
             get_ratings($con, $name, $teacher, $rollno, $class, $division, $semester, $paper);
         }
     }
 }
 
 // get all classes and
-
 function classes($con)
 {
     $query = "SELECT DISTINCT `cname` FROM `activectrlid`;";
@@ -92,9 +92,7 @@ function verify_student($rollno, $con)
     }
 }
 
-
 // sql teacher_name get
-
 // data submit func
 function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semester, $paper)
 {
@@ -122,9 +120,8 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
         $rating7_3 = mysqli_real_escape_string($con, $_POST['rating7_3']);
         $rating8_3 = mysqli_real_escape_string($con, $_POST['rating8_3']);
         $suggest = mysqli_real_escape_string($con, $_POST['suggest']);
-        // echo 
+        // echo
         // echo $rating1_1 . " " . $rating2_1 . " " . $rating3_1 . " " . $rating1_2 . " " . $rating2_2 . " " . $rating3_2 . " " . $rating4_2  . " " . $rating5_2 . " " . $rating6_2 . " " . $rating7_2;
-
         // get academic_year settings
         $query = "SELECT YEAR(CURDATE()) as year_end;";
         $result = mysqli_query($con, $query);
@@ -138,9 +135,9 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
         $start = $result['year_start'];
         $academic_year = $start . "-" . $end;
 
-        // check if already 
+        // check if already
         // concat saftey
-        $query = "SELECT * FROM `answerpats` WHERE ctrlid =\"" . $rollno . "\"" . " AND cname =\"" . $class . "\"" . " AND tname =\"" . $teacher . "\"" . " AND sem =\"" . $semester . "\""  . " AND subject =\"" . $paper . "\""  . " AND academic_year =\"" . $academic_year . "\";";
+        $query = "SELECT * FROM `answerpats` WHERE ctrlid =\"" . $rollno . "\"" . " AND cname =\"" . $class . "\"" . " AND tname =\"" . $teacher . "\"" . " AND sem =\"" . $semester . "\"" . " AND subject =\"" . $paper . "\"" . " AND academic_year =\"" . $academic_year . "\";";
         $result = mysqli_query($con, $query);
         $result = mysqli_num_rows($result);
         if ($result > 0) {
@@ -161,12 +158,11 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
     } else {
         echo "<script>alert('Please select all the fields given below 🤓');</script>";
         //session_destroy();
+
     }
 }
 
-
 ?>
-
 
 <!DOCTYPE html>
 <html>
@@ -217,7 +213,6 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                                 style="height: 3rem; margin-top: 1rem;" />
                         </span>
                     </h1>
-
                     <div class="form__div">
                         <input type="text" class="form__input" name="name" id="name" placeholder="e.g Atharv Desai"
                             autocomplete="off" />
@@ -232,7 +227,6 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                     <!-- feature req -->
                     <p id="notvalid_roll"></p>
                     <!-- ajax ctrlid verify -->
-
                     <!-- <input type="hidden" id="msg"> -->
                     <!-- bug not value do not change -->
                     <br />
@@ -251,7 +245,6 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                             <?php division($con); ?>
                         </select>
                     </div>
-
                     <div class="form__div selectaltered">
                         <label for="division" class="text-sm" style="color: rgb(68, 74, 79);">&bull; Teacher
                             Name:</label>
@@ -263,7 +256,6 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                         </select>
                     </div>
                     <br />
-
                     <div class="form__div selectaltered">
                         <label for="division" class="text-sm" style="color: rgb(68, 74, 79);">&bull; Choose
                             Semester:</label>
@@ -274,8 +266,6 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                         </select>
                     </div>
                     <!-- paper selection -->
-
-
                     <div class="form__div selectaltered" id="semester_paper" style="display: block;">
                         <label for="subject" class="text-sm" style="color: rgb(68, 74, 79);">&bull; Choose
                             Subject:</label>
@@ -284,17 +274,13 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                             <option value=" ">--</option>
                         </select>
                     </div>
-
                     <br />
                     <!-- selected opts -->
-
-
                     <!-- all query  -->
-
                     <br />
                     <br />
                     <!-- if msg displaynone -->
-                    <ol id="msg_set">
+                    <ol id="msg_set" style="display:none">
                         <li>
                             Attitude Towards Students:
                             <br />
@@ -306,18 +292,22 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                                     <br />
                                     <span class="radio">
                                         <p><input type="radio" name="rating1_1" value="1" />&nbsp;
-                                            Very-Poor&nbsp;</p>
+                                            Very-Poor&nbsp;
+                                        </p>
                                         <p><input type="radio" name="rating1_1" value="2" />&nbsp; Poor&nbsp;</p>
                                         <p><input type="radio" name="rating1_1" value="3" />&nbsp;
-                                            Below-Average&nbsp;</p>
+                                            Below-Average&nbsp;
+                                        </p>
                                         <p><input type="radio" name="rating1_1" value="4" />&nbsp;
                                             Average&nbsp;
                                         </p>
                                         <p><input type="radio" name="rating1_1" value="5" />&nbsp; Good&nbsp;</p>
                                         <p> <input type="radio" name="rating1_1" value="6" />&nbsp;
-                                            Very-Good&nbsp;</p>
+                                            Very-Good&nbsp;
+                                        </p>
                                         <p><input type="radio" name="rating1_1" value="7" />&nbsp;
-                                            Excellent&nbsp;</p>
+                                            Excellent&nbsp;
+                                        </p>
                                     </span>
                                 </li>
                                 <li>
@@ -327,17 +317,21 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                                     <br />
                                     <span class="radio">
                                         <p><input type="radio" name="rating2_1" value="1" />&nbsp;
-                                            Very-Poor&nbsp; </p>
+                                            Very-Poor&nbsp;
+                                        </p>
                                         <p><input type="radio" name="rating2_1" value="2" />&nbsp; Poor&nbsp;</p>
                                         <p><input type="radio" name="rating2_1" value="3" />&nbsp;
-                                            Below-Average&nbsp;</p>
+                                            Below-Average&nbsp;
+                                        </p>
                                         <p><input type="radio" name="rating2_1" value="4" />&nbsp; Average&nbsp;
                                         </p>
                                         <p> <input type="radio" name="rating2_1" value="5" />&nbsp; Good&nbsp;</p>
                                         <p><input type="radio" name="rating2_1" value="6" />&nbsp;
-                                            Very-Good&nbsp;</p>
+                                            Very-Good&nbsp;
+                                        </p>
                                         <p><input type="radio" name="rating2_1" value="7" />&nbsp;
-                                            Excellent&nbsp;</p>
+                                            Excellent&nbsp;
+                                        </p>
                                     </span>
                                 </li>
                                 <li>
@@ -346,17 +340,21 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                                     <br />
                                     <span class="radio">
                                         <p><input type="radio" name="rating3_1" value="1" />&nbsp;
-                                            Very-Poor&nbsp;</p>
+                                            Very-Poor&nbsp;
+                                        </p>
                                         <p><input type="radio" name="rating3_1" value="2" />&nbsp; Poor&nbsp;</p>
                                         <p> <input type="radio" name="rating3_1" value="3" />&nbsp;
-                                            Below-Average&nbsp;</p>
+                                            Below-Average&nbsp;
+                                        </p>
                                         <p> <input type="radio" name="rating3_1" value="4" />&nbsp; Average&nbsp;
                                         </p>
                                         <p><input type="radio" name="rating3_1" value="5" />&nbsp; Good&nbsp; </p>
                                         <p><input type="radio" name="rating3_1" value="6" />&nbsp;
-                                            Very-Good&nbsp;</p>
+                                            Very-Good&nbsp;
+                                        </p>
                                         <p><input type="radio" name="rating3_1" value="7" />&nbsp;
-                                            Excellent&nbsp;</p>
+                                            Excellent&nbsp;
+                                        </p>
                                     </span>
                                 </li>
                             </ul>
@@ -377,7 +375,8 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                                         </p>
                                         <p><input type="radio" name="rating1_2" value="2" />&nbsp; Poor&nbsp;</p>
                                         <p><input type="radio" name="rating1_2" value="3" />&nbsp;
-                                            Below-Average&nbsp;</p>
+                                            Below-Average&nbsp;
+                                        </p>
                                         <p><input type="radio" name="rating1_2" value="4" />&nbsp; Average&nbsp;
                                         </p>
                                         <p><input type="radio" name="rating1_2" value="5" />&nbsp; Good&nbsp;</p>
@@ -385,7 +384,8 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                                             Very-Good&nbsp;
                                         </p>
                                         <p><input type="radio" name="rating1_2" value="7" />&nbsp;
-                                            Excellent&nbsp;</p>
+                                            Excellent&nbsp;
+                                        </p>
                                     </span>
                                 </li>
                                 <li>
@@ -394,17 +394,21 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                                     <br />
                                     <span class="radio">
                                         <p><input type="radio" name="rating2_2" value="1" />&nbsp;
-                                            Very-Poor&nbsp;</p>
+                                            Very-Poor&nbsp;
+                                        </p>
                                         <p><input type="radio" name="rating2_2" value="2" />&nbsp; Poor&nbsp; </p>
                                         <p> <input type="radio" name="rating2_2" value="3" />&nbsp;
-                                            Below-Average&nbsp;</p>
+                                            Below-Average&nbsp;
+                                        </p>
                                         <p> <input type="radio" name="rating2_2" value="4" />&nbsp; Average&nbsp;
                                         </p>
                                         <p> <input type="radio" name="rating2_2" value="5" />&nbsp; Good&nbsp;</p>
                                         <p> <input type="radio" name="rating2_2" value="6" />&nbsp;
-                                            Very-Good&nbsp;</p>
+                                            Very-Good&nbsp;
+                                        </p>
                                         <p> <input type="radio" name="rating2_2" value="7" />&nbsp;
-                                            Excellent&nbsp;</p>
+                                            Excellent&nbsp;
+                                        </p>
                                     </span>
                                 </li>
                                 <li>
@@ -413,17 +417,21 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                                     <br />
                                     <span class="radio">
                                         <p><input type="radio" name="rating3_2" value="1" />&nbsp;
-                                            Very-Poor&nbsp;</p>
+                                            Very-Poor&nbsp;
+                                        </p>
                                         <p> <input type="radio" name="rating3_2" value="2" />&nbsp; Poor&nbsp;</p>
                                         <p> <input type="radio" name="rating3_2" value="3" />&nbsp;
-                                            Below-Average&nbsp;</p>
+                                            Below-Average&nbsp;
+                                        </p>
                                         <p> <input type="radio" name="rating3_2" value="4" />&nbsp; Average&nbsp;
                                         </p>
                                         <p> <input type="radio" name="rating3_2" value="5" />&nbsp; Good&nbsp;</p>
                                         <p><input type="radio" name="rating3_2" value="6" />&nbsp;
-                                            Very-Good&nbsp;</p>
+                                            Very-Good&nbsp;
+                                        </p>
                                         <p> <input type="radio" name="rating3_2" value="7" />&nbsp;
-                                            Excellent&nbsp;</p>
+                                            Excellent&nbsp;
+                                        </p>
                                     </span>
                                 </li>
                                 <li>
@@ -432,17 +440,21 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                                     <br />
                                     <span class="radio">
                                         <p><input type="radio" name="rating4_2" value="1" />&nbsp;
-                                            Very-Poor&nbsp;</p>
+                                            Very-Poor&nbsp;
+                                        </p>
                                         <p><input type="radio" name="rating4_2" value="2" />&nbsp; Poor&nbsp;</p>
                                         <p><input type="radio" name="rating4_2" value="3" />&nbsp;
-                                            Below-Average&nbsp;</p>
+                                            Below-Average&nbsp;
+                                        </p>
                                         <p><input type="radio" name="rating4_2" value="4" />&nbsp; Average&nbsp;
                                         </p>
                                         <p><input type="radio" name="rating4_2" value="5" />&nbsp; Good&nbsp;</p>
                                         <p> <input type="radio" name="rating4_2" value="6" />&nbsp;
-                                            Very-Good&nbsp;</p>
+                                            Very-Good&nbsp;
+                                        </p>
                                         <p> <input type="radio" name="rating4_2" value="7" />&nbsp;
-                                            Excellent&nbsp;</p>
+                                            Excellent&nbsp;
+                                        </p>
                                     </span>
                                 </li>
                                 <li>
@@ -451,17 +463,21 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                                     <br />
                                     <span class="radio">
                                         <p><input type="radio" name="rating5_2" value="1" />&nbsp;
-                                            Very-Poor&nbsp;</p>
+                                            Very-Poor&nbsp;
+                                        </p>
                                         <p><input type="radio" name="rating5_2" value="2" />&nbsp; Poor&nbsp;</p>
                                         <p><input type="radio" name="rating5_2" value="3" />&nbsp;
-                                            Below-Average&nbsp;</p>
+                                            Below-Average&nbsp;
+                                        </p>
                                         <p> <input type="radio" name="rating5_2" value="4" />&nbsp; Average&nbsp;
                                         </p>
                                         <p><input type="radio" name="rating5_2" value="5" />&nbsp; Good&nbsp;</p>
                                         <p> <input type="radio" name="rating5_2" value="6" />&nbsp;
-                                            Very-Good&nbsp;</p>
+                                            Very-Good&nbsp;
+                                        </p>
                                         <p><input type="radio" name="rating5_2" value="7" />&nbsp;
-                                            Excellent&nbsp;</p>
+                                            Excellent&nbsp;
+                                        </p>
                                     </span>
                                 </li>
                                 <li>
@@ -470,17 +486,21 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                                     <br />
                                     <span class="radio">
                                         <p><input type="radio" name="rating6_2" value="1" />&nbsp;
-                                            Very-Poor&nbsp;</p>
+                                            Very-Poor&nbsp;
+                                        </p>
                                         <p> <input type="radio" name="rating6_2" value="2" />&nbsp; Poor&nbsp;</p>
                                         <p> <input type="radio" name="rating6_2" value="3" />&nbsp;
-                                            Below-Average&nbsp;</p>
+                                            Below-Average&nbsp;
+                                        </p>
                                         <p> <input type="radio" name="rating6_2" value="4" />&nbsp; Average&nbsp;
                                         </p>
                                         <p> <input type="radio" name="rating6_2" value="5" />&nbsp; Good&nbsp;</p>
                                         <p> <input type="radio" name="rating6_2" value="6" />&nbsp;
-                                            Very-Good&nbsp;</p>
+                                            Very-Good&nbsp;
+                                        </p>
                                         <p> <input type="radio" name="rating6_2" value="7" />&nbsp;
-                                            Excellent&nbsp;</p>
+                                            Excellent&nbsp;
+                                        </p>
                                     </span>
                                 </li>
                                 <li>
@@ -490,17 +510,21 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                                     <br />
                                     <span class="radio">
                                         <p><input type="radio" name="rating7_2" value="1" />&nbsp;
-                                            Very-Poor&nbsp;</p>
+                                            Very-Poor&nbsp;
+                                        </p>
                                         <p><input type="radio" name="rating7_2" value="2" />&nbsp; Poor&nbsp;</p>
                                         <p><input type="radio" name="rating7_2" value="3" />&nbsp;
-                                            Below-Average&nbsp;</p>
+                                            Below-Average&nbsp;
+                                        </p>
                                         <p><input type="radio" name="rating7_2" value="4" />&nbsp; Average&nbsp;
                                         </p>
                                         <p> <input type="radio" name="rating7_2" value="5" />&nbsp; Good&nbsp;</p>
                                         <p><input type="radio" name="rating7_2" value="6" />&nbsp;
-                                            Very-Good&nbsp;</p>
+                                            Very-Good&nbsp;
+                                        </p>
                                         <p><input type="radio" name="rating7_2" value="7" />&nbsp;
-                                            Excellent&nbsp;</p>
+                                            Excellent&nbsp;
+                                        </p>
                                     </span>
                                 </li>
                             </ul>
@@ -518,17 +542,21 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                                     <br />
                                     <span class="radio">
                                         <p><input type="radio" name="rating1_3" value="1" />&nbsp;
-                                            Very-Poor&nbsp;</p>
+                                            Very-Poor&nbsp;
+                                        </p>
                                         <p><input type="radio" name="rating1_3" value="2" />&nbsp; Poor&nbsp;</p>
                                         <p><input type="radio" name="rating1_3" value="3" />&nbsp;
-                                            Below-Average&nbsp;</p>
+                                            Below-Average&nbsp;
+                                        </p>
                                         <p> <input type="radio" name="rating1_3" value="4" />&nbsp; Average&nbsp;
                                         </p>
                                         <p> <input type="radio" name="rating1_3" value="5" />&nbsp; Good&nbsp;</p>
                                         <p><input type="radio" name="rating1_3" value="6" />&nbsp;
-                                            Very-Good&nbsp;</p>
+                                            Very-Good&nbsp;
+                                        </p>
                                         <p><input type="radio" name="rating1_3" value="7" />&nbsp;
-                                            Excellent&nbsp;</p>
+                                            Excellent&nbsp;
+                                        </p>
                                     </span>
                                 </li>
                                 <li>
@@ -537,17 +565,21 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                                     <br />
                                     <span class="radio">
                                         <p><input type="radio" name="rating2_3" value="1" />&nbsp;
-                                            Very-Poor&nbsp;</p>
+                                            Very-Poor&nbsp;
+                                        </p>
                                         <p><input type="radio" name="rating2_3" value="2" />&nbsp; Poor&nbsp;</p>
                                         <p><input type="radio" name="rating2_3" value="3" />&nbsp;
-                                            Below-Average&nbsp;</p>
+                                            Below-Average&nbsp;
+                                        </p>
                                         <p> <input type="radio" name="rating2_3" value="4" />&nbsp; Average&nbsp;
                                         </p>
                                         <p> <input type="radio" name="rating2_3" value="5" />&nbsp; Good&nbsp;</p>
                                         <p><input type="radio" name="rating2_3" value="6" />&nbsp;
-                                            Very-Good&nbsp;</p>
+                                            Very-Good&nbsp;
+                                        </p>
                                         <p><input type="radio" name="rating2_3" value="7" />&nbsp;
-                                            Excellent&nbsp;</p>
+                                            Excellent&nbsp;
+                                        </p>
                                     </span>
                                 </li>
                                 <li>
@@ -556,17 +588,21 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                                     <br />
                                     <span class="radio">
                                         <p><input type="radio" name="rating3_3" value="1" />&nbsp;
-                                            Very-Poor&nbsp;</p>
+                                            Very-Poor&nbsp;
+                                        </p>
                                         <p><input type="radio" name="rating3_3" value="2" />&nbsp; Poor&nbsp;</p>
                                         <p><input type="radio" name="rating3_3" value="3" />&nbsp;
-                                            Below-Average&nbsp;</p>
+                                            Below-Average&nbsp;
+                                        </p>
                                         <p> <input type="radio" name="rating3_3" value="4" />&nbsp; Average&nbsp;
                                         </p>
                                         <p> <input type="radio" name="rating3_3" value="5" />&nbsp; Good&nbsp;</p>
                                         <p><input type="radio" name="rating3_3" value="6" />&nbsp;
-                                            Very-Good&nbsp;</p>
+                                            Very-Good&nbsp;
+                                        </p>
                                         <p><input type="radio" name="rating3_3" value="7" />&nbsp;
-                                            Excellent&nbsp;</p>
+                                            Excellent&nbsp;
+                                        </p>
                                     </span>
                                 </li>
                                 <li>
@@ -575,17 +611,21 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                                     <br />
                                     <span class="radio">
                                         <p><input type="radio" name="rating4_3" value="1" />&nbsp;
-                                            Very-Poor&nbsp;</p>
+                                            Very-Poor&nbsp;
+                                        </p>
                                         <p><input type="radio" name="rating4_3" value="2" />&nbsp; Poor&nbsp;</p>
                                         <p><input type="radio" name="rating4_3" value="3" />&nbsp;
-                                            Below-Average&nbsp;</p>
+                                            Below-Average&nbsp;
+                                        </p>
                                         <p> <input type="radio" name="rating4_3" value="4" />&nbsp; Average&nbsp;
                                         </p>
                                         <p> <input type="radio" name="rating4_3" value="5" />&nbsp; Good&nbsp;</p>
                                         <p><input type="radio" name="rating4_3" value="6" />&nbsp;
-                                            Very-Good&nbsp;</p>
+                                            Very-Good&nbsp;
+                                        </p>
                                         <p><input type="radio" name="rating4_3" value="7" />&nbsp;
-                                            Excellent&nbsp;</p>
+                                            Excellent&nbsp;
+                                        </p>
                                     </span>
                                 </li>
                                 <li>
@@ -595,17 +635,21 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                                     <br />
                                     <span class="radio">
                                         <p><input type="radio" name="rating5_3" value="1" />&nbsp;
-                                            Very-Poor&nbsp;</p>
+                                            Very-Poor&nbsp;
+                                        </p>
                                         <p><input type="radio" name="rating5_3" value="2" />&nbsp; Poor&nbsp;</p>
                                         <p><input type="radio" name="rating5_3" value="3" />&nbsp;
-                                            Below-Average&nbsp;</p>
+                                            Below-Average&nbsp;
+                                        </p>
                                         <p> <input type="radio" name="rating5_3" value="4" />&nbsp; Average&nbsp;
                                         </p>
                                         <p> <input type="radio" name="rating5_3" value="5" />&nbsp; Good&nbsp;</p>
                                         <p><input type="radio" name="rating5_3" value="6" />&nbsp;
-                                            Very-Good&nbsp;</p>
+                                            Very-Good&nbsp;
+                                        </p>
                                         <p><input type="radio" name="rating5_3" value="7" />&nbsp;
-                                            Excellent&nbsp;</p>
+                                            Excellent&nbsp;
+                                        </p>
                                     </span>
                                 </li>
                                 <li>
@@ -614,17 +658,21 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                                     <br />
                                     <span class="radio">
                                         <p><input type="radio" name="rating6_3" value="1" />&nbsp;
-                                            Very-Poor&nbsp;</p>
+                                            Very-Poor&nbsp;
+                                        </p>
                                         <p><input type="radio" name="rating6_3" value="2" />&nbsp; Poor&nbsp;</p>
                                         <p><input type="radio" name="rating6_3" value="3" />&nbsp;
-                                            Below-Average&nbsp;</p>
+                                            Below-Average&nbsp;
+                                        </p>
                                         <p> <input type="radio" name="rating6_3" value="4" />&nbsp; Average&nbsp;
                                         </p>
                                         <p> <input type="radio" name="rating6_3" value="5" />&nbsp; Good&nbsp;</p>
                                         <p><input type="radio" name="rating6_3" value="6" />&nbsp;
-                                            Very-Good&nbsp;</p>
+                                            Very-Good&nbsp;
+                                        </p>
                                         <p><input type="radio" name="rating6_3" value="7" />&nbsp;
-                                            Excellent&nbsp;</p>
+                                            Excellent&nbsp;
+                                        </p>
                                     </span>
                                 </li>
                                 <li>
@@ -633,17 +681,21 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                                     <br />
                                     <span class="radio">
                                         <p><input type="radio" name="rating7_3" value="1" />&nbsp;
-                                            Very-Poor&nbsp;</p>
+                                            Very-Poor&nbsp;
+                                        </p>
                                         <p><input type="radio" name="rating7_3" value="2" />&nbsp; Poor&nbsp;</p>
                                         <p><input type="radio" name="rating7_3" value="3" />&nbsp;
-                                            Below-Average&nbsp;</p>
+                                            Below-Average&nbsp;
+                                        </p>
                                         <p> <input type="radio" name="rating7_3" value="4" />&nbsp; Average&nbsp;
                                         </p>
                                         <p> <input type="radio" name="rating7_3" value="5" />&nbsp; Good&nbsp;</p>
                                         <p><input type="radio" name="rating7_3" value="6" />&nbsp;
-                                            Very-Good&nbsp;</p>
+                                            Very-Good&nbsp;
+                                        </p>
                                         <p><input type="radio" name="rating7_3" value="7" />&nbsp;
-                                            Excellent&nbsp;</p>
+                                            Excellent&nbsp;
+                                        </p>
                                     </span>
                                 </li>
                                 <li>
@@ -652,17 +704,21 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                                     <br />
                                     <span class="radio">
                                         <p><input type="radio" name="rating8_3" value="1" />&nbsp;
-                                            Very-Poor&nbsp;</p>
+                                            Very-Poor&nbsp;
+                                        </p>
                                         <p><input type="radio" name="rating8_3" value="2" />&nbsp; Poor&nbsp;</p>
                                         <p><input type="radio" name="rating8_3" value="3" />&nbsp;
-                                            Below-Average&nbsp;</p>
+                                            Below-Average&nbsp;
+                                        </p>
                                         <p> <input type="radio" name="rating8_3" value="4" />&nbsp; Average&nbsp;
                                         </p>
                                         <p> <input type="radio" name="rating8_3" value="5" />&nbsp; Good&nbsp;</p>
                                         <p><input type="radio" name="rating8_3" value="6" />&nbsp;
-                                            Very-Good&nbsp;</p>
+                                            Very-Good&nbsp;
+                                        </p>
                                         <p><input type="radio" name="rating8_3" value="7" />&nbsp;
-                                            Excellent&nbsp;</p>
+                                            Excellent&nbsp;
+                                        </p>
                                     </span>
                                 </li>
                             </ul>
@@ -681,7 +737,6 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
             </form>
         </div>
         <br />
-
         <div class="footer-copyright text-center">
             <br />
             <p style="padding: 1rem;">
@@ -692,7 +747,6 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
             </p>
         </div>
     </div>
-
 </body>
 <!-- jquery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -701,7 +755,5 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
 <script src="../../../Js/main.js" type="text/javascript"></script>
 <script async type="text/javascript"
     src="https://api.countapi.xyz/hit/KelkarForms.com/415a7523-bb25-4d45-a700-33a48a168a6c/?callback=counter"></script>
-
-
 
 </html>

@@ -18,9 +18,11 @@ roll.addEventListener('blur', () => {
 })
 
 roll.addEventListener('focus', () => {
-        roll.style.borderColor = "#006eff";
-    })
-    // works do not touch
+    roll.style.borderColor = "#006eff";
+})
+
+
+// works do not touch
 var value1 = "";
 var value2 = "";
 
@@ -86,12 +88,16 @@ function FetchSub_from_division(id) {
     })
 }
 
+
+// verification 
+
 // begin condition;
 window.onload = () => {
-        document.getElementById("sub").disabled = true;
+    document.getElementById("sub").disabled = true;
+}
 
-    }
-    // verify student async
+
+// verify student async
 function verify_stu() {
     $.ajax({
         type: 'post',
@@ -111,5 +117,7 @@ window.setInterval(function() {
         var msg = document.getElementById('msg').value;
         // console.log(msg);
         document.getElementById('msg_set').style.display = msg;
+    } else {
+        document.getElementById("sub").disabled = true;
     }
 }, 50);

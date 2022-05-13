@@ -24,7 +24,9 @@ if (isset($_POST['FFForm'])) {
     header('Location: faculty.php');
 }
 // INSERT INTO `form_fillup` (`Id`, `Name`, `Review`, `Day`) VALUES ('1', 'Atharv', 'NICE', DAYNAME(CURDATE()));
+
 ?>
+
 
 
 <!DOCTYPE html>
@@ -105,7 +107,6 @@ if (isset($_POST['FFForm'])) {
             </p>
         </div>
     </div>
-
 </body>
 <!-- form validation -->
 <script type="text/javascript" src="../../../Js/forms.js"></script>

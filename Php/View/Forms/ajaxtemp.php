@@ -44,7 +44,7 @@ if (isset($_POST['sem']) && isset($_POST['teachername'])) {
 }
 
 
-
+// verify student
 if (isset($_POST['rollno'])) {
     $con = get_con();
     $query = " SELECT * FROM `activectrlid` WHERE ctrlid= " . "\"" . $_POST['rollno'] . "\";";

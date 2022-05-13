@@ -22,19 +22,44 @@ roll.addEventListener('focus', () => {
     })
     // works do not touch
 var value1 = "";
+var value2 = "";
+
+
 // for Ajax requests noob code
 // ref https://www.youtube.com/watch?v=neZTTWJ98-0
-
-function FetchSem(id) {
+function FetchTeacher_from_class(id) {
     $('#semester').html('<option value =" ">--</option>');
     $('#subject').html('<option value =" ">--</option>');
+    $('#teacher').html('<option value =" ">--</option>');
     $.ajax({
         type: 'post',
         url: 'ajaxtemp.php',
         data: {
-            tname: id
+            class: id
         },
         success: function(data) {
+            // first clear data
+            $('#teacher').html("");
+            $('#teacher').html(data);
+        }
+
+    })
+    class1 = id;
+}
+
+function FetchSem_from_teacher(id) {
+    $('#semester').html('<option value =" ">--</option>');
+    $('#subject').html('<option value =" ">--</option>');
+    console.log(value2);
+    $.ajax({
+        type: 'post',
+        url: 'ajaxtemp.php',
+        data: {
+            tname: id,
+            classv1: class1,
+        },
+        success: function(data) {
+            $('#semester').html("");
             $('#semester').html(data);
         }
 
@@ -44,7 +69,7 @@ function FetchSem(id) {
 }
 
 // get subject for specific sem of teacher
-function FetchSub(id) {
+function FetchSub_from_division(id) {
     $('#subject').html('<option value =" ">--</option>');
     $.ajax({
         type: 'post',
@@ -54,13 +79,19 @@ function FetchSub(id) {
             teachername: value1,
         },
         success: function(data) {
+            $('#subject').html("");
             $('#subject').html(data);
         }
 
     })
 }
 
-// verify student ascyconously
+// begin condition;
+window.onload = () => {
+        document.getElementById("sub").disabled = true;
+
+    }
+    // verify student async
 function verify_stu() {
     $.ajax({
         type: 'post',
@@ -74,9 +105,11 @@ function verify_stu() {
 }
 
 
-// if ctrlid valid set ratings else none
+// if ctrlid valid set ratings else none every 50 ms 
 window.setInterval(function() {
-    var msg = document.getElementById('msg').value;
-    console.log(msg);
-    document.getElementById('msg_set').style.display = msg;
-}, 1000);
+    if (document.getElementById('msg') != null) {
+        var msg = document.getElementById('msg').value;
+        // console.log(msg);
+        document.getElementById('msg_set').style.display = msg;
+    }
+}, 50);

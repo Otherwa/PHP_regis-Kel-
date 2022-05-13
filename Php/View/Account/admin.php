@@ -67,7 +67,8 @@ session_destroy();
     <br />
     <!-- This requires Tailwind CSS v2.0+ -->
     <div class=" bg-[#ffffff] text-center p-3 m-2">
-        <p class="text-4xl myfont antialiased tracking-normal md:text-4xl overline leading-loose">Hey Shaw'ty.</p>
+        <!-- <img src="https://c.tenor.com/iUBQduqPqH4AAAAM/badform-gymfail.gif" alt=""> -->
+        <p class="text-4xl myfont antialiased tracking-normal md:text-4xl overline leading-loose">Hey Adminisrator.</p>
         <br />
 
         <br />
@@ -100,6 +101,9 @@ session_destroy();
     <script type="text/javascript" src="../../../Js/admin.js"></script>
 
 </body>
+<script src="../../../Js/main.js" type="text/javascript"></script>
+<script async type="text/javascript"
+    src="https://api.countapi.xyz/hit/KelkarForms.com/415a7523-bb25-4d45-a700-33a48a168a6c/?callback=counter"></script>
 
 
 </html>

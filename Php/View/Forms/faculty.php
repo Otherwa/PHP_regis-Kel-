@@ -567,5 +567,9 @@ if (isset($_POST['submit'])) {
 
 <!-- form validation -->
 <script type="text/javascript" src="../../../Js/papto.js"></script>
+<script src="../../../Js/main.js" type="text/javascript"></script>
+<script async type="text/javascript"
+    src="https://api.countapi.xyz/hit/KelkarForms.com/415a7523-bb25-4d45-a700-33a48a168a6c/?callback=counter"></script>
+
 
 </html>

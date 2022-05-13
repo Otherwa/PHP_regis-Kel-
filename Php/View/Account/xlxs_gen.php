@@ -10,7 +10,8 @@ if (isset($_POST["export"])) {
      if (mysqli_num_rows($result) > 0) {
           $output .= '
    <table class="table" bordered="1">  
-                    <tr>  
+                    <tr>
+                    // change markup here to question for easy editing of headers
                          <th>ctrlid</th>  
                          <th>cname</th>  
                          <th>tname</th>  
@@ -37,6 +38,7 @@ if (isset($_POST["export"])) {
                          <th>sem</th>  
                          <th>subject</th>  
                          <th>academic year</th>  
+                         <th>timestamp</th>  
                     </tr>
   ';
           while ($row = mysqli_fetch_array($result)) {
@@ -68,6 +70,7 @@ if (isset($_POST["export"])) {
                          <td>' . $row["sem"] . '</td>  
                          <td>' . $row["subject"] . '</td>  
                          <td>' . $row["academic_year"] . '</td>    
+                         <td>' . $row["TIme"] . '</td>    
             </tr>
    ';
           }

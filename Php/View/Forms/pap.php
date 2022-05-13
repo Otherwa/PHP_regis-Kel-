@@ -40,7 +40,7 @@ if (isset($_POST['submit'])) {
     $teacher = mysqli_real_escape_string($con, $_POST['teacher']);
 
     if ($name == ' ' || $rollno == ' ' || $class == ' ' || $division == ' ' || $semester == ' ' || $paper == ' ' || $paper == "--" || $teacher == ' ') {
-        echo "<script>alert('name set issues');</script>";
+        echo "<script>alert('Kindly Check Your Form Once Again 🤓');</script>";
         // session_destroy();
     } else {
 
@@ -49,7 +49,7 @@ if (isset($_POST['submit'])) {
 
         // check stu active ctrlid
         if ($is_stu != true) {
-            echo "<script>alert('ctrlid issues');</script>";
+            echo "<script>alert('Something Wrong with Your Control Id 🤓');</script>";
             // session_destroy();
         } else {
 
@@ -59,6 +59,26 @@ if (isset($_POST['submit'])) {
     }
 }
 
+// get all classes and
+
+function classes($con)
+{
+    $query = "SELECT DISTINCT `cname` FROM `activectrlid`;";
+    $result = mysqli_query($con, $query);
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo "<option value =\"" . $row['cname'] . "\">" . $row['cname'] . "</option>";
+    }
+}
+
+// get division
+function division($con)
+{
+    $query = "SELECT DISTINCT `division` FROM `activectrlid`;";
+    $result = mysqli_query($con, $query);
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo "<option value =\"" . $row['division'] . "\">" . $row['division'] . "</option>";
+    }
+}
 
 // double ctrlid check during submission
 function verify_student($rollno, $con)
@@ -74,15 +94,6 @@ function verify_student($rollno, $con)
 
 
 // sql teacher_name get
-function teacher_dat($con)
-{
-    $query = "SELECT distinct(`tname`) FROM `teachers`;";
-    $result = mysqli_query($con, $query);
-    while ($row = mysqli_fetch_assoc($result)) {
-
-        echo "<option value"  . "=\""  . $row['tname'] . "\">" . $row['tname'] . "</option>";
-    }
-}
 
 // data submit func
 function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semester, $paper)
@@ -114,7 +125,7 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
         // echo 
         // echo $rating1_1 . " " . $rating2_1 . " " . $rating3_1 . " " . $rating1_2 . " " . $rating2_2 . " " . $rating3_2 . " " . $rating4_2  . " " . $rating5_2 . " " . $rating6_2 . " " . $rating7_2;
 
-        // get academic_year
+        // get academic_year settings
         $query = "SELECT YEAR(CURDATE()) as year_end;";
         $result = mysqli_query($con, $query);
         $result = mysqli_fetch_assoc($result);
@@ -127,26 +138,28 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
         $start = $result['year_start'];
         $academic_year = $start . "-" . $end;
 
-        // check if already exists
+        // check if already 
+        // concat saftey
         $query = "SELECT * FROM `answerpats` WHERE ctrlid =\"" . $rollno . "\"" . " AND cname =\"" . $class . "\"" . " AND tname =\"" . $teacher . "\"" . " AND sem =\"" . $semester . "\""  . " AND subject =\"" . $paper . "\""  . " AND academic_year =\"" . $academic_year . "\";";
         $result = mysqli_query($con, $query);
         $result = mysqli_num_rows($result);
         if ($result > 0) {
-            echo "<script>alert('form already exists');</script>";
+            echo "<script>alert('Your submitted Form already exists 🤡');</script>";
             // redirect flag
             // session_destroy();
             sleep(1);
         } else {
             // change year year(curdate)
-            $query = "INSERT INTO `answerpats`(`ctrlid`, `cname`, `tname`, `a11`, `a12`, `a13`, `a14`, `a15`, `a16`, `a17`, `a18`, `a19`, `a20`, `a21`, `a22`, `a23`, `a24`, `a25`, `a26`, `a27`, `a28`, `suggession`, `division`, `sem`, `subject`, `academic_year`) 
-            VALUES ('$rollno','$class','$teacher','$rating1_1','$rating2_1','$rating3_1','$rating1_2','$rating2_2','$rating3_2','$rating4_2','$rating5_2','$rating6_2','$rating7_2','$rating1_3','$rating2_3','$rating3_3','$rating4_3','$rating5_3','$rating6_3','$rating7_3','$rating8_3','$suggest','$division','$semester','$paper','$academic_year');";
+            sleep(1);
+            $query = "INSERT INTO `answerpats`(`ctrlid`, `cname`, `tname`, `a11`, `a12`, `a13`, `a14`, `a15`, `a16`, `a17`, `a18`, `a19`, `a20`, `a21`, `a22`, `a23`, `a24`, `a25`, `a26`, `a27`, `a28`, `suggession`, `division`, `sem`, `subject`, `academic_year`,`Time`) 
+            VALUES ('$rollno','$class','$teacher','$rating1_1','$rating2_1','$rating3_1','$rating1_2','$rating2_2','$rating3_2','$rating4_2','$rating5_2','$rating6_2','$rating7_2','$rating1_3','$rating2_3','$rating3_3','$rating4_3','$rating5_3','$rating6_3','$rating7_3','$rating8_3','$suggest','$division','$semester','$paper','$academic_year',current_timestamp());";
             // execute query
             mysqli_query($con, $query);
             $_SESSION['name'] = $name;
             header('Location: formsubmit.php');
         }
     } else {
-        echo "<script>alert('ratting isssues');</script>";
+        echo "<script>alert('Please select all the fields given below 🤓');</script>";
         //session_destroy();
     }
 }
@@ -215,43 +228,38 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                             placeholder="e.g Use 2020080289 for verify_student" autocomplete="off"
                             onInput="verify_stu()" />
                         <label for="" class="form__label">Control Id</label>
-
                     </div>
                     <!-- feature req -->
                     <p id="notvalid_roll"></p>
                     <!-- ajax ctrlid verify -->
 
+                    <!-- <input type="hidden" id="msg"> -->
+                    <!-- bug not value do not change -->
                     <br />
                     <!-- selected opts -->
                     <div class="form__div selectaltered">
                         <label for="class" class="text-sm" style="color: rgb(68, 74, 79);">&bull; Class:</label>
-                        <select name="class" id="class">
+                        <select name="class" id="class" onchange=FetchTeacher_from_class(this.value)>
                             <option value=" " selected>--</option>
-                            <option value="FYIT">FYBsc-IT</option>
-                            <option value="SYIT">SYBsc-IT</option>
-                            <option value="TYIT">TYBsc-IT</option>
+                            <!-- list of classes -->
+                            <?php classes($con); ?>
                         </select>
                     </div>
                     <div class="form__div selectaltered">
                         <label for="division" class="text-sm" style="color: rgb(68, 74, 79);">&bull; Division:</label>
                         <select name="division" id="divison">
-                            <option value=" ">--</option>
-                            <option value="A" selected>A</option>
-                            <option value="B">B</option>
-                            <option value="C">C</option>
-                            <option value="D">D</option>
+                            <?php division($con); ?>
                         </select>
                     </div>
 
-                    <div class="form__div selectaltered" id="teacher">
+                    <div class="form__div selectaltered">
                         <label for="division" class="text-sm" style="color: rgb(68, 74, 79);">&bull; Teacher
                             Name:</label>
-                        <select name="teacher" id="teacher" onchange=FetchSem(this.value)>
+                        <select style="width:5rem" name="teacher" id="teacher"
+                            onchange=FetchSem_from_teacher(this.value)>
                             <option value=" ">--</option>
                             <!-- get list -->
-                            <?php
-                            teacher_dat($con);
-                            ?>
+                            <!-- get list Ajax -->
                         </select>
                     </div>
                     <br />
@@ -259,15 +267,13 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                     <div class="form__div selectaltered">
                         <label for="division" class="text-sm" style="color: rgb(68, 74, 79);">&bull; Choose
                             Semester:</label>
-                        <select name="semester" id="semester" onchange=FetchSub(this.value)>
+                        <select name="semester" id="semester" onchange=FetchSub_from_division(this.value)>
                             <option value=" ">--</option>
                             <!-- get list Ajax-->
                             <!-- value as space character if no subject -->
                         </select>
                     </div>
                     <!-- paper selection -->
-
-
 
 
                     <div class="form__div selectaltered" id="semester_paper" style="display: block;">
@@ -692,6 +698,10 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <!-- form validation -->
 <script type="text/javascript" src="../../../Js/papto.js"></script>
+<script src="../../../Js/main.js" type="text/javascript"></script>
+<script async type="text/javascript"
+    src="https://api.countapi.xyz/hit/KelkarForms.com/415a7523-bb25-4d45-a700-33a48a168a6c/?callback=counter"></script>
+
 
 
 </html>

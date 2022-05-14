@@ -86,7 +86,7 @@ session_destroy();
 
     /* inline nav */
     .overfolo::-webkit-scrollbar {
-        width: 9px;
+        width: 3px;
     }
 
     /* Track */
@@ -99,6 +99,7 @@ session_destroy();
 
     .overfolo::-webkit-scrollbar-thumb {
         background: #006eff;
+        border-radius: 0.5rem;
     }
 
     /* Handle on hover */

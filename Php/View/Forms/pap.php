@@ -122,18 +122,14 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
         $suggest = mysqli_real_escape_string($con, $_POST['suggest']);
         // echo
         // echo $rating1_1 . " " . $rating2_1 . " " . $rating3_1 . " " . $rating1_2 . " " . $rating2_2 . " " . $rating3_2 . " " . $rating4_2  . " " . $rating5_2 . " " . $rating6_2 . " " . $rating7_2;
-        // get academic_year settings
-        $query = "SELECT YEAR(CURDATE()) as year_end;";
+
+        // get academic_year from teacher table for sepcific 
+        $query = "SELECT `academic_year` FROM `teachers` WHERE tname = '$teacher' AND cname = '$class' ;";
         $result = mysqli_query($con, $query);
         $result = mysqli_fetch_assoc($result);
-        $end = $result['year_end'];
+        $academic_year = $result['academic_year'];
 
         // start config each time of year
-        $query = "SELECT YEAR('2021-01-01 00:00:00') as year_start;";
-        $result = mysqli_query($con, $query);
-        $result = mysqli_fetch_assoc($result);
-        $start = $result['year_start'];
-        $academic_year = $start . "-" . $end;
 
         // check if already
         // concat saftey
@@ -144,10 +140,8 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
             echo "<script>alert('Your submitted Form already exists 🤡');</script>";
             // redirect flag
             // session_destroy();
-            sleep(1);
         } else {
             // change year year(curdate)
-            sleep(1);
             $query = "INSERT INTO `answerpats`(`ctrlid`, `cname`, `tname`, `a11`, `a12`, `a13`, `a14`, `a15`, `a16`, `a17`, `a18`, `a19`, `a20`, `a21`, `a22`, `a23`, `a24`, `a25`, `a26`, `a27`, `a28`, `suggession`, `division`, `sem`, `subject`, `academic_year`,`Time`) 
             VALUES ('$rollno','$class','$teacher','$rating1_1','$rating2_1','$rating3_1','$rating1_2','$rating2_2','$rating3_2','$rating4_2','$rating5_2','$rating6_2','$rating7_2','$rating1_3','$rating2_3','$rating3_3','$rating4_3','$rating5_3','$rating6_3','$rating7_3','$rating8_3','$suggest','$division','$semester','$paper','$academic_year',current_timestamp());";
             // execute query
@@ -165,7 +159,7 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="UTF-8">
 
 <head>
     <title>PAT's Form</title>
@@ -203,7 +197,7 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
         <div class="l-form">
             <form method="POST" class="form">
                 <fieldset>
-                    <code style="color: red;">Still in Testing</code>
+                    <code style="color: green;">(Beta Build)</code>
                     <legend>Yare Yare Daze</legend>
                     <h1 class="form__title"
                         style="font-family: 'Bungee', cursive; font-size: 2.2rem; color: rgb(119, 195, 196);">

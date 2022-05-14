@@ -81,7 +81,7 @@ session_destroy();
         <form method="POST" action="xlxs_gen.php">
             <input type="submit" name="export"
                 class="font-mono text-center bg-[#006eff] p-3 m-1 hover:bg-slate-500 rounded transition-all duration-500"
-                value=".xlxs sheet" />
+                value="answerpats.xlxs sheet" />
             <br />
             <p>Does not work in mobile browsers.</p>
         </form>

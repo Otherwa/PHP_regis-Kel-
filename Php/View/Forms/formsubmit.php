@@ -67,7 +67,8 @@ session_destroy();
                     <div class="tracking-wide font-mono font-semibold text-xl">
                         <p class="text-[1.6rem]" style="text-align:start;">Konichiwa</p>
                         <br />
-                        <p class="text-[blue] font-mono" style="text-align:start;">
+                        <p class="text-[blue] font-mono"
+                            style="text-align:start;font-family:monospace;font-weight:bold">
                             <?php if (isset($_SESSION['name'])) {
                                 echo $firstname[0];
                             } else {

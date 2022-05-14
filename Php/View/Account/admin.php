@@ -19,6 +19,24 @@ function admin_chart($con)
     return $data;
 }
 
+function list_disp($con)
+{
+    $sql_form_retrive = "SELECT * FROM `answerpats`;";
+    $result = mysqli_query($con, $sql_form_retrive);
+    echo '<table style="text-align:left"> 
+    <tr>
+    <th class="myfont">Ctrlid</th>
+    <th class="myfont">Class</th>
+    <th class="myfont">Name</th>
+    </tr>';
+    while ($row = mysqli_fetch_array($result)) {
+        echo '<tr>';
+        echo '<td>' . $row['ctrlid'] . '</td>' . '<td>' . $row['cname'] . '</td>' . '<td>' . $row['tname'] . '</td>' . '</td>';
+        echo '<tr>';
+    }
+
+    echo '</table>';
+}
 
 //varaibe to store chart data
 $chartdata = admin_chart($con);
@@ -58,6 +76,36 @@ session_destroy();
     .myfont {
         font-family: "Bungee", cursive;
     }
+
+    th,
+    td {
+        padding: 1rem;
+        font-family: monospace;
+        font-weight: bold;
+    }
+
+    /* inline nav */
+    .overfolo::-webkit-scrollbar {
+        width: 9px;
+    }
+
+    /* Track */
+
+    .overfolo::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 2px grey;
+    }
+
+    /* Handle */
+
+    .overfolo::-webkit-scrollbar-thumb {
+        background: #006eff;
+    }
+
+    /* Handle on hover */
+
+    .overfolo::-webkit-scrollbar-thumb:hover {
+        background: #006effb7;
+    }
     </style>
 </head>
 
@@ -81,13 +129,16 @@ session_destroy();
         <form method="POST" action="xlxs_gen.php">
             <input type="submit" name="export"
                 class="font-mono text-center bg-[#006eff] p-3 m-1 hover:bg-slate-500 rounded transition-all duration-500"
-                value="answerpats.xlxs sheet" />
+                value="answerpats.xlxs" />
             <br />
             <p>Does not work in mobile browsers.</p>
         </form>
-
-
-
+        <br />
+        <br />
+        <div class="overfolo"
+            style="border-radius:0.5rem;overflow-y:auto;width:75%;height:20rem;display:inline-block;background-color:gainsboro;">
+            <?php list_disp($con); ?>
+        </div>
         <div class=" footer-copyright">
             <br />
             <p>&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html" target="_blank"

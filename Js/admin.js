@@ -27,3 +27,21 @@ const myChart = new Chart(ctx, {
         }
     }
 });
+
+
+// start  con
+let list = document.getElementById('list');
+list.style.display = 'none';
+
+function Togglegraph_list(options) {
+    console.log(options)
+    let graph = document.getElementById('myChart');
+    let list = document.getElementById('list');
+    if (options == 'graph') {
+        graph.style.display = 'inline-block';
+        list.style.display = 'none';
+    } else {
+        graph.style.display = 'none';
+        list.style.display = 'inline-block';
+    }
+}

@@ -60,7 +60,7 @@ if (isset($_POST['submit'])) {
     }
 }
 
-// get all classes and
+// get all classes func
 function classes($con)
 {
     $query = "SELECT DISTINCT `cname` FROM `activectrlid`;";
@@ -197,8 +197,8 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
         <div class="l-form">
             <form method="POST" class="form">
                 <fieldset>
-                    <code style="color: green;">(Beta Build)</code>
-                    <legend>Yare Yare Daze</legend>
+                    <code id="times" style="color: green;"></code>
+                    <legend>Fill up</legend>
                     <h1 class="form__title"
                         style="font-family: 'Bungee', cursive; font-size: 2.2rem; color: rgb(119, 195, 196);">
                         <span style="text-decoration: underline;">PAT's Question</span><br />

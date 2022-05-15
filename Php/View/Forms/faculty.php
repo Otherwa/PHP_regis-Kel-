@@ -73,8 +73,8 @@ if (isset($_POST['submit'])) {
         <div class="l-form p-0 ">
             <form action="#" method="POST" class="form">
                 <fieldset>
-                    <code style="color:red">Still in Production</code>
-                    <legend>Yare Yare Daze</legend>
+                    <code id="times" style="color: green;"></code>
+                    <legend>Fill up</legend>
 
                     <h1 class=" form__title"
                         style="font-family: 'Bungee', cursive; font-size: 2.2rem; color: rgb(119, 195, 196);">
@@ -85,7 +85,7 @@ if (isset($_POST['submit'])) {
                     </h1>
 
 
-                    <ul style="color:red">
+                    <ul style="color:red;font-family:monospace;font-weight:bold">
                         <li>
                             Instruction: Please read the statements given and mark against the appropriate response.
                         </li>
@@ -100,7 +100,7 @@ if (isset($_POST['submit'])) {
 
                     <div class="form__div ">
                         <input type="text" class="form__input" name="faculty_name" id="faculty_name"
-                            placeholder="e.g Your Faculty name" autocomplete="off" />
+                            placeholder="e.g Your Faculty name FY,FY" autocomplete="off" />
                         <label for="" class="form__label">Faculty Name?</label>
                     </div>
 
@@ -561,8 +561,6 @@ if (isset($_POST['submit'])) {
                 <br>
         </div>
     </div>
-
-
 </body>
 
 <!-- form validation -->

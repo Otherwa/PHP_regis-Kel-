@@ -8,5 +8,7 @@ function get_con()
     $connect = mysqli_connect($host, $user, $password, $dbname);
     return $connect;
 }
+$status = "online";
 ?>
+
 <!doctype html>

@@ -20,4 +20,6 @@ document.addEventListener('contextmenu', function(e) {
 
 function counter(response) {
     console.log("This site was visited " + response.value + " times");
+    document.getElementById('times').innerHTML = '(beta build) ' + 'This page was opened ' +
+        response.value + ' times';
 }

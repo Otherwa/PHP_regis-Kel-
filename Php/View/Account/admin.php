@@ -5,6 +5,8 @@ session_start();
 if (!isset($_SESSION['name'])) {
     header('Location: adminlogin.php');
 }
+
+$name = explode(" ", $_SESSION['name']);
 include('../connect.php');
 $con = get_con();
 // re write functions
@@ -25,9 +27,9 @@ function list_disp($con)
     $result = mysqli_query($con, $sql_form_retrive);
     echo '<table style="text-align:left"> 
     <tr>
-    <th class="myfont">Ctrlid</th>
-    <th class="myfont">Class</th>
-    <th class="myfont">Name</th>
+    <th><p class="myfont">Ctrlid</p></th>
+    <th><p  class="myfont">Class</p></th>
+    <th><p  class="myfont">Name</p></th>
     </tr>';
     while ($row = mysqli_fetch_array($result)) {
         echo '<tr>';
@@ -56,6 +58,7 @@ session_destroy();
     <link rel="stylesheet" href="../../../dist/output.css" />
     <link rel="stylesheet" href="../../../Css/style.css" />
     <link rel="stylesheet" type="text/css" href="../../../Css/form.css" />
+    <link rel="stylesheet" type="text/css" href="../../../Css/nav.css" />
     <!-- title color -->
     <meta name="theme-color" content="#ff6600">
     <!-- Gfonts -->
@@ -110,48 +113,66 @@ session_destroy();
     </style>
 </head>
 
-<body class="p-1 m-0">
+<body class="p-0 m-0">
+    <ul class="sidenav">
+        <!-- to destroy session -->
+        <li style="padding-bottom:0px"><a class="font-mono" href="adminlogin.php" target="_self">Back</a></li>
+    </ul>
     <br />
     <br />
     <br />
-    <!-- This requires Tailwind CSS v2.0+ -->
-    <div class=" bg-[#ffffff] text-center p-3 m-2">
-        <!-- <img src="https://c.tenor.com/iUBQduqPqH4AAAAM/badform-gymfail.gif" alt=""> -->
-        <p class="text-4xl myfont antialiased tracking-normal md:text-4xl overline leading-loose">Hey Adminisrator.</p>
-        <br />
+    <div class="bg-[#ffffff] text-center content" style="padding:0.5rem">
+        <!-- This requires Tailwind CSS v2.0+ -->
+        <div class=" bg-[#ffffff] text-center p-3 m-2">
+            <!-- <img src="https://c.tenor.com/iUBQduqPqH4AAAAM/badform-gymfail.gif" alt=""> -->
+            <p class="text-4xl myfont antialiased tracking-normal md:text-4xl overline leading-loose">Hey
+                <?php echo $name[0]; ?>
+            </p>
+            <br />
+            <div style="text-align:right">
+                <select onchange="Togglegraph_list(this.value)"
+                    style="width: auto;padding: 2px;margin: 2px;font-family: monospace;font-size: 0.99rem;font-weight: bold;color: #0559c7;border-style: solid;border-width: 0.5px;border-color: #8d949d;background-color: #ffffff;border-radius: 3px;">
+                    <option value="graph">Graph</option>
+                    <option value="list">List</option>
+                </select>
+            </div>
+            <br />
+            <p class="myfont" style="text-align:start">Forms :</p>
+            <br />
+            <!-- chart js -->
+            <canvas id="myChart" width="450" height="150"></canvas>
+            <br />
+            <br />
 
-        <br />
-        <!-- chart js -->
-        <canvas id="myChart" width="400" height="150"></canvas>
-        <br />
-        <br />
-        <br />
-        <!-- form post method -->
-        <form method="POST" action="xlxs_gen.php">
-            <input type="submit" name="export"
-                class="font-mono text-center bg-[#006eff] p-3 m-1 hover:bg-slate-500 rounded transition-all duration-500"
-                value="answerpats.xlxs" />
             <br />
-            <p>Does not work in mobile browsers.</p>
-        </form>
-        <br />
-        <br />
-        <div class="overfolo"
-            style="border-radius:0.5rem;overflow-y:auto;width:75%;height:20rem;display:inline-block;background-color:gainsboro;">
-            <?php list_disp($con); ?>
-        </div>
-        <div class=" footer-copyright">
-            <br />
-            <p>&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html" target="_blank"
-                    class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> | <a
-                    href="../../../personal.html" class="text-[blue] hover:underline " target="_blank">Contact</a>
+            <div class="overfolo" id="list"
+                style="border-radius:0.5rem;overflow-y:auto;width:100%;height:30rem;display:inline-block;background-color:gainsboro;">
+                <?php list_disp($con); ?>
+            </div>
+
+
+
+            <div class=" footer-copyright" style="bottom: -13rem;">
                 <br />
+                <p>&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html" target="_blank"
+                        class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> | <a
+                        href="../../../personal.html" class="text-[blue] hover:underline " target="_blank">Contact</a>
+                    <br />
+            </div>
+            <br />
+            <!-- form post method -->
+            <form method="POST" action="xlxs_gen.php">
+                <input type="submit" name="export" title="download answerpats.xlxs"
+                    class="font-mono text-center bg-[#006eff] p-3 m-1 hover:bg-slate-500 rounded transition-all duration-500"
+                    value="answerpats" />
+                <br />
+            </form>
+            <br />
         </div>
+        <!-- php js bridge -->
+        <input id="data" type="hidden" value="<?php echo $chartdata ?>">
+        <script type="text/javascript" src="../../../Js/admin.js"></script>
     </div>
-    <!-- php js bridge -->
-    <input id="data" type="hidden" value="<?php echo $chartdata ?>">
-    <script type="text/javascript" src="../../../Js/admin.js"></script>
-
 </body>
 <script src="../../../Js/main.js" type="text/javascript"></script>
 <script async type="text/javascript"

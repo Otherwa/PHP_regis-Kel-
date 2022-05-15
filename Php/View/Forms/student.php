@@ -6,6 +6,7 @@ if (!isset($_SESSION['setStu'])) {
     header('Location: forms.php');
 }
 
+$con = get_con();
 
 if (isset($_POST['submit'])) {
 
@@ -32,30 +33,51 @@ if (isset($_POST['submit'])) {
     $programme = $_POST['programme'];
     $division = $_POST['division'];
     // ratings
-    $rating_1 = $_POST['rating_1'];
-    $rating_2 = $_POST['rating_2'];
-    $rating_3 = $_POST['rating_3'];
-    $rating_4 = $_POST['rating_4'];
-    $rating_5 = $_POST['rating_5'];
-    $rating_6 = $_POST['rating_6'];
-    $rating_7 = $_POST['rating_7'];
-    $rating_8 = $_POST['rating_8'];
-    $rating_9 = $_POST['rating_9'];
-    $rating_10 = $_POST['rating_10'];
-    $rating_11 = $_POST['rating_11'];
-    $rating_12 = $_POST['rating_12'];
-    $rating_13 = $_POST['rating_13'];
-    $rating_14 = $_POST['rating_14'];
-    $rating_15 = $_POST['rating_15'];
-    $rating_16 = $_POST['rating_16'];
-    $rating_17 = $_POST['rating_17'];
-
-
-    echo $confirm . " " . $name . " " . $age . " " . $gender . " " . $rollno . " " . $class . " " . $programme . " " . $division . "\n";
-    echo $rating_1 . " " . $rating_2 . " " . $rating_3 . " " . $rating_4 . " " . $rating_5 . " " . $rating_6 . " " . $rating_7 . " " . $rating_8 . " " . $rating_9 . " " . $rating_10 . " " . $rating_11 . " " . $rating_12 . " " . $rating_13 . " " . $rating_14 . " " . $rating_15 . " " . $rating_16 . " " . $rating_17;
-    // INSERT INTO `form_fillup` (`Id`, `Name`, `Review`, `Day`) VALUES ('1', 'Atharv', 'NICE', DAYNAME(CURDATE()));
+    getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class, $programme, $division);
 }
 
+function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class, $programme, $division)
+{
+
+
+
+    if (isset($_POST['rating_1']) && isset($_POST['rating_2'])  && isset($_POST['rating_3'])  && isset($_POST['rating_4'])  && isset($_POST['rating_5'])  && isset($_POST['rating_6'])  && isset($_POST['rating_7'])  && isset($_POST['rating_8'])  && isset($_POST['rating_9'])  && isset($_POST['rating_10'])  && isset($_POST['rating_11'])  && isset($_POST['rating_12'])  && isset($_POST['rating_13'])  && isset($_POST['rating_14'])  && isset($_POST['rating_15'])  && isset($_POST['rating_16'])  && isset($_POST['rating_17'])) {
+        // 
+        $rating_1 = $_POST['rating_1'];
+        $rating_2 = $_POST['rating_2'];
+        $rating_3 = $_POST['rating_3'];
+        $rating_4 = $_POST['rating_4'];
+        $rating_5 = $_POST['rating_5'];
+        $rating_6 = $_POST['rating_6'];
+        $rating_7 = $_POST['rating_7'];
+        $rating_8 = $_POST['rating_8'];
+        $rating_9 = $_POST['rating_9'];
+        $rating_10 = $_POST['rating_10'];
+        $rating_11 = $_POST['rating_11'];
+        $rating_12 = $_POST['rating_12'];
+        $rating_13 = $_POST['rating_13'];
+        $rating_14 = $_POST['rating_14'];
+        $rating_15 = $_POST['rating_15'];
+        $rating_16 = $_POST['rating_16'];
+        $rating_17 = $_POST['rating_17'];
+
+        // if form already exisits if roll no primary considered case (roll programme class) in database
+        $query = "SELECT `rollno` FROM `answersss` WHERE rollno = '$rollno';";
+        $result = mysqli_query($con, $query);
+
+        if (mysqli_num_rows($result) > 0) {
+            echo "<script>alert('Your submitted Form already exists 🤡');</script>";
+        } else {
+            $query = "INSERT INTO `answersss`(`confirm`, `name`, `age`, `gender`, `rollno`, `class`, `programme`, `division`, `a11`, `a12`, `a13`, `a14`, `a15`, `a16`, `a17`, `a18`, `a19`, `a20`, `a21`, `a22`, `a23`, `a24`, `a25`, `a26`, `a27`, `time`)
+                VALUES ('$confirm','$name','$age','$gender','$rollno','$class','$programme','$division','$rating_1','$rating_2','$rating_3','$rating_4','$rating_5','$rating_6','$rating_7','$rating_8','$rating_9','$rating_10','$rating_11','$rating_12','$rating_13','$rating_14','$rating_15','$rating_16','$rating_17',current_timestamp());";
+            mysqli_query($con, $query);
+            $_SESSION['name'] = $name;
+            header('Location: formsubmit.php');
+        }
+    } else {
+        echo "<script>alert('Please select all the fields given below 🤓');</script>";
+    }
+}
 ?>
 
 
@@ -110,8 +132,8 @@ if (isset($_POST['submit'])) {
         <div class="l-form p-0 ">
             <form method="POST" class="form">
                 <fieldset>
-                    <code style="color:red">Still in Production</code>
-                    <legend>Yare Yare Daze</legend>
+                    <code id="times" style="color: green;"></code>
+                    <legend>Fill up</legend>
 
                     <h1 class=" form__title"
                         style="font-family: 'Bungee', cursive; font-size: 2.2rem; color: rgb(119, 195, 196);">
@@ -176,10 +198,9 @@ if (isset($_POST['submit'])) {
                     </div>
                     <p id="notvalid_roll"></p>
                     <!-- ajax ctrlid verify -->
-
-                    <input type="hidden" id="msg">
                     <!-- bug -->
                     <br>
+                    <!-- can be acquired by database activectrlid-->
                     <div class="form__div selectaltered">
                         <label for="class" class="text-sm" style="color:rgb(68, 74, 79)">&squarf; Class:</label>
                         <select name="class" id="class">
@@ -236,20 +257,20 @@ if (isset($_POST['submit'])) {
 
                     <!-- selected opts -->
 
-                    <ol class="form-ol" id="msg_set">
+                    <ol class="form-ol" id="msg_set" style="display:none">
                         <li>
                             Availability of extra-curricular activities in college:
                             <br />
                             <br />
                             <span class="radio">
-                                <p><input type="radio" name="rating_1" value="VeryPoor">&nbsp; Very-Poor&nbsp;</p>
-                                <p><input type="radio" name="rating_1" value="Poor">&nbsp; Poor&nbsp;</p>
-                                <p><input type="radio" name="rating_1" value="BelowAverage">&nbsp; Below-Average&nbsp;
+                                <p><input type="radio" name="rating_1" value="1">&nbsp; Very-Poor&nbsp;</p>
+                                <p><input type="radio" name="rating_1" value="2">&nbsp; Poor&nbsp;</p>
+                                <p><input type="radio" name="rating_1" value="3">&nbsp; Below-Average&nbsp;
                                 </p>
-                                <p><input type="radio" name="rating_1" value="Average">&nbsp; Average&nbsp;</p>
-                                <p><input type="radio" name="rating_1" value="Good">&nbsp; Good&nbsp;</p>
-                                <p><input type="radio" name="rating_1" vlaue="VeryGood">&nbsp; Very-Good&nbsp;</p>
-                                <p><input type="radio" name="rating_1" value="Excellent">&nbsp; Excellent&nbsp;</p>
+                                <p><input type="radio" name="rating_1" value="4">&nbsp; Average&nbsp;</p>
+                                <p><input type="radio" name="rating_1" value="5">&nbsp; Good&nbsp;</p>
+                                <p><input type="radio" name="rating_1" vlaue="6">&nbsp; Very-Good&nbsp;</p>
+                                <p><input type="radio" name="rating_1" value="7">&nbsp; Excellent&nbsp;</p>
                             </span>
                         </li>
 
@@ -260,14 +281,14 @@ if (isset($_POST['submit'])) {
                             <br />
                             <br />
                             <span class="radio">
-                                <p><input type="radio" name="rating_2" value="VeryPoor">&nbsp; Very-Poor&nbsp;</p>
-                                <p><input type="radio" name="rating_2" value="Poor">&nbsp; Poor&nbsp;</p>
-                                <p><input type="radio" name="rating_2" value="BelowAverage">&nbsp; Below-Average&nbsp;
+                                <p><input type="radio" name="rating_2" value="1">&nbsp; Very-Poor&nbsp;</p>
+                                <p><input type="radio" name="rating_2" value="2">&nbsp; Poor&nbsp;</p>
+                                <p><input type="radio" name="rating_2" value="3">&nbsp; Below-Average&nbsp;
                                 </p>
-                                <p><input type="radio" name="rating_2" value="Average">&nbsp; Average&nbsp;</p>
-                                <p><input type="radio" name="rating_2" value="Good">&nbsp; Good&nbsp;</p>
-                                <p> <input type="radio" name="rating_2" vlaue="VeryGood">&nbsp; Very-Good&nbsp;</p>
-                                <p> <input type="radio" name="rating_2" value="Excellent">&nbsp; Excellent&nbsp;</p>
+                                <p><input type="radio" name="rating_2" value="4">&nbsp; Average&nbsp;</p>
+                                <p><input type="radio" name="rating_2" value="5">&nbsp; Good&nbsp;</p>
+                                <p><input type="radio" name="rating_2" vlaue="6">&nbsp; Very-Good&nbsp;</p>
+                                <p><input type="radio" name="rating_2" value="7">&nbsp; Excellent&nbsp;</p>
                             </span>
                         </li>
 
@@ -278,14 +299,14 @@ if (isset($_POST['submit'])) {
                             <br />
                             <br />
                             <span class="radio">
-                                <p> <input type="radio" name="rating_3" value="VeryPoor">&nbsp; Very-Poor&nbsp;</p>
-                                <p> <input type="radio" name="rating_3" value="Poor">&nbsp; Poor&nbsp;</p>
-                                <p> <input type="radio" name="rating_3" value="BelowAverage">&nbsp; Below-Average&nbsp;
+                                <p><input type="radio" name="rating_3" value="1">&nbsp; Very-Poor&nbsp;</p>
+                                <p><input type="radio" name="rating_3" value="2">&nbsp; Poor&nbsp;</p>
+                                <p><input type="radio" name="rating_3" value="3">&nbsp; Below-Average&nbsp;
                                 </p>
-                                <p> <input type="radio" name="rating_3" value="Average">&nbsp; Average&nbsp;</p>
-                                <p> <input type="radio" name="rating_3" value="Good">&nbsp; Good&nbsp;</p>
-                                <p> <input type="radio" name="rating_3" vlaue="VeryGood">&nbsp; Very-Good&nbsp;</p>
-                                <p> <input type="radio" name="rating_3" value="Excellent">&nbsp; Excellent&nbsp;</p>
+                                <p><input type="radio" name="rating_3" value="4">&nbsp; Average&nbsp;</p>
+                                <p><input type="radio" name="rating_3" value="5">&nbsp; Good&nbsp;</p>
+                                <p><input type="radio" name="rating_3" vlaue="6">&nbsp; Very-Good&nbsp;</p>
+                                <p><input type="radio" name="rating_3" value="7">&nbsp; Excellent&nbsp;</p>
                             </span>
                         </li>
 
@@ -296,14 +317,14 @@ if (isset($_POST['submit'])) {
                             <br />
                             <br />
                             <span class="radio">
-                                <p> <input type="radio" name="rating_4" value="VeryPoor">&nbsp; Very-Poor&nbsp;</p>
-                                <p> <input type="radio" name="rating_4" value="Poor">&nbsp; Poor&nbsp;</p>
-                                <p> <input type="radio" name="rating_4" value="BelowAverage">&nbsp; Below-Average&nbsp;
+                                <p><input type="radio" name="rating_4" value="1">&nbsp; Very-Poor&nbsp;</p>
+                                <p><input type="radio" name="rating_4" value="2">&nbsp; Poor&nbsp;</p>
+                                <p><input type="radio" name="rating_4" value="3">&nbsp; Below-Average&nbsp;
                                 </p>
-                                <p> <input type="radio" name="rating_4" value="Average">&nbsp; Average&nbsp;</p>
-                                <p> <input type="radio" name="rating_4" value="Good">&nbsp; Good&nbsp;</p>
-                                <p> <input type="radio" name="rating_4" vlaue="VeryGood">&nbsp; Very-Good&nbsp;</p>
-                                <p> <input type="radio" name="rating_4" value="Excellent">&nbsp; Excellent&nbsp;</p>
+                                <p><input type="radio" name="rating_4" value="4">&nbsp; Average&nbsp;</p>
+                                <p><input type="radio" name="rating_4" value="5">&nbsp; Good&nbsp;</p>
+                                <p><input type="radio" name="rating_4" vlaue="6">&nbsp; Very-Good&nbsp;</p>
+                                <p><input type="radio" name="rating_4" value="7">&nbsp; Excellent&nbsp;</p>
                             </span>
                         </li>
 
@@ -314,14 +335,14 @@ if (isset($_POST['submit'])) {
                             <br />
                             <br />
                             <span class="radio">
-                                <p> <input type="radio" name="rating_5" value="VeryPoor">&nbsp; Very-Poor&nbsp;</p>
-                                <p> <input type="radio" name="rating_5" value="Poor">&nbsp; Poor&nbsp;</p>
-                                <p> <input type="radio" name="rating_5" value="BelowAverage">&nbsp; Below-Average&nbsp;
+                                <p><input type="radio" name="rating_5" value="1">&nbsp; Very-Poor&nbsp;</p>
+                                <p><input type="radio" name="rating_5" value="2">&nbsp; Poor&nbsp;</p>
+                                <p><input type="radio" name="rating_5" value="3">&nbsp; Below-Average&nbsp;
                                 </p>
-                                <p> <input type="radio" name="rating_5" value="Average">&nbsp; Average&nbsp;</p>
-                                <p> <input type="radio" name="rating_5" value="Good">&nbsp; Good&nbsp;</p>
-                                <p> <input type="radio" name="rating_5" vlaue="VeryGood">&nbsp; Very-Good&nbsp;</p>
-                                <p> <input type="radio" name="rating_5" value="Excellent">&nbsp; Excellent&nbsp;</p>
+                                <p><input type="radio" name="rating_5" value="4">&nbsp; Average&nbsp;</p>
+                                <p><input type="radio" name="rating_5" value="5">&nbsp; Good&nbsp;</p>
+                                <p><input type="radio" name="rating_5" vlaue="6">&nbsp; Very-Good&nbsp;</p>
+                                <p><input type="radio" name="rating_5" value="7">&nbsp; Excellent&nbsp;</p>
                             </span>
                         </li>
 
@@ -332,14 +353,14 @@ if (isset($_POST['submit'])) {
                             <br />
                             <br />
                             <span class="radio">
-                                <p> <input type="radio" name="rating_6" value="VeryPoor">&nbsp; Very-Poor&nbsp;</p>
-                                <p> <input type="radio" name="rating_6" value="Poor">&nbsp; Poor&nbsp;</p>
-                                <p> <input type="radio" name="rating_6" value="BelowAverage">&nbsp; Below-Average&nbsp;
+                                <p><input type="radio" name="rating_6" value="1">&nbsp; Very-Poor&nbsp;</p>
+                                <p><input type="radio" name="rating_6" value="2">&nbsp; Poor&nbsp;</p>
+                                <p><input type="radio" name="rating_6" value="3">&nbsp; Below-Average&nbsp;
                                 </p>
-                                <p> <input type="radio" name="rating_6" value="Average">&nbsp; Average&nbsp;</p>
-                                <p> <input type="radio" name="rating_6" value="Good">&nbsp; Good&nbsp;</p>
-                                <p> <input type="radio" name="rating_6" vlaue="VeryGood">&nbsp; Very-Good&nbsp;</p>
-                                <p> <input type="radio" name="rating_6" value="Excellent">&nbsp; Excellent&nbsp;</p>
+                                <p><input type="radio" name="rating_6" value="4">&nbsp; Average&nbsp;</p>
+                                <p><input type="radio" name="rating_6" value="5">&nbsp; Good&nbsp;</p>
+                                <p><input type="radio" name="rating_6" vlaue="6">&nbsp; Very-Good&nbsp;</p>
+                                <p><input type="radio" name="rating_6" value="7">&nbsp; Excellent&nbsp;</p>
                             </span>
                         </li>
 
@@ -350,13 +371,14 @@ if (isset($_POST['submit'])) {
                             <br />
                             <br />
                             <span class="radio">
-                                <input type="radio" name="rating_7" value="VeryPoor">&nbsp; Very-Poor&nbsp;
-                                <input type="radio" name="rating_7" value="Poor">&nbsp; Poor&nbsp;
-                                <input type="radio" name="rating_7" value="BelowAverage">&nbsp; Below-Average&nbsp;
-                                <input type="radio" name="rating_7" value="Average">&nbsp; Average&nbsp;
-                                <input type="radio" name="rating_7" value="Good">&nbsp; Good&nbsp;
-                                <input type="radio" name="rating_7" vlaue="VeryGood">&nbsp; Very-Good&nbsp;
-                                <input type="radio" name="rating_7" value="Excellent">&nbsp; Excellent&nbsp;
+                                <p><input type="radio" name="rating_7" value="1">&nbsp; Very-Poor&nbsp;</p>
+                                <p><input type="radio" name="rating_7" value="2">&nbsp; Poor&nbsp;</p>
+                                <p><input type="radio" name="rating_7" value="3">&nbsp; Below-Average&nbsp;
+                                </p>
+                                <p><input type="radio" name="rating_7" value="4">&nbsp; Average&nbsp;</p>
+                                <p><input type="radio" name="rating_7" value="5">&nbsp; Good&nbsp;</p>
+                                <p><input type="radio" name="rating_7" vlaue="6">&nbsp; Very-Good&nbsp;</p>
+                                <p><input type="radio" name="rating_7" value="7">&nbsp; Excellent&nbsp;</p>
                             </span>
                         </li>
 
@@ -367,13 +389,14 @@ if (isset($_POST['submit'])) {
                             <br />
                             <br />
                             <span class="radio">
-                                <input type="radio" name="rating_8" value="VeryPoor">&nbsp; Very-Poor&nbsp;
-                                <input type="radio" name="rating_8" value="Poor">&nbsp; Poor&nbsp;
-                                <input type="radio" name="rating_8" value="BelowAverage">&nbsp; Below-Average&nbsp;
-                                <input type="radio" name="rating_8" value="Average">&nbsp; Average&nbsp;
-                                <input type="radio" name="rating_8" value="Good">&nbsp; Good&nbsp;
-                                <input type="radio" name="rating_8" vlaue="VeryGood">&nbsp; Very-Good&nbsp;
-                                <input type="radio" name="rating_8" value="Excellent">&nbsp; Excellent&nbsp;
+                                <p><input type="radio" name="rating_8" value="1">&nbsp; Very-Poor&nbsp;</p>
+                                <p><input type="radio" name="rating_8" value="2">&nbsp; Poor&nbsp;</p>
+                                <p><input type="radio" name="rating_8" value="3">&nbsp; Below-Average&nbsp;
+                                </p>
+                                <p><input type="radio" name="rating_8" value="4">&nbsp; Average&nbsp;</p>
+                                <p><input type="radio" name="rating_8" value="5">&nbsp; Good&nbsp;</p>
+                                <p><input type="radio" name="rating_8" vlaue="6">&nbsp; Very-Good&nbsp;</p>
+                                <p><input type="radio" name="rating_8" value="7">&nbsp; Excellent&nbsp;</p>
                             </span>
                         </li>
 
@@ -384,13 +407,14 @@ if (isset($_POST['submit'])) {
                             <br />
                             <br />
                             <span class="radio">
-                                <input type="radio" name="rating_9" value="VeryPoor">&nbsp; Very-Poor&nbsp;
-                                <input type="radio" name="rating_9" value="Poor">&nbsp; Poor&nbsp;
-                                <input type="radio" name="rating_9" value="BelowAverage">&nbsp; Below-Average&nbsp;
-                                <input type="radio" name="rating_9" value="Average">&nbsp; Average&nbsp;
-                                <input type="radio" name="rating_9" value="Good">&nbsp; Good&nbsp;
-                                <input type="radio" name="rating_9" vlaue="VeryGood">&nbsp; Very-Good&nbsp;
-                                <input type="radio" name="rating_9" value="Excellent">&nbsp; Excellent&nbsp;
+                                <p><input type="radio" name="rating_9" value="1">&nbsp; Very-Poor&nbsp;</p>
+                                <p><input type="radio" name="rating_9" value="2">&nbsp; Poor&nbsp;</p>
+                                <p><input type="radio" name="rating_9" value="3">&nbsp; Below-Average&nbsp;
+                                </p>
+                                <p><input type="radio" name="rating_9" value="4">&nbsp; Average&nbsp;</p>
+                                <p><input type="radio" name="rating_9" value="5">&nbsp; Good&nbsp;</p>
+                                <p><input type="radio" name="rating_9" vlaue="6">&nbsp; Very-Good&nbsp;</p>
+                                <p><input type="radio" name="rating_9" value="7">&nbsp; Excellent&nbsp;</p>
                             </span>
                         </li>
 
@@ -401,13 +425,14 @@ if (isset($_POST['submit'])) {
                             <br />
                             <br />
                             <span class="radio">
-                                <input type="radio" name="rating_10" value="VeryPoor">&nbsp; Very-Poor&nbsp;
-                                <input type="radio" name="rating_10" value="Poor">&nbsp; Poor&nbsp;
-                                <input type="radio" name="rating_10" value="BelowAverage">&nbsp; Below-Average&nbsp;
-                                <input type="radio" name="rating_10" value="Average">&nbsp; Average&nbsp;
-                                <input type="radio" name="rating_10" value="Good">&nbsp; Good&nbsp;
-                                <input type="radio" name="rating_10" vlaue="VeryGood">&nbsp; Very-Good&nbsp;
-                                <input type="radio" name="rating_10" value="Excellent">&nbsp; Excellent&nbsp;
+                                <p><input type="radio" name="rating_10" value="1">&nbsp; Very-Poor&nbsp;</p>
+                                <p><input type="radio" name="rating_10" value="2">&nbsp; Poor&nbsp;</p>
+                                <p><input type="radio" name="rating_10" value="3">&nbsp; Below-Average&nbsp;
+                                </p>
+                                <p><input type="radio" name="rating_10" value="4">&nbsp; Average&nbsp;</p>
+                                <p><input type="radio" name="rating_10" value="5">&nbsp; Good&nbsp;</p>
+                                <p><input type="radio" name="rating_10" vlaue="6">&nbsp; Very-Good&nbsp;</p>
+                                <p><input type="radio" name="rating_10" value="7">&nbsp; Excellent&nbsp;</p>
                             </span>
                         </li>
 
@@ -419,13 +444,14 @@ if (isset($_POST['submit'])) {
                             <br />
                             <br />
                             <span class="radio">
-                                <input type="radio" name="rating_11" value="VeryPoor">&nbsp; Very-Poor&nbsp;
-                                <input type="radio" name="rating_11" value="Poor">&nbsp; Poor&nbsp;
-                                <input type="radio" name="rating_11" value="BelowAverage">&nbsp; Below-Average&nbsp;
-                                <input type="radio" name="rating_11" value="Average">&nbsp; Average&nbsp;
-                                <input type="radio" name="rating_11" value="Good">&nbsp; Good&nbsp;
-                                <input type="radio" name="rating_11" vlaue="VeryGood">&nbsp; Very-Good&nbsp;
-                                <input type="radio" name="rating_11" value="Excellent">&nbsp; Excellent&nbsp;
+                                <p><input type="radio" name="rating_11" value="1">&nbsp; Very-Poor&nbsp;</p>
+                                <p><input type="radio" name="rating_11" value="2">&nbsp; Poor&nbsp;</p>
+                                <p><input type="radio" name="rating_11" value="3">&nbsp; Below-Average&nbsp;
+                                </p>
+                                <p><input type="radio" name="rating_11" value="4">&nbsp; Average&nbsp;</p>
+                                <p><input type="radio" name="rating_11" value="5">&nbsp; Good&nbsp;</p>
+                                <p><input type="radio" name="rating_11" vlaue="6">&nbsp; Very-Good&nbsp;</p>
+                                <p><input type="radio" name="rating_11" value="7">&nbsp; Excellent&nbsp;</p>
                             </span>
                         </li>
 
@@ -436,13 +462,14 @@ if (isset($_POST['submit'])) {
                             <br />
                             <br />
                             <span class="radio">
-                                <input type="radio" name="rating_12" value="VeryPoor">&nbsp; Very-Poor&nbsp;
-                                <input type="radio" name="rating_12" value="Poor">&nbsp; Poor&nbsp;
-                                <input type="radio" name="rating_12" value="BelowAverage">&nbsp; Below-Average&nbsp;
-                                <input type="radio" name="rating_12" value="Average">&nbsp; Average&nbsp;
-                                <input type="radio" name="rating_12" value="Good">&nbsp; Good&nbsp;
-                                <input type="radio" name="rating_12" vlaue="VeryGood">&nbsp; Very-Good&nbsp;
-                                <input type="radio" name="rating_12" value="Excellent">&nbsp; Excellent&nbsp;
+                                <p><input type="radio" name="rating_12" value="1">&nbsp; Very-Poor&nbsp;</p>
+                                <p><input type="radio" name="rating_12" value="2">&nbsp; Poor&nbsp;</p>
+                                <p><input type="radio" name="rating_12" value="3">&nbsp; Below-Average&nbsp;
+                                </p>
+                                <p><input type="radio" name="rating_12" value="4">&nbsp; Average&nbsp;</p>
+                                <p><input type="radio" name="rating_12" value="5">&nbsp; Good&nbsp;</p>
+                                <p><input type="radio" name="rating_12" vlaue="6">&nbsp; Very-Good&nbsp;</p>
+                                <p><input type="radio" name="rating_12" value="7">&nbsp; Excellent&nbsp;</p>
                             </span>
                         </li>
 
@@ -455,13 +482,14 @@ if (isset($_POST['submit'])) {
                             <br />
                             <br />
                             <span class="radio">
-                                <input type="radio" name="rating_13" value="VeryPoor">&nbsp; Very-Poor&nbsp;
-                                <input type="radio" name="rating_13" value="Poor">&nbsp; Poor&nbsp;
-                                <input type="radio" name="rating_13" value="BelowAverage">&nbsp; Below-Average&nbsp;
-                                <input type="radio" name="rating_13" value="Average">&nbsp; Average&nbsp;
-                                <input type="radio" name="rating_13" value="Good">&nbsp; Good&nbsp;
-                                <input type="radio" name="rating_13" vlaue="VeryGood">&nbsp; Very-Good&nbsp;
-                                <input type="radio" name="rating_13" value="Excellent">&nbsp; Excellent&nbsp;
+                                <p><input type="radio" name="rating_13" value="1">&nbsp; Very-Poor&nbsp;</p>
+                                <p><input type="radio" name="rating_13" value="2">&nbsp; Poor&nbsp;</p>
+                                <p><input type="radio" name="rating_13" value="3">&nbsp; Below-Average&nbsp;
+                                </p>
+                                <p><input type="radio" name="rating_13" value="4">&nbsp; Average&nbsp;</p>
+                                <p><input type="radio" name="rating_13" value="5">&nbsp; Good&nbsp;</p>
+                                <p><input type="radio" name="rating_13" vlaue="6">&nbsp; Very-Good&nbsp;</p>
+                                <p><input type="radio" name="rating_13" value="7">&nbsp; Excellent&nbsp;</p>
                             </span>
                         </li>
 
@@ -472,13 +500,14 @@ if (isset($_POST['submit'])) {
                             <br />
                             <br />
                             <span class="radio">
-                                <input type="radio" name="rating_14" value="VeryPoor">&nbsp; Very-Poor&nbsp;
-                                <input type="radio" name="rating_14" value="Poor">&nbsp; Poor&nbsp;
-                                <input type="radio" name="rating_14" value="BelowAverage">&nbsp; Below-Average&nbsp;
-                                <input type="radio" name="rating_14" value="Average">&nbsp; Average&nbsp;
-                                <input type="radio" name="rating_14" value="Good">&nbsp; Good&nbsp;
-                                <input type="radio" name="rating_14" vlaue="VeryGood">&nbsp; Very-Good&nbsp;
-                                <input type="radio" name="rating_14" value="Excellent">&nbsp; Excellent&nbsp;
+                                <p><input type="radio" name="rating_14" value="1">&nbsp; Very-Poor&nbsp;</p>
+                                <p><input type="radio" name="rating_14" value="2">&nbsp; Poor&nbsp;</p>
+                                <p><input type="radio" name="rating_14" value="3">&nbsp; Below-Average&nbsp;
+                                </p>
+                                <p><input type="radio" name="rating_14" value="4">&nbsp; Average&nbsp;</p>
+                                <p><input type="radio" name="rating_14" value="5">&nbsp; Good&nbsp;</p>
+                                <p><input type="radio" name="rating_14" vlaue="6">&nbsp; Very-Good&nbsp;</p>
+                                <p><input type="radio" name="rating_14" value="7">&nbsp; Excellent&nbsp;</p>
                             </span>
                         </li>
 
@@ -489,13 +518,14 @@ if (isset($_POST['submit'])) {
                             <br />
                             <br />
                             <span class="radio">
-                                <input type="radio" name="rating_15" value="VeryPoor">&nbsp; Very-Poor&nbsp;
-                                <input type="radio" name="rating_15" value="Poor">&nbsp; Poor&nbsp;
-                                <input type="radio" name="rating_15" value="BelowAverage">&nbsp; Below-Average&nbsp;
-                                <input type="radio" name="rating_15" value="Average">&nbsp; Average&nbsp;
-                                <input type="radio" name="rating_15" value="Good">&nbsp; Good&nbsp;
-                                <input type="radio" name="rating_15" vlaue="VeryGood">&nbsp; Very-Good&nbsp;
-                                <input type="radio" name="rating_15" value="Excellent">&nbsp; Excellent&nbsp;
+                                <p><input type="radio" name="rating_15" value="1">&nbsp; Very-Poor&nbsp;</p>
+                                <p><input type="radio" name="rating_15" value="2">&nbsp; Poor&nbsp;</p>
+                                <p><input type="radio" name="rating_15" value="3">&nbsp; Below-Average&nbsp;
+                                </p>
+                                <p><input type="radio" name="rating_15" value="4">&nbsp; Average&nbsp;</p>
+                                <p><input type="radio" name="rating_15" value="5">&nbsp; Good&nbsp;</p>
+                                <p><input type="radio" name="rating_15" vlaue="6">&nbsp; Very-Good&nbsp;</p>
+                                <p><input type="radio" name="rating_15" value="7">&nbsp; Excellent&nbsp;</p>
                             </span>
                         </li>
 
@@ -506,13 +536,14 @@ if (isset($_POST['submit'])) {
                             <br />
                             <br />
                             <span class="radio">
-                                <input type="radio" name="rating_16" value="VeryPoor">&nbsp; Very-Poor&nbsp;
-                                <input type="radio" name="rating_16" value="Poor">&nbsp; Poor&nbsp;
-                                <input type="radio" name="rating_16" value="BelowAverage">&nbsp; Below-Average&nbsp;
-                                <input type="radio" name="rating_16" value="Average">&nbsp; Average&nbsp;
-                                <input type="radio" name="rating_16" value="Good">&nbsp; Good&nbsp;
-                                <input type="radio" name="rating_16" vlaue="VeryGood">&nbsp; Very-Good&nbsp;
-                                <input type="radio" name="rating_16" value="Excellent">&nbsp; Excellent&nbsp;
+                                <p><input type="radio" name="rating_16" value="1">&nbsp; Very-Poor&nbsp;</p>
+                                <p><input type="radio" name="rating_16" value="2">&nbsp; Poor&nbsp;</p>
+                                <p><input type="radio" name="rating_16" value="3">&nbsp; Below-Average&nbsp;
+                                </p>
+                                <p><input type="radio" name="rating_16" value="4">&nbsp; Average&nbsp;</p>
+                                <p><input type="radio" name="rating_16" value="5">&nbsp; Good&nbsp;</p>
+                                <p><input type="radio" name="rating_16" vlaue="6">&nbsp; Very-Good&nbsp;</p>
+                                <p><input type="radio" name="rating_16" value="7">&nbsp; Excellent&nbsp;</p>
                             </span>
                         </li>
 
@@ -523,13 +554,14 @@ if (isset($_POST['submit'])) {
                             <br />
                             <br />
                             <span class="radio">
-                                <input type="radio" name="rating_17" value="VeryPoor">&nbsp; Very-Poor&nbsp;
-                                <input type="radio" name="rating_17" value="Poor">&nbsp; Poor&nbsp;
-                                <input type="radio" name="rating_17" value="BelowAverage">&nbsp; Below-Average&nbsp;
-                                <input type="radio" name="rating_17" value="Average">&nbsp; Average&nbsp;
-                                <input type="radio" name="rating_17" value="Good">&nbsp; Good&nbsp;
-                                <input type="radio" name="rating_17" vlaue="VeryGood">&nbsp; Very-Good&nbsp;
-                                <input type="radio" name="rating_17" value="Excellent">&nbsp; Excellent&nbsp;
+                                <p><input type="radio" name="rating_17" value="1">&nbsp; Very-Poor&nbsp;</p>
+                                <p><input type="radio" name="rating_17" value="2">&nbsp; Poor&nbsp;</p>
+                                <p><input type="radio" name="rating_17" value="3">&nbsp; Below-Average&nbsp;
+                                </p>
+                                <p><input type="radio" name="rating_17" value="4">&nbsp; Average&nbsp;</p>
+                                <p><input type="radio" name="rating_17" value="5">&nbsp; Good&nbsp;</p>
+                                <p><input type="radio" name="rating_17" vlaue="6">&nbsp; Very-Good&nbsp;</p>
+                                <p><input type="radio" name="rating_17" value="7">&nbsp; Excellent&nbsp;</p>
                             </span>
                         </li>
                     </ol>

@@ -242,7 +242,22 @@ ul li {
     padding: 2rem;
 }
 
+#inst li {
+    color: red;
+    font-weight: bold;
+    font-family: monospace;
+}
+
+
+/* responsivnes */
+
 @media screen and (max-width: 430px) {
+    #inst li {
+        color: red;
+        font-weight: bold;
+        font-family: monospace;
+        font-size: 0.79rem;
+    }
     .selectaltered {
         height: 18px;
         margin-bottom: 2.1rem;

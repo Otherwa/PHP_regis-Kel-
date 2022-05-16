@@ -85,7 +85,7 @@ if (isset($_POST['submit'])) {
                     </h1>
 
 
-                    <ul style="color:red;font-family:monospace;font-weight:bold">
+                    <ul id="inst">
                         <li>
                             Instruction: Please read the statements given and mark against the appropriate response.
                         </li>
@@ -130,7 +130,7 @@ if (isset($_POST['submit'])) {
                     <br />
                     <br />
 
-                    <p><code class="text-lg" style="text-decoration: underline">Teaching ,Learning ,Evaluation & Result.
+                    <p><code class="text-lg" style="text-decoration: underline;line-height:1.5rem">Teaching ,Learning ,Evaluation & Result.
                         </code></p>
                     <br />
                     <!-- selected opts -->

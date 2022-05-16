@@ -247,11 +247,11 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
 
                     <p class="text-lg hover:underline"><code>Instructions to fill the questionnaire</code></p>
                     <br />
-                    <ul>
-                        <li style="color:red;font-weight:bold;font-family:monospace;">All questions should be
-                            compulsorily attempted. *</li>
-                        <li style="color:red;font-weight:bold;font-family:monospace;">Each question has seven responses,
-                            choose the most appropriate one. *</li>
+                    <ul id="inst">
+                        <li>All questions should be
+                            compulsorily attempted.</li>
+                        <li>Each question has seven responses,
+                            choose the most appropriate one.</li>
                     </ul>
                     <br />
 

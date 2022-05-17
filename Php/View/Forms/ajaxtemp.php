@@ -51,12 +51,12 @@ if (isset($_POST['rollno'])) {
     $result = mysqli_query($con, $query);
     $result = mysqli_num_rows($result);
     if ($result > 0) {
-        echo "<span style='color:green;font-family:monospace;font-weight:bold;'>Valid Control Id ✅</span>";
+        echo "<span style='color:green;font-family:monospace;font-weight:bold;'>Valid Id ✅</span>";
         echo "<input id =\"msg\" value = \"block\" style=\"display:none;\">";
         echo "<script>$('#sub').attr('disabled',false);</script>";
         // js hidden value to ol display:none
     } else {
-        echo "<span style='color:red;font-family:monospace;font-weight:bold;'>Not Valid Control Id ❌</span>";
+        echo "<span style='color:red;font-family:monospace;font-weight:bold;'>Invalid Id ❌</span>";
         echo "<input id =\"msg\" value = \"none\" style=\"display:none;\">";
         echo "<script>$('#sub').attr('disabled',true);</script>";
     }

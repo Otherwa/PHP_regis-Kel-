@@ -53,6 +53,29 @@ if (isset($_POST['FFForm'])) {
     <meta http-equiv='cache-control' content='no-cache'>
     <meta http-equiv='expires' content='0'>
     <meta http-equiv='pragma' content='no-cache'>
+
+    <style type="text/css">
+    .but {
+        text-align: center;
+        width: 25rem;
+        height: 10rem;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, );
+        transition: 300ms;
+        box-shadow: 5px 5px rgba(0, 0, 0);
+    }
+
+    .but:hover {
+        transition: 300ms;
+        box-shadow: 2.5px 2.5px rgba(0, 0, 0);
+    }
+
+    @media screen and (max-width: 430px) {
+        .but {
+            width: 15rem;
+            height: 5rem;
+        }
+    }
+    </style>
 </head>
 
 <body class="p-0 m-0">
@@ -70,22 +93,22 @@ if (isset($_POST['FFForm'])) {
         <div class="text-center" id="forms" style="display:none; padding:1rem;margin:1rem">
             <form action="" method="POST">
                 <button type="submit"
-                    class="inline-block font-mono text-center border border-transparent rounded-md py-3 px-8 text-lg text-white transition ease-in-out delay-100 bg-blue-500 hover:bg-[#1fc6e4] hover:text-black duration-300"
-                    name="PAPForm" style="text-align:center;width:15rem;height:5rem"> PAP's Form
+                    class="but inline-block font-mono text-center border border-transparent rounded-md py-3 px-8 text-lg text-white transition ease-in-out delay-100 bg-blue-500 hover:bg-[#1fc6e4] hover:text-black duration-300"
+                    name="PAPForm"> PAP's Form
                 </button>
                 <br />
                 <br />
                 <br />
                 <button type="submit"
-                    class="inline-block font-mono text-center border border-transparent rounded-md py-3 px-8 text-lg text-white transition ease-in-out delay-100 bg-blue-500 hover:bg-[#1fc6e4] hover:text-black duration-300"
-                    name="StuForm" style="text-align:center;width:15rem;height:5rem"> Student Survey Form
+                    class="but inline-block font-mono text-center border border-transparent rounded-md py-3 px-8 text-lg text-white transition ease-in-out delay-100 bg-blue-500 hover:bg-[#1fc6e4] hover:text-black duration-300"
+                    name="StuForm"> Student Survey Form
                 </button>
                 <br />
                 <br />
                 <br />
                 <button type="submit"
-                    class="inline-block font-mono text-center border border-transparent rounded-md py-3 px-8 text-lg text-white transition ease-in-out delay-100 bg-blue-500 hover:bg-[#1fc6e4] hover:text-black duration-300"
-                    name="FFForm" style="text-align:center;width:15rem;height:5rem"> Faculty Feedback Form
+                    class="but inline-block font-mono text-center border border-transparent rounded-md py-3 px-8 text-lg text-white transition ease-in-out delay-100 bg-blue-500 hover:bg-[#1fc6e4] hover:text-black duration-300"
+                    name="FFForm"> Faculty Feedback Form
                 </button>
                 <br />
                 <br />

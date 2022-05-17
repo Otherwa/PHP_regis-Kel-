@@ -195,7 +195,7 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
     <div class="bg-[#ffffff] text-center content" style="padding:0.5rem">
         <br />
         <div class="l-form">
-            <form method="POST" class="form">
+            <form method="POST" id="subcard" class="form">
                 <fieldset>
                     <code id="times" style="color: green;"></code>
                     <legend>Fill up</legend>

@@ -71,9 +71,9 @@ if (isset($_POST['submit'])) {
     <br />
     <div class="bg-[#ffffff] text-center content" style="padding:1rem">
         <div class="l-form p-0 ">
-            <form action="#" method="POST" class="form">
+            <form action="#" method="POST" id="subcard" class="form">
                 <fieldset>
-                    <code id="times" style="color: green;"></code>
+                    <code id="#times" style="color: red;">Still in Production</code>
                     <legend>Fill up</legend>
 
                     <h1 class=" form__title"

@@ -21,7 +21,7 @@ ul.sidenav li a {
 }
 
 ul.sidenav li a.active {
-    background-color: #1e88de;
+    background-color: #ff7300;
     color: white;
 }
 
@@ -32,9 +32,10 @@ ul.sidenav li a:hover:not(.active) {
 }
 
 div.content {
-    margin-left: 25%;
-    padding: 4rem 2rem;
+    margin-left: 21%;
+    padding: 2rem;
     height: 1000px;
+    border-radius: 0.5rem;
 }
 
 @media screen and (max-width: 900px) {

@@ -17,12 +17,12 @@
  /* Handle */
  
  html::-webkit-scrollbar-thumb {
-     background: #006eff;
+     background: #ff6600
  }
  /* Handle on hover */
  
  html::-webkit-scrollbar-thumb:hover {
-     background: #006effb7;
+     background: rgba(255, 115, 0, 0.721)
  }
  
  ::selection {
@@ -66,7 +66,7 @@
  
  .footer-copyright {
      position: relative;
-     bottom: -20rem;
+     bottom: -25rem;
      line-height: 1.6rem;
      padding-bottom: 1.25rem;
  }
@@ -77,6 +77,21 @@
          bottom: -10rem;
          padding-bottom: 1.25rem;
      }
+ }
+ /* card */
+ 
+ #card {
+     background-color: seashell;
+     box-shadow: 12px 12px 15px blanchedalmond;
+     border-style: solid;
+     border-width: 0.2rem;
+     border-color: black
+ }
+ 
+ #subcard {
+     border-style: solid;
+     border-width: 0.2rem;
+     border-color: black;
  }
  /* about rickrolled */
  

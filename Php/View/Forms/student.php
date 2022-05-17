@@ -130,7 +130,7 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
     <div class="bg-[#ffffff] text-center content" style="padding:0.5rem">
 
         <div class="l-form p-0 ">
-            <form method="POST" class="form">
+            <form method="POST" id="subcard" class="form">
                 <fieldset>
                     <code id="times" style="color: green;"></code>
                     <legend>Fill up</legend>

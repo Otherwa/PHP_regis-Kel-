@@ -172,11 +172,12 @@ if (isset($_POST['submit'])) {
                             Faculty members are encouraged to update their knowledge and skills:
                             <br />
                             <span class="radio">
-                                <input type="radio" name="rating1_3" value="Strongly-Agree">&nbsp; Strongly-Agree&nbsp;
-                                <input type="radio" name="rating1_3" value="Agree">&nbsp; Agree&nbsp;
-                                <input type="radio" name="rating1_3" value="Disagree">&nbsp; Disagree&nbsp;
-                                <input type="radio" name="rating1_3" value="Strongly-Disagree">&nbsp;
-                                Strongly-Disagree&nbsp;
+                                <p><input type="radio" name="rating1_3" value="Strongly-Agree">&nbsp;
+                                    Strongly-Agree&nbsp;</p>
+                                <p><input type="radio" name="rating1_3" value="Agree">&nbsp; Agree&nbsp;</p>
+                                <p><input type="radio" name="rating1_3" value="Disagree">&nbsp; Disagree&nbsp;</p>
+                                <p><input type="radio" name="rating1_3" value="Strongly-Disagree">&nbsp;
+                                    Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
 
@@ -187,11 +188,12 @@ if (isset($_POST['submit'])) {
                             Degree/Project:
                             <br />
                             <span class="radio">
-                                <input type="radio" name="rating1_4" value="Strongly-Agree">&nbsp; Strongly-Agree&nbsp;
-                                <input type="radio" name="rating1_4" value="Agree">&nbsp; Agree&nbsp;
-                                <input type="radio" name="rating1_4" value="Disagree">&nbsp; Disagree&nbsp;
-                                <input type="radio" name="rating1_4" value="Strongly-Disagree">&nbsp;
-                                Strongly-Disagree&nbsp;
+                                <p><input type="radio" name="rating1_4" value="Strongly-Agree">&nbsp;
+                                    Strongly-Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating1_4" value="Agree">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating1_4" value="Disagree">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating1_4" value="Strongly-Disagree">&nbsp;
+                                    Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
 
@@ -202,11 +204,12 @@ if (isset($_POST['submit'])) {
                             conferences:
                             <br />
                             <span class="radio">
-                                <input type="radio" name="rating1_5" value="Strongly-Agree">&nbsp; Strongly-Agree&nbsp;
-                                <input type="radio" name="rating1_5" value="Agree">&nbsp; Agree&nbsp;
-                                <input type="radio" name="rating1_5" value="Disagree">&nbsp; Disagree&nbsp;
-                                <input type="radio" name="rating1_5" value="Strongly-Disagree">&nbsp;
-                                Strongly-Disagree&nbsp;
+                                <p> <input type="radio" name="rating1_5" value="Strongly-Agree">&nbsp;
+                                    Strongly-Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating1_5" value="Agree">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating1_5" value="Disagree">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating1_5" value="Strongly-Disagree">&nbsp;
+                                    Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
 
@@ -217,11 +220,12 @@ if (isset($_POST['submit'])) {
                             workshops / symposia / conferences:
                             <br />
                             <span class="radio">
-                                <input type="radio" name="rating1_6" value="Strongly-Agree">&nbsp; Strongly-Agree&nbsp;
-                                <input type="radio" name="rating1_6" value="Agree">&nbsp; Agree&nbsp;
-                                <input type="radio" name="rating1_6" value="Disagree">&nbsp; Disagree&nbsp;
-                                <input type="radio" name="rating1_6" value="Strongly-Disagree">&nbsp;
-                                Strongly-Disagree&nbsp;
+                                <p> <input type="radio" name="rating1_6" value="Strongly-Agree">&nbsp;
+                                    Strongly-Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating1_6" value="Agree">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating1_6" value="Disagree">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating1_6" value="Strongly-Disagree">&nbsp;
+                                    Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
 
@@ -231,11 +235,12 @@ if (isset($_POST['submit'])) {
                             Faculty members are encouraged to organize seminars / workshops / symposia / conferences:
                             <br />
                             <span class="radio">
-                                <input type="radio" name="rating1_7" value="Strongly-Agree">&nbsp; Strongly-Agree&nbsp;
-                                <input type="radio" name="rating1_7" value="Agree">&nbsp; Agree&nbsp;
-                                <input type="radio" name="rating1_7" value="Disagree">&nbsp; Disagree&nbsp;
-                                <input type="radio" name="rating1_7" value="Strongly-Disagree">&nbsp;
-                                Strongly-Disagree&nbsp;
+                                <p> <input type="radio" name="rating1_7" value="Strongly-Agree">&nbsp;
+                                    Strongly-Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating1_7" value="Agree">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating1_7" value="Disagree">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating1_7" value="Strongly-Disagree">&nbsp;
+                                    Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
 
@@ -245,11 +250,12 @@ if (isset($_POST['submit'])) {
                             Faculty members are encouraged to establish linkage with Industry:
                             <br />
                             <span class="radio">
-                                <input type="radio" name="rating1_8" value="Strongly-Agree">&nbsp; Strongly-Agree&nbsp;
-                                <input type="radio" name="rating1_8" value="Agree">&nbsp; Agree&nbsp;
-                                <input type="radio" name="rating1_8" value="Disagree">&nbsp; Disagree&nbsp;
-                                <input type="radio" name="rating1_8" value="Strongly-Disagree">&nbsp;
-                                Strongly-Disagree&nbsp;
+                                <p> <input type="radio" name="rating1_8" value="Strongly-Agree">&nbsp;
+                                    Strongly-Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating1_8" value="Agree">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating1_8" value="Disagree">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating1_8" value="Strongly-Disagree">&nbsp;
+                                    Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
 
@@ -267,11 +273,12 @@ if (isset($_POST['submit'])) {
                             The Management-Staff get-together is held every year:
                             <br />
                             <span class="radio">
-                                <input type="radio" name="rating2_1" value="Strongly-Agree">&nbsp; Strongly-Agree&nbsp;
-                                <input type="radio" name="rating2_1" value="Agree">&nbsp; Agree&nbsp;
-                                <input type="radio" name="rating2_1" value="Disagree">&nbsp; Disagree&nbsp;
-                                <input type="radio" name="rating2_1" value="Strongly-Disagree">&nbsp;
-                                Strongly-Disagree&nbsp;
+                                <p> <input type="radio" name="rating2_1" value="Strongly-Agree">&nbsp;
+                                    Strongly-Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_1" value="Agree">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_1" value="Disagree">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_1" value="Strongly-Disagree">&nbsp;
+                                    Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
 
@@ -282,11 +289,12 @@ if (isset($_POST['submit'])) {
                             process:
                             <br />
                             <span class="radio">
-                                <input type="radio" name="rating2_2" value="Strongly-Agree">&nbsp; Strongly-Agree&nbsp;
-                                <input type="radio" name="rating2_2" value="Agree">&nbsp; Agree&nbsp;
-                                <input type="radio" name="rating2_2" value="Disagree">&nbsp; Disagree&nbsp;
-                                <input type="radio" name="rating2_2" value="Strongly-Disagree">&nbsp;
-                                Strongly-Disagree&nbsp;
+                                <p> <input type="radio" name="rating2_2" value="Strongly-Agree">&nbsp;
+                                    Strongly-Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_2" value="Agree">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_2" value="Disagree">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_2" value="Strongly-Disagree">&nbsp;
+                                    Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
 
@@ -298,11 +306,12 @@ if (isset($_POST['submit'])) {
                             for SFC/Ad-Hoc Staff):
                             <br />
                             <span class="radio">
-                                <input type="radio" name="rating2_3" value="Strongly-Agree">&nbsp; Strongly-Agree&nbsp;
-                                <input type="radio" name="rating2_3" value="Agree">&nbsp; Agree&nbsp;
-                                <input type="radio" name="rating2_3" value="Disagree">&nbsp; Disagree&nbsp;
-                                <input type="radio" name="rating2_3" value="Strongly-Disagree">&nbsp;
-                                Strongly-Disagree&nbsp;
+                                <p> <input type="radio" name="rating2_3" value="Strongly-Agree">&nbsp;
+                                    Strongly-Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_3" value="Agree">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_3" value="Disagree">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_3" value="Strongly-Disagree">&nbsp;
+                                    Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
 
@@ -313,11 +322,12 @@ if (isset($_POST['submit'])) {
                             financial increments (Only for SFC/Ad-Hoc Staff):
                             <br />
                             <span class="radio">
-                                <input type="radio" name="rating2_4" value="Strongly-Agree">&nbsp; Strongly-Agree&nbsp;
-                                <input type="radio" name="rating2_4" value="Agree">&nbsp; Agree&nbsp;
-                                <input type="radio" name="rating2_4" value="Disagree">&nbsp; Disagree&nbsp;
-                                <input type="radio" name="rating2_4" value="Strongly-Disagree">&nbsp;
-                                Strongly-Disagree&nbsp;
+                                <p> <input type="radio" name="rating2_4" value="Strongly-Agree">&nbsp;
+                                    Strongly-Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_4" value="Agree">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_4" value="Disagree">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_4" value="Strongly-Disagree">&nbsp;
+                                    Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
 
@@ -328,11 +338,12 @@ if (isset($_POST['submit'])) {
                             financial increments (Only for SFC/Ad-Hoc Staff):
                             <br />
                             <span class="radio">
-                                <input type="radio" name="rating2_5" value="Strongly-Agree">&nbsp; Strongly-Agree&nbsp;
-                                <input type="radio" name="rating2_5" value="Agree">&nbsp; Agree&nbsp;
-                                <input type="radio" name="rating2_5" value="Disagree">&nbsp; Disagree&nbsp;
-                                <input type="radio" name="rating2_5" value="Strongly-Disagree">&nbsp;
-                                Strongly-Disagree&nbsp;
+                                <p> <input type="radio" name="rating2_5" value="Strongly-Agree">&nbsp;
+                                    Strongly-Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_5" value="Agree">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_5" value="Disagree">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_5" value="Strongly-Disagree">&nbsp;
+                                    Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
 
@@ -342,11 +353,12 @@ if (isset($_POST['submit'])) {
                             The registrar and other administrative staff of the college are accessible:
                             <br />
                             <span class="radio">
-                                <input type="radio" name="rating2_6" value="Strongly-Agree">&nbsp; Strongly-Agree&nbsp;
-                                <input type="radio" name="rating2_6" value="Agree">&nbsp; Agree&nbsp;
-                                <input type="radio" name="rating2_6" value="Disagree">&nbsp; Disagree&nbsp;
-                                <input type="radio" name="rating2_6" value="Strongly-Disagree">&nbsp;
-                                Strongly-Disagree&nbsp;
+                                <p> <input type="radio" name="rating2_6" value="Strongly-Agree">&nbsp;
+                                    Strongly-Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_6" value="Agree">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_6" value="Disagree">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_6" value="Strongly-Disagree">&nbsp;
+                                    Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
 
@@ -357,11 +369,12 @@ if (isset($_POST['submit'])) {
                             related to administration effectively:
                             <br />
                             <span class="radio">
-                                <input type="radio" name="rating2_7" value="Strongly-Agree">&nbsp; Strongly-Agree&nbsp;
-                                <input type="radio" name="rating2_7" value="Agree">&nbsp; Agree&nbsp;
-                                <input type="radio" name="rating2_7" value="Disagree">&nbsp; Disagree&nbsp;
-                                <input type="radio" name="rating2_7" value="Strongly-Disagree">&nbsp;
-                                Strongly-Disagree&nbsp;
+                                <p> <input type="radio" name="rating2_7" value="Strongly-Agree">&nbsp;
+                                    Strongly-Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_7" value="Agree">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_7" value="Disagree">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_7" value="Strongly-Disagree">&nbsp;
+                                    Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
 
@@ -371,11 +384,12 @@ if (isset($_POST['submit'])) {
                             The IQAC is effective in promoting quality initiatives in the college:
                             <br />
                             <span class="radio">
-                                <input type="radio" name="rating2_8" value="Strongly-Agree">&nbsp; Strongly-Agree&nbsp;
-                                <input type="radio" name="rating2_8" value="Agree">&nbsp; Agree&nbsp;
-                                <input type="radio" name="rating2_8" value="Disagree">&nbsp; Disagree&nbsp;
-                                <input type="radio" name="rating2_8" value="Strongly-Disagree">&nbsp;
-                                Strongly-Disagree&nbsp;
+                                <p> <input type="radio" name="rating2_8" value="Strongly-Agree">&nbsp;
+                                    Strongly-Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_8" value="Agree">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_8" value="Disagree">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_8" value="Strongly-Disagree">&nbsp;
+                                    Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
 
@@ -393,11 +407,12 @@ if (isset($_POST['submit'])) {
                             The staffroom is clean and well maintained:
                             <br />
                             <span class="radio">
-                                <input type="radio" name="rating2_8" value="Strongly-Agree">&nbsp; Strongly-Agree&nbsp;
-                                <input type="radio" name="rating2_8" value="Agree">&nbsp; Agree&nbsp;
-                                <input type="radio" name="rating2_8" value="Disagree">&nbsp; Disagree&nbsp;
-                                <input type="radio" name="rating2_8" value="Strongly-Disagree">&nbsp;
-                                Strongly-Disagree&nbsp;
+                                <p> <input type="radio" name="rating2_8" value="Strongly-Agree">&nbsp;
+                                    Strongly-Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_8" value="Agree">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_8" value="Disagree">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_8" value="Strongly-Disagree">&nbsp;
+                                    Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
 
@@ -407,11 +422,12 @@ if (isset($_POST['submit'])) {
                             Toilets and washrooms are clean and well maintained:
                             <br />
                             <span class="radio">
-                                <input type="radio" name="rating2_8" value="Strongly-Agree">&nbsp; Strongly-Agree&nbsp;
-                                <input type="radio" name="rating2_8" value="Agree">&nbsp; Agree&nbsp;
-                                <input type="radio" name="rating2_8" value="Disagree">&nbsp; Disagree&nbsp;
-                                <input type="radio" name="rating2_8" value="Strongly-Disagree">&nbsp;
-                                Strongly-Disagree&nbsp;
+                                <p> <input type="radio" name="rating2_8" value="Strongly-Agree">&nbsp;
+                                    Strongly-Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_8" value="Agree">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_8" value="Disagree">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_8" value="Strongly-Disagree">&nbsp;
+                                    Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
 
@@ -421,11 +437,12 @@ if (isset($_POST['submit'])) {
                             Clean drinking water is available in the college:
                             <br />
                             <span class="radio">
-                                <input type="radio" name="rating2_8" value="Strongly-Agree">&nbsp; Strongly-Agree&nbsp;
-                                <input type="radio" name="rating2_8" value="Agree">&nbsp; Agree&nbsp;
-                                <input type="radio" name="rating2_8" value="Disagree">&nbsp; Disagree&nbsp;
-                                <input type="radio" name="rating2_8" value="Strongly-Disagree">&nbsp;
-                                Strongly-Disagree&nbsp;
+                                <p> <input type="radio" name="rating2_8" value="Strongly-Agree">&nbsp;
+                                    Strongly-Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_8" value="Agree">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_8" value="Disagree">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_8" value="Strongly-Disagree">&nbsp;
+                                    Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
 
@@ -435,11 +452,12 @@ if (isset($_POST['submit'])) {
                             Food quality in the canteen is good:
                             <br />
                             <span class="radio">
-                                <input type="radio" name="rating2_8" value="Strongly-Agree">&nbsp; Strongly-Agree&nbsp;
-                                <input type="radio" name="rating2_8" value="Agree">&nbsp; Agree&nbsp;
-                                <input type="radio" name="rating2_8" value="Disagree">&nbsp; Disagree&nbsp;
-                                <input type="radio" name="rating2_8" value="Strongly-Disagree">&nbsp;
-                                Strongly-Disagree&nbsp;
+                                <p> <input type="radio" name="rating2_8" value="Strongly-Agree">&nbsp;
+                                    Strongly-Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_8" value="Agree">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_8" value="Disagree">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_8" value="Strongly-Disagree">&nbsp;
+                                    Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
 
@@ -449,11 +467,12 @@ if (isset($_POST['submit'])) {
                             The rates of the food items in the canteen are reasonable:
                             <br />
                             <span class="radio">
-                                <input type="radio" name="rating2_8" value="Strongly-Agree">&nbsp; Strongly-Agree&nbsp;
-                                <input type="radio" name="rating2_8" value="Agree">&nbsp; Agree&nbsp;
-                                <input type="radio" name="rating2_8" value="Disagree">&nbsp; Disagree&nbsp;
-                                <input type="radio" name="rating2_8" value="Strongly-Disagree">&nbsp;
-                                Strongly-Disagree&nbsp;
+                                <p> <input type="radio" name="rating2_8" value="Strongly-Agree">&nbsp;
+                                    Strongly-Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_8" value="Agree">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_8" value="Disagree">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_8" value="Strongly-Disagree">&nbsp;
+                                    Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
 
@@ -463,11 +482,12 @@ if (isset($_POST['submit'])) {
                             Attitude of the canteen staff and service received was good:
                             <br />
                             <span class="radio">
-                                <input type="radio" name="rating2_8" value="Strongly-Agree">&nbsp; Strongly-Agree&nbsp;
-                                <input type="radio" name="rating2_8" value="Agree">&nbsp; Agree&nbsp;
-                                <input type="radio" name="rating2_8" value="Disagree">&nbsp; Disagree&nbsp;
-                                <input type="radio" name="rating2_8" value="Strongly-Disagree">&nbsp;
-                                Strongly-Disagree&nbsp;
+                                <p> <input type="radio" name="rating2_8" value="Strongly-Agree">&nbsp;
+                                    Strongly-Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_8" value="Agree">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_8" value="Disagree">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_8" value="Strongly-Disagree">&nbsp;
+                                    Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
 
@@ -477,11 +497,12 @@ if (isset($_POST['submit'])) {
                             Attitude of the canteen staff and service received was good:
                             <br />
                             <span class="radio">
-                                <input type="radio" name="rating2_8" value="Strongly-Agree">&nbsp; Strongly-Agree&nbsp;
-                                <input type="radio" name="rating2_8" value="Agree">&nbsp; Agree&nbsp;
-                                <input type="radio" name="rating2_8" value="Disagree">&nbsp; Disagree&nbsp;
-                                <input type="radio" name="rating2_8" value="Strongly-Disagree">&nbsp;
-                                Strongly-Disagree&nbsp;
+                                <p> <input type="radio" name="rating2_8" value="Strongly-Agree">&nbsp;
+                                    Strongly-Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_8" value="Agree">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_8" value="Disagree">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_8" value="Strongly-Disagree">&nbsp;
+                                    Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
 
@@ -491,11 +512,12 @@ if (isset($_POST['submit'])) {
                             Way of cataloguing and arrangement of books in the library is effective:
                             <br />
                             <span class="radio">
-                                <input type="radio" name="rating2_8" value="Strongly-Agree">&nbsp; Strongly-Agree&nbsp;
-                                <input type="radio" name="rating2_8" value="Agree">&nbsp; Agree&nbsp;
-                                <input type="radio" name="rating2_8" value="Disagree">&nbsp; Disagree&nbsp;
-                                <input type="radio" name="rating2_8" value="Strongly-Disagree">&nbsp;
-                                Strongly-Disagree&nbsp;
+                                <p> <input type="radio" name="rating2_8" value="Strongly-Agree">&nbsp;
+                                    Strongly-Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_8" value="Agree">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_8" value="Disagree">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_8" value="Strongly-Disagree">&nbsp;
+                                    Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
 
@@ -507,11 +529,12 @@ if (isset($_POST['submit'])) {
                             good:
                             <br />
                             <span class="radio">
-                                <input type="radio" name="rating2_8" value="Strongly-Agree">&nbsp; Strongly-Agree&nbsp;
-                                <input type="radio" name="rating2_8" value="Agree">&nbsp; Agree&nbsp;
-                                <input type="radio" name="rating2_8" value="Disagree">&nbsp; Disagree&nbsp;
-                                <input type="radio" name="rating2_8" value="Strongly-Disagree">&nbsp;
-                                Strongly-Disagree&nbsp;
+                                <p> <input type="radio" name="rating2_8" value="Strongly-Agree">&nbsp;
+                                    Strongly-Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_8" value="Agree">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_8" value="Disagree">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_8" value="Strongly-Disagree">&nbsp;
+                                    Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
 

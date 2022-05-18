@@ -33,30 +33,34 @@ if (isset($_POST['submit'])) {
     $rollno = mysqli_real_escape_string($con, $_POST['rollno']);
     $class = mysqli_real_escape_string($con, $_POST['class']);
     $division = mysqli_real_escape_string($con, $_POST['division']);
-    // get teacher
     $semester = mysqli_real_escape_string($con, $_POST['semester']);
     $paper = mysqli_real_escape_string($con, $_POST['subject']);
     $teacher = mysqli_real_escape_string($con, $_POST['teacher']);
 
-    if ($name == ' ' || $rollno == ' ' || $class == ' ' || $division == ' ' || $semester == ' ' || $paper == ' ' || $paper == "--" || $teacher == ' ') {
-        echo "<script>alert('Kindly Check Your Form Once Again 🤓');</script>";
-        // session_destroy();
-
-    } else {
-
-        // double verify student
-        $is_stu = verify_student($rollno, $con);
-
-        // check stu active ctrlid
-        if ($is_stu != true) {
-            echo "<script>alert('Something Wrong with Your Control Id 🤓');</script>";
+    // chech if set defaulu ' '(space); 
+    if (isset($name) && isset($rollno) && isset($class) && isset($division) && isset($semester) && isset($paper) && isset($teacher)) {
+        if ($name == ' ' || $rollno == ' ' || $class == ' ' || $division == ' ' || $semester == ' ' || $paper == ' ' || $paper == "--" || $teacher == ' ') {
+            echo "<script>alert('Kindly Check Your Form Once Again 🤓');</script>";
             // session_destroy();
 
         } else {
 
-            //data submission func
-            get_ratings($con, $name, $teacher, $rollno, $class, $division, $semester, $paper);
+            // double verify student
+            $is_stu = verify_student($rollno, $con);
+
+            // check stu active ctrlid
+            if ($is_stu != true) {
+                echo "<script>alert('Something Wrong with Your Control Id 🤓');</script>";
+                // session_destroy();
+
+            } else {
+
+                //data submission func
+                get_ratings($con, $name, $teacher, $rollno, $class, $division, $semester, $paper);
+            }
         }
+    } else {
+        echo "<script>alert('Something Wrong with Your Form Lol 🤓');</script>";
     }
 }
 

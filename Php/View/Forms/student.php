@@ -24,16 +24,27 @@ if (isset($_POST['submit'])) {
         $stat = 2;
     }
 
-    $confirm = $_POST['confirm'];
-    $name = $_POST['name'];
-    $age = $_POST['age'];
-    $gender = $_POST['gender'];
-    $rollno = $_POST['rollno'];
-    $class = $_POST['class'];
-    $programme = $_POST['programme'];
-    $division = $_POST['division'];
-    // ratings
-    getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class, $programme, $division);
+    // default confirm setStu
+    $name = mysqli_real_escape_string($con, $_POST['name']);
+    $age = mysqli_real_escape_string($con, $_POST['age']);
+    $gender = mysqli_real_escape_string($con, $_POST['gender']);
+    $rollno = mysqli_real_escape_string($con, $_POST['rollno']);
+    $class = mysqli_real_escape_string($con, $_POST['class']);
+    $programme = mysqli_real_escape_string($con, $_POST['programme']);
+    $division = mysqli_real_escape_string($con, $_POST['division']);
+    if (isset($confirm) && isset($name) && isset($age) && isset($gender) && isset($rollno) && isset($class) && isset($program) && isset($division)) {
+
+        // unideinfied post  get confirmation
+        $confirm = mysqli_real_escape_string($con, $_POST['confirm']);
+        if ($confirm == ' ' || $confirm == 'no' || $name = ' ' || $age = ' ' || $gender = ' ' || $rollno = ' ' || $class = ' ' || $programme = ' ' || $division = ' ') { //
+            echo "<script>alert('Kindly Check Your Form Once Again 🤓');</script>";
+        } else {
+            //ratings
+            getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class, $programme, $division);
+        }
+    } else {
+        echo "<script>alert('Something Wrong with Your Form Lol 🤓');</script>";
+    }
 }
 
 function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class, $programme, $division)

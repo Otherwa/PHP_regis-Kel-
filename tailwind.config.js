@@ -1,5 +1,5 @@
 module.exports = {
-    content: ["*.html", "*.php"],
+    content: ["*.html", "Php\View\Forms\*.php"],
     theme: {
         extend: {},
     },

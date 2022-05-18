@@ -141,7 +141,7 @@ session_destroy();
             <br />
             <!-- chart js -->
             <canvas id="myChart" width="450" height="150"
-                style="background-color:bisque;padding: 1rem;border-radius: 0.5rem;"></canvas>
+                style="background-color:#ebe6e0;padding: 1rem;border-radius: 0.5rem;"></canvas>
             <br />
             <br />
 

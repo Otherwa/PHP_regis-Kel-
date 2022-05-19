@@ -48,7 +48,7 @@ session_destroy();
     <br />
     <br />
     <!-- This requires Tailwind CSS v2.0+ -->
-    <div id="card" class="bg-[#ffffff] text-center p-3 m-2">
+    <div class="bg-[#ffffff] text-center p-3 m-2">
         <p class="text-4xl myfont antialiased tracking-normal md:text-4xl overline leading-loose">Form Submitted</p>
         <br />
         <p class="font-mono underline text-xl hover:text-[#006eff]"><a style="font-size:1.3rem" href="forms.php">Submit

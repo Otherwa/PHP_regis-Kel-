@@ -69,10 +69,10 @@ if (isset($_POST['FFForm'])) {
         box-shadow: 2.5px 2.5px rgba(0, 0, 0);
     }
 
-    @media screen and (max-width: 430px) {
+    @media screen and (max-width: 460px) {
         .but {
             width: 15rem;
-            height: 5rem;
+            height: 7rem;
         }
     }
     </style>

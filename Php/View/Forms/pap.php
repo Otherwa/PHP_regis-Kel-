@@ -151,6 +151,8 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
             // execute query
             mysqli_query($con, $query);
             $_SESSION['name'] = $name;
+
+            // https response
             header('Location: formsubmit.php');
         }
     } else {
@@ -240,6 +242,7 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                     <div class="form__div selectaltered">
                         <label for="division" class="text-sm" style="color: rgb(68, 74, 79);">&bull; Division:</label>
                         <select name="division" id="divison">
+                            <!-- php list get -->
                             <?php division($con); ?>
                         </select>
                     </div>

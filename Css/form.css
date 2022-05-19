@@ -231,7 +231,7 @@ ul li {
     font-weight: bold;
     display: grid;
     justify-content: start;
-    padding: 1rem 0rem 1rem 0rem;
+    padding: 1rem 0;
 }
 
 .green {

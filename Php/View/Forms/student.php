@@ -36,7 +36,7 @@ if (isset($_POST['submit'])) {
 
         // unideinfied post  get confirmation
         $confirm = mysqli_real_escape_string($con, $_POST['confirm']);
-        if ($confirm == ' ' || $confirm == 'no' || $name = ' ' || $age = ' ' || $gender = ' ' || $rollno = ' ' || $class = ' ' || $programme = ' ' || $division = ' ') { //
+        if ($confirm == ' ' || $confirm == 'no' || $name == ' ' || $age == ' ' || $gender == ' ' || $rollno == ' ' || $class == ' ' || $programme == ' ' || $division == ' ') { //
             echo "<script>alert('Kindly Check Your Form Once Again 🤓');</script>";
         } else {
             //ratings

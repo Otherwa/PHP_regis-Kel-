@@ -91,15 +91,13 @@ Registration form using php
 - Tailwind Css [documentation](https://tailwindcss.com/docs/installation)
 - Scratch Css. `present in Css/style.css`
 
-# Preview
-
-
-
-# Feature
+# Preview & Feature
 
 ![ss1](https://user-images.githubusercontent.com/67428572/169555222-80c5fcde-321d-44a0-a8a6-e8b4e19d0884.png)
 ![sss2](https://user-images.githubusercontent.com/67428572/169555238-100507cf-e662-42bf-8919-67b1b8ad8a9c.png)
- 
+![ss3](https://user-images.githubusercontent.com/67428572/169555750-b9bb19f4-f26d-4c9a-b01e-182fc08d3888.png)
+![ss4](https://user-images.githubusercontent.com/67428572/169555767-cb5f32b0-20e6-4102-a2a1-b07fc8bbc4ea.png)
+
  ![Demo Build](http://form123.epizy.com/)
 
 # In a nut-shell

@@ -22,8 +22,77 @@ if (isset($_POST['submit'])) {
         //Destroy current and start new one
         $stat = 2;
     }
+
+
+    if (isset($_POST['faculty_name']) && isset($_POST['year_service']) && isset($_POST['department'])) {
+        // establish connection
+        $con = get_con();
+        // chech if datafeilds are set
+        $faculty_name = mysqli_real_escape_string($con, $_POST['faculty_name']);
+        $year_service = mysqli_real_escape_string($con, $_POST['year_service']);
+        $department = mysqli_real_escape_string($con, $_POST['department']);
+        getandset_ratings($con, $faculty_name, $year_service, $department);
+    } else {
+        echo "<script>alert('Something Wrong with Your Form 1 🤓');</script>";
+    }
 }
-// INSERT INTO `form_fillup` (`Id`, `Name`, `Review`, `Day`) VALUES ('1', 'Atharv', 'NICE', DAYNAME(CURDATE()));
+
+function getandset_ratings($con, $faculty_name, $year_service, $department)
+{
+    if (isset($_POST['rating1_1']) && isset($_POST['rating1_2']) && isset($_POST['rating1_3']) && isset($_POST['rating1_4']) && isset($_POST['rating1_5']) && isset($_POST['rating1_6']) && isset($_POST['rating1_7']) && isset($_POST['rating1_8'])) {
+        // first blk pass
+        if (isset($_POST['rating2_1']) && isset($_POST['rating2_2']) && isset($_POST['rating2_3']) && isset($_POST['rating2_4']) && isset($_POST['rating2_5']) && isset($_POST['rating2_6']) && isset($_POST['rating2_7']) && isset($_POST['rating2_8'])) {
+            // second block pass
+            if (isset($_POST['rating3_1']) && isset($_POST['rating3_2']) && isset($_POST['rating3_3']) && isset($_POST['rating3_4']) && isset($_POST['rating3_5']) && isset($_POST['rating3_6']) && isset($_POST['rating3_7']) && isset($_POST['rating3_8']) && isset($_POST['rating3_9'])) {
+                // third blk pass 
+
+                // first block
+                $rating1_1 = mysqli_real_escape_string($con, $_POST['rating1_1']);
+                $rating1_2 = mysqli_real_escape_string($con, $_POST['rating1_2']);
+                $rating1_3 = mysqli_real_escape_string($con, $_POST['rating1_3']);
+                $rating1_4 = mysqli_real_escape_string($con, $_POST['rating1_4']);
+                $rating1_5 = mysqli_real_escape_string($con, $_POST['rating1_5']);
+                $rating1_6 = mysqli_real_escape_string($con, $_POST['rating1_6']);
+                $rating1_7 = mysqli_real_escape_string($con, $_POST['rating1_7']);
+                $rating1_8 = mysqli_real_escape_string($con, $_POST['rating1_8']);
+                // second block
+                $rating2_1 = mysqli_real_escape_string($con, $_POST['rating2_1']);
+                $rating2_2 = mysqli_real_escape_string($con, $_POST['rating2_2']);
+                $rating2_3 = mysqli_real_escape_string($con, $_POST['rating2_3']);
+                $rating2_4 = mysqli_real_escape_string($con, $_POST['rating2_4']);
+                $rating2_5 = mysqli_real_escape_string($con, $_POST['rating2_5']);
+                $rating2_6 = mysqli_real_escape_string($con, $_POST['rating2_6']);
+                $rating2_7 = mysqli_real_escape_string($con, $_POST['rating2_7']);
+                $rating2_8 = mysqli_real_escape_string($con, $_POST['rating2_8']);
+                // third block
+                $rating3_1 = mysqli_real_escape_string($con, $_POST['rating3_1']);
+                $rating3_2 = mysqli_real_escape_string($con, $_POST['rating3_2']);
+                $rating3_3 = mysqli_real_escape_string($con, $_POST['rating3_3']);
+                $rating3_4 = mysqli_real_escape_string($con, $_POST['rating3_4']);
+                $rating3_5 = mysqli_real_escape_string($con, $_POST['rating3_5']);
+                $rating3_6 = mysqli_real_escape_string($con, $_POST['rating3_6']);
+                $rating3_7 = mysqli_real_escape_string($con, $_POST['rating3_7']);
+                $rating3_8 = mysqli_real_escape_string($con, $_POST['rating3_8']);
+                $rating3_9 = mysqli_real_escape_string($con, $_POST['rating3_9']);
+                $suggest1 = mysqli_real_escape_string($con, $_POST['proud_inst']);
+                $suggest2 = mysqli_real_escape_string($con, $_POST['devlopement']);
+
+                $query = "INSERT INTO `answerfac`(`faculty_name`, `year_service`, `department`, `a11`, `a12`, `a13`, `a14`, `a15`, `a16`, `a17`, `a18`, `a19`, `a20`, `a21`, `a22`, `a23`, `a24`, `a25`, `a26`, `a27`, `a28`, `a29`, `a30`, `a31`, `a32`, `a33`, `a34`, `a35`, `suggest1`, `suggest2`, `Time`) 
+                VALUES ('$faculty_name','$year_service','$department','$rating1_1','$rating1_2','$rating1_3','$rating1_4','$rating1_5','$rating1_6','$rating1_7','$rating1_8','$rating2_1','$rating2_2','$rating2_3','$rating2_4','$rating2_5','$rating2_6','$rating2_7','$rating2_8','$rating3_1','$rating3_2','$rating3_3','$rating3_4','$rating3_5','$rating3_6','$rating3_7','$rating3_8','$rating3_9','$suggest1','$suggest2',current_timestamp());";
+                mysqli_query($con, $query);
+                $_SESSION['name'] = "Anonymous";
+                header('Location: formsubmit.php');
+            } else {
+                echo "<script>alert('Please select all the fields given below 🤓');</script>";
+            }
+        } else {
+            echo "<script>alert('Please select all the fields given below 🤓');</script>";
+        }
+    } else {
+        echo "<script>alert('Something's Wrong with Your Form 🤓');</script>";
+    }
+}
+
 ?>
 
 
@@ -407,11 +476,11 @@ if (isset($_POST['submit'])) {
                             The staffroom is clean and well maintained:
                             <br />
                             <span class="radio">
-                                <p> <input type="radio" name="rating2_8" value="Strongly-Agree">&nbsp;
+                                <p> <input type="radio" name="rating3_1" value="Strongly-Agree">&nbsp;
                                     Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_8" value="Agree">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_8" value="Disagree">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_8" value="Strongly-Disagree">&nbsp;
+                                <p> <input type="radio" name="rating3_1" value="Agree">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating3_1" value="Disagree">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating3_1" value="Strongly-Disagree">&nbsp;
                                     Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
@@ -422,11 +491,11 @@ if (isset($_POST['submit'])) {
                             Toilets and washrooms are clean and well maintained:
                             <br />
                             <span class="radio">
-                                <p> <input type="radio" name="rating2_8" value="Strongly-Agree">&nbsp;
+                                <p> <input type="radio" name="rating3" value="Strongly-Agree">&nbsp;
                                     Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_8" value="Agree">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_8" value="Disagree">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_8" value="Strongly-Disagree">&nbsp;
+                                <p> <input type="radio" name="rating3_2" value="Agree">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating3_2" value="Disagree">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating3_2" value="Strongly-Disagree">&nbsp;
                                     Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
@@ -437,11 +506,11 @@ if (isset($_POST['submit'])) {
                             Clean drinking water is available in the college:
                             <br />
                             <span class="radio">
-                                <p> <input type="radio" name="rating2_8" value="Strongly-Agree">&nbsp;
+                                <p> <input type="radio" name="rating3_3" value="Strongly-Agree">&nbsp;
                                     Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_8" value="Agree">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_8" value="Disagree">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_8" value="Strongly-Disagree">&nbsp;
+                                </p> <input type="radio" name="rating3_3" value="Agree">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating3_3" value="Disagree">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating3_3" value="Strongly-Disagree">&nbsp;
                                     Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
@@ -452,11 +521,11 @@ if (isset($_POST['submit'])) {
                             Food quality in the canteen is good:
                             <br />
                             <span class="radio">
-                                <p> <input type="radio" name="rating2_8" value="Strongly-Agree">&nbsp;
+                                <p> <input type="radio" name="rating3_4" value="Strongly-Agree">&nbsp;
                                     Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_8" value="Agree">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_8" value="Disagree">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_8" value="Strongly-Disagree">&nbsp;
+                                <p> <input type="radio" name="rating3_4" value="Agree">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating3_4" value="Disagree">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating3_4" value="Strongly-Disagree">&nbsp;
                                     Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
@@ -467,11 +536,11 @@ if (isset($_POST['submit'])) {
                             The rates of the food items in the canteen are reasonable:
                             <br />
                             <span class="radio">
-                                <p> <input type="radio" name="rating2_8" value="Strongly-Agree">&nbsp;
+                                <p> <input type="radio" name="rating3_5" value="Strongly-Agree">&nbsp;
                                     Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_8" value="Agree">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_8" value="Disagree">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_8" value="Strongly-Disagree">&nbsp;
+                                <p> <input type="radio" name="rating3_5" value="Agree">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating3_5" value="Disagree">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating3_5" value="Strongly-Disagree">&nbsp;
                                     Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
@@ -482,11 +551,11 @@ if (isset($_POST['submit'])) {
                             Attitude of the canteen staff and service received was good:
                             <br />
                             <span class="radio">
-                                <p> <input type="radio" name="rating2_8" value="Strongly-Agree">&nbsp;
+                                <p> <input type="radio" name="rating3_6" value="Strongly-Agree">&nbsp;
                                     Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_8" value="Agree">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_8" value="Disagree">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_8" value="Strongly-Disagree">&nbsp;
+                                <p> <input type="radio" name="rating3_6" value="Agree">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating3_6" value="Disagree">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating3_6" value="Strongly-Disagree">&nbsp;
                                     Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
@@ -497,11 +566,11 @@ if (isset($_POST['submit'])) {
                             Attitude of the canteen staff and service received was good:
                             <br />
                             <span class="radio">
-                                <p> <input type="radio" name="rating2_8" value="Strongly-Agree">&nbsp;
+                                <p> <input type="radio" name="rating3_7" value="Strongly-Agree">&nbsp;
                                     Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_8" value="Agree">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_8" value="Disagree">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_8" value="Strongly-Disagree">&nbsp;
+                                <p> <input type="radio" name="rating3_7" value="Agree">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating3_7" value="Disagree">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating3_7" value="Strongly-Disagree">&nbsp;
                                     Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
@@ -512,11 +581,11 @@ if (isset($_POST['submit'])) {
                             Way of cataloguing and arrangement of books in the library is effective:
                             <br />
                             <span class="radio">
-                                <p> <input type="radio" name="rating2_8" value="Strongly-Agree">&nbsp;
+                                <p> <input type="radio" name="rating3_8" value="Strongly-Agree">&nbsp;
                                     Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_8" value="Agree">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_8" value="Disagree">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_8" value="Strongly-Disagree">&nbsp;
+                                <p> <input type="radio" name="rating3_8" value="Agree">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating3_8" value="Disagree">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating3_8" value="Strongly-Disagree">&nbsp;
                                     Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
@@ -529,11 +598,11 @@ if (isset($_POST['submit'])) {
                             good:
                             <br />
                             <span class="radio">
-                                <p> <input type="radio" name="rating2_8" value="Strongly-Agree">&nbsp;
+                                <p> <input type="radio" name="rating3_9" value="Strongly-Agree">&nbsp;
                                     Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_8" value="Agree">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_8" value="Disagree">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_8" value="Strongly-Disagree">&nbsp;
+                                <p> <input type="radio" name="rating3_9" value="Agree">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating3_9" value="Disagree">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating3_9" value="Strongly-Disagree">&nbsp;
                                     Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>

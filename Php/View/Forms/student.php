@@ -6,7 +6,7 @@ if (!isset($_SESSION['setStu'])) {
     header('Location: forms.php');
 }
 
-$con = get_con();
+
 
 if (isset($_POST['submit'])) {
 
@@ -33,7 +33,8 @@ if (isset($_POST['submit'])) {
     $programme = mysqli_real_escape_string($con, $_POST['programme']);
     $division = mysqli_real_escape_string($con, $_POST['division']);
     if (isset($confirm) && isset($name) && isset($age) && isset($gender) && isset($rollno) && isset($class) && isset($program) && isset($division)) {
-
+        // establish connection
+        $con = get_con();
         // unideinfied post  get confirmation
         $confirm = mysqli_real_escape_string($con, $_POST['confirm']);
         if ($confirm == ' ' || $confirm == 'no' || $name == ' ' || $age == ' ' || $gender == ' ' || $rollno == ' ' || $class == ' ' || $programme == ' ' || $division == ' ') { //
@@ -43,7 +44,7 @@ if (isset($_POST['submit'])) {
             getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class, $programme, $division);
         }
     } else {
-        echo "<script>alert('Something Wrong with Your Form Lol 🤓');</script>";
+        echo "<script>alert('Something Wrong with Your Form 🤓');</script>";
     }
 }
 

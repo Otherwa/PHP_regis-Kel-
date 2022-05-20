@@ -9,8 +9,7 @@ if (!isset($_SESSION['setPAP'])) {
     header('Location: forms.php');
 }
 
-// establish connection
-$con = get_con();
+
 
 // err_msgs
 $var1 = 1;
@@ -39,6 +38,8 @@ if (isset($_POST['submit'])) {
 
     // chech if set defaulu ' '(space); 
     if (isset($name) && isset($rollno) && isset($class) && isset($division) && isset($semester) && isset($paper) && isset($teacher)) {
+        // establish connection
+        $con = get_con();
         if ($name == ' ' || $rollno == ' ' || $class == ' ' || $division == ' ' || $semester == ' ' || $paper == ' ' || $paper == "--" || $teacher == ' ') {
             echo "<script>alert('Kindly Check Your Form Once Again 🤓');</script>";
             // session_destroy();

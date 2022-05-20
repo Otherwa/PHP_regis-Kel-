@@ -21,9 +21,6 @@ Registration form using php
 - Google Fonts API. [documentaion](https://fonts.google.com/knowledge)
 - Tailwind npm/CDN `(temp)`. [documentation](https://tailwindcss.com/docs/installation)
 
-# Schema
-![1213](https://user-images.githubusercontent.com/67428572/169552870-e5ff8c4f-b770-4b39-9b5d-b7e381f1977a.png)
-
 # File Structure
 
 ```
@@ -83,9 +80,11 @@ Registration form using php
 
 #### Database (MySql) Constraints.
 
-`Database name 'regis_dat' table 'form_fillup' for storing feedbacks`
+`Database name 'kelkar_forms'`
+`answerpats` `answersss` `answerfac` for storing feedbacks.
 
-##### table constraints. (Temp/[Update when Schema acq])
+##### Schema
+![1213](https://user-images.githubusercontent.com/67428572/169552870-e5ff8c4f-b770-4b39-9b5d-b7e381f1977a.png)
 
 ## styling
 
@@ -94,15 +93,14 @@ Registration form using php
 
 # Preview
 
-![ssj1](https://user-images.githubusercontent.com/67428572/163563487-7c2512ab-dcc6-45a4-b89a-63b8f02e2a9f.png)
-![ssj2](https://user-images.githubusercontent.com/67428572/163079320-1902922d-1ce9-44fc-96da-68f8819dfa16.png)
-![ssj3](https://user-images.githubusercontent.com/67428572/163079326-1c8c7da9-5ff8-4dfb-b675-1de29571904f.png)
-![ssj4](https://user-images.githubusercontent.com/67428572/163079477-e497d636-22cb-4204-803f-7c77ba767d3a.png)
-![ssj5](https://user-images.githubusercontent.com/67428572/163398910-182d1bb5-3708-4c71-90af-5b19d2e753c4.png)
+
 
 # Feature
 
-![ssj7](https://user-images.githubusercontent.com/67428572/165899848-0fdaa6a6-0a4d-4a2a-9ec4-5b10613c8ee1.png)
+![ss1](https://user-images.githubusercontent.com/67428572/169555222-80c5fcde-321d-44a0-a8a6-e8b4e19d0884.png)
+![sss2](https://user-images.githubusercontent.com/67428572/169555238-100507cf-e662-42bf-8919-67b1b8ad8a9c.png)
+ 
+ ![Demo Build](http://form123.epizy.com/)
 
 # In a nut-shell
 

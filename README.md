@@ -21,6 +21,9 @@ Registration form using php
 - Google Fonts API. [documentaion](https://fonts.google.com/knowledge)
 - Tailwind npm/CDN `(temp)`. [documentation](https://tailwindcss.com/docs/installation)
 
+# Schema
+![1213](https://user-images.githubusercontent.com/67428572/169552870-e5ff8c4f-b770-4b39-9b5d-b7e381f1977a.png)
+
 # File Structure
 
 ```

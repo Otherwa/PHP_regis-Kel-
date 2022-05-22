@@ -6,6 +6,8 @@ if (!isset($_SESSION['setFF'])) {
     header('Location: forms.php');
 }
 
+// establish connection
+$con = get_con();
 
 if (isset($_POST['submit'])) {
 
@@ -142,7 +144,7 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
         <div class="l-form p-0 ">
             <form action="#" method="POST" id="subcard" class="form">
                 <fieldset>
-                    <code id="#times" style="color: red;">Still in Production</code>
+                    <code id="times" style="color: green;"></code>
                     <legend>Fill up</legend>
 
                     <h1 class=" form__title"
@@ -210,11 +212,11 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
                             form of percentage of the time it was effective:
                             <br />
                             <span class="radio">
-                                <p><input type="radio" name="rating1_1" value="80%to100%effective">&nbsp; 80% to 100%
+                                <p><input type="radio" name="rating1_1" value="3">&nbsp; 80% to 100%
                                     effective&nbsp;</p>
-                                <p><input type="radio" name="rating1_1" value="60%to80%effective">&nbsp; 60% to 80%
+                                <p><input type="radio" name="rating1_1" value="2">&nbsp; 60% to 80%
                                     effective&nbsp;</p>
-                                <p><input type="radio" name="rating1_1" value="40%to60%effective">&nbsp; 40% to 60%
+                                <p><input type="radio" name="rating1_1" value="1">&nbsp; 40% to 60%
                                     effective&nbsp;</p>
                             </span>
                         </li>
@@ -226,11 +228,11 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
                             examination has been effective and timely:
                             <br />
                             <span class="radio">
-                                <p><input type="radio" name="rating1_2" value="Strongly-Agree">&nbsp;
+                                <p><input type="radio" name="rating1_2" value="4">&nbsp;
                                     Strongly-Agree&nbsp;</p>
-                                <p><input type="radio" name="rating1_2" value="Agree">&nbsp; Agree&nbsp;</p>
-                                <p><input type="radio" name="rating1_2" value="Disagree">&nbsp; Disagree&nbsp;</p>
-                                <p><input type="radio" name="rating1_2" value="Strongly-Disagree">&nbsp;
+                                <p><input type="radio" name="rating1_2" value="3">&nbsp; Agree&nbsp;</p>
+                                <p><input type="radio" name="rating1_2" value="2">&nbsp; Disagree&nbsp;</p>
+                                <p><input type="radio" name="rating1_2" value="1">&nbsp;
                                     Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
@@ -241,11 +243,11 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
                             Faculty members are encouraged to update their knowledge and skills:
                             <br />
                             <span class="radio">
-                                <p><input type="radio" name="rating1_3" value="Strongly-Agree">&nbsp;
+                                <p><input type="radio" name="rating1_3" value="4">&nbsp;
                                     Strongly-Agree&nbsp;</p>
-                                <p><input type="radio" name="rating1_3" value="Agree">&nbsp; Agree&nbsp;</p>
-                                <p><input type="radio" name="rating1_3" value="Disagree">&nbsp; Disagree&nbsp;</p>
-                                <p><input type="radio" name="rating1_3" value="Strongly-Disagree">&nbsp;
+                                <p><input type="radio" name="rating1_3" value="3">&nbsp; Agree&nbsp;</p>
+                                <p><input type="radio" name="rating1_3" value="2">&nbsp; Disagree&nbsp;</p>
+                                <p><input type="radio" name="rating1_3" value="1">&nbsp;
                                     Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
@@ -257,11 +259,11 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
                             Degree/Project:
                             <br />
                             <span class="radio">
-                                <p><input type="radio" name="rating1_4" value="Strongly-Agree">&nbsp;
+                                <p><input type="radio" name="rating1_4" value="4">&nbsp;
                                     Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating1_4" value="Agree">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating1_4" value="Disagree">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating1_4" value="Strongly-Disagree">&nbsp;
+                                <p> <input type="radio" name="rating1_4" value="3">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating1_4" value="2">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating1_4" value="1">&nbsp;
                                     Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
@@ -273,11 +275,11 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
                             conferences:
                             <br />
                             <span class="radio">
-                                <p> <input type="radio" name="rating1_5" value="Strongly-Agree">&nbsp;
+                                <p> <input type="radio" name="rating1_5" value="4">&nbsp;
                                     Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating1_5" value="Agree">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating1_5" value="Disagree">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating1_5" value="Strongly-Disagree">&nbsp;
+                                <p> <input type="radio" name="rating1_5" value="3">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating1_5" value="2">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating1_5" value="1">&nbsp;
                                     Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
@@ -289,11 +291,11 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
                             workshops / symposia / conferences:
                             <br />
                             <span class="radio">
-                                <p> <input type="radio" name="rating1_6" value="Strongly-Agree">&nbsp;
+                                <p> <input type="radio" name="rating1_6" value="4">&nbsp;
                                     Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating1_6" value="Agree">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating1_6" value="Disagree">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating1_6" value="Strongly-Disagree">&nbsp;
+                                <p> <input type="radio" name="rating1_6" value="3">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating1_6" value="2">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating1_6" value="1">&nbsp;
                                     Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
@@ -304,11 +306,11 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
                             Faculty members are encouraged to organize seminars / workshops / symposia / conferences:
                             <br />
                             <span class="radio">
-                                <p> <input type="radio" name="rating1_7" value="Strongly-Agree">&nbsp;
+                                <p> <input type="radio" name="rating1_7" value="4">&nbsp;
                                     Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating1_7" value="Agree">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating1_7" value="Disagree">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating1_7" value="Strongly-Disagree">&nbsp;
+                                <p> <input type="radio" name="rating1_7" value="3">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating1_7" value="2">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating1_7" value="1">&nbsp;
                                     Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
@@ -319,11 +321,11 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
                             Faculty members are encouraged to establish linkage with Industry:
                             <br />
                             <span class="radio">
-                                <p> <input type="radio" name="rating1_8" value="Strongly-Agree">&nbsp;
+                                <p> <input type="radio" name="rating1_8" value="4">&nbsp;
                                     Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating1_8" value="Agree">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating1_8" value="Disagree">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating1_8" value="Strongly-Disagree">&nbsp;
+                                <p> <input type="radio" name="rating1_8" value="3">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating1_8" value="2">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating1_8" value="1">&nbsp;
                                     Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
@@ -342,11 +344,11 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
                             The Management-Staff get-together is held every year:
                             <br />
                             <span class="radio">
-                                <p> <input type="radio" name="rating2_1" value="Strongly-Agree">&nbsp;
+                                <p> <input type="radio" name="rating2_1" value="4">&nbsp;
                                     Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_1" value="Agree">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_1" value="Disagree">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_1" value="Strongly-Disagree">&nbsp;
+                                <p> <input type="radio" name="rating2_1" value="3">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_1" value="2">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_1" value="1">&nbsp;
                                     Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
@@ -358,11 +360,11 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
                             process:
                             <br />
                             <span class="radio">
-                                <p> <input type="radio" name="rating2_2" value="Strongly-Agree">&nbsp;
+                                <p> <input type="radio" name="rating2_2" value="4">&nbsp;
                                     Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_2" value="Agree">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_2" value="Disagree">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_2" value="Strongly-Disagree">&nbsp;
+                                <p> <input type="radio" name="rating2_2" value="3">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_2" value="2">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_2" value="1">&nbsp;
                                     Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
@@ -375,11 +377,11 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
                             for SFC/Ad-Hoc Staff):
                             <br />
                             <span class="radio">
-                                <p> <input type="radio" name="rating2_3" value="Strongly-Agree">&nbsp;
+                                <p> <input type="radio" name="rating2_3" value="4">&nbsp;
                                     Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_3" value="Agree">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_3" value="Disagree">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_3" value="Strongly-Disagree">&nbsp;
+                                <p> <input type="radio" name="rating2_3" value="3">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_3" value="2">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_3" value="1">&nbsp;
                                     Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
@@ -391,11 +393,11 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
                             financial increments (Only for SFC/Ad-Hoc Staff):
                             <br />
                             <span class="radio">
-                                <p> <input type="radio" name="rating2_4" value="Strongly-Agree">&nbsp;
+                                <p> <input type="radio" name="rating2_4" value="4">&nbsp;
                                     Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_4" value="Agree">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_4" value="Disagree">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_4" value="Strongly-Disagree">&nbsp;
+                                <p> <input type="radio" name="rating2_4" value="3">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_4" value="2">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_4" value="1">&nbsp;
                                     Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
@@ -407,11 +409,11 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
                             financial increments (Only for SFC/Ad-Hoc Staff):
                             <br />
                             <span class="radio">
-                                <p> <input type="radio" name="rating2_5" value="Strongly-Agree">&nbsp;
+                                <p> <input type="radio" name="rating2_5" value="4">&nbsp;
                                     Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_5" value="Agree">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_5" value="Disagree">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_5" value="Strongly-Disagree">&nbsp;
+                                <p> <input type="radio" name="rating2_5" value="3">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_5" value="2">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_5" value="1">&nbsp;
                                     Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
@@ -422,11 +424,11 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
                             The registrar and other administrative staff of the college are accessible:
                             <br />
                             <span class="radio">
-                                <p> <input type="radio" name="rating2_6" value="Strongly-Agree">&nbsp;
+                                <p> <input type="radio" name="rating2_6" value="4">&nbsp;
                                     Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_6" value="Agree">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_6" value="Disagree">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_6" value="Strongly-Disagree">&nbsp;
+                                <p> <input type="radio" name="rating2_6" value="3">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_6" value="2">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_6" value="1">&nbsp;
                                     Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
@@ -438,11 +440,11 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
                             related to administration effectively:
                             <br />
                             <span class="radio">
-                                <p> <input type="radio" name="rating2_7" value="Strongly-Agree">&nbsp;
+                                <p> <input type="radio" name="rating2_7" value="4">&nbsp;
                                     Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_7" value="Agree">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_7" value="Disagree">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_7" value="Strongly-Disagree">&nbsp;
+                                <p> <input type="radio" name="rating2_7" value="3">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_7" value="2">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_7" value="1">&nbsp;
                                     Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
@@ -453,11 +455,11 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
                             The IQAC is effective in promoting quality initiatives in the college:
                             <br />
                             <span class="radio">
-                                <p> <input type="radio" name="rating2_8" value="Strongly-Agree">&nbsp;
+                                <p> <input type="radio" name="rating2_8" value="4">&nbsp;
                                     Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_8" value="Agree">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_8" value="Disagree">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_8" value="Strongly-Disagree">&nbsp;
+                                <p> <input type="radio" name="rating2_8" value="3">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_8" value="2">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating2_8" value="1">&nbsp;
                                     Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
@@ -476,11 +478,11 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
                             The staffroom is clean and well maintained:
                             <br />
                             <span class="radio">
-                                <p> <input type="radio" name="rating3_1" value="Strongly-Agree">&nbsp;
+                                <p> <input type="radio" name="rating3_1" value="4">&nbsp;
                                     Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_1" value="Agree">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_1" value="Disagree">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_1" value="Strongly-Disagree">&nbsp;
+                                <p> <input type="radio" name="rating3_1" value="3">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating3_1" value="2">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating3_1" value="1">&nbsp;
                                     Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
@@ -491,11 +493,11 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
                             Toilets and washrooms are clean and well maintained:
                             <br />
                             <span class="radio">
-                                <p> <input type="radio" name="rating3" value="Strongly-Agree">&nbsp;
+                                <p> <input type="radio" name="rating3" value="4">&nbsp;
                                     Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_2" value="Agree">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_2" value="Disagree">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_2" value="Strongly-Disagree">&nbsp;
+                                <p> <input type="radio" name="rating3_2" value="3">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating3_2" value="2">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating3_2" value="1">&nbsp;
                                     Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
@@ -506,11 +508,11 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
                             Clean drinking water is available in the college:
                             <br />
                             <span class="radio">
-                                <p> <input type="radio" name="rating3_3" value="Strongly-Agree">&nbsp;
+                                <p> <input type="radio" name="rating3_3" value="4">&nbsp;
                                     Strongly-Agree&nbsp;</p>
-                                </p> <input type="radio" name="rating3_3" value="Agree">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_3" value="Disagree">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_3" value="Strongly-Disagree">&nbsp;
+                                </p> <input type="radio" name="rating3_3" value="3">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating3_3" value="D2>&nbsp; Disagree&nbsp;</p>
+                                <p> <input type=" radio" name="rating3_3" value="S1>&nbsp;
                                     Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
@@ -520,12 +522,12 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
                         <li>
                             Food quality in the canteen is good:
                             <br />
-                            <span class="radio">
-                                <p> <input type="radio" name="rating3_4" value="Strongly-Agree">&nbsp;
+                            <span class=" radio">
+                                <p> <input type="radio" name="rating3_4" value="4">&nbsp;
                                     Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_4" value="Agree">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_4" value="Disagree">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_4" value="Strongly-Disagree">&nbsp;
+                                <p> <input type="radio" name="rating3_4" value="3">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating3_4" value="2">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating3_4" value="1">&nbsp;
                                     Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
@@ -536,11 +538,11 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
                             The rates of the food items in the canteen are reasonable:
                             <br />
                             <span class="radio">
-                                <p> <input type="radio" name="rating3_5" value="Strongly-Agree">&nbsp;
+                                <p> <input type="radio" name="rating3_5" value="4">&nbsp;
                                     Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_5" value="Agree">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_5" value="Disagree">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_5" value="Strongly-Disagree">&nbsp;
+                                <p> <input type="radio" name="rating3_5" value="3">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating3_5" value="2">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating3_5" value="1">&nbsp;
                                     Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
@@ -551,11 +553,11 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
                             Attitude of the canteen staff and service received was good:
                             <br />
                             <span class="radio">
-                                <p> <input type="radio" name="rating3_6" value="Strongly-Agree">&nbsp;
+                                <p> <input type="radio" name="rating3_6" value="4">&nbsp;
                                     Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_6" value="Agree">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_6" value="Disagree">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_6" value="Strongly-Disagree">&nbsp;
+                                <p> <input type="radio" name="rating3_6" value="3">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating3_6" value="2">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating3_6" value="1">&nbsp;
                                     Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
@@ -566,11 +568,11 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
                             Attitude of the canteen staff and service received was good:
                             <br />
                             <span class="radio">
-                                <p> <input type="radio" name="rating3_7" value="Strongly-Agree">&nbsp;
+                                <p> <input type="radio" name="rating3_7" value="4">&nbsp;
                                     Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_7" value="Agree">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_7" value="Disagree">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_7" value="Strongly-Disagree">&nbsp;
+                                <p> <input type="radio" name="rating3_7" value="3">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating3_7" value="2">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating3_7" value="1">&nbsp;
                                     Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
@@ -581,11 +583,11 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
                             Way of cataloguing and arrangement of books in the library is effective:
                             <br />
                             <span class="radio">
-                                <p> <input type="radio" name="rating3_8" value="Strongly-Agree">&nbsp;
+                                <p> <input type="radio" name="rating3_8" value="4">&nbsp;
                                     Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_8" value="Agree">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_8" value="Disagree">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_8" value="Strongly-Disagree">&nbsp;
+                                <p> <input type="radio" name="rating3_8" value="3">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating3_8" value="2">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating3_8" value="1">&nbsp;
                                     Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>
@@ -598,11 +600,11 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
                             good:
                             <br />
                             <span class="radio">
-                                <p> <input type="radio" name="rating3_9" value="Strongly-Agree">&nbsp;
+                                <p> <input type="radio" name="rating3_9" value="4">&nbsp;
                                     Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_9" value="Agree">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_9" value="Disagree">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_9" value="Strongly-Disagree">&nbsp;
+                                <p> <input type="radio" name="rating3_9" value="3">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating3_9" value="2">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating3_9" value="1">&nbsp;
                                     Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>

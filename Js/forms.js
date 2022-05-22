@@ -2,8 +2,8 @@ document.addEventListener('contextmenu', function(e) {
     e.preventDefault();
 });
 //timer works DO NOT Alter
-var countDownDatestart = new Date("May 8, 2022 00:00:00").getTime(); //Set startdate on event it works dont touch 
-var countDownDateend = new Date("May 20, 2022 24:00:00").getTime(); //Set enddate on event it works dont touch
+var countDownDatestart = new Date("May 22, 2022 22:30:00").getTime(); //Set startdate on event it works dont touch 
+var countDownDateend = new Date("May 22, 2022 22:35:50").getTime(); //Set enddate on event it works dont touch
 
 // Update 1 second
 var x = setInterval(() => {
@@ -11,34 +11,39 @@ var x = setInterval(() => {
         var timerem = countDownDateend - now;
         var timeend = countDownDatestart - now;
         // days, hours, minutes and seconds
-        var days = Math.floor(timerem / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((timerem % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((timerem % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((timerem % (1000 * 60)) / 1000);
-        document.querySelector("#demo").style.fontSize = "2rem";
+        var days = Math.floor(timeend / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((timeend % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((timeend % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((timeend % (1000 * 60)) / 1000);
+        document.querySelector("#demo").style.fontSize = "1.3rem";
+        document.querySelector("#demo").style.fonFamilye = "monospace";
         document.querySelector("#demo").style.line_height = "1.6rem";
         document.getElementById("demo").innerHTML = days + "d " + hours + "hrs " + minutes + "min " + seconds + "sec ";
 
         // set or display form status
-        if (timeend < 0) {
-            clearInterval(x);
-            document.getElementById("demo").innerHTML = "Select any One Form to fill.";
-            document.getElementById("demo").style.fontSize = "1.2rem";
-            document.getElementById("demo").style.line_height = "1.6rem";
-        }
-
         if (now > countDownDatestart && now < countDownDateend) {
             document.getElementById('forms').style.display = "block";
+            document.getElementById('msg').style.display = "none";
+            document.getElementById("demo").innerHTML = "Select Any Form to Fill.";
+            document.getElementById("demo").style.fontSize = "1.3rem";
+            document.getElementById("demo").style.fontFamily = "monospace"
+            document.getElementById("demo").style.line_height = "1.6rem";
         } else if (now > countDownDatestart && now > countDownDateend) {
             document.getElementById('forms').style.display = "none";
-            document.getElementById('clown_com').src = "https://y.yarn.co/69994431-d693-488c-a19f-bdb447c9a0d8_text.gif";
+            document.getElementById('clown_com').src = "https://pa1.narvii.com/6771/ab4135057351e87e09676e559b5e76f1cad5c77e_hq.gif";
             document.getElementById('msg').style.display = "block";
             document.getElementById('msg-p').innerHTML = "Survey has Ended.";
-            document.getElementById("demo").innerHTML = "Oh no";
+            document.getElementById("demo").innerHTML = "Oh no! The Time Allotted For Form Fillup Has Passed";
+            document.getElementById("demo").style.fontSize = "1.3rem";
+            document.getElementById("demo").style.fontFamily = "monospace"
+            document.getElementById("demo").style.line_height = "1.6rem";
         } else {
-            document.getElementById('clown_com').src = "https://c.tenor.com/tCAeIgVIUKUAAAAC/why-the-office.gif";
+            document.getElementById('clown_com').src = "https://i.pinimg.com/originals/a7/68/76/a76876b05cc5767ce6ce5c59abceb7e4.gif";
             document.getElementById('msg').style.display = "block";
-            document.getElementById('msg-p').innerHTML = "You are about Five years to early";
+            if (days != 0) { document.getElementById('msg-p').innerHTML = "You Are About " + days + " days to Early"; } else if (hours != 0) { document.getElementById('msg-p').innerHTML = "You Are About " + hours + " hrs to Early"; } else if (minutes != 0) { document.getElementById('msg-p').innerHTML = "You Are About " + minutes + " min to Early"; } else if (seconds != 0) { document.getElementById('msg-p').innerHTML = "You Are About " + seconds + " sec to Early"; }
+            document.getElementById("msg-p").style.fontSize = "1.3rem";
+            document.getElementById("msg-p").style.fontFamily = "monospace"
+            document.getElementById("msg-p").style.line_height = "1.3rem";
         }
 
         // if (now < countDownDatestart) {

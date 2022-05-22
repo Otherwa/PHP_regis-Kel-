@@ -9,12 +9,13 @@ if (!isset($_SESSION['setPAP'])) {
     header('Location: forms.php');
 }
 
-
-
+// establish connection
+$con = get_con();
 // err_msgs
 $var1 = 1;
 
 if (isset($_POST['submit'])) {
+
     //session statuses
     $status = session_status();
     if ($status == PHP_SESSION_NONE) {
@@ -38,8 +39,7 @@ if (isset($_POST['submit'])) {
 
     // chech if set defaulu ' '(space); 
     if (isset($name) && isset($rollno) && isset($class) && isset($division) && isset($semester) && isset($paper) && isset($teacher)) {
-        // establish connection
-        $con = get_con();
+
         if ($name == ' ' || $rollno == ' ' || $class == ' ' || $division == ' ' || $semester == ' ' || $paper == ' ' || $paper == "--" || $teacher == ' ') {
             echo "<script>alert('Kindly Check Your Form Once Again 🤓');</script>";
             // session_destroy();
@@ -78,7 +78,7 @@ function classes($con)
 // get division
 function division($con)
 {
-    $query = "SELECT DISTINCT `division` FROM `activectrlid`;";
+    $query = "SELECT DISTINCT  `division` FROM `activectrlid` order by `division` ASC";
     $result = mysqli_query($con, $query);
     while ($row = mysqli_fetch_assoc($result)) {
         echo "<option value =\"" . $row['division'] . "\">" . $row['division'] . "</option>";

@@ -6,7 +6,8 @@ if (!isset($_SESSION['setStu'])) {
     header('Location: forms.php');
 }
 
-
+// establish connection
+$con = get_con();
 
 if (isset($_POST['submit'])) {
 
@@ -32,9 +33,8 @@ if (isset($_POST['submit'])) {
     $class = mysqli_real_escape_string($con, $_POST['class']);
     $programme = mysqli_real_escape_string($con, $_POST['programme']);
     $division = mysqli_real_escape_string($con, $_POST['division']);
-    if (isset($confirm) && isset($name) && isset($age) && isset($gender) && isset($rollno) && isset($class) && isset($program) && isset($division)) {
-        // establish connection
-        $con = get_con();
+    if (isset($name) && isset($age) && isset($gender) && isset($rollno) && isset($class) && isset($programme) && isset($division)) {
+
         // unideinfied post  get confirmation
         $confirm = mysqli_real_escape_string($con, $_POST['confirm']);
         if ($confirm == ' ' || $confirm == 'no' || $name == ' ' || $age == ' ' || $gender == ' ' || $rollno == ' ' || $class == ' ' || $programme == ' ' || $division == ' ') { //
@@ -44,7 +44,7 @@ if (isset($_POST['submit'])) {
             getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class, $programme, $division);
         }
     } else {
-        echo "<script>alert('Something Wrong with Your Form 🤓');</script>";
+        echo "<script>alert('Something Wrong with Your Form 1 🤓');</script>";
     }
 }
 
@@ -281,7 +281,7 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
                                 </p>
                                 <p><input type="radio" name="rating_1" value="4">&nbsp; Average&nbsp;</p>
                                 <p><input type="radio" name="rating_1" value="5">&nbsp; Good&nbsp;</p>
-                                <p><input type="radio" name="rating_1" vlaue="6">&nbsp; Very-Good&nbsp;</p>
+                                <p><input type="radio" name="rating_1" value="6">&nbsp; Very-Good&nbsp;</p>
                                 <p><input type="radio" name="rating_1" value="7">&nbsp; Excellent&nbsp;</p>
                             </span>
                         </li>
@@ -299,7 +299,7 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
                                 </p>
                                 <p><input type="radio" name="rating_2" value="4">&nbsp; Average&nbsp;</p>
                                 <p><input type="radio" name="rating_2" value="5">&nbsp; Good&nbsp;</p>
-                                <p><input type="radio" name="rating_2" vlaue="6">&nbsp; Very-Good&nbsp;</p>
+                                <p><input type="radio" name="rating_2" value="6">&nbsp; Very-Good&nbsp;</p>
                                 <p><input type="radio" name="rating_2" value="7">&nbsp; Excellent&nbsp;</p>
                             </span>
                         </li>
@@ -317,7 +317,7 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
                                 </p>
                                 <p><input type="radio" name="rating_3" value="4">&nbsp; Average&nbsp;</p>
                                 <p><input type="radio" name="rating_3" value="5">&nbsp; Good&nbsp;</p>
-                                <p><input type="radio" name="rating_3" vlaue="6">&nbsp; Very-Good&nbsp;</p>
+                                <p><input type="radio" name="rating_3" value="6">&nbsp; Very-Good&nbsp;</p>
                                 <p><input type="radio" name="rating_3" value="7">&nbsp; Excellent&nbsp;</p>
                             </span>
                         </li>
@@ -335,7 +335,7 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
                                 </p>
                                 <p><input type="radio" name="rating_4" value="4">&nbsp; Average&nbsp;</p>
                                 <p><input type="radio" name="rating_4" value="5">&nbsp; Good&nbsp;</p>
-                                <p><input type="radio" name="rating_4" vlaue="6">&nbsp; Very-Good&nbsp;</p>
+                                <p><input type="radio" name="rating_4" value="6">&nbsp; Very-Good&nbsp;</p>
                                 <p><input type="radio" name="rating_4" value="7">&nbsp; Excellent&nbsp;</p>
                             </span>
                         </li>
@@ -353,7 +353,7 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
                                 </p>
                                 <p><input type="radio" name="rating_5" value="4">&nbsp; Average&nbsp;</p>
                                 <p><input type="radio" name="rating_5" value="5">&nbsp; Good&nbsp;</p>
-                                <p><input type="radio" name="rating_5" vlaue="6">&nbsp; Very-Good&nbsp;</p>
+                                <p><input type="radio" name="rating_5" value="6">&nbsp; Very-Good&nbsp;</p>
                                 <p><input type="radio" name="rating_5" value="7">&nbsp; Excellent&nbsp;</p>
                             </span>
                         </li>
@@ -371,7 +371,7 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
                                 </p>
                                 <p><input type="radio" name="rating_6" value="4">&nbsp; Average&nbsp;</p>
                                 <p><input type="radio" name="rating_6" value="5">&nbsp; Good&nbsp;</p>
-                                <p><input type="radio" name="rating_6" vlaue="6">&nbsp; Very-Good&nbsp;</p>
+                                <p><input type="radio" name="rating_6" value="6">&nbsp; Very-Good&nbsp;</p>
                                 <p><input type="radio" name="rating_6" value="7">&nbsp; Excellent&nbsp;</p>
                             </span>
                         </li>
@@ -389,7 +389,7 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
                                 </p>
                                 <p><input type="radio" name="rating_7" value="4">&nbsp; Average&nbsp;</p>
                                 <p><input type="radio" name="rating_7" value="5">&nbsp; Good&nbsp;</p>
-                                <p><input type="radio" name="rating_7" vlaue="6">&nbsp; Very-Good&nbsp;</p>
+                                <p><input type="radio" name="rating_7" value="6">&nbsp; Very-Good&nbsp;</p>
                                 <p><input type="radio" name="rating_7" value="7">&nbsp; Excellent&nbsp;</p>
                             </span>
                         </li>
@@ -407,7 +407,7 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
                                 </p>
                                 <p><input type="radio" name="rating_8" value="4">&nbsp; Average&nbsp;</p>
                                 <p><input type="radio" name="rating_8" value="5">&nbsp; Good&nbsp;</p>
-                                <p><input type="radio" name="rating_8" vlaue="6">&nbsp; Very-Good&nbsp;</p>
+                                <p><input type="radio" name="rating_8" value="6">&nbsp; Very-Good&nbsp;</p>
                                 <p><input type="radio" name="rating_8" value="7">&nbsp; Excellent&nbsp;</p>
                             </span>
                         </li>
@@ -425,7 +425,7 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
                                 </p>
                                 <p><input type="radio" name="rating_9" value="4">&nbsp; Average&nbsp;</p>
                                 <p><input type="radio" name="rating_9" value="5">&nbsp; Good&nbsp;</p>
-                                <p><input type="radio" name="rating_9" vlaue="6">&nbsp; Very-Good&nbsp;</p>
+                                <p><input type="radio" name="rating_9" value="6">&nbsp; Very-Good&nbsp;</p>
                                 <p><input type="radio" name="rating_9" value="7">&nbsp; Excellent&nbsp;</p>
                             </span>
                         </li>
@@ -443,7 +443,7 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
                                 </p>
                                 <p><input type="radio" name="rating_10" value="4">&nbsp; Average&nbsp;</p>
                                 <p><input type="radio" name="rating_10" value="5">&nbsp; Good&nbsp;</p>
-                                <p><input type="radio" name="rating_10" vlaue="6">&nbsp; Very-Good&nbsp;</p>
+                                <p><input type="radio" name="rating_10" value="6">&nbsp; Very-Good&nbsp;</p>
                                 <p><input type="radio" name="rating_10" value="7">&nbsp; Excellent&nbsp;</p>
                             </span>
                         </li>
@@ -462,7 +462,7 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
                                 </p>
                                 <p><input type="radio" name="rating_11" value="4">&nbsp; Average&nbsp;</p>
                                 <p><input type="radio" name="rating_11" value="5">&nbsp; Good&nbsp;</p>
-                                <p><input type="radio" name="rating_11" vlaue="6">&nbsp; Very-Good&nbsp;</p>
+                                <p><input type="radio" name="rating_11" value="6">&nbsp; Very-Good&nbsp;</p>
                                 <p><input type="radio" name="rating_11" value="7">&nbsp; Excellent&nbsp;</p>
                             </span>
                         </li>
@@ -480,7 +480,7 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
                                 </p>
                                 <p><input type="radio" name="rating_12" value="4">&nbsp; Average&nbsp;</p>
                                 <p><input type="radio" name="rating_12" value="5">&nbsp; Good&nbsp;</p>
-                                <p><input type="radio" name="rating_12" vlaue="6">&nbsp; Very-Good&nbsp;</p>
+                                <p><input type="radio" name="rating_12" value="6">&nbsp; Very-Good&nbsp;</p>
                                 <p><input type="radio" name="rating_12" value="7">&nbsp; Excellent&nbsp;</p>
                             </span>
                         </li>
@@ -500,7 +500,7 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
                                 </p>
                                 <p><input type="radio" name="rating_13" value="4">&nbsp; Average&nbsp;</p>
                                 <p><input type="radio" name="rating_13" value="5">&nbsp; Good&nbsp;</p>
-                                <p><input type="radio" name="rating_13" vlaue="6">&nbsp; Very-Good&nbsp;</p>
+                                <p><input type="radio" name="rating_13" value="6">&nbsp; Very-Good&nbsp;</p>
                                 <p><input type="radio" name="rating_13" value="7">&nbsp; Excellent&nbsp;</p>
                             </span>
                         </li>
@@ -518,7 +518,7 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
                                 </p>
                                 <p><input type="radio" name="rating_14" value="4">&nbsp; Average&nbsp;</p>
                                 <p><input type="radio" name="rating_14" value="5">&nbsp; Good&nbsp;</p>
-                                <p><input type="radio" name="rating_14" vlaue="6">&nbsp; Very-Good&nbsp;</p>
+                                <p><input type="radio" name="rating_14" value="6">&nbsp; Very-Good&nbsp;</p>
                                 <p><input type="radio" name="rating_14" value="7">&nbsp; Excellent&nbsp;</p>
                             </span>
                         </li>
@@ -536,7 +536,7 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
                                 </p>
                                 <p><input type="radio" name="rating_15" value="4">&nbsp; Average&nbsp;</p>
                                 <p><input type="radio" name="rating_15" value="5">&nbsp; Good&nbsp;</p>
-                                <p><input type="radio" name="rating_15" vlaue="6">&nbsp; Very-Good&nbsp;</p>
+                                <p><input type="radio" name="rating_15" value="6">&nbsp; Very-Good&nbsp;</p>
                                 <p><input type="radio" name="rating_15" value="7">&nbsp; Excellent&nbsp;</p>
                             </span>
                         </li>
@@ -554,7 +554,7 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
                                 </p>
                                 <p><input type="radio" name="rating_16" value="4">&nbsp; Average&nbsp;</p>
                                 <p><input type="radio" name="rating_16" value="5">&nbsp; Good&nbsp;</p>
-                                <p><input type="radio" name="rating_16" vlaue="6">&nbsp; Very-Good&nbsp;</p>
+                                <p><input type="radio" name="rating_16" value="6">&nbsp; Very-Good&nbsp;</p>
                                 <p><input type="radio" name="rating_16" value="7">&nbsp; Excellent&nbsp;</p>
                             </span>
                         </li>
@@ -572,7 +572,7 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
                                 </p>
                                 <p><input type="radio" name="rating_17" value="4">&nbsp; Average&nbsp;</p>
                                 <p><input type="radio" name="rating_17" value="5">&nbsp; Good&nbsp;</p>
-                                <p><input type="radio" name="rating_17" vlaue="6">&nbsp; Very-Good&nbsp;</p>
+                                <p><input type="radio" name="rating_17" value="6">&nbsp; Very-Good&nbsp;</p>
                                 <p><input type="radio" name="rating_17" value="7">&nbsp; Excellent&nbsp;</p>
                             </span>
                         </li>

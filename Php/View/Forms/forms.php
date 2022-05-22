@@ -61,7 +61,7 @@ if (isset($_POST['FFForm'])) {
         height: 10rem;
         box-shadow: 5px 5px 5px rgba(0, 0, 0, );
         transition: 300ms;
-        box-shadow: 5px 5px rgba(0, 0, 0);
+        box-shadow: 0.5rem 0.5rem rgba(0, 0, 0);
     }
 
     .but:hover {
@@ -120,7 +120,7 @@ if (isset($_POST['FFForm'])) {
             </p>
             <br />
             <img src="" alt="Scott" id="clown_com"
-                style="text-align:center;display:inline-block;border-radius:0.4rem;width:35rem;height:auto" />
+                style="text-align:center;box-shadow:4px 5px 2.5rem #cacaca;display:inline-block;border-radius:0.4rem;width:35rem;height:auto" />
         </div>
         <div class="footer-copyright text-center" style="padding:1rem">
             <br />

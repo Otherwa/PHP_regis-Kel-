@@ -510,9 +510,9 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
                             <span class="radio">
                                 <p> <input type="radio" name="rating3_3" value="4">&nbsp;
                                     Strongly-Agree&nbsp;</p>
-                                </p> <input type="radio" name="rating3_3" value="3">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_3" value="D2>&nbsp; Disagree&nbsp;</p>
-                                <p> <input type=" radio" name="rating3_3" value="S1>&nbsp;
+                                <p> <input type="radio" name="rating3_3" value="3">&nbsp; Agree&nbsp;</p>
+                                <p> <input type="radio" name="rating3_3" value="2">&nbsp; Disagree&nbsp;</p>
+                                <p> <input type="radio" name="rating3_3" value="1">&nbsp;
                                     Strongly-Disagree&nbsp;</p>
                             </span>
                         </li>

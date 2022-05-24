@@ -2,7 +2,7 @@ document.addEventListener('contextmenu', function(e) {
     e.preventDefault();
 });
 //timer works DO NOT Alter
-var countDownDatestart = new Date("May 24, 2022 20:21:00").getTime(); //Set startdate on event it works dont touch 
+var countDownDatestart = new Date("May 24, 2022 21:30:00").getTime(); //Set startdate on event it works dont touch 
 var countDownDateend = new Date("May 24, 2022 22:35:50").getTime(); //Set enddate on event it works dont touch
 
 // Update 1 second
@@ -15,10 +15,10 @@ var x = setInterval(() => {
         var hours = Math.floor((timeend % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         var minutes = Math.floor((timeend % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((timeend % (1000 * 60)) / 1000);
-        document.querySelector("#demo").style.fontSize = "1.3rem";
-        document.querySelector("#demo").style.fonFamilye = "monospace";
-        document.querySelector("#demo").style.line_height = "1.6rem";
-        document.getElementById("demo").innerHTML = days + "d " + hours + "hrs " + minutes + "min " + seconds + "sec ";
+        // document.querySelector("#demo").style.fontSize = "1.3rem";
+        // document.querySelector("#demo").style.fonFamilye = "monospace";
+        // document.querySelector("#demo").style.line_height = "1.6rem";
+        // document.getElementById("demo").innerHTML = days + "d " + hours + "hrs " + minutes + "min " + seconds + "sec ";
 
         // set or display form status
         if (now > countDownDatestart && now < countDownDateend) {

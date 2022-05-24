@@ -87,7 +87,9 @@ if (isset($_POST['FFForm'])) {
     <div class="bg-[#ffffff] text-center m-2 content">
         <br />
         <br />
-        <p class="text-center hover:underline"><code id="demo" style="padding:1rem">Ping</code></p>
+        <p class="text-center" style="display:inline-block"><code id="demo"
+                style="padding:0.5rem;font-size:1.3rem;font-family:monospace;font-weight:bold"> <img src="https://github.githubassets.com/images/mona-loading-dark.gif" alt="octo" style="min-height:2rem;width:auto;max-height:6rem;"></code>
+        </p>
         <br />
         <br />
         <div class="text-center" id="forms" style="display:none; padding:1rem;margin:1rem">
@@ -115,12 +117,12 @@ if (isset($_POST['FFForm'])) {
                 <br />
             </form>
         </div>
-        <div id="msg" class="msg text-xl text-center hover:underline" style="display:none">
+        <div id="msg" class="msg text-xl text-center" style="display:none">
             <p id="msg-p" style="padding:1rem">Forms are not allowed to fill furthermore.
             </p>
             <br />
             <img src="" alt="Scott" id="clown_com"
-                style="text-align:center;box-shadow:4px 5px 2.5rem #cacaca;display:inline-block;border-radius:0.4rem;width:35rem;height:auto" />
+                style="text-align:center;box-shadow:4px 5px 2.5rem #cacaca;display:inline-block;border-radius:0.4rem;width:55rem;height:auto" />
         </div>
         <div class="footer-copyright text-center" style="padding:1rem">
             <br />

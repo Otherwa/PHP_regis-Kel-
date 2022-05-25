@@ -278,463 +278,466 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                     </div>
                     <br />
                     <!-- selected opts -->
-                    <!-- all query  -->
-                    <br />
-                    <br />
-                    <!-- if msg displaynone -->
-                    <ol id="msg_set" style="display:none">
-                        <li>
-                            Attitude Towards Students:
+                    <div id="msg_set" style="display:none">
+                        <!-- if msg displaynone -->
+                        <ol>
+                            <li>
+                                Attitude Towards Students:
+                                <br />
+                                <br />
+                                <ul>
+                                    <li>
+                                        Positive and motivating attitude towards students.
+                                        <br />
+                                        <br />
+                                        <span class="radio">
+                                            <p><input type="radio" name="rating1_1" value="1" />&nbsp;
+                                                Very-Poor&nbsp;
+                                            </p>
+                                            <p><input type="radio" name="rating1_1" value="2" />&nbsp; Poor&nbsp;</p>
+                                            <p><input type="radio" name="rating1_1" value="3" />&nbsp;
+                                                Below-Average&nbsp;
+                                            </p>
+                                            <p><input type="radio" name="rating1_1" value="4" />&nbsp;
+                                                Average&nbsp;
+                                            </p>
+                                            <p><input type="radio" name="rating1_1" value="5" />&nbsp; Good&nbsp;</p>
+                                            <p> <input type="radio" name="rating1_1" value="6" />&nbsp;
+                                                Very-Good&nbsp;
+                                            </p>
+                                            <p><input type="radio" name="rating1_1" value="7" />&nbsp;
+                                                Excellent&nbsp;
+                                            </p>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        Readiness to resolve student's doubts and general availability / accessibility
+                                        to
+                                        students.Positive and motivating attitude towards students.
+                                        <br />
+                                        <br />
+                                        <span class="radio">
+                                            <p><input type="radio" name="rating2_1" value="1" />&nbsp;
+                                                Very-Poor&nbsp;
+                                            </p>
+                                            <p><input type="radio" name="rating2_1" value="2" />&nbsp; Poor&nbsp;</p>
+                                            <p><input type="radio" name="rating2_1" value="3" />&nbsp;
+                                                Below-Average&nbsp;
+                                            </p>
+                                            <p><input type="radio" name="rating2_1" value="4" />&nbsp; Average&nbsp;
+                                            </p>
+                                            <p> <input type="radio" name="rating2_1" value="5" />&nbsp; Good&nbsp;</p>
+                                            <p><input type="radio" name="rating2_1" value="6" />&nbsp;
+                                                Very-Good&nbsp;
+                                            </p>
+                                            <p><input type="radio" name="rating2_1" value="7" />&nbsp;
+                                                Excellent&nbsp;
+                                            </p>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        Worked hard to create a feeling of belongingness in a classroom without walls.
+                                        <br />
+                                        <br />
+                                        <span class="radio">
+                                            <p><input type="radio" name="rating3_1" value="1" />&nbsp;
+                                                Very-Poor&nbsp;
+                                            </p>
+                                            <p><input type="radio" name="rating3_1" value="2" />&nbsp; Poor&nbsp;</p>
+                                            <p> <input type="radio" name="rating3_1" value="3" />&nbsp;
+                                                Below-Average&nbsp;
+                                            </p>
+                                            <p> <input type="radio" name="rating3_1" value="4" />&nbsp; Average&nbsp;
+                                            </p>
+                                            <p><input type="radio" name="rating3_1" value="5" />&nbsp; Good&nbsp; </p>
+                                            <p><input type="radio" name="rating3_1" value="6" />&nbsp;
+                                                Very-Good&nbsp;
+                                            </p>
+                                            <p><input type="radio" name="rating3_1" value="7" />&nbsp;
+                                                Excellent&nbsp;
+                                            </p>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </li>
                             <br />
+                            <li>
+                                Core Subject-related, teaching and Virtual classroom skills.
+                                <br />
+                                <br />
+                                <ul>
+                                    <li>
+                                        Command over the subject.
+                                        <br />
+                                        <br />
+                                        <span class="radio">
+                                            <p><input type="radio" name="rating1_2" value="1" />&nbsp;
+                                                Very-Poor&nbsp;
+                                            </p>
+                                            <p><input type="radio" name="rating1_2" value="2" />&nbsp; Poor&nbsp;</p>
+                                            <p><input type="radio" name="rating1_2" value="3" />&nbsp;
+                                                Below-Average&nbsp;
+                                            </p>
+                                            <p><input type="radio" name="rating1_2" value="4" />&nbsp; Average&nbsp;
+                                            </p>
+                                            <p><input type="radio" name="rating1_2" value="5" />&nbsp; Good&nbsp;</p>
+                                            <p><input type="radio" name="rating1_2" value="6" />&nbsp;
+                                                Very-Good&nbsp;
+                                            </p>
+                                            <p><input type="radio" name="rating1_2" value="7" />&nbsp;
+                                                Excellent&nbsp;
+                                            </p>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        Skills in making the subject interesting.
+                                        <br />
+                                        <br />
+                                        <span class="radio">
+                                            <p><input type="radio" name="rating2_2" value="1" />&nbsp;
+                                                Very-Poor&nbsp;
+                                            </p>
+                                            <p><input type="radio" name="rating2_2" value="2" />&nbsp; Poor&nbsp; </p>
+                                            <p> <input type="radio" name="rating2_2" value="3" />&nbsp;
+                                                Below-Average&nbsp;
+                                            </p>
+                                            <p> <input type="radio" name="rating2_2" value="4" />&nbsp; Average&nbsp;
+                                            </p>
+                                            <p> <input type="radio" name="rating2_2" value="5" />&nbsp; Good&nbsp;</p>
+                                            <p> <input type="radio" name="rating2_2" value="6" />&nbsp;
+                                                Very-Good&nbsp;
+                                            </p>
+                                            <p> <input type="radio" name="rating2_2" value="7" />&nbsp;
+                                                Excellent&nbsp;
+                                            </p>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        Command over the medium of instruction(language) / communication skills
+                                        <br />
+                                        <br />
+                                        <span class="radio">
+                                            <p><input type="radio" name="rating3_2" value="1" />&nbsp;
+                                                Very-Poor&nbsp;
+                                            </p>
+                                            <p> <input type="radio" name="rating3_2" value="2" />&nbsp; Poor&nbsp;</p>
+                                            <p> <input type="radio" name="rating3_2" value="3" />&nbsp;
+                                                Below-Average&nbsp;
+                                            </p>
+                                            <p> <input type="radio" name="rating3_2" value="4" />&nbsp; Average&nbsp;
+                                            </p>
+                                            <p> <input type="radio" name="rating3_2" value="5" />&nbsp; Good&nbsp;</p>
+                                            <p><input type="radio" name="rating3_2" value="6" />&nbsp;
+                                                Very-Good&nbsp;
+                                            </p>
+                                            <p> <input type="radio" name="rating3_2" value="7" />&nbsp;
+                                                Excellent&nbsp;
+                                            </p>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        Clarity in approach / thinking.
+                                        <br />
+                                        <br />
+                                        <span class="radio">
+                                            <p><input type="radio" name="rating4_2" value="1" />&nbsp;
+                                                Very-Poor&nbsp;
+                                            </p>
+                                            <p><input type="radio" name="rating4_2" value="2" />&nbsp; Poor&nbsp;</p>
+                                            <p><input type="radio" name="rating4_2" value="3" />&nbsp;
+                                                Below-Average&nbsp;
+                                            </p>
+                                            <p><input type="radio" name="rating4_2" value="4" />&nbsp; Average&nbsp;
+                                            </p>
+                                            <p><input type="radio" name="rating4_2" value="5" />&nbsp; Good&nbsp;</p>
+                                            <p> <input type="radio" name="rating4_2" value="6" />&nbsp;
+                                                Very-Good&nbsp;
+                                            </p>
+                                            <p> <input type="radio" name="rating4_2" value="7" />&nbsp;
+                                                Excellent&nbsp;
+                                            </p>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        Punctuality and regularity in taking lectures and practicals.
+                                        <br />
+                                        <br />
+                                        <span class="radio">
+                                            <p><input type="radio" name="rating5_2" value="1" />&nbsp;
+                                                Very-Poor&nbsp;
+                                            </p>
+                                            <p><input type="radio" name="rating5_2" value="2" />&nbsp; Poor&nbsp;</p>
+                                            <p><input type="radio" name="rating5_2" value="3" />&nbsp;
+                                                Below-Average&nbsp;
+                                            </p>
+                                            <p> <input type="radio" name="rating5_2" value="4" />&nbsp; Average&nbsp;
+                                            </p>
+                                            <p><input type="radio" name="rating5_2" value="5" />&nbsp; Good&nbsp;</p>
+                                            <p> <input type="radio" name="rating5_2" value="6" />&nbsp;
+                                                Very-Good&nbsp;
+                                            </p>
+                                            <p><input type="radio" name="rating5_2" value="7" />&nbsp;
+                                                Excellent&nbsp;
+                                            </p>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        Proficiency in handling online classroom platforms.
+                                        <br />
+                                        <br />
+                                        <span class="radio">
+                                            <p><input type="radio" name="rating6_2" value="1" />&nbsp;
+                                                Very-Poor&nbsp;
+                                            </p>
+                                            <p> <input type="radio" name="rating6_2" value="2" />&nbsp; Poor&nbsp;</p>
+                                            <p> <input type="radio" name="rating6_2" value="3" />&nbsp;
+                                                Below-Average&nbsp;
+                                            </p>
+                                            <p> <input type="radio" name="rating6_2" value="4" />&nbsp; Average&nbsp;
+                                            </p>
+                                            <p> <input type="radio" name="rating6_2" value="5" />&nbsp; Good&nbsp;</p>
+                                            <p> <input type="radio" name="rating6_2" value="6" />&nbsp;
+                                                Very-Good&nbsp;
+                                            </p>
+                                            <p> <input type="radio" name="rating6_2" value="7" />&nbsp;
+                                                Excellent&nbsp;
+                                            </p>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        Time management skill \ skill of completing the syllabus with doubt solving
+                                        sessions
+                                        in time.
+                                        <br />
+                                        <br />
+                                        <span class="radio">
+                                            <p><input type="radio" name="rating7_2" value="1" />&nbsp;
+                                                Very-Poor&nbsp;
+                                            </p>
+                                            <p><input type="radio" name="rating7_2" value="2" />&nbsp; Poor&nbsp;</p>
+                                            <p><input type="radio" name="rating7_2" value="3" />&nbsp;
+                                                Below-Average&nbsp;
+                                            </p>
+                                            <p><input type="radio" name="rating7_2" value="4" />&nbsp; Average&nbsp;
+                                            </p>
+                                            <p> <input type="radio" name="rating7_2" value="5" />&nbsp; Good&nbsp;</p>
+                                            <p><input type="radio" name="rating7_2" value="6" />&nbsp;
+                                                Very-Good&nbsp;
+                                            </p>
+                                            <p><input type="radio" name="rating7_2" value="7" />&nbsp;
+                                                Excellent&nbsp;
+                                            </p>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </li>
                             <br />
-                            <ul>
-                                <li>
-                                    Positive and motivating attitude towards students.
-                                    <br />
-                                    <br />
-                                    <span class="radio">
-                                        <p><input type="radio" name="rating1_1" value="1" />&nbsp;
-                                            Very-Poor&nbsp;
-                                        </p>
-                                        <p><input type="radio" name="rating1_1" value="2" />&nbsp; Poor&nbsp;</p>
-                                        <p><input type="radio" name="rating1_1" value="3" />&nbsp;
-                                            Below-Average&nbsp;
-                                        </p>
-                                        <p><input type="radio" name="rating1_1" value="4" />&nbsp;
-                                            Average&nbsp;
-                                        </p>
-                                        <p><input type="radio" name="rating1_1" value="5" />&nbsp; Good&nbsp;</p>
-                                        <p> <input type="radio" name="rating1_1" value="6" />&nbsp;
-                                            Very-Good&nbsp;
-                                        </p>
-                                        <p><input type="radio" name="rating1_1" value="7" />&nbsp;
-                                            Excellent&nbsp;
-                                        </p>
-                                    </span>
-                                </li>
-                                <li>
-                                    Readiness to resolve student's doubts and general availability / accessibility to
-                                    students.Positive and motivating attitude towards students.
-                                    <br />
-                                    <br />
-                                    <span class="radio">
-                                        <p><input type="radio" name="rating2_1" value="1" />&nbsp;
-                                            Very-Poor&nbsp;
-                                        </p>
-                                        <p><input type="radio" name="rating2_1" value="2" />&nbsp; Poor&nbsp;</p>
-                                        <p><input type="radio" name="rating2_1" value="3" />&nbsp;
-                                            Below-Average&nbsp;
-                                        </p>
-                                        <p><input type="radio" name="rating2_1" value="4" />&nbsp; Average&nbsp;
-                                        </p>
-                                        <p> <input type="radio" name="rating2_1" value="5" />&nbsp; Good&nbsp;</p>
-                                        <p><input type="radio" name="rating2_1" value="6" />&nbsp;
-                                            Very-Good&nbsp;
-                                        </p>
-                                        <p><input type="radio" name="rating2_1" value="7" />&nbsp;
-                                            Excellent&nbsp;
-                                        </p>
-                                    </span>
-                                </li>
-                                <li>
-                                    Worked hard to create a feeling of belongingness in a classroom without walls.
-                                    <br />
-                                    <br />
-                                    <span class="radio">
-                                        <p><input type="radio" name="rating3_1" value="1" />&nbsp;
-                                            Very-Poor&nbsp;
-                                        </p>
-                                        <p><input type="radio" name="rating3_1" value="2" />&nbsp; Poor&nbsp;</p>
-                                        <p> <input type="radio" name="rating3_1" value="3" />&nbsp;
-                                            Below-Average&nbsp;
-                                        </p>
-                                        <p> <input type="radio" name="rating3_1" value="4" />&nbsp; Average&nbsp;
-                                        </p>
-                                        <p><input type="radio" name="rating3_1" value="5" />&nbsp; Good&nbsp; </p>
-                                        <p><input type="radio" name="rating3_1" value="6" />&nbsp;
-                                            Very-Good&nbsp;
-                                        </p>
-                                        <p><input type="radio" name="rating3_1" value="7" />&nbsp;
-                                            Excellent&nbsp;
-                                        </p>
-                                    </span>
-                                </li>
-                            </ul>
-                        </li>
+                            <li>
+                                Additional peripheral skills / activities.
+                                <br />
+                                <br />
+                                <ul>
+                                    <li>
+                                        Use of case studies, illustration, current events, anecdotes in teaching.ommand
+                                        over the subject.
+                                        <br />
+                                        <br />
+                                        <span class="radio">
+                                            <p><input type="radio" name="rating1_3" value="1" />&nbsp;
+                                                Very-Poor&nbsp;
+                                            </p>
+                                            <p><input type="radio" name="rating1_3" value="2" />&nbsp; Poor&nbsp;</p>
+                                            <p><input type="radio" name="rating1_3" value="3" />&nbsp;
+                                                Below-Average&nbsp;
+                                            </p>
+                                            <p> <input type="radio" name="rating1_3" value="4" />&nbsp; Average&nbsp;
+                                            </p>
+                                            <p> <input type="radio" name="rating1_3" value="5" />&nbsp; Good&nbsp;</p>
+                                            <p><input type="radio" name="rating1_3" value="6" />&nbsp;
+                                                Very-Good&nbsp;
+                                            </p>
+                                            <p><input type="radio" name="rating1_3" value="7" />&nbsp;
+                                                Excellent&nbsp;
+                                            </p>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        Use of interactive teaching - seminars, tutorials, quizzes, assignments etc.
+                                        <br />
+                                        <br />
+                                        <span class="radio">
+                                            <p><input type="radio" name="rating2_3" value="1" />&nbsp;
+                                                Very-Poor&nbsp;
+                                            </p>
+                                            <p><input type="radio" name="rating2_3" value="2" />&nbsp; Poor&nbsp;</p>
+                                            <p><input type="radio" name="rating2_3" value="3" />&nbsp;
+                                                Below-Average&nbsp;
+                                            </p>
+                                            <p> <input type="radio" name="rating2_3" value="4" />&nbsp; Average&nbsp;
+                                            </p>
+                                            <p> <input type="radio" name="rating2_3" value="5" />&nbsp; Good&nbsp;</p>
+                                            <p><input type="radio" name="rating2_3" value="6" />&nbsp;
+                                                Very-Good&nbsp;
+                                            </p>
+                                            <p><input type="radio" name="rating2_3" value="7" />&nbsp;
+                                                Excellent&nbsp;
+                                            </p>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        Command over the medium of instruction(language) / communication skills
+                                        <br />
+                                        <br />
+                                        <span class="radio">
+                                            <p><input type="radio" name="rating3_3" value="1" />&nbsp;
+                                                Very-Poor&nbsp;
+                                            </p>
+                                            <p><input type="radio" name="rating3_3" value="2" />&nbsp; Poor&nbsp;</p>
+                                            <p><input type="radio" name="rating3_3" value="3" />&nbsp;
+                                                Below-Average&nbsp;
+                                            </p>
+                                            <p> <input type="radio" name="rating3_3" value="4" />&nbsp; Average&nbsp;
+                                            </p>
+                                            <p> <input type="radio" name="rating3_3" value="5" />&nbsp; Good&nbsp;</p>
+                                            <p><input type="radio" name="rating3_3" value="6" />&nbsp;
+                                                Very-Good&nbsp;
+                                            </p>
+                                            <p><input type="radio" name="rating3_3" value="7" />&nbsp;
+                                                Excellent&nbsp;
+                                            </p>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        Giving references for further reading.
+                                        <br />
+                                        <br />
+                                        <span class="radio">
+                                            <p><input type="radio" name="rating4_3" value="1" />&nbsp;
+                                                Very-Poor&nbsp;
+                                            </p>
+                                            <p><input type="radio" name="rating4_3" value="2" />&nbsp; Poor&nbsp;</p>
+                                            <p><input type="radio" name="rating4_3" value="3" />&nbsp;
+                                                Below-Average&nbsp;
+                                            </p>
+                                            <p> <input type="radio" name="rating4_3" value="4" />&nbsp; Average&nbsp;
+                                            </p>
+                                            <p> <input type="radio" name="rating4_3" value="5" />&nbsp; Good&nbsp;</p>
+                                            <p><input type="radio" name="rating4_3" value="6" />&nbsp;
+                                                Very-Good&nbsp;
+                                            </p>
+                                            <p><input type="radio" name="rating4_3" value="7" />&nbsp;
+                                                Excellent&nbsp;
+                                            </p>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        Conducting evaluation by periodic tests / questions answer sessions or by
+                                        designing
+                                        quizzes / tests / assignments / examinations and projects to evaluate students.
+                                        <br />
+                                        <br />
+                                        <span class="radio">
+                                            <p><input type="radio" name="rating5_3" value="1" />&nbsp;
+                                                Very-Poor&nbsp;
+                                            </p>
+                                            <p><input type="radio" name="rating5_3" value="2" />&nbsp; Poor&nbsp;</p>
+                                            <p><input type="radio" name="rating5_3" value="3" />&nbsp;
+                                                Below-Average&nbsp;
+                                            </p>
+                                            <p> <input type="radio" name="rating5_3" value="4" />&nbsp; Average&nbsp;
+                                            </p>
+                                            <p> <input type="radio" name="rating5_3" value="5" />&nbsp; Good&nbsp;</p>
+                                            <p><input type="radio" name="rating5_3" value="6" />&nbsp;
+                                                Very-Good&nbsp;
+                                            </p>
+                                            <p><input type="radio" name="rating5_3" value="7" />&nbsp;
+                                                Excellent&nbsp;
+                                            </p>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        Encouraging students to apply in real life whatever they have learnt in
+                                        classrooms.
+                                        <br />
+                                        <br />
+                                        <span class="radio">
+                                            <p><input type="radio" name="rating6_3" value="1" />&nbsp;
+                                                Very-Poor&nbsp;
+                                            </p>
+                                            <p><input type="radio" name="rating6_3" value="2" />&nbsp; Poor&nbsp;</p>
+                                            <p><input type="radio" name="rating6_3" value="3" />&nbsp;
+                                                Below-Average&nbsp;
+                                            </p>
+                                            <p> <input type="radio" name="rating6_3" value="4" />&nbsp; Average&nbsp;
+                                            </p>
+                                            <p> <input type="radio" name="rating6_3" value="5" />&nbsp; Good&nbsp;</p>
+                                            <p><input type="radio" name="rating6_3" value="6" />&nbsp;
+                                                Very-Good&nbsp;
+                                            </p>
+                                            <p><input type="radio" name="rating6_3" value="7" />&nbsp;
+                                                Excellent&nbsp;
+                                            </p>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        Counselling : Career / placement / personal.
+                                        <br />
+                                        <br />
+                                        <span class="radio">
+                                            <p><input type="radio" name="rating7_3" value="1" />&nbsp;
+                                                Very-Poor&nbsp;
+                                            </p>
+                                            <p><input type="radio" name="rating7_3" value="2" />&nbsp; Poor&nbsp;</p>
+                                            <p><input type="radio" name="rating7_3" value="3" />&nbsp;
+                                                Below-Average&nbsp;
+                                            </p>
+                                            <p> <input type="radio" name="rating7_3" value="4" />&nbsp; Average&nbsp;
+                                            </p>
+                                            <p> <input type="radio" name="rating7_3" value="5" />&nbsp; Good&nbsp;</p>
+                                            <p><input type="radio" name="rating7_3" value="6" />&nbsp;
+                                                Very-Good&nbsp;
+                                            </p>
+                                            <p><input type="radio" name="rating7_3" value="7" />&nbsp;
+                                                Excellent&nbsp;
+                                            </p>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        Stimulating a sense of social responsibility.
+                                        <br />
+                                        <br />
+                                        <span class="radio">
+                                            <p><input type="radio" name="rating8_3" value="1" />&nbsp;
+                                                Very-Poor&nbsp;
+                                            </p>
+                                            <p><input type="radio" name="rating8_3" value="2" />&nbsp; Poor&nbsp;</p>
+                                            <p><input type="radio" name="rating8_3" value="3" />&nbsp;
+                                                Below-Average&nbsp;
+                                            </p>
+                                            <p> <input type="radio" name="rating8_3" value="4" />&nbsp; Average&nbsp;
+                                            </p>
+                                            <p> <input type="radio" name="rating8_3" value="5" />&nbsp; Good&nbsp;</p>
+                                            <p><input type="radio" name="rating8_3" value="6" />&nbsp;
+                                                Very-Good&nbsp;
+                                            </p>
+                                            <p><input type="radio" name="rating8_3" value="7" />&nbsp;
+                                                Excellent&nbsp;
+                                            </p>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ol>
                         <br />
-                        <li>
-                            Core Subject-related, teaching and Virtual classroom skills.
-                            <br />
-                            <br />
-                            <ul>
-                                <li>
-                                    Command over the subject.
-                                    <br />
-                                    <br />
-                                    <span class="radio">
-                                        <p><input type="radio" name="rating1_2" value="1" />&nbsp;
-                                            Very-Poor&nbsp;
-                                        </p>
-                                        <p><input type="radio" name="rating1_2" value="2" />&nbsp; Poor&nbsp;</p>
-                                        <p><input type="radio" name="rating1_2" value="3" />&nbsp;
-                                            Below-Average&nbsp;
-                                        </p>
-                                        <p><input type="radio" name="rating1_2" value="4" />&nbsp; Average&nbsp;
-                                        </p>
-                                        <p><input type="radio" name="rating1_2" value="5" />&nbsp; Good&nbsp;</p>
-                                        <p><input type="radio" name="rating1_2" value="6" />&nbsp;
-                                            Very-Good&nbsp;
-                                        </p>
-                                        <p><input type="radio" name="rating1_2" value="7" />&nbsp;
-                                            Excellent&nbsp;
-                                        </p>
-                                    </span>
-                                </li>
-                                <li>
-                                    Skills in making the subject interesting.
-                                    <br />
-                                    <br />
-                                    <span class="radio">
-                                        <p><input type="radio" name="rating2_2" value="1" />&nbsp;
-                                            Very-Poor&nbsp;
-                                        </p>
-                                        <p><input type="radio" name="rating2_2" value="2" />&nbsp; Poor&nbsp; </p>
-                                        <p> <input type="radio" name="rating2_2" value="3" />&nbsp;
-                                            Below-Average&nbsp;
-                                        </p>
-                                        <p> <input type="radio" name="rating2_2" value="4" />&nbsp; Average&nbsp;
-                                        </p>
-                                        <p> <input type="radio" name="rating2_2" value="5" />&nbsp; Good&nbsp;</p>
-                                        <p> <input type="radio" name="rating2_2" value="6" />&nbsp;
-                                            Very-Good&nbsp;
-                                        </p>
-                                        <p> <input type="radio" name="rating2_2" value="7" />&nbsp;
-                                            Excellent&nbsp;
-                                        </p>
-                                    </span>
-                                </li>
-                                <li>
-                                    Command over the medium of instruction(language) / communication skills
-                                    <br />
-                                    <br />
-                                    <span class="radio">
-                                        <p><input type="radio" name="rating3_2" value="1" />&nbsp;
-                                            Very-Poor&nbsp;
-                                        </p>
-                                        <p> <input type="radio" name="rating3_2" value="2" />&nbsp; Poor&nbsp;</p>
-                                        <p> <input type="radio" name="rating3_2" value="3" />&nbsp;
-                                            Below-Average&nbsp;
-                                        </p>
-                                        <p> <input type="radio" name="rating3_2" value="4" />&nbsp; Average&nbsp;
-                                        </p>
-                                        <p> <input type="radio" name="rating3_2" value="5" />&nbsp; Good&nbsp;</p>
-                                        <p><input type="radio" name="rating3_2" value="6" />&nbsp;
-                                            Very-Good&nbsp;
-                                        </p>
-                                        <p> <input type="radio" name="rating3_2" value="7" />&nbsp;
-                                            Excellent&nbsp;
-                                        </p>
-                                    </span>
-                                </li>
-                                <li>
-                                    Clarity in approach / thinking.
-                                    <br />
-                                    <br />
-                                    <span class="radio">
-                                        <p><input type="radio" name="rating4_2" value="1" />&nbsp;
-                                            Very-Poor&nbsp;
-                                        </p>
-                                        <p><input type="radio" name="rating4_2" value="2" />&nbsp; Poor&nbsp;</p>
-                                        <p><input type="radio" name="rating4_2" value="3" />&nbsp;
-                                            Below-Average&nbsp;
-                                        </p>
-                                        <p><input type="radio" name="rating4_2" value="4" />&nbsp; Average&nbsp;
-                                        </p>
-                                        <p><input type="radio" name="rating4_2" value="5" />&nbsp; Good&nbsp;</p>
-                                        <p> <input type="radio" name="rating4_2" value="6" />&nbsp;
-                                            Very-Good&nbsp;
-                                        </p>
-                                        <p> <input type="radio" name="rating4_2" value="7" />&nbsp;
-                                            Excellent&nbsp;
-                                        </p>
-                                    </span>
-                                </li>
-                                <li>
-                                    Punctuality and regularity in taking lectures and practicals.
-                                    <br />
-                                    <br />
-                                    <span class="radio">
-                                        <p><input type="radio" name="rating5_2" value="1" />&nbsp;
-                                            Very-Poor&nbsp;
-                                        </p>
-                                        <p><input type="radio" name="rating5_2" value="2" />&nbsp; Poor&nbsp;</p>
-                                        <p><input type="radio" name="rating5_2" value="3" />&nbsp;
-                                            Below-Average&nbsp;
-                                        </p>
-                                        <p> <input type="radio" name="rating5_2" value="4" />&nbsp; Average&nbsp;
-                                        </p>
-                                        <p><input type="radio" name="rating5_2" value="5" />&nbsp; Good&nbsp;</p>
-                                        <p> <input type="radio" name="rating5_2" value="6" />&nbsp;
-                                            Very-Good&nbsp;
-                                        </p>
-                                        <p><input type="radio" name="rating5_2" value="7" />&nbsp;
-                                            Excellent&nbsp;
-                                        </p>
-                                    </span>
-                                </li>
-                                <li>
-                                    Proficiency in handling online classroom platforms.
-                                    <br />
-                                    <br />
-                                    <span class="radio">
-                                        <p><input type="radio" name="rating6_2" value="1" />&nbsp;
-                                            Very-Poor&nbsp;
-                                        </p>
-                                        <p> <input type="radio" name="rating6_2" value="2" />&nbsp; Poor&nbsp;</p>
-                                        <p> <input type="radio" name="rating6_2" value="3" />&nbsp;
-                                            Below-Average&nbsp;
-                                        </p>
-                                        <p> <input type="radio" name="rating6_2" value="4" />&nbsp; Average&nbsp;
-                                        </p>
-                                        <p> <input type="radio" name="rating6_2" value="5" />&nbsp; Good&nbsp;</p>
-                                        <p> <input type="radio" name="rating6_2" value="6" />&nbsp;
-                                            Very-Good&nbsp;
-                                        </p>
-                                        <p> <input type="radio" name="rating6_2" value="7" />&nbsp;
-                                            Excellent&nbsp;
-                                        </p>
-                                    </span>
-                                </li>
-                                <li>
-                                    Time management skill \ skill of completing the syllabus with doubt solving sessions
-                                    in time.
-                                    <br />
-                                    <br />
-                                    <span class="radio">
-                                        <p><input type="radio" name="rating7_2" value="1" />&nbsp;
-                                            Very-Poor&nbsp;
-                                        </p>
-                                        <p><input type="radio" name="rating7_2" value="2" />&nbsp; Poor&nbsp;</p>
-                                        <p><input type="radio" name="rating7_2" value="3" />&nbsp;
-                                            Below-Average&nbsp;
-                                        </p>
-                                        <p><input type="radio" name="rating7_2" value="4" />&nbsp; Average&nbsp;
-                                        </p>
-                                        <p> <input type="radio" name="rating7_2" value="5" />&nbsp; Good&nbsp;</p>
-                                        <p><input type="radio" name="rating7_2" value="6" />&nbsp;
-                                            Very-Good&nbsp;
-                                        </p>
-                                        <p><input type="radio" name="rating7_2" value="7" />&nbsp;
-                                            Excellent&nbsp;
-                                        </p>
-                                    </span>
-                                </li>
-                            </ul>
-                        </li>
+                        <div class="form__div">
+                            <input type="text" class="form__input" name="suggest" id="suggest"
+                                placeholder="Your Suggessions" autocomplete="off" />
+                            <label for="" class="form__label">Suggestions</label>
+                        </div>
                         <br />
-                        <li>
-                            Additional peripheral skills / activities.
-                            <br />
-                            <br />
-                            <ul>
-                                <li>
-                                    Use of case studies, illustration, current events, anecdotes in teaching.ommand
-                                    over the subject.
-                                    <br />
-                                    <br />
-                                    <span class="radio">
-                                        <p><input type="radio" name="rating1_3" value="1" />&nbsp;
-                                            Very-Poor&nbsp;
-                                        </p>
-                                        <p><input type="radio" name="rating1_3" value="2" />&nbsp; Poor&nbsp;</p>
-                                        <p><input type="radio" name="rating1_3" value="3" />&nbsp;
-                                            Below-Average&nbsp;
-                                        </p>
-                                        <p> <input type="radio" name="rating1_3" value="4" />&nbsp; Average&nbsp;
-                                        </p>
-                                        <p> <input type="radio" name="rating1_3" value="5" />&nbsp; Good&nbsp;</p>
-                                        <p><input type="radio" name="rating1_3" value="6" />&nbsp;
-                                            Very-Good&nbsp;
-                                        </p>
-                                        <p><input type="radio" name="rating1_3" value="7" />&nbsp;
-                                            Excellent&nbsp;
-                                        </p>
-                                    </span>
-                                </li>
-                                <li>
-                                    Use of interactive teaching - seminars, tutorials, quizzes, assignments etc.
-                                    <br />
-                                    <br />
-                                    <span class="radio">
-                                        <p><input type="radio" name="rating2_3" value="1" />&nbsp;
-                                            Very-Poor&nbsp;
-                                        </p>
-                                        <p><input type="radio" name="rating2_3" value="2" />&nbsp; Poor&nbsp;</p>
-                                        <p><input type="radio" name="rating2_3" value="3" />&nbsp;
-                                            Below-Average&nbsp;
-                                        </p>
-                                        <p> <input type="radio" name="rating2_3" value="4" />&nbsp; Average&nbsp;
-                                        </p>
-                                        <p> <input type="radio" name="rating2_3" value="5" />&nbsp; Good&nbsp;</p>
-                                        <p><input type="radio" name="rating2_3" value="6" />&nbsp;
-                                            Very-Good&nbsp;
-                                        </p>
-                                        <p><input type="radio" name="rating2_3" value="7" />&nbsp;
-                                            Excellent&nbsp;
-                                        </p>
-                                    </span>
-                                </li>
-                                <li>
-                                    Command over the medium of instruction(language) / communication skills
-                                    <br />
-                                    <br />
-                                    <span class="radio">
-                                        <p><input type="radio" name="rating3_3" value="1" />&nbsp;
-                                            Very-Poor&nbsp;
-                                        </p>
-                                        <p><input type="radio" name="rating3_3" value="2" />&nbsp; Poor&nbsp;</p>
-                                        <p><input type="radio" name="rating3_3" value="3" />&nbsp;
-                                            Below-Average&nbsp;
-                                        </p>
-                                        <p> <input type="radio" name="rating3_3" value="4" />&nbsp; Average&nbsp;
-                                        </p>
-                                        <p> <input type="radio" name="rating3_3" value="5" />&nbsp; Good&nbsp;</p>
-                                        <p><input type="radio" name="rating3_3" value="6" />&nbsp;
-                                            Very-Good&nbsp;
-                                        </p>
-                                        <p><input type="radio" name="rating3_3" value="7" />&nbsp;
-                                            Excellent&nbsp;
-                                        </p>
-                                    </span>
-                                </li>
-                                <li>
-                                    Giving references for further reading.
-                                    <br />
-                                    <br />
-                                    <span class="radio">
-                                        <p><input type="radio" name="rating4_3" value="1" />&nbsp;
-                                            Very-Poor&nbsp;
-                                        </p>
-                                        <p><input type="radio" name="rating4_3" value="2" />&nbsp; Poor&nbsp;</p>
-                                        <p><input type="radio" name="rating4_3" value="3" />&nbsp;
-                                            Below-Average&nbsp;
-                                        </p>
-                                        <p> <input type="radio" name="rating4_3" value="4" />&nbsp; Average&nbsp;
-                                        </p>
-                                        <p> <input type="radio" name="rating4_3" value="5" />&nbsp; Good&nbsp;</p>
-                                        <p><input type="radio" name="rating4_3" value="6" />&nbsp;
-                                            Very-Good&nbsp;
-                                        </p>
-                                        <p><input type="radio" name="rating4_3" value="7" />&nbsp;
-                                            Excellent&nbsp;
-                                        </p>
-                                    </span>
-                                </li>
-                                <li>
-                                    Conducting evaluation by periodic tests / questions answer sessions or by designing
-                                    quizzes / tests / assignments / examinations and projects to evaluate students.
-                                    <br />
-                                    <br />
-                                    <span class="radio">
-                                        <p><input type="radio" name="rating5_3" value="1" />&nbsp;
-                                            Very-Poor&nbsp;
-                                        </p>
-                                        <p><input type="radio" name="rating5_3" value="2" />&nbsp; Poor&nbsp;</p>
-                                        <p><input type="radio" name="rating5_3" value="3" />&nbsp;
-                                            Below-Average&nbsp;
-                                        </p>
-                                        <p> <input type="radio" name="rating5_3" value="4" />&nbsp; Average&nbsp;
-                                        </p>
-                                        <p> <input type="radio" name="rating5_3" value="5" />&nbsp; Good&nbsp;</p>
-                                        <p><input type="radio" name="rating5_3" value="6" />&nbsp;
-                                            Very-Good&nbsp;
-                                        </p>
-                                        <p><input type="radio" name="rating5_3" value="7" />&nbsp;
-                                            Excellent&nbsp;
-                                        </p>
-                                    </span>
-                                </li>
-                                <li>
-                                    Encouraging students to apply in real life whatever they have learnt in classrooms.
-                                    <br />
-                                    <br />
-                                    <span class="radio">
-                                        <p><input type="radio" name="rating6_3" value="1" />&nbsp;
-                                            Very-Poor&nbsp;
-                                        </p>
-                                        <p><input type="radio" name="rating6_3" value="2" />&nbsp; Poor&nbsp;</p>
-                                        <p><input type="radio" name="rating6_3" value="3" />&nbsp;
-                                            Below-Average&nbsp;
-                                        </p>
-                                        <p> <input type="radio" name="rating6_3" value="4" />&nbsp; Average&nbsp;
-                                        </p>
-                                        <p> <input type="radio" name="rating6_3" value="5" />&nbsp; Good&nbsp;</p>
-                                        <p><input type="radio" name="rating6_3" value="6" />&nbsp;
-                                            Very-Good&nbsp;
-                                        </p>
-                                        <p><input type="radio" name="rating6_3" value="7" />&nbsp;
-                                            Excellent&nbsp;
-                                        </p>
-                                    </span>
-                                </li>
-                                <li>
-                                    Counselling : Career / placement / personal.
-                                    <br />
-                                    <br />
-                                    <span class="radio">
-                                        <p><input type="radio" name="rating7_3" value="1" />&nbsp;
-                                            Very-Poor&nbsp;
-                                        </p>
-                                        <p><input type="radio" name="rating7_3" value="2" />&nbsp; Poor&nbsp;</p>
-                                        <p><input type="radio" name="rating7_3" value="3" />&nbsp;
-                                            Below-Average&nbsp;
-                                        </p>
-                                        <p> <input type="radio" name="rating7_3" value="4" />&nbsp; Average&nbsp;
-                                        </p>
-                                        <p> <input type="radio" name="rating7_3" value="5" />&nbsp; Good&nbsp;</p>
-                                        <p><input type="radio" name="rating7_3" value="6" />&nbsp;
-                                            Very-Good&nbsp;
-                                        </p>
-                                        <p><input type="radio" name="rating7_3" value="7" />&nbsp;
-                                            Excellent&nbsp;
-                                        </p>
-                                    </span>
-                                </li>
-                                <li>
-                                    Stimulating a sense of social responsibility.
-                                    <br />
-                                    <br />
-                                    <span class="radio">
-                                        <p><input type="radio" name="rating8_3" value="1" />&nbsp;
-                                            Very-Poor&nbsp;
-                                        </p>
-                                        <p><input type="radio" name="rating8_3" value="2" />&nbsp; Poor&nbsp;</p>
-                                        <p><input type="radio" name="rating8_3" value="3" />&nbsp;
-                                            Below-Average&nbsp;
-                                        </p>
-                                        <p> <input type="radio" name="rating8_3" value="4" />&nbsp; Average&nbsp;
-                                        </p>
-                                        <p> <input type="radio" name="rating8_3" value="5" />&nbsp; Good&nbsp;</p>
-                                        <p><input type="radio" name="rating8_3" value="6" />&nbsp;
-                                            Very-Good&nbsp;
-                                        </p>
-                                        <p><input type="radio" name="rating8_3" value="7" />&nbsp;
-                                            Excellent&nbsp;
-                                        </p>
-                                    </span>
-                                </li>
-                            </ul>
-                        </li>
-                    </ol>
-                    <br />
-                    <div class="form__div">
-                        <input type="text" class="form__input" name="suggest" id="suggest"
-                            placeholder="Your Suggessions" autocomplete="off" />
-                        <label for="" class="form__label">Suggestions</label>
+                        <input type="submit" id="sub" class="form__button font-mono" value="Submit" name="submit"
+                            style="float: right;" />
                     </div>
-                    <br />
-                    <input type="submit" id="sub" class="form__button font-mono" value="Submit" name="submit"
-                        style="float: right;" />
                 </fieldset>
             </form>
         </div>
@@ -744,7 +747,7 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
             <p style="padding: 1rem;">
                 &copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html" target="_self"
                     class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> |
-                <a href="../../../personal.html" class="text-[blue] hover:underline">Contact</a>
+                <a href="../../../personal.html" class="text-[blue] hover:underline">Contributors</a>
                 <br />
             </p>
         </div>

@@ -23,8 +23,6 @@ if (isset($_POST['FFForm'])) {
     $_SESSION['setFF'] = "yes";
     header('Location: faculty.php');
 }
-// INSERT INTO `form_fillup` (`Id`, `Name`, `Review`, `Day`) VALUES ('1', 'Atharv', 'NICE', DAYNAME(CURDATE()));
-
 ?>
 
 
@@ -118,7 +116,14 @@ if (isset($_POST['FFForm'])) {
             </form>
         </div>
         <div id="msg" class="msg text-xl text-center" style="display:none">
-            <p id="msg-p" style="padding:1rem">Forms are not allowed to fill furthermore.
+            <br />
+            <img src="https://github.githubassets.com/images/mona-loading-dark.gif" alt="octo"
+                style="min-height:2rem;width:auto;max-height:6rem;display:inline-block;">
+            <br />
+            <br />
+            <p id="msg-p" style="padding:1rem">
+
+                Forms are not allowed to fill furthermore.
             </p>
             <br />
             <img src="" alt="Scott" id="clown_com"
@@ -128,7 +133,7 @@ if (isset($_POST['FFForm'])) {
             <br />
             <p>&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html" target="_self"
                     class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> | <a
-                    href="../../../personal.html" class="text-[blue] hover:underline ">Contact</a>
+                    href="../../../personal.html" class="text-[blue] hover:underline ">Contributors</a>
             </p>
         </div>
     </div>

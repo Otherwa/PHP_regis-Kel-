@@ -29,10 +29,11 @@ const myChart = new Chart(ctx, {
 });
 
 
-// start  con
+// start  condition
 let list = document.getElementById('list');
 list.style.display = 'none';
 
+// toggle
 function Togglegraph_list(options) {
     console.log(options)
     let graph = document.getElementById('myChart');

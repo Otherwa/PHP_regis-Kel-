@@ -141,7 +141,7 @@ session_destroy();
             <br />
             <!-- chart js -->
             <canvas id="myChart" width="450" height="150"
-                style="background-color:#ebe6e0;padding: 1rem;border-radius: 0.5rem;"></canvas>
+                style="background-color:#ebe6e0;border-radius: 0.5rem;padding:0rem 0.4rem 0rem 0.4rem"></canvas>
             <br />
             <br />
 
@@ -151,13 +151,15 @@ session_destroy();
                 <?php list_disp($con); ?>
             </div>
 
-
+            <br />
+            <br />
 
             <div class=" footer-copyright" style="bottom: -13rem;">
                 <br />
                 <p>&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html" target="_blank"
                         class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> | <a
-                        href="../../../personal.html" class="text-[blue] hover:underline " target="_blank">Contact</a>
+                        href="../../../personal.html" class="text-[blue] hover:underline "
+                        target="_blank">Contributors</a>
                     <br />
             </div>
             <br />

@@ -268,323 +268,325 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
                     <br />
 
                     <!-- selected opts -->
+                    <div id="msg_set" style="display:none">
+                        <ol class="form-ol" id="msg_set" style="display:none">
+                            <li>
+                                Availability of extra-curricular activities in college:
+                                <br />
+                                <br />
+                                <span class="radio">
+                                    <p><input type="radio" name="rating_1" value="1">&nbsp; Very-Poor&nbsp;</p>
+                                    <p><input type="radio" name="rating_1" value="2">&nbsp; Poor&nbsp;</p>
+                                    <p><input type="radio" name="rating_1" value="3">&nbsp; Below-Average&nbsp;
+                                    </p>
+                                    <p><input type="radio" name="rating_1" value="4">&nbsp; Average&nbsp;</p>
+                                    <p><input type="radio" name="rating_1" value="5">&nbsp; Good&nbsp;</p>
+                                    <p><input type="radio" name="rating_1" value="6">&nbsp; Very-Good&nbsp;</p>
+                                    <p><input type="radio" name="rating_1" value="7">&nbsp; Excellent&nbsp;</p>
+                                </span>
+                            </li>
 
-                    <ol class="form-ol" id="msg_set" style="display:none">
-                        <li>
-                            Availability of extra-curricular activities in college:
                             <br />
+
+                            <li>
+                                Amenities and assistance available for extra-curricular activities at the college:
+                                <br />
+                                <br />
+                                <span class="radio">
+                                    <p><input type="radio" name="rating_2" value="1">&nbsp; Very-Poor&nbsp;</p>
+                                    <p><input type="radio" name="rating_2" value="2">&nbsp; Poor&nbsp;</p>
+                                    <p><input type="radio" name="rating_2" value="3">&nbsp; Below-Average&nbsp;
+                                    </p>
+                                    <p><input type="radio" name="rating_2" value="4">&nbsp; Average&nbsp;</p>
+                                    <p><input type="radio" name="rating_2" value="5">&nbsp; Good&nbsp;</p>
+                                    <p><input type="radio" name="rating_2" value="6">&nbsp; Very-Good&nbsp;</p>
+                                    <p><input type="radio" name="rating_2" value="7">&nbsp; Excellent&nbsp;</p>
+                                </span>
+                            </li>
+
                             <br />
-                            <span class="radio">
-                                <p><input type="radio" name="rating_1" value="1">&nbsp; Very-Poor&nbsp;</p>
-                                <p><input type="radio" name="rating_1" value="2">&nbsp; Poor&nbsp;</p>
-                                <p><input type="radio" name="rating_1" value="3">&nbsp; Below-Average&nbsp;
-                                </p>
-                                <p><input type="radio" name="rating_1" value="4">&nbsp; Average&nbsp;</p>
-                                <p><input type="radio" name="rating_1" value="5">&nbsp; Good&nbsp;</p>
-                                <p><input type="radio" name="rating_1" value="6">&nbsp; Very-Good&nbsp;</p>
-                                <p><input type="radio" name="rating_1" value="7">&nbsp; Excellent&nbsp;</p>
-                            </span>
-                        </li>
+
+                            <li>
+                                Sports facility in college:
+                                <br />
+                                <br />
+                                <span class="radio">
+                                    <p><input type="radio" name="rating_3" value="1">&nbsp; Very-Poor&nbsp;</p>
+                                    <p><input type="radio" name="rating_3" value="2">&nbsp; Poor&nbsp;</p>
+                                    <p><input type="radio" name="rating_3" value="3">&nbsp; Below-Average&nbsp;
+                                    </p>
+                                    <p><input type="radio" name="rating_3" value="4">&nbsp; Average&nbsp;</p>
+                                    <p><input type="radio" name="rating_3" value="5">&nbsp; Good&nbsp;</p>
+                                    <p><input type="radio" name="rating_3" value="6">&nbsp; Very-Good&nbsp;</p>
+                                    <p><input type="radio" name="rating_3" value="7">&nbsp; Excellent&nbsp;</p>
+                                </span>
+                            </li>
+
+                            <br />
+
+                            <li>
+                                Canteen facility in college(Food quality):
+                                <br />
+                                <br />
+                                <span class="radio">
+                                    <p><input type="radio" name="rating_4" value="1">&nbsp; Very-Poor&nbsp;</p>
+                                    <p><input type="radio" name="rating_4" value="2">&nbsp; Poor&nbsp;</p>
+                                    <p><input type="radio" name="rating_4" value="3">&nbsp; Below-Average&nbsp;
+                                    </p>
+                                    <p><input type="radio" name="rating_4" value="4">&nbsp; Average&nbsp;</p>
+                                    <p><input type="radio" name="rating_4" value="5">&nbsp; Good&nbsp;</p>
+                                    <p><input type="radio" name="rating_4" value="6">&nbsp; Very-Good&nbsp;</p>
+                                    <p><input type="radio" name="rating_4" value="7">&nbsp; Excellent&nbsp;</p>
+                                </span>
+                            </li>
+
+                            <br />
+
+                            <li>
+                                Canteen facility in college(Rates of the food items):
+                                <br />
+                                <br />
+                                <span class="radio">
+                                    <p><input type="radio" name="rating_5" value="1">&nbsp; Very-Poor&nbsp;</p>
+                                    <p><input type="radio" name="rating_5" value="2">&nbsp; Poor&nbsp;</p>
+                                    <p><input type="radio" name="rating_5" value="3">&nbsp; Below-Average&nbsp;
+                                    </p>
+                                    <p><input type="radio" name="rating_5" value="4">&nbsp; Average&nbsp;</p>
+                                    <p><input type="radio" name="rating_5" value="5">&nbsp; Good&nbsp;</p>
+                                    <p><input type="radio" name="rating_5" value="6">&nbsp; Very-Good&nbsp;</p>
+                                    <p><input type="radio" name="rating_5" value="7">&nbsp; Excellent&nbsp;</p>
+                                </span>
+                            </li>
+
+                            <br />
+
+                            <li>
+                                Canteen facility in college(Attitude and service received):
+                                <br />
+                                <br />
+                                <span class="radio">
+                                    <p><input type="radio" name="rating_6" value="1">&nbsp; Very-Poor&nbsp;</p>
+                                    <p><input type="radio" name="rating_6" value="2">&nbsp; Poor&nbsp;</p>
+                                    <p><input type="radio" name="rating_6" value="3">&nbsp; Below-Average&nbsp;
+                                    </p>
+                                    <p><input type="radio" name="rating_6" value="4">&nbsp; Average&nbsp;</p>
+                                    <p><input type="radio" name="rating_6" value="5">&nbsp; Good&nbsp;</p>
+                                    <p><input type="radio" name="rating_6" value="6">&nbsp; Very-Good&nbsp;</p>
+                                    <p><input type="radio" name="rating_6" value="7">&nbsp; Excellent&nbsp;</p>
+                                </span>
+                            </li>
+
+                            <br />
+
+                            <li>
+                                Cleanliness and maintenance in the classrooms:
+                                <br />
+                                <br />
+                                <span class="radio">
+                                    <p><input type="radio" name="rating_7" value="1">&nbsp; Very-Poor&nbsp;</p>
+                                    <p><input type="radio" name="rating_7" value="2">&nbsp; Poor&nbsp;</p>
+                                    <p><input type="radio" name="rating_7" value="3">&nbsp; Below-Average&nbsp;
+                                    </p>
+                                    <p><input type="radio" name="rating_7" value="4">&nbsp; Average&nbsp;</p>
+                                    <p><input type="radio" name="rating_7" value="5">&nbsp; Good&nbsp;</p>
+                                    <p><input type="radio" name="rating_7" value="6">&nbsp; Very-Good&nbsp;</p>
+                                    <p><input type="radio" name="rating_7" value="7">&nbsp; Excellent&nbsp;</p>
+                                </span>
+                            </li>
+
+                            <br />
+
+                            <li>
+                                Cleanliness and maintenance of Toilets/washrooms:
+                                <br />
+                                <br />
+                                <span class="radio">
+                                    <p><input type="radio" name="rating_8" value="1">&nbsp; Very-Poor&nbsp;</p>
+                                    <p><input type="radio" name="rating_8" value="2">&nbsp; Poor&nbsp;</p>
+                                    <p><input type="radio" name="rating_8" value="3">&nbsp; Below-Average&nbsp;
+                                    </p>
+                                    <p><input type="radio" name="rating_8" value="4">&nbsp; Average&nbsp;</p>
+                                    <p><input type="radio" name="rating_8" value="5">&nbsp; Good&nbsp;</p>
+                                    <p><input type="radio" name="rating_8" value="6">&nbsp; Very-Good&nbsp;</p>
+                                    <p><input type="radio" name="rating_8" value="7">&nbsp; Excellent&nbsp;</p>
+                                </span>
+                            </li>
+
+                            <br />
+
+                            <li>
+                                Timely redressal of grievances/problems of students:
+                                <br />
+                                <br />
+                                <span class="radio">
+                                    <p><input type="radio" name="rating_9" value="1">&nbsp; Very-Poor&nbsp;</p>
+                                    <p><input type="radio" name="rating_9" value="2">&nbsp; Poor&nbsp;</p>
+                                    <p><input type="radio" name="rating_9" value="3">&nbsp; Below-Average&nbsp;
+                                    </p>
+                                    <p><input type="radio" name="rating_9" value="4">&nbsp; Average&nbsp;</p>
+                                    <p><input type="radio" name="rating_9" value="5">&nbsp; Good&nbsp;</p>
+                                    <p><input type="radio" name="rating_9" value="6">&nbsp; Very-Good&nbsp;</p>
+                                    <p><input type="radio" name="rating_9" value="7">&nbsp; Excellent&nbsp;</p>
+                                </span>
+                            </li>
+
+                            <br />
+
+                            <li>
+                                Functioning of the Placement Cell:
+                                <br />
+                                <br />
+                                <span class="radio">
+                                    <p><input type="radio" name="rating_10" value="1">&nbsp; Very-Poor&nbsp;</p>
+                                    <p><input type="radio" name="rating_10" value="2">&nbsp; Poor&nbsp;</p>
+                                    <p><input type="radio" name="rating_10" value="3">&nbsp; Below-Average&nbsp;
+                                    </p>
+                                    <p><input type="radio" name="rating_10" value="4">&nbsp; Average&nbsp;</p>
+                                    <p><input type="radio" name="rating_10" value="5">&nbsp; Good&nbsp;</p>
+                                    <p><input type="radio" name="rating_10" value="6">&nbsp; Very-Good&nbsp;</p>
+                                    <p><input type="radio" name="rating_10" value="7">&nbsp; Excellent&nbsp;</p>
+                                </span>
+                            </li>
+
+
+                            <br />
+
+                            <li>
+                                Library facility in college(Availability of prescribed books/reading materials.):
+                                <br />
+                                <br />
+                                <span class="radio">
+                                    <p><input type="radio" name="rating_11" value="1">&nbsp; Very-Poor&nbsp;</p>
+                                    <p><input type="radio" name="rating_11" value="2">&nbsp; Poor&nbsp;</p>
+                                    <p><input type="radio" name="rating_11" value="3">&nbsp; Below-Average&nbsp;
+                                    </p>
+                                    <p><input type="radio" name="rating_11" value="4">&nbsp; Average&nbsp;</p>
+                                    <p><input type="radio" name="rating_11" value="5">&nbsp; Good&nbsp;</p>
+                                    <p><input type="radio" name="rating_11" value="6">&nbsp; Very-Good&nbsp;</p>
+                                    <p><input type="radio" name="rating_11" value="7">&nbsp; Excellent&nbsp;</p>
+                                </span>
+                            </li>
+
+                            <br />
+
+                            <li>
+                                Library facility in college(Way of cataloguing and arrangement of books in the library):
+                                <br />
+                                <br />
+                                <span class="radio">
+                                    <p><input type="radio" name="rating_12" value="1">&nbsp; Very-Poor&nbsp;</p>
+                                    <p><input type="radio" name="rating_12" value="2">&nbsp; Poor&nbsp;</p>
+                                    <p><input type="radio" name="rating_12" value="3">&nbsp; Below-Average&nbsp;
+                                    </p>
+                                    <p><input type="radio" name="rating_12" value="4">&nbsp; Average&nbsp;</p>
+                                    <p><input type="radio" name="rating_12" value="5">&nbsp; Good&nbsp;</p>
+                                    <p><input type="radio" name="rating_12" value="6">&nbsp; Very-Good&nbsp;</p>
+                                    <p><input type="radio" name="rating_12" value="7">&nbsp; Excellent&nbsp;</p>
+                                </span>
+                            </li>
+
+                            <br />
+
+                            <li>
+                                Library facility in college(Availability and accessibility of online educational
+                                resources
+                                in
+                                college.):
+                                <br />
+                                <br />
+                                <span class="radio">
+                                    <p><input type="radio" name="rating_13" value="1">&nbsp; Very-Poor&nbsp;</p>
+                                    <p><input type="radio" name="rating_13" value="2">&nbsp; Poor&nbsp;</p>
+                                    <p><input type="radio" name="rating_13" value="3">&nbsp; Below-Average&nbsp;
+                                    </p>
+                                    <p><input type="radio" name="rating_13" value="4">&nbsp; Average&nbsp;</p>
+                                    <p><input type="radio" name="rating_13" value="5">&nbsp; Good&nbsp;</p>
+                                    <p><input type="radio" name="rating_13" value="6">&nbsp; Very-Good&nbsp;</p>
+                                    <p><input type="radio" name="rating_13" value="7">&nbsp; Excellent&nbsp;</p>
+                                </span>
+                            </li>
+
+                            <br />
+
+                            <li>
+                                Library facility in college(Attitude of Library staff):
+                                <br />
+                                <br />
+                                <span class="radio">
+                                    <p><input type="radio" name="rating_14" value="1">&nbsp; Very-Poor&nbsp;</p>
+                                    <p><input type="radio" name="rating_14" value="2">&nbsp; Poor&nbsp;</p>
+                                    <p><input type="radio" name="rating_14" value="3">&nbsp; Below-Average&nbsp;
+                                    </p>
+                                    <p><input type="radio" name="rating_14" value="4">&nbsp; Average&nbsp;</p>
+                                    <p><input type="radio" name="rating_14" value="5">&nbsp; Good&nbsp;</p>
+                                    <p><input type="radio" name="rating_14" value="6">&nbsp; Very-Good&nbsp;</p>
+                                    <p><input type="radio" name="rating_14" value="7">&nbsp; Excellent&nbsp;</p>
+                                </span>
+                            </li>
+
+                            <br />
+
+                            <li>
+                                College Website:
+                                <br />
+                                <br />
+                                <span class="radio">
+                                    <p><input type="radio" name="rating_15" value="1">&nbsp; Very-Poor&nbsp;</p>
+                                    <p><input type="radio" name="rating_15" value="2">&nbsp; Poor&nbsp;</p>
+                                    <p><input type="radio" name="rating_15" value="3">&nbsp; Below-Average&nbsp;
+                                    </p>
+                                    <p><input type="radio" name="rating_15" value="4">&nbsp; Average&nbsp;</p>
+                                    <p><input type="radio" name="rating_15" value="5">&nbsp; Good&nbsp;</p>
+                                    <p><input type="radio" name="rating_15" value="6">&nbsp; Very-Good&nbsp;</p>
+                                    <p><input type="radio" name="rating_15" value="7">&nbsp; Excellent&nbsp;</p>
+                                </span>
+                            </li>
+
+                            <br />
+
+                            <li>
+                                Fairness and feedback mechanism in the Internal Continuous Assessment (ICA):
+                                <br />
+                                <br />
+                                <span class="radio">
+                                    <p><input type="radio" name="rating_16" value="1">&nbsp; Very-Poor&nbsp;</p>
+                                    <p><input type="radio" name="rating_16" value="2">&nbsp; Poor&nbsp;</p>
+                                    <p><input type="radio" name="rating_16" value="3">&nbsp; Below-Average&nbsp;
+                                    </p>
+                                    <p><input type="radio" name="rating_16" value="4">&nbsp; Average&nbsp;</p>
+                                    <p><input type="radio" name="rating_16" value="5">&nbsp; Good&nbsp;</p>
+                                    <p><input type="radio" name="rating_16" value="6">&nbsp; Very-Good&nbsp;</p>
+                                    <p><input type="radio" name="rating_16" value="7">&nbsp; Excellent&nbsp;</p>
+                                </span>
+                            </li>
+
+                            <br />
+
+                            <li>
+                                Mentoring system:
+                                <br />
+                                <br />
+                                <span class="radio">
+                                    <p><input type="radio" name="rating_17" value="1">&nbsp; Very-Poor&nbsp;</p>
+                                    <p><input type="radio" name="rating_17" value="2">&nbsp; Poor&nbsp;</p>
+                                    <p><input type="radio" name="rating_17" value="3">&nbsp; Below-Average&nbsp;
+                                    </p>
+                                    <p><input type="radio" name="rating_17" value="4">&nbsp; Average&nbsp;</p>
+                                    <p><input type="radio" name="rating_17" value="5">&nbsp; Good&nbsp;</p>
+                                    <p><input type="radio" name="rating_17" value="6">&nbsp; Very-Good&nbsp;</p>
+                                    <p><input type="radio" name="rating_17" value="7">&nbsp; Excellent&nbsp;</p>
+                                </span>
+                            </li>
+                        </ol>
+                        <!-- all query  -->
+
+
 
                         <br />
-
-                        <li>
-                            Amenities and assistance available for extra-curricular activities at the college:
-                            <br />
-                            <br />
-                            <span class="radio">
-                                <p><input type="radio" name="rating_2" value="1">&nbsp; Very-Poor&nbsp;</p>
-                                <p><input type="radio" name="rating_2" value="2">&nbsp; Poor&nbsp;</p>
-                                <p><input type="radio" name="rating_2" value="3">&nbsp; Below-Average&nbsp;
-                                </p>
-                                <p><input type="radio" name="rating_2" value="4">&nbsp; Average&nbsp;</p>
-                                <p><input type="radio" name="rating_2" value="5">&nbsp; Good&nbsp;</p>
-                                <p><input type="radio" name="rating_2" value="6">&nbsp; Very-Good&nbsp;</p>
-                                <p><input type="radio" name="rating_2" value="7">&nbsp; Excellent&nbsp;</p>
-                            </span>
-                        </li>
-
                         <br />
-
-                        <li>
-                            Sports facility in college:
-                            <br />
-                            <br />
-                            <span class="radio">
-                                <p><input type="radio" name="rating_3" value="1">&nbsp; Very-Poor&nbsp;</p>
-                                <p><input type="radio" name="rating_3" value="2">&nbsp; Poor&nbsp;</p>
-                                <p><input type="radio" name="rating_3" value="3">&nbsp; Below-Average&nbsp;
-                                </p>
-                                <p><input type="radio" name="rating_3" value="4">&nbsp; Average&nbsp;</p>
-                                <p><input type="radio" name="rating_3" value="5">&nbsp; Good&nbsp;</p>
-                                <p><input type="radio" name="rating_3" value="6">&nbsp; Very-Good&nbsp;</p>
-                                <p><input type="radio" name="rating_3" value="7">&nbsp; Excellent&nbsp;</p>
-                            </span>
-                        </li>
-
-                        <br />
-
-                        <li>
-                            Canteen facility in college(Food quality):
-                            <br />
-                            <br />
-                            <span class="radio">
-                                <p><input type="radio" name="rating_4" value="1">&nbsp; Very-Poor&nbsp;</p>
-                                <p><input type="radio" name="rating_4" value="2">&nbsp; Poor&nbsp;</p>
-                                <p><input type="radio" name="rating_4" value="3">&nbsp; Below-Average&nbsp;
-                                </p>
-                                <p><input type="radio" name="rating_4" value="4">&nbsp; Average&nbsp;</p>
-                                <p><input type="radio" name="rating_4" value="5">&nbsp; Good&nbsp;</p>
-                                <p><input type="radio" name="rating_4" value="6">&nbsp; Very-Good&nbsp;</p>
-                                <p><input type="radio" name="rating_4" value="7">&nbsp; Excellent&nbsp;</p>
-                            </span>
-                        </li>
-
-                        <br />
-
-                        <li>
-                            Canteen facility in college(Rates of the food items):
-                            <br />
-                            <br />
-                            <span class="radio">
-                                <p><input type="radio" name="rating_5" value="1">&nbsp; Very-Poor&nbsp;</p>
-                                <p><input type="radio" name="rating_5" value="2">&nbsp; Poor&nbsp;</p>
-                                <p><input type="radio" name="rating_5" value="3">&nbsp; Below-Average&nbsp;
-                                </p>
-                                <p><input type="radio" name="rating_5" value="4">&nbsp; Average&nbsp;</p>
-                                <p><input type="radio" name="rating_5" value="5">&nbsp; Good&nbsp;</p>
-                                <p><input type="radio" name="rating_5" value="6">&nbsp; Very-Good&nbsp;</p>
-                                <p><input type="radio" name="rating_5" value="7">&nbsp; Excellent&nbsp;</p>
-                            </span>
-                        </li>
-
-                        <br />
-
-                        <li>
-                            Canteen facility in college(Attitude and service received):
-                            <br />
-                            <br />
-                            <span class="radio">
-                                <p><input type="radio" name="rating_6" value="1">&nbsp; Very-Poor&nbsp;</p>
-                                <p><input type="radio" name="rating_6" value="2">&nbsp; Poor&nbsp;</p>
-                                <p><input type="radio" name="rating_6" value="3">&nbsp; Below-Average&nbsp;
-                                </p>
-                                <p><input type="radio" name="rating_6" value="4">&nbsp; Average&nbsp;</p>
-                                <p><input type="radio" name="rating_6" value="5">&nbsp; Good&nbsp;</p>
-                                <p><input type="radio" name="rating_6" value="6">&nbsp; Very-Good&nbsp;</p>
-                                <p><input type="radio" name="rating_6" value="7">&nbsp; Excellent&nbsp;</p>
-                            </span>
-                        </li>
-
-                        <br />
-
-                        <li>
-                            Cleanliness and maintenance in the classrooms:
-                            <br />
-                            <br />
-                            <span class="radio">
-                                <p><input type="radio" name="rating_7" value="1">&nbsp; Very-Poor&nbsp;</p>
-                                <p><input type="radio" name="rating_7" value="2">&nbsp; Poor&nbsp;</p>
-                                <p><input type="radio" name="rating_7" value="3">&nbsp; Below-Average&nbsp;
-                                </p>
-                                <p><input type="radio" name="rating_7" value="4">&nbsp; Average&nbsp;</p>
-                                <p><input type="radio" name="rating_7" value="5">&nbsp; Good&nbsp;</p>
-                                <p><input type="radio" name="rating_7" value="6">&nbsp; Very-Good&nbsp;</p>
-                                <p><input type="radio" name="rating_7" value="7">&nbsp; Excellent&nbsp;</p>
-                            </span>
-                        </li>
-
-                        <br />
-
-                        <li>
-                            Cleanliness and maintenance of Toilets/washrooms:
-                            <br />
-                            <br />
-                            <span class="radio">
-                                <p><input type="radio" name="rating_8" value="1">&nbsp; Very-Poor&nbsp;</p>
-                                <p><input type="radio" name="rating_8" value="2">&nbsp; Poor&nbsp;</p>
-                                <p><input type="radio" name="rating_8" value="3">&nbsp; Below-Average&nbsp;
-                                </p>
-                                <p><input type="radio" name="rating_8" value="4">&nbsp; Average&nbsp;</p>
-                                <p><input type="radio" name="rating_8" value="5">&nbsp; Good&nbsp;</p>
-                                <p><input type="radio" name="rating_8" value="6">&nbsp; Very-Good&nbsp;</p>
-                                <p><input type="radio" name="rating_8" value="7">&nbsp; Excellent&nbsp;</p>
-                            </span>
-                        </li>
-
-                        <br />
-
-                        <li>
-                            Timely redressal of grievances/problems of students:
-                            <br />
-                            <br />
-                            <span class="radio">
-                                <p><input type="radio" name="rating_9" value="1">&nbsp; Very-Poor&nbsp;</p>
-                                <p><input type="radio" name="rating_9" value="2">&nbsp; Poor&nbsp;</p>
-                                <p><input type="radio" name="rating_9" value="3">&nbsp; Below-Average&nbsp;
-                                </p>
-                                <p><input type="radio" name="rating_9" value="4">&nbsp; Average&nbsp;</p>
-                                <p><input type="radio" name="rating_9" value="5">&nbsp; Good&nbsp;</p>
-                                <p><input type="radio" name="rating_9" value="6">&nbsp; Very-Good&nbsp;</p>
-                                <p><input type="radio" name="rating_9" value="7">&nbsp; Excellent&nbsp;</p>
-                            </span>
-                        </li>
-
-                        <br />
-
-                        <li>
-                            Functioning of the Placement Cell:
-                            <br />
-                            <br />
-                            <span class="radio">
-                                <p><input type="radio" name="rating_10" value="1">&nbsp; Very-Poor&nbsp;</p>
-                                <p><input type="radio" name="rating_10" value="2">&nbsp; Poor&nbsp;</p>
-                                <p><input type="radio" name="rating_10" value="3">&nbsp; Below-Average&nbsp;
-                                </p>
-                                <p><input type="radio" name="rating_10" value="4">&nbsp; Average&nbsp;</p>
-                                <p><input type="radio" name="rating_10" value="5">&nbsp; Good&nbsp;</p>
-                                <p><input type="radio" name="rating_10" value="6">&nbsp; Very-Good&nbsp;</p>
-                                <p><input type="radio" name="rating_10" value="7">&nbsp; Excellent&nbsp;</p>
-                            </span>
-                        </li>
-
-
-                        <br />
-
-                        <li>
-                            Library facility in college(Availability of prescribed books/reading materials.):
-                            <br />
-                            <br />
-                            <span class="radio">
-                                <p><input type="radio" name="rating_11" value="1">&nbsp; Very-Poor&nbsp;</p>
-                                <p><input type="radio" name="rating_11" value="2">&nbsp; Poor&nbsp;</p>
-                                <p><input type="radio" name="rating_11" value="3">&nbsp; Below-Average&nbsp;
-                                </p>
-                                <p><input type="radio" name="rating_11" value="4">&nbsp; Average&nbsp;</p>
-                                <p><input type="radio" name="rating_11" value="5">&nbsp; Good&nbsp;</p>
-                                <p><input type="radio" name="rating_11" value="6">&nbsp; Very-Good&nbsp;</p>
-                                <p><input type="radio" name="rating_11" value="7">&nbsp; Excellent&nbsp;</p>
-                            </span>
-                        </li>
-
-                        <br />
-
-                        <li>
-                            Library facility in college(Way of cataloguing and arrangement of books in the library):
-                            <br />
-                            <br />
-                            <span class="radio">
-                                <p><input type="radio" name="rating_12" value="1">&nbsp; Very-Poor&nbsp;</p>
-                                <p><input type="radio" name="rating_12" value="2">&nbsp; Poor&nbsp;</p>
-                                <p><input type="radio" name="rating_12" value="3">&nbsp; Below-Average&nbsp;
-                                </p>
-                                <p><input type="radio" name="rating_12" value="4">&nbsp; Average&nbsp;</p>
-                                <p><input type="radio" name="rating_12" value="5">&nbsp; Good&nbsp;</p>
-                                <p><input type="radio" name="rating_12" value="6">&nbsp; Very-Good&nbsp;</p>
-                                <p><input type="radio" name="rating_12" value="7">&nbsp; Excellent&nbsp;</p>
-                            </span>
-                        </li>
-
-                        <br />
-
-                        <li>
-                            Library facility in college(Availability and accessibility of online educational resources
-                            in
-                            college.):
-                            <br />
-                            <br />
-                            <span class="radio">
-                                <p><input type="radio" name="rating_13" value="1">&nbsp; Very-Poor&nbsp;</p>
-                                <p><input type="radio" name="rating_13" value="2">&nbsp; Poor&nbsp;</p>
-                                <p><input type="radio" name="rating_13" value="3">&nbsp; Below-Average&nbsp;
-                                </p>
-                                <p><input type="radio" name="rating_13" value="4">&nbsp; Average&nbsp;</p>
-                                <p><input type="radio" name="rating_13" value="5">&nbsp; Good&nbsp;</p>
-                                <p><input type="radio" name="rating_13" value="6">&nbsp; Very-Good&nbsp;</p>
-                                <p><input type="radio" name="rating_13" value="7">&nbsp; Excellent&nbsp;</p>
-                            </span>
-                        </li>
-
-                        <br />
-
-                        <li>
-                            Library facility in college(Attitude of Library staff):
-                            <br />
-                            <br />
-                            <span class="radio">
-                                <p><input type="radio" name="rating_14" value="1">&nbsp; Very-Poor&nbsp;</p>
-                                <p><input type="radio" name="rating_14" value="2">&nbsp; Poor&nbsp;</p>
-                                <p><input type="radio" name="rating_14" value="3">&nbsp; Below-Average&nbsp;
-                                </p>
-                                <p><input type="radio" name="rating_14" value="4">&nbsp; Average&nbsp;</p>
-                                <p><input type="radio" name="rating_14" value="5">&nbsp; Good&nbsp;</p>
-                                <p><input type="radio" name="rating_14" value="6">&nbsp; Very-Good&nbsp;</p>
-                                <p><input type="radio" name="rating_14" value="7">&nbsp; Excellent&nbsp;</p>
-                            </span>
-                        </li>
-
-                        <br />
-
-                        <li>
-                            College Website:
-                            <br />
-                            <br />
-                            <span class="radio">
-                                <p><input type="radio" name="rating_15" value="1">&nbsp; Very-Poor&nbsp;</p>
-                                <p><input type="radio" name="rating_15" value="2">&nbsp; Poor&nbsp;</p>
-                                <p><input type="radio" name="rating_15" value="3">&nbsp; Below-Average&nbsp;
-                                </p>
-                                <p><input type="radio" name="rating_15" value="4">&nbsp; Average&nbsp;</p>
-                                <p><input type="radio" name="rating_15" value="5">&nbsp; Good&nbsp;</p>
-                                <p><input type="radio" name="rating_15" value="6">&nbsp; Very-Good&nbsp;</p>
-                                <p><input type="radio" name="rating_15" value="7">&nbsp; Excellent&nbsp;</p>
-                            </span>
-                        </li>
-
-                        <br />
-
-                        <li>
-                            Fairness and feedback mechanism in the Internal Continuous Assessment (ICA):
-                            <br />
-                            <br />
-                            <span class="radio">
-                                <p><input type="radio" name="rating_16" value="1">&nbsp; Very-Poor&nbsp;</p>
-                                <p><input type="radio" name="rating_16" value="2">&nbsp; Poor&nbsp;</p>
-                                <p><input type="radio" name="rating_16" value="3">&nbsp; Below-Average&nbsp;
-                                </p>
-                                <p><input type="radio" name="rating_16" value="4">&nbsp; Average&nbsp;</p>
-                                <p><input type="radio" name="rating_16" value="5">&nbsp; Good&nbsp;</p>
-                                <p><input type="radio" name="rating_16" value="6">&nbsp; Very-Good&nbsp;</p>
-                                <p><input type="radio" name="rating_16" value="7">&nbsp; Excellent&nbsp;</p>
-                            </span>
-                        </li>
-
-                        <br />
-
-                        <li>
-                            Mentoring system:
-                            <br />
-                            <br />
-                            <span class="radio">
-                                <p><input type="radio" name="rating_17" value="1">&nbsp; Very-Poor&nbsp;</p>
-                                <p><input type="radio" name="rating_17" value="2">&nbsp; Poor&nbsp;</p>
-                                <p><input type="radio" name="rating_17" value="3">&nbsp; Below-Average&nbsp;
-                                </p>
-                                <p><input type="radio" name="rating_17" value="4">&nbsp; Average&nbsp;</p>
-                                <p><input type="radio" name="rating_17" value="5">&nbsp; Good&nbsp;</p>
-                                <p><input type="radio" name="rating_17" value="6">&nbsp; Very-Good&nbsp;</p>
-                                <p><input type="radio" name="rating_17" value="7">&nbsp; Excellent&nbsp;</p>
-                            </span>
-                        </li>
-                    </ol>
-                    <!-- all query  -->
-
-
-
-                    <br />
-                    <br />
-                    <input type="submit" id="sub" class="form__button font-mono" value="Submit" name="submit"
-                        style="float: right;" />
+                        <input type="submit" id="sub" class="form__button font-mono" value="Submit" name="submit"
+                            style="float: right;" />
+                    </div>
                 </fieldset>
             </form>
 
@@ -593,7 +595,7 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
             <br />
             <p style="padding:1rem">&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html"
                     target="_self" class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> | <a
-                    href="../../../personal.html" class="text-[blue] hover:underline ">Contact</a>
+                    href="../../../personal.html" class="text-[blue] hover:underline ">Contributors</a>
                 <br>
         </div>
     </div>

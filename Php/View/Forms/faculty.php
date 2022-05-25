@@ -200,447 +200,456 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
                     </div>
                     <br />
                     <br />
+                    <div id="full_form">
+                        <p><code class="text-lg" style="text-decoration: underline;line-height:1.5rem">Teaching ,Learning ,Evaluation & Result.
+                            </code></p>
+                        <br />
 
-                    <p><code class="text-lg" style="text-decoration: underline;line-height:1.5rem">Teaching ,Learning ,Evaluation & Result.
-                        </code></p>
-                    <br />
-                    <!-- selected opts -->
-                    <ol>
-                        <li>
-                            Wi-Fi facility provided in the college for online classes was effective. Please rate it in
-                            the
-                            form of percentage of the time it was effective:
+                        <!-- selected opts -->
+                        <ol>
+                            <li>
+                                Wi-Fi facility provided in the college for online classes was effective. Please rate it
+                                in
+                                the
+                                form of percentage of the time it was effective:
+                                <br />
+                                <span class="radio">
+                                    <p><input type="radio" name="rating1_1" value="3">&nbsp; 80% to 100%
+                                        effective&nbsp;</p>
+                                    <p><input type="radio" name="rating1_1" value="2">&nbsp; 60% to 80%
+                                        effective&nbsp;</p>
+                                    <p><input type="radio" name="rating1_1" value="1">&nbsp; 40% to 60%
+                                        effective&nbsp;</p>
+                                </span>
+                            </li>
+
                             <br />
-                            <span class="radio">
-                                <p><input type="radio" name="rating1_1" value="3">&nbsp; 80% to 100%
-                                    effective&nbsp;</p>
-                                <p><input type="radio" name="rating1_1" value="2">&nbsp; 60% to 80%
-                                    effective&nbsp;</p>
-                                <p><input type="radio" name="rating1_1" value="1">&nbsp; 40% to 60%
-                                    effective&nbsp;</p>
-                            </span>
-                        </li>
+
+                            <li>
+                                Communication regarding upcoming meetings/events in the context of teaching, learning
+                                and
+                                examination has been effective and timely:
+                                <br />
+                                <span class="radio">
+                                    <p><input type="radio" name="rating1_2" value="4">&nbsp;
+                                        Strongly-Agree&nbsp;</p>
+                                    <p><input type="radio" name="rating1_2" value="3">&nbsp; Agree&nbsp;</p>
+                                    <p><input type="radio" name="rating1_2" value="2">&nbsp; Disagree&nbsp;</p>
+                                    <p><input type="radio" name="rating1_2" value="1">&nbsp;
+                                        Strongly-Disagree&nbsp;</p>
+                                </span>
+                            </li>
+
+                            <br />
+
+                            <li>
+                                Faculty members are encouraged to update their knowledge and skills:
+                                <br />
+                                <span class="radio">
+                                    <p><input type="radio" name="rating1_3" value="4">&nbsp;
+                                        Strongly-Agree&nbsp;</p>
+                                    <p><input type="radio" name="rating1_3" value="3">&nbsp; Agree&nbsp;</p>
+                                    <p><input type="radio" name="rating1_3" value="2">&nbsp; Disagree&nbsp;</p>
+                                    <p><input type="radio" name="rating1_3" value="1">&nbsp;
+                                        Strongly-Disagree&nbsp;</p>
+                                </span>
+                            </li>
+
+                            <br />
+
+                            <li>
+                                Faculty members are encouraged to register for M.Phil., Ph.D. and Post-Doctoral
+                                Degree/Project:
+                                <br />
+                                <span class="radio">
+                                    <p><input type="radio" name="rating1_4" value="4">&nbsp;
+                                        Strongly-Agree&nbsp;</p>
+                                    <p> <input type="radio" name="rating1_4" value="3">&nbsp; Agree&nbsp;</p>
+                                    <p> <input type="radio" name="rating1_4" value="2">&nbsp; Disagree&nbsp;</p>
+                                    <p> <input type="radio" name="rating1_4" value="1">&nbsp;
+                                        Strongly-Disagree&nbsp;</p>
+                                </span>
+                            </li>
+
+                            <br />
+
+                            <li>
+                                Faculty members get duty leave to participate in seminars / workshops / symposia /
+                                conferences:
+                                <br />
+                                <span class="radio">
+                                    <p> <input type="radio" name="rating1_5" value="4">&nbsp;
+                                        Strongly-Agree&nbsp;</p>
+                                    <p> <input type="radio" name="rating1_5" value="3">&nbsp; Agree&nbsp;</p>
+                                    <p> <input type="radio" name="rating1_5" value="2">&nbsp; Disagree&nbsp;</p>
+                                    <p> <input type="radio" name="rating1_5" value="1">&nbsp;
+                                        Strongly-Disagree&nbsp;</p>
+                                </span>
+                            </li>
+
+                            <br />
+
+                            <li>
+                                Faculty members get reimbursement of registration fees when they participate in seminars
+                                /
+                                workshops / symposia / conferences:
+                                <br />
+                                <span class="radio">
+                                    <p> <input type="radio" name="rating1_6" value="4">&nbsp;
+                                        Strongly-Agree&nbsp;</p>
+                                    <p> <input type="radio" name="rating1_6" value="3">&nbsp; Agree&nbsp;</p>
+                                    <p> <input type="radio" name="rating1_6" value="2">&nbsp; Disagree&nbsp;</p>
+                                    <p> <input type="radio" name="rating1_6" value="1">&nbsp;
+                                        Strongly-Disagree&nbsp;</p>
+                                </span>
+                            </li>
+
+                            <br />
+
+                            <li>
+                                Faculty members are encouraged to organize seminars / workshops / symposia /
+                                conferences:
+                                <br />
+                                <span class="radio">
+                                    <p> <input type="radio" name="rating1_7" value="4">&nbsp;
+                                        Strongly-Agree&nbsp;</p>
+                                    <p> <input type="radio" name="rating1_7" value="3">&nbsp; Agree&nbsp;</p>
+                                    <p> <input type="radio" name="rating1_7" value="2">&nbsp; Disagree&nbsp;</p>
+                                    <p> <input type="radio" name="rating1_7" value="1">&nbsp;
+                                        Strongly-Disagree&nbsp;</p>
+                                </span>
+                            </li>
+
+                            <br />
+
+                            <li>
+                                Faculty members are encouraged to establish linkage with Industry:
+                                <br />
+                                <span class="radio">
+                                    <p> <input type="radio" name="rating1_8" value="4">&nbsp;
+                                        Strongly-Agree&nbsp;</p>
+                                    <p> <input type="radio" name="rating1_8" value="3">&nbsp; Agree&nbsp;</p>
+                                    <p> <input type="radio" name="rating1_8" value="2">&nbsp; Disagree&nbsp;</p>
+                                    <p> <input type="radio" name="rating1_8" value="1">&nbsp;
+                                        Strongly-Disagree&nbsp;</p>
+                                </span>
+                            </li>
+
+                        </ol>
 
                         <br />
 
-                        <li>
-                            Communication regarding upcoming meetings/events in the context of teaching, learning and
-                            examination has been effective and timely:
-                            <br />
-                            <span class="radio">
-                                <p><input type="radio" name="rating1_2" value="4">&nbsp;
-                                    Strongly-Agree&nbsp;</p>
-                                <p><input type="radio" name="rating1_2" value="3">&nbsp; Agree&nbsp;</p>
-                                <p><input type="radio" name="rating1_2" value="2">&nbsp; Disagree&nbsp;</p>
-                                <p><input type="radio" name="rating1_2" value="1">&nbsp;
-                                    Strongly-Disagree&nbsp;</p>
-                            </span>
-                        </li>
+                        <p><code class="text-lg" style="text-decoration: underline">Governance.
+                            </code></p>
 
                         <br />
 
-                        <li>
-                            Faculty members are encouraged to update their knowledge and skills:
+                        <ol>
+                            <li>
+                                The Management-Staff get-together is held every year:
+                                <br />
+                                <span class="radio">
+                                    <p> <input type="radio" name="rating2_1" value="4">&nbsp;
+                                        Strongly-Agree&nbsp;</p>
+                                    <p> <input type="radio" name="rating2_1" value="3">&nbsp; Agree&nbsp;</p>
+                                    <p> <input type="radio" name="rating2_1" value="2">&nbsp; Disagree&nbsp;</p>
+                                    <p> <input type="radio" name="rating2_1" value="1">&nbsp;
+                                        Strongly-Disagree&nbsp;</p>
+                                </span>
+                            </li>
+
                             <br />
-                            <span class="radio">
-                                <p><input type="radio" name="rating1_3" value="4">&nbsp;
-                                    Strongly-Agree&nbsp;</p>
-                                <p><input type="radio" name="rating1_3" value="3">&nbsp; Agree&nbsp;</p>
-                                <p><input type="radio" name="rating1_3" value="2">&nbsp; Disagree&nbsp;</p>
-                                <p><input type="radio" name="rating1_3" value="1">&nbsp;
-                                    Strongly-Disagree&nbsp;</p>
-                            </span>
-                        </li>
+
+                            <li>
+                                The management has provided updated infrastructure required for effective
+                                teaching-learning
+                                process:
+                                <br />
+                                <span class="radio">
+                                    <p> <input type="radio" name="rating2_2" value="4">&nbsp;
+                                        Strongly-Agree&nbsp;</p>
+                                    <p> <input type="radio" name="rating2_2" value="3">&nbsp; Agree&nbsp;</p>
+                                    <p> <input type="radio" name="rating2_2" value="2">&nbsp; Disagree&nbsp;</p>
+                                    <p> <input type="radio" name="rating2_2" value="1">&nbsp;
+                                        Strongly-Disagree&nbsp;</p>
+                                </span>
+                            </li>
+
+                            <br />
+
+                            <li>
+                                The remuneration/salary that you receive for your services to the college is
+                                satisfactory
+                                (Only
+                                for SFC/Ad-Hoc Staff):
+                                <br />
+                                <span class="radio">
+                                    <p> <input type="radio" name="rating2_3" value="4">&nbsp;
+                                        Strongly-Agree&nbsp;</p>
+                                    <p> <input type="radio" name="rating2_3" value="3">&nbsp; Agree&nbsp;</p>
+                                    <p> <input type="radio" name="rating2_3" value="2">&nbsp; Disagree&nbsp;</p>
+                                    <p> <input type="radio" name="rating2_3" value="1">&nbsp;
+                                        Strongly-Disagree&nbsp;</p>
+                                </span>
+                            </li>
+
+                            <br />
+
+                            <li>
+                                The Management acknowledges higher degrees/qualifications acquired by staff members with
+                                financial increments (Only for SFC/Ad-Hoc Staff):
+                                <br />
+                                <span class="radio">
+                                    <p> <input type="radio" name="rating2_4" value="4">&nbsp;
+                                        Strongly-Agree&nbsp;</p>
+                                    <p> <input type="radio" name="rating2_4" value="3">&nbsp; Agree&nbsp;</p>
+                                    <p> <input type="radio" name="rating2_4" value="2">&nbsp; Disagree&nbsp;</p>
+                                    <p> <input type="radio" name="rating2_4" value="1">&nbsp;
+                                        Strongly-Disagree&nbsp;</p>
+                                </span>
+                            </li>
+
+                            <br />
+
+                            <li>
+                                The Management acknowledges higher degrees/qualifications acquired by staff members with
+                                financial increments (Only for SFC/Ad-Hoc Staff):
+                                <br />
+                                <span class="radio">
+                                    <p> <input type="radio" name="rating2_5" value="4">&nbsp;
+                                        Strongly-Agree&nbsp;</p>
+                                    <p> <input type="radio" name="rating2_5" value="3">&nbsp; Agree&nbsp;</p>
+                                    <p> <input type="radio" name="rating2_5" value="2">&nbsp; Disagree&nbsp;</p>
+                                    <p> <input type="radio" name="rating2_5" value="1">&nbsp;
+                                        Strongly-Disagree&nbsp;</p>
+                                </span>
+                            </li>
+
+                            <br />
+
+                            <li>
+                                The registrar and other administrative staff of the college are accessible:
+                                <br />
+                                <span class="radio">
+                                    <p> <input type="radio" name="rating2_6" value="4">&nbsp;
+                                        Strongly-Agree&nbsp;</p>
+                                    <p> <input type="radio" name="rating2_6" value="3">&nbsp; Agree&nbsp;</p>
+                                    <p> <input type="radio" name="rating2_6" value="2">&nbsp; Disagree&nbsp;</p>
+                                    <p> <input type="radio" name="rating2_6" value="1">&nbsp;
+                                        Strongly-Disagree&nbsp;</p>
+                                </span>
+                            </li>
+
+                            <br />
+
+                            <li>
+                                The registrar and other administrative staff of the college address the issues and
+                                concerns
+                                related to administration effectively:
+                                <br />
+                                <span class="radio">
+                                    <p> <input type="radio" name="rating2_7" value="4">&nbsp;
+                                        Strongly-Agree&nbsp;</p>
+                                    <p> <input type="radio" name="rating2_7" value="3">&nbsp; Agree&nbsp;</p>
+                                    <p> <input type="radio" name="rating2_7" value="2">&nbsp; Disagree&nbsp;</p>
+                                    <p> <input type="radio" name="rating2_7" value="1">&nbsp;
+                                        Strongly-Disagree&nbsp;</p>
+                                </span>
+                            </li>
+
+                            <br />
+
+                            <li>
+                                The IQAC is effective in promoting quality initiatives in the college:
+                                <br />
+                                <span class="radio">
+                                    <p> <input type="radio" name="rating2_8" value="4">&nbsp;
+                                        Strongly-Agree&nbsp;</p>
+                                    <p> <input type="radio" name="rating2_8" value="3">&nbsp; Agree&nbsp;</p>
+                                    <p> <input type="radio" name="rating2_8" value="2">&nbsp; Disagree&nbsp;</p>
+                                    <p> <input type="radio" name="rating2_8" value="1">&nbsp;
+                                        Strongly-Disagree&nbsp;</p>
+                                </span>
+                            </li>
+
+                            <br />
+                        </ol>
 
                         <br />
 
-                        <li>
-                            Faculty members are encouraged to register for M.Phil., Ph.D. and Post-Doctoral
-                            Degree/Project:
+                        <p><code class="text-lg" style="text-decoration: underline">Infrastructure & Other Facilities.
+                            </code></p>
+
+                        <br />
+                        <ol>
+                            <li>
+                                The staffroom is clean and well maintained:
+                                <br />
+                                <span class="radio">
+                                    <p> <input type="radio" name="rating3_1" value="4">&nbsp;
+                                        Strongly-Agree&nbsp;</p>
+                                    <p> <input type="radio" name="rating3_1" value="3">&nbsp; Agree&nbsp;</p>
+                                    <p> <input type="radio" name="rating3_1" value="2">&nbsp; Disagree&nbsp;</p>
+                                    <p> <input type="radio" name="rating3_1" value="1">&nbsp;
+                                        Strongly-Disagree&nbsp;</p>
+                                </span>
+                            </li>
+
                             <br />
-                            <span class="radio">
-                                <p><input type="radio" name="rating1_4" value="4">&nbsp;
-                                    Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating1_4" value="3">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating1_4" value="2">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating1_4" value="1">&nbsp;
-                                    Strongly-Disagree&nbsp;</p>
-                            </span>
-                        </li>
+
+                            <li>
+                                Toilets and washrooms are clean and well maintained:
+                                <br />
+                                <span class="radio">
+                                    <p> <input type="radio" name="rating3" value="4">&nbsp;
+                                        Strongly-Agree&nbsp;</p>
+                                    <p> <input type="radio" name="rating3_2" value="3">&nbsp; Agree&nbsp;</p>
+                                    <p> <input type="radio" name="rating3_2" value="2">&nbsp; Disagree&nbsp;</p>
+                                    <p> <input type="radio" name="rating3_2" value="1">&nbsp;
+                                        Strongly-Disagree&nbsp;</p>
+                                </span>
+                            </li>
+
+                            <br />
+
+                            <li>
+                                Clean drinking water is available in the college:
+                                <br />
+                                <span class="radio">
+                                    <p> <input type="radio" name="rating3_3" value="4">&nbsp;
+                                        Strongly-Agree&nbsp;</p>
+                                    <p> <input type="radio" name="rating3_3" value="3">&nbsp; Agree&nbsp;</p>
+                                    <p> <input type="radio" name="rating3_3" value="2">&nbsp; Disagree&nbsp;</p>
+                                    <p> <input type="radio" name="rating3_3" value="1">&nbsp;
+                                        Strongly-Disagree&nbsp;</p>
+                                </span>
+                            </li>
+
+                            <br />
+
+                            <li>
+                                Food quality in the canteen is good:
+                                <br />
+                                <span class=" radio">
+                                    <p> <input type="radio" name="rating3_4" value="4">&nbsp;
+                                        Strongly-Agree&nbsp;</p>
+                                    <p> <input type="radio" name="rating3_4" value="3">&nbsp; Agree&nbsp;</p>
+                                    <p> <input type="radio" name="rating3_4" value="2">&nbsp; Disagree&nbsp;</p>
+                                    <p> <input type="radio" name="rating3_4" value="1">&nbsp;
+                                        Strongly-Disagree&nbsp;</p>
+                                </span>
+                            </li>
+
+                            <br />
+
+                            <li>
+                                The rates of the food items in the canteen are reasonable:
+                                <br />
+                                <span class="radio">
+                                    <p> <input type="radio" name="rating3_5" value="4">&nbsp;
+                                        Strongly-Agree&nbsp;</p>
+                                    <p> <input type="radio" name="rating3_5" value="3">&nbsp; Agree&nbsp;</p>
+                                    <p> <input type="radio" name="rating3_5" value="2">&nbsp; Disagree&nbsp;</p>
+                                    <p> <input type="radio" name="rating3_5" value="1">&nbsp;
+                                        Strongly-Disagree&nbsp;</p>
+                                </span>
+                            </li>
+
+                            <br />
+
+                            <li>
+                                Attitude of the canteen staff and service received was good:
+                                <br />
+                                <span class="radio">
+                                    <p> <input type="radio" name="rating3_6" value="4">&nbsp;
+                                        Strongly-Agree&nbsp;</p>
+                                    <p> <input type="radio" name="rating3_6" value="3">&nbsp; Agree&nbsp;</p>
+                                    <p> <input type="radio" name="rating3_6" value="2">&nbsp; Disagree&nbsp;</p>
+                                    <p> <input type="radio" name="rating3_6" value="1">&nbsp;
+                                        Strongly-Disagree&nbsp;</p>
+                                </span>
+                            </li>
+
+                            <br />
+
+                            <li>
+                                Attitude of the canteen staff and service received was good:
+                                <br />
+                                <span class="radio">
+                                    <p> <input type="radio" name="rating3_7" value="4">&nbsp;
+                                        Strongly-Agree&nbsp;</p>
+                                    <p> <input type="radio" name="rating3_7" value="3">&nbsp; Agree&nbsp;</p>
+                                    <p> <input type="radio" name="rating3_7" value="2">&nbsp; Disagree&nbsp;</p>
+                                    <p> <input type="radio" name="rating3_7" value="1">&nbsp;
+                                        Strongly-Disagree&nbsp;</p>
+                                </span>
+                            </li>
+
+                            <br />
+
+                            <li>
+                                Way of cataloguing and arrangement of books in the library is effective:
+                                <br />
+                                <span class="radio">
+                                    <p> <input type="radio" name="rating3_8" value="4">&nbsp;
+                                        Strongly-Agree&nbsp;</p>
+                                    <p> <input type="radio" name="rating3_8" value="3">&nbsp; Agree&nbsp;</p>
+                                    <p> <input type="radio" name="rating3_8" value="2">&nbsp; Disagree&nbsp;</p>
+                                    <p> <input type="radio" name="rating3_8" value="1">&nbsp;
+                                        Strongly-Disagree&nbsp;</p>
+                                </span>
+                            </li>
+
+                            <br />
+
+                            <li>
+                                Availability and accessibility of online educational resources in college on library
+                                facility is
+                                good:
+                                <br />
+                                <span class="radio">
+                                    <p> <input type="radio" name="rating3_9" value="4">&nbsp;
+                                        Strongly-Agree&nbsp;</p>
+                                    <p> <input type="radio" name="rating3_9" value="3">&nbsp; Agree&nbsp;</p>
+                                    <p> <input type="radio" name="rating3_9" value="2">&nbsp; Disagree&nbsp;</p>
+                                    <p> <input type="radio" name="rating3_9" value="1">&nbsp;
+                                        Strongly-Disagree&nbsp;</p>
+                                </span>
+                            </li>
+
+                            <br />
+                        </ol>
+
+
+                        <br />
+                        <p><code class="text-lg" style="text-decoration: underline">Others.
+                            </code></p>
 
                         <br />
 
-                        <li>
-                            Faculty members get duty leave to participate in seminars / workshops / symposia /
-                            conferences:
-                            <br />
-                            <span class="radio">
-                                <p> <input type="radio" name="rating1_5" value="4">&nbsp;
-                                    Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating1_5" value="3">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating1_5" value="2">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating1_5" value="1">&nbsp;
-                                    Strongly-Disagree&nbsp;</p>
-                            </span>
-                        </li>
+                        <p>Three things that you are proud of about the institute:</p>
+                        <br />
+                        <div class="form__div ">
+
+                            <input type="text" class="form__input" name="proud_inst" id="faculty_name"
+                                placeholder="e.g Misal Pav Price ka Bohot Hai." autocomplete="off" />
+                            <label for="" class="form__label">Opinions?</label>
+                        </div>
+
+                        <p>Suggestions for developmental areas of the institute :</p>
+                        <br />
+                        <div class="form__div ">
+
+                            <input type="text" class="form__input" name="devlopement" id="faculty_name"
+                                placeholder="e.g Chatri ke liye ek Stand" autocomplete="off" />
+                            <label for="" class="form__label">Opinions?</label>
+                        </div>
 
                         <br />
-
-                        <li>
-                            Faculty members get reimbursement of registration fees when they participate in seminars /
-                            workshops / symposia / conferences:
-                            <br />
-                            <span class="radio">
-                                <p> <input type="radio" name="rating1_6" value="4">&nbsp;
-                                    Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating1_6" value="3">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating1_6" value="2">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating1_6" value="1">&nbsp;
-                                    Strongly-Disagree&nbsp;</p>
-                            </span>
-                        </li>
-
                         <br />
-
-                        <li>
-                            Faculty members are encouraged to organize seminars / workshops / symposia / conferences:
-                            <br />
-                            <span class="radio">
-                                <p> <input type="radio" name="rating1_7" value="4">&nbsp;
-                                    Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating1_7" value="3">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating1_7" value="2">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating1_7" value="1">&nbsp;
-                                    Strongly-Disagree&nbsp;</p>
-                            </span>
-                        </li>
-
-                        <br />
-
-                        <li>
-                            Faculty members are encouraged to establish linkage with Industry:
-                            <br />
-                            <span class="radio">
-                                <p> <input type="radio" name="rating1_8" value="4">&nbsp;
-                                    Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating1_8" value="3">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating1_8" value="2">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating1_8" value="1">&nbsp;
-                                    Strongly-Disagree&nbsp;</p>
-                            </span>
-                        </li>
-
-                    </ol>
-
-                    <br />
-
-                    <p><code class="text-lg" style="text-decoration: underline">Governance.
-                        </code></p>
-
-                    <br />
-
-                    <ol>
-                        <li>
-                            The Management-Staff get-together is held every year:
-                            <br />
-                            <span class="radio">
-                                <p> <input type="radio" name="rating2_1" value="4">&nbsp;
-                                    Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_1" value="3">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_1" value="2">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_1" value="1">&nbsp;
-                                    Strongly-Disagree&nbsp;</p>
-                            </span>
-                        </li>
-
-                        <br />
-
-                        <li>
-                            The management has provided updated infrastructure required for effective teaching-learning
-                            process:
-                            <br />
-                            <span class="radio">
-                                <p> <input type="radio" name="rating2_2" value="4">&nbsp;
-                                    Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_2" value="3">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_2" value="2">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_2" value="1">&nbsp;
-                                    Strongly-Disagree&nbsp;</p>
-                            </span>
-                        </li>
-
-                        <br />
-
-                        <li>
-                            The remuneration/salary that you receive for your services to the college is satisfactory
-                            (Only
-                            for SFC/Ad-Hoc Staff):
-                            <br />
-                            <span class="radio">
-                                <p> <input type="radio" name="rating2_3" value="4">&nbsp;
-                                    Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_3" value="3">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_3" value="2">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_3" value="1">&nbsp;
-                                    Strongly-Disagree&nbsp;</p>
-                            </span>
-                        </li>
-
-                        <br />
-
-                        <li>
-                            The Management acknowledges higher degrees/qualifications acquired by staff members with
-                            financial increments (Only for SFC/Ad-Hoc Staff):
-                            <br />
-                            <span class="radio">
-                                <p> <input type="radio" name="rating2_4" value="4">&nbsp;
-                                    Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_4" value="3">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_4" value="2">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_4" value="1">&nbsp;
-                                    Strongly-Disagree&nbsp;</p>
-                            </span>
-                        </li>
-
-                        <br />
-
-                        <li>
-                            The Management acknowledges higher degrees/qualifications acquired by staff members with
-                            financial increments (Only for SFC/Ad-Hoc Staff):
-                            <br />
-                            <span class="radio">
-                                <p> <input type="radio" name="rating2_5" value="4">&nbsp;
-                                    Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_5" value="3">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_5" value="2">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_5" value="1">&nbsp;
-                                    Strongly-Disagree&nbsp;</p>
-                            </span>
-                        </li>
-
-                        <br />
-
-                        <li>
-                            The registrar and other administrative staff of the college are accessible:
-                            <br />
-                            <span class="radio">
-                                <p> <input type="radio" name="rating2_6" value="4">&nbsp;
-                                    Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_6" value="3">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_6" value="2">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_6" value="1">&nbsp;
-                                    Strongly-Disagree&nbsp;</p>
-                            </span>
-                        </li>
-
-                        <br />
-
-                        <li>
-                            The registrar and other administrative staff of the college address the issues and concerns
-                            related to administration effectively:
-                            <br />
-                            <span class="radio">
-                                <p> <input type="radio" name="rating2_7" value="4">&nbsp;
-                                    Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_7" value="3">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_7" value="2">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_7" value="1">&nbsp;
-                                    Strongly-Disagree&nbsp;</p>
-                            </span>
-                        </li>
-
-                        <br />
-
-                        <li>
-                            The IQAC is effective in promoting quality initiatives in the college:
-                            <br />
-                            <span class="radio">
-                                <p> <input type="radio" name="rating2_8" value="4">&nbsp;
-                                    Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_8" value="3">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_8" value="2">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating2_8" value="1">&nbsp;
-                                    Strongly-Disagree&nbsp;</p>
-                            </span>
-                        </li>
-
-                        <br />
-                    </ol>
-
-                    <br />
-
-                    <p><code class="text-lg" style="text-decoration: underline">Infrastructure & Other Facilities.
-                        </code></p>
-
-                    <br />
-                    <ol>
-                        <li>
-                            The staffroom is clean and well maintained:
-                            <br />
-                            <span class="radio">
-                                <p> <input type="radio" name="rating3_1" value="4">&nbsp;
-                                    Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_1" value="3">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_1" value="2">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_1" value="1">&nbsp;
-                                    Strongly-Disagree&nbsp;</p>
-                            </span>
-                        </li>
-
-                        <br />
-
-                        <li>
-                            Toilets and washrooms are clean and well maintained:
-                            <br />
-                            <span class="radio">
-                                <p> <input type="radio" name="rating3" value="4">&nbsp;
-                                    Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_2" value="3">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_2" value="2">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_2" value="1">&nbsp;
-                                    Strongly-Disagree&nbsp;</p>
-                            </span>
-                        </li>
-
-                        <br />
-
-                        <li>
-                            Clean drinking water is available in the college:
-                            <br />
-                            <span class="radio">
-                                <p> <input type="radio" name="rating3_3" value="4">&nbsp;
-                                    Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_3" value="3">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_3" value="2">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_3" value="1">&nbsp;
-                                    Strongly-Disagree&nbsp;</p>
-                            </span>
-                        </li>
-
-                        <br />
-
-                        <li>
-                            Food quality in the canteen is good:
-                            <br />
-                            <span class=" radio">
-                                <p> <input type="radio" name="rating3_4" value="4">&nbsp;
-                                    Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_4" value="3">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_4" value="2">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_4" value="1">&nbsp;
-                                    Strongly-Disagree&nbsp;</p>
-                            </span>
-                        </li>
-
-                        <br />
-
-                        <li>
-                            The rates of the food items in the canteen are reasonable:
-                            <br />
-                            <span class="radio">
-                                <p> <input type="radio" name="rating3_5" value="4">&nbsp;
-                                    Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_5" value="3">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_5" value="2">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_5" value="1">&nbsp;
-                                    Strongly-Disagree&nbsp;</p>
-                            </span>
-                        </li>
-
-                        <br />
-
-                        <li>
-                            Attitude of the canteen staff and service received was good:
-                            <br />
-                            <span class="radio">
-                                <p> <input type="radio" name="rating3_6" value="4">&nbsp;
-                                    Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_6" value="3">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_6" value="2">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_6" value="1">&nbsp;
-                                    Strongly-Disagree&nbsp;</p>
-                            </span>
-                        </li>
-
-                        <br />
-
-                        <li>
-                            Attitude of the canteen staff and service received was good:
-                            <br />
-                            <span class="radio">
-                                <p> <input type="radio" name="rating3_7" value="4">&nbsp;
-                                    Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_7" value="3">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_7" value="2">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_7" value="1">&nbsp;
-                                    Strongly-Disagree&nbsp;</p>
-                            </span>
-                        </li>
-
-                        <br />
-
-                        <li>
-                            Way of cataloguing and arrangement of books in the library is effective:
-                            <br />
-                            <span class="radio">
-                                <p> <input type="radio" name="rating3_8" value="4">&nbsp;
-                                    Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_8" value="3">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_8" value="2">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_8" value="1">&nbsp;
-                                    Strongly-Disagree&nbsp;</p>
-                            </span>
-                        </li>
-
-                        <br />
-
-                        <li>
-                            Availability and accessibility of online educational resources in college on library
-                            facility is
-                            good:
-                            <br />
-                            <span class="radio">
-                                <p> <input type="radio" name="rating3_9" value="4">&nbsp;
-                                    Strongly-Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_9" value="3">&nbsp; Agree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_9" value="2">&nbsp; Disagree&nbsp;</p>
-                                <p> <input type="radio" name="rating3_9" value="1">&nbsp;
-                                    Strongly-Disagree&nbsp;</p>
-                            </span>
-                        </li>
-
-                        <br />
-                    </ol>
-
-
-                    <br />
-                    <p><code class="text-lg" style="text-decoration: underline">Others.
-                        </code></p>
-
-                    <br />
-
-                    <p>Three things that you are proud of about the institute:</p>
-                    <br />
-                    <div class="form__div ">
-
-                        <input type="text" class="form__input" name="proud_inst" id="faculty_name"
-                            placeholder="e.g Misal Pav Price ka Bohot Hai." autocomplete="off" />
-                        <label for="" class="form__label">Opinions?</label>
+                        <input type="submit" id="sub" class="form__button font-mono" value="Submit" name="submit"
+                            style="float: right;" />
                     </div>
-
-                    <p>Suggestions for developmental areas of the institute :</p>
-                    <br />
-                    <div class="form__div ">
-
-                        <input type="text" class="form__input" name="devlopement" id="faculty_name"
-                            placeholder="e.g Chatri ke liye ek Stand" autocomplete="off" />
-                        <label for="" class="form__label">Opinions?</label>
-                    </div>
-
-                    <br />
-                    <br />
-                    <input type="submit" id="sub" class="form__button font-mono" value="Submit" name="submit"
-                        style="float: right;" />
                 </fieldset>
             </form>
             <br />
@@ -651,7 +660,7 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
             <br />
             <p style="padding:1rem">&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html"
                     target="_self" class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> | <a
-                    href="../../../personal.html" class="text-[blue] hover:underline ">Contact</a>
+                    href="../../../personal.html" class="text-[blue] hover:underline ">Contributors</a>
                 <br>
         </div>
     </div>

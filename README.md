@@ -92,11 +92,16 @@ Registration form using php
 - Scratch Css. `present in Css/style.css`
 
 # Preview & Feature
+![sss111](https://user-images.githubusercontent.com/67428572/170446860-39d0202f-7a9e-4649-b955-01ca37c02b1d.png)
+![sss2](https://user-images.githubusercontent.com/67428572/170446864-d377be48-e0bf-44d3-b48b-2436e36a91b9.png)
+![sss22](https://user-images.githubusercontent.com/67428572/170446868-fb9ddc1f-33bd-42bf-89f6-1d9ac1fa0fa5.png)
+![sss3](https://user-images.githubusercontent.com/67428572/170446871-890a1fc8-14c5-4700-8f38-454592e76099.png)
+![sss4](https://user-images.githubusercontent.com/67428572/170446876-1d5a6e98-b729-4315-93aa-803bb405b6d1.png)
+![sss444](https://user-images.githubusercontent.com/67428572/170446878-e0778382-0fae-46c6-90fc-8bb51d3fcda3.png)
+![sss1](https://user-images.githubusercontent.com/67428572/170446881-5d45912e-ff41-4d20-982b-0b6d02a160f9.png)
+![sss11](https://user-images.githubusercontent.com/67428572/170446885-8063d5db-35b8-43ed-9261-77ab220a7e00.png)
 
-![ss1](https://user-images.githubusercontent.com/67428572/169555222-80c5fcde-321d-44a0-a8a6-e8b4e19d0884.png)
-![sss2](https://user-images.githubusercontent.com/67428572/169555238-100507cf-e662-42bf-8919-67b1b8ad8a9c.png)
-![ss3](https://user-images.githubusercontent.com/67428572/169555750-b9bb19f4-f26d-4c9a-b01e-182fc08d3888.png)
-![ss4](https://user-images.githubusercontent.com/67428572/169555767-cb5f32b0-20e6-4102-a2a1-b07fc8bbc4ea.png)
+
 
  ![Demo Build](http://form123.epizy.com/)
 
@@ -149,14 +154,4 @@ SOFTWARE.
 
 ## Appendix
 
-Any additional information goes here
-
-## Color Reference
-
-| Color             | Hex                                                                |
-| ----------------- | ------------------------------------------------------------------ |
-| Black | ![#0a192f](https://via.placeholder.com/10/0a192f?text=+) #0a192f |
-| Cyan | ![#f8f8f8](https://via.placeholder.com/10/f8f8f8?text=+) #f8f8f8 |
-| Cyan | ![#00b48a](https://via.placeholder.com/10/00b48a?text=+) #00b48a |
-| Also Cyan| ![#00d1a0](https://via.placeholder.com/10/00b48a?text=+) #00d1a0 |
-
+https://www.youtube.com/

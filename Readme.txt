@@ -2,6 +2,8 @@ Instructions:
 
 1. Place the directory in the CPanel of server
 2. config database connection in Php/View/connect.php
+3. load kelkar_forms.sql in any Relaional database (#note: mysqli) 
+4. Done
 
 Scalable:
 
@@ -11,4 +13,5 @@ Scalable:
         echo "<option value =\"" . $row['subject2'] . "\">" .  $row['subject2']  . "</option>";
         echo "<option value =\"" . $row['subject3'] . "\">" .  $row['subject3']  . "</option>";"
         //add lines
+        
 in ajaxtemp.php for asynchronous calls

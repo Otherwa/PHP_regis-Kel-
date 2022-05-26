@@ -86,13 +86,6 @@ session_destroy();
             </div>
         </div>
         <br />
-        <div class=" footer-copyright">
-            <br />
-            <p>&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html" target="_blank"
-                    class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> | <a
-                    href="../../../personal.html" class="text-[blue] hover:underline " target="_blank">Contributors</a>
-                <br />
-        </div>
     </div>
 </body>
 <script src="../../../Js/main.js" type="text/javascript"></script>

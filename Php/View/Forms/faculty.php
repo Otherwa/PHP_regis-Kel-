@@ -171,7 +171,7 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
 
                     <div class="form__div ">
                         <input type="text" class="form__input" name="faculty_name" id="faculty_name"
-                            placeholder="e.g Your Faculty name FY,FY" autocomplete="off" />
+                            placeholder="e.g Your Faculty name SY-BVoc,TY-BSc-IT," autocomplete="off" />
                         <label for="" class="form__label">Faculty Name?</label>
                     </div>
 

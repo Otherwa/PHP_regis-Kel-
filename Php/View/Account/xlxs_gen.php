@@ -15,24 +15,24 @@ if (isset($_POST["export"])) {
                          <th>ctrlid</th>  
                          <th>cname</th>  
                          <th>tname</th>  
-                         <th>a11</th>  
-                         <th>a12</th>  
-                         <th>a13</th>  
-                         <th>a14</th>  
-                         <th>a15</th>  
-                         <th>a16</th>  
-                         <th>a17</th>  
-                         <th>a18</th>  
-                         <th>a19</th>  
-                         <th>a20</th>  
-                         <th>a21</th>  
-                         <th>a22</th>  
-                         <th>a23</th>  
-                         <th>a24</th>  
-                         <th>a25</th>  
-                         <th>a26</th>  
-                         <th>a27</th>  
-                         <th>a28</th>  
+                         <th>Positive and motivating attitude towards students.</th>  
+                         <th>Readiness to resolve students doubts and general availability / accessibility to students.Positive and motivating attitude towards students.</th>  
+                         <th>Worked hard to create a feeling of belongingness in a classroom without walls.</th>  
+                         <th>Command over the subject.</th>  
+                         <th>Skills in making the subject interesting.</th>  
+                         <th>Command over the medium of instruction(language) / communication skills</th>  
+                         <th>Clarity in approach / thinking.</th>  
+                         <th>Punctuality and regularity in taking lectures and practicals</th>  
+                         <th>Proficiency in handling online classroom platforms.</th>  
+                         <th>Time management skill \ skill of completing the syllabus with doubt solving sessions in time.</th>  
+                         <th>Use of case studies, illustration, current events, anecdotes in teaching.ommand over the subject.</th>  
+                         <th>Use of interactive teaching - seminars, tutorials, quizzes, assignments etc.</th>  
+                         <th>Command over the medium of instruction(language) / communication skills</th>  
+                         <th>Giving references for further reading.</th>  
+                         <th>Conducting evaluation by periodic tests / questions answer sessions or by designing quizzes / tests / assignments / examinations and projects to evaluate students.</th>  
+                         <th>Encouraging students to apply in real life whatever they have learnt in classrooms.</th>  
+                         <th>Counselling : Career / placement / personal.</th>  
+                         <th>Stimulating a sense of social responsibility.</th>  
                          <th>suggession</th>  
                          <th>division</th>  
                          <th>sem</th>  
@@ -70,7 +70,7 @@ if (isset($_POST["export"])) {
                          <td>' . $row["sem"] . '</td>  
                          <td>' . $row["subject"] . '</td>  
                          <td>' . $row["academic_year"] . '</td>    
-                         <td>' . $row["TIme"] . '</td>    
+                         <td>' . $row["Time"] . '</td>    
             </tr>
    ';
           }

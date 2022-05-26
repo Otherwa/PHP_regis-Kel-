@@ -89,7 +89,7 @@ session_destroy();
 
     /* inline nav */
     .overfolo::-webkit-scrollbar {
-        width: 3px;
+        width: 6px;
     }
 
     /* Track */

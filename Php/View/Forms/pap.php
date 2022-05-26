@@ -65,6 +65,7 @@ if (isset($_POST['submit'])) {
     }
 }
 
+// all fucntions
 // get all classes func
 function classes($con)
 {
@@ -215,14 +216,13 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                         </span>
                     </h1>
                     <div class="form__div">
-                        <input type="text" class="form__input" name="name" id="name" placeholder="e.g Atharv Desai"
+                        <input type="text" class="form__input" name="name" id="name" placeholder="Full Name"
                             autocomplete="off" />
                         <label for="" class="form__label">Name</label>
                     </div>
                     <div class="form__div">
-                        <input type="text" class="form__input" name="rollno" id="rollno"
-                            placeholder="e.g Use 2020080289 for verify_student" autocomplete="off"
-                            onInput="verify_stu()" />
+                        <input type="text" class="form__input" name="rollno" id="rollno" placeholder="e.g XXXXXXX289"
+                            autocomplete="off" onInput="verify_stu()" />
                         <label for="" class="form__label">Control Id</label>
                     </div>
                     <!-- feature req -->

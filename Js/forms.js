@@ -43,7 +43,7 @@ var x = setInterval(() => {
             document.getElementById('forms').style.display = "none";
             document.getElementById('clown_com').src = "https://i.pinimg.com/originals/a7/68/76/a76876b05cc5767ce6ce5c59abceb7e4.gif";
             document.getElementById('msg').style.display = "block";
-            if (days != 0) { document.getElementById('msg-p').innerHTML = "You Are About " + days + " days to Early"; } else if (hours != 0) { document.getElementById('msg-p').innerHTML = "You Are About " + hours + " hrs to Early"; } else if (minutes != 0) { document.getElementById('msg-p').innerHTML = "You Are About " + minutes + " min to Early"; } else if (seconds != 0) { document.getElementById('msg-p').innerHTML = "You Are About " + seconds + " sec to Early"; }
+            if (days != 0) { document.getElementById('msg-p').innerHTML = "You Are About " + days + " days too Early"; } else if (hours != 0) { document.getElementById('msg-p').innerHTML = "You Are About " + hours + " hrs to Early"; } else if (minutes != 0) { document.getElementById('msg-p').innerHTML = "You Are About " + minutes + " min to Early"; } else if (seconds != 0) { document.getElementById('msg-p').innerHTML = "You Are About " + seconds + " sec to Early"; }
             document.getElementById("msg-p").style.fontSize = "1.3rem";
             document.getElementById("msg-p").style.fontFamily = "monospace"
             document.getElementById("msg-p").style.line_height = "1.3rem";

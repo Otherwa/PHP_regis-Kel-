@@ -37,14 +37,17 @@ if (isset($_POST['submit'])) {
 
         // unideinfied post  get confirmation
         $confirm = mysqli_real_escape_string($con, $_POST['confirm']);
-        if ($confirm == ' ' || $confirm == 'no' || $name == ' ' || $age == ' ' || $gender == ' ' || $rollno == ' ' || $class == ' ' || $programme == ' ' || $division == ' ') { //
+        if ($confirm == ' ' || $confirm == 'no' || $name == ' ' || $age == ' ' || $gender == ' ' || $rollno == ' ' || $class == ' ' || $programme == ' ' || $division == ' ') {
+            if ($confirm == 'no') {
+                echo "<script>alert('Please Select Yes in The Form Field 🤓');</script>";
+            }
             echo "<script>alert('Kindly Check Your Form Once Again 🤓');</script>";
         } else {
             //ratings
             getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class, $programme, $division);
         }
     } else {
-        echo "<script>alert('Something Wrong with Your Form 1 🤓');</script>";
+        echo "<script>alert('Something Wrong with Your Form 🤓');</script>";
     }
 }
 
@@ -179,13 +182,13 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
                     <br />
 
                     <div class="form__div">
-                        <input type="text" class="form__input" name="name" id="name" placeholder="e.g xyz"
+                        <input type="text" class="form__input" name="name" id="name" placeholder="Full Name"
                             autocomplete="off" />
                         <label for="" class="form__label">Name?</label>
                     </div>
 
                     <div class="form__div">
-                        <input type="number" class="form__input" name="age" id="age" placeholder="e.g 19"
+                        <input type="number" class="form__input" name="age" id="age" placeholder="e.g 18"
                             autocomplete="off" />
                         <label for="" class="form__label">Age?</label>
                     </div>
@@ -203,9 +206,8 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
                     <br />
 
                     <div class="form__div">
-                        <input type="text" class="form__input" name="rollno" id="rollno"
-                            placeholder="e.g Use 2020080289 for verify_student" autocomplete="off"
-                            onInput="verify_stu()" />
+                        <input type="text" class="form__input" name="rollno" id="rollno" placeholder="e.g XXXXXXX289"
+                            autocomplete="off" onInput="verify_stu()" />
                         <label for="" class="form__label">Control Id</label>
                     </div>
                     <p id="notvalid_roll"></p>
@@ -269,7 +271,7 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
 
                     <!-- selected opts -->
                     <div id="msg_set" style="display:none">
-                        <ol class="form-ol" id="msg_set" style="display:none">
+                        <ol class="form-ol">
                             <li>
                                 Availability of extra-curricular activities in college:
                                 <br />

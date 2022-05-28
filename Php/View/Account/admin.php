@@ -2,6 +2,7 @@
 
 session_start();
 // php get user name using session variable or else redirect 
+
 if (!isset($_SESSION['name'])) {
     header('Location: adminlogin.php');
 }
@@ -14,11 +15,132 @@ function admin_chart($con)
 {
 
     // bar data
-    $sql_form_retrive = "SELECT count(*) as total FROM `answerpats`;";
+    $sql_form_retrive = "SELECT COUNT(*) AS total FROM `answerpats` WHERE `Time` LIKE '% 00:%';";
     $result = mysqli_query($con, $sql_form_retrive);
     $data = mysqli_fetch_assoc($result);
-    $data = $data['total'];
-    return $data;
+    $data1 = $data['total'];
+
+    $sql_form_retrive = "SELECT COUNT(*) AS total FROM `answerpats` WHERE `Time` LIKE '% 01:%';";
+    $result = mysqli_query($con, $sql_form_retrive);
+    $data = mysqli_fetch_assoc($result);
+    $data2 = $data['total'];
+
+    $sql_form_retrive = "SELECT COUNT(*) AS total FROM `answerpats` WHERE `Time` LIKE '% 02:%';";
+    $result = mysqli_query($con, $sql_form_retrive);
+    $data = mysqli_fetch_assoc($result);
+    $data3 = $data['total'];
+
+    $sql_form_retrive = "SELECT COUNT(*) AS total FROM `answerpats` WHERE `Time` LIKE '% 03:%';";
+    $result = mysqli_query($con, $sql_form_retrive);
+    $data = mysqli_fetch_assoc($result);
+    $data4 = $data['total'];
+
+    $sql_form_retrive = "SELECT COUNT(*) AS total FROM `answerpats` WHERE `Time` LIKE '% 04:%';";
+    $result = mysqli_query($con, $sql_form_retrive);
+    $data = mysqli_fetch_assoc($result);
+    $data5 = $data['total'];
+
+    $sql_form_retrive = "SELECT COUNT(*) AS total FROM `answerpats` WHERE `Time` LIKE '% 05:%';";
+    $result = mysqli_query($con, $sql_form_retrive);
+    $data = mysqli_fetch_assoc($result);
+    $data6 = $data['total'];
+
+    $sql_form_retrive = "SELECT COUNT(*) AS total FROM `answerpats` WHERE `Time` LIKE '% 06:%';";
+    $result = mysqli_query($con, $sql_form_retrive);
+    $data = mysqli_fetch_assoc($result);
+    $data7 = $data['total'];
+
+    $sql_form_retrive = "SELECT COUNT(*) AS total FROM `answerpats` WHERE `Time` LIKE '% 07:%';";
+    $result = mysqli_query($con, $sql_form_retrive);
+    $data = mysqli_fetch_assoc($result);
+    $data8 = $data['total'];
+
+    $sql_form_retrive = "SELECT COUNT(*) AS total FROM `answerpats` WHERE `Time` LIKE '% 08:%';";
+    $result = mysqli_query($con, $sql_form_retrive);
+    $data = mysqli_fetch_assoc($result);
+    $data9 = $data['total'];
+
+    $sql_form_retrive = "SELECT COUNT(*) AS total FROM `answerpats` WHERE `Time` LIKE '% 09:%';";
+    $result = mysqli_query($con, $sql_form_retrive);
+    $data = mysqli_fetch_assoc($result);
+    $data10 = $data['total'];
+
+    $sql_form_retrive = "SELECT COUNT(*) AS total FROM `answerpats` WHERE `Time` LIKE '% 10:%';";
+    $result = mysqli_query($con, $sql_form_retrive);
+    $data = mysqli_fetch_assoc($result);
+    $data11 = $data['total'];
+
+    $sql_form_retrive = "SELECT COUNT(*) AS total FROM `answerpats` WHERE `Time` LIKE '% 11:%';";
+    $result = mysqli_query($con, $sql_form_retrive);
+    $data = mysqli_fetch_assoc($result);
+    $data12 = $data['total'];
+
+    $sql_form_retrive = "SELECT COUNT(*) AS total FROM `answerpats` WHERE `Time` LIKE '% 12:%';";
+    $result = mysqli_query($con, $sql_form_retrive);
+    $data = mysqli_fetch_assoc($result);
+    $data13 = $data['total'];
+
+    $sql_form_retrive = "SELECT COUNT(*) AS total FROM `answerpats` WHERE `Time` LIKE '% 13:%';";
+    $result = mysqli_query($con, $sql_form_retrive);
+    $data = mysqli_fetch_assoc($result);
+    $data14 = $data['total'];
+
+    $sql_form_retrive = "SELECT COUNT(*) AS total FROM `answerpats` WHERE `Time` LIKE '% 14:%';";
+    $result = mysqli_query($con, $sql_form_retrive);
+    $data = mysqli_fetch_assoc($result);
+    $data15 = $data['total'];
+
+    $sql_form_retrive = "SELECT COUNT(*) AS total FROM `answerpats` WHERE `Time` LIKE '% 15:%';";
+    $result = mysqli_query($con, $sql_form_retrive);
+    $data = mysqli_fetch_assoc($result);
+    $data16 = $data['total'];
+
+    $sql_form_retrive = "SELECT COUNT(*) AS total FROM `answerpats` WHERE `Time` LIKE '% 16:%';";
+    $result = mysqli_query($con, $sql_form_retrive);
+    $data = mysqli_fetch_assoc($result);
+    $data17 = $data['total'];
+
+    $sql_form_retrive = "SELECT COUNT(*) AS total FROM `answerpats` WHERE `Time` LIKE '% 17:%';";
+    $result = mysqli_query($con, $sql_form_retrive);
+    $data = mysqli_fetch_assoc($result);
+    $data18 = $data['total'];
+
+    $sql_form_retrive = "SELECT COUNT(*) AS total FROM `answerpats` WHERE `Time` LIKE '% 18:%';";
+    $result = mysqli_query($con, $sql_form_retrive);
+    $data = mysqli_fetch_assoc($result);
+    $data19 = $data['total'];
+
+    $sql_form_retrive = "SELECT COUNT(*) AS total FROM `answerpats` WHERE `Time` LIKE '% 19:%';";
+    $result = mysqli_query($con, $sql_form_retrive);
+    $data = mysqli_fetch_assoc($result);
+    $data20 = $data['total'];
+
+    $sql_form_retrive = "SELECT COUNT(*) AS total FROM `answerpats` WHERE `Time` LIKE '% 20:%';";
+    $result = mysqli_query($con, $sql_form_retrive);
+    $data = mysqli_fetch_assoc($result);
+    $data21 = $data['total'];
+
+    $sql_form_retrive = "SELECT COUNT(*) AS total FROM `answerpats` WHERE `Time` LIKE '% 21:%';";
+    $result = mysqli_query($con, $sql_form_retrive);
+    $data = mysqli_fetch_assoc($result);
+    $data22 = $data['total'];
+
+    $sql_form_retrive = "SELECT COUNT(*) AS total FROM `answerpats` WHERE `Time` LIKE '% 22:%';";
+    $result = mysqli_query($con, $sql_form_retrive);
+    $data = mysqli_fetch_assoc($result);
+    $data23 = $data['total'];
+
+    $sql_form_retrive = "SELECT COUNT(*) AS total FROM `answerpats` WHERE `Time` LIKE '% 23:%';";
+    $result = mysqli_query($con, $sql_form_retrive);
+    $data = mysqli_fetch_assoc($result);
+    $data24 = $data['total'];
+
+    $sql_form_retrive = "SELECT COUNT(*) AS total FROM `answerpats` WHERE `Time` LIKE '% 24:%';";
+    $result = mysqli_query($con, $sql_form_retrive);
+    $data = mysqli_fetch_assoc($result);
+    $data25 = $data['total'];
+
+    return array($data1, $data2, $data3, $data4, $data5, $data6, $data7, $data8, $data9, $data10, $data11, $data12, $data13, $data14, $data15, $data16, $data17, $data18, $data19, $data20, $data21, $data22, $data23, $data24, $data25);
 }
 
 function list_disp($con)
@@ -39,7 +161,13 @@ function list_disp($con)
 
     echo '</table>';
 }
-
+function get_count($con)
+{
+    $query = "SELECT COUNT(*) AS `count` FROM `answerpats`;";
+    $result = mysqli_query($con, $query);
+    $result = mysqli_fetch_assoc($result);
+    return $result['count'];
+}
 //varaibe to store chart data
 $chartdata = admin_chart($con);
 
@@ -125,8 +253,8 @@ session_destroy();
         <!-- This requires Tailwind CSS v2.0+ -->
         <div class=" bg-[#ffffff] text-center p-3 m-2">
             <!-- <img src="https://c.tenor.com/iUBQduqPqH4AAAAM/badform-gymfail.gif" alt=""> -->
-            <p class="text-4xl myfont antialiased tracking-normal md:text-4xl overline leading-loose">Hey
-                <?php echo $name[0]; ?>
+            <p class="text-2xl antialiased tracking-normal md:text-3xl leading-loose" style="font-family: monospace;">
+                Count:<?php echo get_count($con); ?>
             </p>
             <br />
             <div style="text-align:right">
@@ -154,7 +282,7 @@ session_destroy();
             <br />
             <br />
 
-            <div class=" footer-copyright" style="bottom: -13rem;">
+            <div class="footer-copyright">
                 <br />
                 <p>&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html" target="_blank"
                         class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> | <a
@@ -164,16 +292,43 @@ session_destroy();
             </div>
             <br />
             <!-- form post method -->
+            <!-- download ans-pats list -->
             <form method="POST" action="xlxs_gen.php">
                 <input type="submit" name="export" title="download answerpats.xlxs"
                     class="font-mono text-center bg-[#006eff] p-3 m-1 hover:bg-slate-500 rounded transition-all duration-500"
                     value="answerpats" />
                 <br />
             </form>
+            <!-- more list not possible reason procastination -->
             <br />
         </div>
         <!-- php js bridge -->
-        <input id="data" type="hidden" value="<?php echo $chartdata ?>">
+        <input id="data1" type="hidden" value="<?php echo $chartdata[0] ?>">
+        <input id="data2" type="hidden" value="<?php echo $chartdata[1] ?>">
+        <input id="data3" type="hidden" value="<?php echo $chartdata[2] ?>">
+        <input id="data4" type="hidden" value="<?php echo $chartdata[3] ?>">
+        <input id="data5" type="hidden" value="<?php echo $chartdata[4] ?>">
+        <input id="data6" type="hidden" value="<?php echo $chartdata[5] ?>">
+        <input id="data7" type="hidden" value="<?php echo $chartdata[6] ?>">
+        <input id="data8" type="hidden" value="<?php echo $chartdata[7] ?>">
+        <input id="data9" type="hidden" value="<?php echo $chartdata[8] ?>">
+        <input id="data10" type="hidden" value="<?php echo $chartdata[9] ?>">
+        <input id="data11" type="hidden" value="<?php echo $chartdata[10] ?>">
+        <input id="data12" type="hidden" value="<?php echo $chartdata[11] ?>">
+        <input id="data13" type="hidden" value="<?php echo $chartdata[12] ?>">
+        <input id="data14" type="hidden" value="<?php echo $chartdata[13] ?>">
+        <input id="data15" type="hidden" value="<?php echo $chartdata[14] ?>">
+        <input id="data16" type="hidden" value="<?php echo $chartdata[15] ?>">
+        <input id="data17" type="hidden" value="<?php echo $chartdata[16] ?>">
+        <input id="data18" type="hidden" value="<?php echo $chartdata[17] ?>">
+        <input id="data19" type="hidden" value="<?php echo $chartdata[18] ?>">
+        <input id="data20" type="hidden" value="<?php echo $chartdata[19] ?>">
+        <input id="data21" type="hidden" value="<?php echo $chartdata[20] ?>">
+        <input id="data22" type="hidden" value="<?php echo $chartdata[21] ?>">
+        <input id="data23" type="hidden" value="<?php echo $chartdata[22] ?>">
+        <input id="data24" type="hidden" value="<?php echo $chartdata[23] ?>">
+        <input id="data25" type="hidden" value="<?php echo $chartdata[24] ?>">
+
         <script type="text/javascript" src="../../../Js/admin.js"></script>
     </div>
 </body>

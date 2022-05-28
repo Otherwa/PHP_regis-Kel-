@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 20, 2022 at 04:44 PM
+-- Generation Time: May 26, 2022 at 09:44 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -237,8 +237,15 @@ CREATE TABLE `answersss` (
   `a25` int(1) NOT NULL,
   `a26` int(1) NOT NULL,
   `a27` int(1) NOT NULL,
-  `time` timestamp NOT NULL DEFAULT current_timestamp()
+  `Time` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `answersss`
+--
+
+INSERT INTO `answersss` (`confirm`, `name`, `age`, `gender`, `rollno`, `class`, `programme`, `division`, `a11`, `a12`, `a13`, `a14`, `a15`, `a16`, `a17`, `a18`, `a19`, `a20`, `a21`, `a22`, `a23`, `a24`, `a25`, `a26`, `a27`, `Time`) VALUES
+('yes', 'Atharv Desai', 19, 'Male', '1234567890', 'MSc', 'BSc', 'A', 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, '2022-05-26 05:56:13');
 
 -- --------------------------------------------------------
 

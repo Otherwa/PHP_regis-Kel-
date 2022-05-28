@@ -136,7 +136,6 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
         $academic_year = $result['academic_year'];
 
         // start config each time of year
-
         // check if already
         // concat saftey
         $query = "SELECT * FROM `answerpats` WHERE ctrlid =\"" . $rollno . "\"" . " AND cname =\"" . $class . "\"" . " AND tname =\"" . $teacher . "\"" . " AND sem =\"" . $semester . "\"" . " AND subject =\"" . $paper . "\"" . " AND academic_year =\"" . $academic_year . "\";";

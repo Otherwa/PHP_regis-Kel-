@@ -1,0 +1,46 @@
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});
+
+var countDownDatestart = new Date("May 24, 2022 21:30:00").getTime();
+var countDownDateend = new Date("May 24, 2023 22:35:50").getTime();
+
+var x = setInterval(() => {
+        var now = new Date().getTime();
+        var timerem = countDownDateend - now;
+        var timeend = countDownDatestart - now;
+        var days = Math.floor(timeend / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((timeend % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((timeend % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((timeend % (1000 * 60)) / 1000);
+
+        if (now > countDownDatestart && now < countDownDateend) {
+            // within timelimit
+            document.getElementById('forms').style.display = "block";
+            document.getElementById('msg').style.display = "none";
+            document.getElementById("demo").innerHTML = "Select Any Form to Fill.";
+            document.getElementById("demo").style.fontSize = "1.3rem";
+            document.getElementById("demo").style.fontFamily = "monospace"
+            document.getElementById("demo").style.line_height = "1.6rem";
+        } else if (now > countDownDatestart && now > countDownDateend) {
+            document.getElementById('forms').style.display = "none";
+            document.getElementById('clown_com').src = "https://pa1.narvii.com/6771/ab4135057351e87e09676e559b5e76f1cad5c77e_hq.gif";
+            document.getElementById('msg').style.display = "block";
+            document.getElementById("msg-p").style.fontFamily = "monospace"
+            document.getElementById('msg-p').innerHTML = "Survey has Ended.";
+            document.getElementById("demo").innerHTML = "Oh no! The Time Allotted For Form Fillup Has Passed";
+            document.getElementById("demo").style.fontSize = "1.3rem";
+            document.getElementById("demo").style.fontFamily = "monospace"
+            document.getElementById("demo").style.line_height = "1.6rem";
+        } else {
+            document.getElementById('demo').style.display = "none";
+            document.getElementById('forms').style.display = "none";
+            document.getElementById('clown_com').src = "https://i.pinimg.com/originals/a7/68/76/a76876b05cc5767ce6ce5c59abceb7e4.gif";
+            document.getElementById('msg').style.display = "block";
+            if (days != 0) { document.getElementById('msg-p').innerHTML = "You Are About " + days + " days too Early"; } else if (hours != 0) { document.getElementById('msg-p').innerHTML = "You Are About " + hours + " hrs to Early"; } else if (minutes != 0) { document.getElementById('msg-p').innerHTML = "You Are About " + minutes + " min to Early"; } else if (seconds != 0) { document.getElementById('msg-p').innerHTML = "You Are About " + seconds + " sec to Early"; }
+            document.getElementById("msg-p").style.fontSize = "1.3rem";
+            document.getElementById("msg-p").style.fontFamily = "monospace"
+            document.getElementById("msg-p").style.line_height = "1.3rem";
+        }
+    },
+    1000);

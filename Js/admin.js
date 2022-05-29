@@ -28,6 +28,7 @@ let data22 = document.getElementById('data22').value;
 let data23 = document.getElementById('data23').value;
 let data24 = document.getElementById('data24').value;
 let data25 = document.getElementById('data25').value;
+let x = document.getElementById('count').value;
 
 const labels = [
     '00:00',
@@ -58,26 +59,80 @@ const labels = [
 ];
 const Data = [data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12, data13, data14, data15, data16, data17, data18, data19, data20, data21, data22, data23, data24, data25];
 
-Chart.defaults.font.size = 12;
+Chart.defaults.font.size = 13;
 Chart.defaults.font.family = "monospace";
 Chart.defaults.font.weight = "900";
+
+// doc https://www.chartjs.org/docs/latest/samples/animations/progressive-line.html
+
+const totalDuration = 2250;
+const delayBetweenPoints = totalDuration / Data.length;
+const previousY = (ctx) => ctx.index === 0 ? ctx.chart.scales.y.getPixelForValue(100) : ctx.chart.getDatasetMeta(ctx.datasetIndex).data[ctx.index - 1].getProps(['y'], true).y;
+const animation = {
+    x: {
+        type: 'number',
+        easing: 'linear',
+        duration: delayBetweenPoints,
+        from: NaN, // the point is initially skipped
+        delay(ctx) {
+            if (ctx.type !== 'data' || ctx.xStarted) {
+                return 0;
+            }
+            ctx.xStarted = true;
+            return ctx.index * delayBetweenPoints;
+        }
+    },
+    y: {
+        type: 'number',
+        easing: 'linear',
+        duration: delayBetweenPoints,
+        from: previousY,
+        delay(ctx) {
+            if (ctx.type !== 'data' || ctx.yStarted) {
+                return 0;
+            }
+            ctx.yStarted = true;
+            return ctx.index * delayBetweenPoints;
+        }
+    }
+};
+
 const myChart = new Chart(ctx, {
     type: 'line',
     data: {
         labels: labels,
         datasets: [{
-            label: 'People-registered',
+            label: 'Students-Forms Filled up',
             data: Data,
             borderColor: 'rgb(255, 99, 132)',
             fill: {
                 target: 'origin',
-                above: 'rgba(255, 99, 132, 0.2)', // Area will be red above the origin
+                above: 'rgba(255, 99, 132, 0.6)', // Area will be red above the origin
             }
-
         }]
     },
-
     options: {
+        animation,
+        elements: {
+            point: {
+                backgroundColor: 'rgb(255, 99, 132)',
+                hoverBackgroundColor: 'rgba(255, 99, 132, 0.5)',
+                radius: 6,
+                pointStyle: 'rect',
+                hoverRadius: 9,
+            }
+        },
+        plugins: {
+            title: {
+                display: true,
+                text: 'Students',
+            },
+            subtitle: {
+                display: true,
+                text: 'Till now ' + x,
+            },
+
+        },
         indexAxis: 'x',
         scales: {
             y: {
@@ -90,9 +145,6 @@ const myChart = new Chart(ctx, {
             y: {
                 min: 0,
             },
-            x: {
-                type: 'category',
-            }
         },
         animations: {
             tension: {
@@ -106,6 +158,7 @@ const myChart = new Chart(ctx, {
     },
 
 });
+
 
 
 // start  condition

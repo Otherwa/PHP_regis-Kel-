@@ -253,9 +253,7 @@ session_destroy();
         <!-- This requires Tailwind CSS v2.0+ -->
         <div class=" bg-[#ffffff] text-center p-3 m-2">
             <!-- <img src="https://c.tenor.com/iUBQduqPqH4AAAAM/badform-gymfail.gif" alt=""> -->
-            <p class="text-2xl antialiased tracking-normal md:text-3xl leading-loose" style="font-family: monospace;">
-                Count:<?php echo get_count($con); ?>
-            </p>
+            <input type="hidden" id="count" value="<?php echo get_count($con); ?>">
             <br />
             <div style="text-align:right">
                 <select onchange="Togglegraph_list(this.value)"
@@ -268,8 +266,8 @@ session_destroy();
             <p class="myfont" style="text-align:start">Forms :</p>
             <br />
             <!-- chart js -->
-            <canvas id="myChart" width="450" height="150"
-                style="background-color:#ebe6e0;border-radius: 0.5rem;padding:0rem 0.4rem 0rem 0.4rem"></canvas>
+            <canvas id="myChart"
+                style="border-radius: 0.5rem;padding:0rem 0.4rem 0rem 0.4rem;height:50vh; width:80vw"></canvas>
             <br />
             <br />
 

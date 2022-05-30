@@ -21,7 +21,7 @@ ul.sidenav li a {
 }
 
 ul.sidenav li a.active {
-    background-color: #006eff;
+    background-color: #1abc9c;
     color: white;
 }
 
@@ -54,6 +54,10 @@ div.content {
     div.content {
         margin-left: 0;
     }
+    .footer-copyright {
+        position: relative;
+        bottom: -28rem;
+    }
 }
 
 
@@ -64,5 +68,9 @@ div.content {
         text-align: center;
         float: none;
         padding: 16px 16px;
+    }
+    .footer-copyright {
+        position: relative;
+        bottom: -20rem;
     }
 }

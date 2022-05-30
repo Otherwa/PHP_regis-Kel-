@@ -267,7 +267,7 @@ session_destroy();
             <br />
             <!-- chart js -->
             <canvas id="myChart"
-                style="border-radius: 0.5rem;padding:0rem 0.4rem 0rem 0.4rem;height:50vh; width:80vw"></canvas>
+                style="padding:0rem 0.4rem 0rem 0.4rem;height:50vh; width:75vw;background-color:rgba(0,0,0,0.1)"></canvas>
             <br />
             <br />
 

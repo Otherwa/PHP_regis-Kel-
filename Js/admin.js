@@ -30,33 +30,15 @@ let data24 = document.getElementById('data24').value;
 let data25 = document.getElementById('data25').value;
 let x = document.getElementById('count').value;
 
-const labels = [
-    '00:00',
-    '01:00',
-    '02:00',
-    '03:00',
-    '04:00',
-    '05:00',
-    '06:00',
-    '07:00',
-    '08:00',
-    '09:00',
-    '10:00',
-    '11:00',
-    '12:00',
-    '13:00',
-    '14:00',
-    '15:00',
-    '16:00',
-    '17:00',
-    '18:00',
-    '19:00',
-    '20:00',
-    '21:00',
-    '22:00',
-    '23:00',
-    '24:00'
-];
+const labels = [];
+
+let i = 0;
+while (i < 25) {
+    data = '0' + i + ':00';
+    labels.push(data);
+    i++;
+}
+
 const Data = [data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12, data13, data14, data15, data16, data17, data18, data19, data20, data21, data22, data23, data24, data25];
 
 Chart.defaults.font.size = 13;
@@ -65,7 +47,7 @@ Chart.defaults.font.weight = "900";
 
 // doc https://www.chartjs.org/docs/latest/samples/animations/progressive-line.html
 
-const totalDuration = 2250;
+const totalDuration = 1750;
 const delayBetweenPoints = totalDuration / Data.length;
 const previousY = (ctx) => ctx.index === 0 ? ctx.chart.scales.y.getPixelForValue(100) : ctx.chart.getDatasetMeta(ctx.datasetIndex).data[ctx.index - 1].getProps(['y'], true).y;
 const animation = {
@@ -108,7 +90,7 @@ const myChart = new Chart(ctx, {
             fill: {
                 target: 'origin',
                 above: 'rgba(255, 99, 132, 0.6)', // Area will be red above the origin
-            }
+            },
         }]
     },
     options: {
@@ -118,8 +100,8 @@ const myChart = new Chart(ctx, {
                 backgroundColor: 'rgb(255, 99, 132)',
                 hoverBackgroundColor: 'rgba(255, 99, 132, 0.5)',
                 radius: 6,
-                pointStyle: 'rect',
-                hoverRadius: 9,
+                pointStyle: 'circ',
+                hoverRadius: 12,
             }
         },
         plugins: {
@@ -130,6 +112,9 @@ const myChart = new Chart(ctx, {
             subtitle: {
                 display: true,
                 text: 'Till now ' + x,
+                padding: {
+                    bottom: 10,
+                }
             },
 
         },

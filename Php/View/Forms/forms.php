@@ -67,8 +67,8 @@ if (isset($_POST['FFForm'])) {
         transition: 300ms;
         box-shadow: 0.5rem 0.5rem rgba(0, 0, 0);
         position: relative;
-        transform: translate(-0.25rem, -0.25rem);
-        box-shadow: 0.25rem 0.25rem #000;
+        transform: translate(-0.5rem, -0.5rem);
+        box-shadow: 0.5rem 0.5rem #000;
     }
 
     @media screen and (max-width: 460px) {
@@ -122,7 +122,7 @@ if (isset($_POST['FFForm'])) {
         <div id="msg" class="msg text-xl text-center" style="display:none">
             <br />
             <img src="https://github.githubassets.com/images/mona-loading-dark.gif" alt="octo"
-                style="min-height:2rem;width:auto;max-height:6rem;display:inline-block;">
+                style="min-height:2rem;width:80%;max-height:6rem;display:inline-block;">
             <br />
             <br />
             <p id="msg-p" style="padding:1rem">
@@ -134,6 +134,8 @@ if (isset($_POST['FFForm'])) {
                 style="text-align:center;box-shadow:4px 5px 2.5rem #cacaca;display:inline-block;border-radius:0.4rem;width:55rem;height:auto" />
         </div>
         <div class="footer-copyright text-center" style="padding:1rem">
+            <img src="https://cdn.dribbble.com/users/2972698/screenshots/6550218/digitalpal_academy_pc_shot-dribbble.gif"
+                alt="pc" style="width: 60%;height:auto;display: inline-block;position:relative;">
             <br />
             <p>&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html" target="_self"
                     class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> | <a

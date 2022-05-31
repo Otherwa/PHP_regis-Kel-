@@ -3,6 +3,7 @@ document.addEventListener('contextmenu', function(e) {
 });
 
 const ctx = document.getElementById('myChart').getContext('2d');
+
 let data1 = document.getElementById('data1').value;
 let data2 = document.getElementById('data2').value;
 let data3 = document.getElementById('data3').value;

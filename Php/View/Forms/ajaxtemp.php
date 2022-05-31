@@ -56,7 +56,7 @@ if (isset($_POST['rollno'])) {
         echo "<script>$('#sub').attr('disabled',false);</script>";
         // js hidden value to ol display:none
     } else {
-        echo "<span style='color:red;font-family:monospace;font-weight:bold;'>Invalid Id ❌</span>";
+        echo "<span id=\"msg_\"style='color:red;font-family:monospace;font-weight:bold;'>Invalid Id ❌</span>";
         echo "<input id =\"msg\" value = \"none\" style=\"display:none;\">";
         echo "<script>$('#sub').attr('disabled',true);</script>";
     }

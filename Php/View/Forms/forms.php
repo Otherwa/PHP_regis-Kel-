@@ -57,14 +57,18 @@ if (isset($_POST['FFForm'])) {
         text-align: center;
         width: 25rem;
         height: 10rem;
-        box-shadow: 5px 5px 5px rgba(0, 0, 0, );
+        box-shadow: 5px 5px 5px rgb(0, 0, 0);
         transition: 300ms;
-        box-shadow: 0.5rem 0.5rem rgba(0, 0, 0);
+        border: solid 1.5px black;
+        box-shadow: 0rem 0rem rgba(0, 0, 0);
     }
 
     .but:hover {
         transition: 300ms;
-        box-shadow: 2.5px 2.5px rgba(0, 0, 0);
+        box-shadow: 0.5rem 0.5rem rgba(0, 0, 0);
+        position: relative;
+        transform: translate(-0.25rem, -0.25rem);
+        box-shadow: 0.25rem 0.25rem #000;
     }
 
     @media screen and (max-width: 460px) {

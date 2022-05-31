@@ -79,6 +79,8 @@
     color: var(--input-color);
     font-size: var(--normal-font-size);
     transition: .3s;
+    font-family: 'Maven Pro', sans-serif;
+    font-weight: bold;
     z-index: 0;
 }
 

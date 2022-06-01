@@ -194,6 +194,10 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
     .myfont {
         font-family: "Bungee", cursive;
     }
+
+    p {
+        font-family: monospace;
+    }
     </style>
 </head>
 

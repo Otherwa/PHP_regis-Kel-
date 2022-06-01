@@ -132,6 +132,10 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
     input[type="number"] {
         -moz-appearance: textfield;
     }
+
+    p {
+        font-family: monospace;
+    }
     </style>
 </head>
 

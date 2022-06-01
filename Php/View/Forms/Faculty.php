@@ -131,6 +131,10 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
     input[type="number"] {
         -moz-appearance: textfield;
     }
+
+    p {
+        font-family: monospace;
+    }
     </style>
 </head>
 

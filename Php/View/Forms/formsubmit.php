@@ -6,6 +6,7 @@ session_start();
 if (!isset($_SESSION['name'])) {
     header('Location: forms.php');
 }
+
 $firstname = explode(" ", $_SESSION['name']);
 session_destroy();
 ?>
@@ -86,6 +87,11 @@ session_destroy();
             </div>
         </div>
         <br />
+        <br />
+        <br>
+        <img src="https://assets.website-files.com/5e51c674258ffe10d286d30a/5e5354e49588e03c817d03a4_peep-33.svg"
+            alt="pep" style="height:auto;width:22rem;display:inline-block;">
+        <code>(Visible Disapointment..)</code>
     </div>
 </body>
 <script src="../../../Js/main.js" type="text/javascript"></script>

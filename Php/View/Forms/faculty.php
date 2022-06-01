@@ -131,6 +131,10 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
     input[type="number"] {
         -moz-appearance: textfield;
     }
+
+    p {
+        font-family: monospace;
+    }
     </style>
 </head>
 
@@ -144,9 +148,9 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
         <div class="l-form p-0 ">
             <form action="#" method="POST" id="subcard" class="form">
                 <fieldset>
-                    <code id="times" style="color: green;"></code>
-                    <legend>Fill up</legend>
-
+                    <legend>
+                        <h1 class="font-mono antialiased text-lg">Fill up</h1>
+                    </legend>
                     <h1 class=" form__title"
                         style="font-family: 'Bungee', cursive; font-size: 2.2rem; color: rgb(119, 195, 196);">
                         <span style="text-decoration:underline">Faculty Feedback Form</span><br />

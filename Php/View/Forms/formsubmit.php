@@ -88,13 +88,17 @@ session_destroy();
         </div>
         <br />
         <br />
+        <br />
+        <br />
+        <br />
+        <code>(<code id="meme2"></code>)</code>
         <br>
-        <img src="https://assets.website-files.com/5e51c674258ffe10d286d30a/5e5354e49588e03c817d03a4_peep-33.svg"
-            alt="pep" style="height:auto;width:22rem;display:inline-block;">
-        <code>(Visible Disapointment..)</code>
+        <img id="meme1" src="" alt="pep" style="height:auto;width:15rem;display:inline-block;">
+        <br />
     </div>
 </body>
 <script src="../../../Js/main.js" type="text/javascript"></script>
+<script src="../../../Js/formsub.js" type="text/javascript"></script>
 <script async type="text/javascript"
     src="https://api.countapi.xyz/hit/KelkarForms.com/415a7523-bb25-4d45-a700-33a48a168a6c/?callback=counter"></script>
 

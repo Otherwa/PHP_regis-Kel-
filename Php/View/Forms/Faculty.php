@@ -658,7 +658,7 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
         </div>
         <div class="footer-copyright text-center">
             <br />
-            <p style="padding:0.5rem">&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html"
+            <p style="padding:1rem">&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html"
                     target="_self" class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> | <a
                     href="../../../personal.html" class="text-[blue] hover:underline ">Contributors</a>
                 <br>

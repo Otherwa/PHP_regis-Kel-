@@ -33,9 +33,9 @@ let x = document.getElementById('count').value;
 
 const labels = [];
 
-let i = 0;
+let i = 00;
 while (i < 25) {
-    data = '0' + i + ':00';
+    let data = i + ':00';
     labels.push(data);
     i++;
 }

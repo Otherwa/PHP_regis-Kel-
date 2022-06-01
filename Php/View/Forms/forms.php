@@ -126,16 +126,17 @@ if (isset($_POST['FFForm'])) {
             <br />
             <br />
             <p id="msg-p" style="padding:1rem">
-
                 Forms are not allowed to fill furthermore.
             </p>
             <br />
-            <img src="" alt="Scott" id="clown_com"
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Solid_white.svg/768px-Solid_white.svg.png"
+                alt="Scott" id="clown_com"
                 style="text-align:center;box-shadow:4px 5px 2.5rem #cacaca;display:inline-block;border-radius:0.4rem;width:55rem;height:auto" />
         </div>
         <div class="footer-copyright text-center" style="padding:1rem">
-            <img src="https://cdn.dribbble.com/users/2972698/screenshots/6550218/digitalpal_academy_pc_shot-dribbble.gif"
-                alt="pc" style="width: 60%;height:auto;display: inline-block;position:relative;">
+            <img id="foot" alt="pc"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Solid_white.svg/768px-Solid_white.svg.png"
+                style="width: 60%;height:auto;display: inline-block;position:relative;">
             <br />
             <p>&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html" target="_self"
                     class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> | <a

@@ -144,9 +144,9 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
         <div class="l-form p-0 ">
             <form action="#" method="POST" id="subcard" class="form">
                 <fieldset>
-                    <code id="times" style="color: green;"></code>
-                    <legend>Fill up</legend>
-
+                    <legend>
+                        <h1 class="font-mono antialiased text-lg">Fill up</h1>
+                    </legend>
                     <h1 class=" form__title"
                         style="font-family: 'Bungee', cursive; font-size: 2.2rem; color: rgb(119, 195, 196);">
                         <span style="text-decoration:underline">Faculty Feedback Form</span><br />
@@ -658,7 +658,7 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
         </div>
         <div class="footer-copyright text-center">
             <br />
-            <p style="padding:1rem">&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html"
+            <p style="padding:0.5rem">&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html"
                     target="_self" class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> | <a
                     href="../../../personal.html" class="text-[blue] hover:underline ">Contributors</a>
                 <br>

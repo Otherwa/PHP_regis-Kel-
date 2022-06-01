@@ -190,6 +190,11 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
     <meta http-equiv='cache-control' content='no-cache'>
     <meta http-equiv='expires' content='0'>
     <meta http-equiv='pragma' content='no-cache'>
+    <style>
+    .myfont {
+        font-family: "Bungee", cursive;
+    }
+    </style>
 </head>
 
 <body class="p-0 m-0">
@@ -204,10 +209,10 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
         <div class="l-form">
             <form method="POST" id="subcard" class="form">
                 <fieldset>
-                    <code id="times" style="color: green;"></code>
-                    <legend>Fill up</legend>
-                    <h1 class="form__title"
-                        style="font-family: 'Bungee', cursive; font-size: 2.2rem; color: rgb(119, 195, 196);">
+                    <legend>
+                        <h1 class="font-mono antialiased text-lg">Fill up</h1>
+                    </legend>
+                    <h1 class="form__title myfont" style=" font-size: 2.2rem; color: rgb(119, 195, 196);">
                         <span style="text-decoration: underline;">PAT's Question</span><br />
                         <span style="font-size: 1.4rem; font-family: 'Roboto', sans-serif; color: black;">
                             <img src="https://github.githubassets.com/images/mona-loading-dark.gif" alt="octo"
@@ -276,6 +281,14 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                         </select>
                     </div>
                     <br />
+                    <p class="text-lg hover:underline"><code>Instructions to fill the questionnaire</code></p>
+                    <br />
+                    <ul id="inst">
+                        <li>All questions should be
+                            compulsorily attempted.</li>
+                        <li>Each question has seven responses,
+                            choose the most appropriate one.</li>
+                    </ul>
                     <!-- selected opts -->
                     <div id="msg_set" style="display:none">
                         <!-- if msg displaynone -->
@@ -743,7 +756,7 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
         <br />
         <div class="footer-copyright text-center">
             <br />
-            <p style="padding: 1rem;">
+            <p style="padding: 0.5rem;">
                 &copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html" target="_self"
                     class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> |
                 <a href="../../../personal.html" class="text-[blue] hover:underline">Contributors</a>

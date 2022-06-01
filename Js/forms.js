@@ -23,9 +23,10 @@ var x = setInterval(() => {
             document.getElementById('forms').style.display = "block";
             document.getElementById('msg').style.display = "none";
             document.getElementById("demo").innerHTML = "Select Any Form to Fill.";
-            document.getElementById("demo").style.fontSize = "1.3rem";
+            document.getElementById("demo").style.fontSize = "1.6rem";
             document.getElementById("demo").style.fontFamily = "monospace"
             document.getElementById("demo").style.line_height = "1.6rem";
+            document.getElementById("foot").src = "https://cdn.dribbble.com/users/2972698/screenshots/6550218/digitalpal_academy_pc_shot-dribbble.gif";
         } else if (now > countDownDatestart && now > countDownDateend) {
             // timelimit above
             document.getElementById('forms').style.display = "none";

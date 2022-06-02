@@ -77,6 +77,13 @@ if (isset($_POST['FFForm'])) {
             height: 7rem;
         }
     }
+
+    .octo {
+        max-height: 6rem;
+        display: inline-block;
+        width: auto;
+
+    }
     </style>
 </head>
 
@@ -90,7 +97,7 @@ if (isset($_POST['FFForm'])) {
         <br />
         <br />
         <p class="text-center" style="display:inline-block"><code id="demo" style="padding:0.5rem"
-                class="hover:underline"> <img src="https://github.githubassets.com/images/mona-loading-dark.gif" alt="octo" style="max-height:6rem;display: inline-block;"></code>
+                class="hover:underline"> <img class="octo" src="https://github.githubassets.com/images/mona-loading-dark.gif" alt="octo"></code>
         </p>
         <br />
         <br />
@@ -121,7 +128,7 @@ if (isset($_POST['FFForm'])) {
         <div id="msg" class="msg text-xl text-center" style="display:none">
             <br />
             <img src="https://github.githubassets.com/images/mona-loading-dark.gif" alt="octo"
-                style="min-height:2rem;width:80%;max-height:6rem;display:inline-block;">
+                style="max-height:6rem;display:inline-block;">
             <br />
             <br />
             <p id="msg-p" style="padding:1rem">

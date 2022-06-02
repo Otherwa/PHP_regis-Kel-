@@ -26,7 +26,8 @@ var x = setInterval(() => {
             document.getElementById("demo").style.fontSize = "1.6rem";
             document.getElementById("demo").style.fontFamily = "monospace"
             document.getElementById("demo").style.line_height = "1.6rem";
-            document.getElementById("foot").src = "https://cdn.dribbble.com/users/2972698/screenshots/6550218/digitalpal_academy_pc_shot-dribbble.gif";
+            document.getElementById("demo").style.fontWeight = "200";
+            document.getElementById("foot").src = "https://bang-phinf.pstatic.net/a/32ehga/0_8g9Ud018bng1q157yzwrfmle_wzcvar.gif";
         } else if (now > countDownDatestart && now > countDownDateend) {
             // timelimit above
             document.getElementById('forms').style.display = "none";

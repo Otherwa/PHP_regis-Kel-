@@ -59,7 +59,7 @@ if (isset($_POST['FFForm'])) {
         height: 10rem;
         box-shadow: 5px 5px 5px rgb(0, 0, 0);
         transition: 300ms;
-        border: solid 1.5px black;
+        border: solid 0.1rem black;
         box-shadow: 0rem 0rem rgba(0, 0, 0);
     }
 
@@ -89,8 +89,8 @@ if (isset($_POST['FFForm'])) {
     <div class="bg-[#ffffff] text-center m-2 content">
         <br />
         <br />
-        <p class="text-center" style="display:inline-block"><code id="demo"
-                style="padding:0.5rem;font-size:1.3rem;font-family:monospace;font-weight:bold"> <img src="https://github.githubassets.com/images/mona-loading-dark.gif" alt="octo" style="min-height:2rem;width:auto;max-height:6rem;"></code>
+        <p class="text-center" style="display:inline-block"><code id="demo" style="padding:0.5rem"
+                class="hover:underline"> <img src="https://github.githubassets.com/images/mona-loading-dark.gif" alt="octo" style="max-height:6rem;display: inline-block;"></code>
         </p>
         <br />
         <br />
@@ -116,7 +116,6 @@ if (isset($_POST['FFForm'])) {
                 </button>
                 <br />
                 <br />
-                <br />
             </form>
         </div>
         <div id="msg" class="msg text-xl text-center" style="display:none">
@@ -136,7 +135,7 @@ if (isset($_POST['FFForm'])) {
         <div class="footer-copyright text-center" style="padding:1rem">
             <img id="foot" alt="pc"
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Solid_white.svg/768px-Solid_white.svg.png"
-                style="width: 60%;height:auto;display: inline-block;position:relative;">
+                style="max-width: 34vh;min-width: 24vh;height:auto;display: inline-block;position:relative;">
             <br />
             <p>&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html" target="_self"
                     class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> | <a

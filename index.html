@@ -82,12 +82,11 @@
             </p>
         </div>
         <br />
-        <p id="x"></p>
-        <p id="y"></p>
     </div>
     <script src="Js/main.js" type="text/javascript"></script>
     <script async type="text/javascript" src="https://api.countapi.xyz/hit/KelkarForms.com/415a7523-bb25-4d45-a700-33a48a168a6c/?callback=counter"></script>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
     <script type="text/javascript">
         var x, y;
 
@@ -104,8 +103,7 @@
         function shwpos(position) {
             x = position.coords.latitude;
             y = position.coords.longitude;
-            document.getElementById('x').innerHTML = x;
-            document.getElementById('y').innerHTML = y;
+            console.log(x, y);
         }
         getLoc();
         console.log(navigator);

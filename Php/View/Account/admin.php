@@ -526,14 +526,14 @@ session_destroy();
             <br />
             <!-- chart js -->
             <canvas id="myChart"
-                style="padding:0rem 0.4rem 0rem 0.4rem;height:50vh; width:75vw;background-color:rgba(0,0,0,0.1)"></canvas>
+                style="padding:0rem 0.4rem 0rem 0.4rem;height:40vh; width:75vw;background-color:rgba(0,0,0,0.1)"></canvas>
             <br />
             <br />
             <p class="myfont" style="text-align:start">Student Forms :</p>
             <br />
             <!-- chart js -->
             <canvas id="myChart1"
-                style="padding:0rem 0.4rem 0rem 0.4rem;height:50vh; width:75vw;background-color:rgba(0,0,0,0.1)"></canvas>
+                style="padding:0rem 0.4rem 0rem 0.4rem;height:40vh; width:75vw;background-color:rgba(0,0,0,0.1)"></canvas>
 
             <br />
             <br />
@@ -541,7 +541,7 @@ session_destroy();
             <br />
             <!-- chart js -->
             <canvas id="myChart2"
-                style="padding:0rem 0.4rem 0rem 0.4rem;height:50vh; width:75vw;background-color:rgba(0,0,0,0.1)"></canvas>
+                style="padding:0rem 0.4rem 0rem 0.4rem;height:40vh; width:75vw;background-color:rgba(0,0,0,0.1)"></canvas>
 
             <br />
             <br />

@@ -70,7 +70,7 @@ Registration form using php
        |- style.css
 ```
 
-# Instructions
+# Overview
 
 - `*/` consists of all basic static pages needed to render , the `index.html` redirects to `Php\View\Forms\formto.php`.
 - `Php\View\Forms\formto.php` uses sql connect to fill respective data to Mysql backend
@@ -85,6 +85,21 @@ Registration form using php
 
 ##### Schema
 ![1213](https://user-images.githubusercontent.com/67428572/169552870-e5ff8c4f-b770-4b39-9b5d-b7e381f1977a.png)
+
+# Instructions:
+
+1. Place the directory in the CPanel of server
+2. config database connection in Php/View/connect.php
+
+Scalable:
+
+1.in teacher subject increases config echo 
+        "<option value =\"" . " " . "\">" . "--" . "</option>";
+        echo "<option value =\"" . $row['subject1'] . "\">" .  $row['subject1']  . "</option>";
+        echo "<option value =\"" . $row['subject2'] . "\">" .  $row['subject2']  . "</option>";
+        echo "<option value =\"" . $row['subject3'] . "\">" .  $row['subject3']  . "</option>";"
+        //add lines
+in ajaxtemp.php for asynchronous calls
 
 ## styling
 

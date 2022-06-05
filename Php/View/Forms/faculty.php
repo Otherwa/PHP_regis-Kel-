@@ -505,7 +505,7 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
                                 Toilets and washrooms are clean and well maintained:
                                 <br />
                                 <span class="radio">
-                                    <p> <input type="radio" name="rating3" value="4">&nbsp;
+                                    <p> <input type="radio" name="rating3_2" value="4">&nbsp;
                                         Strongly-Agree&nbsp;</p>
                                     <p> <input type="radio" name="rating3_2" value="3">&nbsp; Agree&nbsp;</p>
                                     <p> <input type="radio" name="rating3_2" value="2">&nbsp; Disagree&nbsp;</p>

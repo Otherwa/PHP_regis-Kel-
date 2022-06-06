@@ -127,3 +127,15 @@
      a {
          font-size: 0.9rem;
      }
+     
+     .wea {
+         position: relative;
+         bottom: -34rem;
+         padding: 1rem;
+         border: #000 1px solid;
+         display: inline-block;
+     }
+     
+     .wea>p {
+         padding: 0.2rem;
+     }

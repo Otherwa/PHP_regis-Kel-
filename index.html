@@ -75,6 +75,24 @@
                     Proceed to Fill up
                 </a>
         </div>
+        <br>
+        <br>
+        <br>
+        <!-- weather -->
+        <div class="wea" style="display: none;">
+            <p id="des"></p>
+            <div style="display:flex;justify-content: center;flex-wrap: wrap;align-content: space-between;flex-direction: row;">
+                <p id="lat"></p> &nbsp;&nbsp;&nbsp;
+                <p id="lon"></p>
+            </div>
+            <p id="weather_ico"></p>
+            <p id="weather"></p>
+            <p id="hum"></p>
+            <p id="wind"></p>
+        </div>
+        <br>
+        <br>
+        <br>
         <div class="footer-copyright">
             <br />
             <p>&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="term.html" target="_self" class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> | <a href="personal.html" class="text-[blue] hover:underline ">Contributors</a>                |
@@ -86,10 +104,9 @@
     <script src="Js/main.js" type="text/javascript"></script>
     <script async type="text/javascript" src="https://api.countapi.xyz/hit/KelkarForms.com/415a7523-bb25-4d45-a700-33a48a168a6c/?callback=counter"></script>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-    <script type="text/javascript">
-        var x, y;
 
+    <script type="text/javascript">
+        // You were not supposed to be hear
         function getLoc() {
             if (navigator.geolocation) {
                 console.log("Supporting");
@@ -99,14 +116,22 @@
             }
         }
 
-
         function shwpos(position) {
-            x = position.coords.latitude;
-            y = position.coords.longitude;
-            console.log(x, y);
+
+            fetch("https://api.openweathermap.org/data/2.5/onecall?units=metric&lat=" + position.coords.latitude + "&lon=" + position.coords.longitude + "&exclude=hourly,daily&appid=0e9776b2652e4b70993b4c0886425e39")
+                .then(response => response.json())
+                .then(response = (data1) => {
+                    document.querySelector('.wea').style.display = "inline-block";
+                    document.getElementById('des').innerHTML = "Today's Description: " + data1.current.weather[0].description;
+                    document.getElementById('lat').innerHTML = "latitude: " + data1.lat;
+                    document.getElementById('lon').innerHTML = "longitude: " + data1.lon;
+                    document.getElementById('weather').innerHTML = "Temperature: " + data1.current.temp + " deg";
+                    document.getElementById('hum').innerHTML = "Humidity: " + data1.current.humidity;
+                    document.getElementById('wind').innerHTML = "Wind Speed: " + data1.current.wind_speed;
+                })
+                .catch(err => console.error(err));
         }
         getLoc();
-        console.log(navigator);
     </script>
 </body>
 

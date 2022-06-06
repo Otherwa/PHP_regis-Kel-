@@ -1,19 +1,19 @@
 {
-  "name": "PHP_regis",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "build-css": "tailwindcss build -i src/style.css -o style/style.css --watch"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "tailwind": "^4.0.0"
-  },
-  "devDependencies": {
-    "prettier": "2.6.2",
-    "tailwindcss": "^3.0.24"
-  }
+    "name": "PHP_regis",
+    "version": "1.0.0",
+    "description": "For Get and Post of Forms",
+    "main": "index.js",
+    "scripts": {
+        "build-css": "tailwindcss build -i src/style.css -o style/style.css --watch"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "tailwind": "^4.0.0"
+    },
+    "devDependencies": {
+        "prettier": "2.6.2",
+        "tailwindcss": "^3.0.24"
+    }
 }

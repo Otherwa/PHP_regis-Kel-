@@ -59,6 +59,10 @@ div.content {
         position: relative;
         bottom: -28rem;
     }
+    .wea {
+        position: relative;
+        bottom: -19rem;
+    }
 }
 
 
@@ -73,5 +77,9 @@ div.content {
     .footer-copyright {
         position: relative;
         bottom: -20rem;
+    }
+    .wea {
+        position: relative;
+        bottom: -16rem;
     }
 }

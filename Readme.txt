@@ -12,3 +12,5 @@ Scalable:
         echo "<option value =\"" . $row['subject3'] . "\">" .  $row['subject3']  . "</option>";"
         //add lines
 in ajaxtemp.php for asynchronous calls
+
+except index all hidden .html

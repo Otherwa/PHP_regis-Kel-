@@ -3,83 +3,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');
 ul.sidenav {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 20%;
-    background-color: #f1f1f1;
-    position: fixed;
-    height: 100%;
-    overflow: auto;
+    width: auto;
+    padding: 1px;
+    display: flex;
 }
 
 ul.sidenav li a {
-    display: block;
+    float: left;
     color: #000;
     padding: 20px;
-    text-decoration: none;
     font-family: "Bungee", cursive;
     font-size: 1.15rem;
 }
 
-ul.sidenav li a.active {
-    background-color: #1fc6e4;
-    color: white;
-}
-
 ul.sidenav li a:hover:not(.active) {
     transition: 0.5s;
-    background-color: rgba(198, 198, 198, 0.845);
-    color: #ffffff;
+    color: lightblue;
 }
 
-div.content {
-    margin-left: 21%;
-    padding: 2rem;
-    height: 1000px;
-    border-radius: 0.5rem;
-}
-
-
-/* Tab responsive */
-
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 768px) {
     ul.sidenav {
-        width: 100%;
-        height: auto;
-        position: relative;
-    }
-    ul.sidenav li a {
-        float: left;
-        padding: 15px;
-    }
-    div.content {
-        margin-left: 0;
-    }
-    .footer-copyright {
-        position: relative;
-        bottom: -28rem;
-    }
-    .wea {
-        position: relative;
-        bottom: -19rem;
-    }
-}
-
-
-/* mobile responsive */
-
-@media screen and (max-width: 460px) {
-    ul.sidenav li a {
-        text-align: center;
-        float: none;
-        padding: 16px 16px;
-    }
-    .footer-copyright {
-        position: relative;
-        bottom: -20rem;
-    }
-    .wea {
-        position: relative;
-        bottom: -16rem;
+        list-style-type: none;
+        margin: 1px;
+        width: auto;
+        padding: 1px;
+        background-color: #f1f1f1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }

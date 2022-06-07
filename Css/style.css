@@ -70,10 +70,13 @@
      }
      
      .footer-copyright {
-         position: relative;
-         bottom: -39rem;
+         position: absolute;
+         bottom: -17.5rem;
          line-height: 1.6rem;
-         padding-bottom: 1.25rem;
+         text-align: center;
+         align-items: center;
+         width: 99%;
+         padding: 1rem;
      }
      
      #b-list {
@@ -126,16 +129,4 @@
      
      a {
          font-size: 0.9rem;
-     }
-     
-     .wea {
-         position: relative;
-         bottom: -34rem;
-         padding: 1rem;
-         border: #000 1px solid;
-         display: inline-block;
-     }
-     
-     .wea>p {
-         padding: 0.2rem;
      }

@@ -80,18 +80,14 @@ if (isset($_POST['login'])) {
 </head>
 
 <body class="p-0 m-0">
-    <ul class="sidenav">
-        <!-- to destroy session -->
-        <li style="padding-bottom:0px"><a class="font-mono" href="../../../index.html" target="_self">Back</a></li>
-    </ul>
     <br />
     <br />
     <br />
-    <br />
-    <br />
-    <div class="bg-[#ffffff] text-center content" style="padding:0.5rem">
+    <div class="bg-[#ffffff] text-center" style="padding:0.5rem">
+        <br>
+        <br>
         <div class="l-form p-0 ">
-
+            <br>
             <form action="#" method="POST" class="form" style="width:33rem">
                 <fieldset>
                     <legend></legend>
@@ -125,8 +121,6 @@ if (isset($_POST['login'])) {
             </form>
 
         </div>
-        <br />
-        <br />
         <div class="footer-copyright text-center" style="padding:1rem">
             <br />
             <p>&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html" target="_self"

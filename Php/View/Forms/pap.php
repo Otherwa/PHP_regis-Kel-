@@ -202,13 +202,9 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
 </head>
 
 <body class="p-0 m-0">
-    <ul class="sidenav">
-        <!-- to destroy session -->
-        <li style="padding-bottom:0px"><a class="font-mono" href="forms.php" target="_self">Back</a></li>
-    </ul>
     <br />
     <br />
-    <div class="bg-[#ffffff] text-center content" style="padding:0.5rem">
+    <div class="bg-[#ffffff] text-center" style="padding:0.5rem">
         <br />
         <div class="l-form">
             <form method="POST" id="subcard" class="form">
@@ -758,15 +754,16 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
             </form>
         </div>
         <br />
-        <div class="footer-copyright text-center">
+    </div>
+    <br>
+    <div class="footer-copyright text-center" style="position:relative">
+        <br />
+        <p style="padding:1rem;">
+            &copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html" target="_self"
+                class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> |
+            <a href="../../../personal.html" class="text-[blue] hover:underline">Contributors</a>
             <br />
-            <p style="padding:1rem;">
-                &copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html" target="_self"
-                    class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> |
-                <a href="../../../personal.html" class="text-[blue] hover:underline">Contributors</a>
-                <br />
-            </p>
-        </div>
+        </p>
     </div>
 </body>
 <!-- jquery -->

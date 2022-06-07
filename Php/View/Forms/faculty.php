@@ -139,12 +139,9 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
 </head>
 
 <body class="p-0 m-0">
-    <ul class="sidenav">
-        <li><a class="font-mono" href="forms.php" target="_self">Back</a></li>
-    </ul>
     <br />
     <br />
-    <div class="bg-[#ffffff] text-center content" style="padding:1rem">
+    <div class="bg-[#ffffff] text-center" style="padding:1rem">
         <div class="l-form p-0 ">
             <form action="#" method="POST" id="subcard" class="form">
                 <fieldset>
@@ -660,13 +657,14 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
             <br />
             <br />
         </div>
-        <div class="footer-copyright text-center">
+    </div>
+    <br />
+    <div class="footer-copyright text-center" style="position:relative">
+        <br />
+        <p style="padding:1rem">&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html"
+                target="_self" class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> | <a
+                href="../../../personal.html" class="text-[blue] hover:underline ">Contributors</a>
             <br />
-            <p style="padding:1rem">&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html"
-                    target="_self" class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> | <a
-                    href="../../../personal.html" class="text-[blue] hover:underline ">Contributors</a>
-                <br>
-        </div>
     </div>
 </body>
 

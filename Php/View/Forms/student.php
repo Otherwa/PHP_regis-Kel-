@@ -140,12 +140,8 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
 </head>
 
 <body class="p-0 m-0">
-    <ul class="sidenav">
-        <li style="padding-bottom:0px"><a class="font-mono" href="forms.php" target="_self">Back</a></li>
-    </ul>
     <br />
-    <br />
-    <div class="bg-[#ffffff] text-center content" style="padding:0.5rem">
+    <div class="bg-[#ffffff] text-center" style="padding:0.5rem">
         <div class="l-form p-0 ">
             <form method="POST" id="subcard" class="form">
                 <fieldset>
@@ -172,7 +168,7 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
                         <br />
                         <ul style="display:grid">
                             <li>
-                                <p style="font-weight:bold;font-family:monospace;color:#006effb7;">Yes&nbsp;<input
+                                <p style="font-weight:bold;font-family:monospace;color:green;">Yes&nbsp;<input
                                         type="radio" name="confirm" value="yes"></p>
                             </li>
                             <li>
@@ -597,13 +593,15 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
             </form>
 
         </div>
-        <div class="footer-copyright text-center">
-            <br />
-            <p style="padding:1rem">&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html"
-                    target="_self" class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> | <a
-                    href="../../../personal.html" class="text-[blue] hover:underline ">Contributors</a>
-                <br>
-        </div>
+
+    </div>
+    <br>
+    <div class="footer-copyright text-center" style="position:relative">
+        <br />
+        <p style="padding:1rem">&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html"
+                target="_self" class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> | <a
+                href="../../../personal.html" class="text-[blue] hover:underline ">Contributors</a>
+            <br>
     </div>
 </body>
 

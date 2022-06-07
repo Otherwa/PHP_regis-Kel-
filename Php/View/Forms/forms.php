@@ -89,7 +89,7 @@ if (isset($_POST['FFForm'])) {
 
 <body class="p-0 m-0">
     <ul class="sidenav">
-        <li><a class="font-mono" href="../../../index.html" target="_self">Form</a></li>
+        <li><a class="font-mono" href="../../../index.html" target="_self">Init</a></li>
         <li><a class="font-mono" href="../../../about.html" target="_self">About</a></li>
     </ul>
     <br />
@@ -139,16 +139,15 @@ if (isset($_POST['FFForm'])) {
                 alt="Scott" id="clown_com"
                 style="text-align:center;box-shadow:4px 5px 2.5rem #cacaca;display:inline-block;border-radius:0.4rem;width:55rem;height:auto" />
         </div>
-        <div class="footer-copyright text-center" style="padding:1rem">
-            <img id="foot" alt="pc"
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Solid_white.svg/768px-Solid_white.svg.png"
-                style="max-width: 34vh;min-width: 24vh;height:auto;display: inline-block;position:relative;">
-            <br />
-            <p>&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html" target="_self"
-                    class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> | <a
-                    href="../../../personal.html" class="text-[blue] hover:underline ">Contributors</a>
-            </p>
-        </div>
+    </div>
+    <div class="footer-copyright text-center" style="padding:1rem;bottom:-26rem">
+        <img id="foot" alt="pc" src="../../../imgs/1.png"
+            style="max-width: 34vh;min-width: 24vh;height:auto;display: inline-block;position:relative;">
+        <br />
+        <p>&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html" target="_self"
+                class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> | <a
+                href="../../../personal.html" class="text-[blue] hover:underline ">Contributors</a>
+        </p>
     </div>
 </body>
 <!-- form validation -->

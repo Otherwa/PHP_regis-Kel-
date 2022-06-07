@@ -2,8 +2,8 @@ document.addEventListener('contextmenu', function(e) {
     e.preventDefault();
 });
 //timer works DO NOT Alter
-var countDownDatestart = new Date("May 25, 2022 21:30:00").getTime(); //Set startdate on event it works dont touch 
-var countDownDateend = new Date("June 7, 2023 22:35:50").getTime(); //Set enddate on event it works dont touch
+var countDownDatestart = new Date("June 1, 2022 21:30:00").getTime(); //Set startdate on event it works dont touch 
+var countDownDateend = new Date("June 2, 2022 22:35:50").getTime(); //Set enddate on event it works dont touch
 
 // Update 1 second
 var x = setInterval(() => {

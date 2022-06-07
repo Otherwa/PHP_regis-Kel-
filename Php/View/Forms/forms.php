@@ -89,7 +89,7 @@ if (isset($_POST['FFForm'])) {
 
 <body class="p-0 m-0">
     <ul class="sidenav">
-        <li><a class="font-mono" href="../../../index.html" target="_self">Init</a></li>
+        <li><a class="font-mono" href="../../../index.html" target="_self">Form</a></li>
         <li><a class="font-mono" href="../../../about.html" target="_self">About</a></li>
     </ul>
     <br />
@@ -140,9 +140,9 @@ if (isset($_POST['FFForm'])) {
                 style="text-align:center;box-shadow:4px 5px 2.5rem #cacaca;display:inline-block;border-radius:0.4rem;width:55rem;height:auto" />
         </div>
     </div>
-    <div class="footer-copyright text-center" style="padding:1rem;bottom:-26rem">
-        <img id="foot" alt="pc" src="../../../imgs/1.png"
-            style="max-width: 34vh;min-width: 24vh;height:auto;display: inline-block;position:relative;">
+    <div class="footer-copyright text-center" style="padding:1rem">
+        <img id="foot" alt="pc" src="https://64.media.tumblr.com/tumblr_mac17l4bpY1rfjowdo1_500.gifv"
+            style="max-width: 34vh;min-width: 24vh;height:auto;display:none;position:relative;">
         <br />
         <p>&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html" target="_self"
                 class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> | <a

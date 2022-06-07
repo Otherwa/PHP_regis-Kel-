@@ -76,11 +76,22 @@ if (isset($_POST['login'])) {
     input[type="number"] {
         -moz-appearance: textfield;
     }
+
+    ul li {
+        padding-bottom: 0rem;
+
+    }
+
+    ul {
+        padding-left: 0rem;
+    }
     </style>
 </head>
 
 <body class="p-0 m-0">
-    <br />
+    <ul class="sidenav">
+        <li><a class="font-mono" href="../../../index.html" target="_self">Init</a></li>
+    </ul>
     <br />
     <br />
     <div class="bg-[#ffffff] text-center" style="padding:0.5rem">

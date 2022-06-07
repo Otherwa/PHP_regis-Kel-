@@ -16,8 +16,8 @@ ul.sidenav li a {
     font-size: 1.15rem;
 }
 
-ul.sidenav li a:hover:not(.active) {
-    transition: 0.5s;
+ul.sidenav li a:hover {
+    transition: 0.39s;
     color: lightblue;
 }
 

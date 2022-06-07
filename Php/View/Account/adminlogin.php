@@ -90,7 +90,7 @@ if (isset($_POST['login'])) {
 
 <body class="p-0 m-0">
     <ul class="sidenav">
-        <li><a class="font-mono" href="../../../index.html" target="_self">Init</a></li>
+        <li><a class="font-mono" href="../../../index.html" target="_self">Form</a></li>
     </ul>
     <br />
     <br />

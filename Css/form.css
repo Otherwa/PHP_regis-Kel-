@@ -253,7 +253,7 @@ ul li {
 
 /* responsivnes */
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 469px) {
     #inst li {
         color: red;
         font-weight: bold;

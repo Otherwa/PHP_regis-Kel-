@@ -261,7 +261,6 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                             <!-- get list Ajax -->
                         </select>
                     </div>
-                    <br />
                     <div class="form__div selectaltered">
                         <label for="division" class="text-sm" style="color: rgb(68, 74, 79);">&bull; Choose
                             Semester:</label>

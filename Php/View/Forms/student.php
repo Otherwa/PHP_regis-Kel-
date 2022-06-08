@@ -97,7 +97,7 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
 
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <title>Student Satisfaction Survey</title>

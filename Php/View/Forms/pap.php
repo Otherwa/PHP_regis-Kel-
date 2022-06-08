@@ -166,7 +166,7 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
 ?>
 
 <!DOCTYPE html>
-<html lang="UTF-8">
+<html lang="en">
 
 <head>
     <title>PAT's Form</title>

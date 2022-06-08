@@ -99,7 +99,7 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
 
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <title>Faculty Feedback Form</title>

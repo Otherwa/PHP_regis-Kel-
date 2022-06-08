@@ -439,7 +439,7 @@ session_destroy();
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <title>Admin</title>

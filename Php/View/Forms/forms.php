@@ -28,7 +28,7 @@ if (isset($_POST['FFForm'])) {
 
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <title>Forms Submission</title>
@@ -52,7 +52,6 @@ if (isset($_POST['FFForm'])) {
     <meta http-equiv='cache-control' content='no-cache'>
     <meta http-equiv='expires' content='0'>
     <meta http-equiv='pragma' content='no-cache'>
-
     <style type="text/css">
     .but {
         text-align: center;

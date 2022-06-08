@@ -86,34 +86,6 @@
     <script src="Js/main.js" type="text/javascript"></script>
     <script async type="text/javascript" src="https://api.countapi.xyz/hit/KelkarForms.com/415a7523-bb25-4d45-a700-33a48a168a6c/?callback=counter"></script>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-
-    <script type="text/javascript">
-        // You were not supposed to be hear
-        function getLoc() {
-            if (navigator.geolocation) {
-                console.log("Supporting");
-                navigator.geolocation.getCurrentPosition(shwpos);
-            } else {
-                console.log("No");
-            }
-        }
-
-        function shwpos(position) {
-
-            fetch("https://api.openweathermap.org/data/2.5/onecall?units=metric&lat=" + position.coords.latitude + "&lon=" + position.coords.longitude + "&exclude=hourly,daily&appid=0e9776b2652e4b70993b4c0886425e39")
-                .then(response => response.json())
-                .then(response = (data1) => {
-                    console.log("Today's Description: " + data1.current.weather[0].description);
-                    console.log("latitude: " + data1.lat);
-                    console.log("longitude: " + data1.long);
-                    console.log("Temperature: " + data1.current.temp + " deg");
-                    console.log("humidity: " + data1.current.humidity);
-                    console.log("Wind Speed: " + data1.current.wind_speed);
-                })
-                .catch(err => console.error(err));
-        }
-        getLoc();
-    </script>
 </body>
 
 </html>

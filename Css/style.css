@@ -77,6 +77,11 @@
          align-items: center;
          width: 99%;
          padding: 1rem;
+         font-size: 0.8rem;
+     }
+     
+     .footer-copyright>a {
+         font-size: 0.8rem;
      }
      
      #b-list {
@@ -125,10 +130,6 @@
          height: 30em;
          display: inline-block;
          border-radius: 12px;
-     }
-     
-     a {
-         font-size: 0.9rem;
      }
      
      #msg {

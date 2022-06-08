@@ -142,7 +142,7 @@ if (isset($_POST['FFForm'])) {
     </div>
     <div class="footer-copyright text-center" style="padding:1rem">
         <img id="foot" alt="pc" src="https://64.media.tumblr.com/tumblr_mac17l4bpY1rfjowdo1_500.gifv"
-            style="max-width: 34vh;min-width: 24vh;height:auto;display:none;position:relative;">
+            style="max-width:10rem;height:auto;display:none;position:relative;">
         <br />
         <p>&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html" target="_self"
                 class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> | <a

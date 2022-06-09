@@ -18,9 +18,11 @@ var x = setInterval(() => {
 
         // set or display form status
         // check if dates fall in timelimit if yes display forms or else msg
+        let hidcopy = document.getElementById('hidcopy');
 
         if (now > countDownDatestart && now < countDownDateend) {
             // within timelimit
+            hidcopy.style.display = 'inline-block';
             document.getElementById('forms').style.display = "block";
             document.getElementById('msg').style.display = "none";
             document.getElementById("demo").innerHTML = "Select Any Form to Fill.";
@@ -33,6 +35,7 @@ var x = setInterval(() => {
         } else if (now > countDownDatestart && now > countDownDateend) {
             // timelimit above
             document.getElementById('forms').style.display = "none";
+            hidcopy.style.display = 'inline-block';
             document.getElementById('clown_com').src = "https://pa1.narvii.com/6771/ab4135057351e87e09676e559b5e76f1cad5c77e_hq.gif";
             document.getElementById('msg').style.display = "block";
             document.getElementById('foot').style.display = "inline-block";
@@ -44,11 +47,12 @@ var x = setInterval(() => {
             document.getElementById("demo").style.line_height = "1.6rem";
         } else {
             // timelimit below
+            hidcopy.style.display = 'inline-block';
             document.getElementById('demo').style.display = "none"; // loading effect farcry
             document.getElementById('forms').style.display = "none";
             document.getElementById('clown_com').src = "https://i.pinimg.com/originals/a7/68/76/a76876b05cc5767ce6ce5c59abceb7e4.gif";
             document.getElementById('msg').style.display = "block";
-            if (days != 0) { document.getElementById('msg-p').innerHTML = "You Are About " + day + " days too Early"; } else if (hours != 0) { document.getElementById('msg-p').innerHTML = "You Are About " + hours + " hrs too Early"; } else if (minutes != 0) { document.getElementById('msg-p').innerHTML = "You Are About " + minutes + " min too Early"; } else if (seconds != 0) { document.getElementById('msg-p').innerHTML = "You Are About " + seconds + " sec too Early"; }
+            if (days != 0) { document.getElementById('msg-p').innerHTML = "You Are About " + day + " day too Early"; } else if (hours != 0) { document.getElementById('msg-p').innerHTML = "You Are About " + hours + " hr too Early"; } else if (minutes != 0) { document.getElementById('msg-p').innerHTML = "You Are About " + minutes + " min too Early"; } else if (seconds != 0) { document.getElementById('msg-p').innerHTML = "You Are About " + seconds + " sec too Early"; }
             document.getElementById("msg-p").style.fontSize = "1.3rem";
             document.getElementById("msg-p").style.fontFamily = "monospace"
             document.getElementById("msg-p").style.line_height = "1.3rem";

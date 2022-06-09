@@ -182,13 +182,13 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
 
                     <div class="form__div">
                         <input type="text" class="form__input" name="name" id="name" placeholder="Full Name"
-                            autocomplete="off" />
+                            autocomplete="off" value="<?php if (isset($name)) echo $name; ?>" />
                         <label for="" class="form__label">Name?</label>
                     </div>
 
                     <div class="form__div">
                         <input type="number" class="form__input" name="age" id="age" placeholder="e.g 18"
-                            autocomplete="off" />
+                            autocomplete="off" value="<?php if (isset($age)) echo $age; ?>" />
                         <label for="" class="form__label">Age?</label>
                     </div>
 

@@ -140,7 +140,7 @@ if (isset($_POST['FFForm'])) {
                 style="text-align:center;box-shadow:4px 5px 2.5rem #cacaca;display:inline-block;border-radius:0.4rem;width:55rem;height:auto" />
         </div>
     </div>
-    <div class="footer-copyright text-center" style="padding:1rem">
+    <div class="footer-copyright text-center" id="hidcopy" style=" display:none;padding:1rem">
         <img id="foot" alt="pc" src="https://64.media.tumblr.com/tumblr_mac17l4bpY1rfjowdo1_500.gifv"
             style="max-width:10rem;height:auto;display:none;position:relative;">
         <br />

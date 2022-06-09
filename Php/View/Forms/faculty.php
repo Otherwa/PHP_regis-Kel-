@@ -173,13 +173,14 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
 
                     <div class="form__div ">
                         <input type="text" class="form__input" name="faculty_name" id="faculty_name"
-                            placeholder="e.g SY-BVoc, TY-BSc-IT" autocomplete="off" />
+                            placeholder="e.g SY-BVoc, TY-BSc-IT" autocomplete="off"
+                            value="<?php if (isset($faculty_name)) echo $faculty_name; ?>" />
                         <label for="" class="form__label">Faculty Name?</label>
                     </div>
 
                     <div class="form__div">
                         <input type="text" class="form__input" name="year_service" id="year_service" placeholder="e.g 3"
-                            autocomplete="off" />
+                            autocomplete="off" value="<?php if (isset($year_service)) echo $year_service; ?>" />
                         <label for="" class="form__label">Number of years in service?</label>
                     </div>
 

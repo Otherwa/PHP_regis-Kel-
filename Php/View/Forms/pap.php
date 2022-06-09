@@ -221,7 +221,7 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                     </h1>
                     <div class="form__div">
                         <input type="text" class="form__input" name="name" id="name" placeholder="Full Name"
-                            autocomplete="off" />
+                            autocomplete="off" value="<?php if (isset($name)) echo $name; ?>" />
                         <label for="" class="form__label">Name</label>
                     </div>
                     <div class="form__div">

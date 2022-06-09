@@ -25,7 +25,7 @@ var x = setInterval(() => {
             hidcopy.style.display = 'inline-block';
             document.getElementById('forms').style.display = "block";
             document.getElementById('msg').style.display = "none";
-            document.getElementById("demo").innerHTML = "Select Any Form to Fill.";
+            document.getElementById("demo").innerHTML = "<p>Select Any Form to Fill.</p>";
             document.getElementById("demo").style.fontSize = "1.3rem";
             document.getElementById("demo").style.fontFamily = "monospace";
             document.getElementById("demo").style.line_height = "1.6rem";

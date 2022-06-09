@@ -55,8 +55,8 @@ if (isset($_POST['FFForm'])) {
     <style type="text/css">
     .but {
         text-align: center;
-        width: 25rem;
-        height: 10rem;
+        width: 29rem;
+        height: 14rem;
         box-shadow: 5px 5px 5px rgb(0, 0, 0);
         transition: 300ms;
         border: solid 0.1rem black;
@@ -71,10 +71,22 @@ if (isset($_POST['FFForm'])) {
         box-shadow: 0.5rem 0.5rem #000;
     }
 
+    /* res card form */
+
+    .forms {
+        padding: 0.7rem;
+        display: inline-grid;
+        justify-items: center;
+        align-items: center;
+        justify-content: center;
+        grid-gap: 1rem;
+        align-content: space-between;
+    }
+
     @media screen and (max-width: 460px) {
         .but {
-            width: 15rem;
-            height: 7rem;
+            width: 18rem;
+            height: 9rem;
         }
     }
 
@@ -103,24 +115,30 @@ if (isset($_POST['FFForm'])) {
         <br />
         <div class="text-center" id="forms" style="display:none; padding:1rem;margin:1rem">
             <form action="" method="POST">
-                <button type="submit"
-                    class="but inline-block font-mono text-center border border-transparent rounded-md py-3 px-8 text-lg text-white transition ease-in-out delay-100 bg-blue-500 hover:bg-[#1fc6e4] hover:text-black duration-300"
-                    name="PAPForm"> PAP's Form
-                </button>
+                <div class="forms">
+                    <button type=" submit"
+                        class="but inline-block font-mono text-center border border-transparent rounded-md py-3 px-8 text-lg text-white transition ease-in-out delay-100 bg-blue-500 hover:bg-[#1fc6e4] hover:text-black duration-300"
+                        name="PAPForm"> PAP's Form
+                    </button>
+                </div>
                 <br />
                 <br />
                 <br />
-                <button type="submit"
-                    class="but inline-block font-mono text-center border border-transparent rounded-md py-3 px-8 text-lg text-white transition ease-in-out delay-100 bg-blue-500 hover:bg-[#1fc6e4] hover:text-black duration-300"
-                    name="StuForm"> Student Survey Form
-                </button>
+                <div class="forms">
+                    <button type="submit"
+                        class="but inline-block font-mono text-center border border-transparent rounded-md py-3 px-8 text-lg text-white transition ease-in-out delay-100 bg-blue-500 hover:bg-[#1fc6e4] hover:text-black duration-300"
+                        name="StuForm"> Student Survey Form
+                    </button>
+                </div>
                 <br />
                 <br />
                 <br />
-                <button type="submit"
-                    class="but inline-block font-mono text-center border border-transparent rounded-md py-3 px-8 text-lg text-white transition ease-in-out delay-100 bg-blue-500 hover:bg-[#1fc6e4] hover:text-black duration-300"
-                    name="FFForm"> Faculty Feedback Form
-                </button>
+                <div class="forms">
+                    <button type="submit"
+                        class="but inline-block font-mono text-center border border-transparent rounded-md py-3 px-8 text-lg text-white transition ease-in-out delay-100 bg-blue-500 hover:bg-[#1fc6e4] hover:text-black duration-300"
+                        name="FFForm"> Faculty Feedback Form
+                    </button>
+                </div>
                 <br />
                 <br />
             </form>
@@ -143,6 +161,10 @@ if (isset($_POST['FFForm'])) {
     <div class="footer-copyright text-center" id="hidcopy" style=" display:none;padding:1rem">
         <img id="foot" alt="pc" src="https://64.media.tumblr.com/tumblr_mac17l4bpY1rfjowdo1_500.gifv"
             style="max-width:10rem;height:auto;display:none;position:relative;">
+        <br />
+        <code style="padding:0.4rem;color:gray;font-size:0.8rem;font-weight:bold">(Please fill the attached form to receive the required information. For
+            further informations, advice or assistance contact the administrator.)</code>
+        <br />
         <br />
         <p>&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html" target="_self"
                 class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> | <a

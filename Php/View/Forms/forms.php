@@ -142,6 +142,11 @@ if (isset($_POST['FFForm'])) {
                 <br />
                 <br />
             </form>
+            <br>
+            <code style="padding:0.4rem;color:gray;font-size:0.7rem;font-weight:bold">
+                (Please fill the attached form to receive the required information. For
+                further informations, advice or assistance contact the administrator.)
+            </code>
         </div>
         <div id="msg" class="msg text-xl text-center" style="display:none">
             <br />
@@ -153,17 +158,17 @@ if (isset($_POST['FFForm'])) {
                 Forms are not allowed to fill furthermore.
             </p>
             <br />
+            <br />
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Solid_white.svg/768px-Solid_white.svg.png"
                 alt="Scott" id="clown_com"
                 style="text-align:center;box-shadow:4px 5px 2.5rem #cacaca;display:inline-block;border-radius:0.4rem;width:55rem;height:auto" />
         </div>
     </div>
+
     <div class="footer-copyright text-center" id="hidcopy" style=" display:none;padding:1rem">
         <img id="foot" alt="pc" src="https://64.media.tumblr.com/tumblr_mac17l4bpY1rfjowdo1_500.gifv"
             style="max-width:10rem;height:auto;display:none;position:relative;">
         <br />
-        <code style="padding:0.4rem;color:gray;font-size:0.8rem;font-weight:bold">(Please fill the attached form to receive the required information. For
-            further informations, advice or assistance contact the administrator.)</code>
         <br />
         <br />
         <p>&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html" target="_self"
@@ -171,6 +176,7 @@ if (isset($_POST['FFForm'])) {
                 href="../../../personal.html" class="text-[blue] hover:underline ">Contributors</a>
         </p>
     </div>
+
 </body>
 <!-- form validation -->
 <script type="text/javascript" src="../../../Js/forms.js"></script>

@@ -271,7 +271,6 @@ const myChart1 = new Chart(ctx1, {
     },
 
 });
-
 // faculty form
 
 const myChart2 = new Chart(ctx2, {

@@ -146,10 +146,10 @@ const myChart = new Chart(ctx, {
         datasets: [{
             label: 'Students-Forms Filled up',
             data: Data,
-            borderColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(13,220,212)',
             fill: {
                 target: 'origin',
-                above: 'rgba(255, 99, 132, 0.6)', // Area will be red above the origin
+                above: 'rgba(13, 229, 212, 0.5)', // Area will be red above the origin
             },
         }]
     },
@@ -157,8 +157,8 @@ const myChart = new Chart(ctx, {
         animation,
         elements: {
             point: {
-                backgroundColor: 'rgb(255, 99, 132)',
-                hoverBackgroundColor: 'rgba(255, 99, 132, 0.5)',
+                backgroundColor: 'rgb(13,220,212)',
+                hoverBackgroundColor: 'rgba(13, 229, 212, 0.5)',
                 radius: 6,
                 pointStyle: 'circ',
                 hoverRadius: 12,
@@ -214,10 +214,10 @@ const myChart1 = new Chart(ctx1, {
         datasets: [{
             label: 'Students-Forms Filled up',
             data: Data1,
-            borderColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(13,220,212)',
             fill: {
                 target: 'origin',
-                above: 'rgba(255, 99, 132, 0.6)', // Area will be red above the origin
+                above: 'rgba(13, 229, 212, 0.5)', // Area will be red above the origin
             },
         }]
     },
@@ -225,8 +225,8 @@ const myChart1 = new Chart(ctx1, {
         animation,
         elements: {
             point: {
-                backgroundColor: 'rgb(255, 99, 132)',
-                hoverBackgroundColor: 'rgba(255, 99, 132, 0.5)',
+                backgroundColor: 'rgb(13,220,212)',
+                hoverBackgroundColor: 'rgba(13, 229, 212, 0.5)',
                 radius: 6,
                 pointStyle: 'circ',
                 hoverRadius: 12,
@@ -281,10 +281,10 @@ const myChart2 = new Chart(ctx2, {
         datasets: [{
             label: 'Students-Forms Filled up',
             data: Data2,
-            borderColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(13,220,212)',
             fill: {
                 target: 'origin',
-                above: 'rgba(255, 99, 132, 0.6)', // Area will be red above the origin
+                above: 'rgba(13, 229, 212, 0.5)', // Area will be red above the origin
             },
         }]
     },
@@ -292,8 +292,8 @@ const myChart2 = new Chart(ctx2, {
         animation,
         elements: {
             point: {
-                backgroundColor: 'rgb(255, 99, 132)',
-                hoverBackgroundColor: 'rgba(255, 99, 132, 0.5)',
+                backgroundColor: 'rgb(13,220,212)',
+                hoverBackgroundColor: 'rgba(13, 229, 212, 0.5)',
                 radius: 6,
                 pointStyle: 'circ',
                 hoverRadius: 12,

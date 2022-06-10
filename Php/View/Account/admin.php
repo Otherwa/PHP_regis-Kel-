@@ -510,6 +510,10 @@ session_destroy();
         background-color: rgba(0, 0, 0, 0.05);
         border-radius: 0.5rem;
     }
+
+    .chart_con {
+        padding: 1rem;
+    }
     </style>
 </head>
 
@@ -533,7 +537,7 @@ session_destroy();
             <br />
             <div class="chart_con">
                 <!-- chart js -->
-                <canvas id="myChart" style="padding:1rem;position: relative;height:40vh; width:60vw;"></canvas>
+                <canvas id="myChart" style="padding:1rem;position: relative;height:40vh; width:69vw;"></canvas>
                 <br>
                 <br>
                 <div class="li">
@@ -575,7 +579,7 @@ session_destroy();
             <br />
             <div class="chart_con">
                 <!-- chart js -->
-                <canvas id="myChart1" style="padding:1rem;position: relative; height:40vh; width:60vw;"></canvas>
+                <canvas id="myChart1" style="padding:1rem;position: relative; height:40vh; width:69vw;"></canvas>
                 <br />
                 <br>
                 <br>
@@ -585,29 +589,34 @@ session_destroy();
                     $result = mysqli_query($con, $query);
                     echo "<table style=\"text-align:left\">";
                     echo '<tr>
-                    <th>' . 'Name' . '</th>
                     <th>' . 'Control-id' . '</th>
+                    <th>' . 'Name' . '</th>
                     <th>' . 'Programme' . '</th>
                     </tr>';
 
                     while ($row = mysqli_fetch_array($result)) {
                         echo '<tr>
-                        <td>' . $row['name'] . '</td>
                         <td>' . $row['rollno'] . '</td>
+                        <td>' . $row['name'] . '</td>
                         <td>' . $row['programme'] . '</td>
                         </tr>';
                     }
                     echo '</table>';
                     ?>
                 </div>
+                <br>
+                <br>
             </div>
+            <br />
             <br />
             <p class="myfont" style="text-align:start">Faculty Forms :</p>
             <br />
-            <!-- chart js -->
-            <canvas id="myChart2" style="padding:1rem;height:40vh;position: relative;width:60vw;"></canvas>
-
-            <br />
+            <div class="chart_con">
+                <!-- chart js -->
+                <canvas id="myChart2" style="padding:1rem;height:40vh;position: relative;width:60vw;"></canvas>
+                <br />
+                <br />
+            </div>
         </div>
         <br />
         <div class="footer-copyright" style="position:relative;">

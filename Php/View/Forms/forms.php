@@ -144,8 +144,8 @@ if (isset($_POST['FFForm'])) {
             </form>
             <br>
             <code
-                style="padding:0.4rem;color:gray;font-size:0.7rem;font-weight:bold;text-align: start;display: flex;flex-direction: row;justify-content: center;">
-                (Please fill the attached form to receive the required information. For
+                style="padding:0.4rem;color:gray;font-size:0.7rem;font-weight:bold;text-align: center;display: flex;flex-direction: row;justify-content: center;">
+                (Please fill the attached form to receive the required information.<br> For
                 further informations, advice or assistance contact the administrator.)
             </code>
         </div>

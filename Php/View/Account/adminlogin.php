@@ -41,12 +41,13 @@ if (isset($_POST['login'])) {
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <title>Admin Login</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- tailwind css -->
     <!-- <script src="https://cdn.tailwindcss.com"></script>  -->
     <link rel="stylesheet" type="text/css" href="../../../dist/output.css" />
@@ -76,22 +77,29 @@ if (isset($_POST['login'])) {
     input[type="number"] {
         -moz-appearance: textfield;
     }
+
+    ul li {
+        padding-bottom: 0rem;
+
+    }
+
+    ul {
+        padding-left: 0rem;
+    }
     </style>
 </head>
 
 <body class="p-0 m-0">
     <ul class="sidenav">
-        <!-- to destroy session -->
-        <li style="padding-bottom:0px"><a class="font-mono" href="../../../index.html" target="_self">Back</a></li>
+        <li><a class="font-mono" href="../../../index.html" target="_self">Init</a></li>
     </ul>
     <br />
     <br />
-    <br />
-    <br />
-    <br />
-    <div class="bg-[#ffffff] text-center content" style="padding:0.5rem">
+    <div class="bg-[#ffffff] text-center" style="padding:0.5rem">
+        <br>
+        <br>
         <div class="l-form p-0 ">
-
+            <br>
             <form action="#" method="POST" class="form" style="width:33rem">
                 <fieldset>
                     <legend></legend>
@@ -125,8 +133,6 @@ if (isset($_POST['login'])) {
             </form>
 
         </div>
-        <br />
-        <br />
         <div class="footer-copyright text-center" style="padding:1rem">
             <br />
             <p>&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html" target="_self"

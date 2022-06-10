@@ -1,32 +1,43 @@
 <?php
 session_start();
+// php get user name using session variable
+
+// validiting refresh
 if (!isset($_SESSION['name'])) {
     header('Location: forms.php');
 }
+
 $firstname = explode(" ", $_SESSION['name']);
 session_destroy();
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <title>Form Submited</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- tailwind css CDN (solve after npm install [note]) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../../../dist/output.css" />
     <link rel="stylesheet" href="../../../Css/style.css" />
+    <!-- title color -->
     <meta name="theme-color" content="#ff6600">
+    <!-- Gfonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet" />
+    <!-- icon -->
     <link type="image/png" sizes="16x16" rel="icon" href="../../../imgs/1611814068005.jpg" />
     <meta http-equiv='cache-control' content='no-cache'>
     <meta http-equiv='expires' content='0'>
     <meta http-equiv='pragma' content='no-cache'>
     <script type="text/javascript">
+    // formsub to index after 3 sec
     </script>
+    <!-- basic css -->
     <style>
     .myfont {
         font-family: "Bungee", cursive;
@@ -34,11 +45,12 @@ session_destroy();
     </style>
 </head>
 
-<body class="p-1 m-0">
+<body class="p-0 m-0">
     <br />
     <br />
     <br />
-    <div class="bg-[#ffffff] text-center p-3 m-2">
+    <!-- This requires Tailwind CSS v2.0+ -->
+    <div class="bg-[#ffffff] text-center m-2" style="padding: 1rem;">
         <p class="text-4xl myfont antialiased tracking-normal md:text-4xl overline leading-loose">Form Submitted</p>
         <br />
         <p class="font-mono underline text-xl hover:text-[#006eff]"><a style="font-size:1.3rem" href="forms.php">Submit
@@ -53,6 +65,7 @@ session_destroy();
                         alt="Nyan Cat" />
                 </div>
                 <div class="p-8 pr-3">
+                    <!-- php session data-->
                     <div class="tracking-wide font-mono font-semibold text-xl">
                         <p class="text-[1.6rem]" style="text-align:start;">Konichiwa</p>
                         <br />
@@ -75,9 +88,18 @@ session_destroy();
             </div>
         </div>
         <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <code>(<code id="meme2"></code>)</code>
+        <br>
+        <img id="meme1" src="" alt="pep" style="height:auto;width:15rem;display:inline-block;">
+        <br />
     </div>
 </body>
 <script src="../../../Js/main.js" type="text/javascript"></script>
+<script src="../../../Js/formsub.js" type="text/javascript"></script>
 <script async type="text/javascript"
     src="https://api.countapi.xyz/hit/KelkarForms.com/415a7523-bb25-4d45-a700-33a48a168a6c/?callback=counter"></script>
 

@@ -7,6 +7,11 @@
          background: #000;
      }
      
+     p {
+         font-family: 'Maven Pro', sans-serif;
+         font-weight: bold;
+     }
+     
      html {
          /* cursor: url(http://www.rw-designer.com/cursor-extern.php?id=121707), auto; */
          cursor: auto;
@@ -66,9 +71,12 @@
      
      .footer-copyright {
          position: relative;
-         bottom: -25rem;
+         bottom: -17.5rem;
          line-height: 1.6rem;
-         padding-bottom: 1.25rem;
+         text-align: center;
+         align-items: center;
+         width: 99%;
+         padding: 1rem;
      }
      
      #b-list {
@@ -86,6 +94,10 @@
          }
          #b-list a {
              font-size: 0.9rem;
+         }
+         .rickrolled {
+             height: 15em;
+             width: 98%;
          }
      }
      /* card */
@@ -115,13 +127,6 @@
          border-radius: 12px;
      }
      
-     @media screen and (max-width:460px) {
-         .rickrolled {
-             height: 15em;
-             width: 98%;
-         }
-     }
-     
-     a {
-         font-size: 0.9rem;
+     #msg {
+         padding: 1rem;
      }

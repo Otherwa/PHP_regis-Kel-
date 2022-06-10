@@ -1,6 +1,10 @@
 <?php
+
+// do no touch 
+
 include('../connect.php');
 
+// get teacher from class
 if (isset($_POST['class'])) {
     $con = get_con();
     $query = " SELECT DISTINCT `tname` FROM `teachers` WHERE cname = " . "\"" . $_POST['class'] . "\";";
@@ -11,6 +15,7 @@ if (isset($_POST['class'])) {
     }
 }
 
+// semester if tname concides one in a blue moon
 if (isset($_POST['tname']) && isset($_POST['classv1'])) {
     $con = get_con();
     $query = " SELECT * FROM `teachers` WHERE tname = " . "\"" . $_POST['tname'] . "\"" .  "AND cname =" . "\"" . $_POST['classv1'] . "\"; ";
@@ -21,6 +26,7 @@ if (isset($_POST['tname']) && isset($_POST['classv1'])) {
     }
 }
 
+// get subject for specific semester teacher
 if (isset($_POST['sem']) && isset($_POST['teachername'])) {
     $con = get_con();
     $query = " SELECT * FROM `teachers` WHERE sem = " . "\"" . $_POST['sem'] . "\" " . "AND tname =" . "\"" . $_POST['teachername'] . "\"; ";
@@ -38,7 +44,7 @@ if (isset($_POST['sem']) && isset($_POST['teachername'])) {
 }
 
 
-
+// verify student
 if (isset($_POST['rollno'])) {
     $con = get_con();
     $query = " SELECT * FROM `activectrlid` WHERE ctrlid= " . "\"" . $_POST['rollno'] . "\";";
@@ -48,8 +54,9 @@ if (isset($_POST['rollno'])) {
         echo "<span style='color:green;font-family:monospace;font-weight:bold;'>Valid Id ✅</span>";
         echo "<input id =\"msg\" value = \"block\" style=\"display:none;\">";
         echo "<script>$('#sub').attr('disabled',false);</script>";
+        // js hidden value to ol display:none
     } else {
-        echo "<span style='color:red;font-family:monospace;font-weight:bold;'>Invalid Id ❌</span>";
+        echo "<span id=\"msg_\"style='color:red;font-family:monospace;font-weight:bold;'>Invalid Id ❌</span>";
         echo "<input id =\"msg\" value = \"none\" style=\"display:none;\">";
         echo "<script>$('#sub').attr('disabled',true);</script>";
     }

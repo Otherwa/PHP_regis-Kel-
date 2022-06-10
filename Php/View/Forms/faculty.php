@@ -1,25 +1,35 @@
 <?php
 include('../connect.php');
+//on click
 session_start();
-
 if (!isset($_SESSION['setFF'])) {
     header('Location: forms.php');
 }
 
+// establish connection
 $con = get_con();
 
 if (isset($_POST['submit'])) {
+
+    //session statuses
+    //session statuses
     $status = session_status();
     if ($status == PHP_SESSION_NONE) {
+        //There is no active session
         session_start();
     } elseif ($status == PHP_SESSION_DISABLED) {
+        //Sessions are not available
         $stat = 1;
     } elseif ($status == PHP_SESSION_ACTIVE) {
+        //Destroy current and start new one
         $stat = 2;
     }
 
+
     if (isset($_POST['faculty_name']) && isset($_POST['year_service']) && isset($_POST['department'])) {
+        // establish connection
         $con = get_con();
+        // chech if datafeilds are set
         $faculty_name = mysqli_real_escape_string($con, $_POST['faculty_name']);
         $year_service = mysqli_real_escape_string($con, $_POST['year_service']);
         $department = mysqli_real_escape_string($con, $_POST['department']);
@@ -32,8 +42,13 @@ if (isset($_POST['submit'])) {
 function getandset_ratings($con, $faculty_name, $year_service, $department)
 {
     if (isset($_POST['rating1_1']) && isset($_POST['rating1_2']) && isset($_POST['rating1_3']) && isset($_POST['rating1_4']) && isset($_POST['rating1_5']) && isset($_POST['rating1_6']) && isset($_POST['rating1_7']) && isset($_POST['rating1_8'])) {
+        // first blk pass
         if (isset($_POST['rating2_1']) && isset($_POST['rating2_2']) && isset($_POST['rating2_3']) && isset($_POST['rating2_4']) && isset($_POST['rating2_5']) && isset($_POST['rating2_6']) && isset($_POST['rating2_7']) && isset($_POST['rating2_8'])) {
+            // second block pass
             if (isset($_POST['rating3_1']) && isset($_POST['rating3_2']) && isset($_POST['rating3_3']) && isset($_POST['rating3_4']) && isset($_POST['rating3_5']) && isset($_POST['rating3_6']) && isset($_POST['rating3_7']) && isset($_POST['rating3_8']) && isset($_POST['rating3_9'])) {
+                // third blk pass 
+
+                // first block
                 $rating1_1 = mysqli_real_escape_string($con, $_POST['rating1_1']);
                 $rating1_2 = mysqli_real_escape_string($con, $_POST['rating1_2']);
                 $rating1_3 = mysqli_real_escape_string($con, $_POST['rating1_3']);
@@ -42,6 +57,7 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
                 $rating1_6 = mysqli_real_escape_string($con, $_POST['rating1_6']);
                 $rating1_7 = mysqli_real_escape_string($con, $_POST['rating1_7']);
                 $rating1_8 = mysqli_real_escape_string($con, $_POST['rating1_8']);
+                // second block
                 $rating2_1 = mysqli_real_escape_string($con, $_POST['rating2_1']);
                 $rating2_2 = mysqli_real_escape_string($con, $_POST['rating2_2']);
                 $rating2_3 = mysqli_real_escape_string($con, $_POST['rating2_3']);
@@ -50,6 +66,7 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
                 $rating2_6 = mysqli_real_escape_string($con, $_POST['rating2_6']);
                 $rating2_7 = mysqli_real_escape_string($con, $_POST['rating2_7']);
                 $rating2_8 = mysqli_real_escape_string($con, $_POST['rating2_8']);
+                // third block
                 $rating3_1 = mysqli_real_escape_string($con, $_POST['rating3_1']);
                 $rating3_2 = mysqli_real_escape_string($con, $_POST['rating3_2']);
                 $rating3_3 = mysqli_real_escape_string($con, $_POST['rating3_3']);
@@ -82,21 +99,28 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
 
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <title>Faculty Feedback Form</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- tailwind css -->
+    <!-- <script src="https://cdn.tailwindcss.com"></script>  -->
     <link rel="stylesheet" type="text/css" href="../../../dist/output.css" />
     <link rel="stylesheet" type="text/css" href="../../../Css/style.css" />
     <link rel="stylesheet" type="text/css" href="../../../Css/form.css" />
     <link rel="stylesheet" type="text/css" href="../../../Css/nav.css" />
+    <!-- title color -->
     <meta name="theme-color" content="#ff6600">
+    <!-- Gfonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet" />
+    <!-- icon -->
     <link type="image/png" sizes="16x16" rel="icon" href="../../../imgs/1611814068005.jpg" />
+    <!-- num style -->
     <style>
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {
@@ -104,25 +128,27 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
         margin: 0;
     }
 
+    /* Firefox */
     input[type="number"] {
         -moz-appearance: textfield;
+    }
+
+    p {
+        font-family: monospace;
     }
     </style>
 </head>
 
 <body class="p-0 m-0">
-    <ul class="sidenav">
-        <li><a class="font-mono" href="forms.php" target="_self">Back</a></li>
-    </ul>
     <br />
     <br />
-    <div class="bg-[#ffffff] text-center content" style="padding:1rem">
+    <div class="bg-[#ffffff] text-center" style="padding:1rem">
         <div class="l-form p-0 ">
             <form action="#" method="POST" id="subcard" class="form">
                 <fieldset>
-                    <code id="times" style="color: green;"></code>
-                    <legend>Fill up</legend>
-
+                    <legend>
+                        <h1 class="font-mono antialiased text-lg">Fill up</h1>
+                    </legend>
                     <h1 class=" form__title"
                         style="font-family: 'Bungee', cursive; font-size: 2.2rem; color: rgb(119, 195, 196);">
                         <span style="text-decoration:underline">Faculty Feedback Form</span><br />
@@ -147,13 +173,14 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
 
                     <div class="form__div ">
                         <input type="text" class="form__input" name="faculty_name" id="faculty_name"
-                            placeholder="e.g Your Faculty name SY-BVoc,TY-BSc-IT," autocomplete="off" />
+                            placeholder="e.g SY-BVoc, TY-BSc-IT" autocomplete="off"
+                            value="<?php if (isset($faculty_name)) echo $faculty_name; ?>" />
                         <label for="" class="form__label">Faculty Name?</label>
                     </div>
 
                     <div class="form__div">
                         <input type="text" class="form__input" name="year_service" id="year_service" placeholder="e.g 3"
-                            autocomplete="off" />
+                            autocomplete="off" value="<?php if (isset($year_service)) echo $year_service; ?>" />
                         <label for="" class="form__label">Number of years in service?</label>
                     </div>
 
@@ -477,7 +504,7 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
                                 Toilets and washrooms are clean and well maintained:
                                 <br />
                                 <span class="radio">
-                                    <p> <input type="radio" name="rating3" value="4">&nbsp;
+                                    <p> <input type="radio" name="rating3_2" value="4">&nbsp;
                                         Strongly-Agree&nbsp;</p>
                                     <p> <input type="radio" name="rating3_2" value="3">&nbsp; Agree&nbsp;</p>
                                     <p> <input type="radio" name="rating3_2" value="2">&nbsp; Disagree&nbsp;</p>
@@ -632,16 +659,18 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
             <br />
             <br />
         </div>
-        <div class="footer-copyright text-center">
+    </div>
+    <br />
+    <div class="footer-copyright text-center" style="position:relative">
+        <br />
+        <p style="padding:1rem">&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html"
+                target="_self" class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> | <a
+                href="../../../personal.html" class="text-[blue] hover:underline ">Contributors</a>
             <br />
-            <p style="padding:1rem">&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html"
-                    target="_self" class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> | <a
-                    href="../../../personal.html" class="text-[blue] hover:underline ">Contributors</a>
-                <br>
-        </div>
     </div>
 </body>
 
+<!-- form validation -->
 <script type="text/javascript" src="../../../Js/papto.js"></script>
 <script src="../../../Js/main.js" type="text/javascript"></script>
 <script async type="text/javascript"

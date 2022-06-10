@@ -1,22 +1,31 @@
 <?php
 include('../connect.php');
-
+//on click
 session_start();
 if (!isset($_SESSION['setStu'])) {
     header('Location: forms.php');
 }
 
+// establish connection
 $con = get_con();
 
 if (isset($_POST['submit'])) {
+
+    //session statuses
+    //session statuses
     $status = session_status();
     if ($status == PHP_SESSION_NONE) {
+        //There is no active session
         session_start();
     } elseif ($status == PHP_SESSION_DISABLED) {
+        //Sessions are not available
         $stat = 1;
     } elseif ($status == PHP_SESSION_ACTIVE) {
+        //Destroy current and start new one
         $stat = 2;
     }
+
+    // default confirm setStu
     $name = mysqli_real_escape_string($con, $_POST['name']);
     $age = mysqli_real_escape_string($con, $_POST['age']);
     $gender = mysqli_real_escape_string($con, $_POST['gender']);
@@ -25,6 +34,8 @@ if (isset($_POST['submit'])) {
     $programme = mysqli_real_escape_string($con, $_POST['programme']);
     $division = mysqli_real_escape_string($con, $_POST['division']);
     if (isset($name) && isset($age) && isset($gender) && isset($rollno) && isset($class) && isset($programme) && isset($division)) {
+
+        // unideinfied post  get confirmation
         $confirm = mysqli_real_escape_string($con, $_POST['confirm']);
         if ($confirm == ' ' || $confirm == 'no' || $name == ' ' || $age == ' ' || $gender == ' ' || $rollno == ' ' || $class == ' ' || $programme == ' ' || $division == ' ') {
             if ($confirm == 'no') {
@@ -32,6 +43,7 @@ if (isset($_POST['submit'])) {
             }
             echo "<script>alert('Kindly Check Your Form Once Again 🤓');</script>";
         } else {
+            //ratings
             getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class, $programme, $division);
         }
     } else {
@@ -45,6 +57,7 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
 
 
     if (isset($_POST['rating_1']) && isset($_POST['rating_2'])  && isset($_POST['rating_3'])  && isset($_POST['rating_4'])  && isset($_POST['rating_5'])  && isset($_POST['rating_6'])  && isset($_POST['rating_7'])  && isset($_POST['rating_8'])  && isset($_POST['rating_9'])  && isset($_POST['rating_10'])  && isset($_POST['rating_11'])  && isset($_POST['rating_12'])  && isset($_POST['rating_13'])  && isset($_POST['rating_14'])  && isset($_POST['rating_15'])  && isset($_POST['rating_16'])  && isset($_POST['rating_17'])) {
+        // 
         $rating_1 = $_POST['rating_1'];
         $rating_2 = $_POST['rating_2'];
         $rating_3 = $_POST['rating_3'];
@@ -63,7 +76,7 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
         $rating_16 = $_POST['rating_16'];
         $rating_17 = $_POST['rating_17'];
 
-
+        // if form already exisits if roll no primary considered case (roll programme class) in database
         $query = "SELECT `rollno` FROM `answersss` WHERE rollno = '$rollno';";
         $result = mysqli_query($con, $query);
 
@@ -84,21 +97,28 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
 
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <title>Student Satisfaction Survey</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- tailwind css -->
+    <!-- <script src="https://cdn.tailwindcss.com"></script>  -->
     <link rel="stylesheet" type="text/css" href="../../../dist/output.css" />
     <link rel="stylesheet" type="text/css" href="../../../Css/style.css" />
     <link rel="stylesheet" type="text/css" href="../../../Css/form.css" />
     <link rel="stylesheet" type="text/css" href="../../../Css/nav.css" />
+    <!-- title color -->
     <meta name="theme-color" content="#ff6600">
+    <!-- Gfonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet" />
+    <!-- icon -->
     <link type="image/png" sizes="16x16" rel="icon" href="../../../imgs/1611814068005.jpg" />
+    <!-- num style -->
     <meta http-equiv='cache-control' content='no-cache'>
     <meta http-equiv='expires' content='0'>
     <meta http-equiv='pragma' content='no-cache'>
@@ -109,26 +129,26 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
         margin: 0;
     }
 
+    /* Firefox */
     input[type="number"] {
         -moz-appearance: textfield;
+    }
+
+    p {
+        font-family: monospace;
     }
     </style>
 </head>
 
 <body class="p-0 m-0">
-    <ul class="sidenav">
-        <li style="padding-bottom:0px"><a class="font-mono" href="forms.php" target="_self">Back</a></li>
-    </ul>
     <br />
-    <br />
-    <div class="bg-[#ffffff] text-center content" style="padding:0.5rem">
-
+    <div class="bg-[#ffffff] text-center" style="padding:0.5rem">
         <div class="l-form p-0 ">
             <form method="POST" id="subcard" class="form">
                 <fieldset>
-                    <code id="times" style="color: green;"></code>
-                    <legend>Fill up</legend>
-
+                    <legend>
+                        <h1 class="font-mono antialiased text-lg">Fill up</h1>
+                    </legend>
                     <h1 class=" form__title"
                         style="font-family: 'Bungee', cursive; font-size: 2.2rem; color: rgb(119, 195, 196);">
                         <span style="text-decoration:underline">Student Satisfaction Survey</span>
@@ -149,7 +169,7 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
                         <br />
                         <ul style="display:grid">
                             <li>
-                                <p style="font-weight:bold;font-family:monospace;color:#006effb7;">Yes&nbsp;<input
+                                <p style="font-weight:bold;font-family:monospace;color:green;">Yes&nbsp;<input
                                         type="radio" name="confirm" value="yes"></p>
                             </li>
                             <li>
@@ -162,13 +182,13 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
 
                     <div class="form__div">
                         <input type="text" class="form__input" name="name" id="name" placeholder="Full Name"
-                            autocomplete="off" />
+                            autocomplete="off" value="<?php if (isset($name)) echo $name; ?>" />
                         <label for="" class="form__label">Name?</label>
                     </div>
 
                     <div class="form__div">
                         <input type="number" class="form__input" name="age" id="age" placeholder="e.g 18"
-                            autocomplete="off" />
+                            autocomplete="off" value="<?php if (isset($age)) echo $age; ?>" />
                         <label for="" class="form__label">Age?</label>
                     </div>
 
@@ -209,7 +229,8 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
                     </div>
 
                     <div class="form__div selectaltered">
-                        <label for="programme" class="text-sm" style="color:rgb(68, 74, 79)">&squarf; Programme:</label>
+                        <label for="programme" class="text-sm" style="color:rgb(68, 74, 79)">&squarf;
+                            Programme:</label>
                         <select name="programme" id="programme">
                             <option value=" ">--</option>
                             <option value="BA">BA</option>
@@ -247,6 +268,8 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
                             choose the most appropriate one.</li>
                     </ul>
                     <br />
+
+                    <!-- selected opts -->
                     <div id="msg_set" style="display:none">
                         <ol class="form-ol">
                             <li>
@@ -449,7 +472,8 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
                             <br />
 
                             <li>
-                                Library facility in college(Way of cataloguing and arrangement of books in the library):
+                                Library facility in college(Way of cataloguing and arrangement of books in the
+                                library):
                                 <br />
                                 <br />
                                 <span class="radio">
@@ -570,17 +594,21 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
             </form>
 
         </div>
-        <div class="footer-copyright text-center">
-            <br />
-            <p style="padding:1rem">&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html"
-                    target="_self" class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> | <a
-                    href="../../../personal.html" class="text-[blue] hover:underline ">Contributors</a>
-                <br>
-        </div>
+
+    </div>
+    <br>
+    <div class="footer-copyright text-center" style="position:relative">
+        <br />
+        <p style="padding:1rem">&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html"
+                target="_self" class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> | <a
+                href="../../../personal.html" class="text-[blue] hover:underline ">Contributors</a>
+            <br>
     </div>
 </body>
 
+<!-- jquery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- form validation -->
 <script type="text/javascript" src="../../../Js/sss.js"></script>
 <script src="../../../Js/main.js" type="text/javascript"></script>
 <script async type="text/javascript"

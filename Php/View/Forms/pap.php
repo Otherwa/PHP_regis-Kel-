@@ -1,22 +1,31 @@
 <?php
 include('../connect.php');
+
+//on click
 session_start();
 
 if (!isset($_SESSION['setPAP'])) {
+    // redirect if not set
     header('Location: forms.php');
 }
 
-
+// establish connection
 $con = get_con();
+// err_msgs
 $var1 = 1;
 
 if (isset($_POST['submit'])) {
+
+    //session statuses
     $status = session_status();
     if ($status == PHP_SESSION_NONE) {
+        //There is no active session
         session_start();
     } elseif ($status == PHP_SESSION_DISABLED) {
+        //Sessions are not available
         $stat = 1;
     } elseif ($status == PHP_SESSION_ACTIVE) {
+        //Destroy current and start new one
         $stat = 2;
     }
 
@@ -28,15 +37,26 @@ if (isset($_POST['submit'])) {
     $paper = mysqli_real_escape_string($con, $_POST['subject']);
     $teacher = mysqli_real_escape_string($con, $_POST['teacher']);
 
+    // chech if set defaulu ' '(space); 
     if (isset($name) && isset($rollno) && isset($class) && isset($division) && isset($semester) && isset($paper) && isset($teacher)) {
 
         if ($name == ' ' || $rollno == ' ' || $class == ' ' || $division == ' ' || $semester == ' ' || $paper == ' ' || $paper == "--" || $teacher == ' ') {
             echo "<script>alert('Kindly Check Your Form Once Again 🤓');</script>";
+            // session_destroy();
+
         } else {
+
+            // double verify student
             $is_stu = verify_student($rollno, $con);
+
+            // check stu active ctrlid
             if ($is_stu != true) {
                 echo "<script>alert('Something Wrong with Your Control Id 🤓');</script>";
+                // session_destroy();
+
             } else {
+
+                //data submission func
                 get_ratings($con, $name, $teacher, $rollno, $class, $division, $semester, $paper);
             }
         }
@@ -45,6 +65,8 @@ if (isset($_POST['submit'])) {
     }
 }
 
+// all fucntions
+// get all classes func
 function classes($con)
 {
     $query = "SELECT DISTINCT `cname` FROM `activectrlid`;";
@@ -54,7 +76,7 @@ function classes($con)
     }
 }
 
-
+// get division
 function division($con)
 {
     $query = "SELECT DISTINCT  `division` FROM `activectrlid` order by `division` ASC";
@@ -64,7 +86,7 @@ function division($con)
     }
 }
 
-
+// double ctrlid check during submission
 function verify_student($rollno, $con)
 {
     $query = "SELECT * FROM `activectrlid` WHERE ctrlid = '$rollno'";
@@ -76,6 +98,8 @@ function verify_student($rollno, $con)
     }
 }
 
+// sql teacher_name get
+// data submit func
 function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semester, $paper)
 {
 
@@ -84,7 +108,7 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
         $rating1_1 = mysqli_real_escape_string($con, $_POST['rating1_1']);
         $rating2_1 = mysqli_real_escape_string($con, $_POST['rating2_1']);
         $rating3_1 = mysqli_real_escape_string($con, $_POST['rating3_1']);
-
+        // second rating block
         $rating1_2 = mysqli_real_escape_string($con, $_POST['rating1_2']);
         $rating2_2 = mysqli_real_escape_string($con, $_POST['rating2_2']);
         $rating3_2 = mysqli_real_escape_string($con, $_POST['rating3_2']);
@@ -92,7 +116,7 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
         $rating5_2 = mysqli_real_escape_string($con, $_POST['rating5_2']);
         $rating6_2 = mysqli_real_escape_string($con, $_POST['rating6_2']);
         $rating7_2 = mysqli_real_escape_string($con, $_POST['rating7_2']);
-
+        // third rating block
         $rating1_3 = mysqli_real_escape_string($con, $_POST['rating1_3']);
         $rating2_3 = mysqli_real_escape_string($con, $_POST['rating2_3']);
         $rating3_3 = mysqli_real_escape_string($con, $_POST['rating3_3']);
@@ -102,66 +126,93 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
         $rating7_3 = mysqli_real_escape_string($con, $_POST['rating7_3']);
         $rating8_3 = mysqli_real_escape_string($con, $_POST['rating8_3']);
         $suggest = mysqli_real_escape_string($con, $_POST['suggest']);
+        // echo
+        // echo $rating1_1 . " " . $rating2_1 . " " . $rating3_1 . " " . $rating1_2 . " " . $rating2_2 . " " . $rating3_2 . " " . $rating4_2  . " " . $rating5_2 . " " . $rating6_2 . " " . $rating7_2;
 
+        // get academic_year from teacher table for sepcific 
         $query = "SELECT `academic_year` FROM `teachers` WHERE tname = '$teacher' AND cname = '$class' ;";
         $result = mysqli_query($con, $query);
         $result = mysqli_fetch_assoc($result);
         $academic_year = $result['academic_year'];
 
+        // start config each time of year
+        // check if already
+        // concat saftey
         $query = "SELECT * FROM `answerpats` WHERE ctrlid =\"" . $rollno . "\"" . " AND cname =\"" . $class . "\"" . " AND tname =\"" . $teacher . "\"" . " AND sem =\"" . $semester . "\"" . " AND subject =\"" . $paper . "\"" . " AND academic_year =\"" . $academic_year . "\";";
         $result = mysqli_query($con, $query);
         $result = mysqli_num_rows($result);
         if ($result > 0) {
             echo "<script>alert('Your submitted Form already exists 🤡');</script>";
+            // redirect flag
+            // session_destroy();
         } else {
+            // change year year(curdate)
             $query = "INSERT INTO `answerpats`(`ctrlid`, `cname`, `tname`, `a11`, `a12`, `a13`, `a14`, `a15`, `a16`, `a17`, `a18`, `a19`, `a20`, `a21`, `a22`, `a23`, `a24`, `a25`, `a26`, `a27`, `a28`, `suggession`, `division`, `sem`, `subject`, `academic_year`,`Time`) 
             VALUES ('$rollno','$class','$teacher','$rating1_1','$rating2_1','$rating3_1','$rating1_2','$rating2_2','$rating3_2','$rating4_2','$rating5_2','$rating6_2','$rating7_2','$rating1_3','$rating2_3','$rating3_3','$rating4_3','$rating5_3','$rating6_3','$rating7_3','$rating8_3','$suggest','$division','$semester','$paper','$academic_year',current_timestamp());";
+            // execute query
+            mysqli_query($con, $query);
             $_SESSION['name'] = $name;
+
+            // https response
             header('Location: formsubmit.php');
         }
     } else {
         echo "<script>alert('Please select all the fields given below 🤓');</script>";
+        //session_destroy();
+
     }
 }
 
 ?>
 
 <!DOCTYPE html>
-<html lang="UTF-8">
+<html lang="en">
 
 <head>
     <title>PAT's Form</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- tailwind css -->
+    <!-- <script src="https://cdn.tailwindcss.com"></>  -->
     <link rel="stylesheet" type="text/css" href="../../../dist/output.css" />
     <link rel="stylesheet" type="text/css" href="../../../Css/style.css" />
     <link rel="stylesheet" type="text/css" href="../../../Css/form.css" />
     <link rel="stylesheet" type="text/css" href="../../../Css/nav.css" />
+    <!-- title color -->
     <meta name="theme-color" content="#ff6600" />
+    <!-- Gfonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet" />
+    <!-- icon -->
     <link type="image/png" sizes="16x16" rel="icon" href="../../../imgs/1611814068005.jpg" />
+    <!-- num style -->
     <meta http-equiv='cache-control' content='no-cache'>
     <meta http-equiv='expires' content='0'>
     <meta http-equiv='pragma' content='no-cache'>
+    <style>
+    .myfont {
+        font-family: "Bungee", cursive;
+    }
+
+    p {
+        font-family: monospace;
+    }
+    </style>
 </head>
 
 <body class="p-0 m-0">
-    <ul class="sidenav">
-        <li style="padding-bottom:0px"><a class="font-mono" href="forms.php" target="_self">Back</a></li>
-    </ul>
     <br />
     <br />
-    <div class="bg-[#ffffff] text-center content" style="padding:0.5rem">
+    <div class="bg-[#ffffff] text-center" style="padding:0.5rem">
         <br />
         <div class="l-form">
             <form method="POST" id="subcard" class="form">
                 <fieldset>
-                    <code id="times" style="color: green;"></code>
-                    <legend>Fill up</legend>
-                    <h1 class="form__title"
-                        style="font-family: 'Bungee', cursive; font-size: 2.2rem; color: rgb(119, 195, 196);">
+                    <legend>
+                        <h1 class="font-mono antialiased text-lg">Fill up</h1>
+                    </legend>
+                    <h1 class="form__title myfont" style=" font-size: 2.2rem; color: rgb(119, 195, 196);">
                         <span style="text-decoration: underline;">PAT's Question</span><br />
                         <span style="font-size: 1.4rem; font-family: 'Roboto', sans-serif; color: black;">
                             <img src="https://github.githubassets.com/images/mona-loading-dark.gif" alt="octo"
@@ -170,7 +221,7 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                     </h1>
                     <div class="form__div">
                         <input type="text" class="form__input" name="name" id="name" placeholder="Full Name"
-                            autocomplete="off" />
+                            autocomplete="off" value="<?php if (isset($name)) echo $name; ?>" />
                         <label for="" class="form__label">Name</label>
                     </div>
                     <div class="form__div">
@@ -180,17 +231,23 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                     </div>
                     <!-- feature req -->
                     <p id="notvalid_roll"></p>
+                    <!-- ajax ctrlid verify -->
+                    <!-- <input type="hidden" id="msg"> -->
+                    <!-- bug not value do not change -->
                     <br />
+                    <!-- selected opts -->
                     <div class="form__div selectaltered">
                         <label for="class" class="text-sm" style="color: rgb(68, 74, 79);">&bull; Class:</label>
                         <select name="class" id="class" onchange=FetchTeacher_from_class(this.value)>
                             <option value=" " selected>--</option>
+                            <!-- list of classes -->
                             <?php classes($con); ?>
                         </select>
                     </div>
                     <div class="form__div selectaltered">
                         <label for="division" class="text-sm" style="color: rgb(68, 74, 79);">&bull; Division:</label>
                         <select name="division" id="divison">
+                            <!-- php list get -->
                             <?php division($con); ?>
                         </select>
                     </div>
@@ -200,25 +257,40 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                         <select style="width:5rem" name="teacher" id="teacher"
                             onchange=FetchSem_from_teacher(this.value)>
                             <option value=" ">--</option>
+                            <!-- get list -->
+                            <!-- get list Ajax -->
                         </select>
                     </div>
-                    <br />
                     <div class="form__div selectaltered">
                         <label for="division" class="text-sm" style="color: rgb(68, 74, 79);">&bull; Choose
                             Semester:</label>
                         <select name="semester" id="semester" onchange=FetchSub_from_division(this.value)>
                             <option value=" ">--</option>
+                            <!-- get list Ajax-->
+                            <!-- value as space character if no subject -->
                         </select>
                     </div>
+                    <!-- paper selection -->
                     <div class="form__div selectaltered" id="semester_paper" style="display: block;">
                         <label for="subject" class="text-sm" style="color: rgb(68, 74, 79);">&bull; Choose
                             Subject:</label>
                         <select id="subject" name="subject">
+                            <!-- get list Ajax-->
                             <option value=" ">--</option>
                         </select>
                     </div>
                     <br />
+                    <p class="text-lg hover:underline"><code>Instructions to fill the questionnaire</code></p>
+                    <br />
+                    <ul id="inst">
+                        <li>All questions should be
+                            compulsorily attempted.</li>
+                        <li>Each question has seven responses,
+                            choose the most appropriate one.</li>
+                    </ul>
+                    <!-- selected opts -->
                     <div id="msg_set" style="display:none">
+                        <!-- if msg displaynone -->
                         <ol>
                             <li>
                                 Attitude Towards Students:
@@ -681,18 +753,21 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
             </form>
         </div>
         <br />
-        <div class="footer-copyright text-center">
+    </div>
+    <br>
+    <div class="footer-copyright text-center" style="position:relative">
+        <br />
+        <p style="padding:1rem;">
+            &copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html" target="_self"
+                class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> |
+            <a href="../../../personal.html" class="text-[blue] hover:underline">Contributors</a>
             <br />
-            <p style="padding: 1rem;">
-                &copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html" target="_self"
-                    class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> |
-                <a href="../../../personal.html" class="text-[blue] hover:underline">Contributors</a>
-                <br />
-            </p>
-        </div>
+        </p>
     </div>
 </body>
+<!-- jquery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- form validation -->
 <script type="text/javascript" src="../../../Js/papto.js"></script>
 <script src="../../../Js/main.js" type="text/javascript"></script>
 <script async type="text/javascript"

@@ -2,6 +2,7 @@ document.addEventListener('contextmenu', function(e) {
     e.preventDefault();
 });
 
+// roll no  validation
 var roll = document.getElementById('rollno');
 roll.addEventListener('input', () => {
     var rollno = roll.value;
@@ -20,9 +21,14 @@ roll.addEventListener('focus', () => {
     roll.style.borderColor = "#006eff";
 })
 
+
+// works do not touch
 var value1 = "";
 var value2 = "";
 
+
+// for Ajax requests noob code
+// ref https://www.youtube.com/watch?v=neZTTWJ98-0
 function FetchTeacher_from_class(id) {
     $('#semester').html('<option value =" ">--</option>');
     $('#subject').html('<option value =" ">--</option>');
@@ -61,8 +67,10 @@ function FetchSem_from_teacher(id) {
 
     })
     value1 = id;
+    // for And SQL query in ajaxtemp if isset$_POST'sem' && isset$_POST'teachername' method
 }
 
+// get subject for specific sem of teacher
 function FetchSub_from_division(id) {
     $('#subject').html('<option value =" ">--</option>');
     $.ajax({
@@ -80,10 +88,16 @@ function FetchSub_from_division(id) {
     })
 }
 
+
+// verification 
+
+// begin condition;
 window.onload = () => {
     document.getElementById("sub").disabled = true;
 }
 
+
+// verify student async
 function verify_stu() {
     $.ajax({
         type: 'post',
@@ -96,6 +110,8 @@ function verify_stu() {
     })
 }
 
+
+// if ctrlid valid set ratings else none every 50 ms 
 window.setInterval(function() {
     if (document.getElementById('msg') != null) {
         var msg = document.getElementById('msg').value;

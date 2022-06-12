@@ -74,6 +74,7 @@ Registration form using php
 
 - `*/` consists of all basic static pages needed to render , the `index.html` redirects to `Php\View\Forms\formto.php`.
 - `Php\View\Forms\formto.php` uses sql connect to fill respective data to Mysql backend
+- `*.js` files contain ajax request to fetch data for specificc conditions (logic).
 - after fillup is compeleted again redirected to `Php Directory\formsub.html` (1 sec) wait -> `index.html`
 - Done.
 - Each seperate .css file for each components (Name Convention).
@@ -92,14 +93,16 @@ Registration form using php
 - Scratch Css. `present in Css/style.css`
 
 # Preview & Feature
-![sss111](https://user-images.githubusercontent.com/67428572/170446860-39d0202f-7a9e-4649-b955-01ca37c02b1d.png)
-![sss2](https://user-images.githubusercontent.com/67428572/170446864-d377be48-e0bf-44d3-b48b-2436e36a91b9.png)
-![sss22](https://user-images.githubusercontent.com/67428572/170446868-fb9ddc1f-33bd-42bf-89f6-1d9ac1fa0fa5.png)
-![sss3](https://user-images.githubusercontent.com/67428572/170446871-890a1fc8-14c5-4700-8f38-454592e76099.png)
-![sss4](https://user-images.githubusercontent.com/67428572/170446876-1d5a6e98-b729-4315-93aa-803bb405b6d1.png)
-![sss444](https://user-images.githubusercontent.com/67428572/170446878-e0778382-0fae-46c6-90fc-8bb51d3fcda3.png)
-![sss1](https://user-images.githubusercontent.com/67428572/170446881-5d45912e-ff41-4d20-982b-0b6d02a160f9.png)
-![sss11](https://user-images.githubusercontent.com/67428572/170446885-8063d5db-35b8-43ed-9261-77ab220a7e00.png)
+
+![ss1](https://user-images.githubusercontent.com/67428572/173231279-ff60e720-7a1b-44bb-8198-95f9f5d49f0a.png)
+![ss2](https://user-images.githubusercontent.com/67428572/173231280-0e918b60-483a-482b-abfd-5be0de50a46b.png)
+![ss3](https://user-images.githubusercontent.com/67428572/173231281-b1068ae3-a2e9-4492-aad1-fc808b0013f6.png)
+![ss4](https://user-images.githubusercontent.com/67428572/173231283-969f92fa-c1ec-4c98-9f3e-6b12a802a67b.png)
+![ss5](https://user-images.githubusercontent.com/67428572/173231284-75a834e7-4542-4d8d-b625-445f5404c58a.png)
+![ss6](https://user-images.githubusercontent.com/67428572/173231285-a79d4f89-32ba-46eb-b9b5-d7280426c78f.png)
+![ss7](https://user-images.githubusercontent.com/67428572/173231289-ffc31a87-ed13-479d-a0b5-064027311793.png)
+![ss8](https://user-images.githubusercontent.com/67428572/173231290-5f38eccd-2dc8-4ffd-a686-408e940f6033.png)
+![ss9](https://user-images.githubusercontent.com/67428572/173231292-e2fb68b7-2b93-4ddf-9cb5-d87ffdf2d329.png)
 
 
 
@@ -119,7 +122,6 @@ Registration form using php
 
  - [Awesome Readme Templates](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
  - [Awesome README](https://github.com/matiassingers/awesome-readme)
- - [How to write a Good readme](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
 
 # Status
 

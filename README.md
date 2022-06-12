@@ -74,7 +74,7 @@ Registration form using php
 
 - `*/` consists of all basic static pages needed to render , the `index.html` redirects to `Php\View\Forms\formto.php`.
 - `Php\View\Forms\formto.php` uses sql connect to fill respective data to Mysql backend
-- `*.js` files contain ajax request to fetch data for specificc conditions (logic).
+- `*.js` files contain ajax request to fetch data for specific conditions (logic).
 - after fillup is compeleted again redirected to `Php Directory\formsub.html` (1 sec) wait -> `index.html`
 - Done.
 - Each seperate .css file for each components (Name Convention).

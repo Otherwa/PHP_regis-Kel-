@@ -1,7 +1,7 @@
 {
     "name": "PHP_regis",
     "version": "1.0.0",
-    "description": "For Get and Post of Forms",
+    "description": "For Get and Post of Forms aka Kollege Freeprj",
     "main": "index.js",
     "scripts": {
         "build-css": "tailwindcss build -i src/style.css -o style/style.css --watch"

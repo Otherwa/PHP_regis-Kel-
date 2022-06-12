@@ -9,7 +9,7 @@ if (isset($_POST["export"])) {
      $result = mysqli_query($con, $query);
      if (mysqli_num_rows($result) > 0) {
           $output .= '
-   <table class="table" bordered="1">  
+               <table class="table" bordered="1">  
                     <tr>
                     // change markup here to question for easy editing of headers
                          <th>ctrlid</th>  
@@ -39,11 +39,11 @@ if (isset($_POST["export"])) {
                          <th>subject</th>  
                          <th>academic year</th>  
                          <th>timestamp</th>  
-                    </tr>
-  ';
+               </tr>
+                ';
           while ($row = mysqli_fetch_array($result)) {
                $output .= '
-            <tr>  
+                     <tr>  
                          <td>' . $row["ctrlid"] . '</td>  
                          <td>' . $row["cname"] . '</td>  
                          <td>' . $row["tname"] . '</td>  
@@ -71,8 +71,8 @@ if (isset($_POST["export"])) {
                          <td>' . $row["subject"] . '</td>  
                          <td>' . $row["academic_year"] . '</td>    
                          <td>' . $row["Time"] . '</td>    
-            </tr>
-   ';
+                      </tr>
+                    ';
           }
           $output .= '</table>';
           header('Content-Type: application/xlsx');

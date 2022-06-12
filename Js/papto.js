@@ -106,7 +106,9 @@ function verify_stu() {
         success: function(data) {
             $('#notvalid_roll').html(data);
         },
-        error: function() {},
+        error: function() {
+            console.log(response.status);
+        },
     })
 }
 

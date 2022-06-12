@@ -529,6 +529,7 @@ session_destroy();
         <!-- This requires Tailwind CSS v2.0+ -->
         <div class=" bg-[#ffffff] text-center p-3 m-2">
             <!-- <img src="https://c.tenor.com/iUBQduqPqH4AAAAM/badform-gymfail.gif" alt=""> -->
+
             <input type="hidden" id="count" value="<?php echo get_count($con); ?>">
             <input type="hidden" id="_count" value="<?php echo get_count1($con); ?>">
             <input type="hidden" id="__count" value="<?php echo get_count2($con); ?>">
@@ -705,7 +706,7 @@ session_destroy();
         <input id="__data23" type="hidden" value="<?php echo $chartdata2[22] ?>">
         <input id="__data24" type="hidden" value="<?php echo $chartdata2[23] ?>">
         <input id="__data25" type="hidden" value="<?php echo $chartdata2[24] ?>">
-        <script type="text/javascript" src="../../../Js/admin.js"></script>
+        <script type="text/javascript" src="../../../Js/admin.js?v=1"></script>
     </div>
 </body>
 <script src="../../../Js/main.js?v=1" type="text/javascript"></script>

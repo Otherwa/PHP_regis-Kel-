@@ -65,7 +65,7 @@ let __data1 = document.getElementById('__data1').value;
 let __data2 = document.getElementById('__data2').value;
 let __data3 = document.getElementById('__data3').value;
 let __data4 = document.getElementById('__data4').value;
-let __data5 = document.getElementById('_data5').value;
+let __data5 = document.getElementById('__data5').value;
 let __data6 = document.getElementById('__data6').value;
 let __data7 = document.getElementById('__data7').value;
 let __data8 = document.getElementById('__data8').value;
@@ -97,9 +97,9 @@ while (i < 25) {
     i++;
 }
 
-const Data = [data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12, data13, data14, data15, data16, data17, data18, data19, data20, data21, data22, data23, data24, data25];
-const Data1 = [_data1, _data2, _data3, _data4, _data5, _data6, _data7, _data8, _data9, _data10, _data11, _data12, _data13, _data14, _data15, _data16, _data17, _data18, _data19, _data20, _data21, _data22, _data23, _data24, _data25];
-const Data2 = [__data1, __data2, __data3, __data4, __data5, __data6, __data7, __data8, __data9, __data10, __data11, __data12, __data13, __data14, __data15, __data16, __data17, __data18, __data19, __data20, __data21, __data22, __data23, __data24, __data25];
+let Data = [data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12, data13, data14, data15, data16, data17, data18, data19, data20, data21, data22, data23, data24, data25];
+let Data1 = [_data1, _data2, _data3, _data4, _data5, _data6, _data7, _data8, _data9, _data10, _data11, _data12, _data13, _data14, _data15, _data16, _data17, _data18, _data19, _data20, _data21, _data22, _data23, _data24, _data25];
+let Data2 = [__data1, __data2, __data3, __data4, __data5, __data6, __data7, __data8, __data9, __data10, __data11, __data12, __data13, __data14, __data15, __data16, __data17, __data18, __data19, __data20, __data21, __data22, __data23, __data24, __data25];
 
 Chart.defaults.font.size = 13;
 Chart.defaults.font.family = "monospace";
@@ -271,6 +271,8 @@ const myChart1 = new Chart(ctx1, {
     },
 
 });
+
+
 // faculty form
 
 const myChart2 = new Chart(ctx2, {

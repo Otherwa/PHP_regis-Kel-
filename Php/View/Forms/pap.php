@@ -768,8 +768,8 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
 <!-- jquery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <!-- form validation -->
-<script type="text/javascript" src="../../../Js/papto.js"></script>
-<script src="../../../Js/main.js" type="text/javascript"></script>
+<script type="text/javascript" src="../../../Js/papto.js?v=1"></script>
+<script src="../../../Js/main.js?v=1" type="text/javascript"></script>
 <script async type="text/javascript"
     src="https://api.countapi.xyz/hit/KelkarForms.com/415a7523-bb25-4d45-a700-33a48a168a6c/?callback=counter"></script>
 

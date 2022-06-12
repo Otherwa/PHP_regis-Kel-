@@ -180,8 +180,8 @@ if (isset($_POST['FFForm'])) {
 
 </body>
 <!-- form validation -->
-<script type="text/javascript" src="../../../Js/forms.js"></script>
-<script src="../../../Js/main.js" type="text/javascript"></script>
+<script type="text/javascript" src="../../../Js/forms.js?v=1"></script>
+<script src="../../../Js/main.js?v=1" type="text/javascript"></script>
 <script async type="text/javascript"
     src="https://api.countapi.xyz/hit/KelkarForms.com/415a7523-bb25-4d45-a700-33a48a168a6c/?callback=counter"></script>
 

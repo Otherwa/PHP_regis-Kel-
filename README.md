@@ -106,7 +106,7 @@ Registration form using php
 
 
 
- [Demo Build](http://form123.epizy.com/)
+ [Demo Build](https://form123.epizy.com/)
 
 # In a nut-shell
 

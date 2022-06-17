@@ -16,7 +16,7 @@ Registration form using php
 
 ## For Developement
 
-- XAMPP [documentation](https://www.apachefriends.org/index.html)
+- XAMPP 8.0.19 [documentation](https://www.apachefriends.org/index.html)
 - Any IDE. `VSCode`.
 - Google Fonts API. [documentaion](https://fonts.google.com/knowledge)
 - Tailwind npm/CDN `(temp)`. [documentation](https://tailwindcss.com/docs/installation)

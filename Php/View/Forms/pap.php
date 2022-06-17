@@ -66,15 +66,7 @@ if (isset($_POST['submit'])) {
 }
 
 // all fucntions
-// get all classes func
-function classes($con)
-{
-    $query = "SELECT DISTINCT `cname` FROM `activectrlid`;";
-    $result = mysqli_query($con, $query);
-    while ($row = mysqli_fetch_assoc($result)) {
-        echo "<option value =\"" . $row['cname'] . "\">" . $row['cname'] . "</option>";
-    }
-}
+
 
 // get division
 function division($con)
@@ -144,6 +136,7 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
         if ($result > 0) {
             echo "<script>alert('Your submitted Form already exists 🤡');</script>";
             // redirect flag
+            // if ajax req fails in case
             // session_destroy();
         } else {
             // change year year(curdate)
@@ -213,41 +206,42 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                         <h1 class="font-mono antialiased text-lg">Fill up</h1>
                     </legend>
                     <h1 class="form__title myfont" style=" font-size: 2.2rem; color: rgb(119, 195, 196);">
-                        <span style="text-decoration: underline;">PAT's Question</span><br />
+                        <span style="text-decoration: underline;">PATS Question</span><br />
                         <span style="font-size: 1.4rem; font-family: 'Roboto', sans-serif; color: black;">
                             <img src="https://github.githubassets.com/images/mona-loading-dark.gif" alt="octo"
                                 style="height: 3rem; margin-top: 1rem;" />
                         </span>
                     </h1>
-                    <div class="form__div">
-                        <input type="text" class="form__input" name="name" id="name" placeholder="Full Name"
-                            autocomplete="off" value="<?php if (isset($name)) echo $name; ?>" />
-                        <label for="" class="form__label">Name</label>
-                    </div>
+                    <!-- feature req -->
                     <div class="form__div">
                         <input type="text" class="form__input" name="rollno" id="rollno" placeholder="e.g XXXXXXX289"
                             autocomplete="off" onInput="verify_stu()" />
                         <label for="" class="form__label">Control Id</label>
                     </div>
-                    <!-- feature req -->
                     <p id="notvalid_roll"></p>
                     <!-- ajax ctrlid verify -->
                     <!-- <input type="hidden" id="msg"> -->
                     <!-- bug not value do not change -->
+                    <div class="form__div">
+                        <input type="text" class="form__input" name="name" id="name" placeholder="Full Name"
+                            autocomplete="off" value="<?php if (isset($name)) echo $name; ?>" />
+                        <label for="" class="form__label">Name</label>
+                    </div>
                     <br />
                     <!-- selected opts -->
                     <div class="form__div selectaltered">
                         <label for="class" class="text-sm" style="color: rgb(68, 74, 79);">&bull; Class:</label>
-                        <select name="class" id="class" onchange=FetchTeacher_from_class(this.value)>
-                            <option value=" " selected>--</option>
+                        <select name="class" id="class" onchange="FetchTeacher_from_class(this.value)">
+                            <option value="--">--</option>
+                            <option value="set">--</option>
                             <!-- list of classes -->
-                            <?php classes($con); ?>
                         </select>
                     </div>
                     <div class="form__div selectaltered">
                         <label for="division" class="text-sm" style="color: rgb(68, 74, 79);">&bull; Division:</label>
                         <select name="division" id="divison">
                             <!-- php list get -->
+                            <option value="--">--</option>
                             <?php division($con); ?>
                         </select>
                     </div>
@@ -262,9 +256,9 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                         </select>
                     </div>
                     <div class="form__div selectaltered">
-                        <label for="division" class="text-sm" style="color: rgb(68, 74, 79);">&bull; Choose
+                        <label for="semsester" class="text-sm" style="color: rgb(68, 74, 79);">&bull; Choose
                             Semester:</label>
-                        <select name="semester" id="semester" onchange=FetchSub_from_division(this.value)>
+                        <select name="semester" id="semester" onchange="FetchSub_from_division(this.value)">
                             <option value=" ">--</option>
                             <!-- get list Ajax-->
                             <!-- value as space character if no subject -->
@@ -274,11 +268,13 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                     <div class="form__div selectaltered" id="semester_paper" style="display: block;">
                         <label for="subject" class="text-sm" style="color: rgb(68, 74, 79);">&bull; Choose
                             Subject:</label>
-                        <select id="subject" name="subject">
+                        <select id="subject" name="subject" onchange="Is_Form_Sent()">
                             <!-- get list Ajax-->
-                            <option value=" ">--</option>
+                            <option value="--">--</option>
                         </select>
                     </div>
+                    <p id="msg_form"></p>
+
                     <br />
                     <p class="text-lg hover:underline"><code>Instructions to fill the questionnaire</code></p>
                     <br />

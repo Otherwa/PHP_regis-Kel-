@@ -180,6 +180,17 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
                     </div>
                     <br />
 
+
+                    <div class="form__div">
+                        <input type="text" class="form__input" name="rollno" id="rollno" placeholder="e.g XXXXXXX289"
+                            autocomplete="off" onInput="verify_stu()" />
+                        <label for="" class="form__label">Control Id</label>
+                    </div>
+                    <p id="notvalid_roll"></p>
+                    <!-- ajax ctrlid verify -->
+                    <!-- bug -->
+                    <br>
+
                     <div class="form__div">
                         <input type="text" class="form__input" name="name" id="name" placeholder="Full Name"
                             autocomplete="off" value="<?php if (isset($name)) echo $name; ?>" />
@@ -204,15 +215,6 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
 
                     <br />
 
-                    <div class="form__div">
-                        <input type="text" class="form__input" name="rollno" id="rollno" placeholder="e.g XXXXXXX289"
-                            autocomplete="off" onInput="verify_stu()" />
-                        <label for="" class="form__label">Control Id</label>
-                    </div>
-                    <p id="notvalid_roll"></p>
-                    <!-- ajax ctrlid verify -->
-                    <!-- bug -->
-                    <br>
                     <!-- can be acquired by database activectrlid-->
                     <div class="form__div selectaltered">
                         <label for="class" class="text-sm" style="color:rgb(68, 74, 79)">&squarf; Class:</label>
@@ -231,7 +233,7 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
                     <div class="form__div selectaltered">
                         <label for="programme" class="text-sm" style="color:rgb(68, 74, 79)">&squarf;
                             Programme:</label>
-                        <select name="programme" id="programme">
+                        <select name="programme" id="programme" onchange="Is_Form_Sent()">
                             <option value=" ">--</option>
                             <option value="BA">BA</option>
                             <option value="BSc">Bsc</option>
@@ -258,7 +260,8 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
                     </div>
 
                     <br />
-
+                    <p id="msg_form"></p>
+                    <br />
                     <p class="text-lg hover:underline"><code>Instructions to fill the questionnaire</code></p>
                     <br />
                     <ul id="inst">

@@ -15,6 +15,30 @@ if (isset($_POST['class'])) {
     }
 }
 
+// check first ez if form submit
+if (isset($_POST['cid']) && isset($_POST['class1']) && isset($_POST['teach']) && isset($_POST['sem']) && isset($_POST['sub'])) {
+    $con = get_con();
+    if ($_POST['sub'] != '--') {
+        $query = "SELECT * FROM `answerpats` WHERE ctrlid =\"" . $_POST['cid'] . "\"" . " AND cname =\"" . $_POST['class1'] . "\"" . " AND tname =\"" . $_POST['teach'] . "\"" . " AND sem =\"" . $_POST['sem'] . "\"" . " AND subject =\"" . $_POST['sub'] . "\"";
+        $result = mysqli_query($con, $query);
+        $result = mysqli_num_rows($result);
+        // if form filled dont display
+        if ($result > 0) {
+            echo "<script>$('#sub').attr('disabled', true);</script>";
+            echo "<input id =\"msg\" value = \"none\" style=\"display:none;\">";
+            echo "<p style=\"color:red;\">You've already Filled this Form</p>";
+            echo "<script>$('#sub').attr('disabled',true);</script>";
+        } else {
+            echo "<input id=\"msg\" value=\"block\" style=\"display:none;\">";
+            echo "<p style=\"color:green;\">Form Open</p>";
+            echo "<script>$('#sub').attr('disabled', false);</script>";
+        }
+    } else {
+        echo "<input id =\"msg\" value = \"none\" style=\"display:none;\">";
+        echo "<p style=\"color:red;\">Invalid</p>";
+        echo "<script>$('#sub').attr('disabled',true);</script>";
+    }
+}
 // semester if tname concides one in a blue moon
 if (isset($_POST['tname']) && isset($_POST['classv1'])) {
     $con = get_con();
@@ -26,6 +50,26 @@ if (isset($_POST['tname']) && isset($_POST['classv1'])) {
     }
 }
 
+// student  sss form check
+
+if (isset($_POST['cid_stu'])) {
+    $con = get_con();
+    $query = "SELECT * FROM `answersss` WHERE rollno =\"" . $_POST['cid_stu'] . "\"";
+    $result = mysqli_query($con, $query);
+    $result = mysqli_num_rows($result);
+    // if form filled dont display
+    if ($result > 0) {
+        echo "<script>$('#sub').attr('disabled', true);</script>";
+        echo "<input id =\"msg\" value = \"none\" style=\"display:none;\">";
+        echo "<p style=\"color:red;\">You've already Filled this Form</p>";
+        echo "<script>$('#sub').attr('disabled',true);</script>";
+    } else {
+        echo "<input id=\"msg\" value=\"block\" style=\"display:none;\">";
+        echo "<p style=\"color:green;\">Form Open</p>";
+        echo "<script>$('#sub').attr('disabled', false);</script>";
+    }
+}
+
 // get subject for specific semester teacher
 if (isset($_POST['sem']) && isset($_POST['teachername'])) {
     $con = get_con();
@@ -34,12 +78,12 @@ if (isset($_POST['sem']) && isset($_POST['teachername'])) {
     $row = mysqli_fetch_array($result);
     $result1 = mysqli_num_rows($result);
     if ($result1 > 0) {
-        echo "<option value =\"" . " " . "\">" . "--" . "</option>";
+        echo "<option value =\"" . "--" . "\">" . "--" . "</option>";
         echo "<option value =\"" . $row['subject1'] . "\">" .  $row['subject1']  . "</option>";
         echo "<option value =\"" . $row['subject2'] . "\">" .  $row['subject2']  . "</option>";
         echo "<option value =\"" . $row['subject3'] . "\">" .  $row['subject3']  . "</option>";
     } else {
-        echo "<option value =\"" . " " . "\">" . "--" . "</option>";
+        echo "<option value =\"" . "--" . "\">" . "--" . "</option>";
     }
 }
 
@@ -47,18 +91,16 @@ if (isset($_POST['sem']) && isset($_POST['teachername'])) {
 // verify student
 if (isset($_POST['rollno'])) {
     $con = get_con();
-    $query = " SELECT * FROM `activectrlid` WHERE ctrlid= " . "\"" . $_POST['rollno'] . "\";";
+    $query = "SELECT `name`,`cname` FROM `activectrlid` WHERE ctrlid= " . "\"" . $_POST['rollno'] . "\";";
     $result = mysqli_query($con, $query);
+    $row = mysqli_fetch_array($result);
     $result = mysqli_num_rows($result);
     if ($result > 0) {
         echo "<span style='color:green;font-family:monospace;font-weight:bold;'>Valid Id ✅</span>";
-        echo "<input id =\"msg\" value = \"block\" style=\"display:none;\">";
-        echo "<script>$('#sub').attr('disabled',false);</script>";
-        // js hidden value to ol display:none
+        echo "<input id =\"set_name\" value = \"" . $row['name'] . "\" style=\"display:none;\">";
+        echo "<input id =\"set_class\" value = \"" . $row['cname'] . "\" style=\"display:none;\">";
     } else {
         echo "<span id=\"msg_\"style='color:red;font-family:monospace;font-weight:bold;'>Invalid Id ❌</span>";
-        echo "<input id =\"msg\" value = \"none\" style=\"display:none;\">";
-        echo "<script>$('#sub').attr('disabled',true);</script>";
     }
 }
 ?>

@@ -12,6 +12,11 @@
          font-weight: bold;
      }
      
+     #notvalid_roll {
+         padding-bottom: 1rem;
+         padding-left: 0.45rem;
+     }
+     
      html {
          /* cursor: url(http://www.rw-designer.com/cursor-extern.php?id=121707), auto; */
          cursor: auto;

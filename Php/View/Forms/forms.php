@@ -118,7 +118,7 @@ if (isset($_POST['FFForm'])) {
                 <div class="forms">
                     <button type=" submit"
                         class="but inline-block font-mono text-center border border-transparent rounded-md py-3 px-8 text-lg text-white transition ease-in-out delay-100 bg-blue-500 hover:bg-[#1fc6e4] hover:text-black duration-300"
-                        name="PAPForm"> PAP's Form
+                        name="PAPForm"> PATS Form
                     </button>
                 </div>
                 <br />

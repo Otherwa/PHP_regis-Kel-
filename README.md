@@ -85,7 +85,8 @@ Registration form using php
 `answerpats` `answersss` `answerfac` for storing feedbacks.
 
 ##### Schema
-![1213](https://user-images.githubusercontent.com/67428572/169552870-e5ff8c4f-b770-4b39-9b5d-b7e381f1977a.png)
+![ss1](https://user-images.githubusercontent.com/67428572/174314616-7b18230a-b2c4-4d3c-858d-3dfb75c8fedc.png)
+
 
 ## styling
 

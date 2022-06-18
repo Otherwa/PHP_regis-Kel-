@@ -151,12 +151,11 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
                     </legend>
                     <h1 class=" form__title"
                         style="font-family: 'Bungee', cursive; font-size: 2.2rem; color: rgb(119, 195, 196);">
-                        <span style="text-decoration:underline">Student Satisfaction Survey</span>
+                        <span style="text-decoration:underline;font-size: 1.45rem;">Student Satisfaction Survey</span>
                         <img src="https://github.githubassets.com/images/mona-loading-dark.gif" alt="octo"
                             style="height:3rem;margin-top:1rem">
                         <p style=" font-size: 1rem; font-family: 'Roboto' , sans-serif; color: black;margin-top:10px">
-                            <code> Student
-                                Satisfaction Survey will help upgrade the quality in higher education.
+                            <code class="msg">Student Satisfaction Survey will help upgrade the quality in higher education.
                                 A student will have to respond to all the questions given in the following format with her/his
                                 sincere effort and thought.
                             </code>
@@ -193,13 +192,13 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
 
                     <div class="form__div">
                         <input type="text" class="form__input" name="name" id="name" placeholder="Full Name"
-                            autocomplete="off" value="<?php if (isset($name)) echo $name; ?>" />
+                            autocomplete="off" />
                         <label for="" class="form__label">Name?</label>
                     </div>
 
                     <div class="form__div">
                         <input type="number" class="form__input" name="age" id="age" placeholder="e.g 18"
-                            autocomplete="off" value="<?php if (isset($age)) echo $age; ?>" />
+                            autocomplete="off" />
                         <label for="" class="form__label">Age?</label>
                     </div>
 
@@ -212,8 +211,6 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
                             <option value="Other">Other</option>
                         </select>
                     </div>
-
-                    <br />
 
                     <!-- can be acquired by database activectrlid-->
                     <div class="form__div selectaltered">
@@ -264,7 +261,7 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
                     <br />
                     <p class="text-lg hover:underline"><code>Instructions to fill the questionnaire</code></p>
                     <br />
-                    <ul id="inst">
+                    <ul class="msg">
                         <li>All questions should be
                             compulsorily attempted.</li>
                         <li>Each question has seven responses,

@@ -99,12 +99,13 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
 
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <title>Faculty Feedback Form</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- tailwind css -->
     <!-- <script src="https://cdn.tailwindcss.com"></script>  -->
     <link rel="stylesheet" type="text/css" href="../../../dist/output.css" />
@@ -139,12 +140,9 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
 </head>
 
 <body class="p-0 m-0">
-    <ul class="sidenav">
-        <li><a class="font-mono" href="forms.php" target="_self">Back</a></li>
-    </ul>
     <br />
     <br />
-    <div class="bg-[#ffffff] text-center content" style="padding:1rem">
+    <div class="bg-[#ffffff] text-center" style="padding:1rem">
         <div class="l-form p-0 ">
             <form action="#" method="POST" id="subcard" class="form">
                 <fieldset>
@@ -153,7 +151,7 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
                     </legend>
                     <h1 class=" form__title"
                         style="font-family: 'Bungee', cursive; font-size: 2.2rem; color: rgb(119, 195, 196);">
-                        <span style="text-decoration:underline">Faculty Feedback Form</span><br />
+                        <span style="text-decoration:underline;font-size: 1.45rem;">Faculty Feedback Form</span><br />
                         <span style=" font-size: 1.4rem; font-family: 'Roboto' , sans-serif; color: black;">
                             <img src="https://github.githubassets.com/images/mona-loading-dark.gif" alt="octo"
                                 style="height:3rem;margin-top:1rem"></span>
@@ -175,13 +173,14 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
 
                     <div class="form__div ">
                         <input type="text" class="form__input" name="faculty_name" id="faculty_name"
-                            placeholder="e.g Your Faculty name SY-BVoc,TY-BSc-IT," autocomplete="off" />
+                            placeholder="e.g SY-BVoc, TY-BSc-IT" autocomplete="off"
+                            value="<?php if (isset($faculty_name)) echo $faculty_name; ?>" />
                         <label for="" class="form__label">Faculty Name?</label>
                     </div>
 
                     <div class="form__div">
                         <input type="text" class="form__input" name="year_service" id="year_service" placeholder="e.g 3"
-                            autocomplete="off" />
+                            autocomplete="off" value="<?php if (isset($year_service)) echo $year_service; ?>" />
                         <label for="" class="form__label">Number of years in service?</label>
                     </div>
 
@@ -505,7 +504,7 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
                                 Toilets and washrooms are clean and well maintained:
                                 <br />
                                 <span class="radio">
-                                    <p> <input type="radio" name="rating3" value="4">&nbsp;
+                                    <p> <input type="radio" name="rating3_2" value="4">&nbsp;
                                         Strongly-Agree&nbsp;</p>
                                     <p> <input type="radio" name="rating3_2" value="3">&nbsp; Agree&nbsp;</p>
                                     <p> <input type="radio" name="rating3_2" value="2">&nbsp; Disagree&nbsp;</p>
@@ -660,19 +659,20 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
             <br />
             <br />
         </div>
-        <div class="footer-copyright text-center">
+    </div>
+    <br />
+    <div class="footer-copyright text-center" style="position:relative">
+        <br />
+        <p style="padding:1rem">&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html"
+                target="_self" class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> | <a
+                href="../../../personal.html" class="text-[blue] hover:underline ">Contributors</a>
             <br />
-            <p style="padding:1rem">&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html"
-                    target="_self" class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> | <a
-                    href="../../../personal.html" class="text-[blue] hover:underline ">Contributors</a>
-                <br>
-        </div>
     </div>
 </body>
 
 <!-- form validation -->
-<script type="text/javascript" src="../../../Js/papto.js"></script>
-<script src="../../../Js/main.js" type="text/javascript"></script>
+<script type="text/javascript" src="../../../Js/papto.js?v=1"></script>
+<script src="../../../Js/main.js?v=1" type="text/javascript"></script>
 <script async type="text/javascript"
     src="https://api.countapi.xyz/hit/KelkarForms.com/415a7523-bb25-4d45-a700-33a48a168a6c/?callback=counter"></script>
 

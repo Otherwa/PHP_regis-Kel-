@@ -83,9 +83,9 @@ if (isset($_POST['FFForm'])) {
         align-content: space-between;
     }
 
-    @media screen and (max-width: 460px) {
+    @media screen and (max-width: 660px) {
         .but {
-            width: 18rem;
+            width: 15rem;
             height: 9rem;
         }
     }

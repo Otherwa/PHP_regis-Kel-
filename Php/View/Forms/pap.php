@@ -43,7 +43,6 @@ if (isset($_POST['submit'])) {
         if ($name == ' ' || $rollno == ' ' || $class == ' ' || $division == ' ' || $semester == ' ' || $paper == ' ' || $paper == "--" || $teacher == ' ') {
             echo "<script>alert('Kindly Check Your Form Once Again 🤓');</script>";
             // session_destroy();
-
         } else {
 
             // double verify student
@@ -119,8 +118,6 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
         $rating8_3 = mysqli_real_escape_string($con, $_POST['rating8_3']);
         $suggest = mysqli_real_escape_string($con, $_POST['suggest']);
         // echo
-        // echo $rating1_1 . " " . $rating2_1 . " " . $rating3_1 . " " . $rating1_2 . " " . $rating2_2 . " " . $rating3_2 . " " . $rating4_2  . " " . $rating5_2 . " " . $rating6_2 . " " . $rating7_2;
-
         // get academic_year from teacher table for sepcific 
         $query = "SELECT `academic_year` FROM `teachers` WHERE tname = '$teacher' AND cname = '$class' ;";
         $result = mysqli_query($con, $query);
@@ -130,6 +127,7 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
         // start config each time of year
         // check if already
         // concat saftey
+        // dead code ahead scared to remove [block start]
         $query = "SELECT * FROM `answerpats` WHERE ctrlid =\"" . $rollno . "\"" . " AND cname =\"" . $class . "\"" . " AND tname =\"" . $teacher . "\"" . " AND sem =\"" . $semester . "\"" . " AND subject =\"" . $paper . "\"" . " AND academic_year =\"" . $academic_year . "\";";
         $result = mysqli_query($con, $query);
         $result = mysqli_num_rows($result);
@@ -139,6 +137,7 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
             // if ajax req fails in case
             // session_destroy();
         } else {
+            //[block end]
             // change year year(curdate)
             $query = "INSERT INTO `answerpats`(`ctrlid`, `cname`, `tname`, `a11`, `a12`, `a13`, `a14`, `a15`, `a16`, `a17`, `a18`, `a19`, `a20`, `a21`, `a22`, `a23`, `a24`, `a25`, `a26`, `a27`, `a28`, `suggession`, `division`, `sem`, `subject`, `academic_year`,`Time`) 
             VALUES ('$rollno','$class','$teacher','$rating1_1','$rating2_1','$rating3_1','$rating1_2','$rating2_2','$rating3_2','$rating4_2','$rating5_2','$rating6_2','$rating7_2','$rating1_3','$rating2_3','$rating3_3','$rating4_3','$rating5_3','$rating6_3','$rating7_3','$rating8_3','$suggest','$division','$semester','$paper','$academic_year',current_timestamp());";
@@ -206,7 +205,7 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                         <h1 class="font-mono antialiased text-lg">Fill up</h1>
                     </legend>
                     <h1 class="form__title myfont" style=" font-size: 2.2rem; color: rgb(119, 195, 196);">
-                        <span style="text-decoration: underline;">PATS Question</span><br />
+                        <span style="text-decoration: underline;font-size: 1.45rem;">PATS Question</span><br />
                         <span style="font-size: 1.4rem; font-family: 'Roboto', sans-serif; color: black;">
                             <img src="https://github.githubassets.com/images/mona-loading-dark.gif" alt="octo"
                                 style="height: 3rem; margin-top: 1rem;" />
@@ -224,7 +223,7 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                     <!-- bug not value do not change -->
                     <div class="form__div">
                         <input type="text" class="form__input" name="name" id="name" placeholder="Full Name"
-                            autocomplete="off" value="<?php if (isset($name)) echo $name; ?>" />
+                            autocomplete="off" />
                         <label for="" class="form__label">Name</label>
                     </div>
                     <br />
@@ -273,12 +272,12 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                             <option value="--">--</option>
                         </select>
                     </div>
+                    <br>
                     <p id="msg_form"></p>
-
                     <br />
                     <p class="text-lg hover:underline"><code>Instructions to fill the questionnaire</code></p>
                     <br />
-                    <ul id="inst">
+                    <ul class="msg">
                         <li>All questions should be
                             compulsorily attempted.</li>
                         <li>Each question has seven responses,

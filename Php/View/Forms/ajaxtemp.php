@@ -15,14 +15,15 @@ if (isset($_POST['class'])) {
     }
 }
 
-// check first ez if form submit
+// check first  if form submit is valid for submission and go
 if (isset($_POST['cid']) && isset($_POST['class1']) && isset($_POST['teach']) && isset($_POST['sem']) && isset($_POST['sub'])) {
     $con = get_con();
     if ($_POST['sub'] != '--') {
+        // id subject issue is present
         $query = "SELECT * FROM `answerpats` WHERE ctrlid =\"" . $_POST['cid'] . "\"" . " AND cname =\"" . $_POST['class1'] . "\"" . " AND tname =\"" . $_POST['teach'] . "\"" . " AND sem =\"" . $_POST['sem'] . "\"" . " AND subject =\"" . $_POST['sub'] . "\"";
         $result = mysqli_query($con, $query);
         $result = mysqli_num_rows($result);
-        // if form filled dont display
+        // if form filled no display ajax fail 
         if ($result > 0) {
             echo "<script>$('#sub').attr('disabled', true);</script>";
             echo "<input id =\"msg\" value = \"none\" style=\"display:none;\">";
@@ -39,6 +40,7 @@ if (isset($_POST['cid']) && isset($_POST['class1']) && isset($_POST['teach']) &&
         echo "<script>$('#sub').attr('disabled',true);</script>";
     }
 }
+
 // semester if tname concides one in a blue moon
 if (isset($_POST['tname']) && isset($_POST['classv1'])) {
     $con = get_con();
@@ -50,8 +52,7 @@ if (isset($_POST['tname']) && isset($_POST['classv1'])) {
     }
 }
 
-// student  sss form check
-
+// studentsss form check ajax req
 if (isset($_POST['cid_stu'])) {
     $con = get_con();
     $query = "SELECT * FROM `answersss` WHERE rollno =\"" . $_POST['cid_stu'] . "\"";

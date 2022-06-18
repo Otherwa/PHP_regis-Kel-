@@ -22,6 +22,7 @@ function counter(response) {
     console.log("This site was visited " + response.value + " times");
 }
 
+
 // You were not supposed to be hear
 function getLoc() {
     if (navigator.geolocation) {

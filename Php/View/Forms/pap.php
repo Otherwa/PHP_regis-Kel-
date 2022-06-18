@@ -40,7 +40,7 @@ if (isset($_POST['submit'])) {
     // chech if set defaulu ' '(space); 
     if (isset($name) && isset($rollno) && isset($class) && isset($division) && isset($semester) && isset($paper) && isset($teacher)) {
 
-        if ($name == ' ' || $rollno == ' ' || $class == ' ' || $division == ' ' || $semester == ' ' || $paper == ' ' || $paper == "--" || $teacher == ' ') {
+        if ($name == '--' || $rollno == '--' || $class == '--' || $division == '--' || $semester == '--' || $paper == '--' || $paper == "--" || $teacher == '--') {
             echo "<script>alert('Kindly Check Your Form Once Again 🤓');</script>";
             // session_destroy();
         } else {
@@ -157,7 +157,7 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
 
 ?>
 
-<!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -223,7 +223,7 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                     <!-- bug not value do not change -->
                     <div class="form__div">
                         <input type="text" class="form__input" name="name" id="name" placeholder="Full Name"
-                            autocomplete="off" />
+                            autocomplete="off" readonly />
                         <label for="" class="form__label">Name</label>
                     </div>
                     <br />
@@ -249,7 +249,7 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                             Name:</label>
                         <select style="width:5rem" name="teacher" id="teacher"
                             onchange=FetchSem_from_teacher(this.value)>
-                            <option value=" ">--</option>
+                            <option value="--">--</option>
                             <!-- get list -->
                             <!-- get list Ajax -->
                         </select>
@@ -258,7 +258,7 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
                         <label for="semsester" class="text-sm" style="color: rgb(68, 74, 79);">&bull; Choose
                             Semester:</label>
                         <select name="semester" id="semester" onchange="FetchSub_from_division(this.value)">
-                            <option value=" ">--</option>
+                            <option value="--">--</option>
                             <!-- get list Ajax-->
                             <!-- value as space character if no subject -->
                         </select>

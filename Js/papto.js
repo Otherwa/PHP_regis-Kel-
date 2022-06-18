@@ -71,9 +71,14 @@ function FetchTeacher_from_class(id) {
             class: id
         },
         success: function(data) {
-            // first clear data
-            $('#teacher').html("");
-            $('#teacher').html(data);
+            if (id == "--") {
+                $('#msg').attr('value', 'none');
+                $('#msg_form').html("<p>Invalid</p>").css("color", "red");
+                $('#msg_set').css("display", "none");
+            } else {
+                $('#teacher').html("");
+                $('#teacher').html(data);
+            }
         }
 
     })
@@ -92,8 +97,14 @@ function FetchSem_from_teacher(id) {
             classv1: class1,
         },
         success: function(data) {
-            $('#semester').html("");
-            $('#semester').html(data);
+            if (id == "--") {
+                $('#msg').attr('value', 'none');
+                $('#msg_form').html("<p>Invalid</p>").css("color", "red");
+                $('#msg_set').css("display", "none");
+            } else {
+                $('#semester').html("");
+                $('#semester').html(data);
+            }
         }
 
     })
@@ -113,8 +124,14 @@ function FetchSub_from_division(id) {
             teachername: value1,
         },
         success: function(data) {
-            $('#subject').html("");
-            $('#subject').html(data);
+            if (id == "--") {
+                $('#msg').attr('value', 'none');
+                $('#msg_form').html("<p>Invalid</p>").css("color", "red");
+                $('#msg_set').css("display", "none");
+            } else {
+                $('#subject').html("");
+                $('#subject').html(data);
+            }
         }
 
     })
@@ -139,7 +156,12 @@ function Is_Form_Sent() {
             sub: sub_,
         },
         success: function(data) {
-            $('#msg_form').html(data);
+            if (sub_ == "--") {
+                $('#msg_form').html("<p>Invalid</p>").css("color", "red");
+                $('#msg_set').css("display", "none");
+            } else {
+                $('#msg_form').html(data);
+            }
         }
 
     })
@@ -147,22 +169,19 @@ function Is_Form_Sent() {
 
 
 // verification 
-
 // begin condition;
 window.onload = () => {
     document.getElementById("sub").disabled = true;
 }
 
 
-
-
-
 // if ctrlid valid set ratings else none every 50 ms 
+// no change inspect works
+
 window.setInterval(function() {
     if (document.getElementById('msg') != null) {
         var msg = document.getElementById('msg').value;
         console.log(msg);
-        // console.log(msg);
         document.getElementById('msg_set').style.display = msg;
     } else {
         document.getElementById("sub").disabled = true;

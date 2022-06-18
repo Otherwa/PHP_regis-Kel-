@@ -23,14 +23,19 @@ roll.addEventListener('focus', () => {
 
 // begin condition;
 window.onload = () => {
-        document.getElementById("sub").disabled = true;
-    }
-    // verify student async
+    document.getElementById("sub").disabled = true;
+}
+
+
+
+// verify student async
 function verify_stu() {
+    // if wrong clear
     $('#msg_form').html('');
     $('#semester').html('<option value =" ">--</option>');
     $('#subject').html('<option value =" ">--</option>');
     $('#teacher').html('<option value =" ">--</option>');
+    $('#programme').html('<option value =" ">--</option>');
     $.ajax({
         type: 'post',
         url: 'ajaxtemp.php',
@@ -51,9 +56,35 @@ function verify_stu() {
     })
 }
 
+function Get_Programme() {
+    // programme get
+    let ctrlid = $('#rollno').val();
+    let class1 = $('#class').val();
+    $.ajax({
+        type: 'post',
+        url: 'ajaxtemp.php',
+        data: {
+            cid_crt: ctrlid
+        },
+        success: function(data) {
+            if (class1 == "--") {
+                $('#programme').html('<option value ="--">--</option>');
+                $('#msg').attr('value', 'none');
+                $('#msg_form').html("<p>Invalid</p>").css("color", "red");
+                $('#msg_set').css("display", "none");
+            } else {
+                $('#programme').html();
+                $('#programme').html(data);
+            }
+        }
+
+    })
+}
+
 function Is_Form_Sent() {
     let id_ = $('#rollno').val();
-    // console.log(id_, class_, teach_, sem_, sub_);
+    let programme = $('#programme').val();
+
     $.ajax({
         type: 'post',
         url: 'ajaxtemp.php',
@@ -61,19 +92,28 @@ function Is_Form_Sent() {
             cid_stu: id_,
         },
         success: function(data) {
-            $('#msg_form').html(data);
+            if (programme == "--") {
+                $('#msg_form').html("<p>Invalid</p>").css("color", "red");
+                $('#msg_set').css("display", "none");
+            } else {
+                $('#msg_form').html(data);
+            }
         }
 
     })
 }
 
+window.onload = () => {
+    document.getElementById("sub").disabled = true;
+}
 
 // if ctrlid valid set ratings else none every 50 ms 
-// if ctrlid valid set ratings else none every 50 ms 
+
 window.setInterval(function() {
     if (document.getElementById('msg') != null) {
         var msg = document.getElementById('msg').value;
-        // console.log(msg);
         document.getElementById('msg_set').style.display = msg;
+    } else {
+        document.getElementById("sub").disabled = true;
     }
 }, 50);

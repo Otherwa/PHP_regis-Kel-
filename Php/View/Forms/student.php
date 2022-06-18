@@ -35,23 +35,19 @@ if (isset($_POST['submit'])) {
     $division = mysqli_real_escape_string($con, $_POST['division']);
     if (isset($name) && isset($age) && isset($gender) && isset($rollno) && isset($class) && isset($programme) && isset($division)) {
 
-        // unideinfied post  get confirmation
-        $confirm = mysqli_real_escape_string($con, $_POST['confirm']);
-        if ($confirm == ' ' || $confirm == 'no' || $name == ' ' || $age == ' ' || $gender == ' ' || $rollno == ' ' || $class == ' ' || $programme == ' ' || $division == ' ') {
-            if ($confirm == 'no') {
-                echo "<script>alert('Please Select Yes in The Form Field 🤓');</script>";
-            }
+
+        if ($name == '--' || $age == '--' || $gender == '--' || $rollno == '--' || $class == '--' || $programme == '--' || $division == '--') {
             echo "<script>alert('Kindly Check Your Form Once Again 🤓');</script>";
         } else {
             //ratings
-            getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class, $programme, $division);
+            getandset_ratings($con, $name, $age, $gender, $rollno, $class, $programme, $division);
         }
     } else {
         echo "<script>alert('Something Wrong with Your Form 🤓');</script>";
     }
 }
 
-function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class, $programme, $division)
+function getandset_ratings($con, $name, $age, $gender, $rollno, $class, $programme, $division)
 {
 
 
@@ -76,15 +72,17 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
         $rating_16 = $_POST['rating_16'];
         $rating_17 = $_POST['rating_17'];
 
+        // dead code ahead scared to remove [block start]
         // if form already exisits if roll no primary considered case (roll programme class) in database
         $query = "SELECT `rollno` FROM `answersss` WHERE rollno = '$rollno';";
         $result = mysqli_query($con, $query);
 
         if (mysqli_num_rows($result) > 0) {
             echo "<script>alert('Your submitted Form already exists 🤡');</script>";
+            //[block end]
         } else {
-            $query = "INSERT INTO `answersss`(`confirm`, `name`, `age`, `gender`, `rollno`, `class`, `programme`, `division`, `a11`, `a12`, `a13`, `a14`, `a15`, `a16`, `a17`, `a18`, `a19`, `a20`, `a21`, `a22`, `a23`, `a24`, `a25`, `a26`, `a27`, `time`)
-                VALUES ('$confirm','$name','$age','$gender','$rollno','$class','$programme','$division','$rating_1','$rating_2','$rating_3','$rating_4','$rating_5','$rating_6','$rating_7','$rating_8','$rating_9','$rating_10','$rating_11','$rating_12','$rating_13','$rating_14','$rating_15','$rating_16','$rating_17',current_timestamp());";
+            $query = "INSERT INTO `answersss`(`name`, `age`, `gender`, `rollno`, `class`, `programme`, `division`, `a11`, `a12`, `a13`, `a14`, `a15`, `a16`, `a17`, `a18`, `a19`, `a20`, `a21`, `a22`, `a23`, `a24`, `a25`, `a26`, `a27`, `time`)
+                VALUES ('$name','$age','$gender','$rollno','$class','$programme','$division','$rating_1','$rating_2','$rating_3','$rating_4','$rating_5','$rating_6','$rating_7','$rating_8','$rating_9','$rating_10','$rating_11','$rating_12','$rating_13','$rating_14','$rating_15','$rating_16','$rating_17',current_timestamp());";
             mysqli_query($con, $query);
             $_SESSION['name'] = $name;
             header('Location: formsubmit.php');
@@ -163,22 +161,7 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
                         </span>
                     </h1>
 
-                    <div class="form_div">
-                        <p>Please confirm this is the first and only time you answer this survey. </p>
-                        <br />
-                        <ul style="display:grid">
-                            <li>
-                                <p style="font-weight:bold;font-family:monospace;color:green;">Yes&nbsp;<input
-                                        type="radio" name="confirm" value="yes"></p>
-                            </li>
-                            <li>
-                                <p style="font-weight:bold;font-family:monospace;color:#FF0000B7;">No&nbsp;<input
-                                        type="radio" name="confirm" value="no"></p>
-                            </li>
-                        </ul>
-                    </div>
                     <br />
-
 
                     <div class="form__div">
                         <input type="text" class="form__input" name="rollno" id="rollno" placeholder="e.g XXXXXXX289"
@@ -188,11 +171,10 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
                     <p id="notvalid_roll"></p>
                     <!-- ajax ctrlid verify -->
                     <!-- bug -->
-                    <br>
 
                     <div class="form__div">
                         <input type="text" class="form__input" name="name" id="name" placeholder="Full Name"
-                            autocomplete="off" />
+                            autocomplete="off" readonly />
                         <label for="" class="form__label">Name?</label>
                     </div>
 
@@ -205,7 +187,7 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
                     <div class="form__div selectaltered">
                         <label for="gender" class="text-sm" style="color:rgb(68, 74, 79)">&squarf; Gender:</label>
                         <select name="gender" id="gender">
-                            <option value="Default">--</option>
+                            <option value="--">--</option>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
                             <option value="Other">Other</option>
@@ -215,15 +197,9 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
                     <!-- can be acquired by database activectrlid-->
                     <div class="form__div selectaltered">
                         <label for="class" class="text-sm" style="color:rgb(68, 74, 79)">&squarf; Class:</label>
-                        <select name="class" id="class">
+                        <select name="class" id="class" onchange="Get_Programme()">
                             <option value=" ">--</option>
-                            <option value="FY">FY</option>
-                            <option value="SY">SY</option>
-                            <option value="TY">TY</option>
-                            <option value="MSc">Msc</option>
-                            <option value="MSc-IT">Msc-IT</option>
-                            <option value="MSc-BT">Msc-BT</option>
-                            <option value="PGDPCM">PGDPCM</option>
+                            <!-- ajax get -->
                         </select>
                     </div>
 
@@ -232,17 +208,7 @@ function getandset_ratings($con, $confirm, $name, $age, $gender, $rollno, $class
                             Programme:</label>
                         <select name="programme" id="programme" onchange="Is_Form_Sent()">
                             <option value=" ">--</option>
-                            <option value="BA">BA</option>
-                            <option value="BSc">Bsc</option>
-                            <option value="BCom">BCom</option>
-                            <option value="BSc-IT">BSc-IT</option>
-                            <option value="BBI">BBI</option>
-                            <option value="BAMMC">BAMMC</option>
-                            <option value="BMC">BMC</option>
-                            <option value="BAF">BAF</option>
-                            <option value="BVoc">BVoc</option>
-                            <option value="Part-I">Part-I</option>
-                            <option value="Part-II">Part-II</option>
+                            <!-- ajax get -->
                         </select>
                     </div>
 

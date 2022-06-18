@@ -135,3 +135,19 @@
      #msg {
          padding: 1rem;
      }
+     
+     .selopt {
+         display: flex;
+         flex-wrap: nowrap;
+         align-content: stretch;
+         flex-direction: column;
+         gap: 0.4rem;
+     }
+     
+     .selopt select {
+         padding: 0.6rem;
+     }
+     
+     .lbl {
+         text-align: left;
+     }

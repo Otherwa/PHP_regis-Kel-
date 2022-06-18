@@ -151,14 +151,14 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
                     </legend>
                     <h1 class=" form__title"
                         style="font-family: 'Bungee', cursive; font-size: 2.2rem; color: rgb(119, 195, 196);">
-                        <span style="text-decoration:underline">Faculty Feedback Form</span><br />
+                        <span style="text-decoration:underline;font-size: 1.45rem;">Faculty Feedback Form</span><br />
                         <span style=" font-size: 1.4rem; font-family: 'Roboto' , sans-serif; color: black;">
                             <img src="https://github.githubassets.com/images/mona-loading-dark.gif" alt="octo"
                                 style="height:3rem;margin-top:1rem"></span>
                     </h1>
 
 
-                    <ul id="inst">
+                    <ul class="msg">
                         <li>
                             Instruction: Please read the statements given and mark against the appropriate response.
                         </li>

@@ -44,7 +44,6 @@ if (isset($_POST['submit'])) {
             echo "<script>alert('Kindly Check Your Form Once Again 🤓');</script>";
             // session_destroy();
         } else {
-
             // double verify student
             $is_stu = verify_student($rollno, $con);
 

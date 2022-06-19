@@ -3,7 +3,7 @@ include('../connect.php');
 
 if (isset($_POST['teach'])) {
     $con = get_con();
-    $query = " SELECT DISTINCT `cname` FROM `teachers` WHERE tname = " . "\"" . $_POST['teach'] . "\";";
+    $query = " SELECT DISTINCT `cname` FROM `answerpats` WHERE tname = " . "\"" . $_POST['teach'] . "\";";
     $result = mysqli_query($con, $query);
     echo "<option value = " . "--" . ">" . "--" . "</option>";
     while ($row = mysqli_fetch_assoc($result)) {
@@ -13,7 +13,7 @@ if (isset($_POST['teach'])) {
 
 if (isset($_POST['teac1'])) {
     $con = get_con();
-    $query = "SELECT * FROM `teachers` WHERE tname =\"" . $_POST['teac1'] . "\";";
+    $query = "SELECT DISTINCT `sem` FROM `answerpats` WHERE tname =\"" . $_POST['teac1'] . "\";";
     $result = mysqli_query($con, $query);
     echo "<option value =\"" . "--" . "\">" . "--" . "</option>";
     while ($row = mysqli_fetch_assoc($result)) {
@@ -23,17 +23,11 @@ if (isset($_POST['teac1'])) {
 
 if (isset($_POST['sem']) && isset($_POST['teachername'])) {
     $con = get_con();
-    $query = " SELECT * FROM `teachers` WHERE sem = " . "\"" . $_POST['sem'] . "\" " . "AND tname =" . "\"" . $_POST['teachername'] . "\"; ";
+    $query = " SELECT DISTINCT `subject` FROM `answerpats` WHERE sem = " . "\"" . $_POST['sem'] . "\" " . "AND tname =" . "\"" . $_POST['teachername'] . "\"; ";
     $result = mysqli_query($con, $query);
-    $row = mysqli_fetch_array($result);
-    $result1 = mysqli_num_rows($result);
-    if ($result1 > 0) {
-        echo "<option value =\"" . "--" . "\">" . "--" . "</option>";
-        echo "<option value =\"" . $row['subject1'] . "\">" .  $row['subject1']  . "</option>";
-        echo "<option value =\"" . $row['subject2'] . "\">" .  $row['subject2']  . "</option>";
-        echo "<option value =\"" . $row['subject3'] . "\">" .  $row['subject3']  . "</option>";
-    } else {
-        echo "<option value =\"" . "--" . "\">" . "--" . "</option>";
+    echo "<option value =\"" . "--" . "\" selected>" . "--" . "</option>";
+    while ($row = mysqli_fetch_array($result)) {
+        echo "<option value=\"" . $row['subject'] . "\">" . $row['subject'] . "</option>";
     }
 }
 
@@ -94,7 +88,7 @@ function Get_count()
     $result = mysqli_fetch_array($result);
 
     $result = $result['count1'];
-    echo "total count : " . $result * $total_qus . "<br>";
+    echo "<p> total count : " . $result * $total_qus . "</p><br>" . "<p>" . $_POST['teacher'] . "</p><br>" . "<p>" . $_POST['sub'] . "</p>";
     return ($result * $total_qus);
 }
 

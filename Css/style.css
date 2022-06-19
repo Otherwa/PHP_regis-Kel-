@@ -1,153 +1,180 @@
-     /* selected text */
-     /* G-font */
-     
-     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
-      ::selection {
-         color: #fff;
-         background: #000;
-     }
-     
-     p {
-         font-family: 'Maven Pro', sans-serif;
-         font-weight: bold;
-     }
-     
-     #notvalid_roll {
-         padding-bottom: 1rem;
-         padding-left: 0.45rem;
-     }
-     
-     html {
-         /* cursor: url(http://www.rw-designer.com/cursor-extern.php?id=121707), auto; */
-         cursor: auto;
-     }
-     
-     html::-webkit-scrollbar {
-         width: 9px;
-     }
-     /* Track */
-     
-     html::-webkit-scrollbar-track {
-         box-shadow: inset 0 0 2px grey;
-     }
-     /* Handle */
-     
-     html::-webkit-scrollbar-thumb {
-         background: #006eff;
-     }
-     /* Handle on hover */
-     
-     html::-webkit-scrollbar-thumb:hover {
-         background: #006effad;
-     }
-     /* base css */
-     
-     @import url('https://fonts.googleapis.com/css2?family=Water+Brush&display=swap');
-      :root {
-         /*===== Colores =====*/
-         --first-color: #006eff;
-         --input-color: #80868B;
-         --border-color: #DADCE0;
-         /*===== Fuente y tipografia =====*/
-         --body-font: 'Roboto', sans-serif;
-         --normal-font-size: 0.9rem;
-         --small-font-size: 0.70rem;
-     }
-     
-     img {
-         pointer-events: none;
-     }
-     /*===== BASE =====*/
-     
-     *,
-      ::before,
-      ::after {
-         box-sizing: border-box;
-     }
-     
-     body {
-         font-family: var(--body-font);
-         font-size: var(--normal-font-size);
-     }
-     
-     h1 {
-         margin: 0;
-     }
-     
-     .footer-copyright {
-         position: relative;
-         bottom: -17.5rem;
-         line-height: 1.6rem;
-         text-align: center;
-         align-items: center;
-         width: 99%;
-         padding: 1rem;
-     }
-     
-     #b-list {
-         font-size: 1.5rem;
-         font-family: monospace;
-     }
-     
-     #b-list a {
-         font-size: 1.5rem;
-     }
-     
-     @media screen and (max-width: 460px) {
-         #b-list {
-             font-size: 0.9rem;
-         }
-         #b-list a {
-             font-size: 0.9rem;
-         }
-         .rickrolled {
-             height: 15em;
-             width: 98%;
-         }
-     }
-     /* card */
-     
-     #card {
-         background-color: #ffffff;
-         border-style: solid;
-         transition: 200ms;
-     }
-     
-     #card:hover {
-         transform: scale(0.999);
-         transition: 200ms;
-     }
-     
-     #subcard {
-         border-style: solid;
-         border-width: 0.1rem;
-         border-color: black;
-     }
-     /* about rickrolled */
-     
-     .rickrolled {
-         width: 85%;
-         height: 30em;
-         display: inline-block;
-         border-radius: 12px;
-     }
-     
-     #msg {
-         padding: 1rem;
-     }
-     
-     .selopt {
-         display: flex;
-         flex-wrap: nowrap;
-         align-content: stretch;
-         flex-direction: column;
-         gap: 0.4rem;
-     }
-     
-     .selopt select {
-         padding: 0.6rem;
-     }
-     
-     .lbl {
-         text-align: left;
-     }
+/* selected text */
+
+
+/* G-font */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+ ::selection {
+    color: #fff;
+    background: #000;
+}
+
+p {
+    font-family: 'Maven Pro', sans-serif;
+    font-weight: bold;
+}
+
+#notvalid_roll {
+    padding-bottom: 1rem;
+    padding-left: 0.45rem;
+}
+
+html {
+    /* cursor: url(http://www.rw-designer.com/cursor-extern.php?id=121707), auto; */
+    cursor: auto;
+}
+
+html::-webkit-scrollbar {
+    width: 9px;
+}
+
+
+/* Track */
+
+html::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 2px grey;
+}
+
+
+/* Handle */
+
+html::-webkit-scrollbar-thumb {
+    background: #006eff;
+}
+
+
+/* Handle on hover */
+
+html::-webkit-scrollbar-thumb:hover {
+    background: #006effad;
+}
+
+
+/* base css */
+
+@import url('https://fonts.googleapis.com/css2?family=Water+Brush&display=swap');
+ :root {
+    /*===== Colores =====*/
+    --first-color: #006eff;
+    --input-color: #80868B;
+    --border-color: #DADCE0;
+    /*===== Fuente y tipografia =====*/
+    --body-font: 'Roboto', sans-serif;
+    --normal-font-size: 0.9rem;
+    --small-font-size: 0.70rem;
+}
+
+img {
+    pointer-events: none;
+}
+
+
+/*===== BASE =====*/
+
+*,
+ ::before,
+ ::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+}
+
+h1 {
+    margin: 0;
+}
+
+.footer-copyright {
+    position: relative;
+    bottom: -17.5rem;
+    line-height: 1.6rem;
+    text-align: center;
+    align-items: center;
+    width: 99%;
+    padding: 1rem;
+}
+
+#b-list {
+    font-size: 1.5rem;
+    font-family: monospace;
+}
+
+#b-list a {
+    font-size: 1.5rem;
+}
+
+@media screen and (max-width: 460px) {
+    #b-list {
+        font-size: 0.9rem;
+    }
+    #b-list a {
+        font-size: 0.9rem;
+    }
+    .rickrolled {
+        height: 15em;
+        width: 98%;
+    }
+}
+
+
+/* card */
+
+#card {
+    background-color: #ffffff;
+    border-style: solid;
+    transition: 200ms;
+}
+
+#card:hover {
+    transform: scale(0.999);
+    transition: 200ms;
+}
+
+#subcard {
+    border-style: solid;
+    border-width: 0.1rem;
+    border-color: black;
+}
+
+
+/* about rickrolled */
+
+.rickrolled {
+    width: 85%;
+    height: 30em;
+    display: inline-block;
+    border-radius: 12px;
+}
+
+#msg {
+    padding: 1rem;
+}
+
+.selopt {
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: stretch;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.selopt select {
+    padding: 0.6rem;
+    font-size: 1rem;
+    font-family: 'Maven Pro', sans-serif;
+    font-weight: bold;
+}
+
+.lbl {
+    text-align: left;
+}
+
+.selopt1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-wrap: wrap;
+}

@@ -7,13 +7,14 @@ if (!isset($_SESSION['name'])) {
     header('Location: adminlogin.php');
 }
 
-$name = explode(" ", $_SESSION['name']);
+
 include('../connect.php');
 $con = get_con();
+
 // re write functions
 
 
-
+session_destroy();
 ?>
 
 <!DOCTYPE html>
@@ -42,9 +43,7 @@ $con = get_con();
     <meta http-equiv='cache-control' content='no-cache'>
     <meta http-equiv='expires' content='0'>
     <meta http-equiv='pragma' content='no-cache'>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"
-        integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- basic css -->
     <style>
     .myfont {
@@ -121,7 +120,7 @@ $con = get_con();
                         <select name="teacher" id="teacher" onchange="Get_Class(this.value)">
                             <?php
                             echo "<option value =\"" . "--" . "\" selected>" . "--" . "</option>";
-                            $query = "SELECT DISTINCT `tname` FROM teachers;";
+                            $query = "SELECT DISTINCT `tname` FROM answerpats;";
                             $result = mysqli_query($con, $query);
                             while ($row = mysqli_fetch_array($result)) {
                                 echo "<option value=\"" . $row['tname'] . "\">" . $row['tname'] . "</option>";
@@ -143,6 +142,7 @@ $con = get_con();
                             <!-- get ajax -->
                             <option value="--">--</option>
                         </select>
+                        <br>
                         <!-- gen chart only once -->
                         <input type="submit" name="export" title="download answerpats.xlxs"
                             class="font-mono text-center bg-[#006eff] p-3 m-1 hover:bg-slate-500 rounded transition-all duration-200"
@@ -151,21 +151,10 @@ $con = get_con();
                 </form>
 
             </div>
-            <!-- draw chart -->
-            <div class="selopt" style="padding-left:1rem;padding-right:1rem">
-                <input type="submit" name="export" title="download answerpats.xlxs"
-                    class="font-mono text-center bg-[#006eff] p-3 m-1 hover:bg-slate-500 rounded transition-all duration-200"
-                    value="Genrate chart" onclick="Draw_Chart()" />
-            </div>
+
             <br>
-            <div class="selopt" style="padding-left:1rem;padding-right:1rem">
-                <input type="submit" name="export" title="download answerpats.xlxs"
-                    class="font-mono text-center bg-[#006eff] p-3 m-1 hover:bg-slate-500 rounded transition-all duration-200"
-                    value="Refresh" onclick="Refresh()" />
-            </div>
-
-
             <div id="divGraph" style="padding:2.6rem">
+                <!-- draw chart -->
                 <!-- ajax get data -->
             </div>
 
@@ -173,7 +162,7 @@ $con = get_con();
 
             <!-- chart js -->
             <div style="display:inline-block">
-                <canvas id="myChart" style="padding:1rem;position: relative;height:70vh; width:79vw;"></canvas>
+                <canvas id="myChart" style="padding:1rem;"></canvas>
             </div>
             <br>
 

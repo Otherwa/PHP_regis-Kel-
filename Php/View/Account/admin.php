@@ -90,6 +90,11 @@ session_destroy();
 
     .chart_con {
         padding: 1rem;
+        max-width: 100%;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
     }
     </style>
 </head>
@@ -105,16 +110,11 @@ session_destroy();
     <div class="bg-[#ffffff] text-center content" style="padding:0.5rem">
         <!-- This requires Tailwind CSS v2.0+ -->
         <div class=" bg-[#ffffff] text-center p-3 m-2">
-            <!-- <img src="https://c.tenor.com/iUBQduqPqH4AAAAM/badform-gymfail.gif" alt=""> -->
-            <br />
-            <p class="myfont" style="text-align:start">PAP Forms :</p>
+            <p class="myfont" style="text-align:start;font-size:1.2rem">PAP Forms :</p>
             <br />
             <div class="chart_con">
-
                 <form method="POST" action="xlxs_gen.php">
                     <!-- form post method -->
-
-
                     <div class="selopt">
                         <p class="lbl">Teacher</p>
                         <select name="teacher" id="teacher" onchange="Get_Class(this.value)">
@@ -149,28 +149,23 @@ session_destroy();
                             value="Download" />
                     </div>
                 </form>
-
             </div>
-
             <br>
             <div id="divGraph" style="padding:2.6rem">
+                <p>Demo-data</p>
                 <!-- draw chart -->
                 <!-- ajax get data -->
             </div>
-
             <br>
-
             <!-- chart js -->
             <div style="display:inline-block">
                 <canvas id="myChart" style="padding:1rem;"></canvas>
             </div>
             <br>
-
             <!-- more list not possible reason procastination -->
         </div>
         <br />
         <br />
-
         <div class="footer-copyright" style="position:relative;">
             <br />
             <p>&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html" target="_blank"

@@ -139,7 +139,6 @@ function getandset_ratings($con, $name, $age, $gender, $rollno, $class, $program
 </head>
 
 <body class="p-0 m-0">
-    <br />
     <div class="bg-[#ffffff] text-center" style="padding:0.5rem">
         <div class="l-form p-0 ">
             <form method="POST" id="subcard" class="form">

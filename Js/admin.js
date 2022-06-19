@@ -66,11 +66,8 @@ function Get_Sub(id) {
 
 
 
-
-
-
 const Labels = ['Very-Poor', 'Poor', 'Below-Average', 'Average', 'Good', 'Very-Good', 'Excellent'];
-Data1 = [];
+Data1 = ['1', '1', '1', '1', '1', '1', '1'];
 const ctx = document.getElementById('myChart').getContext('2d');
 
 const myChart = new Chart(ctx, {

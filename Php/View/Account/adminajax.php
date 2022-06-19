@@ -42,7 +42,7 @@ if (isset($_POST['teacher']) && $_POST['class1'] && $_POST['sem'] && $_POST['sub
     // store data in 2x2
     for ($a = 11; $a < 29; $a++) {
         $temp_array = array();
-        for ($rate = 1; $rate < 7; $rate++) {
+        for ($rate = 1; $rate < 8; $rate++) {
             $query = "SELECT COUNT(a" . $a  . ") as count1 from answerpats WHERE tname =\"" . $_POST["teacher"] . "\" AND cname=\"" . $_POST["class1"] . "\" AND sem=\"" . $_POST["sem"] .  "\" AND subject=\"" . $_POST["sub"] . "\""  . " AND a" . $a . "=\"" . $rate . "\";";
             $result = mysqli_query($con, $query);
             $result = mysqli_fetch_assoc($result);
@@ -55,7 +55,7 @@ if (isset($_POST['teacher']) && $_POST['class1'] && $_POST['sem'] && $_POST['sub
     $total_count = filter($review);
 
     $data = "";
-    for ($b = 0; $b < 6; $b++) {
+    for ($b = 0; $b < 7; $b++) {
         $data = ($total_count[$b] * 100 / $total);
         echo "<input id=\"" . $b . "\" type=\"hidden\" value =\"" . $data . "\">";
     }
@@ -67,7 +67,7 @@ if (isset($_POST['teacher']) && $_POST['class1'] && $_POST['sem'] && $_POST['sub
 function filter($review)
 {
     $total_count = array();
-    for ($b = 0; $b < 6; $b++) {
+    for ($b = 0; $b < 7; $b++) {
         $temp = 0;
         for ($rate = 0; $rate < 18; $rate++) {
             $temp += (int) $review[$rate][$b];

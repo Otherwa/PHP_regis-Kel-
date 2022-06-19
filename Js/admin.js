@@ -69,7 +69,7 @@ function Get_Sub(id) {
 
 
 
-const Labels = ['Very-Poor', 'Poor', 'Average', 'Good', 'Very-Good', 'Excellent'];
+const Labels = ['Very-Poor', 'Poor', 'Below-Average', 'Average', 'Good', 'Very-Good', 'Excellent'];
 Data1 = [];
 const ctx = document.getElementById('myChart').getContext('2d');
 
@@ -86,7 +86,8 @@ const myChart = new Chart(ctx, {
                 'rgba(255, 206, 86, 0.7)',
                 'rgba(75, 192, 192, 0.7)',
                 'rgba(53, 102, 255, 0.7)',
-                'rgba(255, 159, 64, 0.7)'
+                'rgba(255, 159, 64, 0.7)',
+                'rgba(255, 259, 64, 0.7)'
             ],
             borderColor: [
                 'rgba(255, 99, 132, 1)',
@@ -94,7 +95,8 @@ const myChart = new Chart(ctx, {
                 'rgba(255, 206, 86, 1)',
                 'rgba(75, 192, 192, 1)',
                 'rgba(53, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
+                'rgba(255, 159, 64, 1)',
+                'rgba(255, 259, 64, 1)'
             ],
             borderWidth: 1
         }]
@@ -149,7 +151,8 @@ function Get_Chart() {
                 let rate4 = $('#3').val();
                 let rate5 = $('#4').val();
                 let rate6 = $('#5').val();
-                Data1.push(rate1, rate2, rate3, rate4, rate5, rate6);
+                let rate7 = $('#6').val();
+                Data1.push(rate1, rate2, rate3, rate4, rate5, rate6, rate7);
                 myChart.update();
             }
         }
@@ -157,5 +160,5 @@ function Get_Chart() {
 }
 
 
-myChart.canvas.parentNode.style.height = '66vh';
-myChart.canvas.parentNode.style.width = '56vw';
+myChart.canvas.parentNode.style.height = '60vh';
+myChart.canvas.parentNode.style.width = '50vw';

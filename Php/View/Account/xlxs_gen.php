@@ -12,7 +12,7 @@ if (isset($_POST["export"])) {
      // store data in 2x2
      for ($a = 11; $a < 29; $a++) {
           $temp_array = array();
-          for ($rate = 1; $rate < 7; $rate++) {
+          for ($rate = 1; $rate < 8; $rate++) {
                $query = "SELECT COUNT(a" . $a  . ") as count1 from answerpats WHERE tname =\"" . $_POST["teacher"] . "\" AND cname=\"" . $_POST["class"] . "\" AND sem=\"" . $_POST["sem"] .  "\" AND subject=\"" . $_POST["subject"] . "\""  . " AND a" . $a . "=\"" . $rate . "\";";
                $result = mysqli_query($con, $query);
                $result = mysqli_fetch_assoc($result);
@@ -23,7 +23,7 @@ if (isset($_POST["export"])) {
 
      $total = Get_count();
      $total_count = filter($review);
-     for ($b = 0; $b < 6; $b++) {
+     for ($b = 0; $b < 7; $b++) {
           echo "rating " . ($b + 1) . " = percent " . ($total_count[$b] * 100 / $total) . "             actual count $total_count[$b] <br>";
      }
 }
@@ -35,7 +35,7 @@ if (isset($_POST["export"])) {
 function filter($review)
 {
      $total_count = array();
-     for ($b = 0; $b < 6; $b++) {
+     for ($b = 0; $b < 7; $b++) {
           $temp = 0;
           for ($rate = 0; $rate < 18; $rate++) {
                $temp += (int) $review[$rate][$b];

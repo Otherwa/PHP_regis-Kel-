@@ -143,6 +143,8 @@ session_destroy();
                             <option value="--">--</option>
                         </select>
                         <br>
+                        <br>
+                        <br>
                         <!-- gen chart only once -->
                         <input type="submit" name="export" title="download answerpats.xlxs"
                             class="font-mono text-center bg-[#006eff] p-3 m-1 hover:bg-slate-500 rounded transition-all duration-200"

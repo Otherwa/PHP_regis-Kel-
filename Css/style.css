@@ -158,7 +158,7 @@ h1 {
     align-content: stretch;
     flex-direction: column;
     gap: 0.4rem;
-    width: 50vw;
+    min-width: 46vw;
 }
 
 .selopt select {

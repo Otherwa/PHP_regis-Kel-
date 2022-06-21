@@ -107,9 +107,6 @@ const myChart = new Chart(ctx, {
         plugins: {
             legend: {
                 display: true,
-                labels: {
-                    color: 'rgb(255, 99, 132)'
-                }
             }
         },
     }
@@ -157,5 +154,5 @@ function Get_Chart() {
 }
 
 
-myChart.canvas.parentNode.style.height = '60vh';
-myChart.canvas.parentNode.style.width = '50vw';
+myChart.canvas.parentNode.style.height = '59vh';
+myChart.canvas.parentNode.style.width = '49vw';

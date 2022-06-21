@@ -91,7 +91,7 @@
     outline: none;
     border: none;
     color: #ffffff;
-    background-color: rgb(171, 171, 171);
+    background-color: rgb(19, 95, 196);
     font-size: var(--normal-font-size);
     border-radius: .2rem;
     cursor: pointer;
@@ -100,8 +100,7 @@
 }
 
 .form__button:hover {
-    box-shadow: 1px 10px 36px rgba(77, 77, 77, 0.419);
-    background-color: rgb(8, 231, 212);
+    background-color: rgba(19, 36, 206, 0.744);
 }
 
 
@@ -123,8 +122,7 @@
 }
 
 #sub:hover {
-    box-shadow: 1px 10px 36px rgba(77, 77, 77, 0.419);
-    background-color: rgb(0, 229, 149);
+    background-color: rgba(19, 36, 206, 0.744);
 }
 
 

@@ -110,9 +110,10 @@ session_destroy();
     <div class="bg-[#ffffff] text-center content" style="padding:0.5rem">
         <!-- This requires Tailwind CSS v2.0+ -->
         <div class=" bg-[#ffffff] text-center p-3 m-2">
-            <p class="myfont" style="text-align:start;font-size:1.2rem">PAP Forms :</p>
             <br />
             <div class="chart_con">
+                <p class="myfont" style="text-align:left;font-size:1.5rem;padding:1rem;text-decoration:underline">PAT's
+                    Forms</p>
                 <form method="POST" action="xlxs_gen.php">
                     <!-- form post method -->
                     <div class="selopt">
@@ -146,14 +147,13 @@ session_destroy();
                         <br>
                         <br>
                         <!-- gen chart only once -->
-                        <input type="submit" name="export" title="download answerpats.xlxs"
-                            class="font-mono text-center bg-[#006eff] p-3 m-1 hover:bg-slate-500 rounded transition-all duration-200"
-                            value="Download" />
+                        <input type="submit" name="export" title="download answerpats.xlxs" style="width: 100%;"
+                            id="sub" value="Download" />
                     </div>
                 </form>
             </div>
             <br>
-            <div id="divGraph" style="padding:2.6rem">
+            <div id="divGraph" style="padding:2.6rem;font-size:0.8rem">
                 <p>Demo-data</p>
                 <!-- draw chart -->
                 <!-- ajax get data -->
@@ -161,7 +161,7 @@ session_destroy();
             <br>
             <!-- chart js -->
             <div style="display:inline-block">
-                <canvas id="myChart" style="padding:1rem;"></canvas>
+                <canvas id="myChart" style="padding:1.19rem;"></canvas>
             </div>
             <br>
             <!-- more list not possible reason procastination -->

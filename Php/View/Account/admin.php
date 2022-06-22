@@ -106,8 +106,6 @@ $con = get_con();
         <li style="padding-bottom:0px"><a class="font-mono" href="adminlogin.php" target="_self">Back</a></li>
     </ul>
     <br />
-    <br />
-    <br />
     <div class="bg-[#ffffff] text-center content" style="padding:0.5rem">
         <!-- This requires Tailwind CSS v2.0+ -->
         <div class=" bg-[#ffffff] text-center p-3 m-2">

@@ -3,6 +3,7 @@ document.addEventListener('contextmenu', function(e) {
 });
 
 
+
 function Get_Class(id) {
     $('#class').html('<option value="--">--</option>');
     $('#subjec').html('<option value="--">--</option>');

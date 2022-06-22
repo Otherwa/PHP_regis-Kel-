@@ -19,7 +19,7 @@ const lab = [
     'Counselling : Career / placement / personal.',
     'Stimulating a sense of social responsibility.',
 ];
-// grand data
+// grand data overall
 const Data1 = [];
 const Labels = ['Very-Poor', 'Poor', 'Below-Average', 'Average', 'Good', 'Very-Good', 'Excellent'];
 
@@ -28,7 +28,7 @@ $(".hiddiv input").each(function(index) {
     Data1.push($(this).val());
 });
 
-// Data Segementation;
+// Data Segementation;by 0-7 index each
 Data_1 = get_Dat(0, Data1);
 Data_2 = get_Dat(7, Data1);
 Data_3 = get_Dat(14, Data1);
@@ -922,9 +922,5 @@ function downpdf() {
     let sub = document.getElementById('subjec').innerHTML;
     name = name.trim();
     sub = sub.trim();
-
     window.print();
-    document.body.innerHTML = restorepage;
-
-    pdf.save(name + "_" + sub + ".pdf");
 }

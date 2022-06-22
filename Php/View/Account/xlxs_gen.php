@@ -1,5 +1,6 @@
 <?php
 //export.php  
+session_start();
 include('../connect.php');
 
 $con = get_con();
@@ -7,29 +8,28 @@ $output = "QUERY";
 
 $total = Get_count();
 if ($total == 0) {
-     session_start();
-     header('Location: admin.php');
-     $_SESSION['name'] = "error";
+    header('Location: admin.php');
+    $_SESSION['name'] = "error";
 }
 
 if (isset($_POST["export"])) {
-     $review = array(); // store data
-     $con = get_con();
-     // store data in 2x2
-     // echo "2x2 Store <br>";
-     for ($a = 11; $a < 29; $a++) {
-          $temp_array = array();
-          // echo "<br>";
-          for ($rate = 1; $rate < 8; $rate++) {
-               $query = "SELECT COUNT(a" . $a  . ") as count1 from answerpats WHERE tname =\"" . $_POST["teacher"] . "\" AND cname=\"" . $_POST["class"] . "\" AND sem=\"" . $_POST["sem"] .  "\" AND subject=\"" . $_POST["subject"] . "\""  . " AND a" . $a . "=\"" . $rate . "\";";
-               $result = mysqli_query($con, $query);
-               $result = mysqli_fetch_assoc($result);
-               // echo " " . $result['count1'];
-               array_push($temp_array, $result['count1']);
-          }
-          array_push($review, $temp_array);
-     }
-     Get_Question_Rating($review, $total);
+    $review = array(); // store data
+    $con = get_con();
+    // store data in 2x2
+    // echo "2x2 Store <br>";
+    for ($a = 11; $a < 29; $a++) {
+        $temp_array = array();
+        // echo "<br>";
+        for ($rate = 1; $rate < 8; $rate++) {
+            $query = "SELECT COUNT(a" . $a  . ") as count1 from answerpats WHERE tname =\"" . $_POST["teacher"] . "\" AND cname=\"" . $_POST["class"] . "\" AND sem=\"" . $_POST["sem"] .  "\" AND subject=\"" . $_POST["subject"] . "\""  . " AND a" . $a . "=\"" . $rate . "\";";
+            $result = mysqli_query($con, $query);
+            $result = mysqli_fetch_assoc($result);
+            // echo " " . $result['count1'];
+            array_push($temp_array, $result['count1']);
+        }
+        array_push($review, $temp_array);
+    }
+    Get_Question_Rating($review, $total);
 }
 
 
@@ -37,30 +37,30 @@ if (isset($_POST["export"])) {
 // post count
 function Get_Question_Rating($review, $total)
 {
-     echo "<div class= \"hiddiv\" style=\"Display: none;\">";
-     for ($a = 0; $a < 18; $a++) {
-          echo "<br>";
-          for ($rate = 0; $rate < 7; $rate++) {
-               echo "<input type='hidden' id=\"" . $a . $rate . "\" value=\"" . ($review[$a][$rate] * 100 / $total) . "\">";
-          }
-     }
-     echo "</div>";
+    echo "<div class= \"hiddiv\" style=\"Display: none;\">";
+    for ($a = 0; $a < 18; $a++) {
+        echo "<br>";
+        for ($rate = 0; $rate < 7; $rate++) {
+            echo "<input type='hidden' id=\"" . $a . $rate . "\" value=\"" . ($review[$a][$rate] * 100 / $total) . "\">";
+        }
+    }
+    echo "</div>";
 }
 
 
 // total number
 function Get_count()
 {
-     $con = get_con();
+    $con = get_con();
 
-     $query = "SELECT count(*) as `count1` from answerpats WHERE tname=\"" . $_POST['teacher'] . "\"AND subject =\"" . $_POST['subject'] . "\";";
-     $result = mysqli_query($con, $query);
-     $result = mysqli_fetch_array($result);
-     $result = $result['count1'];
-     return ($result);
+    $query = "SELECT count(*) as `count1` from answerpats WHERE tname=\"" . $_POST['teacher'] . "\"AND subject =\"" . $_POST['subject'] . "\";";
+    $result = mysqli_query($con, $query);
+    $result = mysqli_fetch_array($result);
+    $result = $result['count1'];
+    return ($result);
 }
 
-
+// session_destroy();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -69,10 +69,15 @@ function Get_count()
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link type="img/png" sizes="16x16" rel="icon" href="../../../imgs/1611814068005.jpg" />
+    <meta name="theme-color" content="#ff6600">
+    <!-- icon -->
     <link rel="stylesheet" href="../../../Css/style.css" />
-    <link rel="stylesheet" href="../../../Css/form.css" />
-    <title>Summary</title>
+    <link rel="stylesheet" type="text/css" href="../../../Css/form.css" />
+    <link type="image/png" sizes="16x16" rel="icon" href="../../../imgs/1611814068005.jpg" />
+    <!-- chart js API -->
+    <meta http-equiv='cache-control' content='no-cache'>
+    <meta http-equiv='expires' content='0'>
+    <meta http-equiv='pragma' content='no-cache'>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
     #i1 {

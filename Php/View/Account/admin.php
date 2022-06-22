@@ -14,7 +14,8 @@ $con = get_con();
 // re write functions
 
 
-session_destroy();
+// session_destroy();
+// bug fix remember
 ?>
 
 <!DOCTYPE html>
@@ -110,7 +111,6 @@ session_destroy();
     <div class="bg-[#ffffff] text-center content" style="padding:0.5rem">
         <!-- This requires Tailwind CSS v2.0+ -->
         <div class=" bg-[#ffffff] text-center p-3 m-2">
-            <br />
             <div class="chart_con">
                 <p class="myfont" style="text-align:left;font-size:1.5rem;padding:1rem;text-decoration:underline">PAT's
                     Forms</p>
@@ -148,7 +148,7 @@ session_destroy();
                         <br>
                         <!-- gen chart only once -->
                         <input type="submit" name="export" title="download answerpats.xlxs" style="width: 100%;"
-                            id="sub" value="Download" />
+                            id="sub" value="Insights" />
                     </div>
                 </form>
             </div>

@@ -1,24 +1,3 @@
-// grand label
-const lab = [
-    'Positive and motivating attitude towards students.',
-    'Readiness to resolve students doubts and general availability / accessibility to students.Positive and motivating attitude towards students.',
-    'Worked hard to create a feeling of belongingness in a classroom without walls.',
-    'Command over the subject.',
-    'Skills in making the subject interesting.',
-    'Command over the medium of instruction(language) / communication skills',
-    'Clarity in approach / thinking.',
-    'Punctuality and regularity in taking lectures and practicals',
-    'Proficiency in handling online classroom platforms.',
-    'Time management skill \ skill of completing the syllabus with doubt solving sessions in time.',
-    'Use of case studies, illustration, current events, anecdotes in teaching.ommand over the subject.',
-    'Use of interactive teaching - seminars, tutorials, quizzes, assignments etc.',
-    'Command over the medium of instruction(language) / communication skills',
-    'Giving references for further reading.',
-    'Conducting evaluation by periodic tests / questions answer sessions or by designing quizzes / tests / assignments / examinations and projects to evaluate students.',
-    'Encouraging students to apply in real life whatever they have learnt in classrooms.',
-    'Counselling : Career / placement / personal.',
-    'Stimulating a sense of social responsibility.',
-];
 // grand data overall
 const Data1 = [];
 const Labels = ['Very-Poor', 'Poor', 'Below-Average', 'Average', 'Good', 'Very-Good', 'Excellent'];
@@ -114,7 +93,6 @@ const myChart = new Chart(ctx, {
             },
             title: {
                 display: true,
-                text: lab[0]
             },
             datalabels: {
                 anchor: 'end',
@@ -171,7 +149,6 @@ const myChart1 = new Chart(ctx1, {
             },
             title: {
                 display: true,
-                text: lab[1]
             },
             datalabels: {
                 anchor: 'end',
@@ -228,7 +205,6 @@ const myChart2 = new Chart(ctx2, {
             },
             title: {
                 display: true,
-                text: lab[2]
             },
             datalabels: {
                 anchor: 'end',
@@ -285,7 +261,6 @@ const myChart3 = new Chart(ctx3, {
             },
             title: {
                 display: true,
-                text: lab[3]
             },
             datalabels: {
                 anchor: 'end',
@@ -342,7 +317,6 @@ const myChart4 = new Chart(ctx4, {
             },
             title: {
                 display: true,
-                text: lab[4]
             },
             datalabels: {
                 anchor: 'end',
@@ -399,7 +373,6 @@ const myChart5 = new Chart(ctx5, {
             },
             title: {
                 display: true,
-                text: lab[5]
             },
             datalabels: {
                 anchor: 'end',
@@ -456,7 +429,6 @@ const myChart6 = new Chart(ctx6, {
             },
             title: {
                 display: true,
-                text: lab[6]
             },
             datalabels: {
                 anchor: 'end',
@@ -514,7 +486,6 @@ const myChart7 = new Chart(ctx7, {
             },
             title: {
                 display: true,
-                text: lab[7]
             },
             datalabels: {
                 anchor: 'end',
@@ -572,7 +543,6 @@ const myChart8 = new Chart(ctx8, {
             },
             title: {
                 display: true,
-                text: lab[8]
             },
             datalabels: {
                 anchor: 'end',
@@ -629,7 +599,6 @@ const myChart9 = new Chart(ctx9, {
             },
             title: {
                 display: true,
-                text: lab[9]
             },
             datalabels: {
                 anchor: 'end',
@@ -686,7 +655,6 @@ const myChart10 = new Chart(ctx10, {
             },
             title: {
                 display: true,
-                text: lab[10]
             },
             datalabels: {
                 anchor: 'end',
@@ -743,7 +711,6 @@ const myChart11 = new Chart(ctx11, {
             },
             title: {
                 display: true,
-                text: lab[11]
             },
             datalabels: {
                 anchor: 'end',
@@ -800,7 +767,6 @@ const myChart12 = new Chart(ctx12, {
             },
             title: {
                 display: true,
-                text: lab[12]
             },
             datalabels: {
                 anchor: 'end',
@@ -858,7 +824,6 @@ const myChart13 = new Chart(ctx13, {
             },
             title: {
                 display: true,
-                text: lab[13]
             },
             datalabels: {
                 anchor: 'end',
@@ -916,7 +881,6 @@ const myChart14 = new Chart(ctx14, {
             },
             title: {
                 display: true,
-                text: lab[14]
             },
             datalabels: {
                 anchor: 'end',
@@ -973,7 +937,6 @@ const myChart15 = new Chart(ctx15, {
             },
             title: {
                 display: true,
-                text: lab[15]
             },
             datalabels: {
                 anchor: 'end',
@@ -1031,7 +994,6 @@ const myChart16 = new Chart(ctx16, {
             },
             title: {
                 display: true,
-                text: lab[16]
             },
             datalabels: {
                 anchor: 'end',
@@ -1089,7 +1051,6 @@ const myChart17 = new Chart(ctx17, {
             },
             title: {
                 display: true,
-                text: lab[17]
             },
             datalabels: {
                 anchor: 'end',
@@ -1120,5 +1081,5 @@ function downpdf() {
     let sub = document.getElementById('subjec').innerHTML;
     name = name.trim();
     sub = sub.trim();
-    window.print();
+    window.print(name + "_" + sub + ".pdf");
 }

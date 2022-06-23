@@ -163,7 +163,7 @@ function getandset_ratings($con, $name, $age, $gender, $rollno, $class, $program
                     <br />
 
                     <div class="form__div">
-                        <input type="text" class="form__input" name="rollno" id="rollno" placeholder="e.g XXXXXXX289"
+                        <input type="number" class="form__input" name="rollno" id="rollno" placeholder="e.g XXXXXXX289"
                             autocomplete="off" onInput="verify_stu()" />
                         <label for="" class="form__label">Control Id</label>
                     </div>

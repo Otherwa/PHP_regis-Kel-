@@ -60,6 +60,26 @@ function Get_count()
     return ($result);
 }
 
+$lab = array(
+    'Positive and motivating attitude towards students.',
+    'Readiness to resolve students doubts and general availability/accessibility to students.Positive and motivating attitude towards students.',
+    'Worked hard to create a feeling of belongingness in a classroom without walls.',
+    'Command over the subject.',
+    'Skills in making the subject interesting.',
+    'Command over the medium of instruction(language) / communication skills',
+    'Clarity in approach / thinking.',
+    'Punctuality and regularity in taking lectures and practicals',
+    'Proficiency in handling online classroom platforms.',
+    'Time management skill \ skill of completing the syllabus with doubt solving sessions in time.',
+    'Use of case studies, illustration, current events, anecdotes in teaching.ommand over the subject.',
+    'Use of interactive teaching - seminars, tutorials, quizzes, assignments etc.',
+    'Command over the medium of instruction(language) / communication skills',
+    'Giving references for further reading.',
+    'Conducting evaluation by periodic tests / questions answer sessions or by designing quizzes / tests / assignments / examinations and projects to evaluate students.',
+    'Encouraging students to apply in real life whatever they have learnt in classrooms.',
+    'Counselling : Career / placement / personal.',
+    'Stimulating a sense of social responsibility.',
+);
 // session_destroy();
 ?>
 <!DOCTYPE html>
@@ -90,26 +110,31 @@ function Get_count()
     }
 
     #i1 .c {
-        padding: 1rem;
-        height: 35%;
+        padding: 0.4rem;
+        height: 40%;
         width: 70%;
         border-style: solid;
         border-width: 0.1rem;
         margin: 1rem;
         flex: 1 1 30rem;
+        font-size: 0.9rem;
+    }
+
+    #i1 .c p {
+        padding: 0.5rem;
+        text-align: justify;
     }
 
     /* mob res temp */
     @media screen and (max-width: 768px) {
         #i1 .c {
-            padding: 1rem;
+            padding: 0.4rem;
             height: 90%;
             width: 100%;
         }
     }
 
     #editor {
-        padding: 1rem;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -117,119 +142,124 @@ function Get_count()
     </style>
 </head>
 
-<body>
-    <p style="font-size:1.4rem;text-align:center;padding:1rem;font-family:monospace;text-decoration:underline">Detail
+<body style="padding:1rem">
+    <p style="font-size:1.4rem;text-align:center;font-family:monospace;text-decoration:underline">Detail
         Insights</p>
+    <br>
     <p style="font-size:1.2rem;text-align:center;font-family:monospace" id="name">
         <?php echo $_POST['teacher']; ?></p>
     <p style="font-size:1.2rem;text-align:center;font-family:monospace" id="subjec">
         <?php echo $_POST['subject']; ?></p>
+    <p style="font-size:1.2rem;text-align:center;font-family:monospace">
+        Total Records :
+        <?php echo $_SESSION['count']; ?></p>
+    <br>
     <div id="i1">
         <div class="c">
-            <p style="text-align:left;font-family:monospace;padding:1rem">
-                1.
+            <p style="text-align:left;font-family:monospace">
+                1. <?php echo $lab[0]; ?>
             </p>
             <canvas id="myChart" style="padding:1.19rem;"></canvas>
         </div>
         <div class="c">
-            <p style="text-align:left;font-family:monospace;padding:1rem">
-                2.
+            <p style="text-align:left;font-family:monospace">
+                2. <?php echo $lab[1]; ?>
             </p>
             <canvas id="myChart1" style="padding:1.19rem;"></canvas>
         </div>
         <div class="c">
-            <p style="text-align:left;font-family:monospace;padding:1rem">
-                3.
+            <p style="text-align:left;font-family:monospace">
+                3. <?php echo $lab[2]; ?>
             </p>
             <canvas id="myChart2" style="padding:1.19rem;"></canvas>
         </div>
         <div class="c">
-            <p style="text-align:left;font-family:monospace;padding:1rem">
-                4.
+            <p style="text-align:left;font-family:monospace">
+                4. <?php echo $lab[3]; ?>
             </p>
             <canvas id="myChart3" style="padding:1.19rem;"></canvas>
         </div>
         <div class="c">
-            <p style="text-align:left;font-family:monospace;padding:1rem">
-                5.
+            <p style="text-align:left;font-family:monospace">
+                5. <?php echo $lab[4]; ?>
             </p>
             <canvas id="myChart4" style="padding:1.19rem;"></canvas>
         </div>
         <div class="c">
-            <p style="text-align:left;font-family:monospace;padding:1rem">
-                6.
+            <p style="text-align:left;font-family:monospace">
+                6. <?php echo $lab[5]; ?>
             </p>
             <canvas id="myChart5" style="padding:1.19rem;"></canvas>
         </div>
         <div class="c">
-            <p style="text-align:left;font-family:monospace;padding:1rem">
-                7.
+            <p style="text-align:left;font-family:monospace">
+                7. <?php echo $lab[6]; ?>
             </p>
             <canvas id="myChart6" style="padding:1.19rem;"></canvas>
         </div>
         <div class="c">
-            <p style="text-align:left;font-family:monospace;padding:1rem">
-                8.
+            <p style="text-align:left;font-family:monospace">
+                8. <?php echo $lab[7]; ?>
             </p>
             <canvas id="myChart7" style="padding:1.19rem;"></canvas>
         </div>
         <div class="c">
-            <p style="text-align:left;font-family:monospace;padding:1rem">
-                9.
+            <p style="text-align:left;font-family:monospace">
+                9. <?php echo $lab[9]; ?>
             </p>
             <canvas id="myChart8" style="padding:1.19rem;"></canvas>
         </div>
         <div class="c">
-            <p style="text-align:left;font-family:monospace;padding:1rem">
-                10.
+            <p style="text-align:left;font-family:monospace">
+                10. <?php echo $lab[9]; ?>
             </p>
             <canvas id="myChart9" style="padding:1.19rem;"></canvas>
         </div>
         <div class="c">
-            <p style="text-align:left;font-family:monospace;padding:1rem">
-                11.
+            <p style="text-align:left;font-family:monospace">
+                11. <?php echo $lab[10]; ?>
             </p>
             <canvas id="myChart10" style="padding:1.19rem;"></canvas>
         </div>
         <div class="c">
-            <p style="text-align:left;font-family:monospace;padding:1rem">
-                12.
+            <p style="text-align:left;font-family:monospace">
+                12. <?php echo $lab[11]; ?>
             </p>
             <canvas id="myChart11" style="padding:1.19rem;"></canvas>
         </div>
         <div class="c">
-            <p style="text-align:left;font-family:monospace;padding:1rem">
-                13.
+            <p style="text-align:left;font-family:monospace">
+                13. <?php echo $lab[12]; ?>
             </p>
             <canvas id="myChart12" style="padding:1.19rem;"></canvas>
         </div>
         <div class="c">
-            <p style="text-align:left;font-family:monospace;padding:1rem">
-                14.
+            <p style="text-align:left;font-family:monospace">
+                14. <?php echo $lab[13]; ?>
             </p>
             <canvas id="myChart13" style="padding:1.19rem;"></canvas>
         </div>
         <div class="c">
-            <p style="text-align:left;font-family:monospace;padding:1rem">
-                15.
+            <p style="text-align:left;font-family:monospace">
+                15. <?php echo $lab[14]; ?>
             </p>
             <canvas id="myChart14" style="padding:1.19rem;"></canvas>
         </div>
         <div class="c">
-            <p style="text-align:left;font-family:monospace;padding:1rem">
-                16.
+            <p style="text-align:left;font-family:monospace">
+                16. <?php echo $lab[15]; ?>
             </p>
             <canvas id="myChart15" style="padding:1.19rem;"></canvas>
         </div>
         <div class="c">
-            <p style="text-align:left;font-family:monospace;padding:1rem">
-                17.
+            <p style="text-align:left;font-family:monospace">
+                17. <?php echo $lab[16]; ?>
             </p>
             <canvas id="myChart16" style="padding:1.19rem;"></canvas>
         </div>
         <div class="c">
-            <p style="text-align:left;font-family:monospace;padding:1rem">
-                18.
+            <p style="text-align:left;font-family:monospace">
+                18. <?php echo $lab[17]; ?>
             </p>
             <canvas id="myChart17" style="padding:1.19rem;"></canvas>
         </div>

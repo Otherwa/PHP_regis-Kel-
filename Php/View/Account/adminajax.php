@@ -59,6 +59,10 @@ if (isset($_POST['teacher']) && $_POST['class1'] && $_POST['sem'] && $_POST['sub
         $data = ($total_count[$b] * 100 / $total);
         echo "<input id=\"" . $b . "\" type=\"hidden\" value =\"" . $data . "\">";
     }
+
+    // send session
+    session_start();
+    $_SESSION['count'] = $total;
 }
 
 
@@ -81,15 +85,14 @@ function filter($review)
 function Get_count()
 {
     $con = get_con();
-    $total_qus = 18;
 
     $query = "SELECT count(*) as `count1` from answerpats WHERE tname=\"" . $_POST['teacher'] . "\"AND subject =\"" . $_POST['sub'] . "\";";
     $result = mysqli_query($con, $query);
     $result = mysqli_fetch_array($result);
 
     $result = $result['count1'];
-    echo "<p> total count : " . $result * $total_qus . "</p><br>" . "<p>" . $_POST['teacher'] . "</p><br>" . "<p>" . $_POST['sub'] . "</p>";
-    return ($result * $total_qus);
+    echo "<p> Total Records : " . $result . "</p><br>" . "<p>" . $_POST['teacher'] . "</p><br>" . "<p>" . $_POST['sub'] . "</p>";
+    return ($result);
 }
 
 

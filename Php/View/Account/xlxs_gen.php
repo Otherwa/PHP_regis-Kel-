@@ -79,6 +79,10 @@ function Get_count()
     <meta http-equiv='expires' content='0'>
     <meta http-equiv='pragma' content='no-cache'>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.0.0/chartjs-plugin-datalabels.min.js"
+        integrity="sha512-R/QOHLpV1Ggq22vfDAWYOaMd5RopHrJNMxi8/lJu8Oihwi4Ho4BRFeiMiCefn9rasajKjnx9/fTQ/xkWnkDACg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <style>
     #i1 {
         display: flex;
@@ -90,8 +94,9 @@ function Get_count()
         height: 35%;
         width: 70%;
         border-style: solid;
+        border-width: 0.1rem;
         margin: 1rem;
-        flex: 1 1 569px;
+        flex: 1 1 30rem;
     }
 
     /* mob res temp */

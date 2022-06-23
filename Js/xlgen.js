@@ -37,7 +37,7 @@ Data_5 = get_Dat(28, Data1);
 Data_6 = get_Dat(35, Data1);
 Data_7 = get_Dat(42, Data1);
 Data_8 = get_Dat(49, Data1);
-Data_9 = get_Dat(58, Data1);
+Data_9 = get_Dat(56, Data1);
 Data_10 = get_Dat(63, Data1);
 Data_11 = get_Dat(70, Data1);
 Data_12 = get_Dat(77, Data1);
@@ -104,6 +104,8 @@ const myChart = new Chart(ctx, {
         scales: {
             y: {
                 beginAtZero: true,
+                suggestedMin: 50,
+                suggestedMax: 100
             }
         },
         plugins: {
@@ -113,9 +115,18 @@ const myChart = new Chart(ctx, {
             title: {
                 display: true,
                 text: lab[0]
+            },
+            datalabels: {
+                anchor: 'end',
+                align: 'top',
+                formatter: (value, context) => {
+                    context = value.substr(0, 5) + " %";
+                    return context;
+                }
             }
         },
-    }
+    },
+    plugins: [ChartDataLabels]
 });
 
 const myChart1 = new Chart(ctx1, {
@@ -150,6 +161,8 @@ const myChart1 = new Chart(ctx1, {
         scales: {
             y: {
                 beginAtZero: true,
+                suggestedMin: 50,
+                suggestedMax: 100
             }
         },
         plugins: {
@@ -159,9 +172,18 @@ const myChart1 = new Chart(ctx1, {
             title: {
                 display: true,
                 text: lab[1]
+            },
+            datalabels: {
+                anchor: 'end',
+                align: 'top',
+                formatter: (value, context) => {
+                    context = value.substr(0, 5) + " %";
+                    return context;
+                }
             }
         },
-    }
+    },
+    plugins: [ChartDataLabels]
 });
 
 const myChart2 = new Chart(ctx2, {
@@ -196,6 +218,8 @@ const myChart2 = new Chart(ctx2, {
         scales: {
             y: {
                 beginAtZero: true,
+                suggestedMin: 50,
+                suggestedMax: 100
             }
         },
         plugins: {
@@ -205,9 +229,18 @@ const myChart2 = new Chart(ctx2, {
             title: {
                 display: true,
                 text: lab[2]
+            },
+            datalabels: {
+                anchor: 'end',
+                align: 'top',
+                formatter: (value, context) => {
+                    context = value.substr(0, 5) + " %";
+                    return context;
+                }
             }
         },
-    }
+    },
+    plugins: [ChartDataLabels]
 });
 
 const myChart3 = new Chart(ctx3, {
@@ -242,6 +275,8 @@ const myChart3 = new Chart(ctx3, {
         scales: {
             y: {
                 beginAtZero: true,
+                suggestedMin: 50,
+                suggestedMax: 100
             }
         },
         plugins: {
@@ -251,9 +286,18 @@ const myChart3 = new Chart(ctx3, {
             title: {
                 display: true,
                 text: lab[3]
+            },
+            datalabels: {
+                anchor: 'end',
+                align: 'top',
+                formatter: (value, context) => {
+                    context = value.substr(0, 5) + " %";
+                    return context;
+                }
             }
         },
-    }
+    },
+    plugins: [ChartDataLabels]
 });
 
 const myChart4 = new Chart(ctx4, {
@@ -288,6 +332,8 @@ const myChart4 = new Chart(ctx4, {
         scales: {
             y: {
                 beginAtZero: true,
+                suggestedMin: 50,
+                suggestedMax: 100
             }
         },
         plugins: {
@@ -297,9 +343,18 @@ const myChart4 = new Chart(ctx4, {
             title: {
                 display: true,
                 text: lab[4]
+            },
+            datalabels: {
+                anchor: 'end',
+                align: 'top',
+                formatter: (value, context) => {
+                    context = value.substr(0, 5) + " %";
+                    return context;
+                }
             }
         },
-    }
+    },
+    plugins: [ChartDataLabels]
 });
 
 const myChart5 = new Chart(ctx5, {
@@ -334,6 +389,8 @@ const myChart5 = new Chart(ctx5, {
         scales: {
             y: {
                 beginAtZero: true,
+                suggestedMin: 50,
+                suggestedMax: 100
             }
         },
         plugins: {
@@ -343,9 +400,18 @@ const myChart5 = new Chart(ctx5, {
             title: {
                 display: true,
                 text: lab[5]
+            },
+            datalabels: {
+                anchor: 'end',
+                align: 'top',
+                formatter: (value, context) => {
+                    context = value.substr(0, 5) + " %";
+                    return context;
+                }
             }
         },
-    }
+    },
+    plugins: [ChartDataLabels]
 });
 
 const myChart6 = new Chart(ctx6, {
@@ -380,6 +446,8 @@ const myChart6 = new Chart(ctx6, {
         scales: {
             y: {
                 beginAtZero: true,
+                suggestedMin: 50,
+                suggestedMax: 100
             }
         },
         plugins: {
@@ -389,9 +457,18 @@ const myChart6 = new Chart(ctx6, {
             title: {
                 display: true,
                 text: lab[6]
+            },
+            datalabels: {
+                anchor: 'end',
+                align: 'top',
+                formatter: (value, context) => {
+                    context = value.substr(0, 5) + " %";
+                    return context;
+                }
             }
         },
-    }
+    },
+    plugins: [ChartDataLabels]
 });
 
 
@@ -427,6 +504,8 @@ const myChart7 = new Chart(ctx7, {
         scales: {
             y: {
                 beginAtZero: true,
+                suggestedMin: 50,
+                suggestedMax: 100
             }
         },
         plugins: {
@@ -436,9 +515,18 @@ const myChart7 = new Chart(ctx7, {
             title: {
                 display: true,
                 text: lab[7]
+            },
+            datalabels: {
+                anchor: 'end',
+                align: 'top',
+                formatter: (value, context) => {
+                    context = value.substr(0, 5) + " %";
+                    return context;
+                }
             }
         },
-    }
+    },
+    plugins: [ChartDataLabels]
 });
 
 
@@ -474,6 +562,8 @@ const myChart8 = new Chart(ctx8, {
         scales: {
             y: {
                 beginAtZero: true,
+                suggestedMin: 50,
+                suggestedMax: 100
             }
         },
         plugins: {
@@ -483,9 +573,18 @@ const myChart8 = new Chart(ctx8, {
             title: {
                 display: true,
                 text: lab[8]
+            },
+            datalabels: {
+                anchor: 'end',
+                align: 'top',
+                formatter: (value, context) => {
+                    context = value.substr(0, 5) + " %";
+                    return context;
+                }
             }
         },
-    }
+    },
+    plugins: [ChartDataLabels]
 });
 
 const myChart9 = new Chart(ctx9, {
@@ -520,6 +619,8 @@ const myChart9 = new Chart(ctx9, {
         scales: {
             y: {
                 beginAtZero: true,
+                suggestedMin: 50,
+                suggestedMax: 100
             }
         },
         plugins: {
@@ -529,9 +630,18 @@ const myChart9 = new Chart(ctx9, {
             title: {
                 display: true,
                 text: lab[9]
+            },
+            datalabels: {
+                anchor: 'end',
+                align: 'top',
+                formatter: (value, context) => {
+                    context = value.substr(0, 5) + " %";
+                    return context;
+                }
             }
         },
-    }
+    },
+    plugins: [ChartDataLabels]
 });
 
 const myChart10 = new Chart(ctx10, {
@@ -566,6 +676,8 @@ const myChart10 = new Chart(ctx10, {
         scales: {
             y: {
                 beginAtZero: true,
+                suggestedMin: 50,
+                suggestedMax: 100
             }
         },
         plugins: {
@@ -575,9 +687,18 @@ const myChart10 = new Chart(ctx10, {
             title: {
                 display: true,
                 text: lab[10]
+            },
+            datalabels: {
+                anchor: 'end',
+                align: 'top',
+                formatter: (value, context) => {
+                    context = value.substr(0, 5) + " %";
+                    return context;
+                }
             }
         },
-    }
+    },
+    plugins: [ChartDataLabels]
 });
 
 const myChart11 = new Chart(ctx11, {
@@ -612,6 +733,8 @@ const myChart11 = new Chart(ctx11, {
         scales: {
             y: {
                 beginAtZero: true,
+                suggestedMin: 50,
+                suggestedMax: 100
             }
         },
         plugins: {
@@ -621,9 +744,18 @@ const myChart11 = new Chart(ctx11, {
             title: {
                 display: true,
                 text: lab[11]
+            },
+            datalabels: {
+                anchor: 'end',
+                align: 'top',
+                formatter: (value, context) => {
+                    context = value.substr(0, 5) + " %";
+                    return context;
+                }
             }
         },
-    }
+    },
+    plugins: [ChartDataLabels]
 });
 
 const myChart12 = new Chart(ctx12, {
@@ -658,6 +790,8 @@ const myChart12 = new Chart(ctx12, {
         scales: {
             y: {
                 beginAtZero: true,
+                suggestedMin: 50,
+                suggestedMax: 100
             }
         },
         plugins: {
@@ -667,9 +801,18 @@ const myChart12 = new Chart(ctx12, {
             title: {
                 display: true,
                 text: lab[12]
+            },
+            datalabels: {
+                anchor: 'end',
+                align: 'top',
+                formatter: (value, context) => {
+                    context = value.substr(0, 5) + " %";
+                    return context;
+                }
             }
         },
-    }
+    },
+    plugins: [ChartDataLabels]
 });
 
 
@@ -705,6 +848,8 @@ const myChart13 = new Chart(ctx13, {
         scales: {
             y: {
                 beginAtZero: true,
+                suggestedMin: 50,
+                suggestedMax: 100
             }
         },
         plugins: {
@@ -714,9 +859,18 @@ const myChart13 = new Chart(ctx13, {
             title: {
                 display: true,
                 text: lab[13]
+            },
+            datalabels: {
+                anchor: 'end',
+                align: 'top',
+                formatter: (value, context) => {
+                    context = value.substr(0, 5) + " %";
+                    return context;
+                }
             }
         },
-    }
+    },
+    plugins: [ChartDataLabels]
 });
 
 
@@ -752,6 +906,8 @@ const myChart14 = new Chart(ctx14, {
         scales: {
             y: {
                 beginAtZero: true,
+                suggestedMin: 50,
+                suggestedMax: 100
             }
         },
         plugins: {
@@ -761,9 +917,18 @@ const myChart14 = new Chart(ctx14, {
             title: {
                 display: true,
                 text: lab[14]
+            },
+            datalabels: {
+                anchor: 'end',
+                align: 'top',
+                formatter: (value, context) => {
+                    context = value.substr(0, 5) + " %";
+                    return context;
+                }
             }
         },
-    }
+    },
+    plugins: [ChartDataLabels]
 });
 
 const myChart15 = new Chart(ctx15, {
@@ -798,6 +963,8 @@ const myChart15 = new Chart(ctx15, {
         scales: {
             y: {
                 beginAtZero: true,
+                suggestedMin: 50,
+                suggestedMax: 100
             }
         },
         plugins: {
@@ -807,9 +974,18 @@ const myChart15 = new Chart(ctx15, {
             title: {
                 display: true,
                 text: lab[15]
+            },
+            datalabels: {
+                anchor: 'end',
+                align: 'top',
+                formatter: (value, context) => {
+                    context = value.substr(0, 5) + " %";
+                    return context;
+                }
             }
         },
-    }
+    },
+    plugins: [ChartDataLabels]
 });
 
 
@@ -845,6 +1021,8 @@ const myChart16 = new Chart(ctx16, {
         scales: {
             y: {
                 beginAtZero: true,
+                suggestedMin: 50,
+                suggestedMax: 100
             }
         },
         plugins: {
@@ -854,9 +1032,18 @@ const myChart16 = new Chart(ctx16, {
             title: {
                 display: true,
                 text: lab[16]
+            },
+            datalabels: {
+                anchor: 'end',
+                align: 'top',
+                formatter: (value, context) => {
+                    context = value.substr(0, 5) + " %";
+                    return context;
+                }
             }
         },
-    }
+    },
+    plugins: [ChartDataLabels]
 });
 
 
@@ -892,6 +1079,8 @@ const myChart17 = new Chart(ctx17, {
         scales: {
             y: {
                 beginAtZero: true,
+                suggestedMin: 50,
+                suggestedMax: 100
             }
         },
         plugins: {
@@ -901,9 +1090,18 @@ const myChart17 = new Chart(ctx17, {
             title: {
                 display: true,
                 text: lab[17]
+            },
+            datalabels: {
+                anchor: 'end',
+                align: 'top',
+                formatter: (value, context) => {
+                    context = value.substr(0, 5) + " %";
+                    return context;
+                }
             }
         },
-    }
+    },
+    plugins: [ChartDataLabels]
 });
 
 function get_Dat(i, Data1) {

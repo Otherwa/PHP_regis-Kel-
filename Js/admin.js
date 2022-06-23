@@ -108,9 +108,23 @@ const myChart = new Chart(ctx, {
         plugins: {
             legend: {
                 display: true,
+            },
+            title: {
+                display: true,
+                text: 'Data'
+            },
+            datalabels: {
+                anchor: 'middle',
+                align: 'top',
+                formatter: (value, context) => {
+                    // console.log(value);
+                    context = value.substr(0, 5) + " %";
+                    return context;
+                }
             }
         },
-    }
+    },
+    plugins: [ChartDataLabels]
 });
 
 // ajax chart

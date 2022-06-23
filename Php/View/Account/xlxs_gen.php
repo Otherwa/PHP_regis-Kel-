@@ -118,17 +118,19 @@ $lab = array(
         margin: 0.8rem;
         flex: 1 1 500px;
         font-size: 0.9rem;
+        background-color: rgba(0, 0, 0, 0.025);
     }
 
     #i1 .c p {
         padding: 0.5rem;
         text-align: justify;
+        font-weight: 100;
     }
 
     /* mob res temp */
     @media screen and (max-width: 768px) {
         #i1 .c {
-            padding: 0.4rem;
+            padding: 0.7rem;
             height: 100%;
             width: 100%;
         }
@@ -147,13 +149,13 @@ $lab = array(
 </head>
 
 <body>
+    <br>
     <p style="font-size:1.4rem;text-align:center;font-family:monospace;text-decoration:underline">Detail
         Insights</p>
     <br>
+    <br>
     <p style="font-size:1.2rem;text-align:center;font-family:monospace" id="name">
-        <?php echo $_POST['teacher']; ?></p>
-    <p style="font-size:1.2rem;text-align:center;font-family:monospace" id="subjec">
-        <?php echo $_POST['subject']; ?></p>
+        <?php echo $_POST['teacher'] . " - [" . $_POST['subject'] . "]"; ?></p>
     <p style="font-size:1.2rem;text-align:center;font-family:monospace">
         Total Records :
         <?php echo $_SESSION['count']; ?></p>

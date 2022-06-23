@@ -110,13 +110,13 @@ $lab = array(
     }
 
     #i1 .c {
-        padding: 0.4rem;
+        padding: 0.9rem;
         height: 40%;
         width: 70%;
         border-style: solid;
         border-width: 0.1rem;
-        margin: 1rem;
-        flex: 1 1 30rem;
+        margin: 0.8rem;
+        flex: 1 1 500px;
         font-size: 0.9rem;
     }
 
@@ -129,7 +129,7 @@ $lab = array(
     @media screen and (max-width: 768px) {
         #i1 .c {
             padding: 0.4rem;
-            height: 90%;
+            height: 100%;
             width: 100%;
         }
     }
@@ -139,10 +139,14 @@ $lab = array(
         flex-direction: column;
         align-items: center;
     }
+
+    body {
+        background-color: whitesmoke;
+    }
     </style>
 </head>
 
-<body style="padding:1rem">
+<body>
     <p style="font-size:1.4rem;text-align:center;font-family:monospace;text-decoration:underline">Detail
         Insights</p>
     <br>
@@ -264,9 +268,18 @@ $lab = array(
             <canvas id="myChart17" style="padding:1.19rem;"></canvas>
         </div>
     </div>
+    <br>
     <div id="editor">
         <!-- for pdf use -->
         <input type="button" value="Download" style="margin:0" id="sub" onclick="downpdf()">
+    </div>
+    <br>
+    <div class="footer-copyright text-center" style="padding:1rem;position:relative;">
+        <br />
+        <p style="font-family:monospace">&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html"
+                target="_self" class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> | <a
+                href="../../../personal.html" class="text-[blue] hover:underline ">Contributors</a>
+        </p>
     </div>
 </body>
 

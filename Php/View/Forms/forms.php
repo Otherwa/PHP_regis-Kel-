@@ -96,6 +96,10 @@ if (isset($_POST['FFForm'])) {
         width: auto;
 
     }
+
+    p {
+        font-family: monospace;
+    }
     </style>
 </head>
 

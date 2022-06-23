@@ -169,5 +169,5 @@ function Get_Chart() {
 }
 
 
-myChart.canvas.parentNode.style.height = '59vh';
-myChart.canvas.parentNode.style.width = '49vw';
+// myChart.canvas.parentNode.style.height = '50%';
+// myChart.canvas.parentNode.style.width = '50%';

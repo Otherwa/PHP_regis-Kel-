@@ -101,6 +101,19 @@ $con = get_con();
         align-items: center;
         flex-direction: column;
     }
+
+    .i1 {
+        display: inline-block;
+        width: 50%;
+        height: 50%
+    }
+
+    @media screen and (max-width: 768px) {
+        .i1 {
+            height: 100%;
+            width: 100%;
+        }
+    }
     </style>
 </head>
 
@@ -162,7 +175,7 @@ $con = get_con();
             </div>
             <br>
             <!-- chart js -->
-            <div style="display:inline-block">
+            <div class="i1">
                 <canvas id="myChart" style="padding:1.19rem;"></canvas>
             </div>
             <br>

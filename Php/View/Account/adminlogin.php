@@ -84,6 +84,10 @@ if (isset($_POST['login'])) {
     ul {
         padding-left: 0rem;
     }
+
+    p {
+        font-family: monospace;
+    }
     </style>
 </head>
 

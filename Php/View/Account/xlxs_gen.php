@@ -112,11 +112,8 @@ $lab = array(
     #i1 .c {
         padding: 0.9rem;
         height: 40%;
-        width: 70%;
-        border-style: solid;
-        border-width: 0.1rem;
-        margin: 0.8rem;
-        flex: 1 1 500px;
+        width: 100vw;
+        flex: 1 1 40rem;
         font-size: 0.9rem;
         background-color: rgba(0, 0, 0, 0.025);
     }
@@ -131,8 +128,8 @@ $lab = array(
     @media screen and (max-width: 768px) {
         #i1 .c {
             padding: 0.7rem;
-            height: 100%;
-            width: 100%;
+            height: 50vh;
+            width: 100vw;
         }
     }
 
@@ -143,7 +140,7 @@ $lab = array(
     }
 
     body {
-        background-color: whitesmoke;
+        background-color: white;
     }
     </style>
 </head>

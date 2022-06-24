@@ -1077,7 +1077,5 @@ function get_Dat(i, Data1) {
 
 function downpdf() {
     // file save name
-    name = name.trim();
-    sub = sub.trim();
-    window.print(name + "_" + sub + ".pdf");
+    window.print();
 }

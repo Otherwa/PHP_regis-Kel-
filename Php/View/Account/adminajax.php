@@ -85,12 +85,12 @@ function filter($review)
 function Get_count()
 {
     $con = get_con();
-
+    $cout = 18;
     $query = "SELECT count(*) as `count1` from answerpats WHERE tname=\"" . $_POST['teacher'] . "\"AND subject =\"" . $_POST['sub'] . "\";";
     $result = mysqli_query($con, $query);
     $result = mysqli_fetch_array($result);
 
-    $result = $result['count1'];
+    $result = ($result['count1'] * 18);
     echo "<p> Total Records : " . $result . "</p><br>" . "<p>" . $_POST['teacher'] . "</p><br>" . "<p>" . $_POST['sub'] . "</p>";
     return ($result);
 }

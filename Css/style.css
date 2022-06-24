@@ -87,8 +87,8 @@ h1 {
 }
 
 .footer-copyright {
-    position: absolute;
-    bottom: -100%;
+    position: relative;
+    bottom: -40vh;
     line-height: 1.6rem;
     text-align: center;
     align-items: center;

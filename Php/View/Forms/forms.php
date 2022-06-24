@@ -173,14 +173,14 @@ if (isset($_POST['FFForm'])) {
             </p>
             <br />
             <br />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Solid_white.svg/768px-Solid_white.svg.png"
-                alt="Scott" id="clown_com"
+            <img src="https://pa1.narvii.com/6771/ab4135057351e87e09676e559b5e76f1cad5c77e_hq.gif" alt="Scott"
+                id="clown_com"
                 style="text-align:center;box-shadow:4px 5px 2.5rem #cacaca;display:inline-block;border-radius:0.4rem;width:55rem;height:auto" />
         </div>
     </div>
 
     <div class="footer-copyright text-center" id="hidcopy" style=" display:none;padding:1rem">
-        <img id="foot" alt="pc" src="https://64.media.tumblr.com/tumblr_mac17l4bpY1rfjowdo1_500.gifv"
+        <img id="foot" alt="pc" src="https://bang-phinf.pstatic.net/a/32ehga/0_8g9Ud018bng1q157yzwrfmle_wzcvar.gif"
             style="max-width:10rem;height:auto;display:none;position:relative;">
         <br />
         <br />

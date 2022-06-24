@@ -20,8 +20,8 @@ p {
 }
 
 html {
-    /* cursor: url(http://www.rw-designer.com/cursor-extern.php?id=121707), auto; */
     cursor: auto;
+    scroll-behavior: smooth;
 }
 
 html::-webkit-scrollbar {

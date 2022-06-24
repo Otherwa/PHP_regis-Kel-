@@ -111,7 +111,7 @@ const myChart = new Chart(ctx, {
             },
             title: {
                 display: true,
-                text: 'Overall Insights'
+                text: 'Overall'
             },
             datalabels: {
                 anchor: 'middle',

@@ -91,7 +91,7 @@ function Get_count()
     $result = mysqli_fetch_array($result);
 
     $result = ($result['count1'] * 18);
-    echo "<p> Total Records : " . $result . "</p><br>" . "<p>" . $_POST['teacher'] . "</p><br>" . "<p>" . $_POST['sub'] . "</p>";
+    echo "<p> Total Records : " . ($result / 18) . "</p><br>" . "<p>" . $_POST['teacher'] . "</p><br>" . "<p>" . $_POST['sub'] . "</p>";
     return ($result);
 }
 

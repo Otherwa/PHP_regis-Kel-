@@ -80,7 +80,9 @@ $lab = array(
     'Counselling : Career / placement / personal.',
     'Stimulating a sense of social responsibility.',
 );
-// session_destroy();
+// session_destroy(); xls gen session
+$_SESSION['tec'] = $_POST['teacher'];
+$_SESSION['sub'] = $_POST['subject'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -126,38 +128,52 @@ $lab = array(
     }
 
     /* mob res temp */
+
+
+    #editor {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    body {
+        background-color: white;
+    }
+
+    .intr p {
+        font-size: 1.12rem;
+        text-align: center;
+        font-family: monospace;
+    }
+
     @media screen and (max-width: 768px) {
         #i1 .c {
             padding: 0.7rem;
             height: 50vh;
             width: 100vw;
         }
-    }
 
-    #editor {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    body {
-        background-color: white;
+        .intr p {
+            font-size: 0.9rem;
+        }
     }
     </style>
 </head>
 
 <body>
     <br>
-    <p style="font-size:1.4rem;text-align:center;font-family:monospace;text-decoration:underline">Detail
+    <p style="font-size:1.12rem;text-align:center;font-family:monospace;text-decoration:underline">Detail
         Insights</p>
     <br>
     <br>
-    <p style="font-size:1.2rem;text-align:center;font-family:monospace" id="name">
-        <?php echo $_POST['teacher'] . " - [" . $_POST['subject'] . "]"; ?></p>
-    <p style="font-size:1.2rem;text-align:center;font-family:monospace">
-        Total Records :
-        <?php echo $_SESSION['count']; ?></p>
-    <br>
+    <div class="intr">
+        <p>
+            <?php echo $_POST['teacher'] . " - [" . $_POST['subject'] . "]"; ?></p>
+        <p>
+            Total Records :
+            <?php echo ($_SESSION['count'] / 18); ?></p>
+        <br>
+    </div>
     <div id="i1">
         <div class="c">
             <p style="text-align:left;font-family:monospace">
@@ -269,9 +285,19 @@ $lab = array(
         </div>
     </div>
     <br>
-    <div id="editor">
+    <br>
+    <br>
+    <br>
+    <div id="editor" style="display:flex;padding:0.2rem">
+        <br>
         <!-- for pdf use -->
-        <input type="button" value="Download" style="margin:0" id="sub" onclick="downpdf()">
+        <input type="button" value="Download.Pdf" style="margin:0" id="sub" onclick="downpdf()">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <form method="POST" action="down_xl.php">
+            <!-- set tname -->
+            <input type="submit" value="Download.Xls" style="margin:0" class="form__button" name="export">
+        </form>
+        <br>
     </div>
     <br>
     <div class="footer-copyright text-center" style="padding:1rem;position:relative;">
@@ -284,7 +310,10 @@ $lab = array(
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://parall.ax/parallax/js/jspdf.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.1/html2pdf.bundle.min.js"
+    integrity="sha512-vDKWohFHe2vkVWXHp3tKvIxxXg0pJxeid5eo+UjdjME3DBFBn2F8yWOE0XmiFcFbXxrEOR1JriWEno5Ckpn15A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="../../../Js/xlgen.js" type="text/javascript"></script>
+
 
 </html>

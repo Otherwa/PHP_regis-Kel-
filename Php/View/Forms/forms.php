@@ -55,8 +55,8 @@ if (isset($_POST['FFForm'])) {
     <style type="text/css">
     .but {
         text-align: center;
-        width: 29rem;
-        height: 14rem;
+        width: 30vw;
+        height: 24vh;
         box-shadow: 5px 5px 5px rgb(0, 0, 0);
         transition: 300ms;
         border: solid 0.1rem black;
@@ -67,11 +67,19 @@ if (isset($_POST['FFForm'])) {
         transition: 300ms;
         box-shadow: 0.5rem 0.5rem rgba(0, 0, 0);
         position: relative;
-        transform: translate(-0.5rem, -0.5rem);
-        box-shadow: 0.5rem 0.5rem #000;
+        transform: translate(-1.15rem, -1.15rem);
+        box-shadow: 1.15rem 1.15rem #000;
     }
 
+
+
     /* res card form */
+    @media screen and (max-width: 768px) {
+        .but {
+            width: 60vw;
+            height: 20vh;
+        }
+    }
 
     .forms {
         padding: 0.7rem;
@@ -81,13 +89,6 @@ if (isset($_POST['FFForm'])) {
         justify-content: center;
         grid-gap: 1rem;
         align-content: space-between;
-    }
-
-    @media screen and (max-width: 660px) {
-        .but {
-            width: 15rem;
-            height: 9rem;
-        }
     }
 
     .octo {
@@ -118,11 +119,12 @@ if (isset($_POST['FFForm'])) {
         <br />
         <br />
         <div class="text-center" id="forms" style="display:none; padding:1rem;margin:1rem">
+            <br>
             <form action="" method="POST">
                 <div class="forms">
                     <button type=" submit"
                         class="but inline-block font-mono text-center border border-transparent rounded-md py-3 px-8 text-lg text-white transition ease-in-out delay-100 bg-blue-500 hover:bg-[#1fc6e4] hover:text-black duration-300"
-                        name="PAPForm"> PATS Form
+                        name="PAPForm"> PAT'S Form
                     </button>
                 </div>
                 <br />
@@ -147,12 +149,19 @@ if (isset($_POST['FFForm'])) {
                 <br />
             </form>
             <br>
-            <code
-                style="padding:0.4rem;color:gray;font-size:0.7rem;font-weight:bold;text-align: center;display: flex;flex-direction: row;justify-content: center;">
-                (Please fill the attached form to receive the required information.<br> For
-                further informations, advice or assistance contact the administrator.)
-            </code>
+            <details style="padding:0.4rem;;font-weight:bold;text-align: center;display:
+                        flex;flex-direction: row;justify-content: center;">
+                <summary>
+                    <span style=" font-family: monospace">Note :</span>
+                </summary>
+                <br>
+                <p style="color:gray;font-size:0.6rem">
+                    (Please fill the attached form to receive the required information.<br> For
+                    further informations, advice or assistance contact the administrator.)</p>
+            </details>
+            <br>
         </div>
+        <br>
         <div id="msg" class="msg text-xl text-center" style="display:none">
             <br />
             <img src="https://github.githubassets.com/images/mona-loading-dark.gif" alt="octo"

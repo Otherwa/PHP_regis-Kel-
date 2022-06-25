@@ -116,7 +116,7 @@ $_SESSION['sub'] = $_POST['subject'];
         padding: 0.9rem;
         height: 40%;
         width: 100vw;
-        flex: 1 1 40rem;
+        flex: 1 1 400px;
         font-size: 0.9rem;
         background-color: rgba(0, 0, 0, 0.025);
     }

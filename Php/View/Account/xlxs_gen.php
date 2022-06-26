@@ -116,7 +116,7 @@ $_SESSION['sub'] = $_POST['subject'];
         padding: 0.9rem;
         height: 40%;
         width: 100vw;
-        flex: 1 1 400px;
+        flex: 2 1 500px;
         font-size: 0.9rem;
         background-color: rgba(0, 0, 0, 0.025);
     }
@@ -146,15 +146,24 @@ $_SESSION['sub'] = $_POST['subject'];
         font-family: monospace;
     }
 
+    /* tab res */
     @media screen and (max-width: 768px) {
         #i1 .c {
             padding: 0.7rem;
-            height: 50vh;
+            height: 60vh;
             width: 100vw;
         }
 
         .intr p {
             font-size: 0.9rem;
+        }
+    }
+
+    @media screen and (max-width: 468px) {
+        #i1 .c {
+            padding: 0.7rem;
+            height: 50vh;
+            width: 100vw;
         }
     }
     </style>

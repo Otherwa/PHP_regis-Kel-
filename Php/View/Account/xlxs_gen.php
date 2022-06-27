@@ -29,6 +29,7 @@ if (isset($_POST["export"])) {
         }
         array_push($review, $temp_array);
     }
+    // 
     Get_Question_Rating($review, $total);
 }
 
@@ -80,9 +81,11 @@ $lab = array(
     'Counselling : Career / placement / personal.',
     'Stimulating a sense of social responsibility.',
 );
-// session_destroy(); xls gen session
+
+// session_destroy(); xls gen session for identification
 $_SESSION['tec'] = $_POST['teacher'];
 $_SESSION['sub'] = $_POST['subject'];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

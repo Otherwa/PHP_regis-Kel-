@@ -11,9 +11,9 @@ if (isset($_POST['teach'])) {
     }
 }
 
-if (isset($_POST['teac1'])) {
+if (isset($_POST['teac1']) && isset($_POST['class'])) {
     $con = get_con();
-    $query = "SELECT DISTINCT `sem` FROM `answerpats` WHERE tname =\"" . $_POST['teac1'] . "\";";
+    $query = "SELECT DISTINCT `sem` FROM `answerpats` WHERE tname =\"" . $_POST['teac1'] . "\"AND cname =\"" . $_POST['class'] . "\";";
     $result = mysqli_query($con, $query);
     echo "<option value =\"" . "--" . "\">" . "--" . "</option>";
     while ($row = mysqli_fetch_assoc($result)) {

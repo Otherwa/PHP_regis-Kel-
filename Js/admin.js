@@ -31,7 +31,8 @@ function Get_Sem(id) {
         type: 'POST',
         url: 'adminajax.php',
         data: {
-            teac1: teac
+            teac1: teac,
+            class: id
         },
         success: function(data) {
             if (id == '--') {

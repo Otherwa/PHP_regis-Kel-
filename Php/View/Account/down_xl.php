@@ -71,13 +71,13 @@ if (isset($_POST["export"])) {
         $output .=
             '<tr>
                 <th>' . $lab[$i] . '</th>  
-                <td>' . ($review[$i][0] / $total) . ' %' . '</td>  
-                <td>' . ($review[$i][1] / $total) . ' %' . '</td>  
-                <td>' . ($review[$i][2] / $total) . ' %' . '</td>  
-                <td>' . ($review[$i][3] / $total) . ' %' . '</td>  
-                <td>' . ($review[$i][4] / $total) . ' %' . '</td>  
-                <td>' . ($review[$i][5] / $total) . ' %' . '</td>  
-                <td>' . ($review[$i][6] / $total) . ' %' . '</td>  
+                <td>' . ($review[$i][0] / $total * 100) . ' %' . '</td>  
+                <td>' . ($review[$i][1] / $total * 100) . ' %' . '</td>  
+                <td>' . ($review[$i][2] / $total * 100) . ' %' . '</td>  
+                <td>' . ($review[$i][3] / $total * 100) . ' %' . '</td>  
+                <td>' . ($review[$i][4] / $total * 100) . ' %' . '</td>  
+                <td>' . ($review[$i][5] / $total * 100) . ' %' . '</td>  
+                <td>' . ($review[$i][6] / $total * 100) . ' %' . '</td>  
         </tr>
              ';
     }

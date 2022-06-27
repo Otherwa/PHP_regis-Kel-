@@ -13,4 +13,11 @@ Scalable:
         //add lines
 in ajaxtemp.php for asynchronous calls
 
+Test Case :-
+
+- Ctrlid Verification (Done)
+- Per submit one form (Done)
+- Analtyics (Done)
+- Downloads (Done)
+
 except index all hidden .html

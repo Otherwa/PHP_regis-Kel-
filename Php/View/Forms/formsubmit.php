@@ -77,7 +77,7 @@ session_destroy();
                                 echo 'User';
                             } ?>-Kun</p>
                         <br />
-                        <p class="text-[1.2rem]" style="text-align:start;"> Your Form Sucessfully Submitted</p>
+                        <p class="text-[1.2rem]" style="text-align:start;"> Your Form Successfully Submitted</p>
                     </div>
                     <br />
                     <p href="#" style="text-align:start"

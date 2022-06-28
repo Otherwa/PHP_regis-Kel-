@@ -28,6 +28,8 @@ if (isset($_POST['cid']) && isset($_POST['class1']) && isset($_POST['teach']) &&
         // 50ms send
         echo "<input id =\"msg\" value = \"none\" style=\"display:none;\">";
         echo "<p style=\"color:red;\">You've already Filled this Form</p>";
+        echo " <img src=\"https://i.giphy.com/media/BWxK3egmnMCkVoe5Tj/giphy.webp\" alt=\"octo\"
+        style=\"height: 3rem; margin-top: 1rem;\" />";
         echo "<script>$('#sub').attr('disabled',true);</script>";
     } else {
         echo "<input id=\"msg\" value=\"block\" style=\"display:none;\">";
@@ -97,6 +99,8 @@ if (isset($_POST['cid_stu'])) {
         echo "<script>$('#sub').attr('disabled', true);</script>";
         echo "<input id =\"msg\" value = \"none\" style=\"display:none;\">";
         echo "<p style=\"color:red;\">You've already Filled this Form</p>";
+        echo " <img src=\"https://i.giphy.com/media/BWxK3egmnMCkVoe5Tj/giphy.webp\" alt=\"octo\"
+        style=\"height: 3rem; margin-top: 1rem;\" />";
         echo "<script>$('#sub').attr('disabled',true);</script>";
     } else {
         echo "<input id=\"msg\" value=\"block\" style=\"display:none;\">";

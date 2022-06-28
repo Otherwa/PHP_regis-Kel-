@@ -181,7 +181,7 @@ window.onload = () => {
 window.setInterval(function() {
     if (document.getElementById('msg') != null) {
         var msg = document.getElementById('msg').value;
-        console.log(msg);
+        // console.log(msg);
         document.getElementById('msg_set').style.display = msg;
     } else {
         document.getElementById("sub").disabled = true;

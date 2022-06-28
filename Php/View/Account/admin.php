@@ -144,7 +144,7 @@ $con = get_con();
                             ?>
                         </select>
 
-                        <p class="lbl">Programme</p>
+                        <p class="lbl">Teacher</p>
                         <select name="teacher" id="teacher" onchange="Get_Class(this.value)">
                             <!-- get ajax -->
                             <option value="--">--</option>

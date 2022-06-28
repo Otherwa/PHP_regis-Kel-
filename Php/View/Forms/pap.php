@@ -137,9 +137,10 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
             // session_destroy();
         } else {
             //[block end]
+            $programme = get_prg($con, $rollno);
             // change year year(curdate)
-            $query = "INSERT INTO `answerpats`(`ctrlid`, `cname`, `tname`, `a11`, `a12`, `a13`, `a14`, `a15`, `a16`, `a17`, `a18`, `a19`, `a20`, `a21`, `a22`, `a23`, `a24`, `a25`, `a26`, `a27`, `a28`, `suggession`, `division`, `sem`, `subject`, `academic_year`,`Time`) 
-            VALUES ('$rollno','$class','$teacher','$rating1_1','$rating2_1','$rating3_1','$rating1_2','$rating2_2','$rating3_2','$rating4_2','$rating5_2','$rating6_2','$rating7_2','$rating1_3','$rating2_3','$rating3_3','$rating4_3','$rating5_3','$rating6_3','$rating7_3','$rating8_3','$suggest','$division','$semester','$paper','$academic_year',current_timestamp());";
+            $query = "INSERT INTO `answerpats` (`ctrlid`,`programme`, `cname`, `tname`, `a11`, `a12`, `a13`, `a14`, `a15`, `a16`, `a17`, `a18`, `a19`, `a20`, `a21`, `a22`, `a23`, `a24`, `a25`, `a26`, `a27`, `a28`, `suggession`, `division`, `sem`, `subject`, `academic_year`,`Time`) 
+            VALUES ('$rollno','$programme','$class','$teacher','$rating1_1','$rating2_1','$rating3_1','$rating1_2','$rating2_2','$rating3_2','$rating4_2','$rating5_2','$rating6_2','$rating7_2','$rating1_3','$rating2_3','$rating3_3','$rating4_3','$rating5_3','$rating6_3','$rating7_3','$rating8_3','$suggest','$division','$semester','$paper','$academic_year',current_timestamp());";
             // execute query
             mysqli_query($con, $query);
             $_SESSION['name'] = $name;
@@ -153,6 +154,19 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
 
     }
 }
+
+// function
+
+function get_prg($con, $rollno)
+{
+    $query = "SELECT `programme` FROM `activectrlid` WHERE ctrlid = \"" . $rollno . "\";";
+    $result = mysqli_query($con, $query);
+    $result = mysqli_fetch_assoc($result);
+    $result = $result['programme'];
+    return $result;
+}
+
+
 
 ?>
 

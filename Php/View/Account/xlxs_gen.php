@@ -54,7 +54,7 @@ function Get_count()
 {
     $con = get_con();
 
-    $query = "SELECT count(*) as `count1` from answerpats WHERE tname=\"" . $_POST['teacher'] . "\"AND subject =\"" . $_POST['subject'] . "\";";
+    $query = "SELECT count(*) as `count1` from `answerpats` WHERE tname=\"" . $_POST['teacher'] . "\"AND subject =\"" . $_POST['subject'] . "\";";
     $result = mysqli_query($con, $query);
     $result = mysqli_fetch_array($result);
     $result = $result['count1'];

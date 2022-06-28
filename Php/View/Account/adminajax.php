@@ -1,6 +1,16 @@
 <?php
 include('../connect.php');
 
+if (isset($_POST['programme'])) {
+    $con = get_con();
+    $query = " SELECT DISTINCT `tname` FROM `answerpats` WHERE programme = " . "\"" . $_POST['programme'] . "\";";
+    $result = mysqli_query($con, $query);
+    echo "<option value = " . "--" . ">" . "--" . "</option>";
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo "<option value =\"" . $row['tname'] . "\">" . $row['tname'] . "</option>";
+    }
+}
+
 if (isset($_POST['teach'])) {
     $con = get_con();
     $query = " SELECT DISTINCT `cname` FROM `answerpats` WHERE tname = " . "\"" . $_POST['teach'] . "\";";

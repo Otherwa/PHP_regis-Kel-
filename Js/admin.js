@@ -4,6 +4,25 @@ document.addEventListener('contextmenu', function(e) {
 
 
 
+
+function Get_Teacher(id) {
+    $('#programme').html('<option value="--">--</option>');
+    $('#class').html('<option value="--">--</option>');
+    $('#subjec').html('<option value="--">--</option>');
+    $('#sem').html('<option value="--">--</option>');
+
+    $.ajax({
+        type: 'POST',
+        url: 'adminajax.php',
+        data: {
+            programme: id
+        },
+        success: function(data) {
+            $('#teacher').html(data);
+        }
+    })
+}
+
 function Get_Class(id) {
     $('#class').html('<option value="--">--</option>');
     $('#subjec').html('<option value="--">--</option>');

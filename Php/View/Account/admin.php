@@ -120,7 +120,7 @@ $con = get_con();
 <body class="p-0 m-0">
     <ul class="sidenav">
         <!-- to destroy session -->
-        <li style="padding-bottom:0px"><a class="font-mono" href="adminlogin.php" target="_self">Back</a></li>
+        <li style="padding-bottom:0px"><a class="font-mono" href="logout.php" target="_self">Logout</a></li>
     </ul>
     <br />
     <div class="bg-[#ffffff] text-center content" style="padding:0.5rem">
@@ -132,17 +132,24 @@ $con = get_con();
                 <form method="POST" action="xlxs_gen.php">
                     <!-- form post method -->
                     <div class="selopt">
-                        <p class="lbl">Teacher</p>
-                        <select name="teacher" id="teacher" onchange="Get_Class(this.value)">
+                        <p class="lbl">Programme</p>
+                        <select name="Programme" id="Programme" onchange="Get_Teacher(this.value)">
                             <?php
                             echo "<option value =\"" . "--" . "\" selected>" . "--" . "</option>";
-                            $query = "SELECT DISTINCT `tname` FROM answerpats;";
+                            $query = "SELECT DISTINCT `programme` FROM answerpats;";
                             $result = mysqli_query($con, $query);
-                            while ($row = mysqli_fetch_array($result)) {
-                                echo "<option value=\"" . $row['tname'] . "\">" . $row['tname'] . "</option>";
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                echo "<option value=\"" . $row['programme'] . "\">" . $row['programme'] . "</option>";
                             }
                             ?>
                         </select>
+
+                        <p class="lbl">Programme</p>
+                        <select name="teacher" id="teacher" onchange="Get_Class(this.value)">
+                            <!-- get ajax -->
+                            <option value="--">--</option>
+                        </select>
+
                         <p class="lbl">Class</p>
                         <select name="class" id="class" onchange="Get_Sem(this.value)">
                             <!-- get ajax -->
@@ -162,8 +169,8 @@ $con = get_con();
                         <br>
                         <br>
                         <!-- gen chart only once -->
-                        <input type="submit" name="export" title="download answerpats.xlxs" style="width: 100%;"
-                            id="sub" value="Insights" />
+                        <input type="submit" name="export" title="Detail" style="width: 100%;" id="sub"
+                            value="Insights" />
                     </div>
                 </form>
             </div>

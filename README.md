@@ -79,17 +79,13 @@ Registration form using php
 - Done.
 - Each seperate .css file for each components (Name Convention).
 
-- adding data should be in specific formats according to schema above for e.g :-[Students_data (1).xlsx](https://github.com/Otherwa/PHP_regis-Kel-/files/9010116/Students_data.1.xlsx) for activectrlid updates
-
-
 #### Database (MySql) Constraints.
 
 `Database name 'kelkar_forms'`
 `answerpats` `answersss` `answerfac` for storing feedbacks.
 
 ##### Schema
-![ss1](https://user-images.githubusercontent.com/67428572/176394517-58a094ae-22a7-43e8-80f3-7dc0738ad6bf.png)
-
+![1213](https://user-images.githubusercontent.com/67428572/169552870-e5ff8c4f-b770-4b39-9b5d-b7e381f1977a.png)
 
 ## styling
 

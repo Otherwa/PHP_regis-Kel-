@@ -126,5 +126,8 @@ if (isset($_POST['cid_crt'])) {
     }
 }
 
+// close connection
+mysqli_close($con);
+
 ?>
 <!doctype html>

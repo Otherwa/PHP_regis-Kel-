@@ -14,6 +14,7 @@ $con = get_con();
 // err_msgs
 $var1 = 1;
 
+
 if (isset($_POST['submit'])) {
 
     //session statuses
@@ -147,11 +148,14 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
 
             // https response
             header('Location: formsubmit.php');
+            // close connection
+            mysqli_close($con);
         }
     } else {
         echo "<script>alert('Please select all the fields given below 🤓');</script>";
         //session_destroy();
-
+        // close connection
+        mysqli_close($con);
     }
 }
 
@@ -165,7 +169,6 @@ function get_prg($con, $rollno)
     $result = $result['programme'];
     return $result;
 }
-
 
 
 ?>

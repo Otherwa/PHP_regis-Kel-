@@ -9,7 +9,7 @@ $output = "QUERY";
 $total = Get_count();
 if ($total == 0) {
     header('Location: admin.php');
-    $_SESSION['name'] = "error";
+    $_SESSION['namesub'] = "error";
 }
 
 if (isset($_POST["export"])) {
@@ -85,6 +85,10 @@ $lab = array(
 // session_destroy(); xls gen session for identification
 $_SESSION['tec'] = $_POST['teacher'];
 $_SESSION['sub'] = $_POST['subject'];
+
+// session_destroy();
+// close connection
+mysqli_close($con);
 
 ?>
 <!DOCTYPE html>

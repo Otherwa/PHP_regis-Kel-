@@ -1,4 +1,5 @@
 <?php
+include('../connect.php');
 
 session_start();
 
@@ -7,11 +8,7 @@ if (!isset($_SESSION['name'])) {
     header('Location: adminlogin.php');
 }
 
-
-include('../connect.php');
 $con = get_con();
-
-// re write functions
 
 
 // session_destroy();
@@ -141,6 +138,8 @@ $con = get_con();
                             while ($row = mysqli_fetch_assoc($result)) {
                                 echo "<option value=\"" . $row['programme'] . "\">" . $row['programme'] . "</option>";
                             }
+                            // close connection
+                            mysqli_close($con);
                             ?>
                         </select>
 

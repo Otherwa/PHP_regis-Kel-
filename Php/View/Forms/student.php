@@ -86,9 +86,13 @@ function getandset_ratings($con, $name, $age, $gender, $rollno, $class, $program
             mysqli_query($con, $query);
             $_SESSION['name'] = $name;
             header('Location: formsubmit.php');
+            // close connection
+            mysqli_close($con);
         }
     } else {
         echo "<script>alert('Please select all the fields given below 🤓');</script>";
+        // close connection
+        mysqli_close($con);
     }
 }
 ?>

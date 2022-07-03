@@ -1,27 +1,22 @@
 <?php
 // connection
 include('../connect.php');
-
+session_start();
 // default value
 $pass_confo = "";
+
+$status = session_status(); //1st measure
+if ($status == PHP_SESSION_ACTIVE) {
+    //There is  active session
+    session_destroy();
+}
+
+
 
 if (isset($_POST['login'])) {
     $name =  $_POST['username'];
     $pass = $_POST['password'];
-
-    //session statuses
-    $status = session_status();
-    if ($status == PHP_SESSION_NONE) {
-        //There is no active session
-        session_start();
-    } elseif ($status == PHP_SESSION_DISABLED) {
-        //Sessions are not available
-    } elseif ($status == PHP_SESSION_ACTIVE) {
-        //Destroy current and start new one
-        session_destroy();
-        session_start();
-    }
-
+    session_start();
     //session variables
     $_SESSION['name'] = $name;
 
@@ -29,13 +24,17 @@ if (isset($_POST['login'])) {
     $sql = "SELECT * FROM `admin` WHERE name = '$name' AND pass = '$pass'";
     $result = mysqli_query($con, $sql);
     $row = mysqli_num_rows($result);
+
     if ($row > 0) {
         header("Location: admin.php");
+        // close connection
+        mysqli_close($con);
     } else {
         echo "<script>alert('Wrong Password or Username');</script>";
+        // close connection
+        mysqli_close($con);
     }
 }
-
 
 ?>
 

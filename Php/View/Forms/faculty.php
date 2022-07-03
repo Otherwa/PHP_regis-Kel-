@@ -84,14 +84,22 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
                 mysqli_query($con, $query);
                 $_SESSION['name'] = "Anonymous";
                 header('Location: formsubmit.php');
+                // close connection
+                mysqli_close($con);
             } else {
                 echo "<script>alert('Please select all the fields given below 🤓');</script>";
+                // close connection
+                mysqli_close($con);
             }
         } else {
             echo "<script>alert('Please select all the fields given below 🤓');</script>";
+            // close connection
+            mysqli_close($con);
         }
     } else {
         echo "<script>alert('Something's Wrong with Your Form 🤓');</script>";
+        // close connection
+        mysqli_close($con);
     }
 }
 

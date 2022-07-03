@@ -1,11 +1,13 @@
 <?php
 include('../connect.php');
+$con = get_con();
 //on click
 session_start();
 //session statuses
+
 $status = session_status(); //1st measure
 if ($status == PHP_SESSION_ACTIVE) {
-    //There is no active session
+    //There is  active session
     session_destroy();
 }
 if (isset($_POST['PAPForm'])) {
@@ -23,6 +25,9 @@ if (isset($_POST['FFForm'])) {
     $_SESSION['setFF'] = "yes";
     header('Location: faculty.php');
 }
+
+// close connection
+mysqli_close($con);
 ?>
 
 

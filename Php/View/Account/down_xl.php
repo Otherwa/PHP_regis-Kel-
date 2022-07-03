@@ -100,3 +100,6 @@ function Get_count()
     $result = $result['count1'];
     return ($result);
 }
+
+// close connection
+mysqli_close($con);

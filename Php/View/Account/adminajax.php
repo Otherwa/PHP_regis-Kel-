@@ -105,7 +105,7 @@ function Get_count()
     return ($result);
 }
 
-
-
+// close connection
+mysqli_close($con);
 ?>
 <!doctype html>

@@ -2,7 +2,13 @@ document.addEventListener('contextmenu', function(e) {
     e.preventDefault();
 });
 
-
+window.addEventListener("load", ()=>{
+    document.getElementById('Programme').value='--'
+    document.getElementById('class').value='--'
+    document.getElementById('subjec').value='--'
+    document.getElementById('sem').value='--'
+    document.getElementById('teacher').value='--'
+});
 
 
 function Get_Teacher(id) {

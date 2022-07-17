@@ -1,6 +1,5 @@
 # PHP_regis-Kel-.
-
-Registration form using php 
+`Registration form using php`
 
 ## Prequiste.
 

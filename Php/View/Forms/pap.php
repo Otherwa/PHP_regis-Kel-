@@ -7,7 +7,7 @@ session_start();
 
 if (!isset($_SESSION['setPAP'])) {
     // redirect if not set
-    header('Location: forms.php');
+    header("Location:forms.php");
 }
 
 // establish connection
@@ -148,7 +148,7 @@ function get_ratings($con, $name, $teacher, $rollno, $class, $division, $semeste
             $_SESSION['name'] = $name;
 
             // https response
-            header('Location: formsubmit.php');
+            header("Location: formsubmit.php");
             // close connection
             mysqli_close($con);
         }

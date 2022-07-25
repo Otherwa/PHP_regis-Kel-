@@ -5,7 +5,7 @@ session_start();
 
 // validiting refresh
 if (!isset($_SESSION['name'])) {
-    header('Location: forms.php');
+    header("Location:forms.php");
 }
 
 $firstname = explode(" ", $_SESSION['name']);

@@ -1,6 +1,9 @@
 # PHP_regis-Kel-.
 `Registration form using php`
 
+# Production Fix
+https://www.codeproject.com/Tips/1124690/How-to-Solve-PHP-header-Function-Problem#:~:text=Solution%20to%20the%20Problem,use%20the%20ob_end_flush()%20function.
+
 ## Prequiste.
 
 - >Scratch Html

@@ -1,4 +1,5 @@
 <?php
+ob_start();
 include('../connect.php');
 //on click
 session_start();
@@ -95,6 +96,7 @@ function getandset_ratings($con, $name, $age, $gender, $rollno, $class, $program
         mysqli_close($con);
     }
 }
+ob_end_flush();
 ?>
 
 

@@ -1,4 +1,5 @@
 <?php
+ob_start();
 include('../connect.php');
 //on click
 session_start();
@@ -84,17 +85,25 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
                 mysqli_query($con, $query);
                 $_SESSION['name'] = "Anonymous";
                 header('Location: formsubmit.php');
+                // close connection
+                mysqli_close($con);
             } else {
                 echo "<script>alert('Please select all the fields given below 🤓');</script>";
+                // close connection
+                mysqli_close($con);
             }
         } else {
             echo "<script>alert('Please select all the fields given below 🤓');</script>";
+            // close connection
+            mysqli_close($con);
         }
     } else {
         echo "<script>alert('Something's Wrong with Your Form 🤓');</script>";
+        // close connection
+        mysqli_close($con);
     }
 }
-
+ob_end_flush();
 ?>
 
 
@@ -158,7 +167,7 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
                     </h1>
 
 
-                    <ul id="inst">
+                    <ul class="msg">
                         <li>
                             Instruction: Please read the statements given and mark against the appropriate response.
                         </li>

@@ -1,4 +1,5 @@
 <?php
+ob_start();
 //export.php  
 session_start();
 include('../connect.php');
@@ -89,7 +90,7 @@ $_SESSION['sub'] = $_POST['subject'];
 // session_destroy();
 // close connection
 mysqli_close($con);
-
+ob_end_flush();
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 // php get user name using session variable
 
@@ -9,6 +10,7 @@ if (!isset($_SESSION['name'])) {
 
 $firstname = explode(" ", $_SESSION['name']);
 session_destroy();
+ob_end_flush();
 ?>
 
 <!DOCTYPE html>
@@ -53,7 +55,8 @@ session_destroy();
     <div class="bg-[#ffffff] text-center m-2" style="padding: 1rem;">
         <p class="text-4xl myfont antialiased tracking-normal md:text-4xl overline leading-loose">Form Submitted</p>
         <br />
-        <p class="font-mono underline text-xl hover:text-[#006eff]"><a style="font-size:1.3rem" href="forms.php">Submit
+        <p class="font-mono underline text-xl hover:text-[#006eff]"><a style="font-size:1.3rem;color:#006eff;"
+                href="forms.php">Submit
                 Another Form</a></p>
         <br />
         <br />
@@ -75,7 +78,7 @@ session_destroy();
                                 echo $firstname[0];
                             } else {
                                 echo 'User';
-                            } ?>-Kun</p>
+                            } ?></p>
                         <br />
                         <p class="text-[1.2rem]" style="text-align:start;"> Your Form Successfully Submitted</p>
                     </div>

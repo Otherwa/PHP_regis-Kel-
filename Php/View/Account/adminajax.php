@@ -1,4 +1,5 @@
 <?php
+ob_start();
 include('../connect.php');
 
 if (isset($_POST['programme'])) {
@@ -107,5 +108,6 @@ function Get_count()
 
 // close connection
 mysqli_close($con);
+ob_end_flush();
 ?>
 <!doctype html>

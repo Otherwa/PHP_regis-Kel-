@@ -1,4 +1,5 @@
 <?php
+ob_start();
 include('../connect.php');
 
 session_start();
@@ -13,6 +14,7 @@ $con = get_con();
 
 // session_destroy();
 // bug fix remember
+ob_end_flush();
 ?>
 
 <!DOCTYPE html>

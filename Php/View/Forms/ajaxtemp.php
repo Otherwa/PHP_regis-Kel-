@@ -1,5 +1,5 @@
 <?php
-
+ob_start();
 // do no touch 
 
 include('../connect.php');
@@ -128,6 +128,6 @@ if (isset($_POST['cid_crt'])) {
 
 // close connection
 mysqli_close($con);
-
+ob_end_flush();
 ?>
 <!doctype html>

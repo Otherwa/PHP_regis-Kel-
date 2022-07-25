@@ -1,4 +1,5 @@
 <?php
+ob_start();
 // connection
 include('../connect.php');
 session_start();
@@ -35,7 +36,7 @@ if (isset($_POST['login'])) {
         mysqli_close($con);
     }
 }
-
+ob_end_flush();
 ?>
 
 <!DOCTYPE html>

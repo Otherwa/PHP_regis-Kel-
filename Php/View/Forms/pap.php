@@ -1,4 +1,5 @@
 <?php
+ob_start();
 include('../connect.php');
 
 //on click
@@ -170,7 +171,7 @@ function get_prg($con, $rollno)
     return $result;
 }
 
-
+ob_end_flush();
 ?>
 
 
@@ -254,13 +255,9 @@ function get_prg($con, $rollno)
                     </div>
                     <div class="form__div selectaltered">
                         <label for="division" class="text-sm" style="color: rgb(68, 74, 79);">&bull; Division:</label>
+                        <!-- php list get not possible latest fix-->
                         <select name="division" id="divison">
-                            <!-- php list get not possible latest fix-->
-                            <select name="division" id="divison">
-                            <option value="A" selected>A</option>
-                            <option value="B">B</option>
-                            <option value="C">C</option>
-                            <option value="D">D</option>
+                            <?php division($con); ?>
                         </select>
                     </div>
                     <div class="form__div selectaltered">

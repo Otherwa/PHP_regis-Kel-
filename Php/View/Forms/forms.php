@@ -1,4 +1,5 @@
 <?php
+ob_start();
 include('../connect.php');
 $con = get_con();
 //on click
@@ -13,21 +14,22 @@ if ($status == PHP_SESSION_ACTIVE) {
 if (isset($_POST['PAPForm'])) {
     session_start();
     $_SESSION['setPAP'] = "yes";
-    header('Location: pap.php');
+    header('Location:pap.php');
 }
 if (isset($_POST['StuForm'])) {
     session_start();
     $_SESSION['setStu'] = "yes";
-    header('Location: student.php');
+    header('Location:student.php');
 }
 if (isset($_POST['FFForm'])) {
     session_start();
     $_SESSION['setFF'] = "yes";
-    header('Location: faculty.php');
+    header('Location:faculty.php');
 }
 
 // close connection
 mysqli_close($con);
+ob_end_flush();
 ?>
 
 

@@ -1,4 +1,5 @@
 <?php
+ob_start();
 function get_con()
 {
     $host = "localhost";
@@ -9,6 +10,7 @@ function get_con()
     return $connect;
 }
 $status = "online";
+ob_end_flush();
 ?>
 
 <!doctype html>

@@ -27,7 +27,7 @@ if (isset($_POST['login'])) {
     $row = mysqli_num_rows($result);
 
     if ($row > 0) {
-        header("Location: admin.php");
+        header("Location:admin.php");
         // close connection
         mysqli_close($con);
     } else {

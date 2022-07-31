@@ -85,8 +85,8 @@ if (isset($_POST["export"])) {
 
     $output .= '</table>';
     $name = $_SESSION['tec'] . "_" . $_SESSION['sub'];
-    header('Content-Type: application/xlsx');
-    header('Content-Disposition: attachment; filename=' . $name . '.xls');
+    header("Content-Type:application/xlsx");
+    header('Content-Disposition:attachment;filename=' . $name . '.xls');
     echo $output;
 }
 

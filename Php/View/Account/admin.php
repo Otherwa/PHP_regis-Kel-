@@ -6,7 +6,7 @@ session_start();
 
 // php get user name using session variable or else redirect 
 if (!isset($_SESSION['name'])) {
-    header('Location: adminlogin.php');
+    header("Location:adminlogin.php");
 }
 
 $con = get_con();

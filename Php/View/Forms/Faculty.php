@@ -4,7 +4,7 @@ include('../connect.php');
 //on click
 session_start();
 if (!isset($_SESSION['setFF'])) {
-    header('Location: forms.php');
+    header("Location:forms.php");
 }
 
 // establish connection
@@ -84,7 +84,7 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
                 VALUES ('$faculty_name','$year_service','$department','$rating1_1','$rating1_2','$rating1_3','$rating1_4','$rating1_5','$rating1_6','$rating1_7','$rating1_8','$rating2_1','$rating2_2','$rating2_3','$rating2_4','$rating2_5','$rating2_6','$rating2_7','$rating2_8','$rating3_1','$rating3_2','$rating3_3','$rating3_4','$rating3_5','$rating3_6','$rating3_7','$rating3_8','$rating3_9','$suggest1','$suggest2',current_timestamp());";
                 mysqli_query($con, $query);
                 $_SESSION['name'] = "Anonymous";
-                header('Location: formsubmit.php');
+                header("Location: formsubmit.php");
                 // close connection
                 mysqli_close($con);
             } else {
@@ -153,7 +153,7 @@ ob_end_flush();
     <br />
     <div class="bg-[#ffffff] text-center" style="padding:1rem">
         <div class="l-form p-0 ">
-            <form action="#" method="POST" id="subcard" class="form">
+            <form method="POST" id="subcard" class="form">
                 <fieldset>
                     <legend>
                         <h1 class="font-mono antialiased text-lg">Fill up</h1>

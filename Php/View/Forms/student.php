@@ -4,7 +4,7 @@ include('../connect.php');
 //on click
 session_start();
 if (!isset($_SESSION['setStu'])) {
-    header('Location: forms.php');
+    header("Location:forms.php");
 }
 
 // establish connection

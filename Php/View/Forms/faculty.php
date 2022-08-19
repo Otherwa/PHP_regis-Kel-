@@ -1,4 +1,5 @@
 <?php
+ob_start();
 include('../connect.php');
 //on click
 session_start();
@@ -152,7 +153,7 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
     <br />
     <div class="bg-[#ffffff] text-center" style="padding:1rem">
         <div class="l-form p-0 ">
-            <form action="#" method="POST" id="subcard" class="form">
+            <form method="POST" id="subcard" class="form">
                 <fieldset>
                     <legend>
                         <h1 class="font-mono antialiased text-lg">Fill up</h1>

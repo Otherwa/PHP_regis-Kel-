@@ -103,7 +103,7 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
         mysqli_close($con);
     }
 }
-
+ob_end_flush();
 ?>
 
 

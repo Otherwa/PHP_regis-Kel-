@@ -19,7 +19,7 @@ if (isset($_POST['class'])) {
 if (isset($_POST['cid']) && isset($_POST['class1']) && isset($_POST['teach']) && isset($_POST['sem']) && isset($_POST['sub'])) {
     $con = get_con();
     // id subject issue is present
-    $query = "SELECT * FROM `answerpats` WHERE ctrlid =\"" . $_POST['cid'] . "\"" . " AND cname =\"" . $_POST['class1'] . "\"" . " AND tname =\"" . $_POST['teach'] . "\"" . " AND sem =\"" . $_POST['sem'] . "\"" . " AND subject =\"" . $_POST['sub'] . "\"";
+    $query = "SELECT * FROM `answerpats` WHERE ctrlid =\"" . $_POST['cid'] . "\"" . " AND cname =\"" . $_POST['class1'] . "\"" . " AND tname =\"" . $_POST['teach'] . "\"" . " AND sem =\"" . $_POST['sem'] . "\"" . " AND subject =\"" . $_POST['sub'] . "\";";
     $result = mysqli_query($con, $query);
     $result = mysqli_num_rows($result);
     // if form filled no display ajax fail 

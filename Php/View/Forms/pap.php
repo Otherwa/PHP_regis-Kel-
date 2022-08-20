@@ -74,7 +74,6 @@ function division($con)
     $query = "SELECT DISTINCT  `division` FROM `activectrlid` order by `division` ASC";
     $result = mysqli_query($con, $query);
     while ($row = mysqli_fetch_assoc($result)) {
-        echo "<option value =\"" . "--" . "\">" . "--" . "</option>";
         echo "<option value =\"" . $row['division'] . "\">" . $row['division'] . "</option>";
     }
 }
@@ -258,6 +257,7 @@ ob_end_flush();
                         <label for="division" class="text-sm" style="color: rgb(68, 74, 79);">&bull; Division:</label>
                         <!-- php list get not possible latest fix-->
                         <select name="division" id="divison">
+                            <option value="--">--</option>
                             <?php division($con); ?>
                         </select>
                     </div>

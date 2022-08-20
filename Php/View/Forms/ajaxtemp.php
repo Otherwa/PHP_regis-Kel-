@@ -91,7 +91,7 @@ if (isset($_POST['rollno'])) {
 // studentsss form check ajax req
 if (isset($_POST['cid_stu'])) {
     $con = get_con();
-    $query = "SELECT * FROM `answersss` WHERE rollno =\"" . $_POST['cid_stu'] . "\"";
+    $query = "SELECT * FROM `answersss` WHERE rollno =\"" . $_POST['cid_stu'] . "\";";
     $result = mysqli_query($con, $query);
     $result = mysqli_num_rows($result);
     // if form filled dont display
@@ -113,7 +113,7 @@ if (isset($_POST['cid_stu'])) {
 
 if (isset($_POST['cid_crt'])) {
     $con = get_con();
-    $query = "SELECT `programme` FROM `activectrlid` WHERE ctrlid =\"" . $_POST['cid_crt'] . "\"";
+    $query = "SELECT `programme` FROM `activectrlid` WHERE ctrlid =\"" . $_POST['cid_crt'] . "\";";
     $result = mysqli_query($con, $query);
     $row = mysqli_fetch_array($result);
     $result1 = mysqli_num_rows($result);

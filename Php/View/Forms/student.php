@@ -4,7 +4,7 @@ include('../connect.php');
 //on click
 session_start();
 if (!isset($_SESSION['setStu'])) {
-    header("Location:forms.php");
+    header('Location: forms.php');
 }
 
 // establish connection
@@ -96,7 +96,7 @@ function getandset_ratings($con, $name, $age, $gender, $rollno, $class, $program
         mysqli_close($con);
     }
 }
-ob_end_flush();
+ob_
 ?>
 
 

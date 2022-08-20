@@ -96,7 +96,7 @@ function getandset_ratings($con, $name, $age, $gender, $rollno, $class, $program
         mysqli_close($con);
     }
 }
-ob_
+ob_end_flush();
 ?>
 
 

@@ -74,6 +74,7 @@ function division($con)
     $query = "SELECT DISTINCT  `division` FROM `activectrlid` order by `division` ASC";
     $result = mysqli_query($con, $query);
     while ($row = mysqli_fetch_assoc($result)) {
+        echo "<option value =\"" . "--" . "\">" . "--" . "</option>";
         echo "<option value =\"" . $row['division'] . "\">" . $row['division'] . "</option>";
     }
 }

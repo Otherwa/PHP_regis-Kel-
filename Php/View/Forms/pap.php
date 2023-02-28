@@ -173,6 +173,29 @@ function get_prg($con, $rollno)
 
 ob_end_flush();
 ?>
+<!-- fields for form -->
+<?php
+$lab = array(
+    'Positive and motivating attitude towards students.',
+    'Readiness to resolve students doubts and general availability/accessibility to students.Positive and motivating attitude towards students.',
+    'Worked hard to create a feeling of belongingness in a classroom without walls.',
+    'Command over the subject.',
+    'Skills in making the subject interesting.',
+    'Command over the medium of instruction(language) / communication skills',
+    'Clarity in approach / thinking.',
+    'Punctuality and regularity in taking lectures and practicals',
+    'Proficiency in handling online classroom platforms.',
+    'Time management skill \ skill of completing the syllabus with doubt solving sessions in time.',
+    'Use of case studies, illustration, current events, anecdotes in teaching.ommand over the subject.',
+    'Use of interactive teaching - seminars, tutorials, quizzes, assignments etc.',
+    'Command over the medium of instruction(language) / communication skills',
+    'Giving references for further reading.',
+    'Conducting evaluation by periodic tests / questions answer sessions or by designing quizzes / tests / assignments / examinations and projects to evaluate students.',
+    'Encouraging students to apply in real life whatever they have learnt in classrooms.',
+    'Counselling : Career / placement / personal.',
+    'Stimulating a sense of social responsibility.',
+);
+?>
 
 
 <html lang="en">
@@ -310,7 +333,7 @@ ob_end_flush();
                                 <br />
                                 <ul>
                                     <li>
-                                        Positive and motivating attitude towards students.
+                                        <?php echo $lab[0]; ?>.
                                         <br />
                                         <br />
                                         <span class="radio">
@@ -334,9 +357,7 @@ ob_end_flush();
                                         </span>
                                     </li>
                                     <li>
-                                        Readiness to resolve student's doubts and general availability / accessibility
-                                        to
-                                        students.Positive and motivating attitude towards students.
+                                        <?php echo $lab[1]; ?>.
                                         <br />
                                         <br />
                                         <span class="radio">
@@ -359,7 +380,7 @@ ob_end_flush();
                                         </span>
                                     </li>
                                     <li>
-                                        Worked hard to create a feeling of belongingness in a classroom without walls.
+                                        <?php echo $lab[2]; ?>.
                                         <br />
                                         <br />
                                         <span class="radio">
@@ -390,7 +411,7 @@ ob_end_flush();
                                 <br />
                                 <ul>
                                     <li>
-                                        Command over the subject.
+                                        <?php echo $lab[3]; ?>.
                                         <br />
                                         <br />
                                         <span class="radio">
@@ -413,7 +434,7 @@ ob_end_flush();
                                         </span>
                                     </li>
                                     <li>
-                                        Skills in making the subject interesting.
+                                        <?php echo $lab[4]; ?>.
                                         <br />
                                         <br />
                                         <span class="radio">
@@ -436,7 +457,7 @@ ob_end_flush();
                                         </span>
                                     </li>
                                     <li>
-                                        Command over the medium of instruction(language) / communication skills
+                                        <?php echo $lab[5]; ?>
                                         <br />
                                         <br />
                                         <span class="radio">
@@ -459,7 +480,7 @@ ob_end_flush();
                                         </span>
                                     </li>
                                     <li>
-                                        Clarity in approach / thinking.
+                                        <?php echo $lab[6]; ?>.
                                         <br />
                                         <br />
                                         <span class="radio">
@@ -482,7 +503,7 @@ ob_end_flush();
                                         </span>
                                     </li>
                                     <li>
-                                        Punctuality and regularity in taking lectures and practicals.
+                                        <?php echo $lab[7]; ?>.
                                         <br />
                                         <br />
                                         <span class="radio">
@@ -505,7 +526,7 @@ ob_end_flush();
                                         </span>
                                     </li>
                                     <li>
-                                        Proficiency in handling online classroom platforms.
+                                        <?php echo $lab[8]; ?>.
                                         <br />
                                         <br />
                                         <span class="radio">
@@ -528,9 +549,7 @@ ob_end_flush();
                                         </span>
                                     </li>
                                     <li>
-                                        Time management skill \ skill of completing the syllabus with doubt solving
-                                        sessions
-                                        in time.
+                                        <?php echo $lab[9]; ?>.
                                         <br />
                                         <br />
                                         <span class="radio">
@@ -561,8 +580,7 @@ ob_end_flush();
                                 <br />
                                 <ul>
                                     <li>
-                                        Use of case studies, illustration, current events, anecdotes in teaching.ommand
-                                        over the subject.
+                                        <?php echo $lab[10]; ?>.
                                         <br />
                                         <br />
                                         <span class="radio">
@@ -585,7 +603,7 @@ ob_end_flush();
                                         </span>
                                     </li>
                                     <li>
-                                        Use of interactive teaching - seminars, tutorials, quizzes, assignments etc.
+                                        <?php echo $lab[11]; ?>.
                                         <br />
                                         <br />
                                         <span class="radio">
@@ -608,7 +626,7 @@ ob_end_flush();
                                         </span>
                                     </li>
                                     <li>
-                                        Command over the medium of instruction(language) / communication skills
+                                        <?php echo $lab[12]; ?>
                                         <br />
                                         <br />
                                         <span class="radio">
@@ -631,7 +649,7 @@ ob_end_flush();
                                         </span>
                                     </li>
                                     <li>
-                                        Giving references for further reading.
+                                        <?php echo $lab[13]; ?>
                                         <br />
                                         <br />
                                         <span class="radio">
@@ -654,9 +672,7 @@ ob_end_flush();
                                         </span>
                                     </li>
                                     <li>
-                                        Conducting evaluation by periodic tests / questions answer sessions or by
-                                        designing
-                                        quizzes / tests / assignments / examinations and projects to evaluate students.
+                                        <?php echo $lab[14]; ?>
                                         <br />
                                         <br />
                                         <span class="radio">
@@ -679,8 +695,7 @@ ob_end_flush();
                                         </span>
                                     </li>
                                     <li>
-                                        Encouraging students to apply in real life whatever they have learnt in
-                                        classrooms.
+                                        <?php echo $lab[15]; ?>
                                         <br />
                                         <br />
                                         <span class="radio">
@@ -703,7 +718,7 @@ ob_end_flush();
                                         </span>
                                     </li>
                                     <li>
-                                        Counselling : Career / placement / personal.
+                                        <?php echo $lab[16]; ?>.
                                         <br />
                                         <br />
                                         <span class="radio">
@@ -726,7 +741,7 @@ ob_end_flush();
                                         </span>
                                     </li>
                                     <li>
-                                        Stimulating a sense of social responsibility.
+                                        <?php echo $lab[17]; ?>.
                                         <br />
                                         <br />
                                         <span class="radio">
@@ -780,7 +795,7 @@ ob_end_flush();
 <!-- jquery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <!-- form validation -->
-<script type="text/javascript" src="../../../Js/papto.js?v=1"></script>
+<script type="text/javascript" src="../../../Js/pap.js?v=1"></script>
 <script src="../../../Js/main.js?v=1" type="text/javascript"></script>
 <script async type="text/javascript"
     src="https://api.countapi.xyz/hit/KelkarForms.com/415a7523-bb25-4d45-a700-33a48a168a6c/?callback=counter"></script>

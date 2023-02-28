@@ -2,7 +2,7 @@
 ob_start();
 session_start();
 session_destroy();
-header("Location:adminlogin.php");
+header("Location:login.php");
 ob_end_flush();
 ?>
 <!doctype html>

@@ -1,7 +1,7 @@
 <?php
 ob_start();
 include('../connect.php');
-
+$con = get_con();
 if (isset($_POST['programme'])) {
     $con = get_con();
     $query = " SELECT DISTINCT `tname` FROM `answerpats` WHERE programme = " . "\"" . $_POST['programme'] . "\";";
@@ -44,7 +44,7 @@ if (isset($_POST['sem']) && isset($_POST['teachername'])) {
 
 // chart
 
-
+// GET_CHART() function call
 if (isset($_POST['teacher']) && $_POST['class1'] && $_POST['sem'] && $_POST['sub']) {
 
     $review = array();
@@ -77,7 +77,6 @@ if (isset($_POST['teacher']) && $_POST['class1'] && $_POST['sem'] && $_POST['sub
 }
 
 
-
 // same in xlxs_gen
 function filter($review)
 {
@@ -104,6 +103,19 @@ function Get_count()
     $result = ($result['count1'] * 18);
     echo "<p> Total Records : " . ($result / 18) . "</p><br>" . "<p>" . $_POST['teacher'] . "</p><br>" . "<p>" . $_POST['sub'] . "</p>";
     return ($result);
+}
+
+
+if (isset($_POST['prog'])) {
+    $con = get_con();
+    $query = " SELECT DISTINCT `class` FROM `answersss` WHERE programme = " . "\"" . $_POST['prog'] . "\";";
+    $result = mysqli_query($con, $query);
+    echo "<option value = " . "--" . ">" . "--" . "</option>";
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo "<option value =\"" . $row['class'] . "\">" . $row['class'] . "</option>";
+    }
+
+    $_SESSION['count'] = $total1;
 }
 
 // close connection

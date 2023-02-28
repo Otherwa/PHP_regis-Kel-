@@ -62,8 +62,8 @@
                          
                
                |- Admin |
-                        |- admin.php
-                        |- adminlogin.php
+                        |- pats.php
+                        |- login.php
                         |- xlxsgen.php
                                                 
                

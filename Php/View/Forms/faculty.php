@@ -106,6 +106,28 @@ function getandset_ratings($con, $faculty_name, $year_service, $department)
 ob_end_flush();
 ?>
 
+<!-- fields for form -->
+<?php
+$lab = array(
+    'Availability of extra-curricular activities in college.',
+    'Amenities and assistance available for extra-curricular activities at the college.',
+    'Sports facility in college.',
+    'Canteen facility in college(Food quality).',
+    'Canteen facility in college(Rates of the food items).',
+    'Canteen facility in college(Attitude and service received).',
+    'Cleanliness and maintenance in the classrooms.',
+    'Cleanliness and maintenance of Toilets/washrooms.',
+    'Timely redressal of grievances/problems of students.',
+    'Functioning of the Placement Cell.',
+    'Library facility in college(Availability of prescribed books/reading materials.).',
+    'Library facility in college(Way of cataloguing and arrangement of books in the library).',
+    ' Library facility in college(Availability and accessibility of online educational resources in college.).',
+    'Library facility in college(Attitude of Library staff).',
+    'College Website.',
+    'Fairness and feedback mechanism in the Internal Continuous Assessment (ICA).',
+    'Mentoring system.',
+);
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -680,7 +702,7 @@ ob_end_flush();
 </body>
 
 <!-- form validation -->
-<script type="text/javascript" src="../../../Js/papto.js?v=1"></script>
+<script type="text/javascript" src="../../../Js/faculty.js?v=1"></script>
 <script src="../../../Js/main.js?v=1" type="text/javascript"></script>
 <script async type="text/javascript"
     src="https://api.countapi.xyz/hit/KelkarForms.com/415a7523-bb25-4d45-a700-33a48a168a6c/?callback=counter"></script>

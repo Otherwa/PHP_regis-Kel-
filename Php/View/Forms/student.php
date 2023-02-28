@@ -99,6 +99,28 @@ function getandset_ratings($con, $name, $age, $gender, $rollno, $class, $program
 ob_end_flush();
 ?>
 
+<!-- fields for form -->
+<?php
+$lab = array(
+    'Availability of extra-curricular activities in college.',
+    'Amenities and assistance available for extra-curricular activities at the college.',
+    'Sports facility in college.',
+    'Canteen facility in college(Food quality).',
+    'Canteen facility in college(Rates of the food items).',
+    'Canteen facility in college(Attitude and service received).',
+    'Cleanliness and maintenance in the classrooms.',
+    'Cleanliness and maintenance of Toilets/washrooms.',
+    'Timely redressal of grievances/problems of students.',
+    'Functioning of the Placement Cell.',
+    'Library facility in college(Availability of prescribed books/reading materials.).',
+    'Library facility in college(Way of cataloguing and arrangement of books in the library).',
+    ' Library facility in college(Availability and accessibility of online educational resources in college.).',
+    'Library facility in college(Attitude of Library staff).',
+    'College Website.',
+    'Fairness and feedback mechanism in the Internal Continuous Assessment (ICA).',
+    'Mentoring system.',
+);
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -244,7 +266,7 @@ ob_end_flush();
                     <div id="msg_set" style="display:none">
                         <ol class="form-ol">
                             <li>
-                                Availability of extra-curricular activities in college:
+                                <?php echo $lab[0]; ?>
                                 <br />
                                 <br />
                                 <span class="radio">
@@ -262,7 +284,7 @@ ob_end_flush();
                             <br />
 
                             <li>
-                                Amenities and assistance available for extra-curricular activities at the college:
+                                <?php echo $lab[1]; ?>
                                 <br />
                                 <br />
                                 <span class="radio">
@@ -280,7 +302,7 @@ ob_end_flush();
                             <br />
 
                             <li>
-                                Sports facility in college:
+                                <?php echo $lab[2]; ?>:
                                 <br />
                                 <br />
                                 <span class="radio">
@@ -298,7 +320,7 @@ ob_end_flush();
                             <br />
 
                             <li>
-                                Canteen facility in college(Food quality):
+                                <?php echo $lab[3]; ?>:
                                 <br />
                                 <br />
                                 <span class="radio">
@@ -316,7 +338,7 @@ ob_end_flush();
                             <br />
 
                             <li>
-                                Canteen facility in college(Rates of the food items):
+                                <?php echo $lab[4]; ?>:
                                 <br />
                                 <br />
                                 <span class="radio">
@@ -334,7 +356,7 @@ ob_end_flush();
                             <br />
 
                             <li>
-                                Canteen facility in college(Attitude and service received):
+                                <?php echo $lab[5]; ?>:
                                 <br />
                                 <br />
                                 <span class="radio">
@@ -352,7 +374,7 @@ ob_end_flush();
                             <br />
 
                             <li>
-                                Cleanliness and maintenance in the classrooms:
+                                <?php echo $lab[6]; ?>:
                                 <br />
                                 <br />
                                 <span class="radio">
@@ -370,7 +392,7 @@ ob_end_flush();
                             <br />
 
                             <li>
-                                Cleanliness and maintenance of Toilets/washrooms:
+                                <?php echo $lab[7]; ?>:
                                 <br />
                                 <br />
                                 <span class="radio">
@@ -388,7 +410,7 @@ ob_end_flush();
                             <br />
 
                             <li>
-                                Timely redressal of grievances/problems of students:
+                                <?php echo $lab[8]; ?>:
                                 <br />
                                 <br />
                                 <span class="radio">
@@ -406,7 +428,7 @@ ob_end_flush();
                             <br />
 
                             <li>
-                                Functioning of the Placement Cell:
+                                <?php echo $lab[9]; ?>:
                                 <br />
                                 <br />
                                 <span class="radio">
@@ -425,7 +447,7 @@ ob_end_flush();
                             <br />
 
                             <li>
-                                Library facility in college(Availability of prescribed books/reading materials.):
+                                <?php echo $lab[10]; ?>:
                                 <br />
                                 <br />
                                 <span class="radio">
@@ -443,8 +465,7 @@ ob_end_flush();
                             <br />
 
                             <li>
-                                Library facility in college(Way of cataloguing and arrangement of books in the
-                                library):
+                                <?php echo $lab[11]; ?>:
                                 <br />
                                 <br />
                                 <span class="radio">
@@ -462,10 +483,7 @@ ob_end_flush();
                             <br />
 
                             <li>
-                                Library facility in college(Availability and accessibility of online educational
-                                resources
-                                in
-                                college.):
+                                <?php echo $lab[12]; ?>:
                                 <br />
                                 <br />
                                 <span class="radio">
@@ -483,7 +501,7 @@ ob_end_flush();
                             <br />
 
                             <li>
-                                Library facility in college(Attitude of Library staff):
+                                <?php echo $lab[13]; ?>:
                                 <br />
                                 <br />
                                 <span class="radio">
@@ -501,7 +519,7 @@ ob_end_flush();
                             <br />
 
                             <li>
-                                College Website:
+                                <?php echo $lab[14]; ?>
                                 <br />
                                 <br />
                                 <span class="radio">
@@ -519,7 +537,7 @@ ob_end_flush();
                             <br />
 
                             <li>
-                                Fairness and feedback mechanism in the Internal Continuous Assessment (ICA):
+                                <?php echo $lab[15]; ?>
                                 <br />
                                 <br />
                                 <span class="radio">
@@ -537,7 +555,7 @@ ob_end_flush();
                             <br />
 
                             <li>
-                                Mentoring system:
+                                <?php echo $lab[16]; ?>
                                 <br />
                                 <br />
                                 <span class="radio">
@@ -580,7 +598,7 @@ ob_end_flush();
 <!-- jquery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <!-- form validation -->
-<script type="text/javascript" src="../../../Js/sss.js?v=1"></script>
+<script type="text/javascript" src="../../../Js/student.js?v=1"></script>
 <script src="../../../Js/main.js?v=1" type="text/javascript"></script>
 <script async type="text/javascript"
     src="https://api.countapi.xyz/hit/KelkarForms.com/415a7523-bb25-4d45-a700-33a48a168a6c/?callback=counter"></script>

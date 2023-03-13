@@ -60,54 +60,54 @@ ob_end_flush();
     <meta http-equiv='expires' content='0'>
     <meta http-equiv='pragma' content='no-cache'>
     <style type="text/css">
-    .but {
-        text-align: center;
-        width: 30vw;
-        height: 24vh;
-        box-shadow: 5px 5px 5px rgb(0, 0, 0);
-        transition: 300ms;
-        border: solid 0.1rem black;
-        box-shadow: 0rem 0rem rgba(0, 0, 0);
-    }
-
-    .but:hover {
-        transition: 300ms;
-        box-shadow: 0.5rem 0.5rem rgba(0, 0, 0);
-        position: relative;
-        transform: translate(-1.15rem, -1.15rem);
-        box-shadow: 1.15rem 1.15rem #000;
-    }
-
-
-
-    /* res card form */
-    @media screen and (max-width: 768px) {
         .but {
-            width: 60vw;
-            height: 20vh;
+            text-align: center;
+            width: 30vw;
+            height: 24vh;
+            box-shadow: 5px 5px 5px rgb(0, 0, 0);
+            transition: 300ms;
+            border: solid 0.1rem black;
+            box-shadow: 0rem 0rem rgba(0, 0, 0);
         }
-    }
 
-    .forms {
-        padding: 0.7rem;
-        display: inline-grid;
-        justify-items: center;
-        align-items: center;
-        justify-content: center;
-        grid-gap: 1rem;
-        align-content: space-between;
-    }
+        .but:hover {
+            transition: 300ms;
+            box-shadow: 0.5rem 0.5rem rgba(0, 0, 0);
+            position: relative;
+            transform: translate(-1.15rem, -1.15rem);
+            box-shadow: 1.15rem 1.15rem #000;
+        }
 
-    .octo {
-        max-height: 6rem;
-        display: inline-block;
-        width: auto;
 
-    }
 
-    p {
-        font-family: monospace;
-    }
+        /* res card form */
+        @media screen and (max-width: 768px) {
+            .but {
+                width: 60vw;
+                height: 20vh;
+            }
+        }
+
+        .forms {
+            padding: 0.7rem;
+            display: inline-grid;
+            justify-items: center;
+            align-items: center;
+            justify-content: center;
+            grid-gap: 1rem;
+            align-content: space-between;
+        }
+
+        .octo {
+            max-height: 6rem;
+            display: inline-block;
+            width: auto;
+
+        }
+
+        p {
+            font-family: monospace;
+        }
     </style>
 </head>
 
@@ -120,8 +120,7 @@ ob_end_flush();
     <div class="bg-[#ffffff] text-center m-2 content">
         <br />
         <br />
-        <p class="text-center" style="display:inline-block"><code id="demo" style="padding:0.5rem"
-                class="hover:underline"> <img class="octo" src="https://github.githubassets.com/images/mona-loading-dark.gif" alt="octo"></code>
+        <p class="text-center" style="display:inline-block"><code id="demo" style="padding:0.5rem" class="hover:underline"> <img class="octo" src="https://github.githubassets.com/images/mona-loading-dark.gif" alt="octo"></code>
         </p>
         <br />
         <br />
@@ -129,27 +128,21 @@ ob_end_flush();
             <br>
             <form action="" method="POST">
                 <div class="forms">
-                    <button type=" submit"
-                        class="but inline-block font-mono text-center border border-transparent rounded-md py-3 px-8 text-lg text-white transition ease-in-out delay-100 bg-blue-500 hover:bg-[#1fc6e4] hover:text-black duration-300"
-                        name="PAPForm"> PAT'S Form
+                    <button type="submit" class="but inline-block font-mono text-center border border-transparent rounded-md py-3 px-8 text-lg text-white transition ease-in-out delay-100 bg-blue-500 hover:bg-[#1fc6e4] hover:text-black duration-300" name="PAPForm"> PAT'S Form
                     </button>
                 </div>
                 <br />
                 <br />
                 <br />
                 <div class="forms">
-                    <button type="submit"
-                        class="but inline-block font-mono text-center border border-transparent rounded-md py-3 px-8 text-lg text-white transition ease-in-out delay-100 bg-blue-500 hover:bg-[#1fc6e4] hover:text-black duration-300"
-                        name="StuForm"> Student Survey Form
+                    <button type="submit" class="but inline-block font-mono text-center border border-transparent rounded-md py-3 px-8 text-lg text-white transition ease-in-out delay-100 bg-blue-500 hover:bg-[#1fc6e4] hover:text-black duration-300" name="StuForm"> Student Survey Form
                     </button>
                 </div>
                 <br />
                 <br />
                 <br />
                 <div class="forms">
-                    <button type="submit"
-                        class="but inline-block font-mono text-center border border-transparent rounded-md py-3 px-8 text-lg text-white transition ease-in-out delay-100 bg-blue-500 hover:bg-[#1fc6e4] hover:text-black duration-300"
-                        name="FFForm"> Faculty Feedback Form
+                    <button type="submit" class="but inline-block font-mono text-center border border-transparent rounded-md py-3 px-8 text-lg text-white transition ease-in-out delay-100 bg-blue-500 hover:bg-[#1fc6e4] hover:text-black duration-300" name="FFForm"> Faculty Feedback Form
                     </button>
                 </div>
                 <br />
@@ -171,8 +164,7 @@ ob_end_flush();
         <br>
         <div id="msg" class="msg text-xl text-center" style="display:none">
             <br />
-            <img src="https://github.githubassets.com/images/mona-loading-dark.gif" alt="octo"
-                style="max-height:6rem;display:inline-block;">
+            <img src="https://github.githubassets.com/images/mona-loading-dark.gif" alt="octo" style="max-height:6rem;display:inline-block;">
             <br />
             <br />
             <p id="msg-p" style="padding:1rem">
@@ -180,21 +172,16 @@ ob_end_flush();
             </p>
             <br />
             <br />
-            <img src="https://pa1.narvii.com/6771/ab4135057351e87e09676e559b5e76f1cad5c77e_hq.gif" alt="Scott"
-                id="clown_com"
-                style="text-align:center;box-shadow:4px 5px 2.5rem #cacaca;display:inline-block;border-radius:0.4rem;width:55rem;height:auto" />
+            <img src="https://pa1.narvii.com/6771/ab4135057351e87e09676e559b5e76f1cad5c77e_hq.gif" alt="Scott" id="clown_com" style="text-align:center;box-shadow:4px 5px 2.5rem #cacaca;display:inline-block;border-radius:0.4rem;width:55rem;height:auto" />
         </div>
     </div>
 
     <div class="footer-copyright text-center" id="hidcopy" style=" display:none;padding:1rem">
-        <img id="foot" alt="pc" src="https://bang-phinf.pstatic.net/a/32ehga/0_8g9Ud018bng1q157yzwrfmle_wzcvar.gif"
-            style="max-width:10rem;height:auto;display:none;position:relative;">
+        <img id="foot" alt="pc" src="https://bang-phinf.pstatic.net/a/32ehga/0_8g9Ud018bng1q157yzwrfmle_wzcvar.gif" style="max-width:10rem;height:auto;display:none;position:relative;">
         <br />
         <br />
         <br />
-        <p>&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html" target="_self"
-                class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> | <a
-                href="../../../personal.html" class="text-[blue] hover:underline ">Contributors</a>
+        <p>&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html" target="_self" class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> | <a href="../../../personal.html" class="text-[blue] hover:underline ">Contributors</a>
         </p>
     </div>
 
@@ -202,7 +189,6 @@ ob_end_flush();
 <!-- form validation -->
 <script type="text/javascript" src="../../../Js/forms.js?v=1"></script>
 <script src="../../../Js/main.js?v=1" type="text/javascript"></script>
-<script async type="text/javascript"
-    src="https://api.countapi.xyz/hit/KelkarForms.com/415a7523-bb25-4d45-a700-33a48a168a6c/?callback=counter"></script>
+<script async type="text/javascript" src="https://api.countapi.xyz/hit/KelkarForms.com/415a7523-bb25-4d45-a700-33a48a168a6c/?callback=counter"></script>
 
 </html>

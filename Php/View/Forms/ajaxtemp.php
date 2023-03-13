@@ -110,7 +110,6 @@ if (isset($_POST['cid_stu'])) {
 }
 
 // studentsss programme
-
 if (isset($_POST['cid_crt'])) {
     $con = get_con();
     $query = "SELECT `programme` FROM `activectrlid` WHERE ctrlid =\"" . $_POST['cid_crt'] . "\";";

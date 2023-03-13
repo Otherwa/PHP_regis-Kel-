@@ -43,7 +43,7 @@ if (isset($_POST["export"])) {
         $temp_array = array();
         // echo "<br>";
         for ($rate = 1; $rate < 8; $rate++) {
-            $query = "SELECT COUNT(a" . $a  . ") as count1 from answersss WHERE programme =\"" . $_SESSION["programme"] . "\" AND class=\"" . $_SESSION["class"] . "\""  . " AND a" . $a . "=\"" . $rate . "\";";
+            $query = "SELECT COUNT(a" . $a  . ") as count1 from answersss WHERE programme =\"" . $_SESSION["programme"]   . "\" AND a" . $a . "=\"" . $rate . "\";";
             $result = mysqli_query($con, $query);
             $result = mysqli_fetch_assoc($result);
             // echo " " . $result['count1'];
@@ -83,7 +83,7 @@ if (isset($_POST["export"])) {
     }
 
     $output .= '</table>';
-    $name = $_SESSION['class'] . "_" . $_SESSION['programme'];
+    $name = $_SESSION['programme'];
     header("Content-Type:application/xlsx");
     header('Content-Disposition:attachment;filename=' . $name . '.xls');
     echo $output;
@@ -94,7 +94,7 @@ function Get_count()
 {
     $con = get_con();
 
-    $query = "SELECT count(*) as `count1` from `answersss` WHERE class=\"" . $_SESSION['class'] . "\"AND programme =\"" . $_SESSION['programme'] . "\";";
+    $query = "SELECT count(*) as `count1` from `answersss` WHERE programme =\"" . $_SESSION['programme'] . "\";";
     $result = mysqli_query($con, $query);
     $result = mysqli_fetch_array($result);
     $result = $result['count1'];

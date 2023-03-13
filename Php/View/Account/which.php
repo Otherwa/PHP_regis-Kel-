@@ -41,72 +41,75 @@ ob_end_flush();
     <meta http-equiv='expires' content='0'>
     <meta http-equiv='pragma' content='no-cache'>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.0.0/chartjs-plugin-datalabels.min.js" integrity="sha512-R/QOHLpV1Ggq22vfDAWYOaMd5RopHrJNMxi8/lJu8Oihwi4Ho4BRFeiMiCefn9rasajKjnx9/fTQ/xkWnkDACg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.0.0/chartjs-plugin-datalabels.min.js"
+        integrity="sha512-R/QOHLpV1Ggq22vfDAWYOaMd5RopHrJNMxi8/lJu8Oihwi4Ho4BRFeiMiCefn9rasajKjnx9/fTQ/xkWnkDACg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- basic css -->
     <style>
-        .myfont {
-            font-family: "Bungee", cursive;
-        }
+    .myfont {
+        font-family: "Bungee", cursive;
+    }
 
-        th,
-        td {
-            padding: 1rem;
-            font-family: monospace;
-            font-weight: bold;
-        }
+    th,
+    td {
+        padding: 1rem;
+        font-family: monospace;
+        font-weight: bold;
+    }
 
-        /* inline nav */
-        .overfolo::-webkit-scrollbar {
-            width: 6px;
-        }
+    /* inline nav */
+    .overfolo::-webkit-scrollbar {
+        width: 6px;
+    }
 
-        /* Track */
+    /* Track */
 
-        .overfolo::-webkit-scrollbar-track {
-            box-shadow: inset 0 0 2px grey;
-        }
+    .overfolo::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 2px grey;
+    }
 
-        /* Handle */
+    /* Handle */
 
-        .overfolo::-webkit-scrollbar-thumb {
-            background: #006eff;
-            border-radius: 0.5rem;
-        }
+    .overfolo::-webkit-scrollbar-thumb {
+        background: #006eff;
+        border-radius: 0.5rem;
+    }
 
-        /* Handle on hover */
+    /* Handle on hover */
 
-        .overfolo::-webkit-scrollbar-thumb:hover {
-            background: #006effb7;
-        }
+    .overfolo::-webkit-scrollbar-thumb:hover {
+        background: #006effb7;
+    }
 
-        .li {
-            overflow-y: auto;
-            height: 15rem;
-            background-color: rgba(0, 0, 0, 0.05);
-            border-radius: 0.5rem;
-        }
+    .li {
+        overflow-y: auto;
+        height: 15rem;
+        background-color: rgba(0, 0, 0, 0.05);
+        border-radius: 0.5rem;
+    }
 
-        .chart_con {
-            padding: 1rem;
-            max-width: 100%;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-        }
+    .chart_con {
+        padding: 1rem;
+        max-width: 100%;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
 
+    .i1 {
+        display: inline-block;
+        width: 50%;
+        height: 50%
+    }
+
+    @media screen and (max-width: 768px) {
         .i1 {
-            display: inline-block;
-            width: 50%;
-            height: 50%
+            height: 100%;
+            width: 100%;
         }
-
-        @media screen and (max-width: 768px) {
-            .i1 {
-                height: 100%;
-                width: 100%;
-            }
-        }
+    }
     </style>
 </head>
 
@@ -114,6 +117,7 @@ ob_end_flush();
     <ul class="sidenav">
         <!-- to destroy session -->
         <li style="padding-bottom:0px"><a class="font-mono" href="logout.php" target="_self">Logout</a></li>
+        <li style="padding-bottom:0px"><a class="font-mono" href="which.php" target="_self">Home</a></li>
     </ul>
     <br />
     <div class="bg-[#ffffff] text-center content" style="padding:0.5rem">
@@ -126,21 +130,27 @@ ob_end_flush();
                 <br>
                 <form action="" method="POST">
                     <div class="forms">
-                        <a href="./pats.php" class="but w-max inline-block font-mono text-center border border-transparent rounded-md py-3 px-8 text-lg text-white transition ease-in-out delay-100 bg-blue-500 hover:bg-[#1fc6e4] hover:text-black duration-300" name="PAPForm" style="width:100%"> PAT'S Form
+                        <a href="./pats.php"
+                            class="but w-max inline-block font-mono text-center border border-transparent rounded-md py-3 px-8 text-lg text-white transition ease-in-out delay-100 bg-blue-500 hover:bg-[#1fc6e4] hover:text-black duration-300"
+                            name="PAPForm" style="width:100%"> PAT'S Form
                         </a>
                     </div>
                     <br />
                     <br />
                     <br />
                     <div class="forms">
-                        <a href="./sss.php" class="but w-max inline-block font-mono text-center border border-transparent rounded-md py-3 px-8 text-lg text-white transition ease-in-out delay-100 bg-blue-500 hover:bg-[#1fc6e4] hover:text-black duration-300" name="StuForm" style="width:100%"> Student Survey Form
+                        <a href="./sss.php"
+                            class="but w-max inline-block font-mono text-center border border-transparent rounded-md py-3 px-8 text-lg text-white transition ease-in-out delay-100 bg-blue-500 hover:bg-[#1fc6e4] hover:text-black duration-300"
+                            name="StuForm" style="width:100%"> Student Survey Form
                         </a>
                     </div>
                     <br />
                     <br />
                     <br />
                     <div class="forms">
-                        <a href="./fac.php" class="but w-max inline-block font-mono text-center border border-transparent rounded-md py-3 px-8 text-lg text-white transition ease-in-out delay-100 bg-blue-500 hover:bg-[#1fc6e4] hover:text-black duration-300" name="FFForm" style="width:100%"> Faculty Feedback Form
+                        <a href="./fac.php"
+                            class="but w-max inline-block font-mono text-center border border-transparent rounded-md py-3 px-8 text-lg text-white transition ease-in-out delay-100 bg-blue-500 hover:bg-[#1fc6e4] hover:text-black duration-300"
+                            name="FFForm" style="width:100%"> Faculty Feedback Form
                         </a>
                     </div>
                     <br />
@@ -153,7 +163,10 @@ ob_end_flush();
             <br />
             <div class="footer-copyright" style="position:relative;">
                 <br />
-                <p>&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html" target="_blank" class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> | <a href="../../../personal.html" class="text-[blue] hover:underline " target="_blank">Contributors</a>
+                <p>&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html" target="_blank"
+                        class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> | <a
+                        href="../../../personal.html" class="text-[blue] hover:underline "
+                        target="_blank">Contributors</a>
                     <br />
             </div>
             <script type="text/javascript" src="../../../Js/admin.js?v=1"></script>
@@ -161,7 +174,8 @@ ob_end_flush();
 </body>
 <script src="../../../Js/main.js?v=1" type="text/javascript"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script async type="text/javascript" src="https://api.countapi.xyz/hit/KelkarForms.com/415a7523-bb25-4d45-a700-33a48a168a6c/?callback=counter"></script>
+<script async type="text/javascript"
+    src="https://api.countapi.xyz/hit/KelkarForms.com/415a7523-bb25-4d45-a700-33a48a168a6c/?callback=counter"></script>
 
 
 </html>

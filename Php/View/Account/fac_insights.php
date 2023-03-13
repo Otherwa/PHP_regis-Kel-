@@ -357,7 +357,7 @@ ob_end_flush();
         <!-- for pdf use -->
         <input type="button" value="Download.Pdf" style="margin:0" id="sub" onclick="downpdf()">
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <form method="POST" action="down_xl1_insights_departments.php">
+        <form method="POST" action="down_xl3.php">
             <!-- set tname -->
             <input type="submit" value="Download.Xls" style="margin:0" class="form__button" name="export">
         </form>

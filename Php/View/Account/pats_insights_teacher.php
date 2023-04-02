@@ -9,7 +9,7 @@ $output = "QUERY";
 
 $total = Get_count();
 if ($total == 0) {
-    header('Location: pats.php');
+    // header('Location: pats.php');
     $_SESSION['namesub'] = "error";
 }
 
@@ -55,7 +55,7 @@ function Get_count()
 {
     $con = get_con();
 
-    $query = "SELECT count(*) as `count1` from `answerpats` WHERE tname=\"" . $_POST['teacher'] . "\";";
+    $query = "SELECT count(*) as `count1` from `answerpats` WHERE tname=\"" . $_POST['teacher'] . "\" AND programme=\"" . $_POST['Programme'] . "\";";
     $result = mysqli_query($con, $query);
     $result = mysqli_fetch_array($result);
     $result = $result['count1'];
@@ -109,70 +109,67 @@ ob_end_flush();
     <meta http-equiv='expires' content='0'>
     <meta http-equiv='pragma' content='no-cache'>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.0.0/chartjs-plugin-datalabels.min.js"
-        integrity="sha512-R/QOHLpV1Ggq22vfDAWYOaMd5RopHrJNMxi8/lJu8Oihwi4Ho4BRFeiMiCefn9rasajKjnx9/fTQ/xkWnkDACg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.0.0/chartjs-plugin-datalabels.min.js" integrity="sha512-R/QOHLpV1Ggq22vfDAWYOaMd5RopHrJNMxi8/lJu8Oihwi4Ho4BRFeiMiCefn9rasajKjnx9/fTQ/xkWnkDACg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <style>
-    #i1 {
-        display: flex;
-        flex-wrap: wrap;
-    }
+        #i1 {
+            display: flex;
+            flex-wrap: wrap;
+        }
 
-    #i1 .c {
-        padding: 0.9rem;
-        height: auto;
-        width: 100vw;
-        flex: 2 1 500px;
-        font-size: 0.9rem;
-        background-color: rgba(0, 0, 0, 0.025);
-    }
-
-    #i1 .c p {
-        padding: 0.5rem;
-        text-align: justify;
-        font-weight: 100;
-    }
-
-    /* mob res temp */
-
-
-    #editor {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    body {
-        background-color: white;
-    }
-
-    .intr p {
-        font-size: 1.12rem;
-        text-align: center;
-        font-family: monospace;
-    }
-
-    /* tab res */
-    @media screen and (max-width: 768px) {
         #i1 .c {
-            padding: 0.7rem;
-            height: 60vh;
+            padding: 0.9rem;
+            height: auto;
             width: 100vw;
+            flex: 2 1 500px;
+            font-size: 0.9rem;
+            background-color: rgba(0, 0, 0, 0.025);
+        }
+
+        #i1 .c p {
+            padding: 0.5rem;
+            text-align: justify;
+            font-weight: 100;
+        }
+
+        /* mob res temp */
+
+
+        #editor {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        body {
+            background-color: white;
         }
 
         .intr p {
-            font-size: 0.9rem;
+            font-size: 1.12rem;
+            text-align: center;
+            font-family: monospace;
         }
-    }
 
-    @media screen and (max-width: 468px) {
-        #i1 .c {
-            padding: 0.7rem;
-            height: 50vh;
-            width: 100vw;
+        /* tab res */
+        @media screen and (max-width: 768px) {
+            #i1 .c {
+                padding: 0.7rem;
+                height: 60vh;
+                width: 100vw;
+            }
+
+            .intr p {
+                font-size: 0.9rem;
+            }
         }
-    }
+
+        @media screen and (max-width: 468px) {
+            #i1 .c {
+                padding: 0.7rem;
+                height: 50vh;
+                width: 100vw;
+            }
+        }
     </style>
 </head>
 
@@ -318,17 +315,13 @@ ob_end_flush();
     <br>
     <div class="footer-copyright text-center" style="padding:1rem;position:relative;">
         <br />
-        <p style="font-family:monospace">&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html"
-                target="_self" class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> | <a
-                href="../../../personal.html" class="text-[blue] hover:underline ">Contributors</a>
+        <p style="font-family:monospace">&copy; | Copyright 2022 - ♾️ All rights reserved | <a href="../../../term.html" target="_self" class="text-[blue] hover:underline leading-normal">Terms & Conditions</a> | <a href="../../../personal.html" class="text-[blue] hover:underline ">Contributors</a>
         </p>
     </div>
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.1/html2pdf.bundle.min.js"
-    integrity="sha512-vDKWohFHe2vkVWXHp3tKvIxxXg0pJxeid5eo+UjdjME3DBFBn2F8yWOE0XmiFcFbXxrEOR1JriWEno5Ckpn15A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.1/html2pdf.bundle.min.js" integrity="sha512-vDKWohFHe2vkVWXHp3tKvIxxXg0pJxeid5eo+UjdjME3DBFBn2F8yWOE0XmiFcFbXxrEOR1JriWEno5Ckpn15A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="../../../Js/pats_insights_teacher.js" type="text/javascript"></script>
 
 

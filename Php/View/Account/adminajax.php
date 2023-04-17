@@ -14,7 +14,7 @@ if (isset($_POST['programme'])) {
 
 if (isset($_POST['teach'])) {
     $con = get_con();
-    $query = " SELECT DISTINCT `cname` FROM `answerpats` WHERE tname = " . "\"" . $_POST['teach'] . "\";";
+    $query = " SELECT DISTINCT `cname` FROM `answerpats` WHERE tname = " . "\"" . $_POST['teach'] . "\" AND programme = " . "\"" . $_POST['prg'] . "\";";
     $result = mysqli_query($con, $query);
     echo "<option value = " . "--" . ">" . "--" . "</option>";
     while ($row = mysqli_fetch_assoc($result)) {

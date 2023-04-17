@@ -1,13 +1,13 @@
-document.addEventListener('contextmenu', function(e) {
+document.addEventListener('contextmenu', function (e) {
     e.preventDefault();
 });
 
-window.addEventListener("load", ()=>{
-    document.getElementById('Programme').value='--'
-    document.getElementById('class').value='--'
-    document.getElementById('subjec').value='--'
-    document.getElementById('sem').value='--'
-    document.getElementById('teacher').value='--'
+window.addEventListener("load", () => {
+    document.getElementById('Programme').value = '--'
+    document.getElementById('class').value = '--'
+    document.getElementById('subjec').value = '--'
+    document.getElementById('sem').value = '--'
+    document.getElementById('teacher').value = '--'
 });
 
 
@@ -23,7 +23,7 @@ function Get_Teacher(id) {
         data: {
             programme: id
         },
-        success: function(data) {
+        success: function (data) {
             $('#teacher').html(data);
         }
     })
@@ -38,9 +38,10 @@ function Get_Class(id) {
         type: 'POST',
         url: 'adminajax.php',
         data: {
-            teach: id
+            teach: id,
+            prg: $('#Programme').val(),
         },
-        success: function(data) {
+        success: function (data) {
             $('#class').html(data);
         }
     })
@@ -59,7 +60,7 @@ function Get_Sem(id) {
             teac1: teac,
             class: id
         },
-        success: function(data) {
+        success: function (data) {
             if (id == '--') {
                 $('#sem').html('<option value="--">--</option>');
             } else {
@@ -80,7 +81,7 @@ function Get_Sub(id) {
             sem: id,
             teachername: teacher
         },
-        success: function(data) {
+        success: function (data) {
             if (id == '--') {
                 $('#subjec').html('<option value="--">--</option>');
             } else {
@@ -168,7 +169,7 @@ function Get_Chart() {
             sem: sem,
             sub: subjec,
         },
-        success: function(bar_graphic) {
+        success: function (bar_graphic) {
             if (subjec == '--') {
                 $('#divGraph').html('<p>Invalid</p>')
             } else {

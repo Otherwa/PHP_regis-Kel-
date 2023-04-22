@@ -124,6 +124,8 @@ ob_end_flush();
         <li style="padding-bottom:0px"><a class="font-mono" href="sss.php" target="_self">SSS Insights</a></li>
         <li style="padding-bottom:0px"><a class="font-mono" href="sss_departments.php" target="_self">SSS Departments
                 Insights</a></li>
+        <li style="padding-bottom:0px"><a class="font-mono" href="sss_overall.php" target="_self">SSS Overall
+                Insights</a></li>
     </ul>
     <br />
     <div class="bg-[#ffffff] text-center content" style="padding:0.5rem">

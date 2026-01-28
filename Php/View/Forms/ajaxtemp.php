@@ -52,9 +52,10 @@ if (isset($_POST['tname']) && isset($_POST['classv1'])) {
 
 
 // get subject for specific semester teacher
-if (isset($_POST['sem']) && isset($_POST['teachername'])) {
+if (isset($_POST['sem']) && isset($_POST['teachername']) && && isset($_POST['div']) ) {
     $con = get_con();
-    $query = " SELECT * FROM `teachers` WHERE sem = " . "\"" . $_POST['sem'] . "\" " . "AND tname =" . "\"" . $_POST['teachername'] . "\"; ";
+    // Changed on 28-10-2026
+    $query = "SELECT * FROM `teachers` WHERE sem = \"" . $_POST['sem'] . "\" AND tname = \"" . $_POST['teachername'] . "\" AND div = \"" . $_POST['div'] . "\";";
     $result = mysqli_query($con, $query);
     $row = mysqli_fetch_array($result);
     $result1 = mysqli_num_rows($result);
@@ -129,4 +130,5 @@ if (isset($_POST['cid_crt'])) {
 mysqli_close($con);
 ob_end_flush();
 ?>
+
 <!doctype html>

@@ -115,6 +115,9 @@ function FetchSem_from_teacher(id) {
 // get subject for specific sem of teacher
 function FetchSub_from_division(id) {
     var div_sel = $('#division').val()
+    // USed in fomr on 28-01-2026 on vaze kelakr server please refer that
+    // used vanilla js to get data
+    // 
     
     $('#msg_form').html('');
     $('#subject').html('<option value =" ">--</option>');
@@ -124,7 +127,8 @@ function FetchSub_from_division(id) {
         data: {
             sem: id,
             teachername: value1,
-            div : div_sel
+            div : div_sel,
+            cname : cname_sel
         },
         success: function (data) {
             if (id == "--") {

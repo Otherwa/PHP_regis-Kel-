@@ -114,6 +114,8 @@ function FetchSem_from_teacher(id) {
 
 // get subject for specific sem of teacher
 function FetchSub_from_division(id) {
+    var div_sel = $('#division').val()
+    
     $('#msg_form').html('');
     $('#subject').html('<option value =" ">--</option>');
     $.ajax({
@@ -122,6 +124,7 @@ function FetchSub_from_division(id) {
         data: {
             sem: id,
             teachername: value1,
+            div : div_sel
         },
         success: function (data) {
             if (id == "--") {
